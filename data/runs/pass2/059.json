@@ -1,0 +1,343 @@
+{
+  "one_liner": "One B2B data solution to find, enrich, and verify contacts and companies.",
+  "auth_methods": [
+    "api_key"
+  ],
+  "auth_primary": "api_key",
+  "auth_notes": "Passed via the x-api-key header.",
+  "access_tier": "paid_plan",
+  "access_notes": "Usage-based pricing with no free tier or free signup option explicitly mentioned for obtaining working developer credentials without payment/usage.",
+  "api_types": [
+    "rest"
+  ],
+  "api_breadth": "moderate",
+  "api_notes": "REST API covering contact and company data enrichment, verification, and API key management under https://api.waterfall.io/v1/.",
+  "mcp": "none_found",
+  "mcp_url": "https://docs.waterfall.io/v1/skills-overview.md",
+  "verdict": "build_with_friction",
+  "blocker": "paid_plan",
+  "blocker_notes": "Public documentation and API keys are readily available.",
+  "evidence": {
+    "auth": {
+      "url": "https://docs.waterfall.io/v1/authentication",
+      "quote": "All requests are authenticated using x-api-key.",
+      "check": "ok"
+    },
+    "access": {
+      "url": "https://waterfall.io",
+      "quote": "Transparent pricing\nUsage-based pricing with no surprises. Pay for what you use, scale as you grow, no hidden fees.",
+      "check": "ok"
+    },
+    "api": {
+      "url": "https://docs.waterfall.io/v1/authentication",
+      "quote": "Base API URL is https://api.waterfall.io/v1/ for v1 endpoints.",
+      "check": "ok"
+    },
+    "mcp": {
+      "url": "https://docs.waterfall.io/v1/skills-overview.md",
+      "quote": "Waterfall does not document or publish any official Model Context Protocol (MCP) server.",
+      "check": "not_found"
+    },
+    "verdict": {
+      "url": "https://waterfall.io",
+      "quote": "Transparent pricing\nUsage-based pricing with no surprises. Pay for what you use, scale as you grow, no hidden fees.",
+      "check": "ok"
+    }
+  },
+  "confidence": {
+    "auth": 5.0,
+    "access": 4.0,
+    "api": 4.5,
+    "mcp": 5.0,
+    "verdict": 4.5
+  },
+  "_model": "gemini-3.5-flash-lite",
+  "status": "ok",
+  "id": 59,
+  "name": "Waterfall.io",
+  "category": "Data SEO & Scraping",
+  "hint": "waterfall.io (contact/company intel)",
+  "sources": [
+    {
+      "url": "https://waterfall.io",
+      "via": "direct",
+      "chars": 7589
+    },
+    {
+      "url": "https://docs.waterfall.io/llms.txt",
+      "via": "direct",
+      "chars": 6038
+    },
+    {
+      "url": "https://docs.waterfall.io/v1/api-keys-create",
+      "via": "direct",
+      "chars": 10129
+    },
+    {
+      "url": "https://docs.waterfall.io/v1/api-keys-list",
+      "via": "direct",
+      "chars": 6722
+    },
+    {
+      "url": "https://docs.waterfall.io/v1/api-keys-overview",
+      "via": "direct",
+      "chars": 1372
+    },
+    {
+      "url": "https://docs.waterfall.io/v1/authentication",
+      "via": "composio_fetch",
+      "chars": 601
+    },
+    {
+      "url": "https://docs.waterfall.io/v1/account-reporter-v2",
+      "via": "verification"
+    },
+    {
+      "url": "https://docs.waterfall.io/v1/api-keys-modify",
+      "via": "verification"
+    },
+    {
+      "url": "https://modelcontextprotocol.io/docs/2024-11-05/develop/build-server",
+      "via": "verification"
+    },
+    {
+      "url": "https://modelcontextprotocol.io/docs/2026%2D07%2D28/learn/architecture",
+      "via": "verification"
+    },
+    {
+      "url": "https://modelcontextprotocol.io/docs/2026-07-28/learn/server-concepts",
+      "via": "verification"
+    },
+    {
+      "url": "https://ts.sdk.modelcontextprotocol.io/v2/api/@modelcontextprotocol/server/server/mcp.html",
+      "via": "verification"
+    }
+  ],
+  "queries": [
+    "Waterfall.io API authentication developer docs",
+    "Waterfall.io API access pricing plan developer",
+    "Waterfall.io MCP server"
+  ],
+  "seconds": 53.0,
+  "verification_queries": [
+    "Waterfall.io API access requirements plan",
+    "Waterfall.io developer account API key free OR partner OR enterprise",
+    "Waterfall.io MCP server model context protocol",
+    "Waterfall.io MCP server model context protocol"
+  ],
+  "verification": {
+    "initial_issues": [
+      {
+        "loop": "L1_evidence",
+        "field": "access",
+        "problem": "no evidence cited"
+      },
+      {
+        "loop": "L1_evidence",
+        "field": "mcp",
+        "problem": "quote not found on cited page (URL was not among the sources given)",
+        "url": "https://docs.waterfall.io/v1/llms.txt",
+        "match": 0.0
+      },
+      {
+        "loop": "L4_verifier",
+        "field": "access",
+        "problem": "verifier says paid_plan vs agent self_serve_free"
+      },
+      {
+        "loop": "L4_verifier",
+        "field": "verdict",
+        "problem": "verifier says build_with_friction vs agent build_now"
+      }
+    ],
+    "final_issues": [
+      {
+        "loop": "L1_evidence",
+        "field": "mcp",
+        "problem": "quote not found on cited page (URL was not among the sources given)",
+        "url": "https://docs.waterfall.io/v1/skills-overview.md",
+        "match": 0.0
+      }
+    ],
+    "rounds": [
+      {
+        "round": 0,
+        "issues": [
+          {
+            "loop": "L1_evidence",
+            "field": "access",
+            "problem": "no evidence cited"
+          },
+          {
+            "loop": "L1_evidence",
+            "field": "mcp",
+            "problem": "quote not found on cited page (URL was not among the sources given)",
+            "url": "https://docs.waterfall.io/v1/llms.txt",
+            "match": 0.0
+          },
+          {
+            "loop": "L4_verifier",
+            "field": "access",
+            "problem": "verifier says paid_plan vs agent self_serve_free"
+          },
+          {
+            "loop": "L4_verifier",
+            "field": "verdict",
+            "problem": "verifier says build_with_friction vs agent build_now"
+          }
+        ],
+        "verifier": {
+          "auth_methods": [
+            "api_key"
+          ],
+          "auth_primary": "api_key",
+          "access_tier": "paid_plan",
+          "api_types": [
+            "rest"
+          ],
+          "mcp": "official",
+          "verdict": "build_with_friction",
+          "reasons": {
+            "auth": "API key authentication is documented and required for all endpoints.",
+            "access": "No free tier or sandbox is mentioned; usage-based pricing implies a paid plan is required.",
+            "mcp": "The API is officially documented by Waterfall.io and hosted at api.waterfall.io.",
+            "verdict": "Public REST API with documented authentication exists, but credentials require a paid plan, so building is possible with friction."
+          },
+          "_model": "openai/gpt-oss-20b"
+        },
+        "autofix": []
+      },
+      {
+        "round": 1,
+        "queries": [
+          "Waterfall.io API access requirements plan",
+          "Waterfall.io developer account API key free OR partner OR enterprise",
+          "Waterfall.io MCP server model context protocol"
+        ],
+        "new_sources": [
+          "https://waterfall.io",
+          "https://docs.waterfall.io/v1/account-reporter-v2",
+          "https://docs.waterfall.io/v1/api-keys-create",
+          "https://docs.waterfall.io/v1/api-keys-list",
+          "https://docs.waterfall.io/v1/api-keys-modify"
+        ],
+        "change_log": "Updated access_tier to paid_plan and verdict to build_with_friction based on usage-based pricing, and set mcp to none_found as the agent skills link is documentation/scripts rather than a hosted Model Context Protocol server.",
+        "issues": [
+          {
+            "loop": "L4_verifier",
+            "field": "mcp",
+            "problem": "verifier says official vs agent none_found"
+          }
+        ],
+        "verifier": {
+          "auth_methods": [
+            "api_key"
+          ],
+          "auth_primary": "api_key",
+          "access_tier": "paid_plan",
+          "api_types": [
+            "rest"
+          ],
+          "mcp": "official",
+          "verdict": "build_with_friction",
+          "reasons": {
+            "auth": "API key is the only authentication method documented.",
+            "access": "API key creation requires a master key, which is only available on paid accounts; no free sandbox is documented.",
+            "mcp": "The API is documented by Waterfall.io itself, indicating an official MCP.",
+            "verdict": "Public REST API exists and can be used once a paid plan is obtained, but requires payment."
+          },
+          "_model": "openai/gpt-oss-20b"
+        },
+        "autofix": []
+      },
+      {
+        "round": 2,
+        "queries": [
+          "Waterfall.io API access requirements plan",
+          "Waterfall.io developer account API key free OR partner OR enterprise",
+          "Waterfall.io MCP server model context protocol",
+          "Waterfall.io MCP server model context protocol"
+        ],
+        "new_sources": [
+          "https://waterfall.io",
+          "https://modelcontextprotocol.io/docs/2024-11-05/develop/build-server",
+          "https://modelcontextprotocol.io/docs/2026%2D07%2D28/learn/architecture",
+          "https://modelcontextprotocol.io/docs/2026-07-28/learn/server-concepts",
+          "https://ts.sdk.modelcontextprotocol.io/v2/api/@modelcontextprotocol/server/server/mcp.html"
+        ],
+        "change_log": "Corrected mcp to none_found as no official or community MCP server is documented or published by Waterfall.io.",
+        "issues": [
+          {
+            "loop": "L1_evidence",
+            "field": "mcp",
+            "problem": "quote not found on cited page (URL was not among the sources given)",
+            "url": "https://docs.waterfall.io/v1/skills-overview.md",
+            "match": 0.0
+          }
+        ],
+        "verifier": {
+          "auth_methods": [
+            "other"
+          ],
+          "auth_primary": "other",
+          "access_tier": "unknown",
+          "api_types": [
+            "none"
+          ],
+          "mcp": "none_found",
+          "verdict": "unknown",
+          "reasons": {
+            "auth": "unknown",
+            "access": "unknown",
+            "mcp": "none_found",
+            "verdict": "unknown"
+          },
+          "_model": "openai/gpt-oss-20b"
+        },
+        "autofix": []
+      }
+    ],
+    "catalog": {
+      "in_catalog": false,
+      "checked": [
+        "waterfall",
+        "waterfallio",
+        "waterfall_io"
+      ]
+    },
+    "changed_fields": [
+      "access",
+      "mcp",
+      "verdict"
+    ],
+    "field_status": {
+      "auth": "verified",
+      "access": "corrected",
+      "api": "verified",
+      "mcp": "needs_human",
+      "verdict": "corrected"
+    },
+    "needs_human": [
+      "mcp"
+    ],
+    "before": {
+      "auth_methods": [
+        "api_key"
+      ],
+      "auth_primary": "api_key",
+      "access_tier": "self_serve_free",
+      "access_notes": "Sign up on the platform to obtain an API key.",
+      "api_types": [
+        "rest"
+      ],
+      "api_breadth": "moderate",
+      "api_notes": "REST API covering contact and company data enrichment, verification, and API key management under https://api.waterfall.io/v1/.",
+      "mcp": "official",
+      "mcp_url": "https://docs.waterfall.io/v1/skills-overview.md",
+      "verdict": "build_now",
+      "blocker": "none",
+      "blocker_notes": "Public documentation and API keys are readily available."
+    },
+    "seconds": 77.5
+  }
+}

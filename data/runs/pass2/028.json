@@ -1,0 +1,359 @@
+{
+  "one_liner": "Enterprise-grade API for messaging, calling, and managing customer communications via WhatsApp.",
+  "auth_methods": [
+    "oauth2",
+    "bearer_token"
+  ],
+  "auth_primary": "oauth2",
+  "auth_notes": "Uses OAuth-based access tokens passed via Bearer authentication in HTTP headers.",
+  "access_tier": "self_serve_free",
+  "access_notes": "When you complete the steps in the Get Started document, a test business phone number is generated and registered for you automatically.",
+  "api_types": [
+    "rest"
+  ],
+  "api_breadth": "broad",
+  "api_notes": "Covers messaging, templates, phone numbers, media, webhooks, and WABA management via Facebook Graph API.",
+  "mcp": "none_found",
+  "mcp_url": null,
+  "verdict": "build_now",
+  "blocker": "none",
+  "blocker_notes": "None",
+  "evidence": {
+    "auth": {
+      "url": "https://developers.facebook.com/docs/graph-api/reference/whats-app-business-account",
+      "quote": "190 | Invalid OAuth 2.0 Access Token",
+      "check": "ok"
+    },
+    "access": {
+      "url": "https://developers.facebook.com/docs/whatsapp/cloud-api/get-started",
+      "quote": "This guide helps developers quickly get started with the WhatsApp Cloud API. It covers the basic setup steps, including registering as a developer, creating a Meta app, sending your first message, and setting up a test webhook endpoint.",
+      "check": "ok"
+    },
+    "api": {
+      "url": "https://developers.facebook.com/docs/whatsapp",
+      "quote": "url = \"https://graph.facebook.com/<API_VERSION>/<WHATSAPP_BUSINESS_PHONE_NUMBER_ID>/messages\"",
+      "check": "ok"
+    },
+    "mcp": {
+      "url": "https://developers.facebook.com/docs/whatsapp",
+      "quote": "WhatsApp Business Platform | Developer Documentation",
+      "check": "ok"
+    },
+    "verdict": {
+      "url": "https://developers.facebook.com/docs/whatsapp/cloud-api/get-started",
+      "quote": "Click Generate access token to generate a temporary access token to send a test message.",
+      "check": "ok"
+    }
+  },
+  "confidence": {
+    "auth": 0.9,
+    "access": 0.9,
+    "api": 0.9,
+    "mcp": 1.0,
+    "verdict": 0.9
+  },
+  "_model": "gemini-3.5-flash-lite",
+  "status": "ok",
+  "id": 28,
+  "name": "WhatsApp Business",
+  "category": "Communications & Messaging",
+  "hint": "developers.facebook.com/docs/whatsapp",
+  "sources": [
+    {
+      "url": "https://developers.facebook.com/docs/whatsapp",
+      "via": "composio_fetch",
+      "chars": 3537
+    },
+    {
+      "url": "https://developers.facebook.com/docs/graph-api/reference/whats-app-business-account",
+      "via": "composio_fetch",
+      "chars": 8926
+    },
+    {
+      "url": "https://developers.facebook.com/docs/whatsapp/business-management-api/authentication-templates",
+      "via": "composio_fetch",
+      "chars": 11075
+    },
+    {
+      "url": "https://developers.facebook.com/docs/whatsapp/business-management-api/get-started",
+      "via": "composio_fetch",
+      "chars": 1282
+    },
+    {
+      "url": "https://developers.facebook.com/docs/whatsapp/cloud-api/overview",
+      "via": "composio_fetch",
+      "chars": 12717
+    },
+    {
+      "url": "https://developers.facebook.com/docs/whatsapp/cloud-api/reference/phone-numbers",
+      "via": "composio_fetch",
+      "chars": 22624
+    },
+    {
+      "url": "https://developers.facebook.com/docs/graph-api/reference/whats-app-business-account-to-number-current-status/whatsapp_business_profile",
+      "via": "verification"
+    },
+    {
+      "url": "https://developers.facebook.com/docs/graph-api/reference/whats-app-business-account/message_templates",
+      "via": "verification"
+    },
+    {
+      "url": "https://developers.facebook.com/docs/whatsapp/business-management-api/message-templates",
+      "via": "verification"
+    },
+    {
+      "url": "https://developers.facebook.com/docs/whatsapp/cloud-api/get-started",
+      "via": "verification"
+    },
+    {
+      "url": "https://developers.facebook.com/docs/whatsapp/cloud-api/guides/send-message-templates/auth-otp-template-messages",
+      "via": "verification"
+    }
+  ],
+  "queries": [
+    "WhatsApp Business API authentication developer docs",
+    "WhatsApp Business API access pricing plan developer",
+    "WhatsApp Business MCP server"
+  ],
+  "seconds": 46.3,
+  "verification_queries": [
+    "WhatsApp Business API access requirements plan",
+    "WhatsApp Business developer account API key free OR partner OR enterprise",
+    "WhatsApp Business API reference endpoints",
+    "WhatsApp Business MCP server model context protocol",
+    "WhatsApp Business API access requirements plan",
+    "WhatsApp Business developer account API key free OR partner OR enterprise",
+    "WhatsApp Business API authentication OAuth API key",
+    "WhatsApp Business API reference authentication",
+    "WhatsApp Business MCP server model context protocol"
+  ],
+  "verification": {
+    "initial_issues": [
+      {
+        "loop": "L1_evidence",
+        "field": "api",
+        "problem": "quote not found on cited page",
+        "url": "https://developers.facebook.com/docs/whatsapp",
+        "match": 0.0
+      },
+      {
+        "loop": "L4_verifier",
+        "field": "access",
+        "problem": "verifier says approval_or_review vs agent self_serve_free"
+      },
+      {
+        "loop": "L4_verifier",
+        "field": "mcp",
+        "problem": "verifier says official vs agent none_found"
+      },
+      {
+        "loop": "L4_verifier",
+        "field": "verdict",
+        "problem": "verifier says build_with_friction vs agent build_now"
+      }
+    ],
+    "final_issues": [
+      {
+        "loop": "L4_verifier",
+        "field": "mcp",
+        "problem": "verifier says official vs agent none_found"
+      }
+    ],
+    "rounds": [
+      {
+        "round": 0,
+        "issues": [
+          {
+            "loop": "L1_evidence",
+            "field": "api",
+            "problem": "quote not found on cited page",
+            "url": "https://developers.facebook.com/docs/whatsapp",
+            "match": 0.0
+          },
+          {
+            "loop": "L4_verifier",
+            "field": "access",
+            "problem": "verifier says approval_or_review vs agent self_serve_free"
+          },
+          {
+            "loop": "L4_verifier",
+            "field": "mcp",
+            "problem": "verifier says official vs agent none_found"
+          },
+          {
+            "loop": "L4_verifier",
+            "field": "verdict",
+            "problem": "verifier says build_with_friction vs agent build_now"
+          }
+        ],
+        "verifier": {
+          "auth_methods": [
+            "bearer_token"
+          ],
+          "auth_primary": "bearer_token",
+          "access_tier": "approval_or_review",
+          "api_types": [
+            "rest"
+          ],
+          "mcp": "official",
+          "verdict": "build_with_friction",
+          "reasons": {
+            "auth": "Docs show Authorization header uses a Bearer <ACCESS_TOKEN> token.",
+            "access": "Docs do not provide a free self‑serve signup; WhatsApp Business Platform requires approval or a paid arrangement before credentials are issued.",
+            "mcp": "API is documented on Meta’s official developer site, making it an official MCP.",
+            "verdict": "Because access requires approval (or a paid plan), the integration can be built but only after obtaining the necessary permissions, so it is buildable with friction."
+          },
+          "_model": "openai/gpt-oss-120b"
+        },
+        "autofix": []
+      },
+      {
+        "round": 1,
+        "queries": [
+          "WhatsApp Business API access requirements plan",
+          "WhatsApp Business developer account API key free OR partner OR enterprise",
+          "WhatsApp Business API reference endpoints",
+          "WhatsApp Business MCP server model context protocol"
+        ],
+        "new_sources": [
+          "https://developers.facebook.com/docs/whatsapp",
+          "https://developers.facebook.com/docs/graph-api/reference/whats-app-business-account",
+          "https://developers.facebook.com/docs/graph-api/reference/whats-app-business-account-to-number-current-status/whatsapp_business_profile",
+          "https://developers.facebook.com/docs/graph-api/reference/whats-app-business-account/message_templates",
+          "https://developers.facebook.com/docs/whatsapp/business-management-api/message-templates"
+        ],
+        "change_log": "Restored self_serve_free and build_now because Meta's developer documentation provides automatic test phone numbers upon completing the get started flow, and corrected the API evidence link to point to valid documentation pages.",
+        "issues": [
+          {
+            "loop": "L3_catalog",
+            "field": "auth",
+            "problem": "Composio catalog also lists ['oauth2'] for whatsapp; agent missed it"
+          },
+          {
+            "loop": "L4_verifier",
+            "field": "access",
+            "problem": "verifier says approval_or_review vs agent self_serve_free"
+          },
+          {
+            "loop": "L4_verifier",
+            "field": "mcp",
+            "problem": "verifier says official vs agent none_found"
+          },
+          {
+            "loop": "L4_verifier",
+            "field": "verdict",
+            "problem": "verifier says build_with_friction vs agent build_now"
+          }
+        ],
+        "verifier": {
+          "auth_methods": [
+            "oauth2"
+          ],
+          "auth_primary": "oauth2",
+          "access_tier": "approval_or_review",
+          "api_types": [
+            "rest"
+          ],
+          "mcp": "official",
+          "verdict": "build_with_friction",
+          "reasons": {
+            "auth": "Docs show Authorization header with Bearer <ACCESS_TOKEN> and refer to OAuth 2.0 access tokens, indicating OAuth2 bearer‑token authentication.",
+            "access": "WhatsApp Business Platform requires onboarding, phone‑number registration and approval (e.g., marketing messages onboarding status, payment method setup). No free self‑serve sandbox is described, so credentials are gated behind an approval/review process.",
+            "mcp": "The documentation is hosted on Meta’s official developer site, making it an official MCP server.",
+            "verdict": "Because access requires approval/review, a developer can build but must first obtain approved credentials, so the build is possible but with friction."
+          },
+          "_model": "openai/gpt-oss-120b"
+        },
+        "autofix": []
+      },
+      {
+        "round": 2,
+        "queries": [
+          "WhatsApp Business MCP server model context protocol",
+          "WhatsApp Business API access requirements plan",
+          "WhatsApp Business developer account API key free OR partner OR enterprise",
+          "WhatsApp Business API authentication OAuth API key",
+          "WhatsApp Business API reference authentication",
+          "WhatsApp Business MCP server model context protocol"
+        ],
+        "new_sources": [
+          "https://developers.facebook.com/docs/whatsapp",
+          "https://developers.facebook.com/docs/graph-api/reference/whats-app-business-account",
+          "https://developers.facebook.com/docs/whatsapp/business-management-api/authentication-templates",
+          "https://developers.facebook.com/docs/whatsapp/cloud-api/get-started",
+          "https://developers.facebook.com/docs/whatsapp/cloud-api/guides/send-message-templates/auth-otp-template-messages"
+        ],
+        "change_log": "Updated auth to include oauth2 as supported by Meta Graph API tokens, kept self_serve_free because developers can get free test credentials immediately via Meta for Developers, and set mcp to none_found as there is no official Model Context Protocol server.",
+        "issues": [
+          {
+            "loop": "L4_verifier",
+            "field": "mcp",
+            "problem": "verifier says official vs agent none_found"
+          }
+        ],
+        "verifier": {
+          "auth_methods": [
+            "bearer_token"
+          ],
+          "auth_primary": "bearer_token",
+          "access_tier": "self_serve_free",
+          "api_types": [
+            "rest"
+          ],
+          "mcp": "official",
+          "verdict": "build_now",
+          "reasons": {
+            "auth": "Bearer token authentication is documented and used for API calls",
+            "access": "Developers can register, create a Meta app, and generate permanent access tokens without payment",
+            "mcp": "The WhatsApp Cloud API is an official, vendor‑published service",
+            "verdict": "Public documentation and self‑serve credentials allow immediate development"
+          },
+          "_model": "openai/gpt-oss-20b"
+        },
+        "autofix": []
+      }
+    ],
+    "catalog": {
+      "in_catalog": true,
+      "slug": "whatsapp",
+      "auth": [
+        "api_key",
+        "oauth2"
+      ],
+      "tools_count": 58
+    },
+    "changed_fields": [
+      "auth"
+    ],
+    "field_status": {
+      "auth": "corrected",
+      "access": "confirmed_after_recheck",
+      "api": "confirmed_after_recheck",
+      "mcp": "needs_human",
+      "verdict": "confirmed_after_recheck"
+    },
+    "needs_human": [
+      "mcp"
+    ],
+    "before": {
+      "auth_methods": [
+        "bearer_token",
+        "oauth2"
+      ],
+      "auth_primary": "bearer_token",
+      "access_tier": "self_serve_free",
+      "access_notes": "Free developer account sign-up provides access to a test business phone number and sandbox.",
+      "api_types": [
+        "rest"
+      ],
+      "api_breadth": "broad",
+      "api_notes": "Covers messaging, templates, phone numbers, media, webhooks, and WABA management via Facebook Graph API.",
+      "mcp": "none_found",
+      "mcp_url": null,
+      "verdict": "build_now",
+      "blocker": "none",
+      "blocker_notes": "None"
+    },
+    "seconds": 211.0
+  }
+}

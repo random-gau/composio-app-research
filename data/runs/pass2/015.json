@@ -273,7 +273,14 @@
       }
     ],
     "catalog": {
-      "in_catalog": false
+      "in_catalog": true,
+      "slug": "pylon_mcp",
+      "auth": [
+        "other"
+      ],
+      "tools_count": 12,
+      "via": "listing",
+      "mcp_wrapper": true
     },
     "changed_fields": [
       "api",

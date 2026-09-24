@@ -246,7 +246,10 @@
       }
     ],
     "catalog": {
-      "in_catalog": false
+      "in_catalog": false,
+      "checked": [
+        "liveagent"
+      ]
     },
     "changed_fields": [
       "access",

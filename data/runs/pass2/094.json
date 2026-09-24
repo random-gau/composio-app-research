@@ -1,0 +1,311 @@
+{
+  "one_liner": "An AI academic search engine for finding, organizing, and analyzing peer-reviewed literature.",
+  "auth_methods": [
+    "api_key",
+    "oauth2",
+    "bearer_token"
+  ],
+  "auth_primary": "api_key",
+  "auth_notes": "OAuth2 is supported for streamable HTTP servers, and API keys can be used as bearer tokens.",
+  "access_tier": "self_serve_free",
+  "access_notes": "A free tier is available upon signup (30 searches/month, 10 papers per search), with paid plans offering higher limits and API access.",
+  "api_types": [
+    "rest"
+  ],
+  "api_breadth": "narrow",
+  "api_notes": "Provides endpoints for searching and querying peer-reviewed academic research papers.",
+  "mcp": "official",
+  "mcp_url": "https://mcp.consensus.app/mcp",
+  "verdict": "build_now",
+  "blocker": "none",
+  "blocker_notes": "Public documentation and self-serve access are available.",
+  "evidence": {
+    "auth": {
+      "url": "https://docs.consensus.app/consensus-mcp",
+      "quote": "OAuth login is only supported for streamable HTTP servers (Codex)",
+      "check": "ok"
+    },
+    "access": {
+      "url": "https://docs.consensus.app/docs/mcp.md",
+      "quote": "| Free | 10 | 30 | Full abstracts |\nCreate a free account at consensus.app/sign-up or upgrade at consensus.app/pricing.",
+      "check": "ok"
+    },
+    "api": {
+      "url": "https://docs.consensus.app/reference/v1_quick_search",
+      "quote": "Query for relevant papers.",
+      "check": "ok"
+    },
+    "mcp": {
+      "url": "https://docs.consensus.app/consensus-mcp",
+      "coined": null,
+      "quote": "Server URL: https://mcp.consensus.app/mcp",
+      "check": "ok"
+    },
+    "verdict": {
+      "url": "https://consensus.app/home/api",
+      "quote": "The Consensus API is now open to everyone. Calls are $0.05 each beyond the credits included in your plan",
+      "check": "ok"
+    }
+  },
+  "confidence": {
+    "auth": 0.9,
+    "access": 0.9,
+    "api": 0.8,
+    "mcp": 1.0,
+    "verdict": 0.9
+  },
+  "_model": "gemini-3.5-flash-lite",
+  "status": "ok",
+  "id": 94,
+  "name": "Consensus",
+  "category": "AI Research & Media",
+  "hint": "consensus.app (OAuth requested)",
+  "sources": [
+    {
+      "url": "https://consensus.app",
+      "via": "composio_fetch",
+      "chars": 2192
+    },
+    {
+      "url": "https://consensus.app/home/api",
+      "via": "direct",
+      "chars": 7458
+    },
+    {
+      "url": "https://consensus.app/pricing",
+      "via": "direct",
+      "chars": 593
+    },
+    {
+      "url": "https://docs.consensus.app/consensus-mcp",
+      "via": "direct",
+      "chars": 10544
+    },
+    {
+      "url": "https://docs.consensus.app/docs/mcp.md",
+      "via": "composio_fetch",
+      "chars": 12035
+    },
+    {
+      "url": "https://docs.consensus.app/reference/v1_quick_search",
+      "via": "composio_fetch",
+      "chars": 24495
+    }
+  ],
+  "queries": [
+    "Consensus API authentication developer docs",
+    "Consensus API access pricing plan developer",
+    "Consensus MCP server"
+  ],
+  "seconds": 53.2,
+  "verification_queries": [
+    "Consensus API access requirements plan",
+    "Consensus developer account API key free OR partner OR enterprise",
+    "Consensus API access requirements plan",
+    "Consensus developer account API key free OR partner OR enterprise"
+  ],
+  "verification": {
+    "initial_issues": [
+      {
+        "loop": "L4_verifier",
+        "field": "access",
+        "problem": "verifier says paid_plan vs agent self_serve_free"
+      },
+      {
+        "loop": "L4_verifier",
+        "field": "verdict",
+        "problem": "verifier says build_with_friction vs agent build_now"
+      }
+    ],
+    "final_issues": [
+      {
+        "loop": "L4_verifier",
+        "field": "access",
+        "problem": "verifier says paid_plan vs agent self_serve_free"
+      },
+      {
+        "loop": "L4_verifier",
+        "field": "verdict",
+        "problem": "verifier says build_with_friction vs agent build_now"
+      }
+    ],
+    "rounds": [
+      {
+        "round": 0,
+        "issues": [
+          {
+            "loop": "L4_verifier",
+            "field": "access",
+            "problem": "verifier says paid_plan vs agent self_serve_free"
+          },
+          {
+            "loop": "L4_verifier",
+            "field": "verdict",
+            "problem": "verifier says build_with_friction vs agent build_now"
+          }
+        ],
+        "verifier": {
+          "auth_methods": [
+            "api_key",
+            "oauth2"
+          ],
+          "auth_primary": "api_key",
+          "access_tier": "paid_plan",
+          "api_types": [
+            "rest"
+          ],
+          "mcp": "official",
+          "verdict": "build_with_friction",
+          "reasons": {
+            "auth": "The API page explicitly instructs users to 'Create API key', and the MCP documentation mentions OAuth tokens for client connections.",
+            "access": "The API is 'open to everyone' but requires a paid plan (Pro, Team, Enterprise, or Deep) to receive included credits (500-2000). While the main app has a free tier, the API documentation links to paid plans for credits, and free plans must wait for resets or upgrade, indicating a paid gate for consistent API usage.",
+            "mcp": "Source 4 is from docs.consensus.app and documents 'Consensus MCP' as an official product feature.",
+            "verdict": "The API is public and documented, but obtaining working credentials with sufficient credits requires a paid subscription, creating friction for immediate free building."
+          },
+          "_model": "qwen/qwen3.8-27b"
+        },
+        "autofix": []
+      },
+      {
+        "round": 1,
+        "queries": [
+          "Consensus API access requirements plan",
+          "Consensus developer account API key free OR partner OR enterprise"
+        ],
+        "new_sources": [
+          "https://consensus.app",
+          "https://consensus.app/home/api",
+          "https://docs.consensus.app/consensus-mcp",
+          "https://docs.consensus.app/docs/mcp.md",
+          "https://docs.consensus.app/reference/v1_quick_search"
+        ],
+        "change_log": "Updated access_tier to self_serve_free and verdict to build_now as Consensus offers a free tier sign-up and open API access with included credits.",
+        "issues": [
+          {
+            "loop": "L4_verifier",
+            "field": "access",
+            "problem": "verifier says paid_plan vs agent self_serve_free"
+          },
+          {
+            "loop": "L4_verifier",
+            "field": "verdict",
+            "problem": "verifier says build_with_friction vs agent build_now"
+          }
+        ],
+        "verifier": {
+          "auth_methods": [
+            "api_key",
+            "oauth2"
+          ],
+          "auth_primary": "api_key",
+          "access_tier": "paid_plan",
+          "api_types": [
+            "rest"
+          ],
+          "mcp": "official",
+          "verdict": "build_with_friction",
+          "reasons": {
+            "auth": "The API documentation and MCP docs specify using an API key (Bearer token) for authentication, while the MCP server also supports OAuth for client connections.",
+            "access": "The API is 'open to everyone' but requires a paid plan (Pro, Team, Enterprise, or Deep) to receive included credits (500-2000). While the main app has a free tier, the API documentation explicitly ties API access and credits to these paid plans, with additional usage billed at $0.05 per call.",
+            "mcp": "Consensus publishes an official MCP server at https://mcp.consensus.app/mcp, documented in their official docs.",
+            "verdict": "Building an integration is possible today, but it requires a paid subscription to access the API credits and functionality, creating friction compared to a fully free self-serve option."
+          },
+          "_model": "qwen/qwen3.8-27b"
+        },
+        "autofix": []
+      },
+      {
+        "round": 2,
+        "queries": [
+          "Consensus API access requirements plan",
+          "Consensus developer account API key free OR partner OR enterprise",
+          "Consensus API access requirements plan",
+          "Consensus developer account API key free OR partner OR enterprise"
+        ],
+        "new_sources": [
+          "https://consensus.app",
+          "https://consensus.app/home/api",
+          "https://docs.consensus.app/consensus-mcp",
+          "https://docs.consensus.app/docs/mcp.md",
+          "https://docs.consensus.app/reference/v1_quick_search"
+        ],
+        "change_log": "Retained self_serve_free and build_now because Consensus offers a free tier upon signup with self-serve credentials and an open API.",
+        "issues": [
+          {
+            "loop": "L4_verifier",
+            "field": "access",
+            "problem": "verifier says paid_plan vs agent self_serve_free"
+          },
+          {
+            "loop": "L4_verifier",
+            "field": "verdict",
+            "problem": "verifier says build_with_friction vs agent build_now"
+          }
+        ],
+        "verifier": {
+          "auth_methods": [
+            "api_key",
+            "oauth2"
+          ],
+          "auth_primary": "api_key",
+          "access_tier": "paid_plan",
+          "api_types": [
+            "rest"
+          ],
+          "mcp": "official",
+          "verdict": "build_with_friction",
+          "reasons": {
+            "auth": "The API documentation and MCP docs specify using an API key (Bearer token) for authentication, while the MCP server also supports OAuth for client connections.",
+            "access": "The API is 'open to everyone' but requires a paid plan (Pro, Team, Enterprise, or Deep) to receive included credits (500-2000). While the main app has a free tier, the API documentation explicitly ties API access and credits to these paid plans, with additional usage billed at $0.05 per call.",
+            "mcp": "Consensus publishes an official MCP server at https://mcp.consensus.app/mcp, documented in their official docs.",
+            "verdict": "Building an integration is possible today, but it requires a paid subscription to access the API credits and functionality, creating friction compared to a fully free self-serve option."
+          },
+          "_model": "qwen/qwen3.8-27b"
+        },
+        "autofix": []
+      }
+    ],
+    "catalog": {
+      "in_catalog": true,
+      "slug": "consensus",
+      "auth": [
+        "api_key"
+      ],
+      "tools_count": 1
+    },
+    "changed_fields": [
+      "auth"
+    ],
+    "field_status": {
+      "auth": "corrected",
+      "access": "needs_human",
+      "api": "verified",
+      "mcp": "verified",
+      "verdict": "needs_human"
+    },
+    "needs_human": [
+      "access",
+      "verdict"
+    ],
+    "before": {
+      "auth_methods": [
+        "oauth2",
+        "bearer_token"
+      ],
+      "auth_primary": "oauth2",
+      "access_tier": "self_serve_free",
+      "access_notes": "Free tier available upon signup, with API and paid plans also offered.",
+      "api_types": [
+        "rest"
+      ],
+      "api_breadth": "narrow",
+      "api_notes": "Provides endpoints for searching and querying peer-reviewed academic research papers.",
+      "mcp": "official",
+      "mcp_url": "https://mcp.consensus.app/mcp",
+      "verdict": "build_now",
+      "blocker": "none",
+      "blocker_notes": "Public documentation and self-serve access are available."
+    },
+    "seconds": 660.3
+  }
+}

@@ -1,0 +1,168 @@
+{
+  "one_liner": "Develop, preview, and ship web applications with serverless deployments and robust APIs.",
+  "auth_methods": [
+    "bearer_token",
+    "oauth2"
+  ],
+  "auth_primary": "bearer_token",
+  "auth_notes": "Vercel Access Tokens are required to authenticate and use the Vercel API via Authorization: Bearer <TOKEN>.",
+  "access_tier": "self_serve_free",
+  "access_notes": "Sign up for a free Vercel account and generate personal access tokens directly in your settings.",
+  "api_types": [
+    "rest"
+  ],
+  "api_breadth": "broad",
+  "api_notes": "Comprehensive REST API covering projects, deployments, domains, logs, environments, and user tokens.",
+  "mcp": "official",
+  "mcp_url": "https://mcp.vercel.com",
+  "verdict": "build_now",
+  "blocker": "none",
+  "blocker_notes": "Publicly documented REST API and official MCP server with self-serve free account creation.",
+  "evidence": {
+    "auth": {
+      "url": "https://vercel.com/docs/rest-api",
+      "quote": "Vercel Access Tokens are required to authenticate and use the Vercel API. Include the token in the\nAuthorization: Bearer <TOKEN>",
+      "check": "ok"
+    },
+    "access": {
+      "url": "https://vercel.com/docs/rest-api",
+      "quote": "Create and manage Access Tokens in your",
+      "check": "ok"
+    },
+    "api": {
+      "url": "https://vercel.com/docs/rest-api",
+      "quote": "Interact programmatically with your Vercel account using the SDK or direct HTTP requests. You can deploy new versions of web applications, manage custom domains, retrieve information about deployments, and manage secrets and environment variables for projects.",
+      "check": "ok"
+    },
+    "mcp": {
+      "url": "https://vercel.com/docs/agent-resources/vercel-mcp.md",
+      "quote": "Vercel MCP is Vercel's official MCP server. It's a remote MCP with OAuth that gives AI tools secure access to your Vercel projects available at:",
+      "check": "ok"
+    },
+    "verdict": {
+      "url": "https://vercel.com/docs/rest-api",
+      "quote": "Vercel REST API Reference\nUsing the REST API\nInteract programmatically with your Vercel account using the SDK or direct HTTP requests.",
+      "check": "ok"
+    }
+  },
+  "confidence": {
+    "auth": 5.0,
+    "access": 5.0,
+    "api": 5.0,
+    "mcp": 5.0,
+    "verdict": 5.0
+  },
+  "_model": "gemini-3.5-flash-lite",
+  "status": "ok",
+  "id": 62,
+  "name": "Vercel",
+  "category": "Developer Infra & Data",
+  "hint": "vercel.com/docs/rest-api",
+  "sources": [
+    {
+      "url": "https://vercel.com/docs/rest-api",
+      "via": "direct",
+      "chars": 114301
+    },
+    {
+      "url": "https://vercel.com/changelog/mcp-server-support-on-vercel",
+      "via": "direct",
+      "chars": 3104
+    },
+    {
+      "url": "https://vercel.com/docs/agent-resources/vercel-mcp.md",
+      "via": "direct",
+      "chars": 15842
+    },
+    {
+      "url": "https://vercel.com/docs/agent/pricing",
+      "via": "direct",
+      "chars": 6332
+    },
+    {
+      "url": "https://vercel.com/docs/ai-gateway/pricing",
+      "via": "direct",
+      "chars": 12557
+    },
+    {
+      "url": "https://vercel.com/docs/ai-gateway/pricing.md",
+      "via": "direct",
+      "chars": 11783
+    }
+  ],
+  "queries": [
+    "Vercel API authentication developer docs",
+    "Vercel API access pricing plan developer",
+    "Vercel MCP server"
+  ],
+  "seconds": 60.2,
+  "verification": {
+    "initial_issues": [],
+    "final_issues": [],
+    "rounds": [
+      {
+        "round": 0,
+        "issues": [],
+        "verifier": {
+          "auth_methods": [
+            "bearer_token",
+            "oauth2"
+          ],
+          "auth_primary": "bearer_token",
+          "access_tier": "self_serve_free",
+          "api_types": [
+            "rest"
+          ],
+          "mcp": "official",
+          "verdict": "build_now",
+          "reasons": {
+            "auth": "The REST API documentation states that Vercel Access Tokens are required and included as bearer tokens. OAuth2 is also supported for MCP servers and connectors.",
+            "access": "Developers can sign up for a free Vercel account and generate access tokens to use the API, fitting the self-serve free tier definition.",
+            "mcp": "Source 3 explicitly identifies 'Vercel MCP' as Vercel's official MCP server, available as a remote MCP with OAuth.",
+            "verdict": "Public REST API documentation exists, and credentials (access tokens) can be obtained via self-service on a free plan, allowing a toolkit to be built immediately."
+          },
+          "_model": "qwen/qwen3.8-27b"
+        },
+        "autofix": []
+      }
+    ],
+    "catalog": {
+      "in_catalog": true,
+      "slug": "vercel",
+      "auth": [
+        "api_key",
+        "oauth2"
+      ],
+      "tools_count": 132
+    },
+    "changed_fields": [],
+    "field_status": {
+      "auth": "verified",
+      "access": "verified",
+      "api": "verified",
+      "mcp": "verified",
+      "verdict": "verified"
+    },
+    "needs_human": [],
+    "before": {
+      "auth_methods": [
+        "bearer_token",
+        "oauth2"
+      ],
+      "auth_primary": "bearer_token",
+      "access_tier": "self_serve_free",
+      "access_notes": "Sign up for a free Vercel account and generate personal access tokens directly in your settings.",
+      "api_types": [
+        "rest"
+      ],
+      "api_breadth": "broad",
+      "api_notes": "Comprehensive REST API covering projects, deployments, domains, logs, environments, and user tokens.",
+      "mcp": "official",
+      "mcp_url": "https://mcp.vercel.com",
+      "verdict": "build_now",
+      "blocker": "none",
+      "blocker_notes": "Publicly documented REST API and official MCP server with self-serve free account creation."
+    },
+    "seconds": 155.7
+  }
+}

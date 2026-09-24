@@ -290,6 +290,8 @@ def verify_app(app: Dict[str, str], force: bool = False) -> Dict[str, Any]:
     cat_issues, cat_info = check_catalog(rec)
     issues = check_evidence(rec, FIELDS) + check_rules(rec) + cat_issues + compare(rec, ver) + mcp_probe(rec)
     initial_issues = list(issues)
+    if ver.get("error"):
+        log(f"  WARNING {app['name']}: blind verifier unavailable ({ver['error'][:100]})")
     rounds.append({"round": 0, "issues": issues, "verifier": ver, "autofix": fixes})
     human: Dict[str, bool] = {}
 

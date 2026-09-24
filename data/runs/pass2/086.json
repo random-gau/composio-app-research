@@ -1,0 +1,212 @@
+{
+  "one_liner": "Cloud accounting software for small businesses to manage invoicing, expenses, and financial reporting.",
+  "auth_methods": [
+    "oauth2"
+  ],
+  "auth_primary": "oauth2",
+  "auth_notes": "OAuth 2.0 is used for authentication and authorization against the Intuit Financial Ecosystem.",
+  "access_tier": "self_serve_free",
+  "access_notes": "Sign up for a free Intuit Developer account to create an app and get sandbox credentials.",
+  "api_types": [
+    "rest"
+  ],
+  "api_breadth": "broad",
+  "api_notes": "Covers accounting, payments, and company info endpoints via REST APIs.",
+  "mcp": "community_only",
+  "mcp_url": "https://github.com/amin-ale/mcp-quickbooks",
+  "verdict": "build_now",
+  "blocker": "none",
+  "blocker_notes": "Public documentation and free self-serve developer sandboxes are available.",
+  "evidence": {
+    "auth": {
+      "url": "https://developer.intuit.com/app/developer/qbo/docs/develop/authentication-and-authorization/faq",
+      "quote": "OAuth 2.0 is our authorization standard. Only registered apps can connect to the Intuit OAuth2.0 server, call our API, and end-users’ QuickBooks Online companies.",
+      "check": "ok"
+    },
+    "access": {
+      "url": "https://developer.intuit.com/app/developer/qbo/docs/develop/sandboxes/postman",
+      "open": null,
+      "quote": "Besides the sandbox environment tied to your developer account, you can use Postman to test REST API production code and endpoints.",
+      "check": "ok"
+    },
+    "api": {
+      "url": "https://developer.intuit.com/app/developer/qbo/docs/develop/sandboxes/postman",
+      "quote": "For the QuickBooks Online Accounting API: sandbox-quickbooks.api.intuit.com For the QuickBooks Payments: sandbox.api.intuit.com",
+      "check": "ok"
+    },
+    "mcp": {
+      "url": "https://help.developer.intuit.com/s/question/0D5TR00001LtKZk0AN/is-there-a-plan-or-timeline-for-when-intuit-will-provide-a-hosted-quickbooks-mcp-server-we-are-exploring-the-possibility-of-a-multitenant-integration-with-quickbooks-and-selfhosted-is-not-a-viable-option-for-us",
+      "quote": "is there a plan or timeline for when Intuit will provide a hosted QuickBooks MCP server?",
+      "check": "ok"
+    },
+    "verdict": {
+      "url": "https://developer.intuit.com/app/developer/qbo/docs/develop/sandboxes/postman",
+      "quote": "Step 1: Set up your app in the Developer Portal\nIf you haven’t already, sign in to your developer account and create your app.",
+      "check": "ok"
+    }
+  },
+  "confidence": {
+    "auth": 0.9,
+    "access": 0.9,
+    "api": 0.9,
+    "mcp": 1.0,
+    "verdict": 0.9
+  },
+  "_model": "gemini-3.5-flash-lite",
+  "status": "ok",
+  "id": 86,
+  "name": "QuickBooks",
+  "category": "Finance & Fintech",
+  "hint": "developer.intuit.com",
+  "sources": [
+    {
+      "url": "https://developer.intuit.com",
+      "via": "composio_fetch",
+      "chars": 678
+    },
+    {
+      "url": "https://developer.intuit.com/app/developer/qbo/docs/develop/authentication-and-authorization/faq",
+      "via": "composio_fetch",
+      "chars": 15003
+    },
+    {
+      "url": "https://developer.intuit.com/app/developer/qbo/docs/develop/sandboxes/postman",
+      "via": "composio_fetch",
+      "chars": 4549
+    },
+    {
+      "url": "https://developer.intuit.com/app/developer/qbo/docs/develop/sdks-and-samples-collections/php/authorization",
+      "via": "composio_fetch",
+      "chars": 7222
+    },
+    {
+      "url": "https://developer.intuit.com/app/developer/qbo/docs/develop/sdks-and-samples-collections/python/python_oauth_client",
+      "via": "composio_fetch",
+      "chars": 4435
+    },
+    {
+      "url": "https://developer.intuit.com/app/developer/qbpayments/docs/develop/authentication-and-authorization/oauth-2.0",
+      "via": "composio_fetch",
+      "chars": 32556
+    },
+    {
+      "url": "https://github.com/amin-ale/mcp-quickbooks",
+      "via": "verification"
+    },
+    {
+      "url": "https://github.com/intuit/quickbooks-online-mcp-server",
+      "via": "verification"
+    },
+    {
+      "url": "https://github.com/mindstone/mcp-servers/tree/main/connectors/quickbooks",
+      "via": "verification"
+    },
+    {
+      "url": "https://github.com/wyre-technology/qbo-mcp",
+      "via": "verification"
+    },
+    {
+      "url": "https://help.developer.intuit.com/s/question/0D5TR00001LtKZk0AN/is-there-a-plan-or-timeline-for-when-intuit-will-provide-a-hosted-quickbooks-mcp-server-we-are-exploring-the-possibility-of-a-multitenant-integration-with-quickbooks-and-selfhosted-is-not-a-viable-option-for-us",
+      "via": "verification"
+    }
+  ],
+  "queries": [
+    "QuickBooks API authentication developer docs",
+    "QuickBooks API access pricing plan developer",
+    "QuickBooks MCP server"
+  ],
+  "seconds": 80.2,
+  "verification_queries": [
+    "QuickBooks MCP server model context protocol"
+  ],
+  "verification": {
+    "initial_issues": [
+      {
+        "loop": "L5_mcp_probe",
+        "field": "mcp",
+        "problem": "possible official MCP found: ['https://help.developer.intuit.com/s/question/0D5TR00001LtKZk0AN/is-there-a-plan-or-timeline-for-when-intuit-will-provide-a-hosted-quickbooks-mcp-server-we-are-exploring-the-possibility-of-a-multitenant-integration-with-quickbooks-and-selfhosted-is-not-a-viable-option-for-us']",
+        "urls": [
+          "https://help.developer.intuit.com/s/question/0D5TR00001LtKZk0AN/is-there-a-plan-or-timeline-for-when-intuit-will-provide-a-hosted-quickbooks-mcp-server-we-are-exploring-the-possibility-of-a-multitenant-integration-with-quickbooks-and-selfhosted-is-not-a-viable-option-for-us"
+        ]
+      }
+    ],
+    "final_issues": [],
+    "rounds": [
+      {
+        "round": 0,
+        "issues": [
+          {
+            "loop": "L5_mcp_probe",
+            "field": "mcp",
+            "problem": "possible official MCP found: ['https://help.developer.intuit.com/s/question/0D5TR00001LtKZk0AN/is-there-a-plan-or-timeline-for-when-intuit-will-provide-a-hosted-quickbooks-mcp-server-we-are-exploring-the-possibility-of-a-multitenant-integration-with-quickbooks-and-selfhosted-is-not-a-viable-option-for-us']",
+            "urls": [
+              "https://help.developer.intuit.com/s/question/0D5TR00001LtKZk0AN/is-there-a-plan-or-timeline-for-when-intuit-will-provide-a-hosted-quickbooks-mcp-server-we-are-exploring-the-possibility-of-a-multitenant-integration-with-quickbooks-and-selfhosted-is-not-a-viable-option-for-us"
+            ]
+          }
+        ],
+        "verifier": {
+          "error": "Expecting property name enclosed in double quotes: line 8 column 51 (char 204)"
+        },
+        "autofix": []
+      },
+      {
+        "round": 1,
+        "queries": [
+          "QuickBooks MCP server model context protocol"
+        ],
+        "new_sources": [
+          "https://developer.intuit.com",
+          "https://github.com/amin-ale/mcp-quickbooks",
+          "https://github.com/intuit/quickbooks-online-mcp-server",
+          "https://github.com/mindstone/mcp-servers/tree/main/connectors/quickbooks",
+          "https://github.com/wyre-technology/qbo-mcp",
+          "https://help.developer.intuit.com/s/question/0D5TR00001LtKZk0AN/is-there-a-plan-or-timeline-for-when-intuit-will-provide-a-hosted-quickbooks-mcp-server-we-are-exploring-the-possibility-of-a-multitenant-integration-with-quickbooks-and-selfhosted-is-not-a-viable-option-for-us"
+        ],
+        "change_log": "Corrected JSON formatting error and updated mcp value to community_only since the official QuickBooks MCP server does not exist and only community implementations are available.",
+        "issues": [],
+        "verifier": {
+          "error": "list indices must be integers or slices, not str"
+        },
+        "autofix": []
+      }
+    ],
+    "catalog": {
+      "in_catalog": true,
+      "slug": "quickbooks",
+      "auth": [
+        "oauth2"
+      ],
+      "tools_count": 114
+    },
+    "changed_fields": [
+      "mcp"
+    ],
+    "field_status": {
+      "auth": "verified",
+      "access": "verified",
+      "api": "verified",
+      "mcp": "corrected",
+      "verdict": "verified"
+    },
+    "needs_human": [],
+    "before": {
+      "auth_methods": [
+        "oauth2"
+      ],
+      "auth_primary": "oauth2",
+      "access_tier": "self_serve_free",
+      "access_notes": "Sign up for a free Intuit Developer account to create an app and get sandbox credentials.",
+      "api_types": [
+        "rest"
+      ],
+      "api_breadth": "broad",
+      "api_notes": "Covers accounting, payments, and company info endpoints via REST APIs.",
+      "mcp": "none_found",
+      "mcp_url": null,
+      "verdict": "build_now",
+      "blocker": "none",
+      "blocker_notes": "Public documentation and free self-serve developer sandboxes are available."
+    },
+    "seconds": 269.8
+  }
+}

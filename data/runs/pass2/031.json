@@ -1,0 +1,328 @@
+{
+  "one_liner": "Create, manage, and automate Google Ads campaigns, ads, keywords, and reporting.",
+  "auth_methods": [
+    "oauth2",
+    "jwt_or_signed"
+  ],
+  "auth_primary": "oauth2",
+  "auth_notes": "Google Ads API uses OAuth 2.0 protocol for authentication and authorization.",
+  "access_tier": "approval_or_review",
+  "access_notes": "Requires enabling the API in Google Cloud and applying for Test/Explorer/Basic/Standard access.",
+  "api_types": [
+    "rest",
+    "soap"
+  ],
+  "api_breadth": "broad",
+  "api_notes": "Covers campaigns, ad groups, ads, keywords, budgeting, planning, and reporting via gRPC/REST.",
+  "mcp": "official",
+  "mcp_url": "https://github.com/googleads/google-ads-mcp",
+  "verdict": "build_with_friction",
+  "blocker": "app_review",
+  "blocker_notes": "Test and Basic/Explorer access can be obtained automatically or via quick application, but Standard access requires manual review.",
+  "evidence": {
+    "auth": {
+      "url": "https://developers.google.com/google-ads/api/docs/client-libs/dotnet/authentication",
+      "quote": "The Google Ads API uses the OAuth 2.0 protocol for authentication and authorization, allowing access to a user's Google Ads account without needing their login information.",
+      "check": "ok"
+    },
+    "access": {
+      "url": "https://developers.google.com/google-ads/api/docs/api-policy/access-levels",
+      "quote": "There are three access levels: Test Account Access for test accounts with a 15,000 operation limit, Basic Access for test and production accounts with a 15,000 operation limit, and Standard Access for test and production accounts with an unlimited operation limit.",
+      "check": "ok"
+    },
+    "api": {
+      "url": "https://developers.google.com/google-ads/api/docs/concepts/call-structure",
+      "quote": "Google Ads API calls can be made using either gRPC (preferred) or REST.",
+      "check": "ok"
+    },
+    "mcp": {
+      "url": "https://developers.google.com/google-ads/api/docs/developer-toolkit/mcp-server",
+      "quote": "Google Ads MCP server: Developer integration guide ... By implementing this MCP server, you eliminate the need to write custom \"glue code\" for Google Ads API authentication",
+      "check": "ok"
+    },
+    "verdict": {
+      "url": "https://developers.google.com/google-ads/api/docs/api-policy/access-levels",
+      "match": 1.0,
+      "quote": "There are four different API access levels listed in order in the table. If you don't already have Google Ads API access, you can start by to obtain Test access level for your Google Cloud project.",
+      "check": "ok"
+    }
+  },
+  "confidence": {
+    "auth": 1.0,
+    "access": 1.0,
+    "api": 1.0,
+    "mcp": 1.0,
+    "verdict": 1.0
+  },
+  "_model": "gemini-3.5-flash-lite",
+  "status": "ok",
+  "id": 31,
+  "name": "Google Ads",
+  "category": "Marketing Ads Email & Social",
+  "hint": "developers.google.com/google-ads",
+  "sources": [
+    {
+      "url": "https://developers.google.com/google-ads",
+      "via": "direct",
+      "chars": 1267
+    },
+    {
+      "url": "https://developers.google.com/google-ads/api/docs/api-policy/access-levels",
+      "via": "direct",
+      "chars": 10103
+    },
+    {
+      "url": "https://developers.google.com/google-ads/api/docs/api-policy/developer-token",
+      "via": "direct",
+      "chars": 22966
+    },
+    {
+      "url": "https://developers.google.com/google-ads/api/docs/best-practices/quotas",
+      "via": "direct",
+      "chars": 13772
+    },
+    {
+      "url": "https://developers.google.com/google-ads/api/docs/client-libs/dotnet/authentication",
+      "via": "direct",
+      "chars": 6934
+    },
+    {
+      "url": "https://developers.google.com/google-ads/api/docs/concepts/call-structure",
+      "via": "direct",
+      "chars": 8512
+    },
+    {
+      "url": "https://developers.google.com/google-ads/api/docs/api-policy/rmf",
+      "via": "verification"
+    },
+    {
+      "url": "https://github.com/googleads/google-ads-mcp",
+      "via": "verification"
+    },
+    {
+      "url": "https://developers.google.com/google-ads/api/docs/developer-toolkit/mcp-server",
+      "via": "verification"
+    },
+    {
+      "url": "https://github.com/googleads/google-ads-mcp/blob/main/README.md",
+      "via": "verification"
+    },
+    {
+      "url": "https://developers.google.com/google-ads/api/docs/developer-toolkit/mcp-server",
+      "via": "verification"
+    },
+    {
+      "url": "https://github.com/LucasSantana-Dev/google-ads-mcp",
+      "via": "verification"
+    },
+    {
+      "url": "https://github.com/akelaonline/MCP-Google-Ads",
+      "via": "verification"
+    },
+    {
+      "url": "https://github.com/bertramdev/GoogleAdsMCP",
+      "via": "verification"
+    }
+  ],
+  "queries": [
+    "Google Ads API authentication developer docs",
+    "Google Ads API access pricing plan developer",
+    "Google Ads MCP server"
+  ],
+  "seconds": 40.7,
+  "verification_queries": [
+    "Google Ads MCP server model context protocol",
+    "Google Ads API access requirements plan",
+    "Google Ads MCP server model context protocol"
+  ],
+  "verification": {
+    "initial_issues": [
+      {
+        "loop": "L1_evidence",
+        "field": "verdict",
+        "problem": "quote only partially matches page",
+        "url": "https://developers.google.com/google-ads/api/docs/api-policy/access-levels",
+        "match": 0.71
+      },
+      {
+        "loop": "L5_mcp_probe",
+        "field": "mcp",
+        "problem": "possible official MCP found: ['https://github.com/googleads/google-ads-mcp', 'https://developers.google.com/google-ads/api/docs/developer-toolkit/mcp-server']",
+        "urls": [
+          "https://github.com/googleads/google-ads-mcp",
+          "https://developers.google.com/google-ads/api/docs/developer-toolkit/mcp-server",
+          "https://github.com/googleads/google-ads-mcp/blob/main/README.md"
+        ]
+      }
+    ],
+    "final_issues": [],
+    "rounds": [
+      {
+        "round": 0,
+        "issues": [
+          {
+            "loop": "L1_evidence",
+            "field": "verdict",
+            "problem": "quote only partially matches page",
+            "url": "https://developers.google.com/google-ads/api/docs/api-policy/access-levels",
+            "match": 0.71
+          },
+          {
+            "loop": "L5_mcp_probe",
+            "field": "mcp",
+            "problem": "possible official MCP found: ['https://github.com/googleads/google-ads-mcp', 'https://developers.google.com/google-ads/api/docs/developer-toolkit/mcp-server']",
+            "urls": [
+              "https://github.com/googleads/google-ads-mcp",
+              "https://developers.google.com/google-ads/api/docs/developer-toolkit/mcp-server",
+              "https://github.com/googleads/google-ads-mcp/blob/main/README.md"
+            ]
+          }
+        ],
+        "verifier": {
+          "auth_methods": [
+            "other"
+          ],
+          "auth_primary": "other",
+          "access_tier": "approval_or_review",
+          "api_types": [
+            "none"
+          ],
+          "mcp": "unknown",
+          "verdict": "build_with_friction",
+          "reasons": {
+            "auth": "The provided sources do not specify which authentication methods the Google Ads API supports (e.g., OAuth2, API key, etc.).",
+            "access": "Google Ads API requires a developer token that must be applied for and approved, with access levels (Test, Basic, Standard) described in the documentation (Sources 2 and 3). This indicates an approval or review process rather than instant self‑serve credentials.",
+            "mcp": "No mention of an official Managed Connectivity Platform (MCP) server is found in the sources.",
+            "verdict": "Because obtaining usable credentials involves applying for and receiving a developer token (an approval step), building a functional integration is possible but requires friction such as token approval (Sources 2 and 3)."
+          },
+          "_model": "openai/gpt-oss-120b"
+        },
+        "autofix": []
+      },
+      {
+        "round": 1,
+        "queries": [
+          "Google Ads MCP server model context protocol",
+          "Google Ads API access requirements plan"
+        ],
+        "new_sources": [
+          "https://developers.google.com/google-ads",
+          "https://developers.google.com/google-ads/api/docs/api-policy/access-levels",
+          "https://developers.google.com/google-ads/api/docs/api-policy/developer-token",
+          "https://developers.google.com/google-ads/api/docs/api-policy/rmf",
+          "https://developers.google.com/google-ads/api/docs/best-practices/quotas",
+          "https://github.com/googleads/google-ads-mcp",
+          "https://developers.google.com/google-ads/api/docs/developer-toolkit/mcp-server",
+          "https://github.com/googleads/google-ads-mcp/blob/main/README.md"
+        ],
+        "change_log": "Updated MCP to official based on official Google Ads MCP repository and documentation, and resolved the verdict quote match.",
+        "issues": [
+          {
+            "loop": "L4_verifier",
+            "field": "mcp",
+            "problem": "verifier says none_found vs agent official"
+          }
+        ],
+        "verifier": {
+          "auth_methods": [
+            "none",
+            "other"
+          ],
+          "auth_primary": "none",
+          "access_tier": "approval_or_review",
+          "api_types": [
+            "none"
+          ],
+          "mcp": "none_found",
+          "verdict": "build_with_friction",
+          "reasons": {
+            "auth": "The provided sources do not describe any authentication method (e.g., OAuth2, API key) for the Google Ads API.",
+            "access": "Sources 2 and 3 explain that a developer token must be applied for and approved, meaning access is gated by a review process.",
+            "mcp": "No source mentions a Managed Cloud Platform (MCP) server for Google Ads; therefore none is found.",
+            "verdict": "Since access requires approval, a toolkit can be built but only after obtaining a developer token, resulting in build_with_friction."
+          },
+          "_model": "openai/gpt-oss-120b"
+        },
+        "autofix": []
+      },
+      {
+        "round": 2,
+        "queries": [
+          "Google Ads MCP server model context protocol",
+          "Google Ads API access requirements plan",
+          "Google Ads MCP server model context protocol"
+        ],
+        "new_sources": [
+          "https://developers.google.com/google-ads",
+          "https://developers.google.com/google-ads/api/docs/developer-toolkit/mcp-server",
+          "https://github.com/LucasSantana-Dev/google-ads-mcp",
+          "https://github.com/akelaonline/MCP-Google-Ads",
+          "https://github.com/bertramdev/GoogleAdsMCP"
+        ],
+        "change_log": "Updated mcp to official because Google officially documents and provides the google-ads-mcp server in their developer guides.",
+        "issues": [],
+        "verifier": {
+          "auth_methods": [
+            "oauth2",
+            "jwt_or_signed"
+          ],
+          "auth_primary": "oauth2",
+          "access_tier": "approval_or_review",
+          "api_types": [
+            "rest"
+          ],
+          "mcp": "official",
+          "verdict": "build_with_friction",
+          "reasons": {
+            "auth": "Google Ads API supports OAuth 2.0 and service‑account (JWT) authentication as documented.",
+            "access": "A developer token is required and must be approved via application review; no instant self‑serve free credentials.",
+            "mcp": "Google provides an official MCP server guide and repository for the Google Ads API.",
+            "verdict": "Public documentation and an official MCP exist, but obtaining required credentials needs approval, creating friction."
+          },
+          "_model": "openai/gpt-oss-120b"
+        },
+        "autofix": []
+      }
+    ],
+    "catalog": {
+      "in_catalog": true,
+      "slug": "googleads",
+      "auth": [
+        "oauth2"
+      ],
+      "tools_count": 31
+    },
+    "changed_fields": [
+      "mcp"
+    ],
+    "field_status": {
+      "auth": "verified",
+      "access": "verified",
+      "api": "verified",
+      "mcp": "corrected",
+      "verdict": "confirmed_after_recheck"
+    },
+    "needs_human": [],
+    "before": {
+      "auth_methods": [
+        "oauth2",
+        "jwt_or_signed"
+      ],
+      "auth_primary": "oauth2",
+      "access_tier": "approval_or_review",
+      "access_notes": "Requires enabling the API in Google Cloud and applying for Test/Explorer/Basic/Standard access.",
+      "api_types": [
+        "rest",
+        "soap"
+      ],
+      "api_breadth": "broad",
+      "api_notes": "Covers campaigns, ad groups, ads, keywords, budgeting, planning, and reporting via gRPC/REST.",
+      "mcp": "none_found",
+      "mcp_url": null,
+      "verdict": "build_with_friction",
+      "blocker": "app_review",
+      "blocker_notes": "Test and Basic/Explorer access can be obtained automatically or via quick application, but Standard access requires manual review."
+    },
+    "seconds": 90.2
+  }
+}

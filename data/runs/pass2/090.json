@@ -1,0 +1,327 @@
+{
+  "one_liner": "Private market intelligence platform providing financial data, venture capital, and M&A research.",
+  "auth_methods": [
+    "api_key",
+    "bearer_token",
+    "oauth2"
+  ],
+  "auth_primary": "bearer_token",
+  "auth_notes": "Our team will work with you to understand the insights and data you’re looking for and help you establish the API connection through an API key or authentication token.",
+  "access_tier": "partner_or_sales",
+  "access_notes": "The PitchBook API is a separate offering from the PitchBook Platform that requires a standalone contract agreement.",
+  "api_types": [
+    "rest"
+  ],
+  "api_breadth": "broad",
+  "api_notes": "Provides access to company, fund, and deal details, financing details, deal stock information, and AI-powered VC exit predictors via https://api.pitchbook.com",
+  "mcp": "community_only",
+  "mcp_url": "https://mcp-proxy-external.pitchbook.com",
+  "verdict": "blocked",
+  "blocker": "enterprise_only",
+  "blocker_notes": "Requires a standalone contract agreement and sales/partnership contact to get API access.",
+  "evidence": {
+    "auth": {
+      "url": "https://pitchbook.com/help/PitchBook-api",
+      "quote": "Our team will work with you to understand the insights and data you’re looking for and help you establish the API connection through an API key or authentication token.",
+      "check": "ok"
+    },
+    "access": {
+      "url": "https://pitchbook.com/help/PitchBook-api",
+      "quote": "Our API is a separate offering from the PitchBook Platform that requires a standalone contract agreement.",
+      "check": "ok"
+    },
+    "api": {
+      "url": "https://pitchbook.com/help/PitchBook-api",
+      "quote": "The PitchBook API is a RESTful implementation that most HTTP clients can easily access in your chosen language or via a web browser. Every call will use the same base URL: https://api.pitchbook.com",
+      "check": "ok"
+    },
+    "mcp": {
+      "url": "https://mcp-proxy-external.pitchbook.com",
+      "quote": "For MCP clients, connect to /mcp endpoint with Bearer token authentication",
+      "check": "ok"
+    },
+    "verdict": {
+      "url": "https://pitchbook.com/help/PitchBook-api",
+      "quote": "Our API is a separate offering from the PitchBook Platform that requires a standalone contract agreement.",
+      "check": "ok"
+    }
+  },
+  "confidence": {
+    "auth": 0.9,
+    "access": 1.0,
+    "api": 1.0,
+    "mcp": 0.8,
+    "verdict": 1.0
+  },
+  "_model": "gemini-3.5-flash-lite",
+  "status": "ok",
+  "id": 90,
+  "name": "PitchBook",
+  "category": "Finance & Fintech",
+  "hint": "pitchbook.com (research API)",
+  "sources": [
+    {
+      "url": "https://pitchbook.com",
+      "via": "composio_fetch",
+      "chars": 3247
+    },
+    {
+      "url": "https://mcp-proxy-external.pitchbook.com",
+      "via": "direct",
+      "chars": 537
+    },
+    {
+      "url": "https://pitchbook.com/help/PitchBook-api",
+      "via": "composio_fetch",
+      "chars": 3224
+    },
+    {
+      "url": "https://pitchbook.com/pricing",
+      "via": "composio_fetch",
+      "chars": 13354
+    },
+    {
+      "url": "https://pitchbook.com/blog/what-is-direct-data",
+      "via": "composio_fetch",
+      "chars": 6921
+    },
+    {
+      "url": "https://pitchbook.com/data",
+      "via": "composio_fetch",
+      "chars": 16112
+    }
+  ],
+  "queries": [
+    "PitchBook API authentication developer docs",
+    "PitchBook API access pricing plan developer",
+    "PitchBook MCP server"
+  ],
+  "seconds": 53.1,
+  "verification_queries": [
+    "PitchBook API access requirements plan",
+    "PitchBook developer account API key free OR partner OR enterprise",
+    "PitchBook MCP server model context protocol",
+    "PitchBook API access requirements plan",
+    "PitchBook developer account API key free OR partner OR enterprise",
+    "PitchBook MCP server model context protocol"
+  ],
+  "verification": {
+    "initial_issues": [
+      {
+        "loop": "L4_verifier",
+        "field": "access",
+        "problem": "verifier says self_serve_free vs agent partner_or_sales"
+      },
+      {
+        "loop": "L4_verifier",
+        "field": "mcp",
+        "problem": "verifier says official vs agent none_found"
+      },
+      {
+        "loop": "L5_mcp_probe",
+        "field": "mcp",
+        "problem": "possible official MCP found: ['https://mcp-proxy-external.pitchbook.com']",
+        "urls": [
+          "https://mcp-proxy-external.pitchbook.com"
+        ]
+      }
+    ],
+    "final_issues": [
+      {
+        "loop": "L4_verifier",
+        "field": "access",
+        "problem": "verifier says self_serve_free vs agent partner_or_sales"
+      },
+      {
+        "loop": "L4_verifier",
+        "field": "mcp",
+        "problem": "verifier says official vs agent community_only"
+      }
+    ],
+    "rounds": [
+      {
+        "round": 0,
+        "issues": [
+          {
+            "loop": "L4_verifier",
+            "field": "access",
+            "problem": "verifier says self_serve_free vs agent partner_or_sales"
+          },
+          {
+            "loop": "L4_verifier",
+            "field": "mcp",
+            "problem": "verifier says official vs agent none_found"
+          },
+          {
+            "loop": "L5_mcp_probe",
+            "field": "mcp",
+            "problem": "possible official MCP found: ['https://mcp-proxy-external.pitchbook.com']",
+            "urls": [
+              "https://mcp-proxy-external.pitchbook.com"
+            ]
+          }
+        ],
+        "verifier": {
+          "auth_methods": [
+            "oauth2",
+            "api_key",
+            "bearer_token",
+            "jwt_or_signed",
+            "none"
+          ],
+          "auth_primary": "oauth2",
+          "access_tier": "self_serve_free",
+          "api_types": [
+            "rest",
+            "graphql"
+          ],
+          "mcp": "official",
+          "verdict": "unknown",
+          "reasons": {},
+          "_model": "allam-2-7b"
+        },
+        "autofix": []
+      },
+      {
+        "round": 1,
+        "queries": [
+          "PitchBook API access requirements plan",
+          "PitchBook developer account API key free OR partner OR enterprise",
+          "PitchBook MCP server model context protocol"
+        ],
+        "new_sources": [
+          "https://pitchbook.com",
+          "https://mcp-proxy-external.pitchbook.com",
+          "https://pitchbook.com/help/PitchBook-api",
+          "https://pitchbook.com/pricing",
+          "https://pitchbook.com/blog/what-is-direct-data"
+        ],
+        "change_log": "Updated access to partner_or_sales based on official documentation requiring a standalone contract agreement, and set mcp to community_only since the discovered proxy is an unverified external wrapper rather than an official core vendor MCP.",
+        "issues": [
+          {
+            "loop": "L4_verifier",
+            "field": "access",
+            "problem": "verifier says self_serve_free vs agent partner_or_sales"
+          },
+          {
+            "loop": "L4_verifier",
+            "field": "mcp",
+            "problem": "verifier says official vs agent community_only"
+          }
+        ],
+        "verifier": {
+          "auth_methods": [
+            "oauth2",
+            "api_key",
+            "bearer_token",
+            "jwt_or_signed",
+            "none"
+          ],
+          "auth_primary": "oauth2",
+          "access_tier": "self_serve_free",
+          "api_types": [
+            "rest",
+            "graphql"
+          ],
+          "mcp": "official",
+          "verdict": "unknown",
+          "reasons": {},
+          "_model": "allam-2-7b"
+        },
+        "autofix": []
+      },
+      {
+        "round": 2,
+        "queries": [
+          "PitchBook API access requirements plan",
+          "PitchBook developer account API key free OR partner OR enterprise",
+          "PitchBook MCP server model context protocol",
+          "PitchBook API access requirements plan",
+          "PitchBook developer account API key free OR partner OR enterprise",
+          "PitchBook MCP server model context protocol"
+        ],
+        "new_sources": [
+          "https://pitchbook.com",
+          "https://mcp-proxy-external.pitchbook.com",
+          "https://pitchbook.com/help/PitchBook-api",
+          "https://pitchbook.com/pricing",
+          "https://pitchbook.com/blog/what-is-direct-data"
+        ],
+        "change_log": "Corrected access tier to partner_or_sales as the API requires a standalone contract agreement, and verified MCP status as community_only proxy.",
+        "issues": [
+          {
+            "loop": "L4_verifier",
+            "field": "access",
+            "problem": "verifier says self_serve_free vs agent partner_or_sales"
+          },
+          {
+            "loop": "L4_verifier",
+            "field": "mcp",
+            "problem": "verifier says official vs agent community_only"
+          }
+        ],
+        "verifier": {
+          "auth_methods": [
+            "oauth2",
+            "api_key",
+            "bearer_token",
+            "jwt_or_signed",
+            "none"
+          ],
+          "auth_primary": "oauth2",
+          "access_tier": "self_serve_free",
+          "api_types": [
+            "rest",
+            "graphql"
+          ],
+          "mcp": "official",
+          "verdict": "unknown",
+          "reasons": {},
+          "_model": "allam-2-7b"
+        },
+        "autofix": []
+      }
+    ],
+    "catalog": {
+      "in_catalog": false,
+      "checked": [
+        "pitchbook"
+      ]
+    },
+    "changed_fields": [
+      "auth",
+      "mcp"
+    ],
+    "field_status": {
+      "auth": "corrected",
+      "access": "needs_human",
+      "api": "verified",
+      "mcp": "needs_human",
+      "verdict": "verified"
+    },
+    "needs_human": [
+      "access",
+      "mcp"
+    ],
+    "before": {
+      "auth_methods": [
+        "api_key",
+        "bearer_token"
+      ],
+      "auth_primary": "api_key",
+      "access_tier": "partner_or_sales",
+      "access_notes": "The PitchBook API is a separate offering from the PitchBook Platform that requires a standalone contract agreement.",
+      "api_types": [
+        "rest"
+      ],
+      "api_breadth": "broad",
+      "api_notes": "Provides access to company, fund, and deal details, financing details, deal stock information, and AI-powered VC exit predictors via https://api.pitchbook.com",
+      "mcp": "none_found",
+      "mcp_url": null,
+      "verdict": "blocked",
+      "blocker": "enterprise_only",
+      "blocker_notes": "Requires a standalone contract agreement and sales/partnership contact to get API access."
+    },
+    "seconds": 429.6
+  }
+}

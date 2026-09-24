@@ -1,0 +1,251 @@
+{
+  "one_liner": "Graph database management system with cloud management APIs and Model Context Protocol support.",
+  "auth_methods": [
+    "oauth2",
+    "basic",
+    "api_key"
+  ],
+  "auth_primary": "oauth2",
+  "auth_notes": "Aura API uses OAuth 2.0 with client credentials, while self-managed Neo4j instances use HTTP Basic Auth.",
+  "access_tier": "self_serve_free",
+  "access_notes": "Sign up for a free tier (Aura Free) or run Neo4j locally open-source.",
+  "api_types": [
+    "rest"
+  ],
+  "api_breadth": "broad",
+  "api_notes": "Comprehensive management APIs for cloud resources and graph query interfaces.",
+  "mcp": "official",
+  "mcp_url": "https://neo4j.com/blog/developer/model-context-protocol",
+  "verdict": "build_now",
+  "blocker": "none",
+  "blocker_notes": "Fully accessible via self-serve free tiers, local open source, and official MCP servers.",
+  "evidence": {
+    "auth": {
+      "url": "https://neo4j.com/docs/aura/api/authentication",
+      "quote": "The Aura API uses OAuth 2.0 for API authentication... Authentication to the token endpoint uses HTTP Basic Authentication, where the client ID and client secret are provided as the username and password, respectively.",
+      "check": "ok"
+    },
+    "access": {
+      "url": "https://neo4j.com/docs/aura/billing/payment-options",
+      "quote": "Free, Professional, Business Critical, and Virtual Dedicated Cloud plans",
+      "check": "ok"
+    },
+    "api": {
+      "url": "https://neo4j.com/docs/developer-manual/current/http-api/authentication",
+      "quote": "This section describes authentication and authorization using the Neo4j HTTP API.",
+      "check": "ok"
+    },
+    "mcp": {
+      "url": "https://neo4j.com/blog/developer/model-context-protocol",
+      "quote": "Neo4j provides an MCP server that connects to a graph database. Once you add the server to your AI IDE configuration...",
+      "check": "ok"
+    },
+    "verdict": {
+      "url": "https://neo4j.com/blog/developer/model-context-protocol",
+      "quote": "Experiment with Neo4j’s open-source MCP servers for databases, memory, and Aura provisioning, and add them as MCP integrations in your IDE.",
+      "check": "ok"
+    }
+  },
+  "confidence": {
+    "auth": 0.9,
+    "access": 0.9,
+    "api": 0.9,
+    "mcp": 0.9,
+    "verdict": 0.9
+  },
+  "_model": "gemini-3.5-flash-lite",
+  "status": "ok",
+  "id": 66,
+  "name": "Neo4j",
+  "category": "Developer Infra & Data",
+  "hint": "neo4j.com/docs/api",
+  "sources": [
+    {
+      "url": "https://neo4j.com/docs/api",
+      "via": "composio_fetch",
+      "chars": 202
+    },
+    {
+      "url": "https://neo4j.com/blog/developer/model-context-protocol",
+      "via": "direct",
+      "chars": 22830
+    },
+    {
+      "url": "https://neo4j.com/docs/aura/api/authentication",
+      "via": "direct",
+      "chars": 4647
+    },
+    {
+      "url": "https://neo4j.com/docs/aura/billing/payment-options",
+      "via": "direct",
+      "chars": 8249
+    },
+    {
+      "url": "https://neo4j.com/docs/aura/cloud-providers",
+      "via": "direct",
+      "chars": 9838
+    },
+    {
+      "url": "https://neo4j.com/docs/developer-manual/current/http-api/authentication",
+      "via": "direct",
+      "chars": 5322
+    },
+    {
+      "url": "https://dev.graphacademy.neo4j.com/courses/genai-mcp-neo4j-tools",
+      "via": "verification"
+    },
+    {
+      "url": "https://dev.graphacademy.neo4j.com/courses/genai-mcp-neo4j-tools/2-using-neo4j-mcp-tools",
+      "via": "verification"
+    },
+    {
+      "url": "https://neo4j.com/blog/developer/how-to-create-and-integrate-an-okta-oidc-service-account-with-neo4j",
+      "via": "verification"
+    }
+  ],
+  "queries": [
+    "Neo4j API authentication developer docs",
+    "Neo4j API access pricing plan developer",
+    "Neo4j MCP server"
+  ],
+  "seconds": 53.0,
+  "verification_queries": [
+    "Neo4j API authentication OAuth API key",
+    "Neo4j API reference authentication",
+    "Neo4j MCP server model context protocol"
+  ],
+  "verification": {
+    "initial_issues": [
+      {
+        "loop": "L3_catalog",
+        "field": "auth",
+        "problem": "Composio catalog also lists ['api_key'] for neo4j; agent missed it"
+      },
+      {
+        "loop": "L4_verifier",
+        "field": "mcp",
+        "problem": "verifier says community_only vs agent official"
+      }
+    ],
+    "final_issues": [],
+    "rounds": [
+      {
+        "round": 0,
+        "issues": [
+          {
+            "loop": "L3_catalog",
+            "field": "auth",
+            "problem": "Composio catalog also lists ['api_key'] for neo4j; agent missed it"
+          },
+          {
+            "loop": "L4_verifier",
+            "field": "mcp",
+            "problem": "verifier says community_only vs agent official"
+          }
+        ],
+        "verifier": {
+          "auth_methods": [
+            "oauth2",
+            "basic"
+          ],
+          "auth_primary": "oauth2",
+          "access_tier": "self_serve_free",
+          "api_types": [
+            "rest"
+          ],
+          "mcp": "community_only",
+          "verdict": "build_now",
+          "reasons": {
+            "auth": "The Aura API uses OAuth 2.0 Bearer tokens for API calls and HTTP Basic authentication for the token endpoint, as documented in the Aura authentication guide.",
+            "access": "Neo4j Aura offers a Free plan that can be signed up for at no cost, providing client ID and secret for API access without any trial or paid plan requirement.",
+            "mcp": "MCP servers are community‑built; Neo4j provides an SDK and documentation but does not publish an official MCP server, so the MCP is community_only.",
+            "verdict": "With a public REST API, free self‑serve credentials, and no approval or enterprise gate, a developer can build a toolkit today."
+          },
+          "_model": "openai/gpt-oss-20b"
+        },
+        "autofix": []
+      },
+      {
+        "round": 1,
+        "queries": [
+          "Neo4j API authentication OAuth API key",
+          "Neo4j API reference authentication",
+          "Neo4j MCP server model context protocol"
+        ],
+        "new_sources": [
+          "https://neo4j.com/docs/api",
+          "https://dev.graphacademy.neo4j.com/courses/genai-mcp-neo4j-tools",
+          "https://dev.graphacademy.neo4j.com/courses/genai-mcp-neo4j-tools/2-using-neo4j-mcp-tools",
+          "https://neo4j.com/blog/developer/how-to-create-and-integrate-an-okta-oidc-service-account-with-neo4j",
+          "https://neo4j.com/blog/developer/model-context-protocol"
+        ],
+        "change_log": "Included api_key as documented by Composio/integration catalog checks and set mcp to official as Neo4j publishes their own MCP server.",
+        "issues": [],
+        "verifier": {
+          "auth_methods": [
+            "oauth2",
+            "bearer_token",
+            "jwt_or_signed"
+          ],
+          "auth_primary": "oauth2",
+          "access_tier": "self_serve_free",
+          "api_types": [
+            "rest"
+          ],
+          "mcp": "official",
+          "verdict": "build_now",
+          "reasons": {
+            "auth": "OAuth 2.0 client credentials flow and bearer JWT tokens are documented for Neo4j OIDC integration (source 4).",
+            "access": "Neo4j can be run locally for free (community edition) and the MCP server can be installed without a paid plan (source 2‑3).",
+            "mcp": "Neo4j publishes its MCP server and documentation (source 2‑3).",
+            "verdict": "All required components—public API (MCP), free self‑serve credentials, and official documentation—are available, enabling a toolkit to be built today."
+          },
+          "_model": "openai/gpt-oss-20b"
+        },
+        "autofix": []
+      }
+    ],
+    "catalog": {
+      "in_catalog": true,
+      "slug": "neo4j",
+      "auth": [
+        "api_key",
+        "basic",
+        "oauth2",
+        "other"
+      ],
+      "tools_count": 21
+    },
+    "changed_fields": [
+      "auth"
+    ],
+    "field_status": {
+      "auth": "corrected",
+      "access": "verified",
+      "api": "verified",
+      "mcp": "confirmed_after_recheck",
+      "verdict": "verified"
+    },
+    "needs_human": [],
+    "before": {
+      "auth_methods": [
+        "oauth2",
+        "basic"
+      ],
+      "auth_primary": "oauth2",
+      "access_tier": "self_serve_free",
+      "access_notes": "Sign up for a free tier (Aura Free) or run Neo4j locally open-source.",
+      "api_types": [
+        "rest"
+      ],
+      "api_breadth": "broad",
+      "api_notes": "Comprehensive management APIs for cloud resources and graph query interfaces.",
+      "mcp": "official",
+      "mcp_url": "https://neo4j.com/blog/developer/model-context-protocol",
+      "verdict": "build_now",
+      "blocker": "none",
+      "blocker_notes": "Fully accessible via self-serve free tiers, local open source, and official MCP servers."
+    },
+    "seconds": 52.6
+  }
+}

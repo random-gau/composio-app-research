@@ -1,0 +1,167 @@
+{
+  "one_liner": "Cloud-based phone system and call center software with AI conversation intelligence and APIs.",
+  "auth_methods": [
+    "basic",
+    "oauth2"
+  ],
+  "auth_primary": "oauth2",
+  "auth_notes": "Aircall supports both Basic Authentication (API ID and token) for private internal tools and OAuth for multi-user integrations.",
+  "access_tier": "self_serve_free",
+  "access_notes": "Users can sign up for a customer account or trial, giving access to the developer dashboard to generate API keys.",
+  "api_types": [
+    "rest",
+    "websocket"
+  ],
+  "api_breadth": "broad",
+  "api_notes": "Covers calls, contacts, users, webhooks, and AI voice agent features via REST endpoints and webhooks.",
+  "mcp": "official",
+  "mcp_url": "https://developer.aircall.io",
+  "verdict": "build_now",
+  "blocker": "none",
+  "blocker_notes": "Public APIs and self-serve credentials are fully available.",
+  "evidence": {
+    "auth": {
+      "url": "https://developer.aircall.io/docs/authentication",
+      "quote": "Aircall supports two ways to authenticate with the REST API: Basic Authentication and OAuth.",
+      "check": "ok"
+    },
+    "access": {
+      "url": "https://developer.aircall.io/docs/basic-authentication",
+      "quote": "You must have an Aircall account. Sign up as a customer here or if you qualify to be a tech partner you can then sign up for a developer account here.",
+      "check": "ok"
+    },
+    "api": {
+      "url": "https://developer.aircall.io",
+      "quote": "Use our REST API and webhooks to access calls, contacts, and users — and keep every system in sync with what's happening on every call, human or AI.",
+      "check": "ok"
+    },
+    "mcp": {
+      "url": "https://developer.aircall.io",
+      "quote": "Connect your tools and data to Aircall's AI Virtual Agents through MCP. Handle inbound and outbound calls.",
+      "check": "ok"
+    },
+    "verdict": {
+      "url": "https://developer.aircall.io",
+      "quote": "Extend your own setup, Connect your CRM, automate workflows, or build custom integrations for your own Aircall workspace, no marketplace approval needed.",
+      "check": "ok"
+    }
+  },
+  "confidence": {
+    "auth": 5.0,
+    "access": 5.0,
+    "api": 5.0,
+    "mcp": 5.0,
+    "verdict": 5.0
+  },
+  "_model": "gemini-3.5-flash-lite",
+  "status": "ok",
+  "id": 29,
+  "name": "Aircall",
+  "category": "Communications & Messaging",
+  "hint": "aircall.io",
+  "sources": [
+    {
+      "url": "https://aircall.io",
+      "via": "direct",
+      "chars": 5073
+    },
+    {
+      "url": "https://aircall.io/en-gb/pricing",
+      "via": "direct",
+      "chars": 14396
+    },
+    {
+      "url": "https://developer.aircall.io",
+      "via": "direct",
+      "chars": 2930
+    },
+    {
+      "url": "https://developer.aircall.io/docs/authentication",
+      "via": "direct",
+      "chars": 2228
+    },
+    {
+      "url": "https://developer.aircall.io/docs/basic-authentication",
+      "via": "direct",
+      "chars": 3275
+    },
+    {
+      "url": "https://developer.aircall.io/docs/best-practices",
+      "via": "direct",
+      "chars": 5469
+    }
+  ],
+  "queries": [
+    "Aircall API authentication developer docs",
+    "Aircall API access pricing plan developer",
+    "Aircall MCP server"
+  ],
+  "seconds": 33.1,
+  "verification": {
+    "initial_issues": [],
+    "final_issues": [],
+    "rounds": [
+      {
+        "round": 0,
+        "issues": [],
+        "verifier": {
+          "auth_methods": [
+            "basic",
+            "oauth2"
+          ],
+          "auth_primary": "oauth2",
+          "access_tier": "self_serve_free",
+          "api_types": [
+            "rest"
+          ],
+          "mcp": "official",
+          "verdict": "build_now",
+          "reasons": {
+            "auth": "Public docs list Basic Authentication and OAuth as supported methods.",
+            "access": "Developer site offers sandboxes and free sign‑up, no paid or approval step mentioned.",
+            "mcp": "MCP is described on the official developer portal.",
+            "verdict": "All required pieces (auth, free sandbox, REST API) are publicly available, enabling immediate development."
+          },
+          "_model": "openai/gpt-oss-120b"
+        },
+        "autofix": []
+      }
+    ],
+    "catalog": {
+      "in_catalog": false,
+      "checked": [
+        "aircall"
+      ]
+    },
+    "changed_fields": [],
+    "field_status": {
+      "auth": "verified",
+      "access": "verified",
+      "api": "verified",
+      "mcp": "verified",
+      "verdict": "verified"
+    },
+    "needs_human": [],
+    "before": {
+      "auth_methods": [
+        "basic",
+        "oauth2"
+      ],
+      "auth_primary": "oauth2",
+      "access_tier": "self_serve_free",
+      "access_notes": "Users can sign up for a customer account or trial, giving access to the developer dashboard to generate API keys.",
+      "api_types": [
+        "rest",
+        "websocket"
+      ],
+      "api_breadth": "broad",
+      "api_notes": "Covers calls, contacts, users, webhooks, and AI voice agent features via REST endpoints and webhooks.",
+      "mcp": "official",
+      "mcp_url": "https://developer.aircall.io",
+      "verdict": "build_now",
+      "blocker": "none",
+      "blocker_notes": "Public APIs and self-serve credentials are fully available."
+    },
+    "seconds": 21.3
+  }
+}

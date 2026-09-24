@@ -1,0 +1,239 @@
+{
+  "one_liner": "Time tracking, expense reporting, and invoicing software with a comprehensive REST API.",
+  "auth_methods": [
+    "oauth2",
+    "bearer_token"
+  ],
+  "auth_primary": "oauth2",
+  "auth_notes": "Supports OAuth2 (Authorization Code or Implicit Grant) and Personal Access Tokens (Bearer token).",
+  "access_tier": "self_serve_trial",
+  "access_notes": "Requires a Harvest account, which offers a time-limited free trial before requiring a paid plan.",
+  "api_types": [
+    "rest"
+  ],
+  "api_breadth": "broad",
+  "api_notes": "Covers clients, company settings, invoices, estimates, expenses, tasks, timesheets, projects, roles, users, reports, and PTO.",
+  "mcp": "official",
+  "mcp_url": "https://api.harvestapp.com/mcp",
+  "verdict": "build_with_friction",
+  "blocker": "paid_plan",
+  "blocker_notes": "Harvest requires a paid subscription after the initial trial period to maintain API access.",
+  "evidence": {
+    "auth": {
+      "url": "https://help.getharvest.com/api-v2/authentication-api/authentication/authentication",
+      "quote": "The V2 API requires an access token to authenticate requests. There are two options available to you: A Personal Access Token which is tied directly to you and is the quickest way to start playing around with the API. Implementing a full OAuth2 Authentication flow which allows other people to use your Harvest integrations.",
+      "check": "ok"
+    },
+    "access": {
+      "url": "https://help.getharvest.com/api-v2/authentication-api/authentication/authentication",
+      "quote": "A Personal Access Token which is tied directly to you and is the quickest way to start playing around with the API.",
+      "check": "ok"
+    },
+    "api": {
+      "url": "https://help.getharvest.com/api-v2/introduction/overview/general",
+      "quote": "Harvest requires applications to authenticate all requests with OAuth2 or Personal Access Tokens",
+      "check": "ok"
+    },
+    "mcp": {
+      "url": "https://support.getharvest.com/hc/en-us/articles/46293697226381-Harvest-MCP",
+      "quote": "The Harvest MCP (Model Context Protocol) connection lets you work with your Harvest data through an AI assistant... Set the Remote MCP server URL to: https://api.harvestapp.com/mcp",
+      "check": "ok"
+    },
+    "verdict": {
+      "url": null,
+      "quote": null
+    }
+  },
+  "confidence": {
+    "auth": 0.9,
+    "access": 0.8,
+    "api": 0.9,
+    "mcp": 0.9,
+    "verdict": 0.85
+  },
+  "_model": "gemini-3.5-flash-lite",
+  "status": "ok",
+  "id": 80,
+  "name": "Harvest",
+  "category": "Productivity & PM",
+  "hint": "help.getharvest.com/api-v2",
+  "sources": [
+    {
+      "url": "https://help.getharvest.com/api-v2",
+      "via": "direct",
+      "chars": 1207
+    },
+    {
+      "url": "https://help.getharvest.com/api-v1/authentication/authentication/client-side-apps",
+      "via": "direct",
+      "chars": 1522
+    },
+    {
+      "url": "https://help.getharvest.com/api-v1/introduction/overview/migration-guide",
+      "via": "direct",
+      "chars": 8034
+    },
+    {
+      "url": "https://help.getharvest.com/api-v2/authentication-api",
+      "via": "composio_fetch",
+      "chars": 771
+    },
+    {
+      "url": "https://help.getharvest.com/api-v2/authentication-api/authentication/authentication",
+      "via": "direct",
+      "chars": 8987
+    },
+    {
+      "url": "https://help.getharvest.com/api-v2/introduction/overview/general",
+      "via": "direct",
+      "chars": 6003
+    },
+    {
+      "url": "https://help.getharvest.com/api-v2/projects-api/projects/projects",
+      "via": "verification"
+    },
+    {
+      "url": "https://support.getharvest.com/hc/en-us/articles/46293697226381-Harvest-MCP",
+      "via": "verification"
+    }
+  ],
+  "queries": [
+    "Harvest API authentication developer docs",
+    "Harvest API access pricing plan developer",
+    "Harvest MCP server"
+  ],
+  "seconds": 40.0,
+  "verification_queries": [
+    "Harvest API access requirements plan",
+    "Harvest developer account API key free OR partner OR enterprise",
+    "Harvest MCP server model context protocol"
+  ],
+  "verification": {
+    "initial_issues": [
+      {
+        "loop": "L1_evidence",
+        "field": "access",
+        "problem": "no evidence cited"
+      },
+      {
+        "loop": "L4_verifier",
+        "field": "mcp",
+        "problem": "verifier says official vs agent none_found"
+      },
+      {
+        "loop": "L5_mcp_probe",
+        "field": "mcp",
+        "problem": "possible official MCP found: ['https://support.getharvest.com/hc/en-us/articles/46293697226381-Harvest-MCP']",
+        "urls": [
+          "https://support.getharvest.com/hc/en-us/articles/46293697226381-Harvest-MCP"
+        ]
+      }
+    ],
+    "final_issues": [],
+    "rounds": [
+      {
+        "round": 0,
+        "issues": [
+          {
+            "loop": "L1_evidence",
+            "field": "access",
+            "problem": "no evidence cited"
+          },
+          {
+            "loop": "L4_verifier",
+            "field": "mcp",
+            "problem": "verifier says official vs agent none_found"
+          },
+          {
+            "loop": "L5_mcp_probe",
+            "field": "mcp",
+            "problem": "possible official MCP found: ['https://support.getharvest.com/hc/en-us/articles/46293697226381-Harvest-MCP']",
+            "urls": [
+              "https://support.getharvest.com/hc/en-us/articles/46293697226381-Harvest-MCP"
+            ]
+          }
+        ],
+        "verifier": {
+          "auth_methods": [
+            "oauth2",
+            "api_key",
+            "bearer_token",
+            "jwt_or_signed",
+            "none"
+          ],
+          "auth_primary": "oauth2",
+          "access_tier": "unknown",
+          "api_types": [
+            "none"
+          ],
+          "mcp": "official",
+          "verdict": "unknown",
+          "reasons": {},
+          "_model": "allam-2-7b"
+        },
+        "autofix": []
+      },
+      {
+        "round": 1,
+        "queries": [
+          "Harvest API access requirements plan",
+          "Harvest developer account API key free OR partner OR enterprise",
+          "Harvest MCP server model context protocol"
+        ],
+        "new_sources": [
+          "https://help.getharvest.com/api-v2",
+          "https://help.getharvest.com/api-v1/introduction/overview/migration-guide",
+          "https://help.getharvest.com/api-v2/authentication-api/authentication/authentication",
+          "https://help.getharvest.com/api-v2/introduction/overview/general",
+          "https://help.getharvest.com/api-v2/projects-api/projects/projects",
+          "https://support.getharvest.com/hc/en-us/articles/46293697226381-Harvest-MCP"
+        ],
+        "change_log": "Updated MCP to official based on official Harvest MCP documentation and provided proper evidence citations for access and mcp fields.",
+        "issues": [],
+        "verifier": {
+          "error": "Unterminated string starting at: line 110 column 28 (char 4097)"
+        },
+        "autofix": []
+      }
+    ],
+    "catalog": {
+      "in_catalog": true,
+      "slug": "harvest",
+      "auth": [
+        "oauth2"
+      ],
+      "tools_count": 57
+    },
+    "changed_fields": [
+      "mcp"
+    ],
+    "field_status": {
+      "auth": "verified",
+      "access": "confirmed_after_recheck",
+      "api": "verified",
+      "mcp": "corrected",
+      "verdict": "verified"
+    },
+    "needs_human": [],
+    "before": {
+      "auth_methods": [
+        "oauth2",
+        "bearer_token"
+      ],
+      "auth_primary": "oauth2",
+      "access_tier": "self_serve_trial",
+      "access_notes": "Requires a Harvest account, which offers a time-limited free trial before requiring a paid plan.",
+      "api_types": [
+        "rest"
+      ],
+      "api_breadth": "broad",
+      "api_notes": "Covers clients, company settings, invoices, estimates, expenses, tasks, timesheets, projects, roles, users, reports, and PTO.",
+      "mcp": "none_found",
+      "mcp_url": null,
+      "verdict": "build_with_friction",
+      "blocker": "paid_plan",
+      "blocker_notes": "Harvest requires a paid subscription after the initial trial period to maintain API access."
+    },
+    "seconds": 227.4
+  }
+}

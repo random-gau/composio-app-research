@@ -1,0 +1,57 @@
+{
+  "h1": "76 of 100 apps could become agent toolkits today. Half of the rest are held back by a price, not a partner.",
+  "lede": "An agent built on Composio's own search and fetch tools researched 100 apps for auth, access gate, API surface, MCP and buildability. It cited a source URL and a verbatim quote for every answer. Five verification loops then flagged 68 apps, changed answers on 43 and sent 22 to a human. On a hand-checked sample, accuracy rose from 75.8% after one pass to 81.1% after the loops.",
+  "patterns": [
+    {
+      "k": "76",
+      "title": "apps can be built today with free, self-serve credentials",
+      "body": "All 10 communications apps are open. Support & Helpdesk and Marketing are the least open, at 6 of 10 each. Pass 1 said 81; the loops moved apps out of 'build now' when they found trials, paid plans and review gates."
+    },
+    {
+      "k": "12 / 24",
+      "title": "The most common blocker is a paid plan or a trial, not a partnership",
+      "body": "Zendesk, Datadog, Snowflake, Smartsheet, Ahrefs, Grain and six others need a paid tier or stop working after a trial. A funded test account unlocks these without a negotiation. Only 6 need a partner or enterprise contract (DealCloud, PitchBook, LinkedIn Ads, Salesforce Commerce Cloud, Ramp, Otter AI), and 4 need an app review (Google Ads, Amazon SP-API, Gorgias, Pinterest)."
+    },
+    {
+      "k": "75",
+      "title": "apps use OAuth 2, and most of them also offer a static key",
+      "body": "OAuth 2 is the main method for 56 apps. 78 apps document two or more methods, usually OAuth for acting on behalf of many users plus an API key or personal token for a single account. So most toolkits need two auth configs, not one."
+    },
+    {
+      "k": "72",
+      "title": "vendors already publish their own MCP server",
+      "body": "Pass 1 found 54. The MCP probe loop found most of the rest, which a single search had missed. Ecommerce lags (4 of 10). The agent's MCP labels were right on 17 of 19 sample apps."
+    },
+    {
+      "k": "11",
+      "title": "build-now apps have no toolkit page on docs.composio.dev",
+      "body": "WooCommerce, BigCommerce, Magento, Ecwid, MongoDB Atlas, Vonage, Lark, Podio, SE Ranking, Binance and Threads: the obvious toolkit URL returns 404. These are the quickest additions. Check each first: Composio's own /toolkits API also left out 7 apps that do have pages (Twilio, Aircall, Gladly and others), and the agent missed that Threads needs Meta app review."
+    },
+    {
+      "k": "9",
+      "title": "apps need outreach, and they cluster in ads, enterprise data and fintech",
+      "body": "Ads platforms gate on app review (Google Ads, LinkedIn Ads). Enterprise data vendors sell access by contract (DealCloud, PitchBook). Marketplaces and fintech require approval (Amazon SP-API, Ramp). These are the conversations to start early."
+    }
+  ],
+  "acc_intro": "Twenty apps, two per category from a seeded random draw, were labelled from vendor docs and checked by hand. iPayX could not be confirmed, which leaves 19 apps \u00d7 5 fields = 95 judgements. The same 95 are scored for pass 1 and pass 2.",
+  "misses": [
+    "Gladly got worse because of the loops. Pass 1 correctly said enterprise-only. The verifier read 'sandbox environment' as free self-serve and the adjudicator agreed. The root cause is my rubric: it counted any free sandbox as self-serve without requiring that anyone can sign up.",
+    "Ecwid is still wrong. Its docs say 'Only stores on paid plans can access API'; the agent read the free custom-app flow as self-serve.",
+    "Threads is still marked build now. Public use needs Meta App Review.",
+    "Sherlock: the local-tool rule and the verifier both flagged 'build now', but the adjudicator kept it, so it sits in the human queue.",
+    "Harvest: the loops changed MCP to 'official' from a weak source, and called it trial-only although a free plan exists.",
+    "Amazon SP-API: the MCP probe did not find Amazon's own sp-api-dev-mcp in its samples repo.",
+    "Auth over-listing on 8 of 19 apps. The agent lists every method it sees mentioned, such as Basic for GitHub or OAuth for Plaid's bank-connection flow. It picks the right main method on 18 of 19."
+  ],
+  "limits": [
+    "19 scored apps give 95 judgements, so one answer moves the score by about a point.",
+    "The reference labels were drafted by Claude from vendor docs before the agent ran, then confirmed by Gaurav opening every source. That is a light human check, not two independent annotators.",
+    "Free tiers shaped the run. Gemini's stronger model ran out of quota, so every extraction used gemini-3.5-flash-lite. Groq's daily caps pushed the verifier across four models, one of them small (allam-2-7b). 7 apps got no blind verifier.",
+    "The rubric was not re-tuned on the sample's misses, because that would inflate the score. Next fixes: count a sandbox only if anyone can sign up for it, read the pricing page for trial-only or paid-only API access, and list only auth methods documented for the public API.",
+    "Access rules and pricing change often. Each answer's evidence URL records what the docs said on 24 Sep 2026."
+  ],
+  "human_notes": [
+    "Chose the free LLM keys and created a Composio project key with tool-execution permission; restarted runs when free-tier caps hit.",
+    "30 fields on 22 apps ended in the review queue. They are tagged 'needs human' in the table rather than silently resolved."
+  ]
+}

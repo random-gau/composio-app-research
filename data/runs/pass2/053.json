@@ -1,0 +1,259 @@
+{
+  "one_liner": "Access Ahrefs marketing and search data through comprehensive APIs and developer tools.",
+  "auth_methods": [
+    "oauth2",
+    "api_key"
+  ],
+  "auth_primary": "oauth2",
+  "auth_notes": "Ahrefs Connect uses OAuth 2.0 for user integrations, and API keys are available for management.",
+  "access_tier": "paid_plan",
+  "access_notes": "Free test queries are available during staging development, but production use requires an Ahrefs paid subscription plan.",
+  "api_types": [
+    "rest"
+  ],
+  "api_breadth": "broad",
+  "api_notes": "REST API v3 covering Site Explorer, Keywords Explorer, Rank Tracker, Site Audit, and more.",
+  "mcp": "official",
+  "mcp_url": "https://ahrefs.com/api",
+  "verdict": "build_with_friction",
+  "blocker": "paid_plan",
+  "blocker_notes": "Requires a paid Ahrefs plan and approval/review for the Ahrefs Connect integration program.",
+  "evidence": {
+    "auth": {
+      "url": "https://docs.ahrefs.com/ahrefs-connect/docs/introduction.md",
+      "quote": "Users connect their Ahrefs account via OAuth, and your app can fetch data using their API units.",
+      "check": "ok"
+    },
+    "access": {
+      "url": "https://docs.ahrefs.com/ahrefs-connect/docs/how-it-works.md",
+      "quote": "If you are building a new integration (not part of the legacy program), you will need an Ahrefs Enterprise plan to activate your integration in production. You do not need the plan during development. It is required to enable the integration for live users.",
+      "check": "ok"
+    },
+    "api": {
+      "url": "https://docs.ahrefs.com/ahrefs-connect/docs/api-guide.md",
+      "quote": "Ahrefs API v3 lets you pull a wide range of data, including: - Organic and backlinks data from Site Explorer",
+      "check": "ok"
+    },
+    "mcp": {
+      "url": "https://ahrefs.com/blog/what-is-mcp-server",
+      "quote": "Ahrefs now has an official MCP server that connects directly to Claude and ChatGPT.",
+      "check": "ok"
+    },
+    "verdict": {
+      "url": "https://docs.ahrefs.com/ahrefs-connect/docs/introduction.md",
+      "quote": "Once a technology provider joins the Ahrefs Connect Program, their integration becomes available to users on Ahrefs paid plans",
+      "check": "ok"
+    }
+  },
+  "confidence": {
+    "auth": 0.9,
+    "access": 0.9,
+    "api": 0.9,
+    "mcp": 0.9,
+    "verdict": 0.9
+  },
+  "_model": "gemini-3.5-flash-lite",
+  "status": "ok",
+  "id": 53,
+  "name": "Ahrefs",
+  "category": "Data SEO & Scraping",
+  "hint": "ahrefs.com/api",
+  "sources": [
+    {
+      "url": "https://ahrefs.com/api",
+      "via": "direct",
+      "chars": 3336
+    },
+    {
+      "url": "https://ahrefs.com/blog/what-is-mcp-server",
+      "via": "direct",
+      "chars": 21220
+    },
+    {
+      "url": "https://ahrefs.com/pricing",
+      "via": "direct",
+      "chars": 9580
+    },
+    {
+      "url": "https://docs.ahrefs.com",
+      "via": "direct",
+      "chars": 3336
+    },
+    {
+      "url": "https://docs.ahrefs.com/ahrefs-connect/docs/api-guide.md",
+      "via": "direct",
+      "chars": 2149
+    },
+    {
+      "url": "https://docs.ahrefs.com/ahrefs-connect/docs/introduction.md",
+      "via": "direct",
+      "chars": 2080
+    },
+    {
+      "url": "https://docs.ahrefs.com/ahrefs-connect/docs/how-it-works.md",
+      "via": "verification"
+    },
+    {
+      "url": "https://docs.ahrefs.com/ahrefs-connect/docs/how-it-works.md",
+      "via": "verification"
+    }
+  ],
+  "queries": [
+    "Ahrefs API authentication developer docs",
+    "Ahrefs API access pricing plan developer",
+    "Ahrefs MCP server"
+  ],
+  "seconds": 52.8,
+  "verification_queries": [
+    "Ahrefs API access requirements plan",
+    "Ahrefs developer account API key free OR partner OR enterprise",
+    "Ahrefs API access requirements plan",
+    "Ahrefs developer account API key free OR partner OR enterprise"
+  ],
+  "verification": {
+    "initial_issues": [
+      {
+        "loop": "L4_verifier",
+        "field": "access",
+        "problem": "verifier says self_serve_free vs agent paid_plan"
+      }
+    ],
+    "final_issues": [],
+    "rounds": [
+      {
+        "round": 0,
+        "issues": [
+          {
+            "loop": "L4_verifier",
+            "field": "access",
+            "problem": "verifier says self_serve_free vs agent paid_plan"
+          }
+        ],
+        "verifier": {
+          "auth_methods": [
+            "oauth2",
+            "api_key"
+          ],
+          "auth_primary": "oauth2",
+          "access_tier": "self_serve_free",
+          "api_types": [
+            "rest"
+          ],
+          "mcp": "official",
+          "verdict": "build_with_friction",
+          "reasons": {
+            "auth": "API supports OAuth 2.0 and API‑key authentication; OAuth is the primary method for third‑party integrations.",
+            "access": "Free test queries are available without an Enterprise plan, but full production access requires a paid Enterprise plan.",
+            "mcp": "MCP is documented and officially supported by Ahrefs.",
+            "verdict": "A toolkit can be built today using the public REST API and free test queries, but production use will need a paid plan, so the process has friction."
+          },
+          "_model": "openai/gpt-oss-20b"
+        },
+        "autofix": []
+      },
+      {
+        "round": 1,
+        "queries": [
+          "Ahrefs API access requirements plan",
+          "Ahrefs developer account API key free OR partner OR enterprise"
+        ],
+        "new_sources": [
+          "https://ahrefs.com/api",
+          "https://ahrefs.com/pricing",
+          "https://docs.ahrefs.com",
+          "https://docs.ahrefs.com/ahrefs-connect/docs/api-guide.md",
+          "https://docs.ahrefs.com/ahrefs-connect/docs/how-it-works.md"
+        ],
+        "change_log": "Set access_tier to paid_plan because production use and activation of API/integrations require a paid subscription.",
+        "issues": [
+          {
+            "loop": "L4_verifier",
+            "field": "access",
+            "problem": "verifier says self_serve_free vs agent paid_plan"
+          }
+        ],
+        "verifier": {
+          "auth_methods": [
+            "oauth2",
+            "api_key"
+          ],
+          "auth_primary": "oauth2",
+          "access_tier": "self_serve_free",
+          "api_types": [
+            "rest"
+          ],
+          "mcp": "official",
+          "verdict": "build_now",
+          "reasons": {
+            "auth": "Ahrefs provides OAuth 2.0 and API‑key authentication as documented on the developer site.",
+            "access": "A free plan (Ahrefs Free) gives API keys for test queries; production use requires a paid plan, but the free sandbox is self‑serve.",
+            "mcp": "The MCP server is documented and supported by Ahrefs, making it an official MCP.",
+            "verdict": "Public REST API, free sandbox credentials, and official MCP allow immediate development without additional hurdles."
+          },
+          "_model": "openai/gpt-oss-20b"
+        },
+        "autofix": []
+      },
+      {
+        "round": 2,
+        "queries": [
+          "Ahrefs API access requirements plan",
+          "Ahrefs developer account API key free OR partner OR enterprise",
+          "Ahrefs API access requirements plan",
+          "Ahrefs developer account API key free OR partner OR enterprise"
+        ],
+        "new_sources": [
+          "https://ahrefs.com/api",
+          "https://ahrefs.com/pricing",
+          "https://docs.ahrefs.com",
+          "https://docs.ahrefs.com/ahrefs-connect/docs/api-guide.md",
+          "https://docs.ahrefs.com/ahrefs-connect/docs/how-it-works.md"
+        ],
+        "change_log": "Changed access_tier from self_serve_free back to paid_plan because production use and activation require an Ahrefs paid/enterprise subscription, matching the original assessment.",
+        "issues": [],
+        "verifier": {
+          "error": "Groq failed: HTTP 429: {\"error\":{\"message\":\"Rate limit reached for model `openai/gpt-oss-20b` in organization `org_01m2fd9xn8e3dtb9zfqc2jdhsc` service tier `on_demand` on tokens per minute (TPM): Limi"
+        },
+        "autofix": []
+      }
+    ],
+    "catalog": {
+      "in_catalog": true,
+      "slug": "ahrefs",
+      "auth": [
+        "api_key",
+        "oauth2"
+      ],
+      "tools_count": 40
+    },
+    "changed_fields": [],
+    "field_status": {
+      "auth": "verified",
+      "access": "confirmed_after_recheck",
+      "api": "verified",
+      "mcp": "verified",
+      "verdict": "verified"
+    },
+    "needs_human": [],
+    "before": {
+      "auth_methods": [
+        "oauth2",
+        "api_key"
+      ],
+      "auth_primary": "oauth2",
+      "access_tier": "paid_plan",
+      "access_notes": "API and MCP access require an Ahrefs paid subscription plan.",
+      "api_types": [
+        "rest"
+      ],
+      "api_breadth": "broad",
+      "api_notes": "REST API v3 covering Site Explorer, Keywords Explorer, Rank Tracker, Site Audit, and more.",
+      "mcp": "official",
+      "mcp_url": "https://ahrefs.com/api",
+      "verdict": "build_with_friction",
+      "blocker": "paid_plan",
+      "blocker_notes": "Requires a paid Ahrefs plan and approval/review for the Ahrefs Connect integration program."
+    },
+    "seconds": 129.3
+  }
+}

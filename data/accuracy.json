@@ -1,0 +1,1208 @@
+{
+  "summary": {
+    "pass1": {
+      "per_field": {
+        "auth": {
+          "correct": 10,
+          "n": 19,
+          "pct": 52.6
+        },
+        "access": {
+          "correct": 16,
+          "n": 19,
+          "pct": 84.2
+        },
+        "api": {
+          "correct": 19,
+          "n": 19,
+          "pct": 100.0
+        },
+        "mcp": {
+          "correct": 14,
+          "n": 19,
+          "pct": 73.7
+        },
+        "verdict": {
+          "correct": 13,
+          "n": 19,
+          "pct": 68.4
+        }
+      },
+      "overall": {
+        "correct": 72,
+        "n": 95,
+        "pct": 75.8
+      },
+      "auth_primary_only": {
+        "correct": 19,
+        "n": 19,
+        "pct": 100.0
+      }
+    },
+    "pass2": {
+      "per_field": {
+        "auth": {
+          "correct": 10,
+          "n": 19,
+          "pct": 52.6
+        },
+        "access": {
+          "correct": 17,
+          "n": 19,
+          "pct": 89.5
+        },
+        "api": {
+          "correct": 19,
+          "n": 19,
+          "pct": 100.0
+        },
+        "mcp": {
+          "correct": 17,
+          "n": 19,
+          "pct": 89.5
+        },
+        "verdict": {
+          "correct": 14,
+          "n": 19,
+          "pct": 73.7
+        }
+      },
+      "overall": {
+        "correct": 77,
+        "n": 95,
+        "pct": 81.1
+      },
+      "auth_primary_only": {
+        "correct": 18,
+        "n": 19,
+        "pct": 94.7
+      }
+    }
+  },
+  "rows": [
+    {
+      "pass": "pass1",
+      "id": 2,
+      "name": "HubSpot",
+      "auth": true,
+      "access": true,
+      "api": true,
+      "mcp": true,
+      "verdict": true,
+      "agent": {
+        "auth": [
+          "oauth2",
+          "bearer_token"
+        ],
+        "access": "self_serve_free",
+        "api": [
+          "rest"
+        ],
+        "mcp": "official",
+        "verdict": "build_now"
+      }
+    },
+    {
+      "pass": "pass1",
+      "id": 6,
+      "name": "Podio",
+      "auth": false,
+      "access": true,
+      "api": true,
+      "mcp": true,
+      "verdict": true,
+      "agent": {
+        "auth": [
+          "oauth2",
+          "basic"
+        ],
+        "access": "self_serve_free",
+        "api": [
+          "rest"
+        ],
+        "mcp": "none_found",
+        "verdict": "build_now"
+      }
+    },
+    {
+      "pass": "pass1",
+      "id": 19,
+      "name": "Gorgias",
+      "auth": true,
+      "access": false,
+      "api": true,
+      "mcp": false,
+      "verdict": false,
+      "agent": {
+        "auth": [
+          "oauth2",
+          "api_key",
+          "bearer_token",
+          "basic"
+        ],
+        "access": "self_serve_free",
+        "api": [
+          "rest"
+        ],
+        "mcp": "none_found",
+        "verdict": "build_now"
+      }
+    },
+    {
+      "pass": "pass1",
+      "id": 20,
+      "name": "Gladly",
+      "auth": false,
+      "access": true,
+      "api": true,
+      "mcp": true,
+      "verdict": true,
+      "agent": {
+        "auth": [
+          "basic",
+          "bearer_token",
+          "jwt_or_signed"
+        ],
+        "access": "partner_or_sales",
+        "api": [
+          "rest"
+        ],
+        "mcp": "none_found",
+        "verdict": "blocked"
+      }
+    },
+    {
+      "pass": "pass1",
+      "id": 22,
+      "name": "Twilio",
+      "auth": false,
+      "access": true,
+      "api": true,
+      "mcp": true,
+      "verdict": true,
+      "agent": {
+        "auth": [
+          "api_key",
+          "basic",
+          "bearer_token",
+          "jwt_or_signed"
+        ],
+        "access": "self_serve_free",
+        "api": [
+          "rest",
+          "websocket"
+        ],
+        "mcp": "official",
+        "verdict": "build_now"
+      }
+    },
+    {
+      "pass": "pass1",
+      "id": 24,
+      "name": "Lark (Larksuite)",
+      "auth": true,
+      "access": true,
+      "api": true,
+      "mcp": false,
+      "verdict": true,
+      "agent": {
+        "auth": [
+          "oauth2",
+          "bearer_token"
+        ],
+        "access": "self_serve_free",
+        "api": [
+          "rest"
+        ],
+        "mcp": "none_found",
+        "verdict": "build_now"
+      }
+    },
+    {
+      "pass": "pass1",
+      "id": 39,
+      "name": "Threads (Meta)",
+      "auth": true,
+      "access": true,
+      "api": true,
+      "mcp": true,
+      "verdict": false,
+      "agent": {
+        "auth": [
+          "oauth2"
+        ],
+        "access": "self_serve_free",
+        "api": [
+          "rest"
+        ],
+        "mcp": "none_found",
+        "verdict": "build_now"
+      }
+    },
+    {
+      "pass": "pass1",
+      "id": 40,
+      "name": "SendGrid",
+      "auth": true,
+      "access": false,
+      "api": true,
+      "mcp": true,
+      "verdict": false,
+      "agent": {
+        "auth": [
+          "api_key"
+        ],
+        "access": "self_serve_free",
+        "api": [
+          "rest"
+        ],
+        "mcp": "community_only",
+        "verdict": "build_now"
+      }
+    },
+    {
+      "pass": "pass1",
+      "id": 47,
+      "name": "Ecwid",
+      "auth": true,
+      "access": false,
+      "api": true,
+      "mcp": true,
+      "verdict": false,
+      "agent": {
+        "auth": [
+          "oauth2",
+          "bearer_token"
+        ],
+        "access": "self_serve_free",
+        "api": [
+          "rest"
+        ],
+        "mcp": "none_found",
+        "verdict": "build_now"
+      }
+    },
+    {
+      "pass": "pass1",
+      "id": 49,
+      "name": "Amazon Selling Partner",
+      "auth": false,
+      "access": true,
+      "api": true,
+      "mcp": false,
+      "verdict": true,
+      "agent": {
+        "auth": [
+          "oauth2",
+          "jwt_or_signed"
+        ],
+        "access": "approval_or_review",
+        "api": [
+          "rest"
+        ],
+        "mcp": "none_found",
+        "verdict": "build_with_friction"
+      }
+    },
+    {
+      "pass": "pass1",
+      "id": 58,
+      "name": "Sherlock",
+      "auth": true,
+      "access": true,
+      "api": true,
+      "mcp": true,
+      "verdict": false,
+      "agent": {
+        "auth": [
+          "none"
+        ],
+        "access": "open_source_local",
+        "api": [
+          "sdk_or_cli_only"
+        ],
+        "mcp": "community_only",
+        "verdict": "build_now"
+      }
+    },
+    {
+      "pass": "pass1",
+      "id": 60,
+      "name": "Clay",
+      "auth": false,
+      "access": true,
+      "api": true,
+      "mcp": false,
+      "verdict": true,
+      "agent": {
+        "auth": [
+          "api_key",
+          "bearer_token",
+          "oauth2"
+        ],
+        "access": "self_serve_free",
+        "api": [
+          "rest"
+        ],
+        "mcp": "none_found",
+        "verdict": "build_now"
+      }
+    },
+    {
+      "pass": "pass1",
+      "id": 61,
+      "name": "GitHub",
+      "auth": false,
+      "access": true,
+      "api": true,
+      "mcp": false,
+      "verdict": true,
+      "agent": {
+        "auth": [
+          "oauth2",
+          "bearer_token",
+          "basic",
+          "jwt_or_signed"
+        ],
+        "access": "self_serve_free",
+        "api": [
+          "rest",
+          "graphql"
+        ],
+        "mcp": "none_found",
+        "verdict": "build_now"
+      }
+    },
+    {
+      "pass": "pass1",
+      "id": 64,
+      "name": "Cloudflare",
+      "auth": false,
+      "access": true,
+      "api": true,
+      "mcp": true,
+      "verdict": true,
+      "agent": {
+        "auth": [
+          "api_key",
+          "bearer_token",
+          "oauth2"
+        ],
+        "access": "self_serve_free",
+        "api": [
+          "rest",
+          "graphql"
+        ],
+        "mcp": "official",
+        "verdict": "build_now"
+      }
+    },
+    {
+      "pass": "pass1",
+      "id": 72,
+      "name": "Airtable",
+      "auth": true,
+      "access": true,
+      "api": true,
+      "mcp": true,
+      "verdict": true,
+      "agent": {
+        "auth": [
+          "oauth2",
+          "bearer_token"
+        ],
+        "access": "self_serve_free",
+        "api": [
+          "rest"
+        ],
+        "mcp": "official",
+        "verdict": "build_now"
+      }
+    },
+    {
+      "pass": "pass1",
+      "id": 80,
+      "name": "Harvest",
+      "auth": true,
+      "access": true,
+      "api": true,
+      "mcp": true,
+      "verdict": false,
+      "agent": {
+        "auth": [
+          "oauth2",
+          "bearer_token"
+        ],
+        "access": "self_serve_trial",
+        "api": [
+          "rest"
+        ],
+        "mcp": "none_found",
+        "verdict": "build_with_friction"
+      }
+    },
+    {
+      "pass": "pass1",
+      "id": 82,
+      "name": "Plaid",
+      "auth": false,
+      "access": true,
+      "api": true,
+      "mcp": true,
+      "verdict": true,
+      "agent": {
+        "auth": [
+          "oauth2",
+          "api_key"
+        ],
+        "access": "self_serve_free",
+        "api": [
+          "rest"
+        ],
+        "mcp": "official",
+        "verdict": "build_now"
+      }
+    },
+    {
+      "pass": "pass1",
+      "id": 85,
+      "name": "iPayX",
+      "auth": null,
+      "access": null,
+      "api": null,
+      "mcp": null,
+      "verdict": null,
+      "agent": {
+        "auth": [
+          "api_key",
+          "bearer_token",
+          "none"
+        ],
+        "access": "self_serve_free",
+        "api": [
+          "rest",
+          "websocket"
+        ],
+        "mcp": "official",
+        "verdict": "build_now"
+      }
+    },
+    {
+      "pass": "pass1",
+      "id": 92,
+      "name": "Otter AI",
+      "auth": false,
+      "access": true,
+      "api": true,
+      "mcp": true,
+      "verdict": true,
+      "agent": {
+        "auth": [
+          "oauth2",
+          "bearer_token"
+        ],
+        "access": "partner_or_sales",
+        "api": [
+          "rest"
+        ],
+        "mcp": "official",
+        "verdict": "build_with_friction"
+      }
+    },
+    {
+      "pass": "pass1",
+      "id": 98,
+      "name": "Mermaid CLI",
+      "auth": true,
+      "access": true,
+      "api": true,
+      "mcp": true,
+      "verdict": true,
+      "agent": {
+        "auth": [
+          "none"
+        ],
+        "access": "open_source_local",
+        "api": [
+          "sdk_or_cli_only"
+        ],
+        "mcp": "community_only",
+        "verdict": "build_now"
+      }
+    },
+    {
+      "pass": "pass2",
+      "id": 2,
+      "name": "HubSpot",
+      "auth": true,
+      "access": true,
+      "api": true,
+      "mcp": true,
+      "verdict": true,
+      "agent": {
+        "auth": [
+          "oauth2",
+          "bearer_token"
+        ],
+        "access": "self_serve_free",
+        "api": [
+          "rest"
+        ],
+        "mcp": "official",
+        "verdict": "build_now"
+      }
+    },
+    {
+      "pass": "pass2",
+      "id": 6,
+      "name": "Podio",
+      "auth": false,
+      "access": true,
+      "api": true,
+      "mcp": true,
+      "verdict": true,
+      "agent": {
+        "auth": [
+          "oauth2",
+          "basic"
+        ],
+        "access": "self_serve_free",
+        "api": [
+          "rest"
+        ],
+        "mcp": "none_found",
+        "verdict": "build_now"
+      }
+    },
+    {
+      "pass": "pass2",
+      "id": 19,
+      "name": "Gorgias",
+      "auth": true,
+      "access": true,
+      "api": true,
+      "mcp": true,
+      "verdict": true,
+      "agent": {
+        "auth": [
+          "oauth2",
+          "api_key",
+          "bearer_token",
+          "basic"
+        ],
+        "access": "approval_or_review",
+        "api": [
+          "rest"
+        ],
+        "mcp": "official",
+        "verdict": "build_with_friction"
+      }
+    },
+    {
+      "pass": "pass2",
+      "id": 20,
+      "name": "Gladly",
+      "auth": false,
+      "access": false,
+      "api": true,
+      "mcp": true,
+      "verdict": false,
+      "agent": {
+        "auth": [
+          "basic",
+          "bearer_token",
+          "jwt_or_signed",
+          "other"
+        ],
+        "access": "self_serve_free",
+        "api": [
+          "rest",
+          "graphql"
+        ],
+        "mcp": "none_found",
+        "verdict": "build_now"
+      }
+    },
+    {
+      "pass": "pass2",
+      "id": 22,
+      "name": "Twilio",
+      "auth": false,
+      "access": true,
+      "api": true,
+      "mcp": true,
+      "verdict": true,
+      "agent": {
+        "auth": [
+          "api_key",
+          "basic",
+          "bearer_token",
+          "jwt_or_signed"
+        ],
+        "access": "self_serve_free",
+        "api": [
+          "rest",
+          "websocket"
+        ],
+        "mcp": "official",
+        "verdict": "build_now"
+      }
+    },
+    {
+      "pass": "pass2",
+      "id": 24,
+      "name": "Lark (Larksuite)",
+      "auth": true,
+      "access": true,
+      "api": true,
+      "mcp": true,
+      "verdict": true,
+      "agent": {
+        "auth": [
+          "oauth2",
+          "bearer_token"
+        ],
+        "access": "self_serve_free",
+        "api": [
+          "rest"
+        ],
+        "mcp": "official",
+        "verdict": "build_now"
+      }
+    },
+    {
+      "pass": "pass2",
+      "id": 39,
+      "name": "Threads (Meta)",
+      "auth": true,
+      "access": true,
+      "api": true,
+      "mcp": true,
+      "verdict": false,
+      "agent": {
+        "auth": [
+          "oauth2"
+        ],
+        "access": "self_serve_free",
+        "api": [
+          "rest"
+        ],
+        "mcp": "community_only",
+        "verdict": "build_now"
+      }
+    },
+    {
+      "pass": "pass2",
+      "id": 40,
+      "name": "SendGrid",
+      "auth": false,
+      "access": true,
+      "api": true,
+      "mcp": true,
+      "verdict": true,
+      "agent": {
+        "auth": [
+          "api_key",
+          "bearer_token",
+          "basic"
+        ],
+        "access": "self_serve_trial",
+        "api": [
+          "rest"
+        ],
+        "mcp": "community_only",
+        "verdict": "build_with_friction"
+      }
+    },
+    {
+      "pass": "pass2",
+      "id": 47,
+      "name": "Ecwid",
+      "auth": true,
+      "access": false,
+      "api": true,
+      "mcp": true,
+      "verdict": false,
+      "agent": {
+        "auth": [
+          "oauth2",
+          "bearer_token"
+        ],
+        "access": "self_serve_free",
+        "api": [
+          "rest"
+        ],
+        "mcp": "none_found",
+        "verdict": "build_now"
+      }
+    },
+    {
+      "pass": "pass2",
+      "id": 49,
+      "name": "Amazon Selling Partner",
+      "auth": true,
+      "access": true,
+      "api": true,
+      "mcp": false,
+      "verdict": true,
+      "agent": {
+        "auth": [
+          "oauth2"
+        ],
+        "access": "approval_or_review",
+        "api": [
+          "rest"
+        ],
+        "mcp": "none_found",
+        "verdict": "build_with_friction"
+      }
+    },
+    {
+      "pass": "pass2",
+      "id": 58,
+      "name": "Sherlock",
+      "auth": true,
+      "access": true,
+      "api": true,
+      "mcp": true,
+      "verdict": false,
+      "agent": {
+        "auth": [
+          "none"
+        ],
+        "access": "open_source_local",
+        "api": [
+          "sdk_or_cli_only"
+        ],
+        "mcp": "community_only",
+        "verdict": "build_now"
+      }
+    },
+    {
+      "pass": "pass2",
+      "id": 60,
+      "name": "Clay",
+      "auth": false,
+      "access": true,
+      "api": true,
+      "mcp": true,
+      "verdict": true,
+      "agent": {
+        "auth": [
+          "api_key",
+          "oauth2"
+        ],
+        "access": "self_serve_free",
+        "api": [
+          "rest"
+        ],
+        "mcp": "official",
+        "verdict": "build_now"
+      }
+    },
+    {
+      "pass": "pass2",
+      "id": 61,
+      "name": "GitHub",
+      "auth": false,
+      "access": true,
+      "api": true,
+      "mcp": true,
+      "verdict": true,
+      "agent": {
+        "auth": [
+          "oauth2",
+          "bearer_token",
+          "basic",
+          "jwt_or_signed"
+        ],
+        "access": "self_serve_free",
+        "api": [
+          "rest",
+          "graphql"
+        ],
+        "mcp": "official",
+        "verdict": "build_now"
+      }
+    },
+    {
+      "pass": "pass2",
+      "id": 64,
+      "name": "Cloudflare",
+      "auth": false,
+      "access": true,
+      "api": true,
+      "mcp": true,
+      "verdict": true,
+      "agent": {
+        "auth": [
+          "api_key",
+          "bearer_token",
+          "oauth2"
+        ],
+        "access": "self_serve_free",
+        "api": [
+          "rest",
+          "graphql"
+        ],
+        "mcp": "official",
+        "verdict": "build_now"
+      }
+    },
+    {
+      "pass": "pass2",
+      "id": 72,
+      "name": "Airtable",
+      "auth": true,
+      "access": true,
+      "api": true,
+      "mcp": true,
+      "verdict": true,
+      "agent": {
+        "auth": [
+          "oauth2",
+          "bearer_token"
+        ],
+        "access": "self_serve_free",
+        "api": [
+          "rest"
+        ],
+        "mcp": "official",
+        "verdict": "build_now"
+      }
+    },
+    {
+      "pass": "pass2",
+      "id": 80,
+      "name": "Harvest",
+      "auth": true,
+      "access": true,
+      "api": true,
+      "mcp": false,
+      "verdict": false,
+      "agent": {
+        "auth": [
+          "oauth2",
+          "bearer_token"
+        ],
+        "access": "self_serve_trial",
+        "api": [
+          "rest"
+        ],
+        "mcp": "official",
+        "verdict": "build_with_friction"
+      }
+    },
+    {
+      "pass": "pass2",
+      "id": 82,
+      "name": "Plaid",
+      "auth": false,
+      "access": true,
+      "api": true,
+      "mcp": true,
+      "verdict": true,
+      "agent": {
+        "auth": [
+          "oauth2",
+          "api_key"
+        ],
+        "access": "self_serve_free",
+        "api": [
+          "rest"
+        ],
+        "mcp": "official",
+        "verdict": "build_now"
+      }
+    },
+    {
+      "pass": "pass2",
+      "id": 85,
+      "name": "iPayX",
+      "auth": null,
+      "access": null,
+      "api": null,
+      "mcp": null,
+      "verdict": null,
+      "agent": {
+        "auth": [
+          "api_key",
+          "bearer_token",
+          "none"
+        ],
+        "access": "self_serve_free",
+        "api": [
+          "rest",
+          "websocket"
+        ],
+        "mcp": "official",
+        "verdict": "build_now"
+      }
+    },
+    {
+      "pass": "pass2",
+      "id": 92,
+      "name": "Otter AI",
+      "auth": false,
+      "access": true,
+      "api": true,
+      "mcp": true,
+      "verdict": true,
+      "agent": {
+        "auth": [
+          "oauth2",
+          "bearer_token"
+        ],
+        "access": "partner_or_sales",
+        "api": [
+          "rest"
+        ],
+        "mcp": "official",
+        "verdict": "build_with_friction"
+      }
+    },
+    {
+      "pass": "pass2",
+      "id": 98,
+      "name": "Mermaid CLI",
+      "auth": true,
+      "access": true,
+      "api": true,
+      "mcp": true,
+      "verdict": true,
+      "agent": {
+        "auth": [
+          "none"
+        ],
+        "access": "open_source_local",
+        "api": [
+          "sdk_or_cli_only"
+        ],
+        "mcp": "community_only",
+        "verdict": "build_with_friction"
+      }
+    }
+  ],
+  "truth": [
+    {
+      "id": "2",
+      "name": "HubSpot",
+      "auth_methods": "oauth2;bearer_token",
+      "access_accept": "self_serve_free",
+      "api_accept": "rest",
+      "mcp_accept": "official",
+      "verdict_accept": "build_now",
+      "sources": "https://developers.hubspot.com/docs/api/intro-to-auth ; https://developers.hubspot.com/ai-tools/mcp",
+      "notes": "OAuth apps + private-app access tokens; free CRM + free dev account; remote MCP at mcp.hubspot.com (OAuth)"
+    },
+    {
+      "id": "6",
+      "name": "Podio",
+      "auth_methods": "oauth2",
+      "access_accept": "self_serve_free",
+      "api_accept": "rest",
+      "mcp_accept": "none_found|community_only",
+      "verdict_accept": "build_now",
+      "sources": "https://developers.podio.com/authentication ; https://developers.podio.com/api-key ; https://www.progress.com/podio/pricing",
+      "notes": "API key = OAuth client id/secret from settings; Free plan (5 users) includes API at 1000 calls/hour"
+    },
+    {
+      "id": "19",
+      "name": "Gorgias",
+      "auth_methods": "api_key;basic;oauth2",
+      "access_accept": "self_serve_trial|approval_or_review",
+      "api_accept": "rest",
+      "mcp_accept": "official",
+      "verdict_accept": "build_with_friction",
+      "sources": "https://developers.gorgias.com/reference/authentication ; https://developers.gorgias.com/docs/1-register-on-developer-portal ; https://updates.gorgias.com/publications/gorgias-mcp-is-now-in-open-beta",
+      "notes": "Private app = API key over Basic; public app = OAuth2 mandatory; no free plan - trial or approved developer sandbox; vendor MCP in open beta"
+    },
+    {
+      "id": "20",
+      "name": "Gladly",
+      "auth_methods": "basic;api_key",
+      "access_accept": "partner_or_sales",
+      "api_accept": "rest",
+      "mcp_accept": "none_found|community_only",
+      "verdict_accept": "blocked",
+      "sources": "https://developer.gladly.com/rest/ ; https://help.gladly.com/docs/generate-api-tokens-and-create-webhooks",
+      "notes": "Token-based Basic auth (user email + API token); tokens only inside a customer's Gladly org; no self-serve signup"
+    },
+    {
+      "id": "22",
+      "name": "Twilio",
+      "auth_methods": "basic;api_key",
+      "access_accept": "self_serve_free|self_serve_trial",
+      "api_accept": "rest",
+      "mcp_accept": "official",
+      "verdict_accept": "build_now|build_with_friction",
+      "sources": "https://www.twilio.com/docs/usage/api ; https://github.com/twilio-labs/mcp",
+      "notes": "Account SID + auth token or API key/secret over Basic; free trial account with credit (not time-limited) - borderline free vs trial"
+    },
+    {
+      "id": "24",
+      "name": "Lark (Larksuite)",
+      "auth_methods": "oauth2;bearer_token;other",
+      "access_accept": "self_serve_free",
+      "api_accept": "rest",
+      "mcp_accept": "official",
+      "verdict_accept": "build_now",
+      "sources": "https://open.larksuite.com/document/ukTMukTMukTM/ukDNz4SO0MjL5QzM/g ; https://github.com/larksuite/lark-openapi-mcp",
+      "notes": "app_id/app_secret -> tenant_access_token; user_access_token via OAuth; official lark-openapi-mcp repo"
+    },
+    {
+      "id": "39",
+      "name": "Threads (Meta)",
+      "auth_methods": "oauth2",
+      "access_accept": "self_serve_free|approval_or_review",
+      "api_accept": "rest",
+      "mcp_accept": "none_found|community_only",
+      "verdict_accept": "build_with_friction",
+      "sources": "https://developers.facebook.com/docs/threads ; https://developers.facebook.com/docs/permissions/",
+      "notes": "Meta app + OAuth; works for app testers in dev mode; public use needs Meta App Review"
+    },
+    {
+      "id": "40",
+      "name": "SendGrid",
+      "auth_methods": "api_key;bearer_token",
+      "access_accept": "self_serve_trial",
+      "api_accept": "rest",
+      "mcp_accept": "none_found|community_only",
+      "verdict_accept": "build_with_friction",
+      "sources": "https://www.twilio.com/docs/sendgrid/api-reference ; https://support.sendgrid.com/hc/en-us/articles/35270136965403-Twilio-SendGrid-Trial-Account-Plan",
+      "notes": "API key sent as Bearer; free plan replaced by 60-day timed trial (Mar 2025); no official MCP (Twilio blog shows how to build one)"
+    },
+    {
+      "id": "47",
+      "name": "Ecwid",
+      "auth_methods": "oauth2;bearer_token",
+      "access_accept": "paid_plan",
+      "api_accept": "rest",
+      "mcp_accept": "none_found|community_only",
+      "verdict_accept": "build_with_friction",
+      "sources": "https://docs.ecwid.com/get-started/set-up-your-dev-environment-in-ecwid ; https://api-docs.ecwid.com/reference/rest-api",
+      "notes": "\"Only stores on paid plans can access API\"; developers can request a free test store"
+    },
+    {
+      "id": "49",
+      "name": "Amazon Selling Partner",
+      "auth_methods": "oauth2",
+      "access_accept": "approval_or_review",
+      "api_accept": "rest",
+      "mcp_accept": "official",
+      "verdict_accept": "build_with_friction",
+      "sources": "https://developer-docs.amazon.com/sp-api/docs/registering-your-application ; https://github.com/amzn/selling-partner-api-samples",
+      "notes": "Login with Amazon OAuth; developer profile must be approved (+ Seller Central account); Amazon published sp-api-dev-mcp"
+    },
+    {
+      "id": "58",
+      "name": "Sherlock",
+      "auth_methods": "none",
+      "access_accept": "open_source_local",
+      "api_accept": "sdk_or_cli_only|none",
+      "mcp_accept": "none_found|community_only",
+      "verdict_accept": "build_with_friction|blocked",
+      "sources": "https://github.com/sherlock-project/sherlock",
+      "notes": "Python CLI you run locally; no hosted API or credentials"
+    },
+    {
+      "id": "60",
+      "name": "Clay",
+      "auth_methods": "api_key;bearer_token;jwt_or_signed",
+      "access_accept": "self_serve_free",
+      "api_accept": "rest",
+      "mcp_accept": "official",
+      "verdict_accept": "build_now",
+      "sources": "https://university.clay.com/docs/using-clay-as-an-api ; https://www.clay.com/mcp",
+      "notes": "\"The developer platform is available across all Clay plans, including free and trial plans\"; official Clay MCP"
+    },
+    {
+      "id": "61",
+      "name": "GitHub",
+      "auth_methods": "oauth2;bearer_token;jwt_or_signed",
+      "access_accept": "self_serve_free",
+      "api_accept": "rest|graphql",
+      "mcp_accept": "official",
+      "verdict_accept": "build_now",
+      "sources": "https://docs.github.com/en/rest/authentication/authenticating-to-the-rest-api ; https://github.com/github/github-mcp-server",
+      "notes": "OAuth apps / PATs / GitHub App JWT; official github-mcp-server"
+    },
+    {
+      "id": "64",
+      "name": "Cloudflare",
+      "auth_methods": "bearer_token;api_key",
+      "access_accept": "self_serve_free",
+      "api_accept": "rest|graphql",
+      "mcp_accept": "official",
+      "verdict_accept": "build_now",
+      "sources": "https://developers.cloudflare.com/fundamentals/api/get-started/create-token/ ; https://github.com/cloudflare/mcp-server-cloudflare",
+      "notes": "API tokens (Bearer) + legacy global API key; free plan; official MCP servers"
+    },
+    {
+      "id": "72",
+      "name": "Airtable",
+      "auth_methods": "bearer_token;oauth2",
+      "access_accept": "self_serve_free",
+      "api_accept": "rest",
+      "mcp_accept": "official",
+      "verdict_accept": "build_now",
+      "sources": "https://airtable.com/developers/web/api/authentication ; https://support.airtable.com/docs/using-the-airtable-mcp-server",
+      "notes": "Personal access tokens + OAuth; free plan; official Airtable MCP server"
+    },
+    {
+      "id": "80",
+      "name": "Harvest",
+      "auth_methods": "bearer_token;oauth2",
+      "access_accept": "self_serve_free|self_serve_trial",
+      "api_accept": "rest",
+      "mcp_accept": "none_found|community_only",
+      "verdict_accept": "build_now",
+      "sources": "https://help.getharvest.com/api-v2/authentication-api/authentication/authentication/",
+      "notes": "Personal access token or OAuth2; Free plan (1 seat / 2 projects) still exists"
+    },
+    {
+      "id": "82",
+      "name": "Plaid",
+      "auth_methods": "api_key",
+      "access_accept": "self_serve_free",
+      "api_accept": "rest",
+      "mcp_accept": "official",
+      "verdict_accept": "build_now|build_with_friction",
+      "sources": "https://plaid.com/docs/api/ ; https://plaid.com/docs/resources/mcp/",
+      "notes": "client_id + secret in request body; free Sandbox; production needs approval; official Plaid MCP"
+    },
+    {
+      "id": "85",
+      "name": "iPayX",
+      "auth_methods": "",
+      "access_accept": "",
+      "api_accept": "",
+      "mcp_accept": "",
+      "verdict_accept": "",
+      "sources": "https://www.ipayx.ai/docs/mcp-server ; https://glama.ai/mcp/connectors/io.github.Ipayx-stellar/fx-audit",
+      "notes": "Unscored. Neither the agent nor the human check (Gaurav, 24 Sep 2026) could confirm auth, access, API surface, MCP ownership or pricing from ipayx.ai; only a third-party MCP directory lists a vendor-named server."
+    },
+    {
+      "id": "92",
+      "name": "Otter AI",
+      "auth_methods": "oauth2",
+      "access_accept": "partner_or_sales",
+      "api_accept": "none|rest",
+      "mcp_accept": "official",
+      "verdict_accept": "build_with_friction|blocked",
+      "sources": "https://help.otter.ai/hc/en-us/articles/35287607569687-Otter-MCP-Server",
+      "notes": "Official Otter MCP (OAuth); \"We currently do not have a public API key at this time\""
+    },
+    {
+      "id": "98",
+      "name": "Mermaid CLI",
+      "auth_methods": "none",
+      "access_accept": "open_source_local",
+      "api_accept": "sdk_or_cli_only|none",
+      "mcp_accept": "official|none_found|community_only",
+      "verdict_accept": "build_now|build_with_friction",
+      "sources": "https://github.com/mermaid-js/mermaid-cli ; https://mermaid.ai/docs/ai/mcp-server",
+      "notes": "Local Node CLI; no auth; Mermaid Chart (the company) runs an MCP but it is not the CLI - MCP label ambiguous"
+    }
+  ]
+}

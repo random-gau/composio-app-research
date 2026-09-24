@@ -1,0 +1,253 @@
+{
+  "one_liner": "Connect your workspace to external tools and automate workflows through the Notion REST API.",
+  "auth_methods": [
+    "oauth2",
+    "bearer_token"
+  ],
+  "auth_primary": "bearer_token",
+  "auth_notes": "Notion supports internal connection tokens, personal access tokens (bearer tokens), and OAuth 2.0 for public integrations.",
+  "access_tier": "self_serve_free",
+  "access_notes": "Developers can sign up for a free Notion account and immediately create internal connections or personal access tokens in the Developer portal at no cost.",
+  "api_types": [
+    "rest"
+  ],
+  "api_breadth": "broad",
+  "api_notes": "Covers pages, databases, users, comments, and blocks via the Notion REST API.",
+  "mcp": "official",
+  "mcp_url": "https://developers.notion.com/guides/mcp/overview",
+  "verdict": "build_now",
+  "blocker": "none",
+  "blocker_notes": "Publicly available API with self-serve free developer access.",
+  "evidence": {
+    "auth": {
+      "url": "https://developers.notion.com",
+      "quote": "Notion supports three authentication models: are scoped to a single workspace and use a static API token. They’re ideal for custom automations and workflows — things like syncing data, sending notifications, or building internal dashboards. use OAuth 2.0 for authentication.",
+      "check": "ok"
+    },
+    "access": {
+      "url": "https://developers.notion.com/guides/get-started/internal-connections",
+      "guidance": "Workspace Owner can create an internal connection directly in the Developer portal for free.",
+      "quote": "In the Build section of the sidebar, select Internal connections. Click Create a new connection, enter a connection name, and choose the workspace where the connection can be installed.",
+      "check": "ok"
+    },
+    "api": {
+      "url": "https://developers.notion.com",
+      "quote": "With the REST API, you can read, create, and update nearly everything in a workspace — pages, databases, users, comments, and more.",
+      "check": "ok"
+    },
+    "mcp": {
+      "url": "https://developers.notion.com/guides/mcp/overview",
+      "quote": "Notion MCP lets an MCP client, such as Claude Code, Cursor, or Codex, connect to your Notion workspace through the Model Context Protocol (MCP).",
+      "check": "ok"
+    },
+    "verdict": {
+      "url": "https://developers.notion.com",
+      "quote": "For developers who want to build their own, Notion supports internal connections, public connections, and personal access tokens — all powered by the same REST API.",
+      "check": "ok"
+    }
+  },
+  "confidence": {
+    "auth": 0.9,
+    "access": 0.9,
+    "api": 0.9,
+    "mcp": 0.8,
+    "verdict": 0.9
+  },
+  "_model": "gemini-3.5-flash-lite",
+  "status": "ok",
+  "id": 71,
+  "name": "Notion",
+  "category": "Productivity & PM",
+  "hint": "developers.notion.com",
+  "sources": [
+    {
+      "url": "https://developers.notion.com",
+      "via": "direct",
+      "chars": 6561
+    },
+    {
+      "url": "https://developers.notion.com/guides/get-started/authorization",
+      "via": "direct",
+      "chars": 20717
+    },
+    {
+      "url": "https://developers.notion.com/guides/get-started/internal-connections",
+      "via": "direct",
+      "chars": 5108
+    },
+    {
+      "url": "https://developers.notion.com/guides/get-started/overview",
+      "via": "direct",
+      "chars": 6561
+    },
+    {
+      "url": "https://developers.notion.com/guides/get-started/personal-access-tokens",
+      "via": "direct",
+      "chars": 6530
+    },
+    {
+      "url": "https://developers.notion.com/guides/get-started/public-connections",
+      "via": "direct",
+      "chars": 5259
+    },
+    {
+      "url": "https://developers.notion.com/guides/mcp/get-started-with-mcp",
+      "via": "verification"
+    },
+    {
+      "url": "https://github.com/awkoy/notion-mcp-server",
+      "via": "verification"
+    },
+    {
+      "url": "https://github.com/makenotion/notion-mcp-server",
+      "via": "verification"
+    },
+    {
+      "url": "https://github.com/roygabriel/mcp-notion",
+      "via": "verification"
+    },
+    {
+      "url": "https://developers.notion.com/guides/mcp/overview",
+      "via": "verification"
+    }
+  ],
+  "queries": [
+    "Notion API authentication developer docs",
+    "Notion API access pricing plan developer",
+    "Notion MCP server"
+  ],
+  "seconds": 177.0,
+  "verification_queries": [
+    "Notion MCP server model context protocol"
+  ],
+  "verification": {
+    "initial_issues": [
+      {
+        "loop": "L5_mcp_probe",
+        "field": "mcp",
+        "problem": "possible official MCP found: ['https://developers.notion.com/guides/mcp/get-started-with-mcp', 'https://developers.notion.com/guides/mcp/overview']",
+        "urls": [
+          "https://developers.notion.com/guides/mcp/get-started-with-mcp",
+          "https://developers.notion.com/guides/mcp/overview",
+          "https://github.com/makenotion/notion-mcp-server"
+        ]
+      }
+    ],
+    "final_issues": [],
+    "rounds": [
+      {
+        "round": 0,
+        "issues": [
+          {
+            "loop": "L5_mcp_probe",
+            "field": "mcp",
+            "problem": "possible official MCP found: ['https://developers.notion.com/guides/mcp/get-started-with-mcp', 'https://developers.notion.com/guides/mcp/overview']",
+            "urls": [
+              "https://developers.notion.com/guides/mcp/get-started-with-mcp",
+              "https://developers.notion.com/guides/mcp/overview",
+              "https://github.com/makenotion/notion-mcp-server"
+            ]
+          }
+        ],
+        "verifier": {
+          "auth_methods": [
+            "oauth2",
+            "bearer_token"
+          ],
+          "auth_primary": "oauth2",
+          "access_tier": "self_serve_free",
+          "api_types": [
+            "rest"
+          ],
+          "mcp": "none_found",
+          "verdict": "build_now",
+          "reasons": {
+            "auth": "Notion documents OAuth 2.0 and personal access tokens (static bearer tokens) for API authentication.",
+            "access": "The API is available to all users with a free Notion account; no paid plan or approval is required to obtain credentials.",
+            "mcp": "No official MCP server is published by Notion; only the REST API is documented.",
+            "verdict": "All required documentation and free credentials are publicly available, enabling immediate development."
+          },
+          "_model": "openai/gpt-oss-20b"
+        },
+        "autofix": []
+      },
+      {
+        "round": 1,
+        "queries": [
+          "Notion MCP server model context protocol"
+        ],
+        "new_sources": [
+          "https://developers.notion.com",
+          "https://developers.notion.com/guides/mcp/get-started-with-mcp",
+          "https://github.com/awkoy/notion-mcp-server",
+          "https://github.com/makenotion/notion-mcp-server",
+          "https://github.com/roygabriel/mcp-notion",
+          "https://developers.notion.com/guides/mcp/overview"
+        ],
+        "change_log": "Updated mcp to 'official' and provided mcp_url based on official Notion documentation for Notion MCP.",
+        "issues": [],
+        "verifier": {
+          "auth_methods": [
+            "oauth2",
+            "bearer_token"
+          ],
+          "auth_primary": "oauth2",
+          "access_tier": "self_serve_free",
+          "api_types": [
+            "rest"
+          ],
+          "mcp": "official",
+          "verdict": "build_now",
+          "reasons": {
+            "auth": "Notion supports OAuth 2.0 and personal access tokens (static bearer tokens) for API access.",
+            "access": "The API is available to all developers with a free Notion account; no paid plan or approval is required to obtain credentials.",
+            "mcp": "Notion publishes an official MCP server (mcp.notion.com) and open‑source implementations.",
+            "verdict": "Public documentation, free self‑serve credentials, and an official MCP server make it possible to build a toolkit today."
+          },
+          "_model": "openai/gpt-oss-20b"
+        },
+        "autofix": []
+      }
+    ],
+    "catalog": {
+      "in_catalog": true,
+      "slug": "notion",
+      "auth": [
+        "api_key",
+        "oauth2"
+      ],
+      "tools_count": 54
+    },
+    "changed_fields": [
+      "mcp"
+    ],
+    "field_status": {
+      "auth": "verified",
+      "access": "verified",
+      "api": "verified",
+      "mcp": "corrected",
+      "verdict": "verified"
+    },
+    "needs_human": [],
+    "before": {
+      "auth_methods": [
+        "oauth2",
+        "bearer_token"
+      ],
+      "auth_primary": "bearer_token",
+      "access_tier": "self_serve_free",
+      "access_notes": "Developers can sign up for a free Notion account and immediately create internal connections or personal access tokens in the Developer portal at no cost.",
+      "api_types": [
+        "rest"
+      ],
+      "api_breadth": "broad",
+      "api_notes": "Covers pages, databases, users, comments, and blocks via the Notion REST API.",
+      "mcp": "none_found",
+      "mcp_url": null,
+      "verdict": "build_now",
+      "blocker": "none",
+      "blocker_notes": "Publicly available API with self-serve free developer access."
+    },
+    "seconds": 52.7
+  }
+}

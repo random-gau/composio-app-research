@@ -68,7 +68,7 @@ def catalog(refresh: bool = False) -> List[Dict[str, Any]]:
     items: List[Dict[str, Any]] = []
     cursor: Optional[str] = None
     for _ in range(50):
-        params: Dict[str, Any] = {"limit": 1000}
+        params: Dict[str, Any] = {"limit": 1000, "managed_by": "all", "include_deprecated": "false"}
         if cursor:
             params["cursor"] = cursor
         r = _request("GET", "/toolkits", params=params)
@@ -95,6 +95,31 @@ def catalog(refresh: bool = False) -> List[Dict[str, Any]]:
     return items
 
 
+def get_toolkit(slug: str) -> Optional[Dict[str, Any]]:
+    """GET /toolkits/{slug}: catches toolkits the bulk listing leaves out."""
+    try:
+        r = _request("GET", f"/toolkits/{slug}")
+    except Exception:  # noqa: BLE001
+        return None
+    if r.status_code != 200:
+        return None
+    it = r.json()
+    meta = it.get("meta") or {}
+    return {"slug": it.get("slug"), "name": it.get("name"), "auth_schemes": it.get("auth_schemes") or
+            [a.get("mode") or a.get("auth_mode") for a in (it.get("auth_config_details") or []) if isinstance(a, dict)],
+            "composio_managed": it.get("composio_managed_auth_schemes") or [], "no_auth": it.get("no_auth"),
+            "tools_count": meta.get("tools_count"), "app_url": meta.get("app_url")}
+
+
+def docs_page_exists(slug: str) -> bool:
+    """Public toolkit page on docs.composio.dev - a third view of the catalog."""
+    try:
+        r = httpx.get(f"https://docs.composio.dev/toolkits/{slug}", timeout=20, follow_redirects=True)
+        return r.status_code == 200  # missing toolkits return a real 404
+    except Exception:  # noqa: BLE001
+        return False
+
+
 def _norm(s: str) -> str:
     return re.sub(r"[^a-z0-9]", "", (s or "").lower())
 
@@ -110,13 +135,14 @@ ALIASES = {
     "Amazon Selling Partner": ["amazonsellingpartner", "amazonsp", "spapi", "amazonseller"],
     "WhatsApp Business": ["whatsapp", "whatsappbusiness"],
     "Monday.com": ["monday", "mondaycom"],
-    "Otter AI": ["otter", "otterai"],
+    "GoHighLevel": ["highlevel", "gohighlevel"],
+    "Otter AI": ["otter", "otterai", "otter_ai"],
     "Zoho CRM": ["zohocrm", "zoho"],
     "Zoho Cliq": ["zohocliq", "cliq"],
     "MongoDB Atlas": ["mongodbatlas", "mongodb"],
     "Google Ads": ["googleads"],
     "YouTube Transcript": ["youtubetranscript", "transcriptapi"],
-    "Mermaid CLI": ["mermaid", "mermaidcli"],
+    "Mermaid CLI": ["mermaid", "mermaidcli", "mermaidchart"],
     "Waterfall.io": ["waterfall", "waterfallio"],
     "Close": ["close", "closecrm"],
     "Copper": ["copper", "coppercrm"],
@@ -139,7 +165,17 @@ def match_toolkit(name: str, cat: List[Dict[str, Any]]) -> Optional[Dict[str, An
             return by_slug[k]
         if k in by_name:
             return by_name[k]
+    for k in keys:  # Composio also lists vendor MCP servers as <app>_mcp toolkits
+        if k + "mcp" in by_slug:
+            return by_slug[k + "mcp"]
     return None
+
+
+def candidate_slugs(name: str) -> List[str]:
+    base = ALIASES.get(name) or [_norm(name), _norm(re.sub(r"\(.*?\)", "", name))]
+    words = re.sub(r"\(.*?\)", "", name).strip().lower()
+    out = list(base) + [re.sub(r"[^a-z0-9]+", "_", words).strip("_")]
+    return list(dict.fromkeys(x for x in out if x))
 
 
 SCHEME_MAP = {

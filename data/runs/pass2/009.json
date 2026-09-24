@@ -127,7 +127,11 @@
       }
     ],
     "catalog": {
-      "in_catalog": false
+      "in_catalog": false,
+      "checked": [
+        "copper",
+        "coppercrm"
+      ]
     },
     "changed_fields": [],
     "field_status": {

@@ -1,0 +1,341 @@
+{
+  "one_liner": "SendGrid Email API and marketing campaigns platform for sending and tracking emails at scale.",
+  "auth_methods": [
+    "api_key",
+    "bearer_token",
+    "basic"
+  ],
+  "auth_primary": "api_key",
+  "auth_notes": "SendGrid uses API keys passed via headers for authentication.",
+  "access_tier": "self_serve_trial",
+  "access_notes": "New Twilio SendGrid accounts receive a 60-day timed free trial plan providing temporary access to both Email API and Marketing Campaigns, after which a paid plan is required.",
+  "api_types": [
+    "rest"
+  ],
+  "api_breadth": "broad",
+  "api_notes": "Comprehensive v3 REST APIs covering mail send, contacts, marketing campaigns, templates, stats, and suppressions.",
+  "mcp": "community_only",
+  "mcp_url": "https://github.com/Choppaaahh/sendgrid-mcp-secure",
+  "verdict": "build_with_friction",
+  "blocker": "paid_plan",
+  "blocker_notes": "Public API with self-serve signup enables immediate building.",
+  "evidence": {
+    "auth": {
+      "url": "https://support.sendgrid.com/hc/en-us/articles/18322114821403-4XX-API-Errors-and-Troubleshooting-Suggestions",
+      "quote": "Make sure that an API key being used to make an API call is available via \"settings > api keys\", and that it has the proper permissions for the endpoint being requested.",
+      "check": "ok"
+    },
+    "access": {
+      "url": "https://support.sendgrid.com/hc/en-us/articles/35270136965403-Twilio-SendGrid-Trial-Account-Plan",
+      "quote": "Beginning March 25, 2025 and when creating a new Twilio SendGrid account for email sending through either Twilio Console (then navigating to SendGrid) or directly with SendGrid, users will be given a 60 day timed free trial plan.",
+      "check": "ok"
+    },
+    "api": {
+      "url": "https://github.com/coopersully/sendgrid-mcp",
+      "quote": "The server uses SendGrid v3 APIs only. It never hardcodes API keys; provide SENDGRID_API_KEY",
+      "check": "ok"
+    },
+    "mcp": {
+      "url": "https://github.com/coopersully/sendgrid-mcp",
+      "quote": "An MCP stdio server for managing SendGrid email workflows from Codex and other MCP clients.",
+      "check": "ok"
+    },
+    "verdict": {
+      "url": "https://support.sendgrid.com/hc/en-us/articles/35270136965403-Twilio-SendGrid-Trial-Account-Plan",
+      "quote": "After your account's trial period ends for 'Email API' or 'Marketing Campaigns', many features will be inaccessible and email send will be stopped unless either package is upgraded to a paid plan.",
+      "check": "ok"
+    }
+  },
+  "confidence": {
+    "auth": 0.9,
+    "access": 0.9,
+    "api": 0.9,
+    "mcp": 0.9,
+    "verdict": 0.9
+  },
+  "_model": "gemini-3.5-flash-lite",
+  "status": "ok",
+  "id": 40,
+  "name": "SendGrid",
+  "category": "Marketing Ads Email & Social",
+  "hint": "sendgrid.com",
+  "sources": [
+    {
+      "url": "https://sendgrid.com",
+      "via": "direct",
+      "chars": 1943
+    },
+    {
+      "url": "https://support.sendgrid.com/hc/en-us/articles/18322114821403-4XX-API-Errors-and-Troubleshooting-Suggestions",
+      "via": "direct",
+      "chars": 5707
+    },
+    {
+      "url": "https://support.sendgrid.com/hc/en-us/articles/360041831393-How-to-Upgrade-or-Change-your-SendGrid-Pricing-Plan",
+      "via": "direct",
+      "chars": 2764
+    },
+    {
+      "url": "https://support.sendgrid.com/hc/en-us/articles/35270136965403-Twilio-SendGrid-Trial-Account-Plan",
+      "via": "direct",
+      "chars": 8849
+    },
+    {
+      "url": "https://github.com/Choppaaahh/sendgrid-mcp-secure",
+      "via": "direct",
+      "chars": 8198
+    },
+    {
+      "url": "https://github.com/coopersully/sendgrid-mcp",
+      "via": "direct",
+      "chars": 12635
+    },
+    {
+      "url": "https://sendgrid.com/en-us/partners/become",
+      "via": "verification"
+    },
+    {
+      "url": "https://www.twilio.com/docs/sendgrid/api-reference/account-provisioning-api.md",
+      "via": "verification"
+    },
+    {
+      "url": "https://www.twilio.com/docs/sendgrid/api-reference/api-key-permissions",
+      "via": "verification"
+    },
+    {
+      "url": "https://www.twilio.com/docs/sendgrid/api-reference/api-key-permissions/retrieve-a-list-of-scopes-for-which-this-user-has-access",
+      "via": "verification"
+    },
+    {
+      "url": "https://sendgrid.com/en-us/partners/become",
+      "via": "verification"
+    },
+    {
+      "url": "https://www.twilio.com/docs/sendgrid/api-reference/account-provisioning-api.md",
+      "via": "verification"
+    },
+    {
+      "url": "https://www.twilio.com/docs/sendgrid/api-reference/api-key-permissions",
+      "via": "verification"
+    },
+    {
+      "url": "https://www.twilio.com/docs/sendgrid/api-reference/api-key-permissions/retrieve-a-list-of-scopes-for-which-this-user-has-access",
+      "via": "verification"
+    }
+  ],
+  "queries": [
+    "SendGrid API authentication developer docs",
+    "SendGrid API access pricing plan developer",
+    "SendGrid MCP server"
+  ],
+  "seconds": 40.4,
+  "verification_queries": [
+    "SendGrid API access requirements plan",
+    "SendGrid developer account API key free OR partner OR enterprise",
+    "SendGrid API access requirements plan",
+    "SendGrid developer account API key free OR partner OR enterprise"
+  ],
+  "verification": {
+    "initial_issues": [
+      {
+        "loop": "L4_verifier",
+        "field": "access",
+        "problem": "verifier says self_serve_trial vs agent self_serve_free"
+      }
+    ],
+    "final_issues": [
+      {
+        "loop": "L4_verifier",
+        "field": "access",
+        "problem": "verifier says self_serve_free vs agent self_serve_trial"
+      },
+      {
+        "loop": "L4_verifier",
+        "field": "verdict",
+        "problem": "verifier says build_now vs agent build_with_friction"
+      }
+    ],
+    "rounds": [
+      {
+        "round": 0,
+        "issues": [
+          {
+            "loop": "L4_verifier",
+            "field": "access",
+            "problem": "verifier says self_serve_trial vs agent self_serve_free"
+          }
+        ],
+        "verifier": {
+          "auth_methods": [
+            "api_key"
+          ],
+          "auth_primary": "api_key",
+          "access_tier": "self_serve_trial",
+          "api_types": [
+            "rest"
+          ],
+          "mcp": "unknown",
+          "verdict": "build_now",
+          "reasons": {
+            "auth": "SendGrid API uses API keys as documented in the support article",
+            "access": "A 60‑day free trial provides self‑serve API keys, but continued use requires a paid plan",
+            "mcp": "No information about an MCP server is provided in the sources",
+            "verdict": "Public docs and a self‑serve trial allow a toolkit to be built today"
+          },
+          "_model": "openai/gpt-oss-120b"
+        },
+        "autofix": []
+      },
+      {
+        "round": 1,
+        "queries": [
+          "SendGrid API access requirements plan",
+          "SendGrid developer account API key free OR partner OR enterprise"
+        ],
+        "new_sources": [
+          "https://sendgrid.com",
+          "https://sendgrid.com/en-us/partners/become",
+          "https://www.twilio.com/docs/sendgrid/api-reference/account-provisioning-api.md",
+          "https://www.twilio.com/docs/sendgrid/api-reference/api-key-permissions",
+          "https://www.twilio.com/docs/sendgrid/api-reference/api-key-permissions/retrieve-a-list-of-scopes-for-which-this-user-has-access"
+        ],
+        "change_log": "Updated access_tier to self_serve_trial because new SendGrid accounts provide a 60-day timed trial after which a paid plan is required.",
+        "issues": [
+          {
+            "loop": "L1_evidence",
+            "field": "access",
+            "problem": "quote only partially matches page",
+            "url": "https://support.sendgrid.com/hc/en-us/articles/35270136965403-Twilio-SendGrid-Trial-Account-Plan",
+            "match": 0.79
+          },
+          {
+            "loop": "L2_rules",
+            "field": "verdict",
+            "problem": "verdict build_now contradicts access_tier self_serve_trial"
+          },
+          {
+            "loop": "L4_verifier",
+            "field": "access",
+            "problem": "verifier says self_serve_free vs agent self_serve_trial"
+          }
+        ],
+        "verifier": {
+          "auth_methods": [
+            "api_key",
+            "bearer_token",
+            "basic"
+          ],
+          "auth_primary": "api_key",
+          "access_tier": "self_serve_free",
+          "api_types": [
+            "rest"
+          ],
+          "mcp": "none_found",
+          "verdict": "build_now",
+          "reasons": {
+            "auth": "SendGrid v3 APIs use API keys passed as Bearer Tokens in the Authorization header; Basic Auth is also supported for specific scopes.",
+            "access": "The homepage explicitly states 'Start for free', indicating self-serve access to credentials without a paid plan or approval process for initial setup.",
+            "mcp": "No mention of official or community MCP servers in the provided sources.",
+            "verdict": "Public documentation exists and free self-serve credentials are available, allowing a toolkit to be built immediately."
+          },
+          "_model": "qwen/qwen3.8-27b"
+        },
+        "autofix": []
+      },
+      {
+        "round": 2,
+        "queries": [
+          "SendGrid API access requirements plan",
+          "SendGrid developer account API key free OR partner OR enterprise",
+          "SendGrid API access requirements plan",
+          "SendGrid developer account API key free OR partner OR enterprise"
+        ],
+        "new_sources": [
+          "https://sendgrid.com",
+          "https://sendgrid.com/en-us/partners/become",
+          "https://www.twilio.com/docs/sendgrid/api-reference/account-provisioning-api.md",
+          "https://www.twilio.com/docs/sendgrid/api-reference/api-key-permissions",
+          "https://www.twilio.com/docs/sendgrid/api-reference/api-key-permissions/retrieve-a-list-of-scopes-for-which-this-user-has-access"
+        ],
+        "change_log": "Updated access tier to self_serve_trial and verdict to build_with_friction because new accounts receive a 60-day timed trial requiring a paid plan afterwards.",
+        "issues": [
+          {
+            "loop": "L4_verifier",
+            "field": "access",
+            "problem": "verifier says self_serve_free vs agent self_serve_trial"
+          },
+          {
+            "loop": "L4_verifier",
+            "field": "verdict",
+            "problem": "verifier says build_now vs agent build_with_friction"
+          }
+        ],
+        "verifier": {
+          "auth_methods": [
+            "api_key",
+            "bearer_token",
+            "basic"
+          ],
+          "auth_primary": "api_key",
+          "access_tier": "self_serve_free",
+          "api_types": [
+            "rest"
+          ],
+          "mcp": "unknown",
+          "verdict": "build_now",
+          "reasons": {
+            "auth": "SendGrid v3 APIs use API keys passed as Bearer Tokens in the Authorization header; Basic Auth is also supported for specific scopes.",
+            "access": "The homepage explicitly states 'Start for free', indicating self-serve access to credentials without a paid plan or approval process.",
+            "mcp": "The provided sources do not contain information regarding official or community MCP servers for SendGrid.",
+            "verdict": "Public documentation exists and free self-serve credentials are available, allowing a toolkit to be built immediately."
+          },
+          "_model": "qwen/qwen3.8-27b"
+        },
+        "autofix": []
+      }
+    ],
+    "catalog": {
+      "in_catalog": true,
+      "slug": "sendgrid",
+      "auth": [
+        "api_key"
+      ],
+      "tools_count": 359
+    },
+    "changed_fields": [
+      "access",
+      "auth",
+      "verdict"
+    ],
+    "field_status": {
+      "auth": "corrected",
+      "access": "needs_human",
+      "api": "verified",
+      "mcp": "verified",
+      "verdict": "needs_human"
+    },
+    "needs_human": [
+      "access",
+      "verdict"
+    ],
+    "before": {
+      "auth_methods": [
+        "api_key"
+      ],
+      "auth_primary": "api_key",
+      "access_tier": "self_serve_free",
+      "access_notes": "Users can sign up and start with a free trial/tier with limited daily credits.",
+      "api_types": [
+        "rest"
+      ],
+      "api_breadth": "broad",
+      "api_notes": "Comprehensive v3 REST APIs covering mail send, contacts, marketing campaigns, templates, stats, and suppressions.",
+      "mcp": "community_only",
+      "mcp_url": "https://github.com/coopersully/sendgrid-mcp",
+      "verdict": "build_now",
+      "blocker": "none",
+      "blocker_notes": "Public API with self-serve signup enables immediate building."
+    },
+    "seconds": 425.4
+  }
+}

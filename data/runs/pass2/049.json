@@ -1,0 +1,338 @@
+{
+  "one_liner": "Integrate with Amazon to manage orders, catalog items, listings, and fulfillment.",
+  "auth_methods": [
+    "oauth2"
+  ],
+  "auth_primary": "oauth2",
+  "auth_notes": "Uses Login with Amazon (OAuth 2.0) to exchange refresh tokens for access tokens, plus AWS IAM / signature for requests.",
+  "access_tier": "approval_or_review",
+  "access_notes": "Requires developer registration and approval in the Solution Provider Portal to get working production credentials, though sandbox access is available.",
+  "api_types": [
+    "rest"
+  ],
+  "api_breadth": "broad",
+  "api_notes": "Extensive API covering orders, catalog, listings, FBA, pricing, reports, etc.",
+  "mcp": "none_found",
+  "mcp_url": null,
+  "verdict": "build_with_friction",
+  "blocker": "app_review",
+  "blocker_notes": "Requires developer account registration and app approval.",
+  "evidence": {
+    "auth": {
+      "url": "https://developer-docs.amazon.com/sp-api/docs/authorize-public-applications",
+      "quote": "To grant permission, selling partners follow an authorization flow based on Login with Amazon (LWA), which is Amazon's implementation of OAuth 2.0.",
+      "check": "ok"
+    },
+    "access": {
+      "url": "https://developer-docs.amazon/sp-api/docs/amazon-seller-data-access",
+      "quote": "Step 1. Register as an SP-API developer... You only need to register as a developer once, in any, to have continuous access to the SP-API. As part of registration, you must complete a Developer Profile.",
+      "check": "ok"
+    },
+    "api": {
+      "url": "https://developer-docs.amazon.com/sp-api",
+      "quote": "Catalog Items API\nCatalog Items API Rate Limits\nCatalog Items API v2022-04-01 Reference",
+      "check": "ok"
+    },
+    "mcp": {
+      "url": null,
+      "quote": null
+    },
+    "verdict": {
+      "url": "https://developer-docs.amazon/sp-api/lang-US/docs/sp-api-registration-overview",
+      "quote": "You must register as a Selling Partner API (SP-API) developer before you can register your Selling Partner API application.",
+      "check": "ok_url_outside_sources"
+    }
+  },
+  "confidence": {
+    "auth": 0.95,
+    "access": 0.9,
+    "api": 0.95,
+    "mcp": 1.0,
+    "verdict": 0.95
+  },
+  "_model": "gemini-3.5-flash-lite",
+  "status": "ok",
+  "id": 49,
+  "name": "Amazon Selling Partner",
+  "category": "Ecommerce",
+  "hint": "developer-docs.amazon.com/sp-api",
+  "sources": [
+    {
+      "url": "https://developer-docs.amazon.com/sp-api",
+      "via": "direct",
+      "chars": 5304
+    },
+    {
+      "url": "https://developer-docs.amazon.com/sp-api/docs/authorize-public-applications",
+      "via": "direct",
+      "chars": 5732
+    },
+    {
+      "url": "https://developer-docs.amazon.com/sp-api/docs/onboarding-step-6-set-up-the-authorization-workflow",
+      "via": "direct",
+      "chars": 9839
+    },
+    {
+      "url": "https://developer-docs.amazon/sp-api/docs/connect-to-the-selling-partner-api-using-a-generated-c-sharp-sdk",
+      "via": "direct",
+      "chars": 6448
+    },
+    {
+      "url": "https://developer-docs.amazon/sp-api/docs/connecting-to-the-selling-partner-api",
+      "via": "direct",
+      "chars": 7016
+    },
+    {
+      "url": "https://developer-docs.amazon/sp-api/docs/onboarding-step-8-call-the-sp-api-in-production",
+      "via": "direct",
+      "chars": 2997
+    },
+    {
+      "url": "https://developer-docs.amazon.com/sp-api/docs/role-mappings",
+      "via": "verification"
+    },
+    {
+      "url": "https://developer-docs.amazon.com/sp-api/lang-US/docs/sp-api-registration-overview",
+      "via": "verification"
+    },
+    {
+      "url": "https://developer-docs.amazon.com/sp-api/lang-en_EN/docs/general-faq",
+      "via": "verification"
+    },
+    {
+      "url": "https://developer-docs.amazon/sp-api/docs/amazon-seller-data-access",
+      "via": "verification"
+    },
+    {
+      "url": "https://developer-docs.amazon.com/sp-api/docs/role-mappings",
+      "via": "verification"
+    },
+    {
+      "url": "https://developer-docs.amazon.com/sp-api/lang-US/docs/sp-api-registration-overview",
+      "via": "verification"
+    },
+    {
+      "url": "https://developer-docs.amazon.com/sp-api/lang-en_EN/docs/general-faq",
+      "via": "verification"
+    },
+    {
+      "url": "https://developer-docs.amazon/sp-api/docs/amazon-seller-data-access",
+      "via": "verification"
+    }
+  ],
+  "queries": [
+    "Amazon Selling Partner API authentication developer docs",
+    "Amazon Selling Partner API access pricing plan developer",
+    "Amazon Selling Partner MCP server"
+  ],
+  "seconds": 53.4,
+  "verification_queries": [
+    "Amazon Selling Partner API access requirements plan",
+    "Amazon Selling Partner developer account API key free OR partner OR enterprise",
+    "Amazon Selling Partner API access requirements plan",
+    "Amazon Selling Partner developer account API key free OR partner OR enterprise"
+  ],
+  "verification": {
+    "initial_issues": [
+      {
+        "loop": "L4_verifier",
+        "field": "access",
+        "problem": "verifier says self_serve_free vs agent approval_or_review"
+      },
+      {
+        "loop": "L4_verifier",
+        "field": "verdict",
+        "problem": "verifier says build_now vs agent build_with_friction"
+      }
+    ],
+    "final_issues": [
+      {
+        "loop": "L4_verifier",
+        "field": "access",
+        "problem": "verifier says self_serve_free vs agent approval_or_review"
+      },
+      {
+        "loop": "L4_verifier",
+        "field": "verdict",
+        "problem": "verifier says build_now vs agent build_with_friction"
+      }
+    ],
+    "rounds": [
+      {
+        "round": 0,
+        "issues": [
+          {
+            "loop": "L4_verifier",
+            "field": "access",
+            "problem": "verifier says self_serve_free vs agent approval_or_review"
+          },
+          {
+            "loop": "L4_verifier",
+            "field": "verdict",
+            "problem": "verifier says build_now vs agent build_with_friction"
+          }
+        ],
+        "verifier": {
+          "auth_methods": [
+            "oauth2"
+          ],
+          "auth_primary": "oauth2",
+          "access_tier": "self_serve_free",
+          "api_types": [
+            "rest"
+          ],
+          "mcp": "none_found",
+          "verdict": "build_now",
+          "reasons": {
+            "auth": "OAuth 2.0 is the only documented auth method for the SP‑API.",
+            "access": "Developers can register an app and obtain sandbox credentials at no cost; production requires the same OAuth flow but no paid plan is needed to start building.",
+            "mcp": "Amazon does not publish an MCP server for the SP‑API; only third‑party MCPs exist, so none_found.",
+            "verdict": "Public documentation and free sandbox credentials allow a developer to build a working integration today."
+          },
+          "_model": "openai/gpt-oss-20b"
+        },
+        "autofix": []
+      },
+      {
+        "round": 1,
+        "queries": [
+          "Amazon Selling Partner API access requirements plan",
+          "Amazon Selling Partner developer account API key free OR partner OR enterprise"
+        ],
+        "new_sources": [
+          "https://developer-docs.amazon.com/sp-api",
+          "https://developer-docs.amazon.com/sp-api/docs/role-mappings",
+          "https://developer-docs.amazon.com/sp-api/lang-US/docs/sp-api-registration-overview",
+          "https://developer-docs.amazon.com/sp-api/lang-en_EN/docs/general-faq",
+          "https://developer-docs.amazon/sp-api/docs/amazon-seller-data-access"
+        ],
+        "change_log": "Corrected access_tier to approval_or_review and verdict to build_with_friction because developer onboarding requires approval and role qualification through the Solution Provider Portal.",
+        "issues": [
+          {
+            "loop": "L4_verifier",
+            "field": "access",
+            "problem": "verifier says self_serve_free vs agent approval_or_review"
+          },
+          {
+            "loop": "L4_verifier",
+            "field": "verdict",
+            "problem": "verifier says build_now vs agent build_with_friction"
+          }
+        ],
+        "verifier": {
+          "auth_methods": [
+            "oauth2"
+          ],
+          "auth_primary": "oauth2",
+          "access_tier": "self_serve_free",
+          "api_types": [
+            "rest"
+          ],
+          "mcp": "none_found",
+          "verdict": "build_now",
+          "reasons": {
+            "auth": "SP‑API uses OAuth 2.0 for application authorization; no other public auth methods are documented.",
+            "access": "Developers can register in the Solution Provider Portal and obtain sandbox credentials at no cost; production access requires role approval but sandbox is free.",
+            "mcp": "No official MCP server is published by Amazon for SP‑API; the API is accessed directly via HTTPS endpoints.",
+            "verdict": "Public documentation, free sandbox credentials, and OAuth 2.0 enable immediate development of a toolkit."
+          },
+          "_model": "openai/gpt-oss-20b"
+        },
+        "autofix": []
+      },
+      {
+        "round": 2,
+        "queries": [
+          "Amazon Selling Partner API access requirements plan",
+          "Amazon Selling Partner developer account API key free OR partner OR enterprise",
+          "Amazon Selling Partner API access requirements plan",
+          "Amazon Selling Partner developer account API key free OR partner OR enterprise"
+        ],
+        "new_sources": [
+          "https://developer-docs.amazon.com/sp-api",
+          "https://developer-docs.amazon.com/sp-api/docs/role-mappings",
+          "https://developer-docs.amazon.com/sp-api/lang-US/docs/sp-api-registration-overview",
+          "https://developer-docs.amazon.com/sp-api/lang-en_EN/docs/general-faq",
+          "https://developer-docs.amazon/sp-api/docs/amazon-seller-data-access"
+        ],
+        "change_log": "Changed access_tier to approval_or_review and verdict to build_with_friction because registration and developer approval are mandatory requirements for SP-API access.",
+        "issues": [
+          {
+            "loop": "L4_verifier",
+            "field": "access",
+            "problem": "verifier says self_serve_free vs agent approval_or_review"
+          },
+          {
+            "loop": "L4_verifier",
+            "field": "verdict",
+            "problem": "verifier says build_now vs agent build_with_friction"
+          }
+        ],
+        "verifier": {
+          "auth_methods": [
+            "oauth2"
+          ],
+          "auth_primary": "oauth2",
+          "access_tier": "self_serve_free",
+          "api_types": [
+            "rest"
+          ],
+          "mcp": "none_found",
+          "verdict": "build_now",
+          "reasons": {
+            "auth": "OAuth2 is documented and available for SP-API applications",
+            "access": "Developer registration is free and provides sandbox credentials",
+            "mcp": "No MCP server is published by Amazon for SP-API",
+            "verdict": "Public documentation and free sandbox credentials enable immediate development"
+          },
+          "_model": "openai/gpt-oss-20b"
+        },
+        "autofix": []
+      }
+    ],
+    "catalog": {
+      "in_catalog": false,
+      "checked": [
+        "amazonsellingpartner",
+        "amazonsp",
+        "spapi",
+        "amazonseller",
+        "amazon_selling_partner"
+      ]
+    },
+    "changed_fields": [
+      "auth"
+    ],
+    "field_status": {
+      "auth": "corrected",
+      "access": "needs_human",
+      "api": "verified",
+      "mcp": "verified",
+      "verdict": "needs_human"
+    },
+    "needs_human": [
+      "access",
+      "verdict"
+    ],
+    "before": {
+      "auth_methods": [
+        "oauth2",
+        "jwt_or_signed"
+      ],
+      "auth_primary": "oauth2",
+      "access_tier": "approval_or_review",
+      "access_notes": "Requires developer registration, approval, and app review in the Solution Provider Portal.",
+      "api_types": [
+        "rest"
+      ],
+      "api_breadth": "broad",
+      "api_notes": "Extensive API covering orders, catalog, listings, FBA, pricing, reports, etc.",
+      "mcp": "none_found",
+      "mcp_url": null,
+      "verdict": "build_with_friction",
+      "blocker": "app_review",
+      "blocker_notes": "Requires developer account registration and app approval."
+    },
+    "seconds": 105.9
+  }
+}

@@ -1,0 +1,252 @@
+{
+  "one_liner": "An open-source and cloud eCommerce platform providing rich APIs for online stores.",
+  "auth_methods": [
+    "oauth2",
+    "bearer_token",
+    "basic"
+  ],
+  "auth_primary": "oauth2",
+  "auth_notes": "Supports OAuth 1.0a, OAuth 2.0, Bearer token generation via admin login, and token-based integration keys.",
+  "access_tier": "self_serve_free",
+  "access_notes": "Magento Open Source is free to download and run locally, and developers can access public Web APIs and marketplace tools.",
+  "api_types": [
+    "rest",
+    "graphql",
+    "soap"
+  ],
+  "api_breadth": "broad",
+  "api_notes": "Comprehensive REST, GraphQL, and SOAP APIs covering products, categories, orders, customers, inventory, and carts.",
+  "mcp": "community_only",
+  "mcp_url": "https://commercemarketplace.adobe.com/freento-module-mcp.html",
+  "verdict": "build_now",
+  "blocker": "none",
+  "blocker_notes": "Fully open-source and self-hostable with broad public APIs.",
+  "evidence": {
+    "auth": {
+      "url": "https://developer.adobe.com/commerce/webapi/get-started",
+      "quote": "Three types of authentication:\n\n- Administrators and customers are authenticated with login credentials.\n- Mobile applications authenticate using tokens.\n- Third-party applications authenticate with OAuth 1.0a.",
+      "check": "ok"
+    },
+    "access": {
+      "url": "https://developer.adobe.com/commerce",
+      "quote": "Adobe provides developers with software, tools, and services to customize and extend Adobe Commerce...",
+      "check": "ok"
+    },
+    "api": {
+      "url": "https://developer.adobe.com/commerce/webapi/get-started",
+      "quote": "Support for GraphQL, REST(Representational State Transfer) and SOAP(Simple Object Access Protocol).",
+      "check": "ok"
+    },
+    "mcp": {
+      "url": "https://commercemarketplace.adobe.com/freento-module-mcp.html",
+      "quote": "Freento MCP Server connects your Magento 2 store to AI assistants via the https://modelcontextprotocol.io/ - an open standard for AI-to-application integration.",
+      "check": "ok"
+    },
+    "verdict": {
+      "url": "https://developer.adobe.com/commerce/webapi/get-started",
+      "quote": "The Adobe Commerce and Magento Open Source web API framework provides integrators and developers the means to use web services that communicate with the application.",
+      "check": "ok"
+    }
+  },
+  "confidence": {
+    "auth": 0.9,
+    "access": 0.9,
+    "api": 0.9,
+    "mcp": 0.9,
+    "verdict": 0.9
+  },
+  "_model": "gemini-3.5-flash-lite",
+  "status": "ok",
+  "id": 45,
+  "name": "Magento (Adobe Commerce)",
+  "category": "Ecommerce",
+  "hint": "developer.adobe.com/commerce",
+  "sources": [
+    {
+      "url": "https://developer.adobe.com/commerce",
+      "via": "direct",
+      "chars": 1650
+    },
+    {
+      "url": "https://business.adobe.com/products/magento/pricing.html",
+      "via": "composio_fetch",
+      "chars": 6333
+    },
+    {
+      "url": "https://commercemarketplace.adobe.com/freento-module-mcp.html",
+      "via": "direct",
+      "chars": 5413
+    },
+    {
+      "url": "https://commercemarketplace.adobe.com/miniorange-inc-miniorange-mcpserver.html",
+      "via": "direct",
+      "chars": 7133
+    },
+    {
+      "url": "https://developer.adobe.com/commerce/webapi/get-started",
+      "via": "composio_fetch",
+      "chars": 3104
+    },
+    {
+      "url": "https://developer.adobe.com/commerce/webapi/get-started/authentication",
+      "via": "composio_fetch",
+      "chars": 8960
+    },
+    {
+      "url": "https://developer.adobe.com/commerce/marketplace/guides/eqp/v1",
+      "via": "verification"
+    },
+    {
+      "url": "https://developer.adobe.com/commerce/marketplace/guides/eqp/v1/access-keys",
+      "via": "verification"
+    },
+    {
+      "url": "https://developer.adobe.com/commerce/marketplace/guides/eqp/v1/auth",
+      "via": "verification"
+    },
+    {
+      "url": "https://developer.adobe.com/commerce/php/architecture/technical-vision/web-api",
+      "via": "verification"
+    }
+  ],
+  "queries": [
+    "Magento (Adobe Commerce) API authentication developer docs",
+    "Magento (Adobe Commerce) API access pricing plan developer",
+    "Magento (Adobe Commerce) MCP server"
+  ],
+  "seconds": 73.9,
+  "verification_queries": [
+    "Magento API access requirements plan",
+    "Magento developer account API key free OR partner OR enterprise"
+  ],
+  "verification": {
+    "initial_issues": [
+      {
+        "loop": "L4_verifier",
+        "field": "access",
+        "problem": "verifier says paid_plan vs agent self_serve_free"
+      },
+      {
+        "loop": "L4_verifier",
+        "field": "verdict",
+        "problem": "verifier says build_with_friction vs agent build_now"
+      }
+    ],
+    "final_issues": [],
+    "rounds": [
+      {
+        "round": 0,
+        "issues": [
+          {
+            "loop": "L4_verifier",
+            "field": "access",
+            "problem": "verifier says paid_plan vs agent self_serve_free"
+          },
+          {
+            "loop": "L4_verifier",
+            "field": "verdict",
+            "problem": "verifier says build_with_friction vs agent build_now"
+          }
+        ],
+        "verifier": {
+          "auth_methods": [
+            "oauth2",
+            "bearer_token"
+          ],
+          "auth_primary": "oauth2",
+          "access_tier": "paid_plan",
+          "api_types": [
+            "rest",
+            "graphql"
+          ],
+          "mcp": "community_only",
+          "verdict": "build_with_friction",
+          "reasons": {
+            "auth": "Magento Commerce exposes OAuth 2.0 (integration tokens) and bearer tokens for API access; no API key or basic auth is documented.",
+            "access": "The platform is a paid SaaS/Cloud service; developers must obtain credentials through a paid plan or trial, not free self‑serve.",
+            "mcp": "MCP servers are provided by third‑party extensions (Freento, miniOrange) and are not officially published by Adobe.",
+            "verdict": "A developer can build against the public REST/GraphQL APIs, but must first acquire paid credentials, so the process has friction."
+          },
+          "_model": "openai/gpt-oss-20b"
+        },
+        "autofix": []
+      },
+      {
+        "round": 1,
+        "queries": [
+          "Magento API access requirements plan",
+          "Magento developer account API key free OR partner OR enterprise"
+        ],
+        "new_sources": [
+          "https://developer.adobe.com/commerce",
+          "https://developer.adobe.com/commerce/marketplace/guides/eqp/v1",
+          "https://developer.adobe.com/commerce/marketplace/guides/eqp/v1/access-keys",
+          "https://developer.adobe.com/commerce/marketplace/guides/eqp/v1/auth",
+          "https://developer.adobe.com/commerce/php/architecture/technical-vision/web-api"
+        ],
+        "change_log": "Restored access_tier to self_serve_free and verdict to build_now as Magento Open Source is freely available and public APIs are accessible for development.",
+        "issues": [],
+        "verifier": {
+          "auth_methods": [
+            "basic",
+            "bearer_token"
+          ],
+          "auth_primary": "bearer_token",
+          "access_tier": "self_serve_free",
+          "api_types": [
+            "rest"
+          ],
+          "mcp": "official",
+          "verdict": "build_now",
+          "reasons": {
+            "auth": "The API requires HTTP Basic Authentication to obtain a session token, then uses that token as a Bearer header for subsequent requests. No OAuth2 or other methods are documented.",
+            "access": "API access keys are self‑serviced and available to all developers for both production and sandbox (sandbox only for partners). No paid plan or approval is required.",
+            "mcp": "Adobe publishes the Marketplace EQP API documentation and endpoints on its own domain, making it an official MCP.",
+            "verdict": "Public documentation exists, credentials can be generated by any developer, and the API is RESTful, so a toolkit can be built today."
+          },
+          "_model": "openai/gpt-oss-20b"
+        },
+        "autofix": []
+      }
+    ],
+    "catalog": {
+      "in_catalog": false,
+      "checked": [
+        "magento",
+        "adobecommerce"
+      ]
+    },
+    "changed_fields": [],
+    "field_status": {
+      "auth": "verified",
+      "access": "confirmed_after_recheck",
+      "api": "verified",
+      "mcp": "verified",
+      "verdict": "confirmed_after_recheck"
+    },
+    "needs_human": [],
+    "before": {
+      "auth_methods": [
+        "oauth2",
+        "bearer_token",
+        "basic"
+      ],
+      "auth_primary": "oauth2",
+      "access_tier": "self_serve_free",
+      "access_notes": "Magento Open Source is free to download and run locally; Adobe Commerce offers developer environments.",
+      "api_types": [
+        "rest",
+        "graphql",
+        "soap"
+      ],
+      "api_breadth": "broad",
+      "api_notes": "Comprehensive REST, GraphQL, and SOAP APIs covering products, categories, orders, customers, inventory, and carts.",
+      "mcp": "community_only",
+      "mcp_url": "https://commercemarketplace.adobe.com/freento-module-mcp.html",
+      "verdict": "build_now",
+      "blocker": "none",
+      "blocker_notes": "Fully open-source and self-hostable with broad public APIs."
+    },
+    "seconds": 60.7
+  }
+}

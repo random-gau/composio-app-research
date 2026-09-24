@@ -1,0 +1,164 @@
+{
+  "one_liner": "All-in-one marketing platform for sales funnels, email marketing, and online courses.",
+  "auth_methods": [
+    "api_key"
+  ],
+  "auth_primary": "api_key",
+  "auth_notes": "Attach your API key to the X-API-Key header of each request.",
+  "access_tier": "self_serve_free",
+  "access_notes": "Sign up for a free account and generate an API key from profile settings.",
+  "api_types": [
+    "rest"
+  ],
+  "api_breadth": "moderate",
+  "api_notes": "REST API covering contacts, tags, and core resources via api.systeme.io/api.",
+  "mcp": "official",
+  "mcp_url": "https://developer.systeme.io/docs/mcp-server",
+  "verdict": "build_now",
+  "blocker": "none",
+  "blocker_notes": "Public REST API with self-serve free account creation and API keys.",
+  "evidence": {
+    "auth": {
+      "url": "https://developer.systeme.io/reference",
+      "quote": "To authenticate with the Systeme.io Public API, your only option right now is to attach your API key to the X-API-Key header of each request.",
+      "check": "ok"
+    },
+    "access": {
+      "url": "https://systeme.io",
+      "quote": "Get your free account now! Click here Free forever No credit card required",
+      "check": "ok"
+    },
+    "api": {
+      "url": "https://developer.systeme.io/reference",
+      "quote": "Our API serves as a bridge, enabling developers to interact with Systeme's core functionalities programmatically. It is meticulously designed to offer a seamless integration experience, allowing you to manage contacts, tags, and a variety of other operations integral to our platform. Adhering to RESTful conventions",
+      "check": "ok"
+    },
+    "mcp": {
+      "url": "https://aide.systeme.io/article/10195-comment-utiliser-le-protocole-mcp-model-context-protocol-avec-systemeio",
+      "quote": "Pour plus de détails techniques, veuillez consulter notre documentation officielle MCP : https://developer.systeme.io/docs/mcp-server",
+      "check": "ok"
+    },
+    "verdict": {
+      "url": "https://systeme.io",
+      "quote": "Get your free account now! Click here Free forever No credit card required",
+      "check": "ok"
+    }
+  },
+  "confidence": {
+    "auth": 5.0,
+    "access": 5.0,
+    "api": 5.0,
+    "mcp": 5.0,
+    "verdict": 5.0
+  },
+  "_model": "gemini-3.5-flash-lite",
+  "status": "ok",
+  "id": 37,
+  "name": "systeme.io",
+  "category": "Marketing Ads Email & Social",
+  "hint": "systeme.io (funnel builder)",
+  "sources": [
+    {
+      "url": "https://systeme.io",
+      "via": "direct",
+      "chars": 2109
+    },
+    {
+      "url": "https://aide.systeme.io/article/10195-comment-utiliser-le-protocole-mcp-model-context-protocol-avec-systemeio",
+      "via": "direct",
+      "chars": 7357
+    },
+    {
+      "url": "https://developer.systeme.io/docs/webhooks",
+      "via": "direct",
+      "chars": 8134
+    },
+    {
+      "url": "https://developer.systeme.io/reference",
+      "via": "direct",
+      "chars": 6407
+    },
+    {
+      "url": "https://developer.systeme.io/reference/api",
+      "via": "direct",
+      "chars": 6407
+    },
+    {
+      "url": "https://developer.systeme.io/reference/api_contacts_get_collection-1",
+      "via": "composio_fetch",
+      "chars": 15372
+    }
+  ],
+  "queries": [
+    "systeme.io API authentication developer docs",
+    "systeme.io API access pricing plan developer",
+    "systeme.io MCP server"
+  ],
+  "seconds": 39.6,
+  "verification": {
+    "initial_issues": [],
+    "final_issues": [],
+    "rounds": [
+      {
+        "round": 0,
+        "issues": [],
+        "verifier": {
+          "auth_methods": [
+            "api_key"
+          ],
+          "auth_primary": "api_key",
+          "access_tier": "self_serve_free",
+          "api_types": [
+            "rest"
+          ],
+          "mcp": "official",
+          "verdict": "build_now",
+          "reasons": {
+            "auth": "Public API uses an API key for authentication, as documented in the 'Getting Started' section of the public API docs.",
+            "access": "Developers can generate a public API key from their account settings after signing up for a free account, allowing self-serve free access.",
+            "mcp": "The MCP server is documented and available at https://developer.systeme.io/docs/mcp-server, indicating an official MCP implementation.",
+            "verdict": "All necessary documentation and free credentials are available, enabling immediate development."
+          },
+          "_model": "openai/gpt-oss-20b"
+        },
+        "autofix": []
+      }
+    ],
+    "catalog": {
+      "in_catalog": false,
+      "checked": [
+        "systemeio",
+        "systeme",
+        "systeme_io"
+      ]
+    },
+    "changed_fields": [],
+    "field_status": {
+      "auth": "verified",
+      "access": "verified",
+      "api": "verified",
+      "mcp": "verified",
+      "verdict": "verified"
+    },
+    "needs_human": [],
+    "before": {
+      "auth_methods": [
+        "api_key"
+      ],
+      "auth_primary": "api_key",
+      "access_tier": "self_serve_free",
+      "access_notes": "Sign up for a free account and generate an API key from profile settings.",
+      "api_types": [
+        "rest"
+      ],
+      "api_breadth": "moderate",
+      "api_notes": "REST API covering contacts, tags, and core resources via api.systeme.io/api.",
+      "mcp": "official",
+      "mcp_url": "https://developer.systeme.io/docs/mcp-server",
+      "verdict": "build_now",
+      "blocker": "none",
+      "blocker_notes": "Public REST API with self-serve free account creation and API keys."
+    },
+    "seconds": 16.7
+  }
+}

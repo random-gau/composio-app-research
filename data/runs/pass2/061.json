@@ -1,0 +1,350 @@
+{
+  "one_liner": "Developer platform for version control, collaboration, CI/CD, and project management.",
+  "auth_methods": [
+    "oauth2",
+    "bearer_token",
+    "basic",
+    "jwt_or_signed"
+  ],
+  "auth_primary": "bearer_token",
+  "auth_notes": "Supports OAuth2, personal access tokens (bearer), and GitHub App authentication.",
+  "access_tier": "self_serve_free",
+  "access_notes": "Free developer accounts and public APIs are available with self-serve signup.",
+  "api_types": [
+    "rest",
+    "graphql"
+  ],
+  "api_breadth": "broad",
+  "api_notes": "Comprehensive REST and GraphQL APIs covering repos, issues, pull requests, users, and organization settings.",
+  "mcp": "official",
+  "mcp_url": "https://github.com/github/github-mcp-server",
+  "verdict": "build_now",
+  "blocker": "none",
+  "blocker_notes": "Publicly documented REST/GraphQL APIs and self-serve developer accounts allow immediate integration.",
+  "evidence": {
+    "auth": {
+      "url": "https://docs.github.com/en/rest/authentication",
+      "quote": "You can authenticate to the REST API to access more endpoints and have a higher rate limit.",
+      "check": "ok"
+    },
+    "access": {
+      "url": "https://docs.github.com/rest",
+      "quote": "Create integrations, retrieve data, and automate your workflows with the GitHub REST API.",
+      "check": "ok"
+    },
+    "api": {
+      "url": "https://docs.github.com/rest",
+      "parseable": true,
+      "quote": "Create integrations, retrieve data, and automate your workflows with the GitHub REST API.",
+      "check": "ok"
+    },
+    "mcp": {
+      "url": "https://docs.github.com/en/copilot/concepts/context/mcp",
+      "quote": "The GitHub MCP server is a Model Context Protocol (MCP) server provided and maintained by GitHub.",
+      "check": "ok"
+    },
+    "verdict": {
+      "url": null,
+      "quote": null
+    }
+  },
+  "confidence": {
+    "auth": 0.95,
+    "access": 0.95,
+    "api": 0.95,
+    "mcp": 0.8,
+    "verdict": 0.95
+  },
+  "_model": "gemini-3.5-flash-lite",
+  "status": "ok",
+  "id": 61,
+  "name": "GitHub",
+  "category": "Developer Infra & Data",
+  "hint": "docs.github.com/rest",
+  "sources": [
+    {
+      "url": "https://docs.github.com/rest",
+      "via": "direct",
+      "chars": 1804
+    },
+    {
+      "url": "https://docs.github.com/en/apps/oauth-apps/building-oauth-apps/authenticating-to-the-rest-api-with-an-oauth-app?apiVersion=2022-11-28",
+      "via": "direct",
+      "chars": 15639
+    },
+    {
+      "url": "https://docs.github.com/en/enterprise-cloud@latest/rest/using-the-rest-api/rate-limits-for-the-rest-api",
+      "via": "direct",
+      "chars": 11398
+    },
+    {
+      "url": "https://docs.github.com/en/enterprise-cloud@latest/rest/using-the-rest-api/troubleshooting-the-rest-api?apiVersion=2026-03-10",
+      "via": "direct",
+      "chars": 13404
+    },
+    {
+      "url": "https://docs.github.com/en/rest/authentication",
+      "via": "composio_fetch",
+      "chars": 1145
+    },
+    {
+      "url": "https://docs.github.com/en/rest/authentication/authenticating-to-the-rest-api?apiVersion=2026-03-10",
+      "via": "direct",
+      "chars": 9857
+    },
+    {
+      "url": "https://developer.github.com/enterprise/2.2/program",
+      "via": "verification"
+    },
+    {
+      "url": "https://docs.github.com/en/apps/creating-github-apps/authenticating-with-a-github-app/generating-an-installation-access-token-for-a-github-app",
+      "via": "verification"
+    },
+    {
+      "url": "https://docs.github.com/en/apps/creating-github-apps/registering-a-github-app/choosing-permissions-for-a-github-app",
+      "via": "verification"
+    },
+    {
+      "url": "https://docs.github.com/en/copilot/concepts/context/mcp",
+      "via": "verification"
+    },
+    {
+      "url": "https://github.com/github/github-mcp-server?locale=en-US",
+      "via": "verification"
+    },
+    {
+      "url": "https://github.blog/open-source/maintainers/why-we-open-sourced-our-mcp-server-and-what-it-means-for-you",
+      "via": "verification"
+    },
+    {
+      "url": "https://github.com/github/docs/blob/main/content/copilot/how-tos/provide-context/use-mcp/set-up-the-github-mcp-server.md",
+      "via": "verification"
+    },
+    {
+      "url": "https://docs.github.com/en/copilot/concepts/context/mcp",
+      "via": "verification"
+    },
+    {
+      "url": "https://github.com/Github/github-mcp-server",
+      "via": "verification"
+    },
+    {
+      "url": "https://github.com/github/github-mcp-server/blob/main/docs/host-integration.md",
+      "via": "verification"
+    },
+    {
+      "url": "https://github.com/s2005/mcp-github-server",
+      "via": "verification"
+    }
+  ],
+  "queries": [
+    "GitHub API authentication developer docs",
+    "GitHub API access pricing plan developer",
+    "GitHub MCP server"
+  ],
+  "seconds": 53.2,
+  "verification_queries": [
+    "GitHub API access requirements plan",
+    "GitHub developer account API key free OR partner OR enterprise",
+    "GitHub MCP server model context protocol",
+    "GitHub MCP server model context protocol"
+  ],
+  "verification": {
+    "initial_issues": [
+      {
+        "loop": "L1_evidence",
+        "field": "access",
+        "problem": "no evidence cited"
+      },
+      {
+        "loop": "L5_mcp_probe",
+        "field": "mcp",
+        "problem": "possible official MCP found: ['https://github.com/github/github-mcp-server?locale=en-US', 'https://github.blog/open-source/maintainers/why-we-open-sourced-our-mcp-server-and-what-it-means-for-you']",
+        "urls": [
+          "https://github.com/github/github-mcp-server?locale=en-US",
+          "https://github.blog/open-source/maintainers/why-we-open-sourced-our-mcp-server-and-what-it-means-for-you",
+          "https://github.com/github/docs/blob/main/content/copilot/how-tos/provide-context/use-mcp/set-up-the-github-mcp-server.md"
+        ]
+      }
+    ],
+    "final_issues": [],
+    "rounds": [
+      {
+        "round": 0,
+        "issues": [
+          {
+            "loop": "L1_evidence",
+            "field": "access",
+            "problem": "no evidence cited"
+          },
+          {
+            "loop": "L5_mcp_probe",
+            "field": "mcp",
+            "problem": "possible official MCP found: ['https://github.com/github/github-mcp-server?locale=en-US', 'https://github.blog/open-source/maintainers/why-we-open-sourced-our-mcp-server-and-what-it-means-for-you']",
+            "urls": [
+              "https://github.com/github/github-mcp-server?locale=en-US",
+              "https://github.blog/open-source/maintainers/why-we-open-sourced-our-mcp-server-and-what-it-means-for-you",
+              "https://github.com/github/docs/blob/main/content/copilot/how-tos/provide-context/use-mcp/set-up-the-github-mcp-server.md"
+            ]
+          }
+        ],
+        "verifier": {
+          "auth_methods": [
+            "oauth2",
+            "api_key",
+            "bearer_token",
+            "jwt_or_signed",
+            "none",
+            "other"
+          ],
+          "auth_primary": "oauth2",
+          "access_tier": "unknown",
+          "api_types": [
+            "rest",
+            "graphql",
+            "soap",
+            "websocket",
+            "sdk_or_cli_only",
+            "none"
+          ],
+          "mcp": "unknown",
+          "verdict": "unknown",
+          "reasons": {},
+          "_model": "allam-2-7b"
+        },
+        "autofix": []
+      },
+      {
+        "round": 1,
+        "queries": [
+          "GitHub API access requirements plan",
+          "GitHub developer account API key free OR partner OR enterprise",
+          "GitHub MCP server model context protocol"
+        ],
+        "new_sources": [
+          "https://docs.github.com/rest",
+          "https://developer.github.com/enterprise/2.2/program",
+          "https://docs.github.com/en/apps/creating-github-apps/authenticating-with-a-github-app/generating-an-installation-access-token-for-a-github-app",
+          "https://docs.github.com/en/apps/creating-github-apps/registering-a-github-app/choosing-permissions-for-a-github-app",
+          "https://docs.github.com/en/copilot/concepts/context/mcp",
+          "https://github.com/github/github-mcp-server?locale=en-US",
+          "https://github.blog/open-source/maintainers/why-we-open-sourced-our-mcp-server-and-what-it-means-for-you",
+          "https://github.com/github/docs/blob/main/content/copilot/how-tos/provide-context/use-mcp/set-up-the-github-mcp-server.md"
+        ],
+        "change_log": "Set access tier to self_serve_free based on standard GitHub developer account documentation and updated mcp to official based on GitHub's official open-source MCP server.",
+        "issues": [
+          {
+            "loop": "L4_verifier",
+            "field": "mcp",
+            "problem": "verifier says none_found vs agent official"
+          }
+        ],
+        "verifier": {
+          "auth_methods": [
+            "oauth2",
+            "bearer_token",
+            "basic",
+            "jwt_or_signed"
+          ],
+          "auth_primary": "oauth2",
+          "access_tier": "self_serve_free",
+          "api_types": [
+            "rest",
+            "graphql"
+          ],
+          "mcp": "none_found",
+          "verdict": "build_now",
+          "reasons": {
+            "auth": "GitHub REST and GraphQL APIs support OAuth2, personal access tokens (bearer), basic auth (deprecated but documented), and JWT for GitHub Apps (jwt_or_signed).",
+            "access": "Developers can sign up for a free GitHub account and immediately obtain personal access tokens or OAuth apps without approval, meeting the self_serve_free tier.",
+            "mcp": "No official MCP server is documented by GitHub; community‑only or none found.",
+            "verdict": "Public REST/GraphQL docs are available, authentication is self‑serve, and the API breadth is broad, enabling a toolkit to be built today."
+          },
+          "_model": "openai/gpt-oss-20b"
+        },
+        "autofix": []
+      },
+      {
+        "round": 2,
+        "queries": [
+          "GitHub API access requirements plan",
+          "GitHub developer account API key free OR partner OR enterprise",
+          "GitHub MCP server model context protocol",
+          "GitHub MCP server model context protocol"
+        ],
+        "new_sources": [
+          "https://docs.github.com/rest",
+          "https://docs.github.com/en/copilot/concepts/context/mcp",
+          "https://github.com/Github/github-mcp-server",
+          "https://github.com/github/github-mcp-server/blob/main/docs/host-integration.md",
+          "https://github.com/s2005/mcp-github-server"
+        ],
+        "change_log": "Corrected mcp to official as GitHub maintains an official GitHub MCP server.",
+        "issues": [],
+        "verifier": {
+          "auth_methods": [
+            "oauth2",
+            "bearer_token"
+          ],
+          "auth_primary": "oauth2",
+          "access_tier": "self_serve_free",
+          "api_types": [
+            "rest"
+          ],
+          "mcp": "official",
+          "verdict": "build_now",
+          "reasons": {
+            "auth": "GitHub REST API supports OAuth2 and Personal Access Tokens (bearer tokens) as documented in the public API docs and MCP server integration docs.",
+            "access": "GitHub provides free API access with a personal account and PAT, allowing developers to self‑serve credentials at no cost.",
+            "mcp": "GitHub publishes an official MCP server implementation (github/github-mcp-server) and documents it in the MCP registry.",
+            "verdict": "All required public documentation and free credentials are available, enabling a toolkit to be built today."
+          },
+          "_model": "openai/gpt-oss-20b"
+        },
+        "autofix": []
+      }
+    ],
+    "catalog": {
+      "in_catalog": true,
+      "slug": "github",
+      "auth": [
+        "oauth2"
+      ],
+      "tools_count": 874
+    },
+    "changed_fields": [
+      "mcp"
+    ],
+    "field_status": {
+      "auth": "verified",
+      "access": "confirmed_after_recheck",
+      "api": "verified",
+      "mcp": "corrected",
+      "verdict": "verified"
+    },
+    "needs_human": [],
+    "before": {
+      "auth_methods": [
+        "oauth2",
+        "bearer_token",
+        "basic",
+        "jwt_or_signed"
+      ],
+      "auth_primary": "bearer_token",
+      "access_tier": "self_serve_free",
+      "access_notes": "Free developer accounts and public APIs are available with self-serve signup.",
+      "api_types": [
+        "rest",
+        "graphql"
+      ],
+      "api_breadth": "broad",
+      "api_notes": "Comprehensive REST and GraphQL APIs covering repos, issues, pull requests, users, and organization settings.",
+      "mcp": "none_found",
+      "mcp_url": null,
+      "verdict": "build_now",
+      "blocker": "none",
+      "blocker_notes": "Publicly documented REST/GraphQL APIs and self-serve developer accounts allow immediate integration."
+    },
+    "seconds": 106.6
+  }
+}

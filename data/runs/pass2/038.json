@@ -1,0 +1,294 @@
+{
+  "one_liner": "Manage pins, boards, ads, and product catalogs on Pinterest via API.",
+  "auth_methods": [
+    "oauth2"
+  ],
+  "auth_primary": "oauth2",
+  "auth_notes": "OAuth 2.0 authorization code flow is used to obtain access tokens, with temporary test tokens available for quick testing.",
+  "access_tier": "self_serve_free",
+  "access_notes": "Creating a developer account and requesting trial access is free, though applications undergo a review process taking 1-3 business days.",
+  "api_types": [
+    "rest"
+  ],
+  "api_breadth": "broad",
+  "api_notes": "Covers content management, ads, analytics, conversions, and shopping catalogs via REST API v5.",
+  "mcp": "none_found",
+  "mcp_url": null,
+  "verdict": "build_with_friction",
+  "blocker": "app_review",
+  "blocker_notes": "Apps require review and approval before gaining trial or standard API access.",
+  "evidence": {
+    "auth": {
+      "url": "https://developers.pinterest.com/docs/getting-started/authentication",
+      "quote": "Build a working authentication flow based on OAuth 2\nFor full details on the OAuth process, review our guide on\nScopes & Authentication",
+      "check": "ok"
+    },
+    "access": {
+      "url": "https://developers.pinterest.com/docs/getting-started/connect-app",
+      "quote": "Select Connect app and complete our request form with your app information. Submit your request for trial access. Application requests are reviewed each business day. As soon as your app has been reviewed you will receive an email notification letting you know if your app has been approved or denied access.",
+      "check": "ok"
+    },
+    "api": {
+      "url": "https://developers.pinterest.com/docs/overview/welcome",
+      "ico": null,
+      "quote": "Use Transport Layer Security (TLS) version 1.2 or later when calling the Pinterest API v5, as the 1.0 and 1.1 protocols are deprecated.",
+      "check": "ok"
+    },
+    "mcp": {
+      "url": null,
+      "quote": null
+    },
+    "verdict": {
+      "url": "https://developers.pinterest.com/docs/getting-started/connect-app",
+      "quote": "If your app is approved for Trial access, you can log into your account and manage your app details on your My apps page.",
+      "check": "ok"
+    }
+  },
+  "confidence": {
+    "auth": 0.9,
+    "access": 0.9,
+    "api": 0.9,
+    "mcp": 0.8,
+    "verdict": 0.9
+  },
+  "_model": "gemini-3.5-flash-lite",
+  "status": "ok",
+  "id": 38,
+  "name": "Pinterest",
+  "category": "Marketing Ads Email & Social",
+  "hint": "developers.pinterest.com",
+  "sources": [
+    {
+      "url": "https://developers.pinterest.com",
+      "via": "direct",
+      "chars": 1262
+    },
+    {
+      "url": "https://developers.pinterest.com/docs/faqs/faqs",
+      "via": "direct",
+      "chars": 15167
+    },
+    {
+      "url": "https://developers.pinterest.com/docs/getting-started/authentication",
+      "via": "direct",
+      "chars": 3252
+    },
+    {
+      "url": "https://developers.pinterest.com/docs/key-concepts/access-tiers",
+      "via": "direct",
+      "chars": 5386
+    },
+    {
+      "url": "https://developers.pinterest.com/docs/key-concepts/best-practices",
+      "via": "direct",
+      "chars": 8236
+    },
+    {
+      "url": "https://developers.pinterest.com/docs/overview/welcome",
+      "via": "direct",
+      "chars": 2637
+    },
+    {
+      "url": "https://developers.pinterest.com/docs/getting-started/connect-app",
+      "via": "verification"
+    },
+    {
+      "url": "https://developers.pinterest.com/docs/getting-started/connect-app",
+      "via": "verification"
+    }
+  ],
+  "queries": [
+    "Pinterest API authentication developer docs",
+    "Pinterest API access pricing plan developer",
+    "Pinterest MCP server"
+  ],
+  "seconds": 40.3,
+  "verification_queries": [
+    "Pinterest API access requirements plan",
+    "Pinterest developer account API key free OR partner OR enterprise",
+    "Pinterest API access requirements plan",
+    "Pinterest developer account API key free OR partner OR enterprise"
+  ],
+  "verification": {
+    "initial_issues": [
+      {
+        "loop": "L4_verifier",
+        "field": "access",
+        "problem": "verifier says self_serve_trial vs agent self_serve_free"
+      },
+      {
+        "loop": "L4_verifier",
+        "field": "verdict",
+        "problem": "verifier says build_now vs agent build_with_friction"
+      }
+    ],
+    "final_issues": [
+      {
+        "loop": "L4_verifier",
+        "field": "access",
+        "problem": "verifier says self_serve_trial vs agent self_serve_free"
+      }
+    ],
+    "rounds": [
+      {
+        "round": 0,
+        "issues": [
+          {
+            "loop": "L4_verifier",
+            "field": "access",
+            "problem": "verifier says self_serve_trial vs agent self_serve_free"
+          },
+          {
+            "loop": "L4_verifier",
+            "field": "verdict",
+            "problem": "verifier says build_now vs agent build_with_friction"
+          }
+        ],
+        "verifier": {
+          "auth_methods": [
+            "oauth2"
+          ],
+          "auth_primary": "oauth2",
+          "access_tier": "self_serve_trial",
+          "api_types": [
+            "rest"
+          ],
+          "mcp": "unknown",
+          "verdict": "build_now",
+          "reasons": {
+            "auth": "Pinterest’s public developer docs describe OAuth 2.0 as the sole authentication mechanism for the API, with no mention of API keys, bearer tokens, or other methods.",
+            "access": "Developers can sign up for a Pinterest developer account and request trial access, which is granted after a brief review. Trial access provides a sandbox token for testing, and the documentation explicitly states that this is a self‑serve option.",
+            "mcp": "The site advertises that a Pinterest MCP is “on the way” but does not provide a published MCP server or documentation, so no official MCP is currently available.",
+            "verdict": "All required components—public documentation, a self‑serve trial access tier, OAuth 2.0 authentication, and a REST API—are available, allowing a developer to build a working integration today."
+          },
+          "_model": "openai/gpt-oss-20b"
+        },
+        "autofix": []
+      },
+      {
+        "round": 1,
+        "queries": [
+          "Pinterest API access requirements plan",
+          "Pinterest developer account API key free OR partner OR enterprise"
+        ],
+        "new_sources": [
+          "https://developers.pinterest.com",
+          "https://developers.pinterest.com/docs/faqs/faqs",
+          "https://developers.pinterest.com/docs/getting-started/connect-app",
+          "https://developers.pinterest.com/docs/key-concepts/access-tiers",
+          "https://developers.pinterest.com/docs/key-concepts/best-practices"
+        ],
+        "change_log": "Updated access_tier to self_serve_trial and verdict to build_with_friction because Pinterest requires an app review/approval step to obtain trial credentials, introducing build friction despite the free tier.",
+        "issues": [
+          {
+            "loop": "L4_verifier",
+            "field": "access",
+            "problem": "verifier says approval_or_review vs agent self_serve_trial"
+          }
+        ],
+        "verifier": {
+          "auth_methods": [
+            "oauth2"
+          ],
+          "auth_primary": "oauth2",
+          "access_tier": "approval_or_review",
+          "api_types": [
+            "rest"
+          ],
+          "mcp": "unknown",
+          "verdict": "build_with_friction",
+          "reasons": {
+            "auth": "Pinterest API uses OAuth 2.0 for authentication, as described in the Connect app guide.",
+            "access": "Access requires a developer account and approval for trial access; production requires Standard access, so credentials are not self‑serve free.",
+            "mcp": "Pinterest MCP is announced as coming soon but not yet officially released or documented.",
+            "verdict": "The API is publicly documented and can be used after approval, but the need for an approval step adds friction to building a tool today."
+          },
+          "_model": "openai/gpt-oss-20b"
+        },
+        "autofix": []
+      },
+      {
+        "round": 2,
+        "queries": [
+          "Pinterest API access requirements plan",
+          "Pinterest developer account API key free OR partner OR enterprise",
+          "Pinterest API access requirements plan",
+          "Pinterest developer account API key free OR partner OR enterprise"
+        ],
+        "new_sources": [
+          "https://developers.pinterest.com",
+          "https://developers.pinterest.com/docs/faqs/faqs",
+          "https://developers.pinterest.com/docs/getting-started/connect-app",
+          "https://developers.pinterest.com/docs/key-concepts/access-tiers",
+          "https://developers.pinterest.com/docs/key-concepts/best-practices"
+        ],
+        "change_log": "Updated access tier to self_serve_free since account and trial sandbox creation have no financial cost, while maintaining build_with_friction due to the review requirement.",
+        "issues": [
+          {
+            "loop": "L4_verifier",
+            "field": "access",
+            "problem": "verifier says self_serve_trial vs agent self_serve_free"
+          }
+        ],
+        "verifier": {
+          "auth_methods": [
+            "oauth2"
+          ],
+          "auth_primary": "oauth2",
+          "access_tier": "self_serve_trial",
+          "api_types": [
+            "rest"
+          ],
+          "mcp": "unknown",
+          "verdict": "build_now",
+          "reasons": {
+            "auth": "Pinterest’s public docs describe OAuth 2.0 for authentication, with access and refresh tokens.",
+            "access": "Developers can sign up, create a business account, and request trial access which is self‑serve; approval is required but typically granted within a few business days.",
+            "mcp": "Pinterest mentions an MCP “on the way” but no official MCP server is documented yet, so status is unknown.",
+            "verdict": "Public REST API, OAuth 2.0, and self‑serve trial credentials are available, enabling a toolkit to be built today."
+          },
+          "_model": "openai/gpt-oss-20b"
+        },
+        "autofix": []
+      }
+    ],
+    "catalog": {
+      "in_catalog": true,
+      "slug": "pinterest",
+      "auth": [
+        "oauth2"
+      ],
+      "tools_count": 26
+    },
+    "changed_fields": [],
+    "field_status": {
+      "auth": "verified",
+      "access": "needs_human",
+      "api": "verified",
+      "mcp": "verified",
+      "verdict": "confirmed_after_recheck"
+    },
+    "needs_human": [
+      "access"
+    ],
+    "before": {
+      "auth_methods": [
+        "oauth2"
+      ],
+      "auth_primary": "oauth2",
+      "access_tier": "self_serve_free",
+      "access_notes": "Free developer account creation and application submission required to get trial access credentials.",
+      "api_types": [
+        "rest"
+      ],
+      "api_breadth": "broad",
+      "api_notes": "Covers content management, ads, analytics, conversions, and shopping catalogs via REST API v5.",
+      "mcp": "none_found",
+      "mcp_url": null,
+      "verdict": "build_with_friction",
+      "blocker": "app_review",
+      "blocker_notes": "Apps require review and approval before gaining trial or standard API access."
+    },
+    "seconds": 76.2
+  }
+}

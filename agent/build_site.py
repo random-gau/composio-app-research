@@ -1,4 +1,4 @@
-"""Build the case-study page (site/index.html) and machine-readable results (site/results.json).
+"""Build the case-study page (docs/index.html) and machine-readable results (docs/results.json).
 
 Everything on the page is computed from data/runs/pass2.json, data/runs/pass1.json,
 data/accuracy.json and data/composio_catalog.json, so the page can't drift from the data.
@@ -19,7 +19,7 @@ sys.path.insert(0, __file__.rsplit("/", 1)[0])
 
 from common import DATA, ROOT, RUNS, read_json, write_json  # noqa: E402
 
-SITE = ROOT / "site"
+SITE = ROOT / "docs"  # GitHub Pages serves /docs on main
 TEMPLATE = Path(__file__).resolve().parent / "site_template.html"
 
 
@@ -44,7 +44,23 @@ def slim(r: Dict[str, Any]) -> Dict[str, Any]:
         "before": v.get("before", {}),
         "sources": [s["url"] for s in r.get("sources", [])][:12],
         "human_override": r.get("human_override"),
+        "_rounds_meta": [{"verifier_model": (rd.get("verifier") or {}).get("_model") or "unavailable"} for rd in v.get("rounds", [])],
+        "_l4_skipped": bool(((v.get("rounds") or [{}])[0].get("verifier") or {}).get("error")),
     }
+
+
+def apply_docs_check(recs: List[Dict[str, Any]]) -> None:
+    """data/catalog_docs_check.csv: manual check of docs.composio.dev/toolkits/<slug> for apps the API listing missed."""
+    p = DATA / "catalog_docs_check.csv"
+    if not p.exists():
+        return
+    by_id = {r["id"]: r for r in recs}
+    for row in csv.DictReader(open(p, newline="")):
+        r = by_id.get(int(row["id"]))
+        if not r or (r.get("composio_catalog") or {}).get("in_catalog"):
+            continue
+        r["composio_catalog"] = {"in_catalog": row["docs_page"] == "exists", "slug": row["slug_tried"],
+                                 "via": "docs_page_check", "docs_page": row["docs_page"], "auth": []}
 
 
 def apply_overrides(recs: List[Dict[str, Any]]) -> None:
@@ -92,7 +108,10 @@ def stats(recs: List[Dict[str, Any]], p1: List[Dict[str, Any]]) -> Dict[str, Any
     in_cat = [r for r in recs if (r.get("composio_catalog") or {}).get("in_catalog")]
     s["in_catalog"] = len(in_cat)
     s["easy_wins_not_in_catalog"] = [r["name"] for r in recs if r["verdict"] == "build_now"
-                                     and not (r.get("composio_catalog") or {}).get("in_catalog")]
+                                     and (r.get("composio_catalog") or {}).get("docs_page") == "404"]
+    s["not_in_catalog_all"] = [r["name"] for r in recs if (r.get("composio_catalog") or {}).get("docs_page") == "404"]
+    s["catalog_unchecked"] = [r["name"] for r in recs if not (r.get("composio_catalog") or {}).get("in_catalog")
+                              and not (r.get("composio_catalog") or {}).get("docs_page")]
     s["outreach"] = [{"name": r["name"], "tier": r["access_tier"], "blocker": r["blocker"]} for r in recs
                      if r["access_tier"] in ("partner_or_sales", "approval_or_review")]
     # verification activity
@@ -110,6 +129,9 @@ def stats(recs: List[Dict[str, Any]], p1: List[Dict[str, Any]]) -> Dict[str, Any
                              and "no evidence" not in i["problem"])
     s["p1_no_evidence"] = sum(1 for r in recs for i in r["issues_initial"] if i["loop"] == "L1_evidence"
                               and "no evidence" in i["problem"])
+    s["verifier_models"] = Counter(rd.get("verifier_model") for r in recs for rd in r.get("_rounds_meta", []))
+    s["l4_skipped_apps"] = [r["name"] for r in recs if r.get("_l4_skipped")]
+    s["models_extract"] = Counter(r.get("_model") for r in p1)
     # pass-1 distribution for the before/after on the headline chart
     s["p1_verdict"] = Counter(r["verdict"] for r in p1)
     return json.loads(json.dumps(s))
@@ -119,6 +141,7 @@ def main() -> None:
     p2 = read_json(RUNS / "pass2.json")
     p1 = read_json(RUNS / "pass1.json")
     recs = [slim(r) for r in p2]
+    apply_docs_check(recs)
     apply_overrides(recs)
     acc = read_json(DATA / "accuracy.json") if (DATA / "accuracy.json").exists() else {}
     insights = read_json(DATA / "insights.json") if (DATA / "insights.json").exists() else {}
@@ -131,7 +154,7 @@ def main() -> None:
         "stats": s, "accuracy": acc.get("summary"), "apps": recs})
     html = TEMPLATE.read_text().replace("/*__DATA__*/null", json.dumps(payload, ensure_ascii=False).replace("</", "<\\/"))
     (SITE / "index.html").write_text(html)
-    print(f"built site/index.html ({len(html)//1024} KB) and site/results.json for {len(recs)} apps")
+    print(f"built docs/index.html ({len(html)//1024} KB) and docs/results.json for {len(recs)} apps")
 
 
 if __name__ == "__main__":

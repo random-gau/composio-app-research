@@ -1,0 +1,255 @@
+{
+  "one_liner": "Cloudflare provides web infrastructure, security, performance, and serverless developer services via a public API.",
+  "auth_methods": [
+    "api_key",
+    "bearer_token",
+    "oauth2"
+  ],
+  "auth_primary": "oauth2",
+  "auth_notes": "Cloudflare supports API tokens, API keys, and OAuth2 for remote MCP or API access.",
+  "access_tier": "self_serve_free",
+  "access_notes": "Cloudflare offers a free developer account and sandbox with self-serve credentials; no paid plan or approval required for basic API use.",
+  "api_types": [
+    "rest",
+    "graphql"
+  ],
+  "api_breadth": "broad",
+  "api_notes": "Comprehensive REST and GraphQL APIs covering DNS, Workers, R2, Zero Trust, and over 2,500 endpoints.",
+  "mcp": "official",
+  "mcp_url": "https://mcp.cloudflare.com/mcp",
+  "verdict": "build_now",
+  "blocker": "none",
+  "blocker_notes": "None. Fully self-serve with public REST/GraphQL APIs and official remote MCP servers.",
+  "evidence": {
+    "auth": {
+      "url": "https://developers.cloudflare.com/analytics/graphql-api/getting-started/authentication/graphql-client-headers",
+      "quote": "You can use Cloudflare Analytics API token authentication (recommended) or Cloudflare API key authentication.",
+      "check": "ok"
+    },
+    "access": {
+      "url": "https://developers.cloudflare.com/api",
+      "id": "API Reference | Cloudflare API",
+      "quote": "API Reference | Cloudflare API",
+      "check": "ok"
+    },
+    "api": {
+      "url": "https://developers.cloudflare.com/agents/model-context-protocol/cloudflare/servers-for-cloudflare",
+      "id": "Cloudflare's own MCP servers · Cloudflare Agents docs",
+      "quote": "Cloudflare API MCP server provides access to the entire — over 2,500 endpoints across DNS, Workers, R2, Zero Trust, and every other product",
+      "check": "ok"
+    },
+    "mcp": {
+      "url": "https://developers.cloudflare.com/agents/model-context-protocol/cloudflare/servers-for-cloudflare",
+      "quote": "Cloudflare runs a catalog of managed remote MCP servers which you can connect to using OAuth on clients like",
+      "check": "ok"
+    },
+    "verdict": {
+      "url": "https://developers.cloudflare.com/agents/model-context-protocol/cloudflare/servers-for-cloudflare",
+      "id": "Cloudflare's own MCP servers · Cloudflare Agents docs",
+      "quote": "Cloudflare runs a catalog of managed remote MCP servers which you can connect to using OAuth on clients like SDK that supports MCP",
+      "check": "ok"
+    }
+  },
+  "confidence": {
+    "auth": 0.9,
+    "access": 0.9,
+    "api": 0.9,
+    "mcp": 0.9,
+    "verdict": 0.9
+  },
+  "_model": "gemini-3.5-flash-lite",
+  "status": "ok",
+  "id": 64,
+  "name": "Cloudflare",
+  "category": "Developer Infra & Data",
+  "hint": "developers.cloudflare.com/api",
+  "sources": [
+    {
+      "url": "https://developers.cloudflare.com/api",
+      "via": "direct",
+      "chars": 200000
+    },
+    {
+      "url": "https://blog.cloudflare.com/thirteen-new-mcp-servers-from-cloudflare",
+      "via": "direct",
+      "chars": 15891
+    },
+    {
+      "url": "https://developers.cloudflare.com/agents/model-context-protocol",
+      "via": "direct",
+      "chars": 2877
+    },
+    {
+      "url": "https://developers.cloudflare.com/agents/model-context-protocol/cloudflare/servers-for-cloudflare",
+      "via": "direct",
+      "chars": 6221
+    },
+    {
+      "url": "https://developers.cloudflare.com/agents/model-context-protocol/guides/remote-mcp-server",
+      "via": "direct",
+      "chars": 13085
+    },
+    {
+      "url": "https://developers.cloudflare.com/analytics/graphql-api/getting-started/authentication/graphql-client-headers",
+      "via": "direct",
+      "chars": 1699
+    },
+    {
+      "url": "https://37731a98.preview.developers.cloudflare.com/fundamentals/api/get-started/create-token",
+      "via": "verification"
+    },
+    {
+      "url": "https://developers.cloudflare.com/api/node/resources/accounts/subresources/subscriptions/methods/create",
+      "via": "verification"
+    },
+    {
+      "url": "https://developers.cloudflare.com/api/python/resources/api_gateway/subresources/operations",
+      "via": "verification"
+    },
+    {
+      "url": "https://developers.cloudflare.com/api/resources/api_gateway/subresources/operations/methods/create",
+      "via": "verification"
+    }
+  ],
+  "queries": [
+    "Cloudflare API authentication developer docs",
+    "Cloudflare API access pricing plan developer",
+    "Cloudflare MCP server"
+  ],
+  "seconds": 53.4,
+  "verification_queries": [
+    "Cloudflare API access requirements plan",
+    "Cloudflare developer account API key free OR partner OR enterprise",
+    "Cloudflare API reference endpoints"
+  ],
+  "verification": {
+    "initial_issues": [
+      {
+        "loop": "L1_evidence",
+        "field": "access",
+        "problem": "no evidence cited"
+      },
+      {
+        "loop": "L1_evidence",
+        "field": "api",
+        "problem": "quote only partially matches page",
+        "url": "https://developers.cloudflare.com/agents/model-context-protocol/cloudflare/servers-for-cloudflare",
+        "match": 0.74
+      },
+      {
+        "loop": "L1_evidence",
+        "field": "verdict",
+        "problem": "no evidence cited"
+      }
+    ],
+    "final_issues": [],
+    "rounds": [
+      {
+        "round": 0,
+        "issues": [
+          {
+            "loop": "L1_evidence",
+            "field": "access",
+            "problem": "no evidence cited"
+          },
+          {
+            "loop": "L1_evidence",
+            "field": "api",
+            "problem": "quote only partially matches page",
+            "url": "https://developers.cloudflare.com/agents/model-context-protocol/cloudflare/servers-for-cloudflare",
+            "match": 0.74
+          },
+          {
+            "loop": "L1_evidence",
+            "field": "verdict",
+            "problem": "no evidence cited"
+          }
+        ],
+        "verifier": {
+          "auth_methods": [
+            "api_key",
+            "bearer_token",
+            "oauth2"
+          ],
+          "auth_primary": "oauth2",
+          "access_tier": "self_serve_free",
+          "api_types": [
+            "rest"
+          ],
+          "mcp": "official",
+          "verdict": "build_now",
+          "reasons": {
+            "auth": "Cloudflare’s API docs list API tokens (bearer token) and API keys; MCP uses OAuth for client authorization.",
+            "access": "Cloudflare offers a free developer account and sandbox with self‑serve credentials; no paid plan or approval required for basic API use.",
+            "mcp": "The MCP servers are published by Cloudflare and documented in the official Agents docs.",
+            "verdict": "All required documentation and free credentials are publicly available, enabling immediate development."
+          },
+          "_model": "openai/gpt-oss-20b"
+        },
+        "autofix": []
+      },
+      {
+        "round": 1,
+        "queries": [
+          "Cloudflare API access requirements plan",
+          "Cloudflare developer account API key free OR partner OR enterprise",
+          "Cloudflare API reference endpoints"
+        ],
+        "new_sources": [
+          "https://developers.cloudflare.com/api",
+          "https://37731a98.preview.developers.cloudflare.com/fundamentals/api/get-started/create-token",
+          "https://developers.cloudflare.com/api/node/resources/accounts/subresources/subscriptions/methods/create",
+          "https://developers.cloudflare.com/api/python/resources/api_gateway/subresources/operations",
+          "https://developers.cloudflare.com/api/resources/api_gateway/subresources/operations/methods/create"
+        ],
+        "change_log": "Updated evidence citations and exact quotes to match the provided source text for access, api, and verdict fields.",
+        "issues": [],
+        "verifier": {
+          "error": "Groq failed: HTTP 429: {\"error\":{\"message\":\"Rate limit reached for model `openai/gpt-oss-20b` in organization `org_01m2fd9xn8e3dtb9zfqc2jdhsc` service tier `on_demand` on tokens per minute (TPM): Limi"
+        },
+        "autofix": []
+      }
+    ],
+    "catalog": {
+      "in_catalog": true,
+      "slug": "cloudflare",
+      "auth": [
+        "api_key"
+      ],
+      "tools_count": 20
+    },
+    "changed_fields": [
+      "auth"
+    ],
+    "field_status": {
+      "auth": "corrected",
+      "access": "confirmed_after_recheck",
+      "api": "confirmed_after_recheck",
+      "mcp": "verified",
+      "verdict": "confirmed_after_recheck"
+    },
+    "needs_human": [],
+    "before": {
+      "auth_methods": [
+        "api_key",
+        "bearer_token",
+        "oauth2"
+      ],
+      "auth_primary": "bearer_token",
+      "access_tier": "self_serve_free",
+      "access_notes": "Sign up for a free developer account at no cost to get working API credentials.",
+      "api_types": [
+        "rest",
+        "graphql"
+      ],
+      "api_breadth": "broad",
+      "api_notes": "Comprehensive REST and GraphQL APIs covering DNS, Workers, R2, Zero Trust, and over 2,500 endpoints.",
+      "mcp": "official",
+      "mcp_url": "https://mcp.cloudflare.com/mcp",
+      "verdict": "build_now",
+      "blocker": "none",
+      "blocker_notes": "None. Fully self-serve with public REST/GraphQL APIs and official remote MCP servers."
+    },
+    "seconds": 140.2
+  }
+}

@@ -1,0 +1,168 @@
+{
+  "one_liner": "Cloud-hosted collaborative spreadsheet and database platform for organizing work and building apps.",
+  "auth_methods": [
+    "oauth2",
+    "bearer_token"
+  ],
+  "auth_primary": "oauth2",
+  "auth_notes": "Airtable supports both Personal Access Tokens and OAuth 2.0 access tokens passed via Bearer token authorization header.",
+  "access_tier": "self_serve_free",
+  "access_notes": "Free tier is available to sign up and test via self-serve developer credentials.",
+  "api_types": [
+    "rest"
+  ],
+  "api_breadth": "broad",
+  "api_notes": "REST API covering bases, tables, records, fields, and webhooks under api.airtable.com/v0.",
+  "mcp": "official",
+  "mcp_url": "https://airtable.com/developers",
+  "verdict": "build_now",
+  "blocker": "none",
+  "blocker_notes": "Public API is accessible with self-serve credentials and an official MCP server is provided.",
+  "evidence": {
+    "auth": {
+      "url": "https://airtable.com/developers/web/api/authentication",
+      "quote": "We currently support using personal access tokens and OAuth access tokens during the authentication process.",
+      "check": "ok"
+    },
+    "access": {
+      "url": "https://airtable.com/developers/web/api/billing-plans",
+      "quote": "Free Access to all \"Base Data\" endpoints except \"Views\" Public API limit is enforced.",
+      "check": "ok"
+    },
+    "api": {
+      "url": "https://airtable.com/developers/web/api/introduction",
+      "quote": "The Airtable API can be used to integrate your data in Airtable with any external system. The API closely follows REST semantics",
+      "check": "ok"
+    },
+    "mcp": {
+      "url": "https://airtable.com/developers",
+      "quote": "The Airtable MCP server gives agents your base's full structure — field types, relationships, and views — so they can make context-aware decisions.",
+      "check": "ok"
+    },
+    "verdict": {
+      "url": "https://airtable.com/developers",
+      "quote": "Any MCP-compatible tool can read, write, and query your bases through natural language, scoped to your existing permissions.",
+      "check": "ok"
+    }
+  },
+  "confidence": {
+    "auth": 1.0,
+    "access": 1.0,
+    "api": 1.0,
+    "mcp": 1.0,
+    "verdict": 1.0
+  },
+  "_model": "gemini-3.5-flash-lite",
+  "status": "ok",
+  "id": 72,
+  "name": "Airtable",
+  "category": "Productivity & PM",
+  "hint": "airtable.com/developers",
+  "sources": [
+    {
+      "url": "https://airtable.com/developers",
+      "via": "direct",
+      "chars": 3653
+    },
+    {
+      "url": "https://airtable.com/developers/web/api/authentication",
+      "via": "composio_fetch",
+      "chars": 3052
+    },
+    {
+      "url": "https://airtable.com/developers/web/api/billing-plans",
+      "via": "composio_fetch",
+      "chars": 918
+    },
+    {
+      "url": "https://airtable.com/developers/web/api/introduction",
+      "via": "composio_fetch",
+      "chars": 543
+    },
+    {
+      "url": "https://airtable.com/developers/web/api/list-records",
+      "via": "composio_fetch",
+      "chars": 8028
+    },
+    {
+      "url": "https://airtable.com/developers/web/api/oauth-reference",
+      "via": "composio_fetch",
+      "chars": 15136
+    }
+  ],
+  "queries": [
+    "Airtable API authentication developer docs",
+    "Airtable API access pricing plan developer",
+    "Airtable MCP server"
+  ],
+  "seconds": 46.3,
+  "verification": {
+    "initial_issues": [],
+    "final_issues": [],
+    "rounds": [
+      {
+        "round": 0,
+        "issues": [],
+        "verifier": {
+          "auth_methods": [
+            "bearer_token",
+            "oauth2"
+          ],
+          "auth_primary": "bearer_token",
+          "access_tier": "self_serve_free",
+          "api_types": [
+            "rest"
+          ],
+          "mcp": "official",
+          "verdict": "build_now",
+          "reasons": {
+            "auth": "Airtable uses bearer token authentication and supports OAuth access tokens.",
+            "access": "Free plan provides API access with no cost, allowing self-serve credentials.",
+            "mcp": "Airtable publishes an official MCP server for agents to interact with bases.",
+            "verdict": "Public API documentation and free credentials enable immediate toolkit development."
+          },
+          "_model": "openai/gpt-oss-20b"
+        },
+        "autofix": []
+      }
+    ],
+    "catalog": {
+      "in_catalog": true,
+      "slug": "airtable",
+      "auth": [
+        "api_key",
+        "oauth2"
+      ],
+      "tools_count": 25
+    },
+    "changed_fields": [],
+    "field_status": {
+      "auth": "verified",
+      "access": "verified",
+      "api": "verified",
+      "mcp": "verified",
+      "verdict": "verified"
+    },
+    "needs_human": [],
+    "before": {
+      "auth_methods": [
+        "oauth2",
+        "bearer_token"
+      ],
+      "auth_primary": "oauth2",
+      "access_tier": "self_serve_free",
+      "access_notes": "Free tier is available to sign up and test via self-serve developer credentials.",
+      "api_types": [
+        "rest"
+      ],
+      "api_breadth": "broad",
+      "api_notes": "REST API covering bases, tables, records, fields, and webhooks under api.airtable.com/v0.",
+      "mcp": "official",
+      "mcp_url": "https://airtable.com/developers",
+      "verdict": "build_now",
+      "blocker": "none",
+      "blocker_notes": "Public API is accessible with self-serve credentials and an official MCP server is provided."
+    },
+    "seconds": 18.3
+  }
+}

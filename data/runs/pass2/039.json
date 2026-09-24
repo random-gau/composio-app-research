@@ -1,0 +1,247 @@
+{
+  "one_liner": "Create posts, retrieve media and profiles, moderate replies, and access insights on Threads.",
+  "auth_methods": [
+    "oauth2"
+  ],
+  "auth_primary": "oauth2",
+  "auth_notes": "API authentication is handled by Threads user access tokens that conform to the OAuth 2.0 protocol.",
+  "access_tier": "self_serve_free",
+  "access_notes": "Sign up for a free Meta developer account and create a Meta app with the Threads API use case.",
+  "api_types": [
+    "rest"
+  ],
+  "api_breadth": "moderate",
+  "api_notes": "REST API endpoints via graph.threads.com or graph.threads.net covering user profiles, media, publishing, replies, and insights.",
+  "mcp": "community_only",
+  "mcp_url": "https://github.com/MetaThreads/meta-threads-mcp",
+  "verdict": "build_now",
+  "blocker": "none",
+  "blocker_notes": "Publicly available APIs with self-serve free developer access.",
+  "evidence": {
+    "auth": {
+      "url": "https://developers.facebook.com/docs/threads/get-started",
+      "quote": "API authentication is handled by Threads user access tokens that conform to the OAuth 2.0 protocol.",
+      "check": "ok"
+    },
+    "access": {
+      "url": "https://developers.facebook.com/docs/threads/get-started",
+      "quote": "To access the Threads API, create an app and pick the Threads Use Case.",
+      "check": "ok"
+    },
+    "api": {
+      "url": "https://developers.facebook.com/docs/threads/overview",
+      "quote": "The Threads API can be accessed by either graph.threads.com or graph.threads.net.",
+      "check": "ok"
+    },
+    "mcp": {
+      "url": "https://github.com/MetaThreads/meta-threads-mcp",
+      "quote": "Unofficial MCP server for Meta's Threads API. Enables LLMs like Claude to publish posts, manage replies, and track insights through the Model Context Protocol.",
+      "check": "ok"
+    },
+    "verdict": {
+      "url": "https://developers.facebook.com/docs/threads/get-started",
+      "quote": "To access the Threads API, create an app and pick the Threads Use Case.",
+      "check": "ok"
+    }
+  },
+  "confidence": {
+    "auth": 5.0,
+    "access": 5.0,
+    "api": 5.0,
+    "mcp": 5.0,
+    "verdict": 5.0
+  },
+  "_model": "gemini-3.5-flash-lite",
+  "status": "ok",
+  "id": 39,
+  "name": "Threads (Meta)",
+  "category": "Marketing Ads Email & Social",
+  "hint": "developers.facebook.com/docs/threads",
+  "sources": [
+    {
+      "url": "https://developers.facebook.com/docs/threads",
+      "via": "composio_fetch",
+      "chars": 724
+    },
+    {
+      "url": "https://developers.facebook.com/docs/development/create-an-app/threads-use-case",
+      "via": "composio_fetch",
+      "chars": 5595
+    },
+    {
+      "url": "https://developers.facebook.com/docs/threads/get-started",
+      "via": "composio_fetch",
+      "chars": 5046
+    },
+    {
+      "url": "https://developers.facebook.com/docs/threads/get-started/get-access-tokens-and-permissions",
+      "via": "composio_fetch",
+      "chars": 5901
+    },
+    {
+      "url": "https://developers.facebook.com/docs/threads/get-started/long-lived-tokens",
+      "via": "composio_fetch",
+      "chars": 3463
+    },
+    {
+      "url": "https://developers.facebook.com/docs/threads/overview",
+      "via": "composio_fetch",
+      "chars": 6866
+    },
+    {
+      "url": "https://github.com/MetaThreads/meta-threads-mcp",
+      "via": "verification"
+    },
+    {
+      "url": "https://github.com/adhdvital/threads-mcp-fork",
+      "via": "verification"
+    },
+    {
+      "url": "https://github.com/bintangtimurlangit/threads-mcp",
+      "via": "verification"
+    },
+    {
+      "url": "https://github.com/bintangtimurlangit/threads-mcp/blob/main/docs/README.md",
+      "via": "verification"
+    }
+  ],
+  "queries": [
+    "Threads (Meta) API authentication developer docs",
+    "Threads (Meta) API access pricing plan developer",
+    "Threads (Meta) MCP server"
+  ],
+  "seconds": 39.7,
+  "verification_queries": [
+    "Threads MCP server model context protocol"
+  ],
+  "verification": {
+    "initial_issues": [
+      {
+        "loop": "L4_verifier",
+        "field": "mcp",
+        "problem": "verifier says official vs agent none_found"
+      },
+      {
+        "loop": "L5_mcp_probe",
+        "field": "mcp",
+        "problem": "possible official MCP found: ['https://github.com/MetaThreads/meta-threads-mcp']",
+        "urls": [
+          "https://github.com/MetaThreads/meta-threads-mcp"
+        ]
+      }
+    ],
+    "final_issues": [],
+    "rounds": [
+      {
+        "round": 0,
+        "issues": [
+          {
+            "loop": "L4_verifier",
+            "field": "mcp",
+            "problem": "verifier says official vs agent none_found"
+          },
+          {
+            "loop": "L5_mcp_probe",
+            "field": "mcp",
+            "problem": "possible official MCP found: ['https://github.com/MetaThreads/meta-threads-mcp']",
+            "urls": [
+              "https://github.com/MetaThreads/meta-threads-mcp"
+            ]
+          }
+        ],
+        "verifier": {
+          "auth_methods": [
+            "oauth2"
+          ],
+          "auth_primary": "oauth2",
+          "access_tier": "self_serve_free",
+          "api_types": [
+            "rest"
+          ],
+          "mcp": "official",
+          "verdict": "build_now",
+          "reasons": {
+            "auth": "Threads API uses OAuth 2.0 user access tokens (Bearer tokens) as documented in the Get Started guide.",
+            "access": "Developers can create an app and enable the Threads use case to obtain short‑ and long‑lived user access tokens without a paid plan, as described in the Get Started and Get Access Tokens docs.",
+            "mcp": "The API is documented on Meta’s official developers site (developers.facebook.com), indicating an official MCP.",
+            "verdict": "Public documentation, OAuth 2.0 flow, and free self‑serve app creation allow a toolkit to be built today."
+          },
+          "_model": "openai/gpt-oss-20b"
+        },
+        "autofix": []
+      },
+      {
+        "round": 1,
+        "queries": [
+          "Threads MCP server model context protocol"
+        ],
+        "new_sources": [
+          "https://developers.facebook.com/docs/threads",
+          "https://github.com/MetaThreads/meta-threads-mcp",
+          "https://github.com/adhdvital/threads-mcp-fork",
+          "https://github.com/bintangtimurlangit/threads-mcp",
+          "https://github.com/bintangtimurlangit/threads-mcp/blob/main/docs/README.md"
+        ],
+        "change_log": "Updated mcp to community_only because available MCP servers for Threads are unofficial community integrations on GitHub.",
+        "issues": [],
+        "verifier": {
+          "auth_methods": [
+            "oauth2",
+            "bearer_token"
+          ],
+          "auth_primary": "oauth2",
+          "access_tier": "self_serve_free",
+          "api_types": [
+            "rest"
+          ],
+          "mcp": "community_only",
+          "verdict": "build_now",
+          "reasons": {
+            "auth": "public docs indicate OAuth 2.0 bearer token usage",
+            "access": "free developer app sign‑up available",
+            "mcp": "only community‑maintained MCP servers exist",
+            "verdict": "public API and free credentials allow immediate build"
+          },
+          "_model": "openai/gpt-oss-20b"
+        },
+        "autofix": []
+      }
+    ],
+    "catalog": {
+      "in_catalog": false,
+      "checked": [
+        "threads"
+      ]
+    },
+    "changed_fields": [
+      "mcp"
+    ],
+    "field_status": {
+      "auth": "verified",
+      "access": "verified",
+      "api": "verified",
+      "mcp": "corrected",
+      "verdict": "verified"
+    },
+    "needs_human": [],
+    "before": {
+      "auth_methods": [
+        "oauth2"
+      ],
+      "auth_primary": "oauth2",
+      "access_tier": "self_serve_free",
+      "access_notes": "Sign up for a free Meta developer account and create a Meta app with the Threads API use case.",
+      "api_types": [
+        "rest"
+      ],
+      "api_breadth": "moderate",
+      "api_notes": "REST API endpoints via graph.threads.com or graph.threads.net covering user profiles, media, publishing, replies, and insights.",
+      "mcp": "none_found",
+      "mcp_url": null,
+      "verdict": "build_now",
+      "blocker": "none",
+      "blocker_notes": "Publicly available APIs with self-serve free developer access."
+    },
+    "seconds": 73.3
+  }
+}

@@ -1,0 +1,350 @@
+{
+  "one_liner": "An all-in-one marketing, sales, and CRM platform with a robust public API.",
+  "auth_methods": [
+    "oauth2",
+    "bearer_token"
+  ],
+  "auth_primary": "oauth2",
+  "auth_notes": "OAuth 2.0 authorization code grant or private integration tokens (PIT) are supported.",
+  "access_tier": "self_serve_free",
+  "access_notes": "Developers can sign up and get credentials via the Developer's Marketplace for free, though building apps for public distribution may involve marketplace submission review.",
+  "api_types": [
+    "rest"
+  ],
+  "api_breadth": "broad",
+  "api_notes": "Covers v2 Public API endpoints including SaaS configurations, sub-accounts, and agency workflows.",
+  "mcp": "official",
+  "mcp_url": "https://services.leadconnectorhq.com/mcp/",
+  "verdict": "build_now",
+  "blocker": "none",
+  "blocker_notes": "Public documentation, SDKs, and self-serve developer portal are available.",
+  "evidence": {
+    "auth": {
+      "url": "https://help.gohighlevel.com/support/solutions/articles/155000000136-how-to-get-started-with-the-developer-s-marketplace",
+      "quote": "In the Developer's Marketplace, developers obtain an Access Token through the OAuth process, which allows their app to make authenticated API requests to GoHighLevel.",
+      "check": "ok"
+    },
+    "access": {
+      "url": "https://developers.gohighlevel.com",
+      "quote": "Join hundreds of other developers just like you who are helping businesses achieve digital success\nLogin To Developer Marketplace\nSign In To Developer Marketplace",
+      "check": "ok"
+    },
+    "api": {
+      "url": "https://help.gohighlevel.com/support/solutions/articles/155000007096-api-center-of-excellence-python-and-php-sdks",
+      "quote": "HighLevel’s officially supported gohighlevel/api-client (PHP) and gohighlevel-api-client (Python) libraries wrap the entire v2 Public API.",
+      "check": "ok"
+    },
+    "mcp": {
+      "url": "https://help.gohighlevel.com/support/solutions/articles/155000005741-how-to-use-the-highlevel-mcp-server",
+      "quote": "HighLevel MCP Endpoint:\nhttps://services.leadconnectorhq.com/mcp/",
+      "check": "ok"
+    },
+    "verdict": {
+      "url": "https://developers.gohighlevel.com",
+      "quote": "API 2.0 Docs\nWe now have an OAuth based API\nand all integration documentation\ncan be found here.",
+      "check": "ok"
+    }
+  },
+  "confidence": {
+    "auth": 0.95,
+    "access": 0.9,
+    "api": 0.95,
+    "mcp": 0.8,
+    "verdict": 0.9
+  },
+  "_model": "gemini-3.5-flash-lite",
+  "status": "ok",
+  "id": 34,
+  "name": "GoHighLevel",
+  "category": "Marketing Ads Email & Social",
+  "hint": "highlevel.stoplight.io",
+  "sources": [
+    {
+      "url": "https://highlevel.stoplight.io",
+      "via": "composio_fetch",
+      "chars": 633
+    },
+    {
+      "url": "https://help.gohighlevel.com/support/solutions/articles/155000000136-how-to-get-started-with-the-developer-s-marketplace",
+      "via": "direct",
+      "chars": 27294
+    },
+    {
+      "url": "https://help.gohighlevel.com/support/solutions/articles/155000005111-usage-based-pricing-on-app-markeptlace",
+      "via": "direct",
+      "chars": 7612
+    },
+    {
+      "url": "https://help.gohighlevel.com/support/solutions/articles/155000005768-public-api-endpoints-for-saas-configurator",
+      "via": "direct",
+      "chars": 7421
+    },
+    {
+      "url": "https://help.gohighlevel.com/support/solutions/articles/155000007096-api-center-of-excellence-python-and-php-sdks",
+      "via": "direct",
+      "chars": 4178
+    },
+    {
+      "url": "https://help.gohighlevel.com/support/solutions/articles/155000007194-agency-app-reselling-config-api",
+      "via": "direct",
+      "chars": 4675
+    },
+    {
+      "url": "https://developers.gohighlevel.com",
+      "via": "verification"
+    },
+    {
+      "url": "https://help.gohighlevel.com/support/solutions/articles/155000002458-how-to-manage-developer-users-and-permissions",
+      "via": "verification"
+    },
+    {
+      "url": "https://help.gohighlevel.com/support/solutions/articles/155000005741-how-to-use-the-highlevel-mcp-server",
+      "via": "verification"
+    },
+    {
+      "url": "https://help.gohighlevel.com/support/solutions/articles/155000005741-how-to-setup-and-use-the-highlevel-mcp-server",
+      "via": "verification"
+    },
+    {
+      "url": "https://ideas.gohighlevel.com/highlevel-mcp/p/claude-mcp",
+      "via": "verification"
+    },
+    {
+      "url": "https://developers.gohighlevel.com",
+      "via": "verification"
+    },
+    {
+      "url": "https://help.gohighlevel.com/support/solutions/articles/155000002458-how-to-manage-developer-users-and-permissions",
+      "via": "verification"
+    },
+    {
+      "url": "https://help.gohighlevel.com/support/solutions/articles/155000005741-how-to-use-the-highlevel-mcp-server",
+      "via": "verification"
+    }
+  ],
+  "queries": [
+    "GoHighLevel API authentication developer docs",
+    "GoHighLevel API access pricing plan developer",
+    "GoHighLevel MCP server"
+  ],
+  "seconds": 40.1,
+  "verification_queries": [
+    "GoHighLevel API access requirements plan",
+    "GoHighLevel developer account API key free OR partner OR enterprise",
+    "GoHighLevel MCP server model context protocol",
+    "GoHighLevel API access requirements plan",
+    "GoHighLevel developer account API key free OR partner OR enterprise",
+    "GoHighLevel MCP server model context protocol"
+  ],
+  "verification": {
+    "initial_issues": [
+      {
+        "loop": "L4_verifier",
+        "field": "access",
+        "problem": "verifier says approval_or_review vs agent self_serve_free"
+      },
+      {
+        "loop": "L4_verifier",
+        "field": "verdict",
+        "problem": "verifier says build_with_friction vs agent build_now"
+      },
+      {
+        "loop": "L5_mcp_probe",
+        "field": "mcp",
+        "problem": "possible official MCP found: ['https://help.gohighlevel.com/support/solutions/articles/155000005741-how-to-setup-and-use-the-highlevel-mcp-server', 'https://ideas.gohighlevel.com/highlevel-mcp/p/claude-mcp']",
+        "urls": [
+          "https://help.gohighlevel.com/support/solutions/articles/155000005741-how-to-setup-and-use-the-highlevel-mcp-server",
+          "https://ideas.gohighlevel.com/highlevel-mcp/p/claude-mcp",
+          "https://help.gohighlevel.com/support/solutions/articles/155000005741-how-to-use-the-highlevel-mcp-server"
+        ]
+      }
+    ],
+    "final_issues": [],
+    "rounds": [
+      {
+        "round": 0,
+        "issues": [
+          {
+            "loop": "L4_verifier",
+            "field": "access",
+            "problem": "verifier says approval_or_review vs agent self_serve_free"
+          },
+          {
+            "loop": "L4_verifier",
+            "field": "verdict",
+            "problem": "verifier says build_with_friction vs agent build_now"
+          },
+          {
+            "loop": "L5_mcp_probe",
+            "field": "mcp",
+            "problem": "possible official MCP found: ['https://help.gohighlevel.com/support/solutions/articles/155000005741-how-to-setup-and-use-the-highlevel-mcp-server', 'https://ideas.gohighlevel.com/highlevel-mcp/p/claude-mcp']",
+            "urls": [
+              "https://help.gohighlevel.com/support/solutions/articles/155000005741-how-to-setup-and-use-the-highlevel-mcp-server",
+              "https://ideas.gohighlevel.com/highlevel-mcp/p/claude-mcp",
+              "https://help.gohighlevel.com/support/solutions/articles/155000005741-how-to-use-the-highlevel-mcp-server"
+            ]
+          }
+        ],
+        "verifier": {
+          "auth_methods": [
+            "oauth2"
+          ],
+          "auth_primary": "oauth2",
+          "access_tier": "approval_or_review",
+          "api_types": [
+            "rest"
+          ],
+          "mcp": "none_found",
+          "verdict": "build_with_friction",
+          "reasons": {
+            "auth": "Source 2 describes an OAuth 2.0 flow with access tokens used in the Authorization header.",
+            "access": "Credentials are obtained by creating OAuth 2.0 credentials in the Developer Marketplace, which implies a review/approval process rather than instant self‑serve free access.",
+            "mcp": "No mention of an official MCP server in the provided sources.",
+            "verdict": "Because access requires marketplace approval, the integration can be built but with friction (approval step)."
+          },
+          "_model": "openai/gpt-oss-120b"
+        },
+        "autofix": []
+      },
+      {
+        "round": 1,
+        "queries": [
+          "GoHighLevel API access requirements plan",
+          "GoHighLevel developer account API key free OR partner OR enterprise",
+          "GoHighLevel MCP server model context protocol"
+        ],
+        "new_sources": [
+          "https://highlevel.stoplight.io",
+          "https://developers.gohighlevel.com",
+          "https://help.gohighlevel.com/support/solutions/articles/155000000136-how-to-get-started-with-the-developer-s-marketplace",
+          "https://help.gohighlevel.com/support/solutions/articles/155000002458-how-to-manage-developer-users-and-permissions",
+          "https://help.gohighlevel.com/support/solutions/articles/155000005741-how-to-use-the-highlevel-mcp-server",
+          "https://help.gohighlevel.com/support/solutions/articles/155000005741-how-to-setup-and-use-the-highlevel-mcp-server",
+          "https://ideas.gohighlevel.com/highlevel-mcp/p/claude-mcp"
+        ],
+        "change_log": "Updated access tier to approval_or_review due to Developer Marketplace registration, set verdict to build_with_friction, and updated mcp to official based on official GoHighLevel MCP documentation.",
+        "issues": [
+          {
+            "loop": "L4_verifier",
+            "field": "access",
+            "problem": "verifier says self_serve_free vs agent approval_or_review"
+          },
+          {
+            "loop": "L4_verifier",
+            "field": "mcp",
+            "problem": "verifier says none_found vs agent official"
+          },
+          {
+            "loop": "L4_verifier",
+            "field": "verdict",
+            "problem": "verifier says build_now vs agent build_with_friction"
+          }
+        ],
+        "verifier": {
+          "auth_methods": [
+            "oauth2"
+          ],
+          "auth_primary": "oauth2",
+          "access_tier": "self_serve_free",
+          "api_types": [
+            "rest"
+          ],
+          "mcp": "none_found",
+          "verdict": "build_now",
+          "reasons": {
+            "auth": "Sources explicitly state 'We now have an OAuth based API' and describe obtaining Access Tokens through the OAuth process for the Developer's Marketplace.",
+            "access": "The Developer Marketplace allows developers to sign up and obtain credentials via OAuth; while app submission may involve review, the API access mechanism itself is available to registered developers without a stated paid gate for initial credential generation.",
+            "mcp": "No sources mention an official or community MCP server for GoHighLevel.",
+            "verdict": "Public documentation exists at developers.gohighlevel.com and help.gohighlevel.com, and OAuth credentials can be obtained by developers, allowing a toolkit to be built."
+          },
+          "_model": "qwen/qwen3.8-27b"
+        },
+        "autofix": [
+          "blocker set to app_review from access tier"
+        ]
+      },
+      {
+        "round": 2,
+        "queries": [
+          "GoHighLevel API access requirements plan",
+          "GoHighLevel developer account API key free OR partner OR enterprise",
+          "GoHighLevel MCP server model context protocol",
+          "GoHighLevel API access requirements plan",
+          "GoHighLevel developer account API key free OR partner OR enterprise",
+          "GoHighLevel MCP server model context protocol"
+        ],
+        "new_sources": [
+          "https://highlevel.stoplight.io",
+          "https://developers.gohighlevel.com",
+          "https://help.gohighlevel.com/support/solutions/articles/155000000136-how-to-get-started-with-the-developer-s-marketplace",
+          "https://help.gohighlevel.com/support/solutions/articles/155000002458-how-to-manage-developer-users-and-permissions",
+          "https://help.gohighlevel.com/support/solutions/articles/155000005741-how-to-use-the-highlevel-mcp-server"
+        ],
+        "change_log": "Updated access_tier to self_serve_free, mcp to official with url, and verdict to build_now as developers can sign up on the marketplace and official MCP documentation is available.",
+        "issues": [],
+        "verifier": {
+          "auth_methods": [
+            "oauth2",
+            "api_key",
+            "bearer_token",
+            "none"
+          ],
+          "auth_primary": "oauth2",
+          "access_tier": "unknown",
+          "api_types": [
+            "rest",
+            "graphql",
+            "websocket",
+            "none"
+          ],
+          "mcp": "unknown",
+          "verdict": "unknown",
+          "reasons": {},
+          "_model": "allam-2-7b"
+        },
+        "autofix": []
+      }
+    ],
+    "catalog": {
+      "in_catalog": true,
+      "slug": "highlevel",
+      "auth": [
+        "oauth2"
+      ],
+      "tools_count": 218,
+      "via": "listing",
+      "mcp_wrapper": false
+    },
+    "changed_fields": [
+      "mcp"
+    ],
+    "field_status": {
+      "auth": "verified",
+      "access": "confirmed_after_recheck",
+      "api": "verified",
+      "mcp": "corrected",
+      "verdict": "confirmed_after_recheck"
+    },
+    "needs_human": [],
+    "before": {
+      "auth_methods": [
+        "oauth2",
+        "bearer_token"
+      ],
+      "auth_primary": "oauth2",
+      "access_tier": "self_serve_free",
+      "access_notes": "Developers can sign up on the Developer's Marketplace to get credentials.",
+      "api_types": [
+        "rest"
+      ],
+      "api_breadth": "broad",
+      "api_notes": "Covers v2 Public API endpoints including SaaS configurations, sub-accounts, and agency workflows.",
+      "mcp": "none_found",
+      "mcp_url": null,
+      "verdict": "build_now",
+      "blocker": "none",
+      "blocker_notes": "Public documentation, SDKs, and self-serve developer portal are available."
+    },
+    "seconds": 205.3
+  }
+}

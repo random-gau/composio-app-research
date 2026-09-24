@@ -86,8 +86,9 @@ def groq_models() -> list:
     except Exception as e:  # noqa: BLE001
         log(f"  groq model list failed: {e}")
     picked = [m for m in GROQ_PREF if m in ids]
-    if not picked:
-        picked = [m for m in ids if not any(x in m for x in ("whisper", "guard", "tts", "playai", "compound", "orpheus"))][:3]
+    # then every other chat model on the account, so a daily cap on one model never silently disables the verifier
+    picked += sorted(m for m in ids if m not in picked and not any(
+        x in m for x in ("whisper", "guard", "tts", "playai", "compound", "orpheus", "safeguard")))
     env = [os.getenv("GROQ_MODEL")] if os.getenv("GROQ_MODEL") else []
     _MODELS["groq"] = list(dict.fromkeys(env + picked)) or GROQ_PREF[:2]
     return _MODELS["groq"]

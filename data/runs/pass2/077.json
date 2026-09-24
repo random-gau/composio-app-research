@@ -1,0 +1,151 @@
+{
+  "one_liner": "Converged AI workspace for project management, task tracking, team communication, and docs.",
+  "auth_methods": [
+    "oauth2",
+    "bearer_token"
+  ],
+  "auth_primary": "oauth2",
+  "auth_notes": "Supports OAuth flow for third-party apps and personal API tokens for personal use.",
+  "access_tier": "self_serve_free",
+  "access_notes": "Free forever plan allows creating a workspace and accessing the API immediately.",
+  "api_types": [
+    "rest"
+  ],
+  "api_breadth": "broad",
+  "api_notes": "Comprehensive REST API covering tasks, lists, spaces, webhooks, and more via API v2 and v3.",
+  "mcp": "official",
+  "mcp_url": "https://developer.clickup.com",
+  "verdict": "build_now",
+  "blocker": "none",
+  "blocker_notes": "None, public API is available with self-serve credentials.",
+  "evidence": {
+    "auth": {
+      "url": "https://developer.clickup.com/docs/Getting%20Started",
+      "quote": "For personal use, authenticate with your personal API token. For apps or integrations that other people use, use the OAuth flow, allowing users to authorize Workspaces for your app.",
+      "check": "ok"
+    },
+    "access": {
+      "url": "https://clickup.com/api",
+      "quote": "⬇️ Click below to create your free workspace today.",
+      "check": "ok"
+    },
+    "api": {
+      "url": "https://developer.clickup.com/docs/Getting%20Started",
+      "quote": "Build your own custom integrations and ClickUp apps with our public Application Programming Interface (API).",
+      "check": "ok"
+    },
+    "mcp": {
+      "url": "https://developer.clickup.com",
+      "quote": "Connect your AI with ClickUp using our MCP Server.",
+      "check": "ok"
+    },
+    "verdict": {
+      "url": "https://developer.clickup.com/docs/Getting%20Started",
+      "quote": "Build your own custom integrations and ClickUp apps with our public Application Programming Interface (API).",
+      "check": "ok"
+    }
+  },
+  "confidence": {
+    "auth": 1.0,
+    "access": 1.0,
+    "api": 1.0,
+    "mcp": 1.0,
+    "verdict": 1.0
+  },
+  "_model": "gemini-3.5-flash-lite",
+  "status": "ok",
+  "id": 77,
+  "name": "ClickUp",
+  "category": "Productivity & PM",
+  "hint": "clickup.com/api",
+  "sources": [
+    {
+      "url": "https://clickup.com/api",
+      "via": "composio_fetch",
+      "chars": 765
+    },
+    {
+      "url": "https://clickup.com/blog/clickup-api",
+      "via": "direct",
+      "chars": 29104
+    },
+    {
+      "url": "https://clickup.com/pricing",
+      "via": "direct",
+      "chars": 12786
+    },
+    {
+      "url": "https://developer.clickup.com",
+      "via": "direct",
+      "chars": 723
+    },
+    {
+      "url": "https://developer.clickup.com/docs/Getting%20Started",
+      "via": "direct",
+      "chars": 1803
+    },
+    {
+      "url": "https://developer.clickup.com/docs/Getting%20Started.md",
+      "via": "direct",
+      "chars": 2142
+    }
+  ],
+  "queries": [
+    "ClickUp API authentication developer docs",
+    "ClickUp API access pricing plan developer",
+    "ClickUp MCP server"
+  ],
+  "seconds": 53.2,
+  "verification": {
+    "initial_issues": [],
+    "final_issues": [],
+    "rounds": [
+      {
+        "round": 0,
+        "issues": [],
+        "verifier": {
+          "error": "list indices must be integers or slices, not str"
+        },
+        "autofix": []
+      }
+    ],
+    "catalog": {
+      "in_catalog": true,
+      "slug": "clickup",
+      "auth": [
+        "api_key",
+        "oauth2"
+      ],
+      "tools_count": 162
+    },
+    "changed_fields": [],
+    "field_status": {
+      "auth": "verified",
+      "access": "verified",
+      "api": "verified",
+      "mcp": "verified",
+      "verdict": "verified"
+    },
+    "needs_human": [],
+    "before": {
+      "auth_methods": [
+        "oauth2",
+        "bearer_token"
+      ],
+      "auth_primary": "oauth2",
+      "access_tier": "self_serve_free",
+      "access_notes": "Free forever plan allows creating a workspace and accessing the API immediately.",
+      "api_types": [
+        "rest"
+      ],
+      "api_breadth": "broad",
+      "api_notes": "Comprehensive REST API covering tasks, lists, spaces, webhooks, and more via API v2 and v3.",
+      "mcp": "official",
+      "mcp_url": "https://developer.clickup.com",
+      "verdict": "build_now",
+      "blocker": "none",
+      "blocker_notes": "None, public API is available with self-serve credentials."
+    },
+    "seconds": 32.0
+  }
+}

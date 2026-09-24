@@ -273,7 +273,10 @@
       }
     ],
     "catalog": {
-      "in_catalog": false
+      "in_catalog": false,
+      "checked": [
+        "dealcloud"
+      ]
     },
     "changed_fields": [
       "auth"

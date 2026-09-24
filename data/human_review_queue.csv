@@ -1,0 +1,31 @@
+id,name,field,agent_value,open_issues,evidence_url
+5,Twenty,access,self_serve_free,verifier says self_serve_trial vs agent self_serve_free,https://twenty.com
+5,Twenty,verdict,build_now,verifier says build_with_friction vs agent build_now,https://docs.twenty.com/developers/extend/api
+10,DealCloud,verdict,blocked,verifier says build_with_friction vs agent blocked,https://api.docs.dealcloud.com/docs/apikeys
+28,WhatsApp Business,mcp,none_found,verifier says official vs agent none_found,https://developers.facebook.com/docs/whatsapp
+30,Vonage,api,"['rest', 'websocket']",quote not found on cited page,https://developer.vonage.com
+38,Pinterest,access,self_serve_free,verifier says self_serve_trial vs agent self_serve_free,https://developers.pinterest.com/docs/getting-started/connect-app
+40,SendGrid,access,self_serve_trial,verifier says self_serve_free vs agent self_serve_trial,https://support.sendgrid.com/hc/en-us/articles/35270136965403-Twilio-SendGrid-Trial-Account-Plan
+40,SendGrid,verdict,build_with_friction,verifier says build_now vs agent build_with_friction,https://support.sendgrid.com/hc/en-us/articles/35270136965403-Twilio-SendGrid-Trial-Account-Plan
+41,Shopify,mcp,none_found,no evidence cited; verifier says official vs agent none_found,https://shopify.dev
+49,Amazon Selling Partner,access,approval_or_review,verifier says self_serve_free vs agent approval_or_review,https://developer-docs.amazon/sp-api/docs/amazon-seller-data-access
+49,Amazon Selling Partner,verdict,build_with_friction,verifier says build_now vs agent build_with_friction,https://developer-docs.amazon/sp-api/lang-US/docs/sp-api-registration-overview
+52,SE Ranking,auth,['api_key'],quote only partially matches page,https://seranking.com/api/data/getting-started
+54,MrScraper,access,self_serve_free,quote only partially matches page; verifier says paid_plan vs agent self_serve_free,https://docs.mrscraper.com/docs/getting-started/billing
+54,MrScraper,verdict,build_now,quote only partially matches page; verifier says build_with_friction vs agent build_now,https://docs.mrscraper.com/docs/getting-started/billing
+56,Firecrawl,auth,"['api_key', 'bearer_token']",quote only partially matches page,https://docs.firecrawl.dev/api-reference/endpoint/crawl-post
+58,Sherlock,mcp,community_only,no evidence cited,https://github.com/p1atdev/sherlock-mcp
+58,Sherlock,verdict,build_now,no evidence cited; open-source local tool has no hosted API or credentials; build_now needs justification; verifier says blocked vs agent build_now,https://github.com/sherlock-project/sherlock
+59,Waterfall.io,mcp,none_found,quote not found on cited page (URL was not among the sources given),https://docs.waterfall.io/v1/skills-overview.md
+60,Clay,access,self_serve_free,verifier says self_serve_trial vs agent self_serve_free,https://www.clay.com
+67,Snowflake,mcp,official,verifier says none_found vs agent official,https://docs.snowflake.com/en/user-guide/snowflake-cortex/cortex-agents-mcp
+67,Snowflake,verdict,build_with_friction,verifier says build_now vs agent build_with_friction,https://docs.snowflake.com
+79,Smartsheet,verdict,build_with_friction,verifier says build_now vs agent build_with_friction,https://developers.smartsheet.com/api/smartsheet/openapi.md
+88,Brex,mcp,official,verifier says community_only vs agent official,https://www.usecarly.com/blog/brex-mcp
+90,PitchBook,access,partner_or_sales,verifier says self_serve_free vs agent partner_or_sales,https://pitchbook.com/help/PitchBook-api
+90,PitchBook,mcp,community_only,verifier says official vs agent community_only,https://mcp-proxy-external.pitchbook.com
+91,NotebookLM,auth,['other'],auth method not identified; agent auth ['other'] shares nothing with Composio catalog ['oauth2'] (notebook_lm),https://github.com/Robiton/notebooklm-mcp-cli/blob/main/docs/AUTHENTICATION.md
+94,Consensus,access,self_serve_free,verifier says paid_plan vs agent self_serve_free,https://docs.consensus.app/docs/mcp.md
+94,Consensus,verdict,build_now,verifier says build_with_friction vs agent build_now,https://consensus.app/home/api
+96,Devin,auth,['bearer_token'],"quote only partially matches page; verifier says ['oauth2', 'api_key'] vs agent ['bearer_token']",https://docs.devin.ai/api-reference/authentication
+98,Mermaid CLI,verdict,build_with_friction,verifier says build_now vs agent build_with_friction,https://github.com/mermaid-js/mermaid-cli

@@ -1,0 +1,224 @@
+{
+  "one_liner": "Issue tracking and project management software by Atlassian",
+  "auth_methods": [
+    "oauth2",
+    "basic",
+    "api_key"
+  ],
+  "auth_primary": "oauth2",
+  "auth_notes": "Jira supports OAuth 2.0 (3LO) for apps/integrations, and basic authentication using an Atlassian account email and API token.",
+  "access_tier": "self_serve_free",
+  "access_notes": "Access to Jira REST APIs is free and self-serve for all Jira plans, using API tokens, basic auth, or OAuth 2.0.",
+  "api_types": [
+    "rest"
+  ],
+  "api_breadth": "broad",
+  "api_notes": "Comprehensive REST API covering issues, projects, workflows, boards, and more.",
+  "mcp": "none_found",
+  "mcp_url": null,
+  "verdict": "build_now",
+  "blocker": "none",
+  "blocker_notes": "Public APIs and self-serve developer access are fully available.",
+  "evidence": {
+    "auth": {
+      "url": "https://developer.atlassian.com/cloud/jira/platform/basic-auth-for-rest-apis/?p=437",
+      "quote": "This page shows you how REST clients can authenticate themselves using basic authentication with an Atlassian account email address and API token.",
+      "check": "ok"
+    },
+    "access": {
+      "url": "https://community.developer.atlassian.com/t/jira-all-apis-are-free-or-paid-if-paid-what-are-the-paiment-plans/87575",
+      "quote": "Access to the REST APIs is free for all Jira plans.",
+      "check": "ok"
+    },
+    "api": {
+      "url": "https://developer.atlassian.com/cloud/jira/platform/index",
+      "quote": "The REST API allows you to access and update Jira entities, such as projects and issues.",
+      "check": "ok"
+    },
+    "mcp": {
+      "url": null,
+      "quote": null
+    },
+    "verdict": {
+      "url": "https://community.developer.atlassian.com/t/jira-all-apis-are-free-or-paid-if-paid-what-are-the-paiment-plans/87575",
+      "quote": "Access to the REST APIs is free for all Jira plans.",
+      "check": "ok"
+    }
+  },
+  "confidence": {
+    "auth": 0.9,
+    "access": 0.9,
+    "api": 0.9,
+    "mcp": 0.8,
+    "verdict": 0.9
+  },
+  "_model": "gemini-3.5-flash-lite",
+  "status": "ok",
+  "id": 74,
+  "name": "Jira",
+  "category": "Productivity & PM",
+  "hint": "developer.atlassian.com",
+  "sources": [
+    {
+      "url": "https://developer.atlassian.com",
+      "via": "composio_fetch",
+      "chars": 934
+    },
+    {
+      "url": "https://community.developer.atlassian.com/t/api-token-rate-limiting/92292",
+      "via": "composio_fetch",
+      "chars": 3782
+    },
+    {
+      "url": "https://community.developer.atlassian.com/t/jira-all-apis-are-free-or-paid-if-paid-what-are-the-paiment-plans/87575",
+      "via": "composio_fetch",
+      "chars": 772
+    },
+    {
+      "url": "https://developer.atlassian.com/cloud/jira/platform/basic-auth-for-rest-apis",
+      "via": "direct",
+      "chars": 5200
+    },
+    {
+      "url": "https://developer.atlassian.com/cloud/jira/platform/index",
+      "via": "direct",
+      "chars": 5835
+    },
+    {
+      "url": "https://developer.atlassian.com/cloud/jira/platform/jira-rest-api-cookie-based-authentication",
+      "via": "direct",
+      "chars": 10055
+    },
+    {
+      "url": "https://developer.atlassian.com/cloud/jira/platform/basic-auth-for-rest-apis/?p=437",
+      "via": "verification"
+    },
+    {
+      "url": "https://developer.atlassian.com/cloud/jira/software/basic-auth-for-rest-apis",
+      "via": "verification"
+    },
+    {
+      "url": "https://developer.atlassian.com/cloud/jira/software/oauth-2-3lo-apps",
+      "via": "verification"
+    },
+    {
+      "url": "https://developer.atlassian.com/cloud/jira/software/rest/intro",
+      "via": "verification"
+    }
+  ],
+  "queries": [
+    "Jira API authentication developer docs",
+    "Jira API access pricing plan developer",
+    "Jira MCP server"
+  ],
+  "seconds": 59.6,
+  "verification_queries": [
+    "Jira API authentication OAuth API key",
+    "Jira API reference authentication"
+  ],
+  "verification": {
+    "initial_issues": [
+      {
+        "loop": "L3_catalog",
+        "field": "auth",
+        "problem": "Composio catalog also lists ['api_key'] for jira; agent missed it"
+      }
+    ],
+    "final_issues": [],
+    "rounds": [
+      {
+        "round": 0,
+        "issues": [
+          {
+            "loop": "L3_catalog",
+            "field": "auth",
+            "problem": "Composio catalog also lists ['api_key'] for jira; agent missed it"
+          }
+        ],
+        "verifier": {
+          "error": "list indices must be integers or slices, not str"
+        },
+        "autofix": []
+      },
+      {
+        "round": 1,
+        "queries": [
+          "Jira API authentication OAuth API key",
+          "Jira API reference authentication"
+        ],
+        "new_sources": [
+          "https://developer.atlassian.com",
+          "https://developer.atlassian.com/cloud/jira/platform/basic-auth-for-rest-apis/?p=437",
+          "https://developer.atlassian.com/cloud/jira/software/basic-auth-for-rest-apis",
+          "https://developer.atlassian.com/cloud/jira/software/oauth-2-3lo-apps",
+          "https://developer.atlassian.com/cloud/jira/software/rest/intro"
+        ],
+        "change_log": "Added api_key to auth_methods as supported by API tokens used in basic auth and catalog definitions.",
+        "issues": [],
+        "verifier": {
+          "auth_methods": [
+            "basic",
+            "oauth2",
+            "jwt_or_signed"
+          ],
+          "auth_primary": "oauth2",
+          "access_tier": "self_serve_free",
+          "api_types": [
+            "rest"
+          ],
+          "mcp": "unknown",
+          "verdict": "build_now",
+          "reasons": {
+            "auth": "Sources document Basic Auth (using API tokens), OAuth 2.0 (3LO), and JWT (for Connect apps). OAuth 2.0 is the standard for third-party integrations.",
+            "access": "Developers can generate API tokens for their own Atlassian accounts and use the public REST API without explicit approval or paid plans mentioned in the sources.",
+            "mcp": "The provided sources do not contain information regarding MCP servers.",
+            "verdict": "Public documentation and self-serve credentials (API tokens/OAuth) are available, allowing a toolkit to be built immediately."
+          },
+          "_model": "qwen/qwen3.8-27b"
+        },
+        "autofix": []
+      }
+    ],
+    "catalog": {
+      "in_catalog": true,
+      "slug": "jira",
+      "auth": [
+        "api_key",
+        "oauth2",
+        "other"
+      ],
+      "tools_count": 98
+    },
+    "changed_fields": [
+      "auth"
+    ],
+    "field_status": {
+      "auth": "corrected",
+      "access": "verified",
+      "api": "verified",
+      "mcp": "verified",
+      "verdict": "verified"
+    },
+    "needs_human": [],
+    "before": {
+      "auth_methods": [
+        "oauth2",
+        "basic"
+      ],
+      "auth_primary": "oauth2",
+      "access_tier": "self_serve_free",
+      "access_notes": "Access to the Jira REST APIs and free Jira plans are self-serve.",
+      "api_types": [
+        "rest"
+      ],
+      "api_breadth": "broad",
+      "api_notes": "Comprehensive REST API covering issues, projects, workflows, boards, and more.",
+      "mcp": "none_found",
+      "mcp_url": null,
+      "verdict": "build_now",
+      "blocker": "none",
+      "blocker_notes": "Public APIs and self-serve developer access are fully available."
+    },
+    "seconds": 259.8
+  }
+}

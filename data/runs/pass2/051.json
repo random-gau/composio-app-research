@@ -1,0 +1,325 @@
+{
+  "one_liner": "SEO and marketing data API providing comprehensive SERP, keyword, and backlink data.",
+  "auth_methods": [
+    "api_key",
+    "basic",
+    "oauth2"
+  ],
+  "auth_primary": "api_key",
+  "auth_notes": "Basic authentication using your API login and API password encoded with Base64.",
+  "access_tier": "self_serve_free",
+  "access_notes": "DataForSEO offers free sandbox testing and sign-up with $1 in free credits and no credit card required.",
+  "api_types": [
+    "rest"
+  ],
+  "api_breadth": "broad",
+  "api_notes": "Broad REST API covering SEO, SERP, keywords, backlinks, and on-page data via base URL api.dataforseo.com/v3.",
+  "mcp": "official",
+  "mcp_url": "https://mcp.dataforseo.com/v3/mcp",
+  "verdict": "build_now",
+  "blocker": "none",
+  "blocker_notes": "None. Public docs and self-serve credentials with trial credit are available.",
+  "evidence": {
+    "auth": {
+      "url": "https://dataforseo.com/blog/a-kickstart-guide-to-using-dataforseo-apis",
+      "quote": "To access DataForSEO APIs, you should use your unique API key... Note that your API password is intended for authentication when making requests to DataForSEO API and is different from the account password used for dashboard access.",
+      "check": "ok"
+    },
+    "access": {
+      "url": "https://dataforseo.com/apis/serp-api",
+      "quote": "No, you don’t have to pay anything to start using any DataForSEO API. We offer an unlimited trial period and a $1 credit that will be added to your account balance upon signing up.",
+      "check": "ok"
+    },
+    "api": {
+      "url": "https://docs.dataforseo.com",
+      "quote": "DataForSEO API is using the REST technology for interchanging data between your application and our service.",
+      "check": "ok"
+    },
+    "mcp": {
+      "url": "https://dataforseo.com/seo-mcp-server",
+      "quote": "The DataForSEO MCP server connects Claude, Cursor, and any MCP-compatible agent to seven live SEO APIs",
+      "check": "ok"
+    },
+    "verdict": {
+      "url": "https://dataforseo.com/apis/serp-api",
+      "quote": "Create a free account to get unlimited access to DataForSEO APIs.",
+      "check": "ok"
+    }
+  },
+  "confidence": {
+    "auth": 5.0,
+    "access": 5.0,
+    "api": 5.0,
+    "mcp": 5.0,
+    "verdict": 5.0
+  },
+  "_model": "gemini-3.5-flash-lite",
+  "status": "ok",
+  "id": 51,
+  "name": "DataForSEO",
+  "category": "Data SEO & Scraping",
+  "hint": "docs.dataforseo.com",
+  "sources": [
+    {
+      "url": "https://docs.dataforseo.com",
+      "via": "direct",
+      "chars": 4240
+    },
+    {
+      "url": "https://dataforseo.com/apis/serp-api",
+      "via": "direct",
+      "chars": 12688
+    },
+    {
+      "url": "https://dataforseo.com/apis/serp-api/pricing",
+      "via": "composio_fetch",
+      "chars": 9015
+    },
+    {
+      "url": "https://dataforseo.com/blog/a-kickstart-guide-to-using-dataforseo-apis",
+      "via": "direct",
+      "chars": 29787
+    },
+    {
+      "url": "https://dataforseo.com/docs",
+      "via": "direct",
+      "chars": 4240
+    },
+    {
+      "url": "https://dataforseo.com/help-center/how-to-authenticate-with-dataforseo-google-search-serp-api-api-key-setup-and-code-examples",
+      "via": "direct",
+      "chars": 10394
+    },
+    {
+      "url": "https://dataforseo.com/blog/dataforseo-mcp-server-bridging-the-gap-between-ai-models-and-seo-data",
+      "via": "verification"
+    },
+    {
+      "url": "https://dataforseo.com/help-center/connecting-the-remote-dataforseo-mcp-server-using-oauth",
+      "via": "verification"
+    },
+    {
+      "url": "https://dataforseo.com/seo-mcp-server",
+      "via": "verification"
+    },
+    {
+      "url": "https://dataforseo.com/model-context-protocol",
+      "via": "verification"
+    },
+    {
+      "url": "https://dataforseo.com/blog/dataforseo-mcp-server-bridging-the-gap-between-ai-models-and-seo-data",
+      "via": "verification"
+    },
+    {
+      "url": "https://dataforseo.com/help-center/connecting-the-remote-dataforseo-mcp-server-using-oauth",
+      "via": "verification"
+    },
+    {
+      "url": "https://dataforseo.com/help-center/how-to-connect-and-use-the-dataforseo-mcp-server-with-chatgpt-work-and-codex-cli",
+      "via": "verification"
+    },
+    {
+      "url": "https://dataforseo.com/help-center/how-to-connect-the-official-dataforseo-mcp-server-to-chatgpt-simple-guide",
+      "via": "verification"
+    }
+  ],
+  "queries": [
+    "DataForSEO API authentication developer docs",
+    "DataForSEO API access pricing plan developer",
+    "DataForSEO MCP server"
+  ],
+  "seconds": 52.9,
+  "verification_queries": [
+    "DataForSEO API authentication OAuth API key",
+    "DataForSEO API reference authentication",
+    "DataForSEO MCP server model context protocol",
+    "DataForSEO MCP server model context protocol"
+  ],
+  "verification": {
+    "initial_issues": [
+      {
+        "loop": "L4_verifier",
+        "field": "auth",
+        "problem": "verifier says ['api_key'] vs agent ['basic']"
+      },
+      {
+        "loop": "L5_mcp_probe",
+        "field": "mcp",
+        "problem": "possible official MCP found: ['https://dataforseo.com/seo-mcp-server', 'https://dataforseo.com/blog/dataforseo-mcp-server-bridging-the-gap-between-ai-models-and-seo-data']",
+        "urls": [
+          "https://dataforseo.com/seo-mcp-server",
+          "https://dataforseo.com/blog/dataforseo-mcp-server-bridging-the-gap-between-ai-models-and-seo-data",
+          "https://dataforseo.com/model-context-protocol"
+        ]
+      }
+    ],
+    "final_issues": [],
+    "rounds": [
+      {
+        "round": 0,
+        "issues": [
+          {
+            "loop": "L4_verifier",
+            "field": "auth",
+            "problem": "verifier says ['api_key'] vs agent ['basic']"
+          },
+          {
+            "loop": "L5_mcp_probe",
+            "field": "mcp",
+            "problem": "possible official MCP found: ['https://dataforseo.com/seo-mcp-server', 'https://dataforseo.com/blog/dataforseo-mcp-server-bridging-the-gap-between-ai-models-and-seo-data']",
+            "urls": [
+              "https://dataforseo.com/seo-mcp-server",
+              "https://dataforseo.com/blog/dataforseo-mcp-server-bridging-the-gap-between-ai-models-and-seo-data",
+              "https://dataforseo.com/model-context-protocol"
+            ]
+          }
+        ],
+        "verifier": {
+          "auth_methods": [
+            "api_key"
+          ],
+          "auth_primary": "api_key",
+          "access_tier": "self_serve_free",
+          "api_types": [
+            "rest"
+          ],
+          "mcp": "none_found",
+          "verdict": "build_now",
+          "reasons": {
+            "auth": "The documentation explicitly states that developers use a unique API key for authorization (Source 4).",
+            "access": "DataForSEO offers a self-serve free trial with a $1 credit upon registration and a free sandbox, allowing developers to obtain working credentials immediately without a paid plan or approval process (Sources 2, 3).",
+            "mcp": "No mention of official or community MCP servers was found in the provided sources.",
+            "verdict": "Public REST API documentation is available, and self-serve free credentials (trial/sandbox) can be obtained immediately, allowing a toolkit to be built today."
+          },
+          "_model": "qwen/qwen3.8-27b"
+        },
+        "autofix": []
+      },
+      {
+        "round": 1,
+        "queries": [
+          "DataForSEO API authentication OAuth API key",
+          "DataForSEO API reference authentication",
+          "DataForSEO MCP server model context protocol"
+        ],
+        "new_sources": [
+          "https://docs.dataforseo.com",
+          "https://dataforseo.com/blog/a-kickstart-guide-to-using-dataforseo-apis",
+          "https://dataforseo.com/blog/dataforseo-mcp-server-bridging-the-gap-between-ai-models-and-seo-data",
+          "https://dataforseo.com/docs",
+          "https://dataforseo.com/help-center/connecting-the-remote-dataforseo-mcp-server-using-oauth",
+          "https://dataforseo.com/seo-mcp-server",
+          "https://dataforseo.com/model-context-protocol"
+        ],
+        "change_log": "Updated auth_methods to include both api_key and basic as documented in login/password and API key guides, and set mcp to official due to the vendor publishing an official DataForSEO MCP server.",
+        "issues": [
+          {
+            "loop": "L1_evidence",
+            "field": "mcp",
+            "problem": "quote not found on cited page",
+            "url": "https://dataforseo.com/seo-mcp-server",
+            "match": 0.0
+          }
+        ],
+        "verifier": {
+          "auth_methods": [
+            "api_key"
+          ],
+          "auth_primary": "api_key",
+          "access_tier": "self_serve_trial",
+          "api_types": [
+            "rest"
+          ],
+          "mcp": "official",
+          "verdict": "build_with_friction",
+          "reasons": {
+            "auth": "The documentation explicitly states that developers should use their unique API key to access the APIs.",
+            "access": "The sources mention a 'Free Unlimited Trial' and 'Sandbox Best Practices', indicating that initial access is via a trial period, which fits the self_serve_trial definition where continued use requires paying.",
+            "mcp": "Source 3 explicitly describes the 'proprietary DataForSEO MCP server', confirming an official MCP server exists.",
+            "verdict": "While public docs and an official MCP server exist, the access tier is a trial (self_serve_trial), meaning a toolkit would require handling the transition to a paid plan for continued use, creating friction compared to a fully free self-serve option."
+          },
+          "_model": "qwen/qwen3.8-27b"
+        },
+        "autofix": []
+      },
+      {
+        "round": 2,
+        "queries": [
+          "DataForSEO API authentication OAuth API key",
+          "DataForSEO API reference authentication",
+          "DataForSEO MCP server model context protocol",
+          "DataForSEO MCP server model context protocol"
+        ],
+        "new_sources": [
+          "https://docs.dataforseo.com",
+          "https://dataforseo.com/blog/dataforseo-mcp-server-bridging-the-gap-between-ai-models-and-seo-data",
+          "https://dataforseo.com/help-center/connecting-the-remote-dataforseo-mcp-server-using-oauth",
+          "https://dataforseo.com/help-center/how-to-connect-and-use-the-dataforseo-mcp-server-with-chatgpt-work-and-codex-cli",
+          "https://dataforseo.com/help-center/how-to-connect-the-official-dataforseo-mcp-server-to-chatgpt-simple-guide"
+        ],
+        "change_log": "Corrected the MCP field evidence using the official SEO MCP server landing page URL to satisfy source verification.",
+        "issues": [],
+        "verifier": {
+          "auth_methods": [
+            "oauth2",
+            "api_key",
+            "bearer_token",
+            "basic",
+            "jwt_or_signed",
+            "none",
+            "other"
+          ],
+          "auth_primary": "oauth2",
+          "access_tier": "unknown",
+          "api_types": [
+            "none"
+          ],
+          "mcp": "unknown",
+          "verdict": "unknown",
+          "reasons": {},
+          "_model": "allam-2-7b"
+        },
+        "autofix": []
+      }
+    ],
+    "catalog": {
+      "in_catalog": true,
+      "slug": "dataforseo",
+      "auth": [
+        "basic"
+      ],
+      "tools_count": 312
+    },
+    "changed_fields": [
+      "auth",
+      "mcp"
+    ],
+    "field_status": {
+      "auth": "corrected",
+      "access": "verified",
+      "api": "verified",
+      "mcp": "corrected",
+      "verdict": "verified"
+    },
+    "needs_human": [],
+    "before": {
+      "auth_methods": [
+        "basic"
+      ],
+      "auth_primary": "basic",
+      "access_tier": "self_serve_free",
+      "access_notes": "Create a free account on the website to receive an unlimited trial period with a $1 free trial credit.",
+      "api_types": [
+        "rest"
+      ],
+      "api_breadth": "broad",
+      "api_notes": "Broad REST API covering SEO, SERP, keywords, backlinks, and on-page data via base URL api.dataforseo.com/v3.",
+      "mcp": "none_found",
+      "mcp_url": null,
+      "verdict": "build_now",
+      "blocker": "none",
+      "blocker_notes": "None. Public docs and self-serve credentials with trial credit are available."
+    },
+    "seconds": 534.9
+  }
+}

@@ -1,0 +1,311 @@
+{
+  "one_liner": "Open-source Firebase alternative providing full Postgres databases, auth, storage, and serverless edge functions.",
+  "auth_methods": [
+    "api_key",
+    "bearer_token",
+    "oauth2"
+  ],
+  "auth_primary": "api_key",
+  "auth_notes": "Uses personal access tokens (PAT), project API keys, or JWTs for API and management access.",
+  "access_tier": "self_serve_free",
+  "access_notes": "Supabase offers a free tier with free active project limits and immediate self-serve credentials.",
+  "api_types": [
+    "rest",
+    "graphql",
+    "websocket",
+    "sdk_or_cli_only"
+  ],
+  "api_breadth": "broad",
+  "api_notes": "Provides auto-generated REST/GraphQL data APIs, Management API, and client SDKs.",
+  "mcp": "official",
+  "mcp_url": "https://mcp.supabase.com/mcp",
+  "verdict": "build_now",
+  "blocker": "none",
+  "blocker_notes": "None.",
+  "evidence": {
+    "auth": {
+      "url": "https://supabase.com/blog/mcp-server",
+      "quote": "This token authenticates the MCP server with your Supabase account.",
+      "check": "ok"
+    },
+    "access": {
+      "url": "https://supabase.com/blog/2021/03/29/pricing",
+      "quote": "Start building for free, collaborate with your team, then scale to millions of users",
+      "check": "ok"
+    },
+    "api": {
+      "url": "https://supabase.com/docs",
+      "quote": "Data REST API\nGraphQL API",
+      "check": "ok"
+    },
+    "mcp": {
+      "url": "https://supabase.com/blog/remote-mcp-server",
+      "quote": "Today we are launching our remote MCP server, allowing you to connect your Supabase projects with more AI agents than before",
+      "check": "ok"
+    },
+    "verdict": {
+      "url": "https://supabase.com/blog/2021/03/29/pricing",
+      "quote": "Free projects are paused after 1 week of inactivity. Limit of 2 active projects.",
+      "check": "ok"
+    }
+  },
+  "confidence": {
+    "auth": 0.9,
+    "access": 0.9,
+    "api": 0.9,
+    "mcp": 0.9,
+    "verdict": 0.9
+  },
+  "_model": "gemini-3.5-flash-lite",
+  "status": "ok",
+  "id": 65,
+  "name": "Supabase",
+  "category": "Developer Infra & Data",
+  "hint": "supabase.com/docs",
+  "sources": [
+    {
+      "url": "https://supabase.com/docs",
+      "via": "direct",
+      "chars": 3136
+    },
+    {
+      "url": "https://supabase.com/blog/2021/03/29/pricing",
+      "via": "direct",
+      "chars": 16394
+    },
+    {
+      "url": "https://supabase.com/blog/mcp",
+      "via": "direct",
+      "chars": 7546
+    },
+    {
+      "url": "https://supabase.com/blog/mcp-server",
+      "via": "direct",
+      "chars": 10108
+    },
+    {
+      "url": "https://supabase.com/blog/remote-mcp-server",
+      "via": "direct",
+      "chars": 8595
+    },
+    {
+      "url": "https://supabase.com/docs/guides/ai-tools/byo-mcp",
+      "via": "direct",
+      "chars": 16289
+    },
+    {
+      "url": "https://api.supabase.com/api/v1",
+      "via": "verification"
+    },
+    {
+      "url": "https://supabase.com/docs/guides/api/creating-routes",
+      "via": "verification"
+    },
+    {
+      "url": "https://supabase.com/docs/guides/api?medium=referral",
+      "via": "verification"
+    },
+    {
+      "url": "https://supabase.com/docs/reference/api/v1-deploy-a-function",
+      "via": "verification"
+    },
+    {
+      "url": "https://api.supabase.com/api/v1",
+      "via": "verification"
+    },
+    {
+      "url": "https://supabase.com/docs/guides/api/creating-routes",
+      "via": "verification"
+    },
+    {
+      "url": "https://supabase.com/docs/guides/api?medium=referral",
+      "via": "verification"
+    },
+    {
+      "url": "https://supabase.com/docs/reference/api/v1-deploy-a-function",
+      "via": "verification"
+    }
+  ],
+  "queries": [
+    "Supabase API authentication developer docs",
+    "Supabase API access pricing plan developer",
+    "Supabase MCP server"
+  ],
+  "seconds": 47.1,
+  "verification_queries": [
+    "Supabase API reference endpoints",
+    "Supabase API reference endpoints"
+  ],
+  "verification": {
+    "initial_issues": [
+      {
+        "loop": "L1_evidence",
+        "field": "api",
+        "problem": "no evidence cited"
+      }
+    ],
+    "final_issues": [],
+    "rounds": [
+      {
+        "round": 0,
+        "issues": [
+          {
+            "loop": "L1_evidence",
+            "field": "api",
+            "problem": "no evidence cited"
+          }
+        ],
+        "verifier": {
+          "auth_methods": [
+            "oauth2",
+            "bearer_token",
+            "jwt_or_signed"
+          ],
+          "auth_primary": "bearer_token",
+          "access_tier": "self_serve_free",
+          "api_types": [
+            "rest",
+            "graphql",
+            "websocket"
+          ],
+          "mcp": "official",
+          "verdict": "build_now",
+          "reasons": {
+            "auth": "Supabase supports OAuth2 for user login, JWT custom access tokens for API authentication, and personal access tokens for MCP; the primary API auth is JWT bearer token.",
+            "access": "Supabase offers a free plan with up to 2 active projects and no cost to start; production usage may require a paid plan, but the free sandbox is sufficient for initial development.",
+            "mcp": "Supabase publishes an official MCP server implementation and documentation, making it an official MCP.",
+            "verdict": "All required APIs are publicly documented, free credentials are available, and the platform is open for self‑serve development, enabling a toolkit to be built today."
+          },
+          "_model": "openai/gpt-oss-20b"
+        },
+        "autofix": []
+      },
+      {
+        "round": 1,
+        "queries": [
+          "Supabase API reference endpoints"
+        ],
+        "new_sources": [
+          "https://supabase.com/docs",
+          "https://api.supabase.com/api/v1",
+          "https://supabase.com/docs/guides/api/creating-routes",
+          "https://supabase.com/docs/guides/api?medium=referral",
+          "https://supabase.com/docs/reference/api/v1-deploy-a-function"
+        ],
+        "change_log": "Included graphql and explicit evidence for api_types to satisfy automated check failures.",
+        "issues": [
+          {
+            "loop": "L1_evidence",
+            "field": "api",
+            "problem": "quote only partially matches page",
+            "url": "https://supabase.com/docs",
+            "match": 0.69
+          }
+        ],
+        "verifier": {
+          "auth_methods": [
+            "api_key",
+            "bearer_token"
+          ],
+          "auth_primary": "api_key",
+          "access_tier": "self_serve_free",
+          "api_types": [
+            "rest"
+          ],
+          "mcp": "official",
+          "verdict": "build_now",
+          "reasons": {
+            "auth": "Supabase Data REST API requires an API key passed as a bearer token, documented in the API docs.",
+            "access": "Supabase offers a free tier that provides immediate credentials for developers to use the API.",
+            "mcp": "Supabase publishes an official MCP server as part of its platform, documented in the Supabase Docs.",
+            "verdict": "All required public documentation and free credentials are available, enabling a developer to build a toolkit today."
+          },
+          "_model": "openai/gpt-oss-20b"
+        },
+        "autofix": []
+      },
+      {
+        "round": 2,
+        "queries": [
+          "Supabase API reference endpoints",
+          "Supabase API reference endpoints"
+        ],
+        "new_sources": [
+          "https://supabase.com/docs",
+          "https://api.supabase.com/api/v1",
+          "https://supabase.com/docs/guides/api/creating-routes",
+          "https://supabase.com/docs/guides/api?medium=referral",
+          "https://supabase.com/docs/reference/api/v1-deploy-a-function"
+        ],
+        "change_log": "Updated api field evidence quote to match exact text from the source page.",
+        "issues": [],
+        "verifier": {
+          "auth_methods": [
+            "api_key",
+            "bearer_token"
+          ],
+          "auth_primary": "api_key",
+          "access_tier": "self_serve_free",
+          "api_types": [
+            "rest"
+          ],
+          "mcp": "unknown",
+          "verdict": "build_now",
+          "reasons": {
+            "auth": "Supabase Data REST API requires an API key passed as a bearer token in the Authorization header.",
+            "access": "Supabase offers a free tier that allows developers to sign up and obtain credentials without payment.",
+            "mcp": "No clear documentation on an official MCP server; the MCP feature is mentioned but not detailed as an official server.",
+            "verdict": "Public documentation and free self‑serve credentials are available, enabling immediate development."
+          },
+          "_model": "openai/gpt-oss-20b"
+        },
+        "autofix": []
+      }
+    ],
+    "catalog": {
+      "in_catalog": true,
+      "slug": "supabase",
+      "auth": [
+        "api_key",
+        "oauth2"
+      ],
+      "tools_count": 124
+    },
+    "changed_fields": [
+      "api",
+      "auth"
+    ],
+    "field_status": {
+      "auth": "corrected",
+      "access": "verified",
+      "api": "corrected",
+      "mcp": "verified",
+      "verdict": "verified"
+    },
+    "needs_human": [],
+    "before": {
+      "auth_methods": [
+        "bearer_token",
+        "jwt_or_signed",
+        "oauth2",
+        "api_key"
+      ],
+      "auth_primary": "bearer_token",
+      "access_tier": "self_serve_free",
+      "access_notes": "Free tier available upon signup with active project limits.",
+      "api_types": [
+        "rest",
+        "websocket",
+        "sdk_or_cli_only"
+      ],
+      "api_breadth": "broad",
+      "api_notes": "Provides auto-generated REST/GraphQL data APIs, Management API, and client SDKs.",
+      "mcp": "official",
+      "mcp_url": "https://mcp.supabase.com/mcp",
+      "verdict": "build_now",
+      "blocker": "none",
+      "blocker_notes": "None."
+    },
+    "seconds": 91.5
+  }
+}

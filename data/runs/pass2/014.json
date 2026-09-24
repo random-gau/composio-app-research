@@ -202,7 +202,14 @@
       }
     ],
     "catalog": {
-      "in_catalog": false
+      "in_catalog": true,
+      "slug": "front",
+      "auth": [
+        "api_key"
+      ],
+      "tools_count": 0,
+      "via": "slug_lookup",
+      "mcp_wrapper": false
     },
     "changed_fields": [],
     "field_status": {

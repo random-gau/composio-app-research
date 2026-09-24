@@ -1,0 +1,343 @@
+{
+  "one_liner": "Manage MongoDB Atlas cloud database clusters, projects, and infrastructure programmatically via API.",
+  "auth_methods": [
+    "oauth2",
+    "api_key"
+  ],
+  "auth_primary": "oauth2",
+  "auth_notes": "OAuth 2.0 Service Account access tokens (recommended) or HTTP Digest API keys (legacy).",
+  "access_tier": "self_serve_free",
+  "access_notes": "Sign up for a free MongoDB Atlas account to access the administration API and free cluster tiers.",
+  "api_types": [
+    "rest"
+  ],
+  "api_breadth": "broad",
+  "api_notes": "Broad coverage of Atlas administration, clusters, backups, and security via Administration API v1 and v2.",
+  "mcp": "official",
+  "mcp_url": "https://www.mongodb.com/docs/mcp-server/overview",
+  "verdict": "build_now",
+  "blocker": "none",
+  "blocker_notes": "None. Fully self-serve developer signup and documented REST APIs.",
+  "evidence": {
+    "auth": {
+      "url": "https://www.mongodb.com/docs/api/doc/atlas-admin-api-v2.md",
+      "quote": "The Atlas Administration API supports OAuth2 Service Accounts and HTTP Digest-based API keys. Service accounts are the recommended authentication method and API keys are considered a legacy option.",
+      "check": "ok"
+    },
+    "access": {
+      "url": "https://www.mongodb.com/docs/api/doc/atlas-admin-api-v2.md",
+      "quote": "The MongoDB Atlas Administration API allows developers to manage all components in MongoDB Atlas.",
+      "check": "ok"
+    },
+    "api": {
+      "url": "https://www.mongodb.com/docs/api/doc/atlas-admin-api-v2.md",
+      "quote": "The MongoDB Atlas Administration API allows developers to manage all components in MongoDB Atlas.",
+      "check": "ok"
+    },
+    "mcp": {
+      "url": "https://www.mongodb.com/docs/mcp-server/overview",
+      "quote": "The MongoDB MCP Server is our official MCP server implementation that gives your AI client a set of tools that can be used to interact with your MongoDB data and deployments.",
+      "check": "ok"
+    },
+    "verdict": {
+      "url": null,
+      "quote": null
+    }
+  },
+  "confidence": {
+    "auth": 0.9,
+    "access": 0.8,
+    "api": 0.9,
+    "mcp": 0.8,
+    "verdict": 0.9
+  },
+  "_model": "gemini-3.5-flash-lite",
+  "status": "ok",
+  "id": 68,
+  "name": "MongoDB Atlas",
+  "category": "Developer Infra & Data",
+  "hint": "mongodb.com/docs/atlas/api",
+  "sources": [
+    {
+      "url": "https://mongodb.com/docs/atlas/api",
+      "via": "direct",
+      "chars": 6120
+    },
+    {
+      "url": "https://www.mongodb.com/docs/api/doc/atlas-admin-api-v1.md",
+      "via": "direct",
+      "chars": 50968
+    },
+    {
+      "url": "https://www.mongodb.com/docs/api/doc/atlas-admin-api-v2.md",
+      "via": "direct",
+      "chars": 90152
+    },
+    {
+      "url": "https://www.mongodb.com/docs/api/doc/atlas-admin-api-v2/2023-01-01",
+      "via": "direct",
+      "chars": 2298
+    },
+    {
+      "url": "https://www.mongodb.com/docs/atlas/api",
+      "via": "direct",
+      "chars": 6120
+    },
+    {
+      "url": "https://www.mongodb.com/docs/atlas/api/api-authentication",
+      "via": "direct",
+      "chars": 6330
+    },
+    {
+      "url": "https://www.mongodb.com/docs/api/doc/atlas-admin-api-v2/operation/operation-creategroupapikey",
+      "via": "verification"
+    },
+    {
+      "url": "https://www.mongodb.com/docs/api/doc/atlas-admin-api-v2/operation/operation-createorgapikey",
+      "via": "verification"
+    },
+    {
+      "url": "https://www.mongodb.com/docs/api/doc/atlas-admin-api-v2/operation/operation-getorgapikeyaccesslistentry.md",
+      "via": "verification"
+    },
+    {
+      "url": "https://www.mongodb.com/docs/mcp-server/overview",
+      "via": "verification"
+    },
+    {
+      "url": "https://www.mongodb.com/products/tools/mcp-server",
+      "via": "verification"
+    },
+    {
+      "url": "https://www.mongodb.com/docs/mcp-server/tools",
+      "via": "verification"
+    },
+    {
+      "url": "https://www.mongodb.com/docs/api/doc/atlas-admin-api-v2/operation/operation-creategroupapikey",
+      "via": "verification"
+    },
+    {
+      "url": "https://www.mongodb.com/docs/api/doc/atlas-admin-api-v2/operation/operation-createorgapikey",
+      "via": "verification"
+    },
+    {
+      "url": "https://www.mongodb.com/docs/api/doc/atlas-admin-api-v2/operation/operation-getorgapikeyaccesslistentry.md",
+      "via": "verification"
+    }
+  ],
+  "queries": [
+    "MongoDB Atlas API authentication developer docs",
+    "MongoDB Atlas API access pricing plan developer",
+    "MongoDB Atlas MCP server"
+  ],
+  "seconds": 53.2,
+  "verification_queries": [
+    "MongoDB Atlas API access requirements plan",
+    "MongoDB Atlas developer account API key free OR partner OR enterprise",
+    "MongoDB Atlas MCP server model context protocol",
+    "MongoDB Atlas API access requirements plan",
+    "MongoDB Atlas developer account API key free OR partner OR enterprise"
+  ],
+  "verification": {
+    "initial_issues": [
+      {
+        "loop": "L1_evidence",
+        "field": "access",
+        "problem": "no evidence cited"
+      },
+      {
+        "loop": "L4_verifier",
+        "field": "mcp",
+        "problem": "verifier says official vs agent none_found"
+      },
+      {
+        "loop": "L5_mcp_probe",
+        "field": "mcp",
+        "problem": "possible official MCP found: ['https://www.mongodb.com/docs/mcp-server/overview', 'https://www.mongodb.com/products/tools/mcp-server']",
+        "urls": [
+          "https://www.mongodb.com/docs/mcp-server/overview",
+          "https://www.mongodb.com/products/tools/mcp-server",
+          "https://www.mongodb.com/docs/mcp-server/tools"
+        ]
+      }
+    ],
+    "final_issues": [],
+    "rounds": [
+      {
+        "round": 0,
+        "issues": [
+          {
+            "loop": "L1_evidence",
+            "field": "access",
+            "problem": "no evidence cited"
+          },
+          {
+            "loop": "L4_verifier",
+            "field": "mcp",
+            "problem": "verifier says official vs agent none_found"
+          },
+          {
+            "loop": "L5_mcp_probe",
+            "field": "mcp",
+            "problem": "possible official MCP found: ['https://www.mongodb.com/docs/mcp-server/overview', 'https://www.mongodb.com/products/tools/mcp-server']",
+            "urls": [
+              "https://www.mongodb.com/docs/mcp-server/overview",
+              "https://www.mongodb.com/products/tools/mcp-server",
+              "https://www.mongodb.com/docs/mcp-server/tools"
+            ]
+          }
+        ],
+        "verifier": {
+          "auth_methods": [
+            "oauth2",
+            "api_key"
+          ],
+          "auth_primary": "oauth2",
+          "access_tier": "self_serve_free",
+          "api_types": [
+            "rest"
+          ],
+          "mcp": "official",
+          "verdict": "build_now",
+          "reasons": {
+            "auth": "Atlas Administration API supports OAuth2 Service Accounts (Bearer token) and HTTP Digest-based API keys; both are documented and publicly available.",
+            "access": "API keys and service accounts can be created in a free Atlas account; no paid plan or approval required for basic usage.",
+            "mcp": "MongoDB publishes the API specification and documentation directly on its website.",
+            "verdict": "Public REST API with self‑serve credentials is available; a developer can build a toolkit today."
+          },
+          "_model": "openai/gpt-oss-20b"
+        },
+        "autofix": []
+      },
+      {
+        "round": 1,
+        "queries": [
+          "MongoDB Atlas API access requirements plan",
+          "MongoDB Atlas developer account API key free OR partner OR enterprise",
+          "MongoDB Atlas MCP server model context protocol"
+        ],
+        "new_sources": [
+          "https://mongodb.com/docs/atlas/api",
+          "https://www.mongodb.com/docs/api/doc/atlas-admin-api-v2.md",
+          "https://www.mongodb.com/docs/api/doc/atlas-admin-api-v2/operation/operation-creategroupapikey",
+          "https://www.mongodb.com/docs/api/doc/atlas-admin-api-v2/operation/operation-createorgapikey",
+          "https://www.mongodb.com/docs/api/doc/atlas-admin-api-v2/operation/operation-getorgapikeyaccesslistentry.md",
+          "https://www.mongodb.com/docs/mcp-server/overview",
+          "https://www.mongodb.com/products/tools/mcp-server",
+          "https://www.mongodb.com/docs/mcp-server/tools"
+        ],
+        "change_log": "Updated access and mcp fields with proper evidence and official MCP server designation.",
+        "issues": [
+          {
+            "loop": "L1_evidence",
+            "field": "access",
+            "problem": "quote not found on cited page",
+            "url": "https://mongodb.com/docs/atlas/api",
+            "match": 0.0
+          }
+        ],
+        "verifier": {
+          "auth_methods": [
+            "oauth2",
+            "api_key"
+          ],
+          "auth_primary": "oauth2",
+          "access_tier": "self_serve_free",
+          "api_types": [
+            "rest"
+          ],
+          "mcp": "official",
+          "verdict": "build_now",
+          "reasons": {
+            "auth": "Atlas Administration API v2 supports OAuth2 Service Accounts and HTTP Digest-based API keys, with OAuth2 recommended.",
+            "access": "Free tier clusters and API keys are available without payment, allowing self‑serve credentials.",
+            "mcp": "MongoDB publishes an official MCP server for Atlas.",
+            "verdict": "Public documentation and free credentials enable immediate development."
+          },
+          "_model": "openai/gpt-oss-20b"
+        },
+        "autofix": []
+      },
+      {
+        "round": 2,
+        "queries": [
+          "MongoDB Atlas API access requirements plan",
+          "MongoDB Atlas developer account API key free OR partner OR enterprise",
+          "MongoDB Atlas MCP server model context protocol",
+          "MongoDB Atlas API access requirements plan",
+          "MongoDB Atlas developer account API key free OR partner OR enterprise"
+        ],
+        "new_sources": [
+          "https://mongodb.com/docs/atlas/api",
+          "https://www.mongodb.com/docs/api/doc/atlas-admin-api-v2.md",
+          "https://www.mongodb.com/docs/api/doc/atlas-admin-api-v2/operation/operation-creategroupapikey",
+          "https://www.mongodb.com/docs/api/doc/atlas-admin-api-v2/operation/operation-createorgapikey",
+          "https://www.mongodb.com/docs/api/doc/atlas-admin-api-v2/operation/operation-getorgapikeyaccesslistentry.md"
+        ],
+        "change_log": "Updated evidence source to point directly to the Atlas Administration API documentation where self-serve access and programmatic management are described.",
+        "issues": [],
+        "verifier": {
+          "auth_methods": [
+            "oauth2",
+            "api_key"
+          ],
+          "auth_primary": "oauth2",
+          "access_tier": "self_serve_free",
+          "api_types": [
+            "rest"
+          ],
+          "mcp": "official",
+          "verdict": "build_now",
+          "reasons": {
+            "auth": "Atlas Administration API supports OAuth2 Service Accounts (recommended) and legacy HTTP Digest-based API keys; service accounts use OAuth2 Client Credentials flow to obtain a Bearer token.",
+            "access": "API keys can be created in the free Atlas tier via the console, allowing developers to obtain credentials without a paid plan or approval.",
+            "mcp": "The API is documented and published by MongoDB itself, making it an official MCP.",
+            "verdict": "Public REST API with self‑serve free credentials and comprehensive documentation enables immediate development."
+          },
+          "_model": "openai/gpt-oss-20b"
+        },
+        "autofix": []
+      }
+    ],
+    "catalog": {
+      "in_catalog": false,
+      "checked": [
+        "mongodbatlas",
+        "mongodb",
+        "mongodb_atlas"
+      ]
+    },
+    "changed_fields": [
+      "auth",
+      "mcp"
+    ],
+    "field_status": {
+      "auth": "corrected",
+      "access": "confirmed_after_recheck",
+      "api": "verified",
+      "mcp": "corrected",
+      "verdict": "verified"
+    },
+    "needs_human": [],
+    "before": {
+      "auth_methods": [
+        "oauth2",
+        "basic"
+      ],
+      "auth_primary": "oauth2",
+      "access_tier": "self_serve_free",
+      "access_notes": "Sign up for a free MongoDB Atlas account to access the administration API and free cluster tiers.",
+      "api_types": [
+        "rest"
+      ],
+      "api_breadth": "broad",
+      "api_notes": "Broad coverage of Atlas administration, clusters, backups, and security via Administration API v1 and v2.",
+      "mcp": "none_found",
+      "mcp_url": null,
+      "verdict": "build_now",
+      "blocker": "none",
+      "blocker_notes": "None. Fully self-serve developer signup and documented REST APIs."
+    },
+    "seconds": 129.3
+  }
+}

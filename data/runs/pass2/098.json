@@ -1,0 +1,360 @@
+{
+  "one_liner": "Command line tool for rendering Mermaid diagrams into SVG or PNG formats.",
+  "auth_methods": [
+    "none"
+  ],
+  "auth_primary": "none",
+  "auth_notes": "Local CLI tool, no authentication needed.",
+  "access_tier": "open_source_local",
+  "access_notes": "Open-source command-line tool available freely on GitHub and npm.",
+  "api_types": [
+    "sdk_or_cli_only"
+  ],
+  "api_breadth": "none",
+  "api_notes": "Command-line interface only, no web REST/GraphQL API.",
+  "mcp": "community_only",
+  "mcp_url": "https://github.com/hustcc/mcp-mermaid",
+  "verdict": "build_with_friction",
+  "blocker": "local_tool_only",
+  "blocker_notes": "Can be easily packaged as an open source local toolkit via CLI execution.",
+  "evidence": {
+    "auth": {
+      "url": "https://github.com/mermaid-js/mermaid-cli",
+      "quote": "GitHub - mermaid-js/mermaid-cli: Command line tool for the Mermaid library",
+      "check": "ok"
+    },
+    "access": {
+      "url": "https://github.com/mermaid-js/mermaid-cli",
+      "quote": "Command line tool for the Mermaid library",
+      "check": "ok"
+    },
+    "api": {
+      "url": "https://github.com/mermaid-js/mermaid-cli",
+      "quote": "Command line tool for the Mermaid library",
+      "check": "ok"
+    },
+    "mcp": {
+      "url": "https://github.com/hustcc/mcp-mermaid",
+      "quote": "Generate mermaid diagram and chart with AI MCP dynamically.",
+      "check": "ok"
+    },
+    "verdict": {
+      "url": "https://github.com/mermaid-js/mermaid-cli",
+      "quote": "Command line tool for the Mermaid library",
+      "check": "ok"
+    }
+  },
+  "confidence": {
+    "auth": 0.9,
+    "access": 1.0,
+    "api": 1.0,
+    "mcp": 1.0,
+    "verdict": 0.9
+  },
+  "_model": "gemini-3.5-flash-lite",
+  "status": "ok",
+  "id": 98,
+  "name": "Mermaid CLI",
+  "category": "AI Research & Media",
+  "hint": "github.com/mermaid-js/mermaid-cli",
+  "sources": [
+    {
+      "url": "https://github.com/mermaid-js/mermaid-cli",
+      "via": "direct",
+      "chars": 6763
+    },
+    {
+      "url": "https://github.com/abekdwight/mermaid-mcp-server",
+      "via": "direct",
+      "chars": 4747
+    },
+    {
+      "url": "https://github.com/andrewginns/mermaid-mcp-server",
+      "via": "direct",
+      "chars": 7919
+    },
+    {
+      "url": "https://github.com/data-mermaid/mermaid-api/blob/master/docs/source/authentication.rst",
+      "via": "composio_fetch",
+      "chars": 1366
+    },
+    {
+      "url": "https://github.com/hustcc/mcp-mermaid",
+      "via": "direct",
+      "chars": 5364
+    },
+    {
+      "url": "https://github.com/locupleto/mcp-mermaid-diagram",
+      "via": "direct",
+      "chars": 7246
+    },
+    {
+      "url": "https://github.com/Narasimhaponnada/mermaid-mcp/blob/main/Setup.md",
+      "via": "verification"
+    },
+    {
+      "url": "https://github.com/aviciot/mcp_mermaid",
+      "via": "verification"
+    },
+    {
+      "url": "https://github.com/mermaid-js/mermaid-cli/pull/354",
+      "via": "verification"
+    },
+    {
+      "url": "https://github.com/noahsabaj/mermaid-cli",
+      "via": "verification"
+    },
+    {
+      "url": "https://docs.rs/crate/mermaid-cli/latest/source/README.md",
+      "via": "verification"
+    },
+    {
+      "url": "https://docs.rs/mermaid-cli/latest/mermaid_cli/cli/enum.Commands.html",
+      "via": "verification"
+    }
+  ],
+  "queries": [
+    "Mermaid CLI API authentication developer docs",
+    "Mermaid CLI API access pricing plan developer",
+    "Mermaid CLI MCP server"
+  ],
+  "seconds": 53.6,
+  "verification_queries": [
+    "Mermaid CLI API reference endpoints",
+    "Mermaid CLI API authentication OAuth API key",
+    "Mermaid CLI API reference authentication",
+    "Mermaid CLI MCP server model context protocol",
+    "Mermaid CLI API access requirements plan",
+    "Mermaid CLI API access requirements plan"
+  ],
+  "verification": {
+    "initial_issues": [
+      {
+        "loop": "L1_evidence",
+        "field": "auth",
+        "problem": "no evidence cited"
+      },
+      {
+        "loop": "L2_rules",
+        "field": "verdict",
+        "problem": "open-source local tool has no hosted API or credentials; build_now needs justification"
+      },
+      {
+        "loop": "L4_verifier",
+        "field": "mcp",
+        "problem": "verifier says official vs agent community_only"
+      },
+      {
+        "loop": "L4_verifier",
+        "field": "api",
+        "problem": "verifier says ['rest', 'graphql', 'none'] vs agent ['sdk_or_cli_only']"
+      },
+      {
+        "loop": "L5_mcp_probe",
+        "field": "mcp",
+        "problem": "possible official MCP found: ['https://github.com/hustcc/mcp-mermaid', 'https://github.com/andrewginns/mermaid-mcp-server']",
+        "urls": [
+          "https://github.com/hustcc/mcp-mermaid",
+          "https://github.com/andrewginns/mermaid-mcp-server",
+          "https://github.com/abekdwight/mermaid-mcp-server"
+        ]
+      }
+    ],
+    "final_issues": [
+      {
+        "loop": "L4_verifier",
+        "field": "verdict",
+        "problem": "verifier says build_now vs agent build_with_friction"
+      }
+    ],
+    "rounds": [
+      {
+        "round": 0,
+        "issues": [
+          {
+            "loop": "L1_evidence",
+            "field": "auth",
+            "problem": "no evidence cited"
+          },
+          {
+            "loop": "L2_rules",
+            "field": "verdict",
+            "problem": "open-source local tool has no hosted API or credentials; build_now needs justification"
+          },
+          {
+            "loop": "L4_verifier",
+            "field": "mcp",
+            "problem": "verifier says official vs agent community_only"
+          },
+          {
+            "loop": "L4_verifier",
+            "field": "api",
+            "problem": "verifier says ['rest', 'graphql', 'none'] vs agent ['sdk_or_cli_only']"
+          },
+          {
+            "loop": "L5_mcp_probe",
+            "field": "mcp",
+            "problem": "possible official MCP found: ['https://github.com/hustcc/mcp-mermaid', 'https://github.com/andrewginns/mermaid-mcp-server']",
+            "urls": [
+              "https://github.com/hustcc/mcp-mermaid",
+              "https://github.com/andrewginns/mermaid-mcp-server",
+              "https://github.com/abekdwight/mermaid-mcp-server"
+            ]
+          }
+        ],
+        "verifier": {
+          "auth_methods": [
+            "oauth2",
+            "api_key",
+            "none"
+          ],
+          "auth_primary": "oauth2",
+          "access_tier": "unknown",
+          "api_types": [
+            "rest",
+            "graphql",
+            "none"
+          ],
+          "mcp": "official",
+          "verdict": "unknown",
+          "reasons": {},
+          "_model": "allam-2-7b"
+        },
+        "autofix": []
+      },
+      {
+        "round": 1,
+        "queries": [
+          "Mermaid CLI API reference endpoints",
+          "Mermaid CLI API authentication OAuth API key",
+          "Mermaid CLI API reference authentication",
+          "Mermaid CLI MCP server model context protocol",
+          "Mermaid CLI API access requirements plan"
+        ],
+        "new_sources": [
+          "https://github.com/mermaid-js/mermaid-cli",
+          "https://github.com/Narasimhaponnada/mermaid-mcp/blob/main/Setup.md",
+          "https://github.com/andrewginns/mermaid-mcp-server",
+          "https://github.com/aviciot/mcp_mermaid",
+          "https://github.com/data-mermaid/mermaid-api/blob/master/docs/source/authentication.rst",
+          "https://github.com/hustcc/mcp-mermaid",
+          "https://github.com/abekdwight/mermaid-mcp-server"
+        ],
+        "change_log": "Resolved flagged fields by confirming mermaid-cli is an open-source local CLI tool with no hosted web API, no auth required, and community-created MCP servers.",
+        "issues": [
+          {
+            "loop": "L2_rules",
+            "field": "verdict",
+            "problem": "open-source local tool has no hosted API or credentials; build_now needs justification"
+          }
+        ],
+        "verifier": {
+          "auth_methods": [
+            "none"
+          ],
+          "auth_primary": "none",
+          "access_tier": "open_source_local",
+          "api_types": [
+            "sdk_or_cli_only"
+          ],
+          "mcp": "community_only",
+          "verdict": "build_now",
+          "reasons": {
+            "auth": "Mermaid CLI is a local command-line tool that does not require authentication credentials to run.",
+            "access": "The tool is open-source and runs locally; users install it via npm or similar package managers without needing a hosted account or API key.",
+            "mcp": "Multiple third-party MCP servers (e.g., Narasimhaponnada/mermaid-mcp, andrewginns/mermaid-mcp-server, aviciot/mcp_mermaid) are available on GitHub, but no official MCP server is documented by the Mermaid vendor.",
+            "verdict": "Since the tool is open-source and runs locally, a toolkit can be built immediately using the CLI or community MCP servers without waiting for API access or approvals."
+          },
+          "_model": "qwen/qwen3.8-27b"
+        },
+        "autofix": []
+      },
+      {
+        "round": 2,
+        "queries": [
+          "Mermaid CLI API reference endpoints",
+          "Mermaid CLI API authentication OAuth API key",
+          "Mermaid CLI API reference authentication",
+          "Mermaid CLI MCP server model context protocol",
+          "Mermaid CLI API access requirements plan",
+          "Mermaid CLI API access requirements plan"
+        ],
+        "new_sources": [
+          "https://github.com/mermaid-js/mermaid-cli",
+          "https://github.com/mermaid-js/mermaid-cli/pull/354",
+          "https://github.com/noahsabaj/mermaid-cli",
+          "https://docs.rs/crate/mermaid-cli/latest/source/README.md",
+          "https://docs.rs/mermaid-cli/latest/mermaid_cli/cli/enum.Commands.html"
+        ],
+        "change_log": "Changed verdict from build_now to build_with_friction because it is an open-source local tool with no hosted API or cloud credentials.",
+        "issues": [
+          {
+            "loop": "L4_verifier",
+            "field": "verdict",
+            "problem": "verifier says build_now vs agent build_with_friction"
+          }
+        ],
+        "verifier": {
+          "auth_methods": [
+            "none"
+          ],
+          "auth_primary": "none",
+          "access_tier": "open_source_local",
+          "api_types": [
+            "sdk_or_cli_only"
+          ],
+          "mcp": "none_found",
+          "verdict": "build_now",
+          "reasons": {
+            "auth": "The mermaid-cli projects are open‑source command‑line tools that run locally and do not require any authentication to use (Source 1, Source 3, Source 4).",
+            "access": "The software is freely available on GitHub and can be installed and run without a paid plan or approval, fitting the open_source_local tier (Source 1, Source 3).",
+            "mcp": "No official MCP server is documented for mermaid-cli; the references to MCP in Source 3 and Source 4 pertain to the AI‑assistant framework, not to a mermaid‑cli hosted service (Source 3, Source 4).",
+            "verdict": "Because the tool is open‑source, requires no auth, and can be used immediately after installation, it can be built today without friction."
+          },
+          "_model": "openai/gpt-oss-120b"
+        },
+        "autofix": []
+      }
+    ],
+    "catalog": {
+      "in_catalog": true,
+      "slug": "mermaid_chart_mcp",
+      "auth": [
+        "none"
+      ],
+      "tools_count": 1
+    },
+    "changed_fields": [
+      "verdict"
+    ],
+    "field_status": {
+      "auth": "confirmed_after_recheck",
+      "access": "verified",
+      "api": "confirmed_after_recheck",
+      "mcp": "confirmed_after_recheck",
+      "verdict": "needs_human"
+    },
+    "needs_human": [
+      "verdict"
+    ],
+    "before": {
+      "auth_methods": [
+        "none"
+      ],
+      "auth_primary": "none",
+      "access_tier": "open_source_local",
+      "access_notes": "Open source command line tool available freely on GitHub and npm.",
+      "api_types": [
+        "sdk_or_cli_only"
+      ],
+      "api_breadth": "none",
+      "api_notes": "Command-line interface only, no web REST/GraphQL API.",
+      "mcp": "community_only",
+      "mcp_url": "https://github.com/hustcc/mcp-mermaid",
+      "verdict": "build_now",
+      "blocker": "none",
+      "blocker_notes": "Can be easily packaged as an open source local toolkit via CLI execution."
+    },
+    "seconds": 342.4
+  }
+}

@@ -346,6 +346,8 @@ $("#agent-facts").innerHTML = [
   `Flagged ${S.apps_flagged} of ${N} apps in pass 2; changed at least one field on ${S.apps_changed}.`,
   `Checked ${S.p1_cited} cited quotes from pass 1 against the live pages.`,
   `Matched ${S.in_catalog} of ${N} apps to an existing Composio toolkit for the auth cross-check.`,
+  `Extraction model: ${Object.keys(S.models_extract||{}).filter(k=>k&&k!=="null").join(", ")}. Blind verifier runs: ${Object.entries(S.verifier_models||{}).map(([k,v])=>`${k} ×${v}`).join(", ")}.`,
+  (S.l4_skipped_apps||[]).length ? `The blind verifier could not run on ${S.l4_skipped_apps.length} apps (malformed model output or free-tier caps): ${S.l4_skipped_apps.join(", ")}. The other four loops still ran on them.` : "",
   run.runtime ? `Runtime: ${run.runtime}.` : ""
 ].filter(Boolean).map(x=>`<li>${esc(x)}</li>`).join("");
 const hq = S.needs_human_apps;
@@ -365,6 +367,7 @@ if (p1 && p2){
   $("#acc-fields").innerHTML = ["auth","access","api","mcp","verdict"].map(f => { const a=p1.per_field[f], b=p2.per_field[f];
     return `<div class="pair"><span>${L(f)}</span><div style="display:grid;gap:3px"><div class="t"><div class="f1" style="width:${a.pct||0}%"></div></div><div class="t"><div class="f2" style="width:${b.pct||0}%"></div></div></div>
     <span></span><span class="count num">${a.correct}/${a.n} → ${b.correct}/${b.n}</span></div>`; }).join("");
+  if (p1.auth_primary_only) $("#acc-fields").insertAdjacentHTML("beforeend", `<p class="count">Auth is scored strictly: the main method must be right and no listed method may be one the docs don't support. Scored on the main method alone, auth is ${p1.auth_primary_only.correct}/${p1.auth_primary_only.n} → ${p2.auth_primary_only.correct}/${p2.auth_primary_only.n}. Most auth misses are extra methods, not wrong ones.</p>`);
 } else { $("#acc-intro").textContent = "Accuracy scoring has not been run yet."; }
 const loopE = Object.entries(S.loops_initial).sort((a,b)=>a[0].localeCompare(b[0]));
 bars($("#loops"), loopE.map(([k,v])=>[L(k),v]), Math.max(...loopE.map(e=>e[1]),1), "var(--warn)");

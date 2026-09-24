@@ -37,6 +37,7 @@ def judge(rec: Dict[str, Any], t: Dict[str, str]) -> Dict[str, Any]:
             {fam(x) for x in t["auth_methods"].split(";")}
         agent = {fam(x) for x in rec["auth_methods"]}
         out["auth"] = fam(rec["auth_primary"]) in truth and agent <= (truth | {"other"})
+        out["_auth_primary"] = fam(rec["auth_primary"]) in truth  # secondary, lenient metric (not in overall)
     if t["access_accept"]:
         out["access"] = rec["access_tier"] in t["access_accept"].split("|")
     if t["api_accept"]:
@@ -59,12 +60,17 @@ def main() -> None:
     summary: Dict[str, Any] = {}
     for name, recs in passes.items():
         tot = {f: [0, 0] for f in FIELDS}
+        prim = [0, 0]
         for t in truth:
             rec = recs.get(int(t["id"]))
             if not rec:
                 continue
             j = judge(rec, t)
             for f, ok in j.items():
+                if f == "_auth_primary":
+                    prim[0] += int(ok)
+                    prim[1] += 1
+                    continue
                 tot[f][0] += int(ok)
                 tot[f][1] += 1
             rows.append({"pass": name, "id": int(t["id"]), "name": t["name"], **{f: j.get(f) for f in FIELDS},
@@ -74,11 +80,14 @@ def main() -> None:
         n = sum(v[1] for v in tot.values())
         summary[name] = {"per_field": {f: {"correct": c, "n": k, "pct": round(100 * c / k, 1) if k else None}
                                        for f, (c, k) in tot.items()},
-                         "overall": {"correct": correct, "n": n, "pct": round(100 * correct / n, 1) if n else None}}
+                         "overall": {"correct": correct, "n": n, "pct": round(100 * correct / n, 1) if n else None},
+                         "auth_primary_only": {"correct": prim[0], "n": prim[1],
+                                               "pct": round(100 * prim[0] / prim[1], 1) if prim[1] else None}}
     write_json(DATA / "accuracy.json", {"summary": summary, "rows": rows, "truth": truth})
     for name, s in summary.items():
         pf = "  ".join(f"{f}={v['correct']}/{v['n']}" for f, v in s["per_field"].items())
-        print(f"{name}: overall {s['overall']['correct']}/{s['overall']['n']} = {s['overall']['pct']}%   {pf}")
+        print(f"{name}: overall {s['overall']['correct']}/{s['overall']['n']} = {s['overall']['pct']}%   {pf}"
+              f"   (primary auth only: {s['auth_primary_only']['correct']}/{s['auth_primary_only']['n']})")
     # list the misses so a human can inspect them
     for r in rows:
         bad = [f for f in FIELDS if r.get(f) is False]
