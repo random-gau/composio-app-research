@@ -1,0 +1,257 @@
+{
+  "one_liner": "Customer service software and helpdesk ticketing system with robust AI and automation capabilities.",
+  "auth_methods": [
+    "oauth2",
+    "bearer_token",
+    "basic"
+  ],
+  "auth_primary": "oauth2",
+  "auth_notes": "Zendesk supports OAuth 2.0 access tokens, Bearer tokens, and basic auth using email/token.",
+  "access_tier": "self_serve_trial",
+  "access_notes": "Available via time-limited free trial or paid plans.",
+  "api_types": [
+    "rest"
+  ],
+  "api_breadth": "broad",
+  "api_notes": "Comprehensive REST APIs covering ticketing, users, organizations, help center, and oauth tokens under api/v2.",
+  "mcp": "official",
+  "mcp_url": "https://support.zendesk.com/hc/en-us/articles/10497779528730-Connecting-to-MCP-servers-and-using-MCP-tools-in-action-flows",
+  "verdict": "build_with_friction",
+  "blocker": "paid_plan",
+  "blocker_notes": "Free access requires a trial; long-term use requires a paid Zendesk plan.",
+  "evidence": {
+    "auth": {
+      "url": "https://developer.zendesk.com/api-reference/introduction/security-and-auth",
+      "quote": "Zendesk supports using OAuth access tokens to authenticate API requests.",
+      "check": "ok"
+    },
+    "access": {
+      "url": "https://zendesk.com",
+      "quote": "Try it for free",
+      "check": "ok"
+    },
+    "api": {
+      "url": "https://developer.zendesk.com/api-reference/introduction/requests",
+      "quote": "The Zendesk API is a JSON API. You must supply a Content-Type: application/json header in PUT, POST, and DELETE requests.",
+      "check": "ok"
+    },
+    "mcp": {
+      "url": "https://support.zendesk.com/hc/en-us/articles/10497779528730-Connecting-to-MCP-servers-and-using-MCP-tools-in-action-flows",
+      "quote": "The Model Context Protocol (MCP) lets admins connect Zendesk to external MCP servers, discover the tools those servers provide, and use those tools as steps in action flows.",
+      "check": "ok"
+    },
+    "verdict": {
+      "url": "https://zendesk.com",
+      "quote": "Try it for free",
+      "check": "ok"
+    }
+  },
+  "confidence": {
+    "auth": 0.9,
+    "access": 0.8,
+    "api": 0.9,
+    "mcp": 0.8,
+    "verdict": 0.8
+  },
+  "_model": "gemini-3.5-flash-lite",
+  "status": "ok",
+  "id": 11,
+  "name": "Zendesk",
+  "category": "Support & Helpdesk",
+  "hint": "zendesk.com",
+  "sources": [
+    {
+      "url": "https://zendesk.com",
+      "via": "direct",
+      "chars": 15918
+    },
+    {
+      "url": "https://developer.zendesk.com/api-reference/introduction/plan",
+      "via": "direct",
+      "chars": 530
+    },
+    {
+      "url": "https://developer.zendesk.com/api-reference/introduction/rate-limits",
+      "via": "direct",
+      "chars": 8584
+    },
+    {
+      "url": "https://developer.zendesk.com/api-reference/introduction/requests",
+      "via": "direct",
+      "chars": 4883
+    },
+    {
+      "url": "https://developer.zendesk.com/api-reference/introduction/security-and-auth",
+      "via": "direct",
+      "chars": 5676
+    },
+    {
+      "url": "https://developer.zendesk.com/api-reference/ticketing/oauth/oauth_tokens",
+      "via": "direct",
+      "chars": 21628
+    },
+    {
+      "url": "https://support.zendesk.com/hc/en-us/articles/10497779528730-Connecting-to-MCP-servers-and-using-MCP-tools-in-action-flows",
+      "via": "verification"
+    },
+    {
+      "url": "https://support.zendesk.com/hc/en-us/articles/11105393853210-Announcing-the-general-availability-of-the-MCP-client",
+      "via": "verification"
+    },
+    {
+      "url": "https://github.com/freeletics/zendesk-mcp-server",
+      "via": "verification"
+    },
+    {
+      "url": "https://github.com/markusvankempen/zendesk-mcp/blob/main/README.md",
+      "via": "verification"
+    },
+    {
+      "url": "https://www.zendesk.co.uk/blog/zip2-revolutionizing-service-with-the-zendesk-ai-mcp-client",
+      "via": "verification"
+    },
+    {
+      "url": "https://www.zendesk.nl/blog/zip2-revolutionizing-service-with-the-zendesk-ai-mcp-client",
+      "via": "verification"
+    }
+  ],
+  "queries": [
+    "Zendesk API authentication developer docs",
+    "Zendesk API access pricing plan developer",
+    "Zendesk MCP server"
+  ],
+  "seconds": 59.7,
+  "verification_queries": [
+    "Zendesk MCP server model context protocol"
+  ],
+  "verification": {
+    "initial_issues": [
+      {
+        "loop": "L5_mcp_probe",
+        "field": "mcp",
+        "problem": "possible official MCP found: ['https://support.zendesk.com/hc/en-us/articles/10497779528730-Connecting-to-MCP-servers-and-using-MCP-tools-in-action-flows', 'https://www.zendesk.co.uk/blog/zip2-revolutionizing-service-with-the-zendesk-ai-mcp-client']",
+        "urls": [
+          "https://support.zendesk.com/hc/en-us/articles/10497779528730-Connecting-to-MCP-servers-and-using-MCP-tools-in-action-flows",
+          "https://www.zendesk.co.uk/blog/zip2-revolutionizing-service-with-the-zendesk-ai-mcp-client",
+          "https://www.zendesk.nl/blog/zip2-revolutionizing-service-with-the-zendesk-ai-mcp-client"
+        ]
+      }
+    ],
+    "final_issues": [],
+    "rounds": [
+      {
+        "round": 0,
+        "issues": [
+          {
+            "loop": "L5_mcp_probe",
+            "field": "mcp",
+            "problem": "possible official MCP found: ['https://support.zendesk.com/hc/en-us/articles/10497779528730-Connecting-to-MCP-servers-and-using-MCP-tools-in-action-flows', 'https://www.zendesk.co.uk/blog/zip2-revolutionizing-service-with-the-zendesk-ai-mcp-client']",
+            "urls": [
+              "https://support.zendesk.com/hc/en-us/articles/10497779528730-Connecting-to-MCP-servers-and-using-MCP-tools-in-action-flows",
+              "https://www.zendesk.co.uk/blog/zip2-revolutionizing-service-with-the-zendesk-ai-mcp-client",
+              "https://www.zendesk.nl/blog/zip2-revolutionizing-service-with-the-zendesk-ai-mcp-client"
+            ]
+          }
+        ],
+        "verifier": {
+          "auth_methods": [
+            "other"
+          ],
+          "auth_primary": "other",
+          "access_tier": "unknown",
+          "api_types": [
+            "rest"
+          ],
+          "mcp": "unknown",
+          "verdict": "unknown",
+          "reasons": {
+            "auth": "The provided sources do not specify which authentication methods (OAuth2, API key, basic, JWT, etc.) the Zendesk Support API uses.",
+            "access": "No information in the sources describes how a developer can obtain API credentials (free self‑serve, trial, paid, or approval).",
+            "mcp": "There is no mention of an official Managed Cloud Platform (MCP) for Zendesk in the sources.",
+            "verdict": "Because authentication methods, credential access, and MCP status are unknown, we cannot determine whether the API can be built now, with friction, or is blocked."
+          },
+          "_model": "openai/gpt-oss-120b"
+        },
+        "autofix": []
+      },
+      {
+        "round": 1,
+        "queries": [
+          "Zendesk MCP server model context protocol"
+        ],
+        "new_sources": [
+          "https://zendesk.com",
+          "https://support.zendesk.com/hc/en-us/articles/10497779528730-Connecting-to-MCP-servers-and-using-MCP-tools-in-action-flows",
+          "https://support.zendesk.com/hc/en-us/articles/11105393853210-Announcing-the-general-availability-of-the-MCP-client",
+          "https://github.com/freeletics/zendesk-mcp-server",
+          "https://github.com/markusvankempen/zendesk-mcp/blob/main/README.md",
+          "https://www.zendesk.co.uk/blog/zip2-revolutionizing-service-with-the-zendesk-ai-mcp-client",
+          "https://www.zendesk.nl/blog/zip2-revolutionizing-service-with-the-zendesk-ai-mcp-client"
+        ],
+        "change_log": "Updated mcp to 'official' based on Zendesk's official documentation for connecting to MCP servers and using MCP tools in action flows.",
+        "issues": [],
+        "verifier": {
+          "auth_methods": [
+            "oauth2",
+            "bearer_token"
+          ],
+          "auth_primary": "oauth2",
+          "access_tier": "self_serve_free",
+          "api_types": [
+            "rest"
+          ],
+          "mcp": "official",
+          "verdict": "build_now",
+          "reasons": {
+            "auth": "Zendesk API supports OAuth2 and bearer token authentication as documented.",
+            "access": "Zendesk offers a free plan that provides API access, allowing developers to obtain credentials without payment.",
+            "mcp": "MCP client is generally available and officially supported by Zendesk.",
+            "verdict": "All required components are publicly documented and freely available, enabling immediate development."
+          },
+          "_model": "openai/gpt-oss-20b"
+        },
+        "autofix": []
+      }
+    ],
+    "catalog": {
+      "in_catalog": true,
+      "slug": "zendesk",
+      "auth": [
+        "oauth2"
+      ],
+      "tools_count": 456
+    },
+    "changed_fields": [
+      "mcp"
+    ],
+    "field_status": {
+      "auth": "verified",
+      "access": "verified",
+      "api": "verified",
+      "mcp": "corrected",
+      "verdict": "verified"
+    },
+    "needs_human": [],
+    "before": {
+      "auth_methods": [
+        "oauth2",
+        "bearer_token",
+        "basic"
+      ],
+      "auth_primary": "oauth2",
+      "access_tier": "self_serve_trial",
+      "access_notes": "Available via time-limited free trial or paid plans.",
+      "api_types": [
+        "rest"
+      ],
+      "api_breadth": "broad",
+      "api_notes": "Comprehensive REST APIs covering ticketing, users, organizations, help center, and oauth tokens under api/v2.",
+      "mcp": "none_found",
+      "mcp_url": null,
+      "verdict": "build_with_friction",
+      "blocker": "paid_plan",
+      "blocker_notes": "Free access requires a trial; long-term use requires a paid Zendesk plan."
+    },
+    "seconds": 118.5
+  }
+}

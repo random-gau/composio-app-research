@@ -1,0 +1,93 @@
+{
+  "one_liner": "Devin is an autonomous AI software engineer that can write, run and test code.",
+  "auth_methods": [
+    "bearer_token"
+  ],
+  "auth_primary": "bearer_token",
+  "auth_notes": "Uses a bearer token (Service User API Key or Personal Access Token) in the Authorization header.",
+  "access_tier": "self_serve_free",
+  "access_notes": "Sign up directly at app.devin.ai for a free tier or self-serve paid plans.",
+  "api_types": [
+    "rest"
+  ],
+  "api_breadth": "moderate",
+  "api_notes": "REST API covering sessions, enterprise features, and more.",
+  "mcp": "official",
+  "mcp_url": "https://docs.devin.ai",
+  "verdict": "build_now",
+  "blocker": "none",
+  "blocker_notes": "None",
+  "evidence": {
+    "auth": {
+      "url": "https://docs.devin.ai/api-reference/authentication",
+      "quote": "Include your token in the Authorization header using the Bearer schema: Authorization: Bearer cog_your_token_here"
+    },
+    "access": {
+      "url": "https://docs.devin.ai/admin/billing",
+      "quote": "Self-serve: Free, Pro, Max, and Teams plans you can sign up for directly at app.devin.ai."
+    },
+    "api": {
+      "url": "https://docs.devin.ai/api-reference/authentication",
+      "quote": "Legacy API keys are used with the v1 and v2 APIs. They continue to work during the deprecation period but do not support new features like RBAC, session attribution, or cursor-based pagination."
+    },
+    "mcp": {
+      "url": "https://docs.devin.ai/api-reference/authentication",
+      "quote": "Devin MCP Verify your API key is correct and properly formatted in the Authorization header. For MCP usage, ensure you are using a service user API key (not a legacy key)."
+    },
+    "verdict": {
+      "url": "https://docs.devin.ai/admin/billing",
+      "quote": "Self-serve: Free, Pro, Max, and Teams plans you can sign up for directly at app.devin.ai."
+    }
+  },
+  "confidence": {
+    "auth": 0.9,
+    "access": 0.9,
+    "api": 0.8,
+    "mcp": 0.8,
+    "verdict": 0.9
+  },
+  "_model": "gemini-3.5-flash-lite",
+  "status": "ok",
+  "id": 96,
+  "name": "Devin",
+  "category": "AI Research & Media",
+  "hint": "docs.devin.ai (MCP)",
+  "sources": [
+    {
+      "url": "https://docs.devin.ai",
+      "via": "direct",
+      "chars": 4805
+    },
+    {
+      "url": "https://devin.ai/blog/pricing-v2",
+      "via": "direct",
+      "chars": 8780
+    },
+    {
+      "url": "https://devin.ai/pricing",
+      "via": "direct",
+      "chars": 3507
+    },
+    {
+      "url": "https://docs.devin.ai/admin/billing",
+      "via": "direct",
+      "chars": 909
+    },
+    {
+      "url": "https://docs.devin.ai/admin/billing/self-serve",
+      "via": "direct",
+      "chars": 6896
+    },
+    {
+      "url": "https://docs.devin.ai/api-reference/authentication",
+      "via": "direct",
+      "chars": 7576
+    }
+  ],
+  "queries": [
+    "Devin API authentication developer docs",
+    "Devin API access pricing plan developer",
+    "Devin MCP server"
+  ],
+  "seconds": 52.9
+}

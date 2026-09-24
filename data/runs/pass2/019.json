@@ -1,0 +1,330 @@
+{
+  "one_liner": "E-commerce customer service and support helpdesk platform with conversational AI.",
+  "auth_methods": [
+    "oauth2",
+    "api_key",
+    "bearer_token",
+    "basic"
+  ],
+  "auth_primary": "oauth2",
+  "auth_notes": "OAuth2 is required for public apps; API keys / basic auth are available for private apps.",
+  "access_tier": "approval_or_review",
+  "access_notes": "Register on the Developer Portal, create a draft app, and obtain approval to get a sandbox account and working credentials.",
+  "api_types": [
+    "rest"
+  ],
+  "api_breadth": "broad",
+  "api_notes": "Covers tickets, customers, users, events, macros, rules, statistics, and more.",
+  "mcp": "official",
+  "mcp_url": "https://mcp.gorgias.com/mcp",
+  "verdict": "build_with_friction",
+  "blocker": "app_review",
+  "blocker_notes": "Public documentation and self-serve developer access are fully available.",
+  "evidence": {
+    "auth": {
+      "url": "https://developers.gorgias.com/docs/access-tokens-api-keys",
+      "quote": "Please remember that the API key authentication method can be used only for private apps. If you plan to build a public app you have to use OAuth2.",
+      "check": "ok"
+    },
+    "access": {
+      "url": "https://developers.gorgias.com/docs/1-register-on-developer-portal",
+      "quote": "⚠️ You will need to have a draft app to get approved for the Sandbox Account",
+      "check": "ok"
+    },
+    "api": {
+      "url": "https://developers.gorgias.com/docs/oauth2-scopes",
+      "quote": "The following scopes can be defined programmatically: Basic scopes Name Description openid Scope required to \"login\" with Gorgias.",
+      "check": "ok"
+    },
+    "mcp": {
+      "url": "https://docs.gorgias.com/en-US/connect-your-ai-assistant-to-the-gorgias-mcp-6310546",
+      "connector_url": "https://mcp.gorgias.com/mcp",
+      "quote": "The Gorgias Model Context Protocol (MCP) app allows your third-party AI assistant to access your Gorgias data and account... https://mcp.gorgias.com/mcp",
+      "check": "ok"
+    },
+    "verdict": {
+      "url": null,
+      "quote": null
+    }
+  },
+  "confidence": {
+    "auth": 5.0,
+    "access": 4.0,
+    "api": 4.0,
+    "mcp": 5.0,
+    "verdict": 4.5
+  },
+  "_model": "gemini-3.5-flash-lite",
+  "status": "ok",
+  "id": 19,
+  "name": "Gorgias",
+  "category": "Support & Helpdesk",
+  "hint": "gorgias.com",
+  "sources": [
+    {
+      "url": "https://gorgias.com",
+      "via": "direct",
+      "chars": 4782
+    },
+    {
+      "url": "https://developers.gorgias.com/docs/access-tokens-api-keys",
+      "via": "direct",
+      "chars": 1603
+    },
+    {
+      "url": "https://developers.gorgias.com/docs/building-a-high-quality-gorgias-app",
+      "via": "direct",
+      "chars": 3756
+    },
+    {
+      "url": "https://developers.gorgias.com/docs/oauth2-authentication-for-creating-apps-with-gorgias",
+      "via": "direct",
+      "chars": 6020
+    },
+    {
+      "url": "https://developers.gorgias.com/docs/oauth2-bearer-token",
+      "via": "direct",
+      "chars": 1358
+    },
+    {
+      "url": "https://developers.gorgias.com/docs/oauth2-scopes",
+      "via": "direct",
+      "chars": 2532
+    },
+    {
+      "url": "https://developers.gorgias.com",
+      "via": "verification"
+    },
+    {
+      "url": "https://developers.gorgias.com/docs/1-register-on-developer-portal",
+      "via": "verification"
+    },
+    {
+      "url": "https://docs.gorgias.com/en-US/connect-your-ai-assistant-to-the-gorgias-mcp-6310546",
+      "via": "verification"
+    },
+    {
+      "url": "https://www.gorgias.com/blog/gorgias-mcp",
+      "via": "verification"
+    },
+    {
+      "url": "https://developers.gorgias.com",
+      "via": "verification"
+    },
+    {
+      "url": "https://developers.gorgias.com/docs/1-register-on-developer-portal",
+      "via": "verification"
+    }
+  ],
+  "queries": [
+    "Gorgias API authentication developer docs",
+    "Gorgias API access pricing plan developer",
+    "Gorgias MCP server"
+  ],
+  "seconds": 52.9,
+  "verification_queries": [
+    "Gorgias API access requirements plan",
+    "Gorgias developer account API key free OR partner OR enterprise",
+    "Gorgias MCP server model context protocol",
+    "Gorgias API access requirements plan",
+    "Gorgias developer account API key free OR partner OR enterprise"
+  ],
+  "verification": {
+    "initial_issues": [
+      {
+        "loop": "L1_evidence",
+        "field": "access",
+        "problem": "no evidence cited"
+      },
+      {
+        "loop": "L5_mcp_probe",
+        "field": "mcp",
+        "problem": "possible official MCP found: ['https://docs.gorgias.com/en-US/connect-your-ai-assistant-to-the-gorgias-mcp-6310546', 'https://www.gorgias.com/blog/gorgias-mcp']",
+        "urls": [
+          "https://docs.gorgias.com/en-US/connect-your-ai-assistant-to-the-gorgias-mcp-6310546",
+          "https://www.gorgias.com/blog/gorgias-mcp"
+        ]
+      }
+    ],
+    "final_issues": [],
+    "rounds": [
+      {
+        "round": 0,
+        "issues": [
+          {
+            "loop": "L1_evidence",
+            "field": "access",
+            "problem": "no evidence cited"
+          },
+          {
+            "loop": "L5_mcp_probe",
+            "field": "mcp",
+            "problem": "possible official MCP found: ['https://docs.gorgias.com/en-US/connect-your-ai-assistant-to-the-gorgias-mcp-6310546', 'https://www.gorgias.com/blog/gorgias-mcp']",
+            "urls": [
+              "https://docs.gorgias.com/en-US/connect-your-ai-assistant-to-the-gorgias-mcp-6310546",
+              "https://www.gorgias.com/blog/gorgias-mcp"
+            ]
+          }
+        ],
+        "verifier": {
+          "auth_methods": [
+            "oauth2",
+            "api_key"
+          ],
+          "auth_primary": "oauth2",
+          "access_tier": "self_serve_free",
+          "api_types": [
+            "rest"
+          ],
+          "mcp": "unknown",
+          "verdict": "build_now",
+          "reasons": {
+            "auth": "Both OAuth2 and API key authentication are documented; public apps require OAuth2.",
+            "access": "Credentials (API keys or OAuth2 client credentials) can be generated from a Gorgias account without payment.",
+            "mcp": "No information about an official MCP server is provided.",
+            "verdict": "Public documentation and free self‑serve credentials allow building an integration today."
+          },
+          "_model": "openai/gpt-oss-120b"
+        },
+        "autofix": []
+      },
+      {
+        "round": 1,
+        "queries": [
+          "Gorgias API access requirements plan",
+          "Gorgias developer account API key free OR partner OR enterprise",
+          "Gorgias MCP server model context protocol"
+        ],
+        "new_sources": [
+          "https://gorgias.com",
+          "https://developers.gorgias.com",
+          "https://developers.gorgias.com/docs/1-register-on-developer-portal",
+          "https://developers.gorgias.com/docs/access-tokens-api-keys",
+          "https://developers.gorgias.com/docs/building-a-high-quality-gorgias-app",
+          "https://docs.gorgias.com/en-US/connect-your-ai-assistant-to-the-gorgias-mcp-6310546",
+          "https://www.gorgias.com/blog/gorgias-mcp"
+        ],
+        "change_log": "Cited developer portal registration for access tier and official Gorgias MCP endpoint documentation for MCP support.",
+        "issues": [
+          {
+            "loop": "L1_evidence",
+            "field": "access",
+            "problem": "quote only partially matches page",
+            "url": "https://developers.gorgias.com/docs/1-register-on-developer-portal",
+            "match": 0.77
+          },
+          {
+            "loop": "L4_verifier",
+            "field": "access",
+            "problem": "verifier says approval_or_review vs agent self_serve_free"
+          }
+        ],
+        "verifier": {
+          "auth_methods": [
+            "oauth2",
+            "api_key"
+          ],
+          "auth_primary": "oauth2",
+          "access_tier": "approval_or_review",
+          "api_types": [
+            "rest"
+          ],
+          "mcp": "unknown",
+          "verdict": "build_with_friction",
+          "reasons": {
+            "auth": "Docs list OAuth2 for public apps and API keys (access tokens) for private apps.",
+            "access": "Sandbox account requires registering on the developer portal, creating a draft app and obtaining approval before credentials are issued, not an instant self‑serve flow.",
+            "mcp": "No information about an official or community Managed Cloud Platform server is provided in the sources.",
+            "verdict": "A toolkit can be built, but obtaining working credentials needs app approval, creating friction."
+          },
+          "_model": "openai/gpt-oss-120b"
+        },
+        "autofix": []
+      },
+      {
+        "round": 2,
+        "queries": [
+          "Gorgias API access requirements plan",
+          "Gorgias developer account API key free OR partner OR enterprise",
+          "Gorgias MCP server model context protocol",
+          "Gorgias API access requirements plan",
+          "Gorgias developer account API key free OR partner OR enterprise"
+        ],
+        "new_sources": [
+          "https://gorgias.com",
+          "https://developers.gorgias.com",
+          "https://developers.gorgias.com/docs/1-register-on-developer-portal",
+          "https://developers.gorgias.com/docs/access-tokens-api-keys",
+          "https://developers.gorgias.com/docs/building-a-high-quality-gorgias-app"
+        ],
+        "change_log": "Updated access_tier to approval_or_review and verdict to build_with_friction because sandbox accounts and credentials require registering on the developer portal and obtaining approval for a draft app.",
+        "issues": [],
+        "verifier": {
+          "auth_methods": [
+            "oauth2",
+            "api_key"
+          ],
+          "auth_primary": "oauth2",
+          "access_tier": "approval_or_review",
+          "api_types": [
+            "rest"
+          ],
+          "mcp": "unknown",
+          "verdict": "build_with_friction",
+          "reasons": {
+            "auth": "Docs list OAuth2 for public apps and API keys for private apps.",
+            "access": "Sandbox account requires draft app approval and email request before getting developer credentials.",
+            "mcp": "No information about an official MCP server is provided.",
+            "verdict": "Public docs exist but obtaining working credentials needs approval, so building is possible but with friction."
+          },
+          "_model": "openai/gpt-oss-120b"
+        },
+        "autofix": []
+      }
+    ],
+    "catalog": {
+      "in_catalog": true,
+      "slug": "gorgias",
+      "auth": [
+        "api_key",
+        "oauth2"
+      ],
+      "tools_count": 44
+    },
+    "changed_fields": [
+      "access",
+      "mcp",
+      "verdict"
+    ],
+    "field_status": {
+      "auth": "verified",
+      "access": "corrected",
+      "api": "verified",
+      "mcp": "corrected",
+      "verdict": "corrected"
+    },
+    "needs_human": [],
+    "before": {
+      "auth_methods": [
+        "oauth2",
+        "api_key",
+        "bearer_token",
+        "basic"
+      ],
+      "auth_primary": "oauth2",
+      "access_tier": "self_serve_free",
+      "access_notes": "Sign up for a free trial or developer account to obtain credentials.",
+      "api_types": [
+        "rest"
+      ],
+      "api_breadth": "broad",
+      "api_notes": "Covers tickets, customers, users, events, macros, rules, statistics, and more.",
+      "mcp": "none_found",
+      "mcp_url": null,
+      "verdict": "build_now",
+      "blocker": "none",
+      "blocker_notes": "Public documentation and self-serve developer access are fully available."
+    },
+    "seconds": 52.4
+  }
+}

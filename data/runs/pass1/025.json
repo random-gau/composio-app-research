@@ -1,0 +1,96 @@
+{
+  "one_liner": "Team communication hub with messaging, video calls, file sharing, and a public API.",
+  "auth_methods": [
+    "api_key",
+    "bearer_token"
+  ],
+  "auth_primary": "api_key",
+  "auth_notes": "API keys can be generated via the Pumble API addon or custom app tokens (user/bot/app tokens) for MCP.",
+  "access_tier": "self_serve_free",
+  "access_notes": "Sign up for a free Pumble workspace, then install the API addon or create a custom app to get credentials.",
+  "api_types": [
+    "rest"
+  ],
+  "api_breadth": "moderate",
+  "api_notes": "Covers messages, reactions, channels, users, and workspace details via Swagger/Scalar documentation.",
+  "mcp": "official",
+  "mcp_url": "https://mcp.pumble.com/mcp",
+  "verdict": "build_now",
+  "blocker": "none",
+  "blocker_notes": "Public API, MCP server, and free tier are fully available.",
+  "evidence": {
+    "auth": {
+      "url": "https://pumble.com/help/integrations/automation-workflow-integrations/api-keys-integration",
+      "quote": "By using the Pumble API addon, you can interact with Pumble’s API documentation without using any complex authentication processes. This addon lets you generate an API key"
+    },
+    "access": {
+      "url": "https://pumble.com",
+      "link": "https://pumble.com",
+      "quote": "Free Forever\nUnlimited users\nUnlimited channels\nUnlimited message history\nSee upgrades"
+    },
+    "api": {
+      "url": "https://docs.pumble.com",
+      "link": "https://docs.pumble.com",
+      "quote": "Pumble API reference\nPumble API reference\nOpen Search Search Keyboard Shortcut:CTRL⌃ k\n[ Open API Client ](https://client.scalar.com/?url=https://api-ga.pumble.com/v3/api-docs/Pumble-api-v1&integration=vue&utm_source=api-reference&utm_medium=button&utm_campaign=sidebar)"
+    },
+    "mcp": {
+      "url": "https://pumble.com/help/integrations/automation-workflow-integrations/how-to-use-the-pumble-mcp-server",
+      "quote": "With the Pumble Model Context Protocol (MCP) server, you can connect third-party AI agents (e.g., Claude, Gemini, Codex) to Pumble and let them access content so they can search messages, find information, and take actions on your behalf."
+    },
+    "verdict": {
+      "url": "https://pumble.com/help/integrations/automation-workflow-integrations/api-keys-integration",
+      "quote": "Once your API addon is installed, you can generate API keys directly in Pumble."
+    }
+  },
+  "confidence": {
+    "auth": 0.9,
+    "access": 0.9,
+    "api": 0.9,
+    "mcp": 0.9,
+    "verdict": 0.9
+  },
+  "_model": "gemini-3.5-flash-lite",
+  "status": "ok",
+  "id": 25,
+  "name": "Pumble",
+  "category": "Communications & Messaging",
+  "hint": "pumble.com",
+  "sources": [
+    {
+      "url": "https://pumble.com",
+      "via": "direct",
+      "chars": 4584
+    },
+    {
+      "url": "https://docs.pumble.com",
+      "via": "composio_fetch",
+      "chars": 338
+    },
+    {
+      "url": "https://pumble.com/help/integrations/automation-workflow-integrations/api-keys-integration",
+      "via": "direct",
+      "chars": 2884
+    },
+    {
+      "url": "https://pumble.com/help/integrations/automation-workflow-integrations/how-to-use-the-pumble-mcp-server",
+      "via": "direct",
+      "chars": 5643
+    },
+    {
+      "url": "https://pumble.com/help/workspace-administration/pricing/guide-to-billing-at-pumble",
+      "via": "direct",
+      "chars": 3300
+    },
+    {
+      "url": "https://pumble.com/learn/pumble/connecting-pumble-with-ai-agents-mcp",
+      "via": "direct",
+      "chars": 14180
+    }
+  ],
+  "queries": [
+    "Pumble API authentication developer docs",
+    "Pumble API access pricing plan developer",
+    "Pumble MCP server"
+  ],
+  "seconds": 260.5
+}

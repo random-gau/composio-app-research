@@ -1,0 +1,96 @@
+{
+  "one_liner": "Create, manage, and analyze advertising campaigns across Facebook, Instagram, and Meta technologies.",
+  "auth_methods": [
+    "oauth2",
+    "bearer_token"
+  ],
+  "auth_primary": "oauth2",
+  "auth_notes": "Uses OAuth 2.0 user access tokens, page access tokens, or system user access tokens.",
+  "access_tier": "self_serve_free",
+  "access_notes": "Sign up for a Meta Developer Account for free development access; production usage requires business verification and app review for advanced access permissions.",
+  "api_types": [
+    "rest",
+    "graphql"
+  ],
+  "api_breadth": "broad",
+  "api_notes": "Graph API endpoints covering campaigns, ad sets, creatives, insights, catalogs, and business management under https://graph.facebook.com/",
+  "mcp": "none_found",
+  "mcp_url": null,
+  "verdict": "build_now",
+  "blocker": "none",
+  "blocker_notes": "Development access is freely available with a Meta Developer account.",
+  "evidence": {
+    "auth": {
+      "url": "https://developers.facebook.com/docs/facebook-login/facebook-login-for-business",
+      "quote": "Facebook Login for Business is the preferred authentication and authorization solution for tech providers building integrations with Meta’s business tools to create marketing, messaging, and selling solutions."
+    },
+    "access": {
+      "url": "https://developers.facebook.com/docs/marketing-api/creative/reels-ads",
+      "qs": null,
+      "quote": "By default, you get Standard Access when you add the Marketing API product to your App Dashboard, which provides you development access to the Marketing API."
+    },
+    "api": {
+      "url": "https://developers.facebook.com/docs/marketing-apis",
+      "quote": "The Marketing API is a collection of Graph API endpoints and other features that can be used to help you advertise across Meta technologies."
+    },
+    "mcp": {
+      "url": null,
+      "quote": null
+    },
+    "verdict": {
+      "url": "https://developers.facebook.com/docs/marketing-api/creative/reels-ads",
+      "quote": "By default, you get Standard Access when you add the Marketing API product to your App Dashboard, which provides you development access to the Marketing API."
+    }
+  },
+  "confidence": {
+    "auth": 0.9,
+    "access": 0.9,
+    "api": 0.9,
+    "mcp": 1.0,
+    "verdict": 0.9
+  },
+  "_model": "gemini-3.5-flash-lite",
+  "status": "ok",
+  "id": 32,
+  "name": "Meta Ads",
+  "category": "Marketing Ads Email & Social",
+  "hint": "developers.facebook.com/docs/marketing-apis",
+  "sources": [
+    {
+      "url": "https://developers.facebook.com/docs/marketing-apis",
+      "via": "composio_fetch",
+      "chars": 1935
+    },
+    {
+      "url": "https://developers.facebook.com/docs/business-sdk/getting-started",
+      "via": "composio_fetch",
+      "chars": 8841
+    },
+    {
+      "url": "https://developers.facebook.com/docs/facebook-login/facebook-login-for-business",
+      "via": "composio_fetch",
+      "chars": 20206
+    },
+    {
+      "url": "https://developers.facebook.com/docs/facebook-login/guides/access-tokens",
+      "via": "composio_fetch",
+      "chars": 15814
+    },
+    {
+      "url": "https://developers.facebook.com/docs/marketing-api/businessmanager/support",
+      "via": "composio_fetch",
+      "chars": 7926
+    },
+    {
+      "url": "https://developers.facebook.com/docs/marketing-api/creative/reels-ads",
+      "via": "composio_fetch",
+      "chars": 19328
+    }
+  ],
+  "queries": [
+    "Meta Ads API authentication developer docs",
+    "Meta Ads API access pricing plan developer",
+    "Meta Ads MCP server"
+  ],
+  "seconds": 40.1
+}

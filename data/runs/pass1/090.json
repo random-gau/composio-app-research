@@ -1,0 +1,94 @@
+{
+  "one_liner": "Private market intelligence platform providing financial data, venture capital, and M&A research.",
+  "auth_methods": [
+    "api_key",
+    "bearer_token"
+  ],
+  "auth_primary": "api_key",
+  "auth_notes": "Our team will work with you to understand the insights and data you’re looking for and help you establish the API connection through an API key or authentication token.",
+  "access_tier": "partner_or_sales",
+  "access_notes": "The PitchBook API is a separate offering from the PitchBook Platform that requires a standalone contract agreement.",
+  "api_types": [
+    "rest"
+  ],
+  "api_breadth": "broad",
+  "api_notes": "Provides access to company, fund, and deal details, financing details, deal stock information, and AI-powered VC exit predictors via https://api.pitchbook.com",
+  "mcp": "none_found",
+  "mcp_url": null,
+  "verdict": "blocked",
+  "blocker": "enterprise_only",
+  "blocker_notes": "Requires a standalone contract agreement and sales/partnership contact to get API access.",
+  "evidence": {
+    "auth": {
+      "url": "https://pitchbook.com/help/PitchBook-api",
+      "quote": "Our team will work with you to understand the insights and data you’re looking for and help you establish the API connection through an API key or authentication token."
+    },
+    "access": {
+      "url": "https://pitchbook.com/help/PitchBook-api",
+      "quote": "Our API is a separate offering from the PitchBook Platform that requires a standalone contract agreement."
+    },
+    "api": {
+      "url": "https://pitchbook.com/help/PitchBook-api",
+      "quote": "The PitchBook API is a RESTful implementation that most HTTP clients can easily access in your chosen language or via a web browser. Every call will use the same base URL: https://api.pitchbook.com"
+    },
+    "mcp": {
+      "url": null,
+      "quote": null
+    },
+    "verdict": {
+      "url": "https://pitchbook.com/help/PitchBook-api",
+      "quote": "Our API is a separate offering from the PitchBook Platform that requires a standalone contract agreement."
+    }
+  },
+  "confidence": {
+    "auth": 0.9,
+    "access": 1.0,
+    "api": 1.0,
+    "mcp": 0.8,
+    "verdict": 1.0
+  },
+  "_model": "gemini-3.5-flash-lite",
+  "status": "ok",
+  "id": 90,
+  "name": "PitchBook",
+  "category": "Finance & Fintech",
+  "hint": "pitchbook.com (research API)",
+  "sources": [
+    {
+      "url": "https://pitchbook.com",
+      "via": "composio_fetch",
+      "chars": 3247
+    },
+    {
+      "url": "https://mcp-proxy-external.pitchbook.com",
+      "via": "direct",
+      "chars": 537
+    },
+    {
+      "url": "https://pitchbook.com/help/PitchBook-api",
+      "via": "composio_fetch",
+      "chars": 3224
+    },
+    {
+      "url": "https://pitchbook.com/pricing",
+      "via": "composio_fetch",
+      "chars": 13354
+    },
+    {
+      "url": "https://pitchbook.com/blog/what-is-direct-data",
+      "via": "composio_fetch",
+      "chars": 6921
+    },
+    {
+      "url": "https://pitchbook.com/data",
+      "via": "composio_fetch",
+      "chars": 16112
+    }
+  ],
+  "queries": [
+    "PitchBook API authentication developer docs",
+    "PitchBook API access pricing plan developer",
+    "PitchBook MCP server"
+  ],
+  "seconds": 53.1
+}

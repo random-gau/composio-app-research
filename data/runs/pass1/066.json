@@ -1,0 +1,94 @@
+{
+  "one_liner": "Graph database management system with cloud management APIs and Model Context Protocol support.",
+  "auth_methods": [
+    "oauth2",
+    "basic"
+  ],
+  "auth_primary": "oauth2",
+  "auth_notes": "Aura API uses OAuth 2.0 with client credentials, while self-managed Neo4j instances use HTTP Basic Auth.",
+  "access_tier": "self_serve_free",
+  "access_notes": "Sign up for a free tier (Aura Free) or run Neo4j locally open-source.",
+  "api_types": [
+    "rest"
+  ],
+  "api_breadth": "broad",
+  "api_notes": "Comprehensive management APIs for cloud resources and graph query interfaces.",
+  "mcp": "official",
+  "mcp_url": "https://neo4j.com/blog/developer/model-context-protocol",
+  "verdict": "build_now",
+  "blocker": "none",
+  "blocker_notes": "Fully accessible via self-serve free tiers, local open source, and official MCP servers.",
+  "evidence": {
+    "auth": {
+      "url": "https://neo4j.com/docs/aura/api/authentication",
+      "quote": "The Aura API uses OAuth 2.0 for API authentication."
+    },
+    "access": {
+      "url": "https://neo4j.com/docs/aura/billing/payment-options",
+      "quote": "Free, Professional, Business Critical, and Virtual Dedicated Cloud plans"
+    },
+    "api": {
+      "url": "https://neo4j.com/docs/developer-manual/current/http-api/authentication",
+      "quote": "This section describes authentication and authorization using the Neo4j HTTP API."
+    },
+    "mcp": {
+      "url": "https://neo4j.com/blog/developer/model-context-protocol",
+      "quote": "Neo4j provides an MCP server that connects to a graph database."
+    },
+    "verdict": {
+      "url": "https://neo4j.com/blog/developer/model-context-protocol",
+      "quote": "Experiment with Neo4j’s open-source MCP servers for databases, memory, and Aura provisioning, and add them as MCP integrations in your IDE."
+    }
+  },
+  "confidence": {
+    "auth": 0.9,
+    "access": 0.9,
+    "api": 0.9,
+    "mcp": 0.9,
+    "verdict": 0.9
+  },
+  "_model": "gemini-3.5-flash-lite",
+  "status": "ok",
+  "id": 66,
+  "name": "Neo4j",
+  "category": "Developer Infra & Data",
+  "hint": "neo4j.com/docs/api",
+  "sources": [
+    {
+      "url": "https://neo4j.com/docs/api",
+      "via": "composio_fetch",
+      "chars": 202
+    },
+    {
+      "url": "https://neo4j.com/blog/developer/model-context-protocol",
+      "via": "direct",
+      "chars": 22830
+    },
+    {
+      "url": "https://neo4j.com/docs/aura/api/authentication",
+      "via": "direct",
+      "chars": 4647
+    },
+    {
+      "url": "https://neo4j.com/docs/aura/billing/payment-options",
+      "via": "direct",
+      "chars": 8249
+    },
+    {
+      "url": "https://neo4j.com/docs/aura/cloud-providers",
+      "via": "direct",
+      "chars": 9838
+    },
+    {
+      "url": "https://neo4j.com/docs/developer-manual/current/http-api/authentication",
+      "via": "direct",
+      "chars": 5322
+    }
+  ],
+  "queries": [
+    "Neo4j API authentication developer docs",
+    "Neo4j API access pricing plan developer",
+    "Neo4j MCP server"
+  ],
+  "seconds": 53.0
+}

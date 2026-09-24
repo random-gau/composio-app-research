@@ -1,0 +1,94 @@
+{
+  "one_liner": "Connect bank accounts to applications for transactions, balances, and identity verification.",
+  "auth_methods": [
+    "oauth2",
+    "api_key"
+  ],
+  "auth_primary": "api_key",
+  "auth_notes": "Almost all Plaid API endpoints require a client_id and secret sent either in the request body or via PLAID-CLIENT-ID and PLAID-SECRET headers.",
+  "access_tier": "self_serve_free",
+  "access_notes": "Sign up on the Plaid Dashboard to instantly get live client_id and secret keys for the Sandbox environment at no cost.",
+  "api_types": [
+    "rest"
+  ],
+  "api_breadth": "broad",
+  "api_notes": "JSON over HTTP REST API covering auth, balance, identity, transactions, investments, liabilities, and sandbox tools.",
+  "mcp": "official",
+  "mcp_url": "https://plaid.com/docs",
+  "verdict": "build_now",
+  "blocker": "none",
+  "blocker_notes": "Fully available via public self-serve sandbox API credentials.",
+  "evidence": {
+    "auth": {
+      "url": "https://plaid.com/docs/api",
+      "quote": "Almost all Plaid API endpoints require a client_id and secret. These may be sent either in the request body or in the headers PLAID-CLIENT-ID and PLAID-SECRET."
+    },
+    "access": {
+      "url": "https://plaid.com/docs/api",
+      "quote": "To gain access to the Plaid API, create an account on the Plaid Dashboard. Once you've completed the signup process and acknowledged our terms, we'll provide a live client_id and secret via the Dashboard."
+    },
+    "api": {
+      "url": "https://plaid.com/docs/api",
+      "quote": "The Plaid API is JSON over HTTP. Requests are POST requests, and responses are JSON, with errors indicated in response bodies as error_code and error_type"
+    },
+    "mcp": {
+      "url": "https://plaid.com/docs",
+      "quote": "Pssst -- I also moonlight as your IDE's research librarian! Plug me in via the Plaid MCP Server"
+    },
+    "verdict": {
+      "url": "https://plaid.com/docs/api",
+      "quote": "Plaid has two environments: Sandbox and Production. Items cannot be moved between environments. The Sandbox environment supports only test Items."
+    }
+  },
+  "confidence": {
+    "auth": 5.0,
+    "access": 5.0,
+    "api": 5.0,
+    "mcp": 5.0,
+    "verdict": 5.0
+  },
+  "_model": "gemini-3.5-flash-lite",
+  "status": "ok",
+  "id": 82,
+  "name": "Plaid",
+  "category": "Finance & Fintech",
+  "hint": "plaid.com/docs",
+  "sources": [
+    {
+      "url": "https://plaid.com/docs",
+      "via": "direct",
+      "chars": 4686
+    },
+    {
+      "url": "https://plaid.com/core-exchange/docs/authentication/oauth-flow",
+      "via": "direct",
+      "chars": 20313
+    },
+    {
+      "url": "https://plaid.com/docs/account/billing",
+      "via": "direct",
+      "chars": 26207
+    },
+    {
+      "url": "https://plaid.com/docs/api",
+      "via": "direct",
+      "chars": 5376
+    },
+    {
+      "url": "https://plaid.com/docs/api/items/index.html.md",
+      "via": "direct",
+      "chars": 74288
+    },
+    {
+      "url": "https://plaid.com/docs/api/oauth/index.html.md",
+      "via": "direct",
+      "chars": 14533
+    }
+  ],
+  "queries": [
+    "Plaid API authentication developer docs",
+    "Plaid API access pricing plan developer",
+    "Plaid MCP server"
+  ],
+  "seconds": 39.8
+}

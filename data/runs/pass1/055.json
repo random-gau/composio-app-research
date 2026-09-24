@@ -1,0 +1,96 @@
+{
+  "one_liner": "Cloud platform for web scraping, browser automation, and running cloud actors.",
+  "auth_methods": [
+    "bearer_token",
+    "oauth2"
+  ],
+  "auth_primary": "bearer_token",
+  "auth_notes": "Apify supports personal API tokens as bearer tokens as well as OAuth for integrations like MCP servers.",
+  "access_tier": "self_serve_free",
+  "access_notes": "Sign up for a free plan instantly at $0 with no credit card required.",
+  "api_types": [
+    "rest",
+    "sdk_or_cli_only"
+  ],
+  "api_breadth": "broad",
+  "api_notes": "Comprehensive REST API for Actors, Storage, Schedules, Datasets, and Proxy configuration.",
+  "mcp": "official",
+  "mcp_url": "https://mcp.apify.com",
+  "verdict": "build_now",
+  "blocker": "none",
+  "blocker_notes": "Fully accessible via self-serve free account and public API/MCP configurator.",
+  "evidence": {
+    "auth": {
+      "url": "https://blog.apify.com/configure-mcp-server-with-apify-actors",
+      "quote": "Verify your Apify API token is correct and has the right permissions. Get your token at"
+    },
+    "access": {
+      "url": "https://apify.com/pricing",
+      "quote": "Free plan that lets you use most of the features of the Apify platform, but with certain limits. No credit card is required."
+    },
+    "api": {
+      "url": "https://docs.apify.com",
+      "page": null,
+      "quote": "Apify API\nInteract with the Apify platform from your applications.\nAPI client for JavaScript\nAPI client for Python\nAPI reference"
+    },
+    "mcp": {
+      "url": "https://blog.apify.com/configure-mcp-server-with-apify-actors",
+      "quote": "That's what you can use the\nApify MCP Configurator\nfor."
+    },
+    "verdict": {
+      "url": "https://apify.com/pricing",
+      "quote": "Start for free"
+    }
+  },
+  "confidence": {
+    "auth": 0.9,
+    "access": 1.0,
+    "api": 1.0,
+    "mcp": 1.0,
+    "verdict": 1.0
+  },
+  "_model": "gemini-3.5-flash-lite",
+  "status": "ok",
+  "id": 55,
+  "name": "Apify",
+  "category": "Data SEO & Scraping",
+  "hint": "docs.apify.com",
+  "sources": [
+    {
+      "url": "https://docs.apify.com",
+      "via": "direct",
+      "chars": 3328
+    },
+    {
+      "url": "https://apify.com/apify/example-mcp-server",
+      "via": "direct",
+      "chars": 3457
+    },
+    {
+      "url": "https://apify.com/pricing",
+      "via": "direct",
+      "chars": 10643
+    },
+    {
+      "url": "https://blog.apify.com/configure-mcp-server-with-apify-actors",
+      "via": "direct",
+      "chars": 9508
+    },
+    {
+      "url": "https://docs.apify.com/academy/actor-marketing-playbook/store-basics/how-to-build-actors.md",
+      "via": "direct",
+      "chars": 18097
+    },
+    {
+      "url": "https://docs.apify.com/account/subscriptions",
+      "via": "direct",
+      "chars": 3965
+    }
+  ],
+  "queries": [
+    "Apify API authentication developer docs",
+    "Apify API access pricing plan developer",
+    "Apify MCP server"
+  ],
+  "seconds": 53.3
+}

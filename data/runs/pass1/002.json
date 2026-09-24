@@ -1,0 +1,94 @@
+{
+  "one_liner": "HubSpot brings together marketing, sales, service, and CRM data on a single platform.",
+  "auth_methods": [
+    "oauth2",
+    "bearer_token"
+  ],
+  "auth_primary": "oauth2",
+  "auth_notes": "OAuth 2.1 is supported via v3 endpoints along with bearer token service keys.",
+  "access_tier": "self_serve_free",
+  "access_notes": "Free tools and developer accounts are available with self-serve credentials.",
+  "api_types": [
+    "rest"
+  ],
+  "api_breadth": "broad",
+  "api_notes": "Covers extensive CRM v3 objects and REST endpoints at api.hubapi.com.",
+  "mcp": "official",
+  "mcp_url": "https://www.npmjs.com/package/@hubspot/mcp-server",
+  "verdict": "build_now",
+  "blocker": "none",
+  "blocker_notes": "Public APIs and self-serve developer access are fully available.",
+  "evidence": {
+    "auth": {
+      "url": "https://developers.hubspot.com/docs/api-reference/auth-oauth-v3/public-token/post-oauth-v3-token",
+      "quote": "The new v3 OAuth endpoints provide security improvements over the previous v1 endpoints, while still maintaining the same functionality to leverage OAuth 2.1 to manage access and refresh tokens."
+    },
+    "access": {
+      "url": "https://hubspot.com",
+      "quote": "Get started free with HubSpot's free tools"
+    },
+    "api": {
+      "url": "https://developers.hubspot.com/docs/apps/developer-platform/build-apps/authentication/account-service-keys",
+      "quote": "If you need to set up a simple third-party integration with HubSpot or try out specific HubSpot API endpoints, you can use service keys to query HubSpot’s REST APIs directly"
+    },
+    "mcp": {
+      "url": "https://community.hubspot.com/t/can-hubspot-ai-agents-connect-with-external-mcp-model-context-protocol-servers/138756",
+      "quote": "The existing MCP functionality works in the opposite direction— allowing external AI tools to connect TO HubSpot via the @hubspot/mcp-server package."
+    },
+    "verdict": {
+      "url": "https://hubspot.com",
+      "quote": "Get started free with HubSpot's free tools"
+    }
+  },
+  "confidence": {
+    "auth": 0.9,
+    "access": 0.9,
+    "api": 0.9,
+    "mcp": 0.9,
+    "verdict": 0.9
+  },
+  "_model": "gemini-3.5-flash-lite",
+  "status": "ok",
+  "id": 2,
+  "name": "HubSpot",
+  "category": "CRM & Sales",
+  "hint": "hubspot.com",
+  "sources": [
+    {
+      "url": "https://hubspot.com",
+      "via": "direct",
+      "chars": 5254
+    },
+    {
+      "url": "https://community.hubspot.com/t/can-hubspot-ai-agents-connect-with-external-mcp-model-context-protocol-servers/138756",
+      "via": "composio_fetch",
+      "chars": 2810
+    },
+    {
+      "url": "https://community.hubspot.com/t5/Sales-Integrations/API-Pricing/m-p/203426",
+      "via": "composio_fetch",
+      "chars": 2969
+    },
+    {
+      "url": "https://developers.hubspot.com/ai-tools/mcp",
+      "via": "direct",
+      "chars": 8061
+    },
+    {
+      "url": "https://developers.hubspot.com/docs/api-reference/auth-oauth-v3/public-token/post-oauth-v3-token",
+      "via": "direct",
+      "chars": 9616
+    },
+    {
+      "url": "https://developers.hubspot.com/docs/apps/developer-platform/build-apps/authentication/account-service-keys",
+      "via": "direct",
+      "chars": 5060
+    }
+  ],
+  "queries": [
+    "HubSpot API authentication developer docs",
+    "HubSpot API access pricing plan developer",
+    "HubSpot MCP server"
+  ],
+  "seconds": 34.5
+}

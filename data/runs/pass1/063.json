@@ -1,0 +1,94 @@
+{
+  "one_liner": "Manage web project deploys, sites, form submissions, environment variables, and domains.",
+  "auth_methods": [
+    "oauth2",
+    "bearer_token"
+  ],
+  "auth_primary": "oauth2",
+  "auth_notes": "Supports OAuth2 for public integrations and Personal Access Tokens (PAT) as bearer tokens.",
+  "access_tier": "self_serve_free",
+  "access_notes": "Free tier available upon signup, providing immediate sandbox and API access.",
+  "api_types": [
+    "rest"
+  ],
+  "api_breadth": "broad",
+  "api_notes": "Covers sites, deploys, form submissions, DNS, snippets, and environment variables via REST endpoints.",
+  "mcp": "official",
+  "mcp_url": "https://developers.netlify.com/guides/write-mcps-on-netlify",
+  "verdict": "build_now",
+  "blocker": "none",
+  "blocker_notes": "Fully accessible via public API and self-serve free tier.",
+  "evidence": {
+    "auth": {
+      "url": "https://docs.netlify.com/api",
+      "quote": "Netlify uses OAuth2 for authentication"
+    },
+    "access": {
+      "url": "https://docs.netlify.com/manage/accounts-and-billing/billing/billing-for-credit-based-plans/billing-faq-for-credit-based-plans",
+      "quote": "We do not have a free trial but you can test out Netlify on the free plan."
+    },
+    "api": {
+      "url": "https://docs.netlify.com/api",
+      "quote": "Use the Netlify REST API to manage atomic deploys of your sites and apps, manage form submissions, inject JavaScript snippets, manage DNS"
+    },
+    "mcp": {
+      "url": "https://developers.netlify.com/guides/write-mcps-on-netlify",
+      "quote": "Let’s build an MCP server and deploy it to Netlify!"
+    },
+    "verdict": {
+      "url": "https://docs.netlify.com/api",
+      "quote": "Use the Netlify REST API to manage atomic deploys of your sites and apps, manage form submissions, inject JavaScript snippets, manage DNS"
+    }
+  },
+  "confidence": {
+    "auth": 5.0,
+    "access": 5.0,
+    "api": 5.0,
+    "mcp": 5.0,
+    "verdict": 5.0
+  },
+  "_model": "gemini-3.5-flash-lite",
+  "status": "ok",
+  "id": 63,
+  "name": "Netlify",
+  "category": "Developer Infra & Data",
+  "hint": "docs.netlify.com/api",
+  "sources": [
+    {
+      "url": "https://docs.netlify.com/api",
+      "via": "direct",
+      "chars": 30397
+    },
+    {
+      "url": "https://developers.netlify.com/guides/write-mcps-on-netlify",
+      "via": "direct",
+      "chars": 15299
+    },
+    {
+      "url": "https://developers.netlify.com/sdk/api-client/classes/netlifyextensionclient",
+      "via": "direct",
+      "chars": 41685
+    },
+    {
+      "url": "https://docs.netlify.com/api-and-cli-guides/api-guides/get-started-with-api",
+      "via": "direct",
+      "chars": 30397
+    },
+    {
+      "url": "https://docs.netlify.com/api-and-cli-guides/cli-guides/get-started-with-cli",
+      "via": "direct",
+      "chars": 28400
+    },
+    {
+      "url": "https://docs.netlify.com/manage/accounts-and-billing/billing/billing-for-credit-based-plans/billing-faq-for-credit-based-plans",
+      "via": "direct",
+      "chars": 25133
+    }
+  ],
+  "queries": [
+    "Netlify API authentication developer docs",
+    "Netlify API access pricing plan developer",
+    "Netlify MCP server"
+  ],
+  "seconds": 53.8
+}

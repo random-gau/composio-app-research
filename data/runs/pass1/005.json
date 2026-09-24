@@ -1,0 +1,96 @@
+{
+  "one_liner": "Open-source CRM platform providing customizable data models, REST and GraphQL APIs, and native MCP support.",
+  "auth_methods": [
+    "oauth2",
+    "api_key",
+    "bearer_token"
+  ],
+  "auth_primary": "oauth2",
+  "auth_notes": "Supports dynamic client registration via RFC 7591 for OAuth2 (authorization code with PKCE and client credentials) as well as static API keys.",
+  "access_tier": "self_serve_free",
+  "access_notes": "Sign up for Cloud with a free trial or self-host for free; developer platform and APIs are accessible out-of-the-box.",
+  "api_types": [
+    "rest",
+    "graphql"
+  ],
+  "api_breadth": "broad",
+  "api_notes": "Core API and Metadata API supporting CRUD, batch operations, filtering, and schema management via REST and GraphQL.",
+  "mcp": "official",
+  "mcp_url": "https://twenty.com",
+  "verdict": "build_now",
+  "blocker": "none",
+  "blocker_notes": "Fully accessible public API with self-serve signup and official MCP support.",
+  "evidence": {
+    "auth": {
+      "url": "https://docs.twenty.com/developers/extend/oauth",
+      "quote": "Twenty implements OAuth 2.0 with authorization code + PKCE for user-facing apps and client credentials for server-to-server access."
+    },
+    "access": {
+      "url": "https://twenty.com/pricing",
+      "quote": "Start your free trial today without credit card."
+    },
+    "api": {
+      "url": "https://docs.twenty.com/developers/extend/api",
+      "quote": "Core API — /rest/ and /graphql/ CRUD on records: People, Companies, Opportunities, your custom objects. Query, filter, traverse relations."
+    },
+    "mcp": {
+      "url": "https://twenty.com",
+      "quote": "Yes. Every Cloud workspace ships with a native MCP server. Connect your AI assistant via OAuth and it can read and write your CRM data in natural language."
+    },
+    "verdict": {
+      "url": "https://twenty.com",
+      "quote": "Sign up for Cloud in under a minute and start your 30-day trial."
+    }
+  },
+  "confidence": {
+    "auth": 5.0,
+    "access": 5.0,
+    "api": 5.0,
+    "mcp": 5.0,
+    "verdict": 5.0
+  },
+  "_model": "gemini-3.5-flash-lite",
+  "status": "ok",
+  "id": 5,
+  "name": "Twenty",
+  "category": "CRM & Sales",
+  "hint": "twenty.com (open-source CRM)",
+  "sources": [
+    {
+      "url": "https://twenty.com",
+      "via": "direct",
+      "chars": 11245
+    },
+    {
+      "url": "https://docs.twenty.com/developers/extend/api",
+      "via": "direct",
+      "chars": 2127
+    },
+    {
+      "url": "https://docs.twenty.com/developers/extend/oauth",
+      "via": "direct",
+      "chars": 4574
+    },
+    {
+      "url": "https://docs.twenty.com/developers/extend/webhooks.md",
+      "via": "direct",
+      "chars": 4718
+    },
+    {
+      "url": "https://docs.twenty.com/user-guide/billing/how-tos/billing-faq",
+      "via": "direct",
+      "chars": 4735
+    },
+    {
+      "url": "https://twenty.com/pricing",
+      "via": "direct",
+      "chars": 5429
+    }
+  ],
+  "queries": [
+    "Twenty API authentication developer docs",
+    "Twenty API access pricing plan developer",
+    "Twenty MCP server"
+  ],
+  "seconds": 59.9
+}

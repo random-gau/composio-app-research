@@ -1,0 +1,97 @@
+{
+  "one_liner": "Open SaaS e-commerce platform offering REST and GraphQL APIs for store management and MCP integration.",
+  "auth_methods": [
+    "oauth2",
+    "api_key",
+    "bearer_token",
+    "jwt_or_signed"
+  ],
+  "auth_primary": "oauth2",
+  "auth_notes": "OAuth2 code grant for apps, plus X-Auth-Token API keys and JWT/Bearer tokens for storefront/B2B APIs.",
+  "access_tier": "self_serve_free",
+  "access_notes": "Sign up for a free BigCommerce trial store or developer account to test APIs and create credentials.",
+  "api_types": [
+    "rest",
+    "graphql"
+  ],
+  "api_breadth": "broad",
+  "api_notes": "Comprehensive REST and GraphQL APIs managing products, orders, customers, and store settings.",
+  "mcp": "official",
+  "mcp_url": "https://docs.bigcommerce.com/_mcp/server",
+  "verdict": "build_now",
+  "blocker": "none",
+  "blocker_notes": "Public docs, self-serve sandboxes, and official MCP support enable building today.",
+  "evidence": {
+    "auth": {
+      "url": "https://docs.bigcommerce.com/developer/docs/integrations/apps/guide/auth",
+      "quote": "this article covers the sequence and contents of API requests and responses in the code grant authorization flow for a BigCommerce app."
+    },
+    "access": {
+      "url": "https://developer.bigcommerce.com",
+      "quote": "Sign up for a free BigCommerce trial store to test API control panel. Create credentials with the scopes you need."
+    },
+    "api": {
+      "url": "https://developer.bigcommerce.com",
+      "quote": "Use REST and GraphQL APIs to manage products, orders, Set up B2B Edition for wholesale and enterprise buyers"
+    },
+    "mcp": {
+      "url": "https://docs.bigcommerce.com/developer/docs/ai-agent-setup",
+      "quote": "BigCommerce docs MCP server https://docs.bigcommerce.com/_mcp/server"
+    },
+    "verdict": {
+      "url": "https://developer.bigcommerce.com",
+      "quote": "Sign up for a free BigCommerce trial store to test API control panel. Create credentials with the scopes you need."
+    }
+  },
+  "confidence": {
+    "auth": 5.0,
+    "access": 5.0,
+    "api": 5.0,
+    "mcp": 5.0,
+    "verdict": 5.0
+  },
+  "_model": "gemini-3.5-flash-lite",
+  "status": "ok",
+  "id": 43,
+  "name": "BigCommerce",
+  "category": "Ecommerce",
+  "hint": "developer.bigcommerce.com",
+  "sources": [
+    {
+      "url": "https://developer.bigcommerce.com",
+      "via": "direct",
+      "chars": 7672
+    },
+    {
+      "url": "https://docs.bigcommerce.com/developer/api-reference/mcp/overview",
+      "via": "direct",
+      "chars": 4263
+    },
+    {
+      "url": "https://docs.bigcommerce.com/developer/api-reference/rest/b2b/management/authentication",
+      "via": "direct",
+      "chars": 2006
+    },
+    {
+      "url": "https://docs.bigcommerce.com/developer/docs/ai-agent-setup",
+      "via": "direct",
+      "chars": 3827
+    },
+    {
+      "url": "https://docs.bigcommerce.com/developer/docs/b2b-edition/getting-started/authentication",
+      "via": "direct",
+      "chars": 13709
+    },
+    {
+      "url": "https://docs.bigcommerce.com/developer/docs/integrations/apps/guide/auth",
+      "via": "direct",
+      "chars": 11453
+    }
+  ],
+  "queries": [
+    "BigCommerce API authentication developer docs",
+    "BigCommerce API access pricing plan developer",
+    "BigCommerce MCP server"
+  ],
+  "seconds": 53.0
+}

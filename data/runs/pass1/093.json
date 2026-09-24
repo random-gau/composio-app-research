@@ -1,0 +1,94 @@
+{
+  "one_liner": "AI notetaker and meeting insights API platform.",
+  "auth_methods": [
+    "api_key",
+    "oauth2"
+  ],
+  "auth_primary": "api_key",
+  "auth_notes": "API keys are generated via the Fathom website's settings area, and OAuth2 is available for public apps.",
+  "access_tier": "self_serve_free",
+  "access_notes": "Sign up for a free Fathom account and generate an API key or build an OAuth app via the developer portal.",
+  "api_types": [
+    "rest"
+  ],
+  "api_breadth": "moderate",
+  "api_notes": "Covers meetings, recordings, summaries, transcripts, teams, users, webhooks via api.fathom.ai/external/v1.",
+  "mcp": "official",
+  "mcp_url": "https://developers.fathom.ai/mcp-docs/index.md",
+  "verdict": "build_now",
+  "blocker": "none",
+  "blocker_notes": "Publicly available documentation, SDKs, and self-serve credentials.",
+  "evidence": {
+    "auth": {
+      "url": "https://developers.fathom.ai/api-overview",
+      "quote": "All REST API resources are authenticated with API keys generated via the Fathom website’s settings area."
+    },
+    "access": {
+      "url": "https://fathom.video",
+      "quote": "Get started - free forever"
+    },
+    "api": {
+      "url": "https://developers.fathom.ai/api-overview",
+      "quote": "This documentation describes Fathom’s REST API."
+    },
+    "mcp": {
+      "url": "https://developers.fathom.ai/llms.txt",
+      "quote": "- [Overview](https://developers.fathom.ai/mcp-docs/index.md): Connect your meeting data to LLMs using the Model Context Protocol"
+    },
+    "verdict": {
+      "url": "https://developers.fathom.ai/quickstart.md",
+      "quote": "Generate an API key and make your first call"
+    }
+  },
+  "confidence": {
+    "auth": 1.0,
+    "access": 1.0,
+    "api": 1.0,
+    "mcp": 1.0,
+    "verdict": 1.0
+  },
+  "_model": "gemini-3.5-flash-lite",
+  "status": "ok",
+  "id": 93,
+  "name": "Fathom",
+  "category": "AI Research & Media",
+  "hint": "fathom.video",
+  "sources": [
+    {
+      "url": "https://fathom.video",
+      "via": "direct",
+      "chars": 6467
+    },
+    {
+      "url": "https://developers.fathom.ai",
+      "via": "composio_fetch",
+      "chars": 743
+    },
+    {
+      "url": "https://developers.fathom.ai/api-overview",
+      "via": "direct",
+      "chars": 2232
+    },
+    {
+      "url": "https://developers.fathom.ai/llms.txt",
+      "via": "direct",
+      "chars": 5829
+    },
+    {
+      "url": "https://developers.fathom.ai/sdks",
+      "via": "composio_fetch",
+      "chars": 676
+    },
+    {
+      "url": "https://developers.fathom.ai/sdks/advanced-configuration",
+      "via": "direct",
+      "chars": 3701
+    }
+  ],
+  "queries": [
+    "Fathom API authentication developer docs",
+    "Fathom API access pricing plan developer",
+    "Fathom MCP server"
+  ],
+  "seconds": 53.1
+}

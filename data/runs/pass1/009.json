@@ -1,0 +1,95 @@
+{
+  "one_liner": "CRM software solutions company for service businesses.",
+  "auth_methods": [
+    "oauth2",
+    "api_key"
+  ],
+  "auth_primary": "oauth2",
+  "auth_notes": "Supports OAuth2.0 authorization code grant and legacy API keys.",
+  "access_tier": "self_serve_trial",
+  "access_notes": "Free 14-day trial available; API/embedded integrations are on paid plans.",
+  "api_types": [
+    "rest"
+  ],
+  "api_breadth": "broad",
+  "api_notes": "RESTful JSON API covering users, projects, and other CRM resources via api.copper.com",
+  "mcp": "none_found",
+  "mcp_url": null,
+  "verdict": "build_with_friction",
+  "blocker": "paid_plan",
+  "blocker_notes": "API access requires a trial or paid plan, plus app registration for OAuth.",
+  "evidence": {
+    "auth": {
+      "url": "https://developer.copper.com/introduction/oauth/index.html",
+      "quote": "You can now access the Copper Developer API via OAuth2.0. This authentication method is an alternative to Copper's legacy API Keys"
+    },
+    "access": {
+      "url": "https://www.copper.com",
+      "quote": "Free 14-day trial"
+    },
+    "api": {
+      "url": "https://developer.copper.com/?version=latest",
+      "quote": "The Copper Developer API (\"Dev API\") provides a RESTful interface with JSON-formatted responses to access most Copper resources."
+    },
+    "mcp": {
+      "url": null,
+      "quote": null
+    },
+    "verdict": {
+      "url": "https://www.copper.com/pricing",
+      "complete": null,
+      "quote": "API & Embedded integration SDK"
+    }
+  },
+  "confidence": {
+    "auth": 0.9,
+    "access": 0.8,
+    "api": 0.9,
+    "mcp": 1.0,
+    "verdict": 0.85
+  },
+  "_model": "gemini-3.5-flash-lite",
+  "status": "ok",
+  "id": 9,
+  "name": "Copper",
+  "category": "CRM & Sales",
+  "hint": "copper.com",
+  "sources": [
+    {
+      "url": "https://copper.com",
+      "via": "direct",
+      "chars": 7486
+    },
+    {
+      "url": "https://developer.copper.com/?version=latest",
+      "via": "direct",
+      "chars": 1918
+    },
+    {
+      "url": "https://developer.copper.com/account-and-users/fetch-user-by-id.html",
+      "via": "direct",
+      "chars": 1151
+    },
+    {
+      "url": "https://developer.copper.com/introduction/oauth/index.html",
+      "via": "direct",
+      "chars": 3352
+    },
+    {
+      "url": "https://developer.copper.com/projects/list-projects-search.html",
+      "via": "direct",
+      "chars": 19546
+    },
+    {
+      "url": "https://www.copper.com/pricing",
+      "via": "direct",
+      "chars": 7198
+    }
+  ],
+  "queries": [
+    "Copper API authentication developer docs",
+    "Copper API access pricing plan developer",
+    "Copper MCP server"
+  ],
+  "seconds": 39.7
+}

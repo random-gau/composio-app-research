@@ -1,0 +1,94 @@
+{
+  "one_liner": "Salesforce Commerce Cloud provides headless ecommerce APIs, sandboxes, and development tools.",
+  "auth_methods": [
+    "oauth2",
+    "jwt_or_signed"
+  ],
+  "auth_primary": "oauth2",
+  "auth_notes": "OAuth2 with JWT tokens via Salesforce Account Manager and SLAS.",
+  "access_tier": "partner_or_sales",
+  "access_notes": "Requires purchasing sandbox credits or a partner/enterprise contract via Account Executive.",
+  "api_types": [
+    "rest"
+  ],
+  "api_breadth": "broad",
+  "api_notes": "Salesforce Commerce API (SCAPI) covers catalogs, products, shoppers, orders, and more.",
+  "mcp": "official",
+  "mcp_url": "https://developer.salesforce.com/docs/commerce/b2c-commerce/guide/mcp-dx-intro.html",
+  "verdict": "build_with_friction",
+  "blocker": "partner_approval",
+  "blocker_notes": "Requires sandbox credits and contract interaction with an Account Executive to get working credentials.",
+  "evidence": {
+    "auth": {
+      "url": "https://developer.salesforce.com/docs/commerce/b2c-commerce/guide/b2c-get-started-sandboxes.html",
+      "quote": "Token Endpoint Auth Method | client_secret_post\nAccess Token Format | JWT"
+    },
+    "access": {
+      "url": "https://developer.salesforce.com/docs/commerce/b2c-commerce/guide/b2c-get-started-sandboxes.html",
+      "quote": "To use on-demand sandboxes, you must purchase sandbox credits. Contact your Account Executive for more information."
+    },
+    "api": {
+      "url": "https://developer.salesforce.com/docs/commerce/b2c-commerce/guide/mcp-dx-intro.html",
+      "quote": "The new B2C DX MCP server is a unified MCP that is the starting point for various development tools and storefronts. The B2C DX MCP server provides your AI assistant with real-time access to B2C Commerce APIs (SCAPI)"
+    },
+    "mcp": {
+      "url": "https://developer.salesforce.com/docs/commerce/b2c-commerce/guide/mcp-dx-intro.html",
+      "quote": "Use the B2C DX Model Context Protocol (MCP), which is part of the B2C Developer Toolkit, to enhance your development workflow by connecting an AI assistant"
+    },
+    "verdict": {
+      "url": "https://developer.salesforce.com/docs/commerce/b2c-commerce/guide/b2c-get-started-sandboxes.html",
+      "quote": "To use on-demand sandboxes, you must purchase sandbox credits. Contact your Account Executive for more information."
+    }
+  },
+  "confidence": {
+    "auth": 0.9,
+    "access": 0.9,
+    "api": 0.9,
+    "mcp": 1.0,
+    "verdict": 0.9
+  },
+  "_model": "gemini-3.5-flash-lite",
+  "status": "ok",
+  "id": 44,
+  "name": "Salesforce Commerce Cloud",
+  "category": "Ecommerce",
+  "hint": "developer.salesforce.com/docs/commerce",
+  "sources": [
+    {
+      "url": "https://developer.salesforce.com/docs/commerce",
+      "via": "composio_fetch",
+      "chars": 217
+    },
+    {
+      "url": "https://developer.salesforce.com/docs/commerce/b2c-commerce/guide/b2c-get-started-sandboxes.html",
+      "via": "composio_fetch",
+      "chars": 6286
+    },
+    {
+      "url": "https://developer.salesforce.com/docs/commerce/b2c-commerce/guide/create-storefront-using-sandbox.html",
+      "via": "composio_fetch",
+      "chars": 4752
+    },
+    {
+      "url": "https://developer.salesforce.com/docs/commerce/b2c-commerce/guide/hybrid-implementation.html",
+      "via": "composio_fetch",
+      "chars": 4887
+    },
+    {
+      "url": "https://developer.salesforce.com/docs/commerce/b2c-commerce/guide/mcp-dx-intro.html",
+      "via": "composio_fetch",
+      "chars": 4002
+    },
+    {
+      "url": "https://developer.salesforce.com/docs/commerce/b2c-commerce/guide/security.html",
+      "via": "composio_fetch",
+      "chars": 6939
+    }
+  ],
+  "queries": [
+    "Salesforce Commerce Cloud API authentication developer docs",
+    "Salesforce Commerce Cloud API access pricing plan developer",
+    "Salesforce Commerce Cloud MCP server"
+  ],
+  "seconds": 46.7
+}

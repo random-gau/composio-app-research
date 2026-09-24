@@ -1,0 +1,96 @@
+{
+  "one_liner": "Cloudflare provides web infrastructure, security, performance, and serverless developer services via a public API.",
+  "auth_methods": [
+    "api_key",
+    "bearer_token",
+    "oauth2"
+  ],
+  "auth_primary": "bearer_token",
+  "auth_notes": "Cloudflare supports API tokens, API keys, and OAuth2 for remote MCP or API access.",
+  "access_tier": "self_serve_free",
+  "access_notes": "Sign up for a free developer account at no cost to get working API credentials.",
+  "api_types": [
+    "rest",
+    "graphql"
+  ],
+  "api_breadth": "broad",
+  "api_notes": "Comprehensive REST and GraphQL APIs covering DNS, Workers, R2, Zero Trust, and over 2,500 endpoints.",
+  "mcp": "official",
+  "mcp_url": "https://mcp.cloudflare.com/mcp",
+  "verdict": "build_now",
+  "blocker": "none",
+  "blocker_notes": "None. Fully self-serve with public REST/GraphQL APIs and official remote MCP servers.",
+  "evidence": {
+    "auth": {
+      "url": "https://developers.cloudflare.com/analytics/graphql-api/getting-started/authentication/graphql-client-headers",
+      "quote": "You can use Cloudflare Analytics API token authentication (recommended) or Cloudflare API key authentication."
+    },
+    "access": {
+      "url": "https://developers.cloudflare.com/api",
+      "quote": null
+    },
+    "api": {
+      "url": "https://developers.cloudflare.com/agents/model-context-protocol/cloudflare/servers-for-cloudflare",
+      "quote": "Cloudflare API server provides access to the entire — over 2,500 endpoints across DNS, Workers, R2, Zero Trust, and every other product"
+    },
+    "mcp": {
+      "url": "https://developers.cloudflare.com/agents/model-context-protocol/cloudflare/servers-for-cloudflare",
+      "quote": "Cloudflare runs a catalog of managed remote MCP servers which you can connect to using OAuth on clients like"
+    },
+    "verdict": {
+      "url": "https://developers.cloudflare.com/api",
+      "quote": null
+    }
+  },
+  "confidence": {
+    "auth": 0.9,
+    "access": 0.9,
+    "api": 0.9,
+    "mcp": 0.9,
+    "verdict": 0.9
+  },
+  "_model": "gemini-3.5-flash-lite",
+  "status": "ok",
+  "id": 64,
+  "name": "Cloudflare",
+  "category": "Developer Infra & Data",
+  "hint": "developers.cloudflare.com/api",
+  "sources": [
+    {
+      "url": "https://developers.cloudflare.com/api",
+      "via": "direct",
+      "chars": 200000
+    },
+    {
+      "url": "https://blog.cloudflare.com/thirteen-new-mcp-servers-from-cloudflare",
+      "via": "direct",
+      "chars": 15891
+    },
+    {
+      "url": "https://developers.cloudflare.com/agents/model-context-protocol",
+      "via": "direct",
+      "chars": 2877
+    },
+    {
+      "url": "https://developers.cloudflare.com/agents/model-context-protocol/cloudflare/servers-for-cloudflare",
+      "via": "direct",
+      "chars": 6221
+    },
+    {
+      "url": "https://developers.cloudflare.com/agents/model-context-protocol/guides/remote-mcp-server",
+      "via": "direct",
+      "chars": 13085
+    },
+    {
+      "url": "https://developers.cloudflare.com/analytics/graphql-api/getting-started/authentication/graphql-client-headers",
+      "via": "direct",
+      "chars": 1699
+    }
+  ],
+  "queries": [
+    "Cloudflare API authentication developer docs",
+    "Cloudflare API access pricing plan developer",
+    "Cloudflare MCP server"
+  ],
+  "seconds": 53.4
+}

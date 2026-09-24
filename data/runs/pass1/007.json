@@ -1,0 +1,94 @@
+{
+  "one_liner": "Sales force automation software that offers lead management, pipeline tracking, and team collaboration.",
+  "auth_methods": [
+    "oauth2",
+    "api_key"
+  ],
+  "auth_primary": "oauth2",
+  "auth_notes": "OAuth2.0 requests are authenticated with an access token passed as a bearer token.",
+  "access_tier": "self_serve_free",
+  "access_notes": "Zoho CRM's freemium edition supports up to 3 users and includes essentials like leads, documents, and mobile apps.",
+  "api_types": [
+    "rest"
+  ],
+  "api_breadth": "broad",
+  "api_notes": "Zoho CRM provides a robust REST API (v8) covering modules, records, workflows, and custom layouts.",
+  "mcp": "official",
+  "mcp_url": "https://help.zoho.com/portal/en-gb/community/topic/zoho-crm-with-built-in-mcp-support",
+  "verdict": "build_now",
+  "blocker": "none",
+  "blocker_notes": "Public APIs and free tier are available.",
+  "evidence": {
+    "auth": {
+      "url": "https://www.zoho.com/crm/developer/docs/api/v8/access-refresh.html",
+      "quote": "OAuth2.0 requests are usually authenticated with an access token, which is passed as bearer token. To use this access token, you need to construct a normal HTTP request and include it in an Authorization header along with the value of Bearer."
+    },
+    "access": {
+      "url": "https://zoho.com/crm",
+      "quote": "Zoho CRM's freemium edition supports up to 3 users and comes with the essentials like leads, documents, and mobile apps, it’s a perfect fit for your home business."
+    },
+    "api": {
+      "url": "https://help.zoho.com/portal/en/kb/crm/faqs/developer-hub/articles/faqs-on-developer-hub",
+      "quote": "You can use the Zoho CRM REST API to retrieve data from the Leads module and other modules."
+    },
+    "mcp": {
+      "url": "https://help.zoho.com/portal/en-gb/community/topic/zoho-crm-with-built-in-mcp-support",
+      "quote": "Zoho CRM now provides built-in support for Model Context Protocol (MCP), enabling AI tools to connect and perform CRM actions using natural language."
+    },
+    "verdict": {
+      "url": "https://zoho.com/crm",
+      "quote": "Zoho CRM's freemium edition supports up to 3 users and comes with the essentials like leads, documents, and mobile apps, it’s a perfect fit for your home business."
+    }
+  },
+  "confidence": {
+    "auth": 5.0,
+    "access": 5.0,
+    "api": 5.0,
+    "mcp": 5.0,
+    "verdict": 5.0
+  },
+  "_model": "gemini-3.5-flash-lite",
+  "status": "ok",
+  "id": 7,
+  "name": "Zoho CRM",
+  "category": "CRM & Sales",
+  "hint": "zoho.com/crm",
+  "sources": [
+    {
+      "url": "https://zoho.com/crm",
+      "via": "direct",
+      "chars": 5670
+    },
+    {
+      "url": "https://help.zoho.com/portal/en-gb/community/topic/zoho-crm-with-built-in-mcp-support",
+      "via": "composio_fetch",
+      "chars": 4085
+    },
+    {
+      "url": "https://help.zoho.com/portal/en/kb/crm/faqs/developer-hub/articles/faqs-on-developer-hub",
+      "via": "composio_fetch",
+      "chars": 9580
+    },
+    {
+      "url": "https://help.zoho.com/portal/en/kb/mcp/implementation-guide/articles/zoho-mcp-implementation-guide",
+      "via": "composio_fetch",
+      "chars": 24278
+    },
+    {
+      "url": "https://www.zoho.com/crm/developer/docs/api/v8/access-refresh.html",
+      "via": "direct",
+      "chars": 5088
+    },
+    {
+      "url": "https://www.zoho.com/crm/developer/docs/api/v8/api-limits.html",
+      "via": "direct",
+      "chars": 10006
+    }
+  ],
+  "queries": [
+    "Zoho CRM API authentication developer docs",
+    "Zoho CRM API access pricing plan developer",
+    "Zoho CRM MCP server"
+  ],
+  "seconds": 39.7
+}

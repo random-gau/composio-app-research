@@ -1,0 +1,93 @@
+{
+  "one_liner": "Extract YouTube transcripts, search videos, and browse channels via REST API or MCP.",
+  "auth_methods": [
+    "bearer_token"
+  ],
+  "auth_primary": "bearer_token",
+  "auth_notes": "Uses a Bearer API key passed in the Authorization header.",
+  "access_tier": "self_serve_free",
+  "access_notes": "Sign up on the website to get a free account with initial credits and an API key.",
+  "api_types": [
+    "rest"
+  ],
+  "api_breadth": "moderate",
+  "api_notes": "Covers seven core endpoints including transcripts, search, channel data, and playlists.",
+  "mcp": "official",
+  "mcp_url": "https://transcriptapi.com/mcp",
+  "verdict": "build_now",
+  "blocker": "none",
+  "blocker_notes": "Publicly accessible with self-serve free keys and official REST and MCP support.",
+  "evidence": {
+    "auth": {
+      "url": "https://transcriptapi.com",
+      "quote": "Authorization: Bearer API_KEY"
+    },
+    "access": {
+      "url": "https://transcriptapi.com",
+      "quote": "Your agent creates a TranscriptAPI account and gets an API key on first use — no manual setup needed. You get 100 free credits to start."
+    },
+    "api": {
+      "url": "https://transcriptapi.com/blog/youtube-transcript-api-for-python-quick-start-tutorial",
+      "quote": "Seven endpoints covering transcripts, search, channels, and playlists"
+    },
+    "mcp": {
+      "url": "https://transcriptapi.com",
+      "quote": "mcp add http transcript-api https://transcriptapi.com/mcp"
+    },
+    "verdict": {
+      "url": "https://transcriptapi.com",
+      "quote": "Stop fighting YouTube blocks. Get transcripts, search videos, browse channels, and extract playlists via REST API or YouTube MCP — at scale. Get Started Free"
+    }
+  },
+  "confidence": {
+    "auth": 1.0,
+    "access": 1.0,
+    "api": 1.0,
+    "mcp": 1.0,
+    "verdict": 1.0
+  },
+  "_model": "gemini-3.5-flash-lite",
+  "status": "ok",
+  "id": 99,
+  "name": "YouTube Transcript",
+  "category": "AI Research & Media",
+  "hint": "transcriptapi.com",
+  "sources": [
+    {
+      "url": "https://transcriptapi.com",
+      "via": "direct",
+      "chars": 13681
+    },
+    {
+      "url": "https://transcriptapi.com/blog/youtube-transcript-api-complete-developer-guide",
+      "via": "direct",
+      "chars": 26876
+    },
+    {
+      "url": "https://transcriptapi.com/blog/youtube-transcript-api-for-python-quick-start-tutorial",
+      "via": "direct",
+      "chars": 20238
+    },
+    {
+      "url": "https://transcriptapi.com/docs/api",
+      "via": "direct",
+      "chars": 47046
+    },
+    {
+      "url": "https://www.youtubetranscript.dev/api-docs",
+      "via": "direct",
+      "chars": 21331
+    },
+    {
+      "url": "https://www.youtubetranscript.dev/pricing",
+      "via": "direct",
+      "chars": 1289
+    }
+  ],
+  "queries": [
+    "YouTube Transcript API authentication developer docs",
+    "YouTube Transcript API access pricing plan developer",
+    "YouTube Transcript MCP server"
+  ],
+  "seconds": 53.4
+}

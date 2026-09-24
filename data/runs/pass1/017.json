@@ -1,0 +1,95 @@
+{
+  "one_liner": "The AI support stack built for B2B customer operations.",
+  "auth_methods": [
+    "api_key",
+    "bearer_token",
+    "oauth2"
+  ],
+  "auth_primary": "api_key",
+  "auth_notes": "API uses Bearer tokens (API keys), while the official MCP server uses OAuth.",
+  "access_tier": "self_serve_free",
+  "access_notes": "Plain offers plans with a free trial or starting free options, though advanced tiers exist.",
+  "api_types": [
+    "graphql"
+  ],
+  "api_breadth": "broad",
+  "api_notes": "Comprehensive GraphQL API covering core support objects; base URL https://core-api.uk.plain.com/graphql/v1",
+  "mcp": "official",
+  "mcp_url": "https://mcp.plain.com/mcp",
+  "verdict": "build_now",
+  "blocker": "none",
+  "blocker_notes": "None.",
+  "evidence": {
+    "auth": {
+      "url": "https://help.plain.com/article/api-quickstart",
+      "quote": "Authorization: Bearer YOUR_TOKEN\nwhere the token is your API key. See authentication for more details."
+    },
+    "access": {
+      "url": "https://help.plain.com/article/pricing",
+      "quote": "Every plan includes a free 7-day trial, with no credit card required."
+    },
+    "api": {
+      "url": "https://help.plain.com/article/api-quickstart",
+      "quote": "Plain itself is built on this same GraphQL API. This means that there are no limitations in what can be done via the API vs the UI."
+    },
+    "mcp": {
+      "url": "https://help.plain.com/article/mcp-server",
+      "quote": "The Plain MCP server at https://mcp.plain.com/mcp"
+    },
+    "verdict": {
+      "url": "https://help.plain.com/article/api-quickstart",
+      "quote": "API URL:\nhttps://core-api.uk.plain.com/graphql/v1"
+    }
+  },
+  "confidence": {
+    "auth": 0.95,
+    "access": 0.9,
+    "api": 0.95,
+    "mcp": 0.95,
+    "verdict": 0.95
+  },
+  "_model": "gemini-3.5-flash-lite",
+  "status": "ok",
+  "id": 17,
+  "name": "Plain",
+  "category": "Support & Helpdesk",
+  "hint": "plain.com",
+  "sources": [
+    {
+      "url": "https://plain.com",
+      "via": "direct",
+      "chars": 8288
+    },
+    {
+      "url": "https://help.plain.com/article/api-quickstart",
+      "via": "direct",
+      "chars": 2309
+    },
+    {
+      "url": "https://help.plain.com/article/developer",
+      "via": "direct",
+      "chars": 2309
+    },
+    {
+      "url": "https://help.plain.com/article/how-to-configure-ari-inline-links-and-connect-mcp-servers-u5sgzsbutg42vm1rf4vm90ui",
+      "via": "direct",
+      "chars": 1654
+    },
+    {
+      "url": "https://help.plain.com/article/mcp-server",
+      "via": "direct",
+      "chars": 9191
+    },
+    {
+      "url": "https://help.plain.com/article/pricing",
+      "via": "direct",
+      "chars": 1910
+    }
+  ],
+  "queries": [
+    "Plain API authentication developer docs",
+    "Plain API access pricing plan developer",
+    "Plain MCP server"
+  ],
+  "seconds": 60.0
+}

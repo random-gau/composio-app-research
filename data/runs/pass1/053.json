@@ -1,0 +1,94 @@
+{
+  "one_liner": "Access Ahrefs marketing and search data through comprehensive APIs and developer tools.",
+  "auth_methods": [
+    "oauth2",
+    "api_key"
+  ],
+  "auth_primary": "oauth2",
+  "auth_notes": "Ahrefs Connect uses OAuth 2.0 for user integrations, and API keys are available for management.",
+  "access_tier": "paid_plan",
+  "access_notes": "API and MCP access require an Ahrefs paid subscription plan.",
+  "api_types": [
+    "rest"
+  ],
+  "api_breadth": "broad",
+  "api_notes": "REST API v3 covering Site Explorer, Keywords Explorer, Rank Tracker, Site Audit, and more.",
+  "mcp": "official",
+  "mcp_url": "https://ahrefs.com/api",
+  "verdict": "build_with_friction",
+  "blocker": "paid_plan",
+  "blocker_notes": "Requires a paid Ahrefs plan and approval/review for the Ahrefs Connect integration program.",
+  "evidence": {
+    "auth": {
+      "url": "https://docs.ahrefs.com/ahrefs-connect/docs/introduction.md",
+      "quote": "Users connect their Ahrefs account via OAuth, and your app can fetch data using their API units."
+    },
+    "access": {
+      "url": "https://ahrefs.com/pricing",
+      "quote": "API and MCP access"
+    },
+    "api": {
+      "url": "https://docs.ahrefs.com/ahrefs-connect/docs/api-guide.md",
+      "quote": "Ahrefs API v3 lets you pull a wide range of data, including: - Organic and backlinks data from Site Explorer"
+    },
+    "mcp": {
+      "url": "https://ahrefs.com/blog/what-is-mcp-server",
+      "quote": "Ahrefs now has an official MCP server that connects directly to Claude and ChatGPT."
+    },
+    "verdict": {
+      "url": "https://docs.ahrefs.com/ahrefs-connect/docs/introduction.md",
+      "quote": "Once a technology provider joins the Ahrefs Connect Program, their integration becomes available to users on Ahrefs paid plans"
+    }
+  },
+  "confidence": {
+    "auth": 0.9,
+    "access": 0.9,
+    "api": 0.9,
+    "mcp": 0.9,
+    "verdict": 0.9
+  },
+  "_model": "gemini-3.5-flash-lite",
+  "status": "ok",
+  "id": 53,
+  "name": "Ahrefs",
+  "category": "Data SEO & Scraping",
+  "hint": "ahrefs.com/api",
+  "sources": [
+    {
+      "url": "https://ahrefs.com/api",
+      "via": "direct",
+      "chars": 3336
+    },
+    {
+      "url": "https://ahrefs.com/blog/what-is-mcp-server",
+      "via": "direct",
+      "chars": 21220
+    },
+    {
+      "url": "https://ahrefs.com/pricing",
+      "via": "direct",
+      "chars": 9580
+    },
+    {
+      "url": "https://docs.ahrefs.com",
+      "via": "direct",
+      "chars": 3336
+    },
+    {
+      "url": "https://docs.ahrefs.com/ahrefs-connect/docs/api-guide.md",
+      "via": "direct",
+      "chars": 2149
+    },
+    {
+      "url": "https://docs.ahrefs.com/ahrefs-connect/docs/introduction.md",
+      "via": "direct",
+      "chars": 2080
+    }
+  ],
+  "queries": [
+    "Ahrefs API authentication developer docs",
+    "Ahrefs API access pricing plan developer",
+    "Ahrefs MCP server"
+  ],
+  "seconds": 52.8
+}

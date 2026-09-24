@@ -1,0 +1,95 @@
+{
+  "one_liner": "Slack is a messaging platform for teams, offering channels, direct messages, and integrations.",
+  "auth_methods": [
+    "oauth2",
+    "bearer_token"
+  ],
+  "auth_primary": "oauth2",
+  "auth_notes": "Supports OAuth 2.0 and token-based authentication (bot or user tokens passed as headers or POST parameters).",
+  "access_tier": "self_serve_free",
+  "access_notes": "Developers can sign up for a free Slack account and create an application via the Slack API portal with self-serve credentials.",
+  "api_types": [
+    "rest",
+    "websocket"
+  ],
+  "api_breadth": "broad",
+  "api_notes": "Comprehensive Web API and Events API covering messaging, users, channels, billing, and custom workflows.",
+  "mcp": "community_only",
+  "mcp_url": null,
+  "verdict": "build_now",
+  "blocker": "none",
+  "blocker_notes": "Publicly accessible API with self-serve developer accounts and broad documentation.",
+  "evidence": {
+    "auth": {
+      "url": "http://docs.slack.dev/reference/methods/team.billing.info.md",
+      "quote": "Authentication token bearing required scopes. Tokens should be passed as an HTTP Authorization header or alternatively, as a POST parameter."
+    },
+    "access": {
+      "url": "https://api.slack.com/apps",
+      "quote": "You'll need to sign in to your Slack account to create an application."
+    },
+    "api": {
+      "url": "http://docs.slack.dev/reference/methods/team.billing.info.md",
+      "quote": "Retrieve information about a workspace's billing plan. Use this information to customize features based on a workspace's billing plan."
+    },
+    "mcp": {
+      "url": "https://api.slack.com/authentication/basics",
+      "quote": "Try using the Slack MCP Plugin to aid in agent-assisted development."
+    },
+    "verdict": {
+      "url": "https://api.slack.com/apps",
+      "quote": "You'll need to sign in to your Slack account to create an application."
+    }
+  },
+  "confidence": {
+    "auth": 0.9,
+    "access": 0.9,
+    "api": 0.9,
+    "mcp": 0.7,
+    "verdict": 0.9
+  },
+  "_model": "gemini-3.5-flash-lite",
+  "status": "ok",
+  "id": 21,
+  "name": "Slack",
+  "category": "Communications & Messaging",
+  "hint": "slack.com",
+  "sources": [
+    {
+      "url": "https://slack.com",
+      "via": "direct",
+      "chars": 6058
+    },
+    {
+      "url": "https://api.slack.com/apps",
+      "via": "direct",
+      "chars": 212
+    },
+    {
+      "url": "https://api.slack.com/authentication/basics",
+      "via": "direct",
+      "chars": 4298
+    },
+    {
+      "url": "https://slack.com/intl/en-gb/terms-of-service/api",
+      "via": "direct",
+      "chars": 24807
+    },
+    {
+      "url": "https://slack.com/pricing",
+      "via": "direct",
+      "chars": 23698
+    },
+    {
+      "url": "http://docs.slack.dev/reference/methods/team.billing.info.md",
+      "via": "direct",
+      "chars": 6611
+    }
+  ],
+  "queries": [
+    "Slack API authentication developer docs",
+    "Slack API access pricing plan developer",
+    "Slack MCP server"
+  ],
+  "seconds": 53.2
+}

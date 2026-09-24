@@ -1,0 +1,96 @@
+{
+  "one_liner": "E-commerce customer service and support helpdesk platform with conversational AI.",
+  "auth_methods": [
+    "oauth2",
+    "api_key",
+    "bearer_token",
+    "basic"
+  ],
+  "auth_primary": "oauth2",
+  "auth_notes": "OAuth2 is required for public apps; API keys / basic auth are available for private apps.",
+  "access_tier": "self_serve_free",
+  "access_notes": "Sign up for a free trial or developer account to obtain credentials.",
+  "api_types": [
+    "rest"
+  ],
+  "api_breadth": "broad",
+  "api_notes": "Covers tickets, customers, users, events, macros, rules, statistics, and more.",
+  "mcp": "none_found",
+  "mcp_url": null,
+  "verdict": "build_now",
+  "blocker": "none",
+  "blocker_notes": "Public documentation and self-serve developer access are fully available.",
+  "evidence": {
+    "auth": {
+      "url": "https://developers.gorgias.com/docs/access-tokens-api-keys",
+      "quote": "Please remember that the API key authentication method can be used only for private apps. If you plan to build a public app you have to use OAuth2."
+    },
+    "access": {
+      "url": null,
+      "quote": null
+    },
+    "api": {
+      "url": "https://developers.gorgias.com/docs/oauth2-scopes",
+      "quote": "The following scopes can be defined programmatically: Basic scopes Name Description openid Scope required to \"login\" with Gorgias."
+    },
+    "mcp": {
+      "url": null,
+      "quote": null
+    },
+    "verdict": {
+      "url": null,
+      "quote": null
+    }
+  },
+  "confidence": {
+    "auth": 5.0,
+    "access": 4.0,
+    "api": 4.0,
+    "mcp": 5.0,
+    "verdict": 4.5
+  },
+  "_model": "gemini-3.5-flash-lite",
+  "status": "ok",
+  "id": 19,
+  "name": "Gorgias",
+  "category": "Support & Helpdesk",
+  "hint": "gorgias.com",
+  "sources": [
+    {
+      "url": "https://gorgias.com",
+      "via": "direct",
+      "chars": 4782
+    },
+    {
+      "url": "https://developers.gorgias.com/docs/access-tokens-api-keys",
+      "via": "direct",
+      "chars": 1603
+    },
+    {
+      "url": "https://developers.gorgias.com/docs/building-a-high-quality-gorgias-app",
+      "via": "direct",
+      "chars": 3756
+    },
+    {
+      "url": "https://developers.gorgias.com/docs/oauth2-authentication-for-creating-apps-with-gorgias",
+      "via": "direct",
+      "chars": 6020
+    },
+    {
+      "url": "https://developers.gorgias.com/docs/oauth2-bearer-token",
+      "via": "direct",
+      "chars": 1358
+    },
+    {
+      "url": "https://developers.gorgias.com/docs/oauth2-scopes",
+      "via": "direct",
+      "chars": 2532
+    }
+  ],
+  "queries": [
+    "Gorgias API authentication developer docs",
+    "Gorgias API access pricing plan developer",
+    "Gorgias MCP server"
+  ],
+  "seconds": 52.9
+}

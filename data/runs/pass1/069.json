@@ -1,0 +1,95 @@
+{
+  "one_liner": "Cloud-scale monitoring, metrics, logging, and security platform with a comprehensive REST API.",
+  "auth_methods": [
+    "api_key",
+    "bearer_token",
+    "oauth2"
+  ],
+  "auth_primary": "api_key",
+  "auth_notes": "Authenticate via API key (DD-API-KEY) and application key (DD-APPLICATION-KEY), or via Bearer tokens (PATs/SATs) and OAuth2.",
+  "access_tier": "self_serve_trial",
+  "access_notes": "Requires signing up for a Datadog account/trial; full production usage requires a paid plan.",
+  "api_types": [
+    "rest"
+  ],
+  "api_breadth": "broad",
+  "api_notes": "Extensive REST API covering metrics, logs, dashboards, monitors, APM, security, and administration.",
+  "mcp": "none_found",
+  "mcp_url": null,
+  "verdict": "build_with_friction",
+  "blocker": "paid_plan",
+  "blocker_notes": "Requires a trial or paid account to obtain working API and application keys.",
+  "evidence": {
+    "auth": {
+      "url": "https://docs.datadoghq.com/api/latest.md",
+      "quote": "Authenticate to the API with an [API key](https://docs.datadoghq.com/account_management/api-app-keys.md#api-keys) using the header `DD-API-KEY`. For some endpoints, you also need an [Application key](https://docs.datadoghq.com/account_management/api-app-keys.md#application-keys), which uses the header `DD-APPLICATION-KEY`."
+    },
+    "access": {
+      "url": "https://docs.datadoghq.com/account_management/billing/pricing.md",
+      "quote": "Datadog has many pricing plans to fit your needs. For more information, see the [Pricing](https://www.datadoghq.com/pricing) page."
+    },
+    "api": {
+      "url": "https://docs.datadoghq.com/api",
+      "quote": "The Datadog API is an HTTP REST API. The API uses resource-oriented URLs to call the API, uses status codes to indicate the success or failure of requests, returns JSON from all requests, and uses standard HTTP response codes."
+    },
+    "mcp": {
+      "url": null,
+      "quote": null
+    },
+    "verdict": {
+      "url": "https://docs.datadoghq.com/account_management/billing/pricing.md",
+      "quote": "Datadog has many pricing plans to fit your needs."
+    }
+  },
+  "confidence": {
+    "auth": 0.95,
+    "access": 0.9,
+    "api": 0.95,
+    "mcp": 0.8,
+    "verdict": 0.9
+  },
+  "_model": "gemini-3.5-flash-lite",
+  "status": "ok",
+  "id": 69,
+  "name": "Datadog",
+  "category": "Developer Infra & Data",
+  "hint": "docs.datadoghq.com/api",
+  "sources": [
+    {
+      "url": "https://docs.datadoghq.com/api",
+      "via": "direct",
+      "chars": 88544
+    },
+    {
+      "url": "https://docs.datadoghq.com/account_management/billing/pricing.md",
+      "via": "direct",
+      "chars": 12382
+    },
+    {
+      "url": "https://docs.datadoghq.com/account_management/personal-access-tokens.md",
+      "via": "direct",
+      "chars": 10881
+    },
+    {
+      "url": "https://docs.datadoghq.com/account_management/plan_and_usage/partner_experience.md",
+      "via": "direct",
+      "chars": 12478
+    },
+    {
+      "url": "https://docs.datadoghq.com/account_management/service-access-tokens.md",
+      "via": "direct",
+      "chars": 10899
+    },
+    {
+      "url": "https://docs.datadoghq.com/api/latest.md",
+      "via": "direct",
+      "chars": 7046
+    }
+  ],
+  "queries": [
+    "Datadog API authentication developer docs",
+    "Datadog API access pricing plan developer",
+    "Datadog MCP server"
+  ],
+  "seconds": 60.3
+}

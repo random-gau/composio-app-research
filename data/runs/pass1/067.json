@@ -1,0 +1,97 @@
+{
+  "one_liner": "Cloud-based data warehousing platform providing REST APIs for data and resource management.",
+  "auth_methods": [
+    "oauth2",
+    "bearer_token",
+    "basic",
+    "jwt_or_signed"
+  ],
+  "auth_primary": "oauth2",
+  "auth_notes": "Supports OAuth, Bearer tokens (programmatic access tokens / JWT), password (basic), and keypair authentication.",
+  "access_tier": "self_serve_trial",
+  "access_notes": "Snowflake offers a trial account to get credentials, but ongoing access requires a paid plan.",
+  "api_types": [
+    "rest",
+    "sdk_or_cli_only"
+  ],
+  "api_breadth": "broad",
+  "api_notes": "Comprehensive REST APIs and Python SDK covering accounts, users, warehouses, databases, tables, and AI/ML services.",
+  "mcp": "none_found",
+  "mcp_url": null,
+  "verdict": "build_with_friction",
+  "blocker": "paid_plan",
+  "blocker_notes": "Requires a paid plan or trial account after initial setup.",
+  "evidence": {
+    "auth": {
+      "url": "https://docs.snowflake.com/en/developer-guide/snowflake-rest-api/tutorials/common-setup",
+      "quote": "REST requests require a JWT token in the request header to authenticate the request. If you don’t have a JWT token, see Generate a JWT token."
+    },
+    "access": {
+      "url": "https://docs.snowflake.com",
+      "quote": "Getting a Trial Account"
+    },
+    "api": {
+      "url": "https://docs.snowflake.com/en/developer-guide/snowflake-rest-api/snowflake-rest-api",
+      "quote": "The Snowflake REST APIs for resource management provide a set of endpoints that lets users programmatically interact with and control various resources within the Snowflake Data Cloud."
+    },
+    "mcp": {
+      "url": null,
+      "quote": null
+    },
+    "verdict": {
+      "url": "https://docs.snowflake.com",
+      "quote": "Getting a Trial Account"
+    }
+  },
+  "confidence": {
+    "auth": 0.9,
+    "access": 0.9,
+    "api": 0.9,
+    "mcp": 1.0,
+    "verdict": 0.9
+  },
+  "_model": "gemini-3.5-flash-lite",
+  "status": "ok",
+  "id": 67,
+  "name": "Snowflake",
+  "category": "Developer Infra & Data",
+  "hint": "docs.snowflake.com",
+  "sources": [
+    {
+      "url": "https://docs.snowflake.com",
+      "via": "direct",
+      "chars": 3610
+    },
+    {
+      "url": "https://docs.snowflake.com/En/user-guide/programmatic-access-tokens",
+      "via": "direct",
+      "chars": 42150
+    },
+    {
+      "url": "https://docs.snowflake.com/en/collaboration/provider-listings-pricing-model",
+      "via": "direct",
+      "chars": 18734
+    },
+    {
+      "url": "https://docs.snowflake.com/en/developer-guide/snowflake-python-api/reference/latest/index",
+      "via": "direct",
+      "chars": 24562
+    },
+    {
+      "url": "https://docs.snowflake.com/en/developer-guide/snowflake-rest-api/snowflake-rest-api",
+      "via": "direct",
+      "chars": 3073
+    },
+    {
+      "url": "https://docs.snowflake.com/en/developer-guide/snowflake-rest-api/tutorials/common-setup",
+      "via": "direct",
+      "chars": 4715
+    }
+  ],
+  "queries": [
+    "Snowflake API authentication developer docs",
+    "Snowflake API access pricing plan developer",
+    "Snowflake MCP server"
+  ],
+  "seconds": 60.1
+}

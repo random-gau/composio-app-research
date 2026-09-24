@@ -1,0 +1,95 @@
+{
+  "one_liner": "Customer service platform combining shared inboxes, teams, and AI-powered workflows into one coordinated system.",
+  "auth_methods": [
+    "oauth2",
+    "api_key",
+    "bearer_token"
+  ],
+  "auth_primary": "oauth2",
+  "auth_notes": "Front's public API supports OAuth 2.0 as well as API tokens (bearer tokens).",
+  "access_tier": "self_serve_free",
+  "access_notes": "Users can sign up for a free trial or account to obtain developer credentials and access the API.",
+  "api_types": [
+    "rest"
+  ],
+  "api_breadth": "broad",
+  "api_notes": "Broad REST API covering conversations, inboxes, channels, contacts, messages, and more via api2.frontapp.com.",
+  "mcp": "official",
+  "mcp_url": "https://help.front.com/en/articles/4883136",
+  "verdict": "build_now",
+  "blocker": "none",
+  "blocker_notes": "Public documentation, self-serve trial/accounts, and an official MCP server allow building immediately.",
+  "evidence": {
+    "auth": {
+      "url": "https://help.front.com/en/articles/2438",
+      "quote": "API requests made by a partner integration on behalf of a company via OAuth have a separate rate limit"
+    },
+    "access": {
+      "url": "https://front.com/pricing",
+      "quote": "Our free 14-day trial offers all the features available in our Professional plan. You can get started without a credit card"
+    },
+    "api": {
+      "url": "https://help.front.com/en/articles/2438",
+      "quote": "POST https://api2.frontapp.com/channels/{channel_id}/incoming_messages"
+    },
+    "mcp": {
+      "url": "https://help.front.com/en/articles/4883136",
+      "quote": "Get started with Front's MCP server [beta]"
+    },
+    "verdict": {
+      "url": "https://front.com/pricing",
+      "quote": "Our free 14-day trial offers all the features available in our Professional plan. You can get started without a credit card and can upgrade at any time"
+    }
+  },
+  "confidence": {
+    "auth": 0.9,
+    "access": 0.9,
+    "api": 0.9,
+    "mcp": 0.9,
+    "verdict": 0.9
+  },
+  "_model": "gemini-3.5-flash-lite",
+  "status": "ok",
+  "id": 14,
+  "name": "Front",
+  "category": "Support & Helpdesk",
+  "hint": "front.com",
+  "sources": [
+    {
+      "url": "https://front.com",
+      "via": "direct",
+      "chars": 4546
+    },
+    {
+      "url": "https://community.front.com/developer-q-a-37/what-s-the-recommended-approach-for-developing-application-requests-2489",
+      "via": "direct",
+      "chars": 3411
+    },
+    {
+      "url": "https://front.com/pricing",
+      "via": "direct",
+      "chars": 11130
+    },
+    {
+      "url": "https://front.com/webassets/pages/pricing/Front-Pricing-One-Pager-2023-03-06.pdf",
+      "via": "composio_fetch",
+      "chars": 8223
+    },
+    {
+      "url": "https://help.front.com/en/articles/2438",
+      "via": "direct",
+      "chars": 5000
+    },
+    {
+      "url": "https://help.front.com/en/articles/4883136",
+      "via": "direct",
+      "chars": 7829
+    }
+  ],
+  "queries": [
+    "Front API authentication developer docs",
+    "Front API access pricing plan developer",
+    "Front MCP server"
+  ],
+  "seconds": 46.7
+}

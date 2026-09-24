@@ -1,0 +1,94 @@
+{
+  "one_liner": "A complete customer service helpdesk system featuring human and AI support capabilities.",
+  "auth_methods": [
+    "oauth2",
+    "bearer_token"
+  ],
+  "auth_primary": "oauth2",
+  "auth_notes": "Uses OAuth 2.0 for public integrations and static Bearer access tokens for private apps.",
+  "access_tier": "self_serve_free",
+  "access_notes": "Free development workspaces are available upon signup to obtain credentials.",
+  "api_types": [
+    "rest"
+  ],
+  "api_breadth": "broad",
+  "api_notes": "Covers contacts, tickets, help center, conversations, and reporting endpoints via api.intercom.io.",
+  "mcp": "official",
+  "mcp_url": "https://developers.intercom.com/docs/build-an-integration/getting-started",
+  "verdict": "build_now",
+  "blocker": "none",
+  "blocker_notes": "Public APIs and free development workspaces are readily accessible.",
+  "evidence": {
+    "auth": {
+      "url": "https://developers.intercom.com/docs/build-an-integration/learn-more/authentication",
+      "quote": "To access the Intercom API, you have two authentication options depending on whether you app is public or private."
+    },
+    "access": {
+      "url": "https://developers.intercom.com/docs/build-an-integration/getting-started",
+      "quote": "Development workspaces are free and intended for development purposes only."
+    },
+    "api": {
+      "url": "https://developers.intercom.com/docs",
+      "quote": "The Intercom Developer Platform is a suite of SDKs and APIs for building apps that connect with Intercom."
+    },
+    "mcp": {
+      "url": "https://www.intercom.com",
+      "quote": "Fin pulls in customer data and takes action through APIs or MCP."
+    },
+    "verdict": {
+      "url": "https://developers.intercom.com/docs",
+      "quote": "To develop a public app you will need to use a development workspace: sign up here to create your free account."
+    }
+  },
+  "confidence": {
+    "auth": 5.0,
+    "access": 5.0,
+    "api": 5.0,
+    "mcp": 4.0,
+    "verdict": 5.0
+  },
+  "_model": "gemini-3.5-flash-lite",
+  "status": "ok",
+  "id": 12,
+  "name": "Intercom",
+  "category": "Support & Helpdesk",
+  "hint": "intercom.com",
+  "sources": [
+    {
+      "url": "https://intercom.com",
+      "via": "direct",
+      "chars": 7327
+    },
+    {
+      "url": "https://developers.intercom.com/docs",
+      "via": "direct",
+      "chars": 5464
+    },
+    {
+      "url": "https://developers.intercom.com/docs.md",
+      "via": "direct",
+      "chars": 6638
+    },
+    {
+      "url": "https://developers.intercom.com/docs/build-an-integration/getting-started",
+      "via": "direct",
+      "chars": 6667
+    },
+    {
+      "url": "https://developers.intercom.com/docs/build-an-integration/learn-more/authentication",
+      "via": "direct",
+      "chars": 3800
+    },
+    {
+      "url": "https://developers.intercom.com/docs/build-an-integration/learn-more/authentication/installing-uninstalling-apps",
+      "via": "direct",
+      "chars": 7562
+    }
+  ],
+  "queries": [
+    "Intercom API authentication developer docs",
+    "Intercom API access pricing plan developer",
+    "Intercom MCP server"
+  ],
+  "seconds": 53.7
+}

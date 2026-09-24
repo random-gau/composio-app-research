@@ -1,0 +1,95 @@
+{
+  "one_liner": "An AI academic search engine for finding, organizing, and analyzing peer-reviewed literature.",
+  "auth_methods": [
+    "oauth2",
+    "bearer_token"
+  ],
+  "auth_primary": "oauth2",
+  "auth_notes": "OAuth2 is supported for streamable HTTP servers, and API keys can be used as bearer tokens.",
+  "access_tier": "self_serve_free",
+  "access_notes": "Free tier available upon signup, with API and paid plans also offered.",
+  "api_types": [
+    "rest"
+  ],
+  "api_breadth": "narrow",
+  "api_notes": "Provides endpoints for searching and querying peer-reviewed academic research papers.",
+  "mcp": "official",
+  "mcp_url": "https://mcp.consensus.app/mcp",
+  "verdict": "build_now",
+  "blocker": "none",
+  "blocker_notes": "Public documentation and self-serve access are available.",
+  "evidence": {
+    "auth": {
+      "url": "https://docs.consensus.app/consensus-mcp",
+      "quote": "OAuth login is only supported for streamable HTTP servers (Codex)"
+    },
+    "access": {
+      "url": "https://docs.consensus.app/docs/mcp.md",
+      "quote": "Create a free account at consensus.app/sign-up or upgrade at consensus.app/pricing."
+    },
+    "api": {
+      "url": "https://docs.consensus.app/reference/v1_quick_search",
+      "quote": "Query for relevant papers."
+    },
+    "mcp": {
+      "url": "https://docs.consensus.app/consensus-mcp",
+      "coined": null,
+      "quote": "Server URL: https://mcp.consensus.app/mcp"
+    },
+    "verdict": {
+      "url": "https://consensus.app/home/api",
+      "quote": "The Consensus API is now open to everyone."
+    }
+  },
+  "confidence": {
+    "auth": 0.9,
+    "access": 0.9,
+    "api": 0.8,
+    "mcp": 1.0,
+    "verdict": 0.9
+  },
+  "_model": "gemini-3.5-flash-lite",
+  "status": "ok",
+  "id": 94,
+  "name": "Consensus",
+  "category": "AI Research & Media",
+  "hint": "consensus.app (OAuth requested)",
+  "sources": [
+    {
+      "url": "https://consensus.app",
+      "via": "composio_fetch",
+      "chars": 2192
+    },
+    {
+      "url": "https://consensus.app/home/api",
+      "via": "direct",
+      "chars": 7458
+    },
+    {
+      "url": "https://consensus.app/pricing",
+      "via": "direct",
+      "chars": 593
+    },
+    {
+      "url": "https://docs.consensus.app/consensus-mcp",
+      "via": "direct",
+      "chars": 10544
+    },
+    {
+      "url": "https://docs.consensus.app/docs/mcp.md",
+      "via": "composio_fetch",
+      "chars": 12035
+    },
+    {
+      "url": "https://docs.consensus.app/reference/v1_quick_search",
+      "via": "composio_fetch",
+      "chars": 24495
+    }
+  ],
+  "queries": [
+    "Consensus API authentication developer docs",
+    "Consensus API access pricing plan developer",
+    "Consensus MCP server"
+  ],
+  "seconds": 53.2
+}

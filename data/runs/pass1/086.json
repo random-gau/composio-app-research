@@ -1,0 +1,94 @@
+{
+  "one_liner": "Cloud accounting software for small businesses to manage invoicing, expenses, and financial reporting.",
+  "auth_methods": [
+    "oauth2"
+  ],
+  "auth_primary": "oauth2",
+  "auth_notes": "OAuth 2.0 is used for authentication and authorization against the Intuit Financial Ecosystem.",
+  "access_tier": "self_serve_free",
+  "access_notes": "Sign up for a free Intuit Developer account to create an app and get sandbox credentials.",
+  "api_types": [
+    "rest"
+  ],
+  "api_breadth": "broad",
+  "api_notes": "Covers accounting, payments, and company info endpoints via REST APIs.",
+  "mcp": "none_found",
+  "mcp_url": null,
+  "verdict": "build_now",
+  "blocker": "none",
+  "blocker_notes": "Public documentation and free self-serve developer sandboxes are available.",
+  "evidence": {
+    "auth": {
+      "url": "https://developer.intuit.com/app/developer/qbo/docs/develop/authentication-and-authorization/faq",
+      "quote": "OAuth 2.0 is our authorization standard. Only registered apps can connect to the Intuit OAuth2.0 server, call our API, and end-users’ QuickBooks Online companies."
+    },
+    "access": {
+      "url": "https://developer.intuit.com/app/developer/qbo/docs/develop/sandboxes/postman",
+      "open": null,
+      "quote": "Besides the sandbox environment tied to your developer account, you can use Postman to test REST API production code and endpoints."
+    },
+    "api": {
+      "url": "https://developer.intuit.com/app/developer/qbo/docs/develop/sandboxes/postman",
+      "quote": "For the QuickBooks Online Accounting API: sandbox-quickbooks.api.intuit.com For the QuickBooks Payments: sandbox.api.intuit.com"
+    },
+    "mcp": {
+      "url": null,
+      "quote": null
+    },
+    "verdict": {
+      "url": "https://developer.intuit.com/app/developer/qbo/docs/develop/sandboxes/postman",
+      "quote": "Step 1: Set up your app in the Developer Portal\nIf you haven’t already, sign in to your developer account and create your app."
+    }
+  },
+  "confidence": {
+    "auth": 0.9,
+    "access": 0.9,
+    "api": 0.9,
+    "mcp": 1.0,
+    "verdict": 0.9
+  },
+  "_model": "gemini-3.5-flash-lite",
+  "status": "ok",
+  "id": 86,
+  "name": "QuickBooks",
+  "category": "Finance & Fintech",
+  "hint": "developer.intuit.com",
+  "sources": [
+    {
+      "url": "https://developer.intuit.com",
+      "via": "composio_fetch",
+      "chars": 678
+    },
+    {
+      "url": "https://developer.intuit.com/app/developer/qbo/docs/develop/authentication-and-authorization/faq",
+      "via": "composio_fetch",
+      "chars": 15003
+    },
+    {
+      "url": "https://developer.intuit.com/app/developer/qbo/docs/develop/sandboxes/postman",
+      "via": "composio_fetch",
+      "chars": 4549
+    },
+    {
+      "url": "https://developer.intuit.com/app/developer/qbo/docs/develop/sdks-and-samples-collections/php/authorization",
+      "via": "composio_fetch",
+      "chars": 7222
+    },
+    {
+      "url": "https://developer.intuit.com/app/developer/qbo/docs/develop/sdks-and-samples-collections/python/python_oauth_client",
+      "via": "composio_fetch",
+      "chars": 4435
+    },
+    {
+      "url": "https://developer.intuit.com/app/developer/qbpayments/docs/develop/authentication-and-authorization/oauth-2.0",
+      "via": "composio_fetch",
+      "chars": 32556
+    }
+  ],
+  "queries": [
+    "QuickBooks API authentication developer docs",
+    "QuickBooks API access pricing plan developer",
+    "QuickBooks MCP server"
+  ],
+  "seconds": 80.2
+}

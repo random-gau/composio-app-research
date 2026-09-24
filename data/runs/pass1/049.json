@@ -1,0 +1,94 @@
+{
+  "one_liner": "Integrate with Amazon to manage orders, catalog items, listings, and fulfillment.",
+  "auth_methods": [
+    "oauth2",
+    "jwt_or_signed"
+  ],
+  "auth_primary": "oauth2",
+  "auth_notes": "Uses Login with Amazon (OAuth 2.0) to exchange refresh tokens for access tokens, plus AWS IAM / signature for requests.",
+  "access_tier": "approval_or_review",
+  "access_notes": "Requires developer registration, approval, and app review in the Solution Provider Portal.",
+  "api_types": [
+    "rest"
+  ],
+  "api_breadth": "broad",
+  "api_notes": "Extensive API covering orders, catalog, listings, FBA, pricing, reports, etc.",
+  "mcp": "none_found",
+  "mcp_url": null,
+  "verdict": "build_with_friction",
+  "blocker": "app_review",
+  "blocker_notes": "Requires developer account registration and app approval.",
+  "evidence": {
+    "auth": {
+      "url": "https://developer-docs.amazon.com/sp-api/docs/authorize-public-applications",
+      "quote": "To grant permission, selling partners follow an authorization flow based on Login with Amazon (LWA), which is Amazon's implementation of OAuth 2.0."
+    },
+    "access": {
+      "url": "https://developer-docs.amazon.com/sp-api",
+      "quote": "SP-API Registration Overview\nDeveloper Registration Request Status\nThird-Party Provider Registration"
+    },
+    "api": {
+      "url": "https://developer-docs.amazon.com/sp-api",
+      "quote": "Catalog Items API\nCatalog Items API Rate Limits\nCatalog Items API v2022-04-01 Reference"
+    },
+    "mcp": {
+      "url": null,
+      "quote": null
+    },
+    "verdict": {
+      "url": "https://developer-docs.amazon.com/sp-api/docs/onboarding-step-8-call-the-sp-api-in-production",
+      "quote": "Your production credentials, which include: Client ID : The client ID that appeared after you registered your app in Step 7: Register Your Production Application."
+    }
+  },
+  "confidence": {
+    "auth": 0.95,
+    "access": 0.9,
+    "api": 0.95,
+    "mcp": 1.0,
+    "verdict": 0.95
+  },
+  "_model": "gemini-3.5-flash-lite",
+  "status": "ok",
+  "id": 49,
+  "name": "Amazon Selling Partner",
+  "category": "Ecommerce",
+  "hint": "developer-docs.amazon.com/sp-api",
+  "sources": [
+    {
+      "url": "https://developer-docs.amazon.com/sp-api",
+      "via": "direct",
+      "chars": 5304
+    },
+    {
+      "url": "https://developer-docs.amazon.com/sp-api/docs/authorize-public-applications",
+      "via": "direct",
+      "chars": 5732
+    },
+    {
+      "url": "https://developer-docs.amazon.com/sp-api/docs/onboarding-step-6-set-up-the-authorization-workflow",
+      "via": "direct",
+      "chars": 9839
+    },
+    {
+      "url": "https://developer-docs.amazon/sp-api/docs/connect-to-the-selling-partner-api-using-a-generated-c-sharp-sdk",
+      "via": "direct",
+      "chars": 6448
+    },
+    {
+      "url": "https://developer-docs.amazon/sp-api/docs/connecting-to-the-selling-partner-api",
+      "via": "direct",
+      "chars": 7016
+    },
+    {
+      "url": "https://developer-docs.amazon/sp-api/docs/onboarding-step-8-call-the-sp-api-in-production",
+      "via": "direct",
+      "chars": 2997
+    }
+  ],
+  "queries": [
+    "Amazon Selling Partner API authentication developer docs",
+    "Amazon Selling Partner API access pricing plan developer",
+    "Amazon Selling Partner MCP server"
+  ],
+  "seconds": 53.4
+}

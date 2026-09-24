@@ -1,0 +1,94 @@
+{
+  "one_liner": "AI-powered meeting notetaker and transcription service with public API and MCP support.",
+  "auth_methods": [
+    "oauth2",
+    "bearer_token"
+  ],
+  "auth_primary": "oauth2",
+  "auth_notes": "Supports OAuth 2.0 (Authorization Code and Client Credentials) and API keys via Bearer token.",
+  "access_tier": "partner_or_sales",
+  "access_notes": "API access is available for Enterprise workspaces or via partner onboarding.",
+  "api_types": [
+    "rest"
+  ],
+  "api_breadth": "moderate",
+  "api_notes": "REST API covering channels, conversations, transcripts, audio downloads, action items, and workspace details.",
+  "mcp": "official",
+  "mcp_url": "https://otter.ai/blog/otter-for-enterprise-connect-ai-to-ai-with-otters-mcp",
+  "verdict": "build_with_friction",
+  "blocker": "partner_approval",
+  "blocker_notes": "Requires Enterprise workspace or partner onboarding credentials to access the API.",
+  "evidence": {
+    "auth": {
+      "url": "https://connect.tryotter.com/docs/api-reference/reference/otter-api",
+      "quote": "Build on Otter with a REST API secured by OAuth 2.0."
+    },
+    "access": {
+      "url": "https://help.otter.ai/hc/en-us/articles/36130822688279-Otter-ai-Public-API",
+      "quote": "Getting Started: Otter's Public API is available for all Enterprise workspaces. If you do not see this feature for your workspace, contact your Otter account manager."
+    },
+    "api": {
+      "url": "https://help.otter.ai/hc/en-us/articles/36130822688279-Otter-ai-Public-API",
+      "quote": "Otter.ai’s Public API provides programmatic access to retrieve channels, conversations, transcripts, audio, action items, insights, outlines, and workspace details from your Otter account."
+    },
+    "mcp": {
+      "url": "https://otter.ai/blog/otter-for-enterprise-connect-ai-to-ai-with-otters-mcp",
+      "quote": "With Otter's MCP Server, your AI tools can: Search your meeting transcripts across all time periods"
+    },
+    "verdict": {
+      "url": "https://help.otter.ai/hc/en-us/articles/36130822688279-Otter-ai-Public-API",
+      "quote": "Getting Started: Otter's Public API is available for all Enterprise workspaces. If you do not see this feature for your workspace, contact your Otter account manager."
+    }
+  },
+  "confidence": {
+    "auth": 0.9,
+    "access": 0.9,
+    "api": 0.9,
+    "mcp": 0.9,
+    "verdict": 0.9
+  },
+  "_model": "gemini-3.5-flash-lite",
+  "status": "ok",
+  "id": 92,
+  "name": "Otter AI",
+  "category": "AI Research & Media",
+  "hint": "help.otter.ai (MCP server)",
+  "sources": [
+    {
+      "url": "https://help.otter.ai",
+      "via": "composio_fetch",
+      "chars": 1819
+    },
+    {
+      "url": "https://help.otter.ai/hc/en-us/articles/36130822688279-Otter-ai-Public-API",
+      "via": "composio_fetch",
+      "chars": 25722
+    },
+    {
+      "url": "https://home.otter.ai/pricing",
+      "via": "direct",
+      "chars": 9517
+    },
+    {
+      "url": "https://otter.ai/blog/otter-for-enterprise-connect-ai-to-ai-with-otters-mcp",
+      "via": "direct",
+      "chars": 3486
+    },
+    {
+      "url": "https://connect.tryotter.com/docs/api-reference/reference/otter-api",
+      "via": "direct",
+      "chars": 9725
+    },
+    {
+      "url": "https://connect.tryotter.com/docs/api-reference/reference/request-token",
+      "via": "direct",
+      "chars": 349
+    }
+  ],
+  "queries": [
+    "Otter AI API authentication developer docs",
+    "Otter AI API access pricing plan developer",
+    "Otter AI MCP server"
+  ],
+  "seconds": 60.0
+}

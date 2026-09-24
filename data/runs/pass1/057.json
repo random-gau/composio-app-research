@@ -1,0 +1,93 @@
+{
+  "one_liner": "Web data infrastructure providing scraping APIs, proxies, and an official Model Context Protocol server.",
+  "auth_methods": [
+    "api_key"
+  ],
+  "auth_primary": "api_key",
+  "auth_notes": "Bright Data uses API keys / tokens generated from the user settings control panel.",
+  "access_tier": "self_serve_free",
+  "access_notes": "Sign up on Bright Data with a free tier offering credits or free monthly requests.",
+  "api_types": [
+    "rest"
+  ],
+  "api_breadth": "broad",
+  "api_notes": "Covers scraping APIs, proxy configuration, datasets, scrapers, and MCP server tools.",
+  "mcp": "official",
+  "mcp_url": "https://github.com/brightdata/brightdata-mcp",
+  "verdict": "build_now",
+  "blocker": "none",
+  "blocker_notes": "Free tier and public API keys available immediately upon signup.",
+  "evidence": {
+    "auth": {
+      "url": "https://brightdata.com/pricing/mcp-server",
+      "quote": "You can get your API token from the user settings page in your Bright Data account."
+    },
+    "access": {
+      "url": "https://brightdata.com/pricing/mcp-server",
+      "quote": "Make sure you have an account on brightdata.com - new users get free credit for testing, and pay-as-you-go options are available after that."
+    },
+    "api": {
+      "url": "https://brightdata.com/pricing/mcp-server",
+      "quote": "The MCP server provides advanced capabilities, including: Bypassing geo-restrictions to access content regardless of location Access to a global IP network to avoid blocking or rate limiting"
+    },
+    "mcp": {
+      "url": "https://brightdata.com/pricing/mcp-server",
+      "quote": "Explore the MCP GitHub repository to review the source code, contribute, or deploy your own instance."
+    },
+    "verdict": {
+      "url": "https://brightdata.com/ai/mcp-server",
+      "quote": "NEW! Start with Bright Data's Web MCP and get 5,000 free monthly requests"
+    }
+  },
+  "confidence": {
+    "auth": 0.9,
+    "access": 0.9,
+    "api": 0.9,
+    "mcp": 1.0,
+    "verdict": 0.9
+  },
+  "_model": "gemini-3.5-flash-lite",
+  "status": "ok",
+  "id": 57,
+  "name": "Bright Data",
+  "category": "Data SEO & Scraping",
+  "hint": "brightdata.com",
+  "sources": [
+    {
+      "url": "https://brightdata.com",
+      "via": "direct",
+      "chars": 6138
+    },
+    {
+      "url": "https://brightdata.com/ai/mcp-server",
+      "via": "direct",
+      "chars": 2341
+    },
+    {
+      "url": "https://brightdata.com/pricing",
+      "via": "direct",
+      "chars": 2089
+    },
+    {
+      "url": "https://brightdata.com/pricing/crawl-api",
+      "via": "direct",
+      "chars": 4063
+    },
+    {
+      "url": "https://brightdata.com/pricing/mcp-server",
+      "via": "direct",
+      "chars": 10457
+    },
+    {
+      "url": "https://brightdata.com/pricing/scraping-browser",
+      "via": "direct",
+      "chars": 4658
+    }
+  ],
+  "queries": [
+    "Bright Data API authentication developer docs",
+    "Bright Data API access pricing plan developer",
+    "Bright Data MCP server"
+  ],
+  "seconds": 46.9
+}

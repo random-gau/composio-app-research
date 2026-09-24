@@ -1,0 +1,96 @@
+{
+  "one_liner": "Open-source ecommerce platform with a comprehensive REST API for products, orders, and customers.",
+  "auth_methods": [
+    "api_key",
+    "basic",
+    "oauth2"
+  ],
+  "auth_primary": "api_key",
+  "auth_notes": "Uses Consumer Key and Consumer Secret via HTTP Basic Auth or query parameters, plus OAuth 1.0a.",
+  "access_tier": "self_serve_free",
+  "access_notes": "WooCommerce core is free/open-source; you host it yourself and generate API keys directly in the admin dashboard.",
+  "api_types": [
+    "rest"
+  ],
+  "api_breadth": "broad",
+  "api_notes": "Extensive REST API (wc/v3) covering products, orders, coupons, customers, taxes, reports, settings, and webhooks.",
+  "mcp": "none_found",
+  "mcp_url": null,
+  "verdict": "build_now",
+  "blocker": "none",
+  "blocker_notes": "Fully open source and self-hosted with complete public API documentation.",
+  "evidence": {
+    "auth": {
+      "url": "https://developer.woocommerce.com/docs/apis/rest-api/authentication",
+      "quote": "HTTP Basic Auth by providing the REST API Consumer Key as the username and the REST API Consumer Secret as the password."
+    },
+    "access": {
+      "url": "https://woocommerce.com/document/woocommerce-rest-api",
+      "link": null,
+      "quote": "This documentation is about the free, core WooCommerce plugin, for which support is provided in our community forums on WordPress.org."
+    },
+    "api": {
+      "url": "https://developer.woocommerce.com/docs/apis/rest-api/v3",
+      "quote": "The current and recommended version of the WooCommerce REST API. Use /wp-json/wc/v3/ endpoints for all new integrations."
+    },
+    "mcp": {
+      "url": null,
+      "quote": null
+    },
+    "verdict": {
+      "url": "https://woocommerce.com/document/woocommerce-rest-api",
+      "quote": "To create or manage keys for a specific WordPress user: Go to WooCommerce > Settings > Advanced > REST API. Select Create an API key or Add Key."
+    }
+  },
+  "confidence": {
+    "auth": 0.95,
+    "access": 0.95,
+    "api": 0.95,
+    "mcp": 0.9,
+    "verdict": 0.95
+  },
+  "_model": "gemini-3.5-flash-lite",
+  "status": "ok",
+  "id": 42,
+  "name": "WooCommerce",
+  "category": "Ecommerce",
+  "hint": "woocommerce.com/document/woocommerce-rest-api",
+  "sources": [
+    {
+      "url": "https://woocommerce.com/document/woocommerce-rest-api",
+      "via": "direct",
+      "chars": 4232
+    },
+    {
+      "url": "https://developer.woocommerce.com/docs/apis/rest-api",
+      "via": "direct",
+      "chars": 9450
+    },
+    {
+      "url": "https://developer.woocommerce.com/docs/apis/rest-api/authentication",
+      "via": "direct",
+      "chars": 13406
+    },
+    {
+      "url": "https://developer.woocommerce.com/docs/apis/rest-api/v3",
+      "via": "direct",
+      "chars": 4370
+    },
+    {
+      "url": "https://developer.woocommerce.com/docs/apis/rest-api/v3/api-reference",
+      "via": "direct",
+      "chars": 177287
+    },
+    {
+      "url": "https://developer.woocommerce.com/docs/apis/store-api/README.md",
+      "via": "direct",
+      "chars": 13830
+    }
+  ],
+  "queries": [
+    "WooCommerce API authentication developer docs",
+    "WooCommerce API access pricing plan developer",
+    "WooCommerce MCP server"
+  ],
+  "seconds": 47.0
+}

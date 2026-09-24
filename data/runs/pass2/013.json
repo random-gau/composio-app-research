@@ -1,0 +1,167 @@
+{
+  "one_liner": "AI-powered customer service software and helpdesk platform for ticketing, automation, and support workflows.",
+  "auth_methods": [
+    "api_key",
+    "basic"
+  ],
+  "auth_primary": "api_key",
+  "auth_notes": "You can use your personal API key to authenticate the request. If you use the API key, there is no need for a password.",
+  "access_tier": "self_serve_free",
+  "access_notes": "Sign up for a free plan or free trial to get an account and generate an API key.",
+  "api_types": [
+    "rest"
+  ],
+  "api_breadth": "broad",
+  "api_notes": "Supports REST endpoints for tickets, contacts, agents, groups, and conversations over HTTPS base URL.",
+  "mcp": "official",
+  "mcp_url": "https://support.freshdesk.com/support/solutions/articles/50000012670-model-context-protocol-mcp-integration-in-freshdesk-eap-",
+  "verdict": "build_now",
+  "blocker": "none",
+  "blocker_notes": "Public APIs and official MCP are available with self-serve account creation.",
+  "evidence": {
+    "auth": {
+      "url": "https://developer.freshdesk.com/api",
+      "quote": "You can use your personal API key to authenticate the request. If you use the API key, there is no need for a password.",
+      "check": "ok"
+    },
+    "access": {
+      "url": "https://freshdesk.com",
+      "quote": "Start for free",
+      "check": "ok"
+    },
+    "api": {
+      "url": "https://developer.freshdesk.com/api",
+      "quote": "Representational State Transfer (REST) category. They allow you to perform 'RESTful' operations such as reading, modifying, adding or deleting data from your helpdesk.",
+      "check": "ok"
+    },
+    "mcp": {
+      "url": "https://support.freshdesk.com/support/solutions/articles/50000012670-model-context-protocol-mcp-integration-in-freshdesk-eap-",
+      "quote": "The Freshworks Model Context Protocol (MCP) server enables AI tools like Cursor and Claude to securely connect and interact with Freshdesk.",
+      "check": "ok"
+    },
+    "verdict": {
+      "url": "https://freshdesk.com",
+      "quote": "Start for free",
+      "check": "ok"
+    }
+  },
+  "confidence": {
+    "auth": 0.9,
+    "access": 0.9,
+    "api": 0.9,
+    "mcp": 0.9,
+    "verdict": 0.9
+  },
+  "_model": "gemini-3.5-flash-lite",
+  "status": "ok",
+  "id": 13,
+  "name": "Freshdesk",
+  "category": "Support & Helpdesk",
+  "hint": "freshdesk.com",
+  "sources": [
+    {
+      "url": "https://freshdesk.com",
+      "via": "direct",
+      "chars": 3636
+    },
+    {
+      "url": "https://developer.freshdesk.com/api",
+      "via": "direct",
+      "chars": 200000
+    },
+    {
+      "url": "https://developer.freshdesk.com/api/v1",
+      "via": "direct",
+      "chars": 147602
+    },
+    {
+      "url": "https://support.freshdesk.com/support/solutions/articles/225439-what-are-the-rate-limits-for-the-api-calls-to-freshdesk-",
+      "via": "direct",
+      "chars": 2272
+    },
+    {
+      "url": "https://support.freshdesk.com/support/solutions/articles/50000012670-model-context-protocol-mcp-integration-in-freshdesk-eap-",
+      "via": "direct",
+      "chars": 19106
+    },
+    {
+      "url": "https://support.freshdesk.com/support/solutions/articles/50000014407-mcp-integration-frequently-asked-questions-faq-",
+      "via": "direct",
+      "chars": 6295
+    }
+  ],
+  "queries": [
+    "Freshdesk API authentication developer docs",
+    "Freshdesk API access pricing plan developer",
+    "Freshdesk MCP server"
+  ],
+  "seconds": 53.6,
+  "verification": {
+    "initial_issues": [],
+    "final_issues": [],
+    "rounds": [
+      {
+        "round": 0,
+        "issues": [],
+        "verifier": {
+          "auth_methods": [
+            "basic",
+            "api_key"
+          ],
+          "auth_primary": "api_key",
+          "access_tier": "self_serve_free",
+          "api_types": [
+            "rest"
+          ],
+          "mcp": "official",
+          "verdict": "build_now",
+          "reasons": {
+            "auth": "Docs describe Basic (username/password) and personal API‑key authentication",
+            "access": "Free plan lets you sign up and obtain an API key without payment",
+            "mcp": "Freshdesk MCP is presented on the vendor site as an official integration platform",
+            "verdict": "Public REST API, self‑serve free credentials, no approval required – a toolkit can be built today"
+          },
+          "_model": "openai/gpt-oss-120b"
+        },
+        "autofix": []
+      }
+    ],
+    "catalog": {
+      "in_catalog": true,
+      "slug": "freshdesk",
+      "auth": [
+        "api_key"
+      ],
+      "tools_count": 178
+    },
+    "changed_fields": [],
+    "field_status": {
+      "auth": "verified",
+      "access": "verified",
+      "api": "verified",
+      "mcp": "verified",
+      "verdict": "verified"
+    },
+    "needs_human": [],
+    "before": {
+      "auth_methods": [
+        "api_key",
+        "basic"
+      ],
+      "auth_primary": "api_key",
+      "access_tier": "self_serve_free",
+      "access_notes": "Sign up for a free plan or free trial to get an account and generate an API key.",
+      "api_types": [
+        "rest"
+      ],
+      "api_breadth": "broad",
+      "api_notes": "Supports REST endpoints for tickets, contacts, agents, groups, and conversations over HTTPS base URL.",
+      "mcp": "official",
+      "mcp_url": "https://support.freshdesk.com/support/solutions/articles/50000012670-model-context-protocol-mcp-integration-in-freshdesk-eap-",
+      "verdict": "build_now",
+      "blocker": "none",
+      "blocker_notes": "Public APIs and official MCP are available with self-serve account creation."
+    },
+    "seconds": 14.0
+  }
+}

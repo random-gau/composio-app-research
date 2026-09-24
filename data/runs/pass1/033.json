@@ -1,0 +1,93 @@
+{
+  "one_liner": "Manage LinkedIn advertising campaigns, ad accounts, analytics, and creatives programmatically.",
+  "auth_methods": [
+    "oauth2"
+  ],
+  "auth_primary": "oauth2",
+  "auth_notes": "Uses 3-legged OAuth for member-consented permission scopes.",
+  "access_tier": "approval_or_review",
+  "access_notes": "Requires developer application approval and vetting by LinkedIn for marketing API programs.",
+  "api_types": [
+    "rest"
+  ],
+  "api_breadth": "broad",
+  "api_notes": "Covers advertising accounts, campaigns, creatives, analytics, and reporting via REST base https://api.linkedin.com/rest/",
+  "mcp": "none_found",
+  "mcp_url": null,
+  "verdict": "build_with_friction",
+  "blocker": "partner_approval",
+  "blocker_notes": "Requires approval and vetting through the LinkedIn Developer portal to access marketing APIs.",
+  "evidence": {
+    "auth": {
+      "url": "https://learn.microsoft.com/en-us/linkedin/marketing/getting-started?view=li-lms-2026-02",
+      "quote": "Once you have a developer application that has been given access to the LinkedIn Marketing API Program, you're ready to start generating OAuth access tokens to make API calls on behalf of authenticated members."
+    },
+    "access": {
+      "url": "https://learn.microsoft.com/en-us/linkedin/marketing/increasing-access?view=li-lms-2026-06",
+      "quote": "The Advertising API and Community Management API each have two access tiers with different access criteria. All applications start with Development tier. You must apply separately to upgrade to the Standard tier."
+    },
+    "api": {
+      "url": "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/ads/ads-overview?view=li-lms-2026-03",
+      "quote": "The Advertising API enables developers to manage LinkedIn's campaign management platform on behalf of clients through APIs. These APIs provide all features available in LinkedIn Campaign Manager, including creation and management of ad accounts, campaign groups, campaigns, creatives, ad types, and analytics."
+    },
+    "mcp": {
+      "url": null,
+      "quote": null
+    },
+    "verdict": {
+      "url": "https://learn.microsoft.com/en-us/linkedin/marketing/increasing-access?view=li-lms-2026-06",
+      "quote": "The Advertising API and Community Management API each have two access tiers with different access criteria. All applications start with Development tier. You must apply separately to upgrade to the Standard tier."
+    }
+  },
+  "confidence": {
+    "auth": 0.9,
+    "access": 0.9,
+    "api": 0.9,
+    "mcp": 1.0,
+    "verdict": 0.9
+  },
+  "_model": "gemini-3.5-flash-lite",
+  "status": "ok",
+  "id": 33,
+  "name": "LinkedIn Ads",
+  "category": "Marketing Ads Email & Social",
+  "hint": "learn.microsoft.com/linkedin/marketing",
+  "sources": [
+    {
+      "url": "https://learn.microsoft.com/linkedin/marketing",
+      "via": "direct",
+      "chars": 3733
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/linkedin/marketing/getting-started?view=li-lms-2026-02",
+      "via": "direct",
+      "chars": 9780
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/linkedin/marketing/increasing-access?view=li-lms-2026-06",
+      "via": "direct",
+      "chars": 13164
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/linkedin/marketing/increasing-access?view=li-lms-2026-08",
+      "via": "direct",
+      "chars": 13164
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/ads/account-structure/create-and-manage-accounts?view=li-lms-2026-05",
+      "via": "direct",
+      "chars": 31519
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/ads/ads-overview?view=li-lms-2026-03",
+      "via": "direct",
+      "chars": 5767
+    }
+  ],
+  "queries": [
+    "LinkedIn Ads API authentication developer docs",
+    "LinkedIn Ads API access pricing plan developer",
+    "LinkedIn Ads MCP server"
+  ],
+  "seconds": 40.1
+}

@@ -1,0 +1,95 @@
+{
+  "one_liner": "DealCloud is a CRM and deal management platform for dealmakers in capital markets.",
+  "auth_methods": [
+    "oauth2",
+    "api_key",
+    "bearer_token"
+  ],
+  "auth_primary": "oauth2",
+  "auth_notes": "Uses OAuth2 Client Credentials flow using an API key and scopes to obtain a bearer token.",
+  "access_tier": "partner_or_sales",
+  "access_notes": "Requires an enterprise subscription/contract and contact with sales/partners to obtain API credentials and access.",
+  "api_types": [
+    "rest"
+  ],
+  "api_breadth": "broad",
+  "api_notes": "Comprehensive REST APIs covering data, schema, users, backups, history, publications, and relationship intelligence.",
+  "mcp": "official",
+  "mcp_url": "https://api.docs.dealcloud.com",
+  "verdict": "blocked",
+  "blocker": "enterprise_only",
+  "blocker_notes": "DealCloud is an enterprise CRM platform requiring a paid enterprise contract; no self-serve free sandbox tier is available.",
+  "evidence": {
+    "auth": {
+      "url": "https://api.docs.dealcloud.com/docs/token",
+      "quote": "DealCloud uses the OAuth2 Client Credentials flow to generate a bearer token, which is then used in the HTTP Authentication header for API requests."
+    },
+    "access": {
+      "url": null,
+      "quote": null
+    },
+    "api": {
+      "url": "https://api.docs.dealcloud.com/docs",
+      "quote": "This site provides a comprehensive overview of our REST APIs, their capabilities, and available endpoints."
+    },
+    "mcp": {
+      "url": "https://api.docs.dealcloud.com",
+      "quote": "MCP\nGetting Started\nAI Clients\nAuthentication\nAvailable Tools\nCustom MCP Servers"
+    },
+    "verdict": {
+      "url": null,
+      "quote": null
+    }
+  },
+  "confidence": {
+    "auth": 0.9,
+    "access": 0.8,
+    "api": 0.9,
+    "mcp": 0.7,
+    "verdict": 0.85
+  },
+  "_model": "gemini-3.5-flash-lite",
+  "status": "ok",
+  "id": 10,
+  "name": "DealCloud",
+  "category": "CRM & Sales",
+  "hint": "api.docs.dealcloud.com",
+  "sources": [
+    {
+      "url": "https://api.docs.dealcloud.com",
+      "via": "direct",
+      "chars": 3315
+    },
+    {
+      "url": "https://api.docs.dealcloud.com/docs",
+      "via": "direct",
+      "chars": 7806
+    },
+    {
+      "url": "https://api.docs.dealcloud.com/docs/apikeys",
+      "via": "direct",
+      "chars": 7509
+    },
+    {
+      "url": "https://api.docs.dealcloud.com/docs/errors",
+      "via": "direct",
+      "chars": 9236
+    },
+    {
+      "url": "https://api.docs.dealcloud.com/docs/limits",
+      "via": "direct",
+      "chars": 7715
+    },
+    {
+      "url": "https://api.docs.dealcloud.com/docs/token",
+      "via": "direct",
+      "chars": 8310
+    }
+  ],
+  "queries": [
+    "DealCloud API authentication developer docs",
+    "DealCloud API access pricing plan developer",
+    "DealCloud MCP server"
+  ],
+  "seconds": 40.2
+}

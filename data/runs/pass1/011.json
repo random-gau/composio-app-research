@@ -1,0 +1,95 @@
+{
+  "one_liner": "Customer service software and helpdesk ticketing system with robust AI and automation capabilities.",
+  "auth_methods": [
+    "oauth2",
+    "bearer_token",
+    "basic"
+  ],
+  "auth_primary": "oauth2",
+  "auth_notes": "Zendesk supports OAuth 2.0 access tokens, Bearer tokens, and basic auth using email/token.",
+  "access_tier": "self_serve_trial",
+  "access_notes": "Available via time-limited free trial or paid plans.",
+  "api_types": [
+    "rest"
+  ],
+  "api_breadth": "broad",
+  "api_notes": "Comprehensive REST APIs covering ticketing, users, organizations, help center, and oauth tokens under api/v2.",
+  "mcp": "none_found",
+  "mcp_url": null,
+  "verdict": "build_with_friction",
+  "blocker": "paid_plan",
+  "blocker_notes": "Free access requires a trial; long-term use requires a paid Zendesk plan.",
+  "evidence": {
+    "auth": {
+      "url": "https://developer.zendesk.com/api-reference/introduction/security-and-auth",
+      "quote": "Zendesk supports using OAuth access tokens to authenticate API requests."
+    },
+    "access": {
+      "url": "https://zendesk.com",
+      "quote": "Try it for free"
+    },
+    "api": {
+      "url": "https://developer.zendesk.com/api-reference/introduction/requests",
+      "quote": "The Zendesk API is a JSON API. You must supply a Content-Type: application/json header in PUT, POST, and DELETE requests."
+    },
+    "mcp": {
+      "url": null,
+      "quote": null
+    },
+    "verdict": {
+      "url": "https://zendesk.com",
+      "quote": "Try it for free"
+    }
+  },
+  "confidence": {
+    "auth": 0.9,
+    "access": 0.8,
+    "api": 0.9,
+    "mcp": 0.8,
+    "verdict": 0.8
+  },
+  "_model": "gemini-3.5-flash-lite",
+  "status": "ok",
+  "id": 11,
+  "name": "Zendesk",
+  "category": "Support & Helpdesk",
+  "hint": "zendesk.com",
+  "sources": [
+    {
+      "url": "https://zendesk.com",
+      "via": "direct",
+      "chars": 15918
+    },
+    {
+      "url": "https://developer.zendesk.com/api-reference/introduction/plan",
+      "via": "direct",
+      "chars": 530
+    },
+    {
+      "url": "https://developer.zendesk.com/api-reference/introduction/rate-limits",
+      "via": "direct",
+      "chars": 8584
+    },
+    {
+      "url": "https://developer.zendesk.com/api-reference/introduction/requests",
+      "via": "direct",
+      "chars": 4883
+    },
+    {
+      "url": "https://developer.zendesk.com/api-reference/introduction/security-and-auth",
+      "via": "direct",
+      "chars": 5676
+    },
+    {
+      "url": "https://developer.zendesk.com/api-reference/ticketing/oauth/oauth_tokens",
+      "via": "direct",
+      "chars": 21628
+    }
+  ],
+  "queries": [
+    "Zendesk API authentication developer docs",
+    "Zendesk API access pricing plan developer",
+    "Zendesk MCP server"
+  ],
+  "seconds": 59.7
+}

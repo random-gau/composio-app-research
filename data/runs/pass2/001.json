@@ -1,0 +1,241 @@
+{
+  "one_liner": "The #1 AI CRM platform providing a unified set of applications for sales and service.",
+  "auth_methods": [
+    "oauth2",
+    "basic",
+    "jwt_or_signed"
+  ],
+  "auth_primary": "oauth2",
+  "auth_notes": "OAuth 2.0 via external client apps or connected apps is standard.",
+  "access_tier": "self_serve_free",
+  "access_notes": "Salesforce Developer Edition is free and provides access to APIs and sandboxes.",
+  "api_types": [
+    "rest",
+    "soap",
+    "graphql"
+  ],
+  "api_breadth": "broad",
+  "api_notes": "Extensive REST, SOAP, and Bulk APIs covering all CRM data objects.",
+  "mcp": "official",
+  "mcp_url": "https://developer.salesforce.com/blogs/2026/06/the-mcp-server-for-marketing-cloud-engagement-is-now-ga",
+  "verdict": "build_now",
+  "blocker": "none",
+  "blocker_notes": "None.",
+  "evidence": {
+    "auth": {
+      "url": "https://developer.salesforce.com/docs/atlas.en-us.api_rest.meta/api_rest/intro_oauth_and_connected_apps.htm",
+      "quote": "For a client application to access REST API resources, it must be authorized as a safe visitor. To implement this authorization, use either an external client app or a connected app and an OAuth 2.0 authorization flow.",
+      "check": "ok"
+    },
+    "access": {
+      "url": "https://salesforce.com",
+      "quote": "Salesforce Starter helps you hit the ground running for free, providing an all-in-one suite of sales, service, and marketing tools designed specifically for small business needs.",
+      "check": "ok"
+    },
+    "api": {
+      "url": "https://developer.salesforce.com/blogs/2024/11/api-limits-and-monitoring-your-api-usage",
+      "quote": "The Salesforce Platform offers an extensive set of APIs for accessing the data in your org, and you can read about them in our blog post Accessing Object Data with Salesforce Platform APIs.",
+      "check": "ok"
+    },
+    "mcp": {
+      "url": "https://developer.salesforce.com/blogs/2026/06/the-mcp-server-for-marketing-cloud-engagement-is-now-ga",
+      "quote": "The MCE MCP Server is Salesforce’s first-party, enterprise-grade, hosted MCP server for Marketing Cloud Engagement.",
+      "check": "ok"
+    },
+    "verdict": {
+      "url": "https://developer.salesforce.com/docs/atlas.en-us.packagingGuide.meta/packagingGuide/dev_packages_rest_api_access.htm",
+      "quote": "Access to Salesforce Developer Edition. If you don’t already have access to a DE org, you can get the Partner Developer Edition from the Environment Hub.",
+      "check": "ok"
+    }
+  },
+  "confidence": {
+    "auth": 0.9,
+    "access": 0.9,
+    "api": 0.9,
+    "mcp": 0.9,
+    "verdict": 0.9
+  },
+  "_model": "gemini-3.5-flash-lite",
+  "status": "ok",
+  "id": 1,
+  "name": "Salesforce",
+  "category": "CRM & Sales",
+  "hint": "salesforce.com",
+  "sources": [
+    {
+      "url": "https://salesforce.com",
+      "via": "direct",
+      "chars": 5542
+    },
+    {
+      "url": "https://developer.salesforce.com/blogs/2024/11/api-limits-and-monitoring-your-api-usage",
+      "via": "composio_fetch",
+      "chars": 14356
+    },
+    {
+      "url": "https://developer.salesforce.com/blogs/2026/06/the-mcp-server-for-marketing-cloud-engagement-is-now-ga",
+      "via": "composio_fetch",
+      "chars": 13003
+    },
+    {
+      "url": "https://developer.salesforce.com/docs/atlas.en-us.api.meta/api/sforce_api_concepts_security.htm",
+      "via": "composio_fetch",
+      "chars": 13688
+    },
+    {
+      "url": "https://developer.salesforce.com/docs/atlas.en-us.api.meta/api/sforce_api_oauth_and_connected_apps.htm",
+      "via": "composio_fetch",
+      "chars": 4257
+    },
+    {
+      "url": "https://developer.salesforce.com/docs/atlas.en-us.api_rest.meta/api_rest/intro_oauth_and_connected_apps.htm",
+      "via": "composio_fetch",
+      "chars": 4276
+    },
+    {
+      "url": "https://developer.salesforce.com/blogs/2024/02/invoke-rest-apis-with-the-salesforce-integration-user-and-oauth-client-credentials",
+      "via": "verification"
+    },
+    {
+      "url": "https://developer.salesforce.com/docs/atlas.en-us.packagingGuide.meta/packagingGuide/dev_packages_api_access.htm",
+      "via": "verification"
+    },
+    {
+      "url": "https://developer.salesforce.com/docs/atlas.en-us.packagingGuide.meta/packagingGuide/dev_packages_rest_api_access.htm",
+      "via": "verification"
+    }
+  ],
+  "queries": [
+    "Salesforce API authentication developer docs",
+    "Salesforce API access pricing plan developer",
+    "Salesforce MCP server"
+  ],
+  "seconds": 74.9,
+  "verification_queries": [
+    "Salesforce API access requirements plan"
+  ],
+  "verification": {
+    "initial_issues": [
+      {
+        "loop": "L4_verifier",
+        "field": "verdict",
+        "problem": "verifier says build_with_friction vs agent build_now"
+      }
+    ],
+    "final_issues": [],
+    "rounds": [
+      {
+        "round": 0,
+        "issues": [
+          {
+            "loop": "L4_verifier",
+            "field": "verdict",
+            "problem": "verifier says build_with_friction vs agent build_now"
+          }
+        ],
+        "verifier": {
+          "auth_methods": [
+            "oauth2",
+            "basic"
+          ],
+          "auth_primary": "oauth2",
+          "access_tier": "unknown",
+          "api_types": [
+            "rest",
+            "soap"
+          ],
+          "mcp": "official",
+          "verdict": "build_with_friction",
+          "reasons": {
+            "auth": "Salesforce supports OAuth 2.0 flows and username/password (basic) authentication as described in the SOAP API security guide and MCP OAuth login flows.",
+            "access": "Sources mention API limits for paid org editions and do not specify a free self‑serve credential option, implying that obtaining working credentials requires a paid plan or trial.",
+            "mcp": "Source 3 announces a first‑party hosted MCP server for Marketing Cloud Engagement, making it an official MCP implementation.",
+            "verdict": "Public API documentation exists, but obtaining credentials appears to require a paid Salesforce edition, so building is possible but with friction."
+          },
+          "_model": "openai/gpt-oss-120b"
+        },
+        "autofix": []
+      },
+      {
+        "round": 1,
+        "queries": [
+          "Salesforce API access requirements plan"
+        ],
+        "new_sources": [
+          "https://salesforce.com",
+          "https://developer.salesforce.com/blogs/2024/02/invoke-rest-apis-with-the-salesforce-integration-user-and-oauth-client-credentials",
+          "https://developer.salesforce.com/docs/atlas.en-us.api.meta/api/sforce_api_concepts_security.htm",
+          "https://developer.salesforce.com/docs/atlas.en-us.packagingGuide.meta/packagingGuide/dev_packages_api_access.htm",
+          "https://developer.salesforce.com/docs/atlas.en-us.packagingGuide.meta/packagingGuide/dev_packages_rest_api_access.htm"
+        ],
+        "change_log": "Retained build_now as developers can freely obtain credentials using Salesforce Developer Edition orgs.",
+        "issues": [],
+        "verifier": {
+          "auth_methods": [
+            "oauth2",
+            "bearer_token",
+            "basic",
+            "jwt_or_signed"
+          ],
+          "auth_primary": "oauth2",
+          "access_tier": "self_serve_free",
+          "api_types": [
+            "rest",
+            "soap"
+          ],
+          "mcp": "none_found",
+          "verdict": "build_now",
+          "reasons": {
+            "auth": "Salesforce supports OAuth 2.0 client credentials, JWT, and username/password with security token (basic).",
+            "access": "Developer accounts are free and provide API credentials; no approval needed for sandbox.",
+            "mcp": "No official MCP server is documented by Salesforce.",
+            "verdict": "Public API docs exist and free developer credentials are available, enabling immediate build."
+          },
+          "_model": "openai/gpt-oss-20b"
+        },
+        "autofix": []
+      }
+    ],
+    "catalog": {
+      "in_catalog": true,
+      "slug": "salesforce",
+      "auth": [
+        "oauth2",
+        "other"
+      ],
+      "tools_count": 185
+    },
+    "changed_fields": [],
+    "field_status": {
+      "auth": "verified",
+      "access": "verified",
+      "api": "verified",
+      "mcp": "verified",
+      "verdict": "confirmed_after_recheck"
+    },
+    "needs_human": [],
+    "before": {
+      "auth_methods": [
+        "oauth2",
+        "basic",
+        "jwt_or_signed"
+      ],
+      "auth_primary": "oauth2",
+      "access_tier": "self_serve_free",
+      "access_notes": "Salesforce Developer Edition is free and provides access to APIs and sandboxes.",
+      "api_types": [
+        "rest",
+        "soap",
+        "graphql"
+      ],
+      "api_breadth": "broad",
+      "api_notes": "Extensive REST, SOAP, and Bulk APIs covering all CRM data objects.",
+      "mcp": "official",
+      "mcp_url": "https://developer.salesforce.com/blogs/2026/06/the-mcp-server-for-marketing-cloud-engagement-is-now-ga",
+      "verdict": "build_now",
+      "blocker": "none",
+      "blocker_notes": "None."
+    },
+    "seconds": 128.6
+  }
+}

@@ -1,0 +1,95 @@
+{
+  "one_liner": "Sales CRM combining calling, email, SMS, pipeline management, reporting, and an AI sales agent.",
+  "auth_methods": [
+    "api_key",
+    "oauth2",
+    "basic"
+  ],
+  "auth_primary": "api_key",
+  "auth_notes": "API keys use HTTP Basic Auth with the key as the username and an empty password; OAuth 2.0 is also supported.",
+  "access_tier": "self_serve_free",
+  "access_notes": "Close is designed to be self-serve, offering a free trial to sign up and get credentials without talking to sales.",
+  "api_types": [
+    "rest"
+  ],
+  "api_breadth": "broad",
+  "api_notes": "Comprehensive REST API covering leads, contacts, opportunities, tasks, files, webhooks, reporting, and more at https://api.close.com/api/v1",
+  "mcp": "official",
+  "mcp_url": "https://developer.close.com/_mcp/server",
+  "verdict": "build_now",
+  "blocker": "none",
+  "blocker_notes": "Public REST API, official MCP server, and self-serve trial make it fully ready to build today.",
+  "evidence": {
+    "auth": {
+      "url": "https://developer.close.com/api/overview.md",
+      "quote": "Two methods are supported:\n\n- API Keys — Best for scripts, internal tools, and server-side integrations. Use HTTP Basic Auth with your API key as the username and an empty password.\n- OAuth 2.0 — Best for user-facing integrations."
+    },
+    "access": {
+      "url": "https://close.com/pricing",
+      "quote": "No. Close is designed to be self-serve, so you can sign up, start a trial, and set up your team without talking to sales."
+    },
+    "api": {
+      "url": "https://developer.close.com/api/overview.md",
+      "quote": "Close uses industry-standard REST conventions with predictable URL structures, standard HTTP methods, and JSON request/response bodies."
+    },
+    "mcp": {
+      "url": "https://developer.close.com/llms.txt",
+      "quote": "For AI client integration (Claude Code, Cursor, etc.), connect to the MCP server at https://developer.close.com/_mcp/server"
+    },
+    "verdict": {
+      "url": "https://close.com",
+      "quote": "REST API, webhooks, and MCP server. Everything you need to customize Close for the way your team works."
+    }
+  },
+  "confidence": {
+    "auth": 1.0,
+    "access": 1.0,
+    "api": 1.0,
+    "mcp": 1.0,
+    "verdict": 1.0
+  },
+  "_model": "gemini-3.5-flash-lite",
+  "status": "ok",
+  "id": 8,
+  "name": "Close",
+  "category": "CRM & Sales",
+  "hint": "close.com",
+  "sources": [
+    {
+      "url": "https://close.com",
+      "via": "direct",
+      "chars": 3833
+    },
+    {
+      "url": "https://close.com/pricing",
+      "via": "direct",
+      "chars": 17541
+    },
+    {
+      "url": "https://developer.close.com/api/overview.md",
+      "via": "direct",
+      "chars": 2647
+    },
+    {
+      "url": "https://developer.close.com/api/overview/changelog/llms.txt",
+      "via": "direct",
+      "chars": 8459
+    },
+    {
+      "url": "https://developer.close.com/api/resources/leads/merge.md",
+      "via": "direct",
+      "chars": 4620
+    },
+    {
+      "url": "https://developer.close.com/llms.txt",
+      "via": "direct",
+      "chars": 60263
+    }
+  ],
+  "queries": [
+    "Close API authentication developer docs",
+    "Close API access pricing plan developer",
+    "Close MCP server"
+  ],
+  "seconds": 86.6
+}

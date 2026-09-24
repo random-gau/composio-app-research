@@ -1,0 +1,94 @@
+{
+  "one_liner": "Sell products, manage subscriptions, and track sales using the Gumroad API.",
+  "auth_methods": [
+    "oauth2",
+    "bearer_token"
+  ],
+  "auth_primary": "bearer_token",
+  "auth_notes": "Supports OAuth2 and personal access tokens generated from the Gumroad advanced settings.",
+  "access_tier": "self_serve_free",
+  "access_notes": "Sign in to Gumroad, navigate to advanced settings, and generate an access token for your account.",
+  "api_types": [
+    "rest"
+  ],
+  "api_breadth": "moderate",
+  "api_notes": "REST API v2 covering products, sales, subscribers, offer codes, and user profiles.",
+  "mcp": "community_only",
+  "mcp_url": "https://github.com/Contrite42/gumroad-mcp-server",
+  "verdict": "build_now",
+  "blocker": "none",
+  "blocker_notes": "Publicly documented API and self-serve access tokens allow building immediately.",
+  "evidence": {
+    "auth": {
+      "url": "https://gumroad.com/help/article/280-create-application-api",
+      "quote": "If you're writing some custom code you need to run with your Gumroad account, all you need is an access token. Your access token is used in the request header of every request to the API"
+    },
+    "access": {
+      "url": "https://gumroad.com/help/article/280-create-application-api",
+      "quote": "First, sign in to your Gumroad account. Then, go to advanced settings. Here, you'll see a form to create a new application."
+    },
+    "api": {
+      "url": "https://github.com/Contrite42/gumroad-mcp-server",
+      "quote": "Built against Gumroad API v2 (the public, stable surface)"
+    },
+    "mcp": {
+      "url": "https://github.com/Contrite42/gumroad-mcp-server",
+      "quote": "MCP server for the Gumroad API. Drive your store from Claude Desktop or Cursor."
+    },
+    "verdict": {
+      "url": "https://gumroad.com/help/article/280-create-application-api",
+      "quote": "With your access token in hand, head back to our API documentation for a list of endpoints the API makes available."
+    }
+  },
+  "confidence": {
+    "auth": 1.0,
+    "access": 1.0,
+    "api": 1.0,
+    "mcp": 1.0,
+    "verdict": 1.0
+  },
+  "_model": "gemini-3.5-flash-lite",
+  "status": "ok",
+  "id": 48,
+  "name": "Gumroad",
+  "category": "Ecommerce",
+  "hint": "gumroad.com/api",
+  "sources": [
+    {
+      "url": "https://gumroad.com/api",
+      "via": "composio_fetch",
+      "chars": 200000
+    },
+    {
+      "url": "https://gumroad.com/help/article/280-create-application-api",
+      "via": "composio_fetch",
+      "chars": 5546
+    },
+    {
+      "url": "https://github.com/Contrite42/gumroad-mcp-server",
+      "via": "direct",
+      "chars": 4860
+    },
+    {
+      "url": "https://github.com/keithah/gumroad-mcp",
+      "via": "composio_fetch",
+      "chars": 4152
+    },
+    {
+      "url": "https://github.com/rmarescu/gumroad-mcp",
+      "via": "direct",
+      "chars": 5746
+    },
+    {
+      "url": "https://github.com/stcmain/gumroad-mcp",
+      "via": "direct",
+      "chars": 3860
+    }
+  ],
+  "queries": [
+    "Gumroad API authentication developer docs",
+    "Gumroad API access pricing plan developer",
+    "Gumroad MCP server"
+  ],
+  "seconds": 59.6
+}

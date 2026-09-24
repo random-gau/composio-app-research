@@ -1,0 +1,93 @@
+{
+  "one_liner": "Hunt down social media accounts by username across social networks",
+  "auth_methods": [
+    "none"
+  ],
+  "auth_primary": "none",
+  "auth_notes": "Runs locally via command line without requiring authentication.",
+  "access_tier": "open_source_local",
+  "access_notes": "Open-source python tool that runs locally.",
+  "api_types": [
+    "sdk_or_cli_only"
+  ],
+  "api_breadth": "none",
+  "api_notes": "CLI tool with no hosted public API.",
+  "mcp": "community_only",
+  "mcp_url": "https://github.com/p1atdev/sherlock-mcp",
+  "verdict": "build_now",
+  "blocker": "none",
+  "blocker_notes": "Open-source CLI tool can be wrapped locally.",
+  "evidence": {
+    "auth": {
+      "url": "https://github.com/sherlock-project/sherlock",
+      "quote": "sherlock user123"
+    },
+    "access": {
+      "url": "https://github.com/sherlock-project/sherlock",
+      "quote": "MIT © Sherlock Project"
+    },
+    "api": {
+      "url": "https://github.com/sherlock-project/sherlock",
+      "quote": "usage: sherlock [-h] [--version] [--verbose] [--folderoutput FOLDEROUTPUT] [--output OUTPUT] [--csv] [--xlsx] [--site SITE_NAME]"
+    },
+    "mcp": {
+      "url": "https://github.com/p1atdev/sherlock-mcp",
+      "quote": "A MCP server to search social accounts across multiple platforms using sherlock."
+    },
+    "verdict": {
+      "url": "https://github.com/sherlock-project/sherlock",
+      "quote": "Hunt down social media accounts by username across 400+ social networks"
+    }
+  },
+  "confidence": {
+    "auth": 0.9,
+    "access": 0.9,
+    "api": 0.9,
+    "mcp": 0.9,
+    "verdict": 0.9
+  },
+  "_model": "gemini-3.5-flash-lite",
+  "status": "ok",
+  "id": 58,
+  "name": "Sherlock",
+  "category": "Data SEO & Scraping",
+  "hint": "github.com/sherlock-project/sherlock",
+  "sources": [
+    {
+      "url": "https://github.com/sherlock-project/sherlock",
+      "via": "direct",
+      "chars": 4999
+    },
+    {
+      "url": "https://github.com/Fewsats/sherlock-mcp",
+      "via": "direct",
+      "chars": 3519
+    },
+    {
+      "url": "https://github.com/H4RR1SON/sherlock-mcp",
+      "via": "direct",
+      "chars": 4999
+    },
+    {
+      "url": "https://github.com/H4RR1SON/sherlock-mcp/blob/main/docs/tools.md",
+      "via": "direct",
+      "chars": 5579
+    },
+    {
+      "url": "https://github.com/jcucci/dotnet-sherlock-mcp",
+      "via": "direct",
+      "chars": 17090
+    },
+    {
+      "url": "https://github.com/p1atdev/sherlock-mcp",
+      "via": "direct",
+      "chars": 1446
+    }
+  ],
+  "queries": [
+    "Sherlock API authentication developer docs",
+    "Sherlock API access pricing plan developer",
+    "Sherlock MCP server"
+  ],
+  "seconds": 194.7
+}

@@ -1,0 +1,98 @@
+{
+  "one_liner": "Developer platform for version control, collaboration, CI/CD, and project management.",
+  "auth_methods": [
+    "oauth2",
+    "bearer_token",
+    "basic",
+    "jwt_or_signed"
+  ],
+  "auth_primary": "bearer_token",
+  "auth_notes": "Supports OAuth2, personal access tokens (bearer), and GitHub App authentication.",
+  "access_tier": "self_serve_free",
+  "access_notes": "Free developer accounts and public APIs are available with self-serve signup.",
+  "api_types": [
+    "rest",
+    "graphql"
+  ],
+  "api_breadth": "broad",
+  "api_notes": "Comprehensive REST and GraphQL APIs covering repos, issues, pull requests, users, and organization settings.",
+  "mcp": "none_found",
+  "mcp_url": null,
+  "verdict": "build_now",
+  "blocker": "none",
+  "blocker_notes": "Publicly documented REST/GraphQL APIs and self-serve developer accounts allow immediate integration.",
+  "evidence": {
+    "auth": {
+      "url": "https://docs.github.com/en/rest/authentication",
+      "quote": "You can authenticate to the REST API to access more endpoints and have a higher rate limit."
+    },
+    "access": {
+      "url": null,
+      "quote": null
+    },
+    "api": {
+      "url": "https://docs.github.com/rest",
+      "parseable": true,
+      "quote": "Create integrations, retrieve data, and automate your workflows with the GitHub REST API."
+    },
+    "mcp": {
+      "url": null,
+      "quote": null
+    },
+    "verdict": {
+      "url": null,
+      "quote": null
+    }
+  },
+  "confidence": {
+    "auth": 0.95,
+    "access": 0.95,
+    "api": 0.95,
+    "mcp": 0.8,
+    "verdict": 0.95
+  },
+  "_model": "gemini-3.5-flash-lite",
+  "status": "ok",
+  "id": 61,
+  "name": "GitHub",
+  "category": "Developer Infra & Data",
+  "hint": "docs.github.com/rest",
+  "sources": [
+    {
+      "url": "https://docs.github.com/rest",
+      "via": "direct",
+      "chars": 1804
+    },
+    {
+      "url": "https://docs.github.com/en/apps/oauth-apps/building-oauth-apps/authenticating-to-the-rest-api-with-an-oauth-app?apiVersion=2022-11-28",
+      "via": "direct",
+      "chars": 15639
+    },
+    {
+      "url": "https://docs.github.com/en/enterprise-cloud@latest/rest/using-the-rest-api/rate-limits-for-the-rest-api",
+      "via": "direct",
+      "chars": 11398
+    },
+    {
+      "url": "https://docs.github.com/en/enterprise-cloud@latest/rest/using-the-rest-api/troubleshooting-the-rest-api?apiVersion=2026-03-10",
+      "via": "direct",
+      "chars": 13404
+    },
+    {
+      "url": "https://docs.github.com/en/rest/authentication",
+      "via": "composio_fetch",
+      "chars": 1145
+    },
+    {
+      "url": "https://docs.github.com/en/rest/authentication/authenticating-to-the-rest-api?apiVersion=2026-03-10",
+      "via": "direct",
+      "chars": 9857
+    }
+  ],
+  "queries": [
+    "GitHub API authentication developer docs",
+    "GitHub API access pricing plan developer",
+    "GitHub MCP server"
+  ],
+  "seconds": 53.2
+}

@@ -1,0 +1,94 @@
+{
+  "one_liner": "Time tracking, expense reporting, and invoicing software with a comprehensive REST API.",
+  "auth_methods": [
+    "oauth2",
+    "bearer_token"
+  ],
+  "auth_primary": "oauth2",
+  "auth_notes": "Supports OAuth2 (Authorization Code or Implicit Grant) and Personal Access Tokens (Bearer token).",
+  "access_tier": "self_serve_trial",
+  "access_notes": "Requires a Harvest account, which offers a time-limited free trial before requiring a paid plan.",
+  "api_types": [
+    "rest"
+  ],
+  "api_breadth": "broad",
+  "api_notes": "Covers clients, company settings, invoices, estimates, expenses, tasks, timesheets, projects, roles, users, reports, and PTO.",
+  "mcp": "none_found",
+  "mcp_url": null,
+  "verdict": "build_with_friction",
+  "blocker": "paid_plan",
+  "blocker_notes": "Harvest requires a paid subscription after the initial trial period to maintain API access.",
+  "evidence": {
+    "auth": {
+      "url": "https://help.getharvest.com/api-v2/authentication-api/authentication/authentication",
+      "quote": "The V2 API requires an access token to authenticate requests. There are two options available to you: A Personal Access Token which is tied directly to you and is the quickest way to start playing around with the API. Implementing a full OAuth2 Authentication flow which allows other people to use your Harvest integrations."
+    },
+    "access": {
+      "url": null,
+      "quote": null
+    },
+    "api": {
+      "url": "https://help.getharvest.com/api-v2/introduction/overview/general",
+      "quote": "Harvest requires applications to authenticate all requests with OAuth2 or Personal Access Tokens"
+    },
+    "mcp": {
+      "url": null,
+      "quote": null
+    },
+    "verdict": {
+      "url": null,
+      "quote": null
+    }
+  },
+  "confidence": {
+    "auth": 0.9,
+    "access": 0.8,
+    "api": 0.9,
+    "mcp": 0.9,
+    "verdict": 0.85
+  },
+  "_model": "gemini-3.5-flash-lite",
+  "status": "ok",
+  "id": 80,
+  "name": "Harvest",
+  "category": "Productivity & PM",
+  "hint": "help.getharvest.com/api-v2",
+  "sources": [
+    {
+      "url": "https://help.getharvest.com/api-v2",
+      "via": "direct",
+      "chars": 1207
+    },
+    {
+      "url": "https://help.getharvest.com/api-v1/authentication/authentication/client-side-apps",
+      "via": "direct",
+      "chars": 1522
+    },
+    {
+      "url": "https://help.getharvest.com/api-v1/introduction/overview/migration-guide",
+      "via": "direct",
+      "chars": 8034
+    },
+    {
+      "url": "https://help.getharvest.com/api-v2/authentication-api",
+      "via": "composio_fetch",
+      "chars": 771
+    },
+    {
+      "url": "https://help.getharvest.com/api-v2/authentication-api/authentication/authentication",
+      "via": "direct",
+      "chars": 8987
+    },
+    {
+      "url": "https://help.getharvest.com/api-v2/introduction/overview/general",
+      "via": "direct",
+      "chars": 6003
+    }
+  ],
+  "queries": [
+    "Harvest API authentication developer docs",
+    "Harvest API access pricing plan developer",
+    "Harvest MCP server"
+  ],
+  "seconds": 40.0
+}

@@ -1,0 +1,283 @@
+{
+  "one_liner": "Omnichannel customer service platform with live chat, ticketing, and AI automation tools.",
+  "auth_methods": [
+    "api_key"
+  ],
+  "auth_primary": "api_key",
+  "auth_notes": "LiveAgent supports API v1 and API v3 keys, which are separate and managed under Configuration > System > API.",
+  "access_tier": "self_serve_trial",
+  "access_notes": "LiveAgent comes with a 30-day free trial that requires no credit card, letting you test all features including the API before committing to a paid plan.",
+  "api_types": [
+    "rest"
+  ],
+  "api_breadth": "broad",
+  "api_notes": "REST API with v1 and v3 endpoints covering tickets, conversations, and messages.",
+  "mcp": "official",
+  "mcp_url": "https://support.liveagent.com/578762-MCP-Tools-Reference",
+  "verdict": "build_with_friction",
+  "blocker": "paid_plan",
+  "blocker_notes": "none",
+  "evidence": {
+    "auth": {
+      "url": "https://faq.liveagent.com/535002-LiveAgent-API-v1-vs-v3-Authentication-Differences-API-Key-Management-and-Resolving-403-Errors",
+      "quote": "Log in to your LiveAgent account. Navigate to Configuration > System > API. Generate or manage your API v3 key here.",
+      "check": "ok"
+    },
+    "access": {
+      "url": "https://liveagent.com",
+      "quote": "Yes — LiveAgent comes with a 30‑day free trial that requires no credit card, letting you test all features before committing to a paid plan.",
+      "check": "ok"
+    },
+    "api": {
+      "url": "https://faq.liveagent.com/535002-LiveAgent-API-v1-vs-v3-Authentication-Differences-API-Key-Management-and-Resolving-403-Errors",
+      "quote": "LiveAgent supports two API versions: API v1 – A legacy (deprecated) version. No new endpoints are being added, but it remains functional and can be used alongside API v3. API v3 – The current, actively developed version.",
+      "check": "ok"
+    },
+    "mcp": {
+      "url": "https://support.liveagent.com/578762-MCP-Tools-Reference",
+      "quote": "This article documents every tool exposed by the LiveAgent MCP server, including the exact parameters each tool accepts and the exact fields it returns.",
+      "check": "ok"
+    },
+    "verdict": {
+      "url": "https://liveagent.com",
+      "quote": "Yes — LiveAgent comes with a 30‑day free trial that requires no credit card, letting you test all features before committing to a paid plan.",
+      "check": "ok"
+    }
+  },
+  "confidence": {
+    "auth": 0.9,
+    "access": 0.9,
+    "api": 0.9,
+    "mcp": 0.9,
+    "verdict": 0.9
+  },
+  "_model": "gemini-3.5-flash-lite",
+  "status": "ok",
+  "id": 16,
+  "name": "LiveAgent",
+  "category": "Support & Helpdesk",
+  "hint": "liveagent.com",
+  "sources": [
+    {
+      "url": "https://liveagent.com",
+      "via": "direct",
+      "chars": 10868
+    },
+    {
+      "url": "https://faq.liveagent.com/535002-LiveAgent-API-v1-vs-v3-Authentication-Differences-API-Key-Management-and-Resolving-403-Errors",
+      "via": "direct",
+      "chars": 3092
+    },
+    {
+      "url": "https://faq.liveagent.com/585717-Do-I-need-to-configure-an-MCP-server-in-my-OpenAI-account-to-use-AI-Agents-feature",
+      "via": "direct",
+      "chars": 1187
+    },
+    {
+      "url": "https://faq.liveagent.com/916372-API-v1-vs-API-v3-in-LiveAgent-Key-Differences-Authentication-and-Resolving-ApiKey-Errors",
+      "via": "direct",
+      "chars": 3443
+    },
+    {
+      "url": "https://support.liveagent.com/578762-MCP-Tools-Reference",
+      "via": "direct",
+      "chars": 25338
+    },
+    {
+      "url": "https://support.liveagent.com/578762-MCP-tools-reference",
+      "via": "direct",
+      "chars": 25338
+    },
+    {
+      "url": "https://support.liveagent.com/242665-New-API-v3-Ticket-Permissions-Added-in-version-547427",
+      "via": "verification"
+    },
+    {
+      "url": "https://support.liveagent.com/741982-API-key",
+      "via": "verification"
+    },
+    {
+      "url": "https://support.liveagent.com/840770-Complete-API-reference",
+      "via": "verification"
+    },
+    {
+      "url": "https://support.liveagent.com/242665-New-API-v3-Ticket-Permissions-Added-in-version-547427",
+      "via": "verification"
+    },
+    {
+      "url": "https://support.liveagent.com/840770-Complete-API-reference",
+      "via": "verification"
+    },
+    {
+      "url": "https://support.liveagent.com/931802-API-rate-limit-API-requests-limit",
+      "via": "verification"
+    }
+  ],
+  "queries": [
+    "LiveAgent API authentication developer docs",
+    "LiveAgent API access pricing plan developer",
+    "LiveAgent MCP server"
+  ],
+  "seconds": 53.4,
+  "verification_queries": [
+    "LiveAgent API access requirements plan",
+    "LiveAgent developer account API key free OR partner OR enterprise",
+    "LiveAgent API access requirements plan"
+  ],
+  "verification": {
+    "initial_issues": [
+      {
+        "loop": "L4_verifier",
+        "field": "access",
+        "problem": "verifier says self_serve_trial vs agent self_serve_free"
+      }
+    ],
+    "final_issues": [],
+    "rounds": [
+      {
+        "round": 0,
+        "issues": [
+          {
+            "loop": "L4_verifier",
+            "field": "access",
+            "problem": "verifier says self_serve_trial vs agent self_serve_free"
+          }
+        ],
+        "verifier": {
+          "auth_methods": [
+            "api_key"
+          ],
+          "auth_primary": "api_key",
+          "access_tier": "self_serve_trial",
+          "api_types": [
+            "rest"
+          ],
+          "mcp": "official",
+          "verdict": "build_now",
+          "reasons": {
+            "auth": "LiveAgent’s public API documentation specifies the use of API keys for both v1 and v3 endpoints.",
+            "access": "The website offers a 30‑day free trial that requires no credit card, allowing developers to obtain credentials without payment.",
+            "mcp": "LiveAgent’s documentation states that the platform automatically connects to its built-in MCP server for AI agents, indicating an official MCP implementation.",
+            "verdict": "With documented REST endpoints, API key authentication, and a free trial for credential acquisition, a developer can build a toolkit today."
+          },
+          "_model": "openai/gpt-oss-20b"
+        },
+        "autofix": []
+      },
+      {
+        "round": 1,
+        "queries": [
+          "LiveAgent API access requirements plan",
+          "LiveAgent developer account API key free OR partner OR enterprise"
+        ],
+        "new_sources": [
+          "https://liveagent.com",
+          "https://faq.liveagent.com/535002-LiveAgent-API-v1-vs-v3-Authentication-Differences-API-Key-Management-and-Resolving-403-Errors",
+          "https://support.liveagent.com/242665-New-API-v3-Ticket-Permissions-Added-in-version-547427",
+          "https://support.liveagent.com/741982-API-key",
+          "https://support.liveagent.com/840770-Complete-API-reference"
+        ],
+        "change_log": "Changed access_tier from self_serve_free to self_serve_trial because the platform provides a time-limited 30-day free trial rather than a permanent free sandbox tier.",
+        "issues": [
+          {
+            "loop": "L2_rules",
+            "field": "verdict",
+            "problem": "verdict build_now contradicts access_tier self_serve_trial"
+          }
+        ],
+        "verifier": {
+          "auth_methods": [
+            "api_key"
+          ],
+          "auth_primary": "api_key",
+          "access_tier": "self_serve_trial",
+          "api_types": [
+            "rest"
+          ],
+          "mcp": "none_found",
+          "verdict": "build_with_friction",
+          "reasons": {
+            "auth": "LiveAgent’s public API uses API keys passed in the request header (e.g., apikey: …) as documented in the API key article.",
+            "access": "API keys are obtainable from the admin UI after signing up for a 30‑day free trial; continued use requires a paid subscription, matching the self‑serve trial tier.",
+            "mcp": "No mention of a Managed Cloud Platform (MCP) server in the provided sources.",
+            "verdict": "Public docs and a way to obtain a trial API key exist, but the need for a time‑limited free trial (paid after) introduces friction."
+          },
+          "_model": "openai/gpt-oss-120b"
+        },
+        "autofix": []
+      },
+      {
+        "round": 2,
+        "queries": [
+          "LiveAgent API access requirements plan",
+          "LiveAgent developer account API key free OR partner OR enterprise",
+          "LiveAgent API access requirements plan"
+        ],
+        "new_sources": [
+          "https://liveagent.com",
+          "https://faq.liveagent.com/535002-LiveAgent-API-v1-vs-v3-Authentication-Differences-API-Key-Management-and-Resolving-403-Errors",
+          "https://support.liveagent.com/242665-New-API-v3-Ticket-Permissions-Added-in-version-547427",
+          "https://support.liveagent.com/840770-Complete-API-reference",
+          "https://support.liveagent.com/931802-API-rate-limit-API-requests-limit"
+        ],
+        "change_log": "Changed verdict from build_now to build_with_friction because access_tier is self_serve_trial which requires a paid plan after the trial period, creating friction.",
+        "issues": [],
+        "verifier": {
+          "auth_methods": [
+            "api_key",
+            "bearer_token"
+          ],
+          "auth_primary": "api_key",
+          "access_tier": "unknown",
+          "api_types": [
+            "rest"
+          ],
+          "mcp": "unknown",
+          "verdict": "build_with_friction",
+          "reasons": {
+            "auth": "LiveAgent documentation references API keys for both v1 and v3 and also mentions an auth token returned by the API (sources 2, 4).",
+            "access": "The only publicly stated offering is a 30‑day free trial for the product (source 1); there is no explicit information about free or trial API credentials, so the access tier cannot be determined.",
+            "mcp": "No information about an official Managed Cloud Platform (MCP) is provided in the sources.",
+            "verdict": "API methods are documented, but lack of clear information on how to obtain credentials (free, trial, or paid) means building a integration would likely require contacting sales or a paid plan, creating friction."
+          },
+          "_model": "openai/gpt-oss-120b"
+        },
+        "autofix": []
+      }
+    ],
+    "catalog": {
+      "in_catalog": false
+    },
+    "changed_fields": [
+      "access",
+      "verdict"
+    ],
+    "field_status": {
+      "auth": "verified",
+      "access": "corrected",
+      "api": "verified",
+      "mcp": "verified",
+      "verdict": "corrected"
+    },
+    "needs_human": [],
+    "before": {
+      "auth_methods": [
+        "api_key"
+      ],
+      "auth_primary": "api_key",
+      "access_tier": "self_serve_free",
+      "access_notes": "LiveAgent offers a 30-day free trial that requires no credit card, letting you test all features.",
+      "api_types": [
+        "rest"
+      ],
+      "api_breadth": "broad",
+      "api_notes": "REST API with v1 and v3 endpoints covering tickets, conversations, and messages.",
+      "mcp": "official",
+      "mcp_url": "https://support.liveagent.com/578762-MCP-Tools-Reference",
+      "verdict": "build_now",
+      "blocker": "none",
+      "blocker_notes": "none"
+    },
+    "seconds": 227.7
+  }
+}

@@ -1,0 +1,95 @@
+{
+  "one_liner": "Sales CRM and pipeline management software with an extensive REST API.",
+  "auth_methods": [
+    "oauth2",
+    "api_key"
+  ],
+  "auth_primary": "oauth2",
+  "auth_notes": "OAuth 2.0 is used for Marketplace apps, while manual personal API tokens/keys can be obtained from the Pipedrive app for private integrations.",
+  "access_tier": "self_serve_free",
+  "access_notes": "14-day free trial available with API access included across plans, and developers can request a sandbox account.",
+  "api_types": [
+    "rest"
+  ],
+  "api_breadth": "broad",
+  "api_notes": "Extensive API reference with hundreds of endpoints covering activities, deals, persons, organizations, products, pipelines, stages, and search.",
+  "mcp": "none_found",
+  "mcp_url": null,
+  "verdict": "build_now",
+  "blocker": "none",
+  "blocker_notes": "Public REST API with self-serve free trial and standard auth methods.",
+  "evidence": {
+    "auth": {
+      "url": "https://developers.pipedrive.com/docs/api/v1/Oauth",
+      "quote": "Using OAuth 2.0 is necessary for developing apps that are available in the Pipedrive Marketplace."
+    },
+    "access": {
+      "url": "https://pipedrive.com",
+      "page_title": null,
+      "quote": "14-day free trial, no credit card required"
+    },
+    "api": {
+      "url": "https://www.pipedrive.com/en/features/crm-api",
+      "quote": "Within our powerful and flexible API is our extensive API Reference with hundreds of endpoints."
+    },
+    "mcp": {
+      "url": null,
+      "quote": null
+    },
+    "verdict": {
+      "url": "https://pipedrive.com",
+      "quote": "14-day free trial, no credit card required"
+    }
+  },
+  "confidence": {
+    "auth": 0.9,
+    "access": 0.9,
+    "api": 0.9,
+    "mcp": 0.8,
+    "verdict": 0.9
+  },
+  "_model": "gemini-3.5-flash-lite",
+  "status": "ok",
+  "id": 3,
+  "name": "Pipedrive",
+  "category": "CRM & Sales",
+  "hint": "pipedrive.com",
+  "sources": [
+    {
+      "url": "https://pipedrive.com",
+      "via": "direct",
+      "chars": 13740
+    },
+    {
+      "url": "https://developers.pipedrive.com/changelog/post/apiv2-endpoints-now-stable-improved-performance-lower-token-costs",
+      "via": "direct",
+      "chars": 3142
+    },
+    {
+      "url": "https://developers.pipedrive.com/docs/api/v1",
+      "via": "direct",
+      "chars": 2494
+    },
+    {
+      "url": "https://developers.pipedrive.com/docs/api/v1/Oauth",
+      "via": "direct",
+      "chars": 6078
+    },
+    {
+      "url": "https://support.pipedrive.com/en/article/how-does-pricing-work-in-pipedrive",
+      "via": "direct",
+      "chars": 3260
+    },
+    {
+      "url": "https://www.pipedrive.com/en/features/crm-api",
+      "via": "direct",
+      "chars": 8326
+    }
+  ],
+  "queries": [
+    "Pipedrive API authentication developer docs",
+    "Pipedrive API access pricing plan developer",
+    "Pipedrive MCP server"
+  ],
+  "seconds": 81.0
+}

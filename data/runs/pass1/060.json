@@ -1,0 +1,95 @@
+{
+  "one_liner": "Build systems to grow revenue with data enrichment and AI agents.",
+  "auth_methods": [
+    "api_key",
+    "bearer_token",
+    "oauth2"
+  ],
+  "auth_primary": "api_key",
+  "auth_notes": "Uses a personal API key passed via the clay-api-key header, or OAuth via CLI login.",
+  "access_tier": "self_serve_free",
+  "access_notes": "Sign up for a free account on Clay to access the API and generate an API key.",
+  "api_types": [
+    "rest"
+  ],
+  "api_breadth": "moderate",
+  "api_notes": "REST API covering user/workspace, search, tables, and routines under https://api.clay.com/public/v0",
+  "mcp": "none_found",
+  "mcp_url": null,
+  "verdict": "build_now",
+  "blocker": "none",
+  "blocker_notes": "Public API docs and self-serve access are available.",
+  "evidence": {
+    "auth": {
+      "url": "https://developers.clay.com/public-api/authentication",
+      "quote": "Every request to the Clay Public API must include a Clay API key in the clay-api-key header."
+    },
+    "access": {
+      "url": "https://developers.clay.com/quickstart",
+      "quote": "Create one yourself in Clay under Settings → Account → API keys (beta)."
+    },
+    "api": {
+      "url": "https://developers.clay.com/api-reference/search/create-a-search-from-a-clay-search-query-beta",
+      "quote": "servers:\n  - description: production\n    url: https://api.clay.com/public/v0"
+    },
+    "mcp": {
+      "url": null,
+      "quote": null
+    },
+    "verdict": {
+      "url": "https://developers.clay.com/quickstart",
+      "quote": "Use the Public API to call Clay from your own applications and services — backend jobs, internal tools, queues, and product features."
+    }
+  },
+  "confidence": {
+    "auth": 0.9,
+    "access": 0.9,
+    "api": 0.9,
+    "mcp": 0.8,
+    "verdict": 0.9
+  },
+  "_model": "gemini-3.5-flash-lite",
+  "status": "ok",
+  "id": 60,
+  "name": "Clay",
+  "category": "Data SEO & Scraping",
+  "hint": "clay.com",
+  "sources": [
+    {
+      "url": "https://clay.com",
+      "via": "direct",
+      "chars": 12188
+    },
+    {
+      "url": "https://developers.clay.com/api-reference/me/get-the-authenticated-user",
+      "via": "direct",
+      "chars": 2180
+    },
+    {
+      "url": "https://developers.clay.com/api-reference/search/create-a-search-from-a-clay-search-query-beta",
+      "via": "composio_fetch",
+      "chars": 3799
+    },
+    {
+      "url": "https://developers.clay.com/concepts/cli-basics",
+      "via": "direct",
+      "chars": 2911
+    },
+    {
+      "url": "https://developers.clay.com/public-api/authentication",
+      "via": "direct",
+      "chars": 994
+    },
+    {
+      "url": "https://developers.clay.com/quickstart",
+      "via": "direct",
+      "chars": 1826
+    }
+  ],
+  "queries": [
+    "Clay API authentication developer docs",
+    "Clay API access pricing plan developer",
+    "Clay MCP server"
+  ],
+  "seconds": 53.2
+}

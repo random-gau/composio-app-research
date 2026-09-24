@@ -1,0 +1,94 @@
+{
+  "one_liner": "AI-powered web scraping and data extraction platform with a REST API and MCP server.",
+  "auth_methods": [
+    "api_key",
+    "bearer_token"
+  ],
+  "auth_primary": "api_key",
+  "auth_notes": "API tokens are managed from the dashboard and passed in the x-api-token header, or as a Bearer token for marketplace endpoints.",
+  "access_tier": "self_serve_free",
+  "access_notes": "Sign up for the free tier providing 1,000 tokens (or 100 tokens per month free plan) with no credit card required.",
+  "api_types": [
+    "rest"
+  ],
+  "api_breadth": "moderate",
+  "api_notes": "REST API covering scrapers, unblocker, analytics, and platform management under api.app.mrscraper.com/api/v1.",
+  "mcp": "official",
+  "mcp_url": "https://docs.mrscraper.com/docs/getting-started/mcp-server",
+  "verdict": "build_now",
+  "blocker": "none",
+  "blocker_notes": "Fully available with self-serve free tier and documented public API.",
+  "evidence": {
+    "auth": {
+      "url": "https://docs.mrscraper.com/docs/api/authentication",
+      "quote": "Include your API token in the x-api-token HTTP header on every request: x-api-token: <MRSCRAPER_API_TOKEN>"
+    },
+    "access": {
+      "url": "https://docs.mrscraper.com/docs/getting-started/billing",
+      "quote": "The Free plan includes 100 tokens per month with no credit card required. Tokens reset at the beginning of each month."
+    },
+    "api": {
+      "url": "https://docs.mrscraper.com/docs/api/overview",
+      "quote": "The MrScraper API provides a powerful and flexible way to programmatically scrape web pages and retrieve structured data. Built on REST principles, our API offers predictable resource-oriented URLs"
+    },
+    "mcp": {
+      "url": "https://docs.mrscraper.com/docs/getting-started/billing",
+      "quote": "Official MrScraper MCP server for web scraping, structured data extraction, and Google search. Connect AI clients or run the open-source server locally."
+    },
+    "verdict": {
+      "url": "https://docs.mrscraper.com/docs/getting-started/billing",
+      "quote": "The Free plan includes 100 tokens per month with no credit card required."
+    }
+  },
+  "confidence": {
+    "auth": 5.0,
+    "access": 5.0,
+    "api": 5.0,
+    "mcp": 5.0,
+    "verdict": 5.0
+  },
+  "_model": "gemini-3.5-flash-lite",
+  "status": "ok",
+  "id": 54,
+  "name": "MrScraper",
+  "category": "Data SEO & Scraping",
+  "hint": "docs.mrscraper.com",
+  "sources": [
+    {
+      "url": "https://docs.mrscraper.com",
+      "via": "direct",
+      "chars": 5658
+    },
+    {
+      "url": "https://docs.mrscraper.com/docs/api/authentication",
+      "via": "direct",
+      "chars": 2902
+    },
+    {
+      "url": "https://docs.mrscraper.com/docs/api/error-handling",
+      "via": "direct",
+      "chars": 4086
+    },
+    {
+      "url": "https://docs.mrscraper.com/docs/api/overview",
+      "via": "direct",
+      "chars": 1934
+    },
+    {
+      "url": "https://docs.mrscraper.com/docs/getting-started/api-token",
+      "via": "direct",
+      "chars": 7300
+    },
+    {
+      "url": "https://docs.mrscraper.com/docs/getting-started/billing",
+      "via": "direct",
+      "chars": 3940
+    }
+  ],
+  "queries": [
+    "MrScraper API authentication developer docs",
+    "MrScraper API access pricing plan developer",
+    "MrScraper MCP server"
+  ],
+  "seconds": 53.6
+}

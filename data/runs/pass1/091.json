@@ -1,0 +1,93 @@
+{
+  "one_liner": "AI-powered research assistant and notebook platform based on user-provided sources.",
+  "auth_methods": [
+    "other"
+  ],
+  "auth_primary": "other",
+  "auth_notes": "Uses session cookies extracted from browser login due to lack of a public API.",
+  "access_tier": "self_serve_free",
+  "access_notes": "Free to use via web interface with a Google account, but lacks any official developer API.",
+  "api_types": [
+    "none"
+  ],
+  "api_breadth": "none",
+  "api_notes": "No official public REST or GraphQL API exists; community tools use reverse-engineered internal RPC endpoints.",
+  "mcp": "community_only",
+  "mcp_url": "https://github.com/PavelGuzenfeld/mcp-notebooklm",
+  "verdict": "blocked",
+  "blocker": "no_public_api",
+  "blocker_notes": "NotebookLM has no official public API; integrations rely on reverse-engineering browser sessions.",
+  "evidence": {
+    "auth": {
+      "url": "https://github.com/PavelGuzenfeld/mcp-notebooklm",
+      "quote": "Option 2: Environment variable\nexport\nNOTEBOOKLM_AUTH_JSON=\n'{\"cookies\":[{\"name\":\"SID\",\"value\":\"...\",\"domain\":\".google.com\",\"path\":\"/\",\"expires\":-1,\"httpOnly\":true,\"secure\":true,\"sameSite\":\"None\"}]}'"
+    },
+    "access": {
+      "url": "https://support.google.com/notebooklm/answer/16213268?hl=en",
+      "quote": "Sign up free of charge by using your gmail account."
+    },
+    "api": {
+      "url": "https://github.com/HenriqueCosta05/notebooklm-ts-api/blob/main/README.md",
+      "quote": "NotebookLM does not have a public API. Authentication is"
+    },
+    "mcp": {
+      "url": "https://github.com/PavelGuzenfeld/mcp-notebooklm",
+      "quote": "MCP server that exposes Google NotebookLM as tools for any MCP-compatible client."
+    },
+    "verdict": {
+      "url": "https://github.com/HenriqueCosta05/notebooklm-ts-api/blob/main/README.md",
+      "quote": "NotebookLM does not have a public API. Authentication is"
+    }
+  },
+  "confidence": {
+    "auth": 0.9,
+    "access": 0.9,
+    "api": 0.9,
+    "mcp": 0.9,
+    "verdict": 0.9
+  },
+  "_model": "gemini-3.5-flash-lite",
+  "status": "ok",
+  "id": 91,
+  "name": "NotebookLM",
+  "category": "AI Research & Media",
+  "hint": "cloud.google.com/gemini (Enterprise API)",
+  "sources": [
+    {
+      "url": "https://cloud.google.com/gemini",
+      "via": "direct",
+      "chars": 9033
+    },
+    {
+      "url": "https://support.google.com/notebooklm/answer/16213268?hl=en",
+      "via": "direct",
+      "chars": 7375
+    },
+    {
+      "url": "https://notebooklm.google/plans",
+      "via": "composio_fetch",
+      "chars": 5464
+    },
+    {
+      "url": "https://github.com/Cezial/notebooklm-mcp-server",
+      "via": "direct",
+      "chars": 8102
+    },
+    {
+      "url": "https://github.com/HenriqueCosta05/notebooklm-ts-api/blob/main/README.md",
+      "via": "direct",
+      "chars": 25811
+    },
+    {
+      "url": "https://github.com/PavelGuzenfeld/mcp-notebooklm",
+      "via": "direct",
+      "chars": 5974
+    }
+  ],
+  "queries": [
+    "NotebookLM API authentication developer docs",
+    "NotebookLM API access pricing plan developer",
+    "NotebookLM MCP server"
+  ],
+  "seconds": 53.6
+}

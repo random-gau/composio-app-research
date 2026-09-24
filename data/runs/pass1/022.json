@@ -1,0 +1,97 @@
+{
+  "one_liner": "Communications platform for SMS, Voice, Email, and messaging APIs.",
+  "auth_methods": [
+    "api_key",
+    "basic",
+    "bearer_token",
+    "jwt_or_signed"
+  ],
+  "auth_primary": "api_key",
+  "auth_notes": "Twilio uses Account SID and Auth Token (Basic Auth) or API Keys/Secrets for REST API requests, and JWT Access Tokens for client SDKs.",
+  "access_tier": "self_serve_free",
+  "access_notes": "Sign up for a free Twilio trial account and get test credits.",
+  "api_types": [
+    "rest",
+    "websocket"
+  ],
+  "api_breadth": "broad",
+  "api_notes": "Over 1,800 endpoints across 30+ products covering SMS, Voice, Video, Messaging, and TaskRouter via REST.",
+  "mcp": "official",
+  "mcp_url": "https://mcp.twilio.com/docs",
+  "verdict": "build_now",
+  "blocker": "none",
+  "blocker_notes": "None",
+  "evidence": {
+    "auth": {
+      "url": "https://www.twilio.com/docs/iam/api-keys",
+      "quote": "API keys are the preferred way to authenticate with Twilio's REST APIs. With API keys, you control which users and applications have access to your Twilio Account's API resources"
+    },
+    "access": {
+      "url": "https://twilio.com",
+      "quote": "Sign up for a free Twilio account and grab one of our official server-side SDKs to get started. Send your first text message, phone call, or email in minutes."
+    },
+    "api": {
+      "url": "https://www.twilio.com/docs/ai/mcp",
+      "quote": "Model Context Protocol (MCP) server gives AI coding agents direct, structured access to Twilio's full API surface—over 1,800 endpoints across 30+ products—without leaving your IDE."
+    },
+    "mcp": {
+      "url": "https://www.twilio.com/docs/ai/mcp",
+      "quote": "mcp.twilio.com/docs\nHosetd MCP server\nhttps://mcp.twilio.com/docs"
+    },
+    "verdict": {
+      "url": "https://twilio.com",
+      "quote": "Sign up for a free Twilio account and grab one of our official server-side SDKs to get started."
+    }
+  },
+  "confidence": {
+    "auth": 0.9,
+    "access": 0.9,
+    "api": 0.9,
+    "mcp": 0.9,
+    "verdict": 0.9
+  },
+  "_model": "gemini-3.5-flash-lite",
+  "status": "ok",
+  "id": 22,
+  "name": "Twilio",
+  "category": "Communications & Messaging",
+  "hint": "twilio.com",
+  "sources": [
+    {
+      "url": "https://twilio.com",
+      "via": "direct",
+      "chars": 9752
+    },
+    {
+      "url": "https://help.twilio.com/hc/en-us/articles/360010715454-How-Does-Twilio-Flex-Pricing-Work-",
+      "via": "composio_fetch",
+      "chars": 8401
+    },
+    {
+      "url": "https://www.twilio.com/de-de/messaging/pricing/conversations-api",
+      "via": "direct",
+      "chars": 2174
+    },
+    {
+      "url": "https://www.twilio.com/docs/ai/mcp",
+      "via": "direct",
+      "chars": 6910
+    },
+    {
+      "url": "https://www.twilio.com/docs/iam/access-tokens",
+      "via": "direct",
+      "chars": 13842
+    },
+    {
+      "url": "https://www.twilio.com/docs/iam/api-keys",
+      "via": "direct",
+      "chars": 3201
+    }
+  ],
+  "queries": [
+    "Twilio API authentication developer docs",
+    "Twilio API access pricing plan developer",
+    "Twilio MCP server"
+  ],
+  "seconds": 53.4
+}

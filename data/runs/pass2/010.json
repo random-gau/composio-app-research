@@ -1,0 +1,313 @@
+{
+  "one_liner": "DealCloud is a CRM and deal management platform for dealmakers in capital markets.",
+  "auth_methods": [
+    "api_key",
+    "bearer_token",
+    "oauth2"
+  ],
+  "auth_primary": "oauth2",
+  "auth_notes": "Uses OAuth2 Client Credentials flow using an API key and scopes to obtain a bearer token.",
+  "access_tier": "partner_or_sales",
+  "access_notes": "DealCloud is an enterprise CRM platform requiring an existing commercial subscription, and credentials must be provisioned within an enterprise tenant.",
+  "api_types": [
+    "rest"
+  ],
+  "api_breadth": "broad",
+  "api_notes": "Comprehensive REST APIs covering data, schema, users, backups, history, publications, and relationship intelligence.",
+  "mcp": "official",
+  "mcp_url": "https://api.docs.dealcloud.com",
+  "verdict": "blocked",
+  "blocker": "enterprise_only",
+  "blocker_notes": "DealCloud is an enterprise CRM platform requiring a paid enterprise contract; no self-serve free sandbox tier is available.",
+  "evidence": {
+    "auth": {
+      "url": "https://api.docs.dealcloud.com/docs/token",
+      "quote": "DealCloud uses the OAuth2 Client Credentials flow to generate a bearer token, which is then used in the HTTP Authentication header for API requests.",
+      "check": "ok"
+    },
+    "access": {
+      "url": "https://api.docs.dealcloud.com/docs/apikeys",
+      "quote": "To enable API access, ensure the intended user is assigned to a user group with the appropriate permissions.",
+      "check": "ok"
+    },
+    "api": {
+      "url": "https://api.docs.dealcloud.com/docs",
+      "quote": "This site provides a comprehensive overview of our REST APIs, their capabilities, and available endpoints.",
+      "check": "ok"
+    },
+    "mcp": {
+      "url": "https://api.docs.dealcloud.com",
+      "quote": "MCP\nGetting Started\nAI Clients\nAuthentication\nAvailable Tools\nCustom MCP Servers",
+      "check": "ok"
+    },
+    "verdict": {
+      "url": "https://api.docs.dealcloud.com/docs/apikeys",
+      "quote": "If you cannot enable or copy your API key, verify your user group permissions and contact your admin or DealCloud support.",
+      "check": "ok"
+    }
+  },
+  "confidence": {
+    "auth": 0.9,
+    "access": 0.8,
+    "api": 0.9,
+    "mcp": 0.7,
+    "verdict": 0.85
+  },
+  "_model": "gemini-3.5-flash-lite",
+  "status": "ok",
+  "id": 10,
+  "name": "DealCloud",
+  "category": "CRM & Sales",
+  "hint": "api.docs.dealcloud.com",
+  "sources": [
+    {
+      "url": "https://api.docs.dealcloud.com",
+      "via": "direct",
+      "chars": 3315
+    },
+    {
+      "url": "https://api.docs.dealcloud.com/docs",
+      "via": "direct",
+      "chars": 7806
+    },
+    {
+      "url": "https://api.docs.dealcloud.com/docs/apikeys",
+      "via": "direct",
+      "chars": 7509
+    },
+    {
+      "url": "https://api.docs.dealcloud.com/docs/errors",
+      "via": "direct",
+      "chars": 9236
+    },
+    {
+      "url": "https://api.docs.dealcloud.com/docs/limits",
+      "via": "direct",
+      "chars": 7715
+    },
+    {
+      "url": "https://api.docs.dealcloud.com/docs/token",
+      "via": "direct",
+      "chars": 8310
+    },
+    {
+      "url": "https://api.docs.dealcloud.com/docs/data",
+      "via": "verification"
+    },
+    {
+      "url": "https://api.docs.dealcloud.com/docs/data",
+      "via": "verification"
+    }
+  ],
+  "queries": [
+    "DealCloud API authentication developer docs",
+    "DealCloud API access pricing plan developer",
+    "DealCloud MCP server"
+  ],
+  "seconds": 40.2,
+  "verification_queries": [
+    "DealCloud API access requirements plan",
+    "DealCloud developer account API key free OR partner OR enterprise",
+    "DealCloud API access requirements plan"
+  ],
+  "verification": {
+    "initial_issues": [
+      {
+        "loop": "L1_evidence",
+        "field": "access",
+        "problem": "no evidence cited"
+      },
+      {
+        "loop": "L4_verifier",
+        "field": "access",
+        "problem": "verifier says approval_or_review vs agent partner_or_sales"
+      },
+      {
+        "loop": "L4_verifier",
+        "field": "verdict",
+        "problem": "verifier says build_with_friction vs agent blocked"
+      }
+    ],
+    "final_issues": [
+      {
+        "loop": "L4_verifier",
+        "field": "verdict",
+        "problem": "verifier says build_with_friction vs agent blocked"
+      }
+    ],
+    "rounds": [
+      {
+        "round": 0,
+        "issues": [
+          {
+            "loop": "L1_evidence",
+            "field": "access",
+            "problem": "no evidence cited"
+          },
+          {
+            "loop": "L4_verifier",
+            "field": "access",
+            "problem": "verifier says approval_or_review vs agent partner_or_sales"
+          },
+          {
+            "loop": "L4_verifier",
+            "field": "verdict",
+            "problem": "verifier says build_with_friction vs agent blocked"
+          }
+        ],
+        "verifier": {
+          "auth_methods": [
+            "api_key",
+            "bearer_token"
+          ],
+          "auth_primary": "api_key",
+          "access_tier": "approval_or_review",
+          "api_types": [
+            "rest"
+          ],
+          "mcp": "official",
+          "verdict": "build_with_friction",
+          "reasons": {
+            "auth": "Docs describe API Keys and an Authorization Token, indicating support for static API keys and bearer tokens.",
+            "access": "API keys are obtained via the DealCloud UI and require appropriate user group permissions; no public self‑serve sign‑up is described, implying an approval or internal review process.",
+            "mcp": "The documentation includes an MCP section, indicating an official Managed Cloud Platform server provided by DealCloud.",
+            "verdict": "Public docs exist, but obtaining credentials requires internal approval, so a toolkit can be built after that step."
+          },
+          "_model": "openai/gpt-oss-120b"
+        },
+        "autofix": []
+      },
+      {
+        "round": 1,
+        "queries": [
+          "DealCloud API access requirements plan",
+          "DealCloud developer account API key free OR partner OR enterprise"
+        ],
+        "new_sources": [
+          "https://api.docs.dealcloud.com",
+          "https://api.docs.dealcloud.com/docs",
+          "https://api.docs.dealcloud.com/docs/apikeys",
+          "https://api.docs.dealcloud.com/docs/data",
+          "https://api.docs.dealcloud.com/docs/token"
+        ],
+        "change_log": "Retained partner_or_sales / blocked verdict because DealCloud is an enterprise-only CRM product requiring a commercial agreement and existing tenant credentials, while acknowledging official API docs and OAuth2/API key support.",
+        "issues": [
+          {
+            "loop": "L1_evidence",
+            "field": "verdict",
+            "problem": "quote not found on cited page",
+            "url": "https://api.docs.dealcloud.com/docs",
+            "match": 0.0
+          },
+          {
+            "loop": "L4_verifier",
+            "field": "verdict",
+            "problem": "verifier says build_with_friction vs agent blocked"
+          }
+        ],
+        "verifier": {
+          "auth_methods": [
+            "api_key",
+            "bearer_token"
+          ],
+          "auth_primary": "bearer_token",
+          "access_tier": "unknown",
+          "api_types": [
+            "rest"
+          ],
+          "mcp": "official",
+          "verdict": "build_with_friction",
+          "reasons": {
+            "auth": "Docs list API Keys and Authorization Token (Bearer) as supported methods.",
+            "access": "No source specifies free self‑serve signup; API keys are obtained via user/group permissions, implying internal approval.",
+            "mcp": "MCP is documented in the official DealCloud API docs.",
+            "verdict": "Public docs exist but credentials require internal permission, so building now would need additional approval."
+          },
+          "_model": "openai/gpt-oss-120b"
+        },
+        "autofix": []
+      },
+      {
+        "round": 2,
+        "queries": [
+          "DealCloud API access requirements plan",
+          "DealCloud developer account API key free OR partner OR enterprise",
+          "DealCloud API access requirements plan"
+        ],
+        "new_sources": [
+          "https://api.docs.dealcloud.com",
+          "https://api.docs.dealcloud.com/docs",
+          "https://api.docs.dealcloud.com/docs/apikeys",
+          "https://api.docs.dealcloud.com/docs/data",
+          "https://api.docs.dealcloud.com/docs/token"
+        ],
+        "change_log": "Updated verdict to blocked based on enterprise-only access requirements where self-serve signup is not available.",
+        "issues": [
+          {
+            "loop": "L4_verifier",
+            "field": "verdict",
+            "problem": "verifier says build_with_friction vs agent blocked"
+          }
+        ],
+        "verifier": {
+          "auth_methods": [
+            "api_key",
+            "bearer_token"
+          ],
+          "auth_primary": "bearer_token",
+          "access_tier": "unknown",
+          "api_types": [
+            "rest"
+          ],
+          "mcp": "official",
+          "verdict": "build_with_friction",
+          "reasons": {
+            "auth": "Docs list API Keys and an Authorization Token (Bearer) as the supported authentication mechanisms.",
+            "access": "Docs show API keys are obtained via user‑group permissions and admin actions; no clear self‑serve free signup is described, implying possible approval requirements.",
+            "mcp": "An MCP section is present in the documentation, indicating an official MCP server is provided by DealCloud.",
+            "verdict": "Authentication is documented, but obtaining credentials may require internal approval, making integration possible but with friction."
+          },
+          "_model": "openai/gpt-oss-120b"
+        },
+        "autofix": []
+      }
+    ],
+    "catalog": {
+      "in_catalog": false
+    },
+    "changed_fields": [
+      "auth"
+    ],
+    "field_status": {
+      "auth": "corrected",
+      "access": "confirmed_after_recheck",
+      "api": "verified",
+      "mcp": "verified",
+      "verdict": "needs_human"
+    },
+    "needs_human": [
+      "verdict"
+    ],
+    "before": {
+      "auth_methods": [
+        "oauth2",
+        "api_key",
+        "bearer_token"
+      ],
+      "auth_primary": "oauth2",
+      "access_tier": "partner_or_sales",
+      "access_notes": "Requires an enterprise subscription/contract and contact with sales/partners to obtain API credentials and access.",
+      "api_types": [
+        "rest"
+      ],
+      "api_breadth": "broad",
+      "api_notes": "Comprehensive REST APIs covering data, schema, users, backups, history, publications, and relationship intelligence.",
+      "mcp": "official",
+      "mcp_url": "https://api.docs.dealcloud.com",
+      "verdict": "blocked",
+      "blocker": "enterprise_only",
+      "blocker_notes": "DealCloud is an enterprise CRM platform requiring a paid enterprise contract; no self-serve free sandbox tier is available."
+    },
+    "seconds": 47.2
+  }
+}

@@ -1,0 +1,161 @@
+{
+  "one_liner": "Work management platform with tools for CRM, project tracking, collaboration, and custom workflows.",
+  "auth_methods": [
+    "oauth2",
+    "basic"
+  ],
+  "auth_primary": "oauth2",
+  "auth_notes": "Podio uses OAuth 2.0 with multiple flows including server-side, client-side, username & password, and app authentication flows.",
+  "access_tier": "self_serve_free",
+  "access_notes": "You can sign up for a Podio account and generate your API key directly from your settings page.",
+  "api_types": [
+    "rest"
+  ],
+  "api_breadth": "broad",
+  "api_notes": "Comprehensive REST API covering apps, items, comments, contacts, files, spaces, tasks, and webhooks.",
+  "mcp": "none_found",
+  "mcp_url": null,
+  "verdict": "build_now",
+  "blocker": "none",
+  "blocker_notes": "",
+  "evidence": {
+    "auth": {
+      "url": "https://developers.podio.com/authentication",
+      "quote": "The Podio API uses the OAuth2 protocol for authentication. This allows external apps to request authorization to Podio without having direct access to the user's password.",
+      "check": "ok"
+    },
+    "access": {
+      "url": "https://developers.podio.com/api-key",
+      "quote": "It's easy to get one or more API keys for accessing your Podio data. You just have to sign in or sign up with Podio, and go to the API key tab in your settings.",
+      "check": "ok"
+    },
+    "api": {
+      "url": "https://developers.podio.com",
+      "quote": "The Podio API is a complete programmable interface to all Podio functionality.",
+      "check": "ok"
+    },
+    "mcp": {
+      "url": null,
+      "quote": null
+    },
+    "verdict": {
+      "url": "https://developers.podio.com",
+      "quote": "The Podio API lets you integrate with other services and build tools and applications on top of Podio",
+      "check": "ok"
+    }
+  },
+  "confidence": {
+    "auth": 5,
+    "access": 5,
+    "api": 5,
+    "mcp": 5,
+    "verdict": 5
+  },
+  "_model": "gemini-3.5-flash-lite",
+  "status": "ok",
+  "id": 6,
+  "name": "Podio",
+  "category": "CRM & Sales",
+  "hint": "podio.com",
+  "sources": [
+    {
+      "url": "https://podio.com",
+      "via": "direct",
+      "chars": 7850
+    },
+    {
+      "url": "https://developers.podio.com",
+      "via": "direct",
+      "chars": 1817
+    },
+    {
+      "url": "https://developers.podio.com/api-key",
+      "via": "direct",
+      "chars": 432
+    },
+    {
+      "url": "https://developers.podio.com/authentication",
+      "via": "direct",
+      "chars": 4427
+    },
+    {
+      "url": "https://developers.podio.com/doc/oauth-authorization",
+      "via": "direct",
+      "chars": 2098
+    },
+    {
+      "url": "https://developers.podio.com/doc/oauth-authorization/client-info-22357",
+      "via": "direct",
+      "chars": 1521
+    }
+  ],
+  "queries": [
+    "Podio API authentication developer docs",
+    "Podio API access pricing plan developer",
+    "Podio MCP server"
+  ],
+  "seconds": 53.1,
+  "verification": {
+    "initial_issues": [],
+    "final_issues": [],
+    "rounds": [
+      {
+        "round": 0,
+        "issues": [],
+        "verifier": {
+          "auth_methods": [
+            "oauth2",
+            "api_key"
+          ],
+          "auth_primary": "oauth2",
+          "access_tier": "self_serve_free",
+          "api_types": [
+            "rest"
+          ],
+          "mcp": "none_found",
+          "verdict": "build_now",
+          "reasons": {
+            "auth": "Podio docs list OAuth2 flows and API‑key generation as authentication options (sources 2‑4).",
+            "access": "API keys can be obtained by signing up for a Podio account and generating a key in settings – no paid tier required (source 3).",
+            "mcp": "No MCP server is mentioned in the provided documentation.",
+            "verdict": "Public REST API, free self‑serve credentials, and clear auth docs allow a toolkit to be built today."
+          },
+          "_model": "openai/gpt-oss-120b"
+        },
+        "autofix": []
+      }
+    ],
+    "catalog": {
+      "in_catalog": false
+    },
+    "changed_fields": [],
+    "field_status": {
+      "auth": "verified",
+      "access": "verified",
+      "api": "verified",
+      "mcp": "verified",
+      "verdict": "verified"
+    },
+    "needs_human": [],
+    "before": {
+      "auth_methods": [
+        "oauth2",
+        "basic"
+      ],
+      "auth_primary": "oauth2",
+      "access_tier": "self_serve_free",
+      "access_notes": "You can sign up for a Podio account and generate your API key directly from your settings page.",
+      "api_types": [
+        "rest"
+      ],
+      "api_breadth": "broad",
+      "api_notes": "Comprehensive REST API covering apps, items, comments, contacts, files, spaces, tasks, and webhooks.",
+      "mcp": "none_found",
+      "mcp_url": null,
+      "verdict": "build_now",
+      "blocker": "none",
+      "blocker_notes": ""
+    },
+    "seconds": 19.3
+  }
+}

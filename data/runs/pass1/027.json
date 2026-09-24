@@ -1,0 +1,96 @@
+{
+  "one_liner": "Telegram is a cloud-based mobile and desktop messaging app with a focus on security and speed.",
+  "auth_methods": [
+    "api_key",
+    "other"
+  ],
+  "auth_primary": "api_key",
+  "auth_notes": "Telegram uses api_id and api_hash for application authentication, combined with user/bot tokens.",
+  "access_tier": "self_serve_free",
+  "access_notes": "Free access available by creating an application via Telegram settings.",
+  "api_types": [
+    "rest",
+    "websocket"
+  ],
+  "api_breadth": "broad",
+  "api_notes": "Comprehensive MTProto and Bot APIs covering all messaging, chats, users, and channel objects.",
+  "mcp": "none_found",
+  "mcp_url": null,
+  "verdict": "build_now",
+  "blocker": "none",
+  "blocker_notes": null,
+  "evidence": {
+    "auth": {
+      "url": "https://core.telegram.org/api/qr-login",
+      "quote": "auth.exportLoginToken #b7e085fe api_id: int, api_hash: string, except_ids: Vector < long > = auth.LoginToken;"
+    },
+    "access": {
+      "url": "https://core.telegram.org",
+      "q": null,
+      "quote": "You are welcome to use both APIs free of charge."
+    },
+    "api": {
+      "url": "https://core.telegram.org",
+      "quote": "We offer three kinds of APIs for developers."
+    },
+    "mcp": {
+      "url": null,
+      "quote": null
+    },
+    "verdict": {
+      "url": "https://core.telegram.org",
+      "quote": "You are welcome to use both APIs free of charge."
+    }
+  },
+  "confidence": {
+    "auth": 0.9,
+    "access": 0.9,
+    "api": 0.9,
+    "mcp": 1.0,
+    "verdict": 0.9
+  },
+  "_model": "gemini-3.5-flash-lite",
+  "status": "ok",
+  "id": 27,
+  "name": "Telegram",
+  "category": "Communications & Messaging",
+  "hint": "core.telegram.org",
+  "sources": [
+    {
+      "url": "https://core.telegram.org",
+      "via": "direct",
+      "chars": 18831
+    },
+    {
+      "url": "https://core.telegram.org/api",
+      "via": "direct",
+      "chars": 18831
+    },
+    {
+      "url": "https://core.telegram.org/api/auth",
+      "via": "direct",
+      "chars": 25549
+    },
+    {
+      "url": "https://core.telegram.org/api/premium",
+      "via": "direct",
+      "chars": 19964
+    },
+    {
+      "url": "https://core.telegram.org/api/qr-login",
+      "via": "direct",
+      "chars": 3442
+    },
+    {
+      "url": "https://core.telegram.org/api/srp",
+      "via": "direct",
+      "chars": 11767
+    }
+  ],
+  "queries": [
+    "Telegram API authentication developer docs",
+    "Telegram API access pricing plan developer",
+    "Telegram MCP server"
+  ],
+  "seconds": 52.9
+}

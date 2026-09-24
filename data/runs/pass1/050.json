@@ -1,0 +1,93 @@
+{
+  "one_liner": "E-commerce, payments, subscriptions, and automated checkout platform with built-in APIs.",
+  "auth_methods": [
+    "api_key"
+  ],
+  "auth_primary": "api_key",
+  "auth_notes": "Every API request must include your API key in the x-api-key header.",
+  "access_tier": "self_serve_free",
+  "access_notes": "Log into your Commas/Fanbasis dashboard and go to Account to get API keys.",
+  "api_types": [
+    "rest"
+  ],
+  "api_breadth": "broad",
+  "api_notes": "Covers checkout sessions, customers, subscribers, products, transactions, refunds, and webhooks via public API.",
+  "mcp": "none_found",
+  "mcp_url": null,
+  "verdict": "build_now",
+  "blocker": "none",
+  "blocker_notes": "Public API is fully self-serve with test and live environments.",
+  "evidence": {
+    "auth": {
+      "url": "https://commasdocs.com",
+      "quote": "Every API request must include your API key in the x-api-key header. There are no usernames or passwords — just your key."
+    },
+    "access": {
+      "url": "https://commasdocs.com",
+      "quote": "Log into your Commas dashboard and go to Account → API Keys. Copy your API key. You'll use it in every request you make."
+    },
+    "api": {
+      "url": "https://github.com/subtain-haider/laravel-payments/blob/main/docs/gateways/fanbasis.md",
+      "quote": "Full Fanbasis API integration: checkout sessions, customers, subscribers, discount codes, products, transactions, refunds, and webhook management."
+    },
+    "mcp": {
+      "url": null,
+      "quote": null
+    },
+    "verdict": {
+      "url": "https://commasdocs.com",
+      "quote": "Use your test API key. No real charges. Safe to experiment freely. Base URL: https://qa.dev-fan-basis.com"
+    }
+  },
+  "confidence": {
+    "auth": 0.9,
+    "access": 0.9,
+    "api": 0.9,
+    "mcp": 0.7,
+    "verdict": 0.9
+  },
+  "_model": "gemini-3.5-flash-lite",
+  "status": "ok",
+  "id": 50,
+  "name": "fanbasis",
+  "category": "Ecommerce",
+  "hint": "fanbasis.com",
+  "sources": [
+    {
+      "url": "https://fanbasis.com",
+      "via": "direct",
+      "chars": 6262
+    },
+    {
+      "url": "https://www.fanbasis.com",
+      "via": "direct",
+      "chars": 6262
+    },
+    {
+      "url": "https://github.com/subtain-haider/laravel-payments/blob/main/docs/gateways/fanbasis.md",
+      "via": "composio_fetch",
+      "chars": 6805
+    },
+    {
+      "url": "https://commasdocs.com",
+      "via": "composio_fetch",
+      "chars": 200000
+    },
+    {
+      "url": "https://fanbase.gg/features/mcp",
+      "via": "direct",
+      "chars": 6238
+    },
+    {
+      "url": "https://mintlify.wiki/MatthewSabia1/AdRecon/api/fanbasis",
+      "via": "direct",
+      "chars": 18093
+    }
+  ],
+  "queries": [
+    "fanbasis API authentication developer docs",
+    "fanbasis API access pricing plan developer",
+    "fanbasis MCP server"
+  ],
+  "seconds": 52.7
+}

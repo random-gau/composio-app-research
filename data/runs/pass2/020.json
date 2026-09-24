@@ -1,0 +1,268 @@
+{
+  "one_liner": "Agentic commerce platform for customer support and sales",
+  "auth_methods": [
+    "basic",
+    "bearer_token",
+    "jwt_or_signed",
+    "other"
+  ],
+  "auth_primary": "bearer_token",
+  "auth_notes": "Gladly API uses token-based Basic Authentication where API tokens are associated with designated Gladly users.",
+  "access_tier": "self_serve_free",
+  "access_notes": "A sandbox environment and API tokens can be created via the developer portal.",
+  "api_types": [
+    "rest",
+    "graphql"
+  ],
+  "api_breadth": "moderate",
+  "api_notes": "REST API supports endpoints, reporting, conversations, and custom attributes/freeform topics.",
+  "mcp": "none_found",
+  "mcp_url": null,
+  "verdict": "build_now",
+  "blocker": "none",
+  "blocker_notes": "API access requires a commercial agreement / sales contact since self-serve free developer signup is not available.",
+  "evidence": {
+    "auth": {
+      "url": "https://developer.gladly.com/rest/index.html",
+      "quote": "Gladly API uses token-based Basic Authentication. API tokens are associated with designated Gladly users.",
+      "check": "ok"
+    },
+    "access": {
+      "url": "https://developer.gladly.com/rest/index.html",
+      "quote": "Test the myriad possibilities of the Gladly API in a safe, secure space. We'll enable the Gladly API in a separate sandbox environment, so you can experiment freely without impacting your production environment",
+      "check": "ok"
+    },
+    "api": {
+      "url": "https://developer.gladly.com/rest/index.html",
+      "quote": "Clients can access the REST API Resources follow REST semantics and utilize industry-standard HTTP verbs, response codes, and authentication schemes.",
+      "check": "ok"
+    },
+    "mcp": {
+      "url": null,
+      "quote": null
+    },
+    "verdict": {
+      "url": "https://developer.gladly.com/rest/index.html",
+      "quote": "Gladly API uses token-based Basic Authentication. API tokens are associated with designated Gladly users. To create and use an API token, your user must have the API User permission.",
+      "check": "ok"
+    }
+  },
+  "confidence": {
+    "auth": 0.9,
+    "access": 0.8,
+    "api": 0.9,
+    "mcp": 1.0,
+    "verdict": 0.85
+  },
+  "_model": "gemini-3.5-flash-lite",
+  "status": "ok",
+  "id": 20,
+  "name": "Gladly",
+  "category": "Support & Helpdesk",
+  "hint": "gladly.com",
+  "sources": [
+    {
+      "url": "https://gladly.com",
+      "via": "direct",
+      "chars": 4529
+    },
+    {
+      "url": "https://developer.gladly.com/rest/index.html",
+      "via": "direct",
+      "chars": 140438
+    },
+    {
+      "url": "https://help.gladly.com/developer-tutorials/docs/architecture",
+      "via": "direct",
+      "chars": 7541
+    },
+    {
+      "url": "https://help.gladly.com/developer-tutorials/docs/authentication",
+      "via": "direct",
+      "chars": 1209
+    },
+    {
+      "url": "https://help.gladly.com/developer-tutorials/docs/default-api-rate-limits",
+      "via": "direct",
+      "chars": 1953
+    },
+    {
+      "url": "https://help.gladly.com/developer-tutorials/docs/request-signing",
+      "via": "direct",
+      "chars": 5752
+    },
+    {
+      "url": "https://help.gladly.com/developer-tutorials/docs/configure-an-app",
+      "via": "verification"
+    },
+    {
+      "url": "https://help.gladly.com/developer-tutorials/docs/getting-started-with-gladly-app-platform",
+      "via": "verification"
+    },
+    {
+      "url": "https://help.gladly.com/developer-tutorials/docs/technical-planning",
+      "via": "verification"
+    }
+  ],
+  "queries": [
+    "Gladly API authentication developer docs",
+    "Gladly API access pricing plan developer",
+    "Gladly MCP server"
+  ],
+  "seconds": 46.5,
+  "verification_queries": [
+    "Gladly API access requirements plan",
+    "Gladly developer account API key free OR partner OR enterprise"
+  ],
+  "verification": {
+    "initial_issues": [
+      {
+        "loop": "L1_evidence",
+        "field": "access",
+        "problem": "no evidence cited"
+      },
+      {
+        "loop": "L1_evidence",
+        "field": "verdict",
+        "problem": "no evidence cited"
+      },
+      {
+        "loop": "L4_verifier",
+        "field": "access",
+        "problem": "verifier says self_serve_free vs agent partner_or_sales"
+      },
+      {
+        "loop": "L4_verifier",
+        "field": "verdict",
+        "problem": "verifier says build_now vs agent blocked"
+      }
+    ],
+    "final_issues": [],
+    "rounds": [
+      {
+        "round": 0,
+        "issues": [
+          {
+            "loop": "L1_evidence",
+            "field": "access",
+            "problem": "no evidence cited"
+          },
+          {
+            "loop": "L1_evidence",
+            "field": "verdict",
+            "problem": "no evidence cited"
+          },
+          {
+            "loop": "L4_verifier",
+            "field": "access",
+            "problem": "verifier says self_serve_free vs agent partner_or_sales"
+          },
+          {
+            "loop": "L4_verifier",
+            "field": "verdict",
+            "problem": "verifier says build_now vs agent blocked"
+          }
+        ],
+        "verifier": {
+          "auth_methods": [
+            "basic",
+            "bearer_token",
+            "jwt_or_signed",
+            "other"
+          ],
+          "auth_primary": "bearer_token",
+          "access_tier": "self_serve_free",
+          "api_types": [
+            "rest"
+          ],
+          "mcp": "unknown",
+          "verdict": "build_now",
+          "reasons": {
+            "auth": "Docs list Basic Auth, API token (bearer), custom static headers and Gladly‑signed request strings (request signing) as supported authentication methods (Sources 2, 3, 4).",
+            "access": "A sandbox and API token can be created via the public developer portal without payment (Source 2), indicating free self‑serve access.",
+            "mcp": "No information about an official MCP server is provided in the sources.",
+            "verdict": "Public REST docs and free sandbox credentials allow immediate integration, so the app can be built now."
+          },
+          "_model": "openai/gpt-oss-120b"
+        },
+        "autofix": []
+      },
+      {
+        "round": 1,
+        "queries": [
+          "Gladly API access requirements plan",
+          "Gladly developer account API key free OR partner OR enterprise"
+        ],
+        "new_sources": [
+          "https://gladly.com",
+          "https://developer.gladly.com/rest/index.html",
+          "https://help.gladly.com/developer-tutorials/docs/configure-an-app",
+          "https://help.gladly.com/developer-tutorials/docs/getting-started-with-gladly-app-platform",
+          "https://help.gladly.com/developer-tutorials/docs/technical-planning"
+        ],
+        "change_log": "Corrected access tier to self_serve_free and verdict to build_now based on developer docs providing sandbox and token creation instructions.",
+        "issues": [],
+        "verifier": {
+          "auth_methods": [
+            "basic",
+            "bearer_token",
+            "api_key"
+          ],
+          "auth_primary": "bearer_token",
+          "access_tier": "self_serve_free",
+          "api_types": [
+            "rest"
+          ],
+          "mcp": "unknown",
+          "verdict": "build_now",
+          "reasons": {
+            "auth": "Source 2 describes Basic Authentication and API tokens; Source 4 shows usage of a Bearer token and a custom apiToken header, indicating support for basic, bearer, and API‑key style auth.",
+            "access": "Source 2 mentions a sandbox environment where users can create API tokens without payment, implying free self‑serve access.",
+            "mcp": "No mention of an MCP server in any source.",
+            "verdict": "Public REST documentation and free sandbox token creation mean a toolkit can be built today."
+          },
+          "_model": "openai/gpt-oss-120b"
+        },
+        "autofix": []
+      }
+    ],
+    "catalog": {
+      "in_catalog": false
+    },
+    "changed_fields": [
+      "access",
+      "api",
+      "auth",
+      "verdict"
+    ],
+    "field_status": {
+      "auth": "corrected",
+      "access": "corrected",
+      "api": "corrected",
+      "mcp": "verified",
+      "verdict": "corrected"
+    },
+    "needs_human": [],
+    "before": {
+      "auth_methods": [
+        "basic",
+        "bearer_token",
+        "jwt_or_signed"
+      ],
+      "auth_primary": "basic",
+      "access_tier": "partner_or_sales",
+      "access_notes": "Requires contacting sales or partnering to gain access to the platform and API.",
+      "api_types": [
+        "rest"
+      ],
+      "api_breadth": "moderate",
+      "api_notes": "REST API supports endpoints, reporting, conversations, and custom attributes/freeform topics.",
+      "mcp": "none_found",
+      "mcp_url": null,
+      "verdict": "blocked",
+      "blocker": "partner_approval",
+      "blocker_notes": "API access requires a commercial agreement / sales contact since self-serve free developer signup is not available."
+    },
+    "seconds": 36.5
+  }
+}

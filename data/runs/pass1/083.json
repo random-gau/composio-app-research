@@ -1,0 +1,95 @@
+{
+  "one_liner": "Cryptocurrency exchange providing spot, margin, futures trading and market data APIs.",
+  "auth_methods": [
+    "api_key",
+    "jwt_or_signed"
+  ],
+  "auth_primary": "api_key",
+  "auth_notes": "API keys are passed via X-MBX-APIKEY header, with secure endpoints requiring HMAC-SHA256 or RSA signatures.",
+  "access_tier": "self_serve_free",
+  "access_notes": "Sign up for a Binance account for free and generate API keys directly in account settings.",
+  "api_types": [
+    "rest",
+    "websocket"
+  ],
+  "api_breadth": "broad",
+  "api_notes": "Comprehensive REST and WebSocket APIs covering spot trading, margin, futures, pay, and general market data.",
+  "mcp": "none_found",
+  "mcp_url": null,
+  "verdict": "build_now",
+  "blocker": "none",
+  "blocker_notes": "Publicly accessible self-serve APIs with extensive documentation.",
+  "evidence": {
+    "auth": {
+      "url": "https://developers.binance.com/docs/binance_link/exchange-link/Introduction",
+      "quote": "API-keys are passed into the Rest API via the X-MBX-APIKEY header."
+    },
+    "access": {
+      "url": "https://developers.binance.com/docs/pay/quick-start",
+      "quote": "Some endpoints will require an API Key. Please refer to this page regarding API key creation."
+    },
+    "api": {
+      "url": "https://developers.binance.com/docs/binance_link/exchange-link/Introduction",
+      "quote": "The base endpoint for Exchange Link is: https://api.binance.com"
+    },
+    "mcp": {
+      "url": null,
+      "quote": null
+    },
+    "verdict": {
+      "url": null,
+      "quote": null
+    }
+  },
+  "confidence": {
+    "auth": 0.9,
+    "access": 0.9,
+    "api": 0.9,
+    "mcp": 0.9,
+    "verdict": 0.9
+  },
+  "_model": "gemini-3.5-flash-lite",
+  "status": "ok",
+  "id": 83,
+  "name": "Binance",
+  "category": "Finance & Fintech",
+  "hint": "binance-docs.github.io",
+  "sources": [
+    {
+      "url": "https://binance-docs.github.io",
+      "via": "composio_fetch",
+      "chars": 202
+    },
+    {
+      "url": "https://developers.binance.com/docs/binance_link/exchange-link/Introduction",
+      "via": "composio_fetch",
+      "chars": 3553
+    },
+    {
+      "url": "https://developers.binance.com/docs/fiat/general-info",
+      "via": "composio_fetch",
+      "chars": 29174
+    },
+    {
+      "url": "https://developers.binance.com/docs/pay/general-info",
+      "via": "composio_fetch",
+      "chars": 29174
+    },
+    {
+      "url": "https://developers.binance.com/docs/pay/quick-start",
+      "via": "composio_fetch",
+      "chars": 1867
+    },
+    {
+      "url": "https://developers.binance.com/en/docs/catalog/core-trading-spot-trading/api/ws-api/auth",
+      "via": "composio_fetch",
+      "chars": 5540
+    }
+  ],
+  "queries": [
+    "Binance API authentication developer docs",
+    "Binance API access pricing plan developer",
+    "Binance MCP server"
+  ],
+  "seconds": 46.8
+}

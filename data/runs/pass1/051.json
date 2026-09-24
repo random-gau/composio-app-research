@@ -1,0 +1,93 @@
+{
+  "one_liner": "SEO and marketing data API providing comprehensive SERP, keyword, and backlink data.",
+  "auth_methods": [
+    "basic"
+  ],
+  "auth_primary": "basic",
+  "auth_notes": "Basic authentication using your API login and API password encoded with Base64.",
+  "access_tier": "self_serve_free",
+  "access_notes": "Create a free account on the website to receive an unlimited trial period with a $1 free trial credit.",
+  "api_types": [
+    "rest"
+  ],
+  "api_breadth": "broad",
+  "api_notes": "Broad REST API covering SEO, SERP, keywords, backlinks, and on-page data via base URL api.dataforseo.com/v3.",
+  "mcp": "none_found",
+  "mcp_url": null,
+  "verdict": "build_now",
+  "blocker": "none",
+  "blocker_notes": "None. Public docs and self-serve credentials with trial credit are available.",
+  "evidence": {
+    "auth": {
+      "url": "https://dataforseo.com/help-center/how-to-authenticate-with-dataforseo-google-search-serp-api-api-key-setup-and-code-examples",
+      "quote": "Authentication at DataForSEO uses a single credential pair: your API login plus your API password, encoded with Base64 and pasted into the auth field of your environment."
+    },
+    "access": {
+      "url": "https://dataforseo.com/apis/serp-api",
+      "quote": "No, you don’t have to pay anything to start using any DataForSEO API. We offer an unlimited trial period and a $1 credit that will be added to your account balance upon signing up."
+    },
+    "api": {
+      "url": "https://docs.dataforseo.com",
+      "quote": "DataForSEO API is using the REST technology for interchanging data between your application and our service."
+    },
+    "mcp": {
+      "url": null,
+      "quote": null
+    },
+    "verdict": {
+      "url": "https://dataforseo.com/apis/serp-api",
+      "quote": "Create a free account to get unlimited access to DataForSEO APIs."
+    }
+  },
+  "confidence": {
+    "auth": 5.0,
+    "access": 5.0,
+    "api": 5.0,
+    "mcp": 5.0,
+    "verdict": 5.0
+  },
+  "_model": "gemini-3.5-flash-lite",
+  "status": "ok",
+  "id": 51,
+  "name": "DataForSEO",
+  "category": "Data SEO & Scraping",
+  "hint": "docs.dataforseo.com",
+  "sources": [
+    {
+      "url": "https://docs.dataforseo.com",
+      "via": "direct",
+      "chars": 4240
+    },
+    {
+      "url": "https://dataforseo.com/apis/serp-api",
+      "via": "direct",
+      "chars": 12688
+    },
+    {
+      "url": "https://dataforseo.com/apis/serp-api/pricing",
+      "via": "composio_fetch",
+      "chars": 9015
+    },
+    {
+      "url": "https://dataforseo.com/blog/a-kickstart-guide-to-using-dataforseo-apis",
+      "via": "direct",
+      "chars": 29787
+    },
+    {
+      "url": "https://dataforseo.com/docs",
+      "via": "direct",
+      "chars": 4240
+    },
+    {
+      "url": "https://dataforseo.com/help-center/how-to-authenticate-with-dataforseo-google-search-serp-api-api-key-setup-and-code-examples",
+      "via": "direct",
+      "chars": 10394
+    }
+  ],
+  "queries": [
+    "DataForSEO API authentication developer docs",
+    "DataForSEO API access pricing plan developer",
+    "DataForSEO MCP server"
+  ],
+  "seconds": 52.9
+}

@@ -1,0 +1,93 @@
+{
+  "one_liner": "Cloud-based accounting software platform with APIs for invoicing, bank feeds, and financial data.",
+  "auth_methods": [
+    "oauth2"
+  ],
+  "auth_primary": "oauth2",
+  "auth_notes": "OAuth 2.0 with authorization code flow or client credentials (for custom connections).",
+  "access_tier": "self_serve_free",
+  "access_notes": "Sign up for a free developer account on the Xero Developer Portal to get credentials and access test environments.",
+  "api_types": [
+    "rest"
+  ],
+  "api_breadth": "broad",
+  "api_notes": "Comprehensive REST APIs covering accounting, bank feeds, assets, projects, and files.",
+  "mcp": "official",
+  "mcp_url": "https://developer.xero.com",
+  "verdict": "build_now",
+  "blocker": "none",
+  "blocker_notes": "Public APIs and self-serve developer accounts are freely available.",
+  "evidence": {
+    "auth": {
+      "url": "https://developer.xero.com/custom-development",
+      "quote": "Alongside our standard OAuth 2.0 flow, Custom Connections is a streamlined integration option for anyone building bespoke solutions for Xero businesses."
+    },
+    "access": {
+      "url": "https://developer.xero.com",
+      "quote": "Sign up for a free account to build on the Xero platform. Take a look at our getting started guide, SDKs and the other steps you need to complete for certification."
+    },
+    "api": {
+      "url": "https://developer.xero.com",
+      "quote": "This includes Xero APIs, SDKs, code samples, documentation and more."
+    },
+    "mcp": {
+      "url": "https://developer.xero.com",
+      "quote": "Get Started with Xero's AI Toolkit including OpenAI Agents SDK, MCP Server, LangChain and prompt examples."
+    },
+    "verdict": {
+      "url": "https://developer.xero.com",
+      "quote": "Sign up for a free account to build on the Xero platform."
+    }
+  },
+  "confidence": {
+    "auth": 0.9,
+    "access": 0.9,
+    "api": 0.9,
+    "mcp": 0.9,
+    "verdict": 0.9
+  },
+  "_model": "gemini-3.5-flash-lite",
+  "status": "ok",
+  "id": 87,
+  "name": "Xero",
+  "category": "Finance & Fintech",
+  "hint": "developer.xero.com",
+  "sources": [
+    {
+      "url": "https://developer.xero.com",
+      "via": "direct",
+      "chars": 4781
+    },
+    {
+      "url": "https://devblog.xero.com/migrating-from-xass-to-our-new-pricing-structure-fa2d045f02c1",
+      "via": "composio_fetch",
+      "chars": 5947
+    },
+    {
+      "url": "https://devblog.xero.com/xero-developer-migration-timelines-and-next-steps-9e0c6c0c913f",
+      "via": "composio_fetch",
+      "chars": 4863
+    },
+    {
+      "url": "https://developer.xero.com/custom-development",
+      "via": "direct",
+      "chars": 4929
+    },
+    {
+      "url": "https://developer.xero.com/faq",
+      "via": "direct",
+      "chars": 38041
+    },
+    {
+      "url": "https://developer.xero.com/faq/custom-integration",
+      "via": "direct",
+      "chars": 4546
+    }
+  ],
+  "queries": [
+    "Xero API authentication developer docs",
+    "Xero API access pricing plan developer",
+    "Xero MCP server"
+  ],
+  "seconds": 46.7
+}

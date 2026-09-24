@@ -1,0 +1,94 @@
+{
+  "one_liner": "Enterprise-grade API for messaging, calling, and managing customer communications via WhatsApp.",
+  "auth_methods": [
+    "bearer_token",
+    "oauth2"
+  ],
+  "auth_primary": "bearer_token",
+  "auth_notes": "Uses OAuth-based access tokens passed via Bearer authentication in HTTP headers.",
+  "access_tier": "self_serve_free",
+  "access_notes": "Free developer account sign-up provides access to a test business phone number and sandbox.",
+  "api_types": [
+    "rest"
+  ],
+  "api_breadth": "broad",
+  "api_notes": "Covers messaging, templates, phone numbers, media, webhooks, and WABA management via Facebook Graph API.",
+  "mcp": "none_found",
+  "mcp_url": null,
+  "verdict": "build_now",
+  "blocker": "none",
+  "blocker_notes": "None",
+  "evidence": {
+    "auth": {
+      "url": "https://developers.facebook.com/docs/whatsapp",
+      "quote": "\"Authorization\": \"Bearer <ACCESS_TOKEN>\""
+    },
+    "access": {
+      "url": "https://developers.facebook.com/docs/whatsapp/cloud-api/reference/phone-numbers",
+      "quote": "When you complete the steps in the Get Started document, a test business phone number is generated and registered for you automatically."
+    },
+    "api": {
+      "url": "https://developers.facebook.com/docs/whatsapp",
+      "quote": "Cloud API uses Graph API for sending messages and Webhooks for receiving events"
+    },
+    "mcp": {
+      "url": null,
+      "quote": null
+    },
+    "verdict": {
+      "url": null,
+      "quote": null
+    }
+  },
+  "confidence": {
+    "auth": 0.9,
+    "access": 0.9,
+    "api": 0.9,
+    "mcp": 1.0,
+    "verdict": 0.9
+  },
+  "_model": "gemini-3.5-flash-lite",
+  "status": "ok",
+  "id": 28,
+  "name": "WhatsApp Business",
+  "category": "Communications & Messaging",
+  "hint": "developers.facebook.com/docs/whatsapp",
+  "sources": [
+    {
+      "url": "https://developers.facebook.com/docs/whatsapp",
+      "via": "composio_fetch",
+      "chars": 3537
+    },
+    {
+      "url": "https://developers.facebook.com/docs/graph-api/reference/whats-app-business-account",
+      "via": "composio_fetch",
+      "chars": 8926
+    },
+    {
+      "url": "https://developers.facebook.com/docs/whatsapp/business-management-api/authentication-templates",
+      "via": "composio_fetch",
+      "chars": 11075
+    },
+    {
+      "url": "https://developers.facebook.com/docs/whatsapp/business-management-api/get-started",
+      "via": "composio_fetch",
+      "chars": 1282
+    },
+    {
+      "url": "https://developers.facebook.com/docs/whatsapp/cloud-api/overview",
+      "via": "composio_fetch",
+      "chars": 12717
+    },
+    {
+      "url": "https://developers.facebook.com/docs/whatsapp/cloud-api/reference/phone-numbers",
+      "via": "composio_fetch",
+      "chars": 22624
+    }
+  ],
+  "queries": [
+    "WhatsApp Business API authentication developer docs",
+    "WhatsApp Business API access pricing plan developer",
+    "WhatsApp Business MCP server"
+  ],
+  "seconds": 46.3
+}

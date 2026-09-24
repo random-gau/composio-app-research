@@ -1,0 +1,94 @@
+{
+  "one_liner": "Manage MongoDB Atlas cloud database clusters, projects, and infrastructure programmatically via API.",
+  "auth_methods": [
+    "oauth2",
+    "basic"
+  ],
+  "auth_primary": "oauth2",
+  "auth_notes": "OAuth 2.0 Service Account access tokens (recommended) or HTTP Digest API keys (legacy).",
+  "access_tier": "self_serve_free",
+  "access_notes": "Sign up for a free MongoDB Atlas account to access the administration API and free cluster tiers.",
+  "api_types": [
+    "rest"
+  ],
+  "api_breadth": "broad",
+  "api_notes": "Broad coverage of Atlas administration, clusters, backups, and security via Administration API v1 and v2.",
+  "mcp": "none_found",
+  "mcp_url": null,
+  "verdict": "build_now",
+  "blocker": "none",
+  "blocker_notes": "None. Fully self-serve developer signup and documented REST APIs.",
+  "evidence": {
+    "auth": {
+      "url": "https://www.mongodb.com/docs/api/doc/atlas-admin-api-v2.md",
+      "quote": "The Atlas Administration API supports OAuth2 Service Accounts and HTTP Digest-based API keys. Service accounts are the recommended authentication method and API keys are considered a legacy option."
+    },
+    "access": {
+      "url": null,
+      "quote": null
+    },
+    "api": {
+      "url": "https://www.mongodb.com/docs/api/doc/atlas-admin-api-v2.md",
+      "quote": "The MongoDB Atlas Administration API allows developers to manage all components in MongoDB Atlas."
+    },
+    "mcp": {
+      "url": null,
+      "quote": null
+    },
+    "verdict": {
+      "url": null,
+      "quote": null
+    }
+  },
+  "confidence": {
+    "auth": 0.9,
+    "access": 0.8,
+    "api": 0.9,
+    "mcp": 0.8,
+    "verdict": 0.9
+  },
+  "_model": "gemini-3.5-flash-lite",
+  "status": "ok",
+  "id": 68,
+  "name": "MongoDB Atlas",
+  "category": "Developer Infra & Data",
+  "hint": "mongodb.com/docs/atlas/api",
+  "sources": [
+    {
+      "url": "https://mongodb.com/docs/atlas/api",
+      "via": "direct",
+      "chars": 6120
+    },
+    {
+      "url": "https://www.mongodb.com/docs/api/doc/atlas-admin-api-v1.md",
+      "via": "direct",
+      "chars": 50968
+    },
+    {
+      "url": "https://www.mongodb.com/docs/api/doc/atlas-admin-api-v2.md",
+      "via": "direct",
+      "chars": 90152
+    },
+    {
+      "url": "https://www.mongodb.com/docs/api/doc/atlas-admin-api-v2/2023-01-01",
+      "via": "direct",
+      "chars": 2298
+    },
+    {
+      "url": "https://www.mongodb.com/docs/atlas/api",
+      "via": "direct",
+      "chars": 6120
+    },
+    {
+      "url": "https://www.mongodb.com/docs/atlas/api/api-authentication",
+      "via": "direct",
+      "chars": 6330
+    }
+  ],
+  "queries": [
+    "MongoDB Atlas API authentication developer docs",
+    "MongoDB Atlas API access pricing plan developer",
+    "MongoDB Atlas MCP server"
+  ],
+  "seconds": 53.2
+}

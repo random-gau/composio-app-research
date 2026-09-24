@@ -1,0 +1,94 @@
+{
+  "one_liner": "AI image, video, and audio generation via developer API and agent MCP server.",
+  "auth_methods": [
+    "api_key"
+  ],
+  "auth_primary": "api_key",
+  "auth_notes": "Authenticate server-side using Authorization: Key YOUR_KEY_ID:YOUR_KEY_SECRET.",
+  "access_tier": "self_serve_free",
+  "access_notes": "Create an account in the console, get API keys, and use pay-as-you-go balance.",
+  "api_types": [
+    "rest",
+    "sdk_or_cli_only"
+  ],
+  "api_breadth": "broad",
+  "api_notes": "Covers 50+ image, video, and audio generation models under https://api.jsdelivr.net or api.higgsfield.ai endpoints.",
+  "mcp": "official",
+  "mcp_url": "https://higgsfield.ai/cli",
+  "verdict": "build_now",
+  "blocker": "none",
+  "blocker_notes": "Publicly available API with self-serve signup and pay-as-you-go or free playground access.",
+  "evidence": {
+    "auth": {
+      "url": "https://docs.higgsfield.ai/docs/help/faq",
+      "quote": "Send requests to https://api.higgsfield.ai and authenticate server-side with Authorization: Key YOUR_KEY_ID:YOUR_KEY_SECRET."
+    },
+    "access": {
+      "url": "https://docs.higgsfield.ai/docs/help/faq",
+      "quote": "To get started:\nCreate an account at console.higgsfield.ai\nGenerate your API credentials from the dashboard"
+    },
+    "api": {
+      "url": "https://higgsfield.ai/creator-hub/help-center/integrations/what-is-the-higgsfield-api",
+      "quote": "One API key unlocks every model in the API catalog: 50+ current video and image models"
+    },
+    "mcp": {
+      "url": "https://higgsfield.ai/cli",
+      "quote": "Higgsfield uses MCP (Model Context Protocol), an open standard that gives AI agents access to external tools."
+    },
+    "verdict": {
+      "url": "https://higgsfield.ai/higgsfield-api",
+      "quote": "No. The playground is free, and a key takes minutes to create. Sales is only for monthly commitments and custom volume terms."
+    }
+  },
+  "confidence": {
+    "auth": 1.0,
+    "access": 1.0,
+    "api": 1.0,
+    "mcp": 1.0,
+    "verdict": 1.0
+  },
+  "_model": "gemini-3.5-flash-lite",
+  "status": "ok",
+  "id": 97,
+  "name": "higgsfield",
+  "category": "AI Research & Media",
+  "hint": "higgsfield.ai/cli (content suite)",
+  "sources": [
+    {
+      "url": "https://higgsfield.ai/cli",
+      "via": "direct",
+      "chars": 6027
+    },
+    {
+      "url": "https://docs.higgsfield.ai/docs",
+      "via": "direct",
+      "chars": 2404
+    },
+    {
+      "url": "https://docs.higgsfield.ai/docs/help/faq",
+      "via": "direct",
+      "chars": 4004
+    },
+    {
+      "url": "https://higgsfield.ai/blog/mcp-for-marketers",
+      "via": "direct",
+      "chars": 13081
+    },
+    {
+      "url": "https://higgsfield.ai/creator-hub/help-center/integrations/what-is-the-higgsfield-api",
+      "via": "direct",
+      "chars": 6421
+    },
+    {
+      "url": "https://higgsfield.ai/higgsfield-api",
+      "via": "direct",
+      "chars": 32790
+    }
+  ],
+  "queries": [
+    "higgsfield API authentication developer docs",
+    "higgsfield API access pricing plan developer",
+    "higgsfield MCP server"
+  ],
+  "seconds": 53.5
+}

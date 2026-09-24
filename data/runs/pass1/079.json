@@ -1,0 +1,95 @@
+{
+  "one_liner": "Work management and collaboration platform providing project tracking, sheets, and task automation.",
+  "auth_methods": [
+    "oauth2",
+    "api_key",
+    "bearer_token"
+  ],
+  "auth_primary": "oauth2",
+  "auth_notes": "Supports OAuth2 and generated API access tokens (Bearer token).",
+  "access_tier": "self_serve_free",
+  "access_notes": "Free developer account and trial available, though the official MCP server requires Business, Enterprise, or Advanced Work Management plans.",
+  "api_types": [
+    "rest"
+  ],
+  "api_breadth": "broad",
+  "api_notes": "Comprehensive REST API covering sheets, workspaces, users, reports, and more.",
+  "mcp": "official",
+  "mcp_url": "https://mcp.smartsheet.com",
+  "verdict": "build_now",
+  "blocker": "none",
+  "blocker_notes": "Public APIs and self-serve developer access are fully available.",
+  "evidence": {
+    "auth": {
+      "url": "https://developers.smartsheet.com/ai-mcp/smartsheet/install-the-smartsheet-mcp-server",
+      "quote": "Valid Smartsheet API token, unless you're connecting an AI tool that supports Smartsheet's OAuth, such as ChatGPT (web or mobile), Claude AI, Claude Desktop, Gemini Enterprise Plus, or Microsoft 365 Copilot."
+    },
+    "access": {
+      "url": null,
+      "quote": null
+    },
+    "api": {
+      "url": null,
+      "quote": null
+    },
+    "mcp": {
+      "url": "https://developers.smartsheet.com/ai-mcp/smartsheet/install-the-smartsheet-mcp-server",
+      "quote": "URL for the MCP server production environment in your target region. Refer to the table below."
+    },
+    "verdict": {
+      "url": null,
+      "quote": null
+    }
+  },
+  "confidence": {
+    "auth": 0.9,
+    "access": 0.8,
+    "api": 0.9,
+    "mcp": 1.0,
+    "verdict": 0.9
+  },
+  "_model": "gemini-3.5-flash-lite",
+  "status": "ok",
+  "id": 79,
+  "name": "Smartsheet",
+  "category": "Productivity & PM",
+  "hint": "smartsheet.com/developers",
+  "sources": [
+    {
+      "url": "https://smartsheet.com/developers",
+      "via": "direct",
+      "chars": 1295
+    },
+    {
+      "url": "https://developers.smartsheet.com/ai-mcp/smartsheet/install-the-smartsheet-mcp-server",
+      "via": "direct",
+      "chars": 2756
+    },
+    {
+      "url": "https://developers.smartsheet.com/ai-mcp/smartsheet/install-the-smartsheet-mcp-server/connect-claude-code",
+      "via": "direct",
+      "chars": 2557
+    },
+    {
+      "url": "https://developers.smartsheet.com/ai-mcp/smartsheet/install-the-smartsheet-mcp-server/manually-configure-the-mcp-server",
+      "via": "direct",
+      "chars": 4184
+    },
+    {
+      "url": "https://developers.smartsheet.com/ai-mcp/smartsheet/mcp-quickstart",
+      "via": "direct",
+      "chars": 3858
+    },
+    {
+      "url": "https://developers.smartsheet.com/ai-mcp/smartsheet/mcp-server",
+      "via": "direct",
+      "chars": 4629
+    }
+  ],
+  "queries": [
+    "Smartsheet API authentication developer docs",
+    "Smartsheet API access pricing plan developer",
+    "Smartsheet MCP server"
+  ],
+  "seconds": 32.9
+}

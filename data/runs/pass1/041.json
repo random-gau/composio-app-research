@@ -1,0 +1,96 @@
+{
+  "one_liner": "Build apps, storefronts, and agents on Shopify's ecommerce platform using comprehensive APIs.",
+  "auth_methods": [
+    "oauth2",
+    "api_key",
+    "bearer_token"
+  ],
+  "auth_primary": "oauth2",
+  "auth_notes": "Shopify uses OAuth 2.0 flows, access tokens in request headers (e.g., X-Shopify-Access-Token), and client credentials.",
+  "access_tier": "self_serve_free",
+  "access_notes": "Developers can sign up for a free developer account / partner account and create apps without initial payment.",
+  "api_types": [
+    "rest",
+    "graphql"
+  ],
+  "api_breadth": "broad",
+  "api_notes": "Covers GraphQL Admin API, REST Admin API, Storefront API, Partner API, and Customer Account API.",
+  "mcp": "none_found",
+  "mcp_url": null,
+  "verdict": "build_now",
+  "blocker": "none",
+  "blocker_notes": "Public docs and self-serve developer accounts allow building integrations immediately.",
+  "evidence": {
+    "auth": {
+      "url": "https://shopify.dev/docs/api/usage/authentication",
+      "quote": "Most Shopify APIs, including the GraphQL Admin API, Storefront API, and Partner API, authenticate your app acting on behalf of a merchant or organization."
+    },
+    "access": {
+      "url": null,
+      "quote": null
+    },
+    "api": {
+      "url": "https://shopify.dev/docs/api/usage",
+      "quote": "GraphQL Admin API reads and writes products, customers, orders, inventory, and the rest of the data behind the Shopify admin."
+    },
+    "mcp": {
+      "url": null,
+      "quote": null
+    },
+    "verdict": {
+      "url": "https://shopify.dev",
+      "quote": "Whether you're just getting started, deep in the development process, or ready to distribute and monetize your work, Shopify's docs, dev tools and frameworks make building easy and efficient."
+    }
+  },
+  "confidence": {
+    "auth": 0.9,
+    "access": 0.8,
+    "api": 0.9,
+    "mcp": 1.0,
+    "verdict": 0.9
+  },
+  "_model": "gemini-3.5-flash-lite",
+  "status": "ok",
+  "id": 41,
+  "name": "Shopify",
+  "category": "Ecommerce",
+  "hint": "shopify.dev",
+  "sources": [
+    {
+      "url": "https://shopify.dev",
+      "via": "direct",
+      "chars": 3910
+    },
+    {
+      "url": "https://shopify.dev/docs/api/usage",
+      "via": "direct",
+      "chars": 6186
+    },
+    {
+      "url": "https://shopify.dev/docs/api/usage/authentication",
+      "via": "direct",
+      "chars": 3537
+    },
+    {
+      "url": "https://shopify.dev/docs/api/usage/limits",
+      "via": "direct",
+      "chars": 4199
+    },
+    {
+      "url": "https://shopify.dev/docs/apps/build/apis/graphql-admin/rate-limits",
+      "via": "direct",
+      "chars": 5070
+    },
+    {
+      "url": "https://shopify.dev/docs/apps/build/authentication-authorization",
+      "via": "direct",
+      "chars": 7817
+    }
+  ],
+  "queries": [
+    "Shopify API authentication developer docs",
+    "Shopify API access pricing plan developer",
+    "Shopify MCP server"
+  ],
+  "seconds": 46.6
+}

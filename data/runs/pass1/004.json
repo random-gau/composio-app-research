@@ -1,0 +1,94 @@
+{
+  "one_liner": "Modern customizable CRM for building pipelines and agentic workflows.",
+  "auth_methods": [
+    "oauth2"
+  ],
+  "auth_primary": "oauth2",
+  "auth_notes": "Uses OAuth 2.0 with the authorization code grant flow.",
+  "access_tier": "self_serve_free",
+  "access_notes": "Free tier available with API, webhook, App SDK, and MCP server access.",
+  "api_types": [
+    "rest"
+  ],
+  "api_breadth": "broad",
+  "api_notes": "Comprehensive REST API with full read/write access under api.attio.com/v2.",
+  "mcp": "official",
+  "mcp_url": "https://attio.com/engineering/blog/building-the-attio-mcp-server",
+  "verdict": "build_now",
+  "blocker": "none",
+  "blocker_notes": "Fully available with public API docs and self-serve free plan access.",
+  "evidence": {
+    "auth": {
+      "url": "https://docs.attio.com/rest-api/endpoint-reference/meta/identify",
+      "quote": "This API uses OAuth 2.0 with the authorization code grant flow."
+    },
+    "access": {
+      "url": "https://attio.com/pricing?level=0",
+      "api and webhook access": null,
+      "quote": "Start today, no credit card required."
+    },
+    "api": {
+      "url": "https://docs.attio.com/rest-api/endpoint-reference/meta/identify",
+      "quote": "curl --request GET --url https://api.attio.com/v2/self --header 'Authorization: Bearer <token>'"
+    },
+    "mcp": {
+      "url": "https://attio.com/engineering/blog/building-the-attio-mcp-server",
+      "quote": "Building the Attio MCP server"
+    },
+    "verdict": {
+      "url": "https://attio.com/pricing?level=0",
+      "quote": "Designed for every stage of your journey. Start today, no credit card required."
+    }
+  },
+  "confidence": {
+    "auth": 1.0,
+    "access": 1.0,
+    "api": 1.0,
+    "mcp": 1.0,
+    "verdict": 1.0
+  },
+  "_model": "gemini-3.5-flash-lite",
+  "status": "ok",
+  "id": 4,
+  "name": "Attio",
+  "category": "CRM & Sales",
+  "hint": "attio.com",
+  "sources": [
+    {
+      "url": "https://attio.com",
+      "via": "direct",
+      "chars": 10056
+    },
+    {
+      "url": "https://attio.com/engineering/blog/building-the-attio-mcp-server",
+      "via": "direct",
+      "chars": 10249
+    },
+    {
+      "url": "https://attio.com/platform/developers?_rsc=1ivjd",
+      "via": "direct",
+      "chars": 4074
+    },
+    {
+      "url": "https://attio.com/pricing?level=0",
+      "via": "direct",
+      "chars": 10210
+    },
+    {
+      "url": "https://docs.attio.com/docs/oauth/token",
+      "via": "direct",
+      "chars": 3990
+    },
+    {
+      "url": "https://docs.attio.com/rest-api/endpoint-reference/meta/identify",
+      "via": "direct",
+      "chars": 5243
+    }
+  ],
+  "queries": [
+    "Attio API authentication developer docs",
+    "Attio API access pricing plan developer",
+    "Attio MCP server"
+  ],
+  "seconds": 47.5
+}

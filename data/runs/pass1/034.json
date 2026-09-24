@@ -1,0 +1,94 @@
+{
+  "one_liner": "An all-in-one marketing, sales, and CRM platform with a robust public API.",
+  "auth_methods": [
+    "oauth2",
+    "bearer_token"
+  ],
+  "auth_primary": "oauth2",
+  "auth_notes": "OAuth 2.0 authorization code grant or private integration tokens (PIT) are supported.",
+  "access_tier": "self_serve_free",
+  "access_notes": "Developers can sign up on the Developer's Marketplace to get credentials.",
+  "api_types": [
+    "rest"
+  ],
+  "api_breadth": "broad",
+  "api_notes": "Covers v2 Public API endpoints including SaaS configurations, sub-accounts, and agency workflows.",
+  "mcp": "none_found",
+  "mcp_url": null,
+  "verdict": "build_now",
+  "blocker": "none",
+  "blocker_notes": "Public documentation, SDKs, and self-serve developer portal are available.",
+  "evidence": {
+    "auth": {
+      "url": "https://help.gohighlevel.com/support/solutions/articles/155000000136-how-to-get-started-with-the-developer-s-marketplace",
+      "quote": "In the Developer's Marketplace, developers obtain an Access Token through the OAuth process, which allows their app to make authenticated API requests to GoHighLevel."
+    },
+    "access": {
+      "url": "https://help.gohighlevel.com/support/solutions/articles/155000000136-how-to-get-started-with-the-developer-s-marketplace",
+      "quote": "Developers register their applications on the Developer's Marketplace, providing necessary details and defining scopes. They receive a Client ID and a Client Secret, unique identifiers for their application."
+    },
+    "api": {
+      "url": "https://help.gohighlevel.com/support/solutions/articles/155000007096-api-center-of-excellence-python-and-php-sdks",
+      "quote": "HighLevel’s officially supported gohighlevel/api-client (PHP) and gohighlevel-api-client (Python) libraries wrap the entire v2 Public API."
+    },
+    "mcp": {
+      "url": null,
+      "quote": null
+    },
+    "verdict": {
+      "url": "https://help.gohighlevel.com/support/solutions/articles/155000000136-how-to-get-started-with-the-developer-s-marketplace",
+      "quote": "Developers register their applications on the Developer's Marketplace, providing necessary details and defining scopes. They receive a Client ID and a Client Secret, unique identifiers for their application."
+    }
+  },
+  "confidence": {
+    "auth": 0.95,
+    "access": 0.9,
+    "api": 0.95,
+    "mcp": 0.8,
+    "verdict": 0.9
+  },
+  "_model": "gemini-3.5-flash-lite",
+  "status": "ok",
+  "id": 34,
+  "name": "GoHighLevel",
+  "category": "Marketing Ads Email & Social",
+  "hint": "highlevel.stoplight.io",
+  "sources": [
+    {
+      "url": "https://highlevel.stoplight.io",
+      "via": "composio_fetch",
+      "chars": 633
+    },
+    {
+      "url": "https://help.gohighlevel.com/support/solutions/articles/155000000136-how-to-get-started-with-the-developer-s-marketplace",
+      "via": "direct",
+      "chars": 27294
+    },
+    {
+      "url": "https://help.gohighlevel.com/support/solutions/articles/155000005111-usage-based-pricing-on-app-markeptlace",
+      "via": "direct",
+      "chars": 7612
+    },
+    {
+      "url": "https://help.gohighlevel.com/support/solutions/articles/155000005768-public-api-endpoints-for-saas-configurator",
+      "via": "direct",
+      "chars": 7421
+    },
+    {
+      "url": "https://help.gohighlevel.com/support/solutions/articles/155000007096-api-center-of-excellence-python-and-php-sdks",
+      "via": "direct",
+      "chars": 4178
+    },
+    {
+      "url": "https://help.gohighlevel.com/support/solutions/articles/155000007194-agency-app-reselling-config-api",
+      "via": "direct",
+      "chars": 4675
+    }
+  ],
+  "queries": [
+    "GoHighLevel API authentication developer docs",
+    "GoHighLevel API access pricing plan developer",
+    "GoHighLevel MCP server"
+  ],
+  "seconds": 40.1
+}

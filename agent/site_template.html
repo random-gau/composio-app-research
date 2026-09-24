@@ -1,0 +1,443 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Toolkit Readiness Atlas</title>
+<meta name="description" content="An agent researched 100 apps for auth, access gates, API surface and MCP, then verified itself. Findings, patterns and accuracy.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700&family=Source+Sans+3:wght@400;600;700&family=JetBrains+Mono:wght@400;600&display=swap">
+<style>
+:root{
+  color-scheme: light;
+  --paper:#F3F5F7; --surface:#FFFFFF; --ink:#151B23; --muted:#5A6572; --line:#DAE0E6; --line-2:#EBEFF3;
+  --accent:#3346A8; --accent-soft:#E5E8F7;
+  --go:#1F7A48; --go-soft:#DCEFE3; --warn:#9A6210; --warn-soft:#F5E8CF; --stop:#AE3535; --stop-soft:#F5DDDD;
+  --human:#7438A6; --human-soft:#EFE3F7; --neutral-soft:#E9EDF1;
+  --display:"Bricolage Grotesque", "Avenir Next", "Segoe UI", system-ui, sans-serif;
+  --body:"Source Sans 3", "Segoe UI", system-ui, -apple-system, sans-serif;
+  --mono:"JetBrains Mono", ui-monospace, "SF Mono", Menlo, Consolas, monospace;
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){
+    color-scheme: dark;
+    --paper:#0E1318; --surface:#151C23; --ink:#E3E8ED; --muted:#96A2AE; --line:#29333D; --line-2:#1E262E;
+    --accent:#93A2F2; --accent-soft:#1F2745;
+    --go:#62C790; --go-soft:#142D1F; --warn:#E3A94E; --warn-soft:#33260F; --stop:#EE8181; --stop-soft:#3A1919;
+    --human:#C593EC; --human-soft:#2A1C38; --neutral-soft:#1D252D;
+  }
+}
+:root[data-theme="dark"]{
+  color-scheme: dark;
+  --paper:#0E1318; --surface:#151C23; --ink:#E3E8ED; --muted:#96A2AE; --line:#29333D; --line-2:#1E262E;
+  --accent:#93A2F2; --accent-soft:#1F2745;
+  --go:#62C790; --go-soft:#142D1F; --warn:#E3A94E; --warn-soft:#33260F; --stop:#EE8181; --stop-soft:#3A1919;
+  --human:#C593EC; --human-soft:#2A1C38; --neutral-soft:#1D252D;
+}
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--paper);color:var(--ink);font:16px/1.55 var(--body);}
+.wrap{max-width:1120px;margin:0 auto;padding-inline:20px;padding-block:28px 64px;display:grid;gap:56px}
+a{color:var(--accent);text-underline-offset:2px}
+a:focus-visible,button:focus-visible,select:focus-visible,input:focus-visible,summary:focus-visible{outline:2px solid var(--accent);outline-offset:2px;border-radius:4px}
+h1,h2,h3{font-family:var(--display);text-wrap:balance;margin:0;letter-spacing:-.01em}
+h1{font-size:clamp(30px,5vw,48px);line-height:1.08;font-weight:700}
+h2{font-size:clamp(22px,3vw,28px);line-height:1.2;font-weight:700}
+h3{font-size:17px;font-weight:700}
+p{margin:0}
+.eyebrow{font:600 12px/1 var(--mono);letter-spacing:.08em;text-transform:uppercase;color:var(--muted)}
+.lede{font-size:18px;color:var(--muted);max-width:68ch}
+.mono{font-family:var(--mono);font-size:.88em}
+.num{font-variant-numeric:tabular-nums}
+section{display:grid;gap:20px}
+.sec-head{display:grid;gap:8px;max-width:72ch}
+.sec-head p{color:var(--muted)}
+.panel{background:var(--surface);border:1px solid var(--line);border-radius:10px;padding:20px}
+.grid-2{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,420px),1fr));gap:20px}
+.grid-3{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,300px),1fr));gap:20px}
+
+/* header */
+header.top{display:grid;gap:18px}
+.meta-row{display:flex;flex-wrap:wrap;gap:8px 18px;color:var(--muted);font-size:14px}
+.meta-row a{font-weight:600}
+.cta-row{display:flex;flex-wrap:wrap;gap:10px}
+.btn{display:inline-flex;align-items:center;gap:8px;padding:9px 14px;border-radius:8px;border:1px solid var(--line);background:var(--surface);color:var(--ink);text-decoration:none;font-weight:600;font-size:14px}
+.btn.primary{background:var(--accent);border-color:var(--accent);color:var(--surface)}
+
+/* verdict bar */
+.vbar{display:flex;height:44px;border-radius:8px;overflow:hidden;border:1px solid var(--line)}
+.vbar div{display:flex;align-items:center;padding-inline:12px;font-weight:700;font-size:14px;white-space:nowrap;overflow:hidden;min-width:0}
+.v-build_now{background:var(--go-soft);color:var(--go)}
+.v-build_with_friction{background:var(--warn-soft);color:var(--warn)}
+.v-blocked{background:var(--stop-soft);color:var(--stop)}
+.legend{display:flex;flex-wrap:wrap;gap:6px 18px;font-size:14px;color:var(--muted)}
+.legend span::before{content:"";display:inline-block;width:10px;height:10px;border-radius:2px;margin-right:6px;background:var(--c)}
+
+/* findings */
+.findings{display:grid;gap:12px;counter-reset:f}
+.finding{display:grid;grid-template-columns:auto 1fr;gap:4px 16px;padding:16px 18px;background:var(--surface);border:1px solid var(--line);border-radius:10px}
+.finding .k{font:700 26px/1 var(--display);color:var(--accent);grid-row:span 2;min-width:3.2ch;font-variant-numeric:tabular-nums}
+.finding h3{font-size:18px}
+.finding p{color:var(--muted)}
+
+/* pills */
+.pill{display:inline-block;font:600 12px/1.6 var(--mono);padding:0 8px;border-radius:999px;background:var(--neutral-soft);color:var(--ink);white-space:nowrap}
+.pill.go{background:var(--go-soft);color:var(--go)} .pill.warn{background:var(--warn-soft);color:var(--warn)} .pill.stop{background:var(--stop-soft);color:var(--stop)}
+.pill.human{background:var(--human-soft);color:var(--human)} .pill.acc{background:var(--accent-soft);color:var(--accent)}
+.chips{display:flex;flex-wrap:wrap;gap:6px}
+
+/* heat matrix */
+.scroll{overflow-x:auto;-webkit-overflow-scrolling:touch}
+table{border-collapse:collapse;width:100%}
+.heat th,.heat td{padding:8px 10px;border-bottom:1px solid var(--line-2);text-align:center;font-size:14px}
+.heat th{font:600 11px/1.3 var(--mono);color:var(--muted);text-transform:uppercase;letter-spacing:.04em;vertical-align:bottom}
+.heat td:first-child,.heat th:first-child{text-align:left;white-space:nowrap}
+.heat td.cell{font-variant-numeric:tabular-nums;font-weight:700;min-width:52px}
+.minibar{display:flex;height:10px;width:120px;border-radius:3px;overflow:hidden;background:var(--line-2)}
+.minibar i{display:block;height:100%}
+
+/* bars */
+.bars{display:grid;gap:8px}
+.bar{display:grid;grid-template-columns:minmax(110px,150px) 1fr 44px;align-items:center;gap:10px;font-size:14px}
+.bar .track{height:14px;background:var(--line-2);border-radius:3px;overflow:hidden}
+.bar .fill{height:100%;background:var(--accent);border-radius:3px}
+.bar .val{text-align:right;font-variant-numeric:tabular-nums;font-weight:700}
+
+/* pipeline */
+.flow{display:grid;gap:14px}
+.lane{display:grid;gap:8px}
+.lane-label{font:600 12px/1 var(--mono);text-transform:uppercase;letter-spacing:.06em;color:var(--muted)}
+.steps{display:flex;flex-wrap:wrap;align-items:stretch;gap:8px}
+.step{flex:1 1 150px;background:var(--surface);border:1px solid var(--line);border-radius:8px;padding:10px 12px;display:grid;gap:4px;position:relative}
+.step b{font-size:14px}
+.step small{color:var(--muted);font-size:13px;line-height:1.35}
+.step .tool{font:600 11px/1.3 var(--mono);color:var(--accent)}
+.step.human{border-color:var(--human);background:var(--human-soft)}
+.step.human .tool{color:var(--human)}
+.step.loop{border-style:dashed}
+.arrow{align-self:center;color:var(--muted);font-family:var(--mono)}
+
+/* accuracy */
+.acc-big{display:flex;flex-wrap:wrap;align-items:flex-end;gap:12px 28px}
+.acc-big .fig{display:grid;gap:2px}
+.acc-big .fig b{font:700 44px/1 var(--display);font-variant-numeric:tabular-nums}
+.acc-big .fig span{font-size:13px;color:var(--muted)}
+.acc-big .to{font:700 28px/1 var(--display);color:var(--muted);padding-bottom:18px}
+.pair{display:grid;grid-template-columns:70px 1fr;gap:4px 10px;align-items:center;font-size:14px}
+.pair .t{height:10px;background:var(--line-2);border-radius:3px;overflow:hidden}
+.pair .f1{height:100%;background:var(--muted);opacity:.55}
+.pair .f2{height:100%;background:var(--accent)}
+.sample th,.sample td{padding:7px 8px;border-bottom:1px solid var(--line-2);font-size:13.5px;text-align:center;white-space:nowrap}
+.sample th{font:600 11px/1.2 var(--mono);color:var(--muted);text-transform:uppercase}
+.sample td:first-child,.sample th:first-child{text-align:left}
+.ok{color:var(--go);font-weight:700} .bad{color:var(--stop);font-weight:700} .na{color:var(--muted)}
+.fix{background:var(--go-soft)} .brk{background:var(--stop-soft)}
+
+/* main table */
+.filters{display:flex;flex-wrap:wrap;gap:10px;align-items:center}
+.filters input,.filters select{font:inherit;font-size:14px;padding:8px 10px;border-radius:8px;border:1px solid var(--line);background:var(--surface);color:var(--ink);min-width:0}
+.filters input[type=search]{flex:1 1 220px}
+.filters label{display:flex;align-items:center;gap:6px;font-size:14px;color:var(--muted)}
+.count{font-size:14px;color:var(--muted)}
+.apps th,.apps td{padding:9px 10px;border-bottom:1px solid var(--line-2);text-align:left;font-size:14px;vertical-align:top}
+.apps th{font:600 11px/1.2 var(--mono);color:var(--muted);text-transform:uppercase;letter-spacing:.04em;position:sticky;top:0;background:var(--surface);z-index:1}
+.apps tbody tr.row{cursor:pointer}
+.apps tbody tr.row:hover td{background:var(--line-2)}
+.apps td.name b{display:block}
+.apps td.name small{color:var(--muted);font-size:12.5px}
+.detail td{background:var(--paper);padding:14px 16px}
+.detail-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,260px),1fr));gap:14px;font-size:14px}
+.detail-grid h4{margin:0 0 4px;font:600 11px/1.2 var(--mono);text-transform:uppercase;color:var(--muted);letter-spacing:.05em}
+blockquote{margin:4px 0 0;padding:6px 10px;border-left:3px solid var(--line);color:var(--muted);font-size:13.5px}
+.ev-ok{border-left-color:var(--go)} .ev-bad{border-left-color:var(--stop)}
+.wrapurl{word-break:break-all;font-size:12.5px}
+ul.clean{margin:0;padding-left:18px;display:grid;gap:4px}
+footer{color:var(--muted);font-size:14px;display:grid;gap:10px;border-top:1px solid var(--line);padding-top:20px}
+@media (max-width:560px){ .bar{grid-template-columns:96px 1fr 36px} .finding{grid-template-columns:1fr} .finding .k{grid-row:auto} }
+@media (prefers-reduced-motion:no-preference){ .fill,.f2{transition:width .5s ease} }
+</style>
+</head>
+<body>
+<div class="wrap" id="app">
+  <header class="top">
+    <div class="eyebrow">Composio · AI Product Ops take-home · <span id="run-date"></span></div>
+    <h1 id="h1">Which of 100 apps could become agent toolkits today?</h1>
+    <p class="lede" id="lede"></p>
+    <div class="meta-row">
+      <span>Gaurav A Gopalakrishnan</span>
+      <a id="repo-link" href="https://github.com/random-gau/composio-app-research">Source repo + README</a>
+      <a href="results.json">results.json (for agents)</a>
+      <a href="#matrix">Jump to all 100 apps</a>
+    </div>
+    <div class="vbar" id="vbar" role="img" aria-label="Verdict split across 100 apps"></div>
+    <div class="legend">
+      <span style="--c:var(--go)">Build now: public docs + self-serve credentials</span>
+      <span style="--c:var(--warn)">Build with friction: paid plan, trial, app review or local tool</span>
+      <span style="--c:var(--stop)">Blocked: partnership / enterprise only, or no public API</span>
+    </div>
+  </header>
+
+  <section id="patterns">
+    <div class="sec-head"><div class="eyebrow">The patterns</div><h2 id="patterns-title">What the 100 apps have in common</h2></div>
+    <div class="findings" id="findings"></div>
+  </section>
+
+  <section>
+    <div class="sec-head"><div class="eyebrow">Clusters</div><h2>Who is self-serve and who is gated, by category</h2>
+      <p>Each cell counts apps in that category with that access gate. The bar on the right is the verdict mix for the category.</p></div>
+    <div class="panel scroll"><table class="heat" id="heat"></table></div>
+    <div class="grid-3">
+      <div class="panel"><h3>Auth methods supported</h3><p class="count" style="margin:4px 0 12px">Share of apps whose API documents each method (an app can have several).</p><div class="bars" id="auth-any"></div></div>
+      <div class="panel"><h3>Most common blockers</h3><p class="count" style="margin:4px 0 12px">Main reason among apps that are not build-now.</p><div class="bars" id="blockers"></div></div>
+      <div class="panel"><h3>MCP today</h3><p class="count" style="margin:4px 0 12px">Vendor-published MCP servers vs community-only vs none found.</p><div class="bars" id="mcp"></div></div>
+    </div>
+    <div class="grid-2">
+      <div class="panel"><h3>Easy wins not yet in Composio's catalog</h3><p class="count" style="margin:4px 0 12px">Build-now apps with no matching toolkit in Composio's catalog when this ran.</p><div class="chips" id="wins"></div></div>
+      <div class="panel"><h3>Needs outreach</h3><p class="count" style="margin:4px 0 12px">Access requires approval, app review, a partnership or sales.</p><div class="chips" id="outreach"></div></div>
+    </div>
+  </section>
+
+  <section id="agent">
+    <div class="sec-head"><div class="eyebrow">The agent</div><h2>How the research ran, and where a human was needed</h2>
+      <p>A Python pipeline built on Composio's own tools. Pass 1 researches each app once. Pass 2 runs five verification loops, re-researches whatever they flag, and escalates what it still can't settle. Purple steps are human.</p></div>
+    <div class="panel flow" id="flow"></div>
+    <div class="grid-2">
+      <div class="panel"><h3>What the agent did on its own</h3><ul class="clean" id="agent-facts" style="margin-top:8px"></ul></div>
+      <div class="panel"><h3>Where a human was needed</h3><ul class="clean" id="human-facts" style="margin-top:8px"></ul></div>
+    </div>
+  </section>
+
+  <section id="verification">
+    <div class="sec-head"><div class="eyebrow">Verification</div><h2>How accurate is it?</h2>
+      <p id="acc-intro"></p></div>
+    <div class="grid-2">
+      <div class="panel" style="display:grid;gap:18px">
+        <div class="acc-big" id="acc-big"></div>
+        <div style="display:grid;gap:10px" id="acc-fields"></div>
+        <div class="legend"><span style="--c:var(--muted)">Pass 1 (single pass)</span><span style="--c:var(--accent)">Pass 2 (after loops)</span></div>
+      </div>
+      <div class="panel"><h3>What each loop caught across all 100 apps</h3><div class="bars" id="loops" style="margin-top:12px"></div>
+        <p class="count" style="margin-top:14px" id="loop-note"></p></div>
+    </div>
+    <div class="panel scroll"><h3 style="margin-bottom:10px">The hand-checked sample: pass 1 → pass 2, field by field</h3><table class="sample" id="sample"></table>
+      <p class="count" style="margin-top:10px">✓ correct · ✗ wrong · green cell = the loops fixed it · red cell = the loops broke it · — not scored. Hover a cell for the agent's answer.</p></div>
+    <div class="grid-2">
+      <div class="panel"><h3>Where it was still wrong</h3><ul class="clean" id="misses" style="margin-top:8px"></ul></div>
+      <div class="panel"><h3>Limits of this check</h3><ul class="clean" id="limits" style="margin-top:8px"></ul></div>
+    </div>
+  </section>
+
+  <section id="matrix">
+    <div class="sec-head"><div class="eyebrow">Findings</div><h2>All 100 apps</h2><p>Click a row for the evidence: cited URL, verbatim quote, whether the quote was found on the page, and what the verification loops changed.</p></div>
+    <div class="filters">
+      <input type="search" id="q" placeholder="Search app, auth, notes…" aria-label="Search apps">
+      <select id="f-cat" aria-label="Category"><option value="">All categories</option></select>
+      <select id="f-ver" aria-label="Verdict"><option value="">All verdicts</option><option value="build_now">Build now</option><option value="build_with_friction">With friction</option><option value="blocked">Blocked</option></select>
+      <select id="f-acc" aria-label="Access"><option value="">All access gates</option></select>
+      <label><input type="checkbox" id="f-changed"> Changed by loops</label>
+      <label><input type="checkbox" id="f-human"> Needs human</label>
+      <span class="count" id="count"></span>
+    </div>
+    <div class="panel scroll" style="padding:0;max-height:78vh;overflow:auto"><table class="apps" id="apps"></table></div>
+  </section>
+
+  <footer>
+    <div id="foot-run"></div>
+    <div>Definitions of every label are in <span class="mono">agent/schema.py</span>. Accuracy rules are in <span class="mono">agent/score.py</span>. Nothing on this page is typed by hand except the pattern wording; every number is computed from the run data.</div>
+  </footer>
+</div>
+
+<script>
+const DATA = /*__DATA__*/null;
+const $ = s => document.querySelector(s);
+const esc = s => String(s ?? "").replace(/[&<>"']/g, c => ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));
+const pct = (a,b) => b ? Math.round(100*a/b) : 0;
+const LBL = {
+  build_now:"Build now", build_with_friction:"With friction", blocked:"Blocked",
+  self_serve_free:"Self-serve free", self_serve_trial:"Trial only", paid_plan:"Paid plan", approval_or_review:"Approval / review",
+  partner_or_sales:"Partner / sales", open_source_local:"Open-source local", unknown:"Unknown",
+  oauth2:"OAuth 2", api_key:"API key", bearer_token:"Static token", basic:"Basic", jwt_or_signed:"JWT / signed", none:"None", other:"Other",
+  official:"Official", community_only:"Community only", none_found:"None found",
+  paid_plan_b:"Paid plan", partner_approval:"Partnership", app_review:"App review", no_public_api:"No public API",
+  local_tool_only:"Local tool only", enterprise_only:"Enterprise only", docs_unclear:"Docs unclear",
+  rest:"REST", graphql:"GraphQL", soap:"SOAP", websocket:"WebSocket", sdk_or_cli_only:"SDK/CLI only",
+  auth:"Auth", access:"Access", api:"API", mcp:"MCP", verdict:"Verdict",
+  L1_evidence:"L1 evidence quote check", L2_rules:"L2 consistency rules", L3_catalog:"L3 Composio catalog", L4_verifier:"L4 blind verifier (other model)", L5_mcp_probe:"L5 MCP probe"
+};
+const L = k => LBL[k] || k;
+const ACCESS_ORDER = ["self_serve_free","self_serve_trial","paid_plan","approval_or_review","partner_or_sales","open_source_local","unknown"];
+const VCLS = {build_now:"go", build_with_friction:"warn", blocked:"stop"};
+const S = DATA.stats, APPS = DATA.apps, N = S.n;
+
+/* header */
+const run = DATA.run || {};
+$("#run-date").textContent = run.date || "";
+if (run.repo) $("#repo-link").href = run.repo;
+const ins = DATA.insights || {};
+if (ins.h1) $("#h1").textContent = ins.h1;
+$("#lede").textContent = ins.lede || `An agent researched ${N} apps (auth, access gate, API surface, MCP, buildability), cited a source and a verbatim quote for each answer, then checked itself in five loops. ${S.verdict.build_now||0} could be built today, ${S.verdict.build_with_friction||0} need a paid plan, review or other hurdle, and ${S.verdict.blocked||0} are blocked.`;
+$("#vbar").innerHTML = ["build_now","build_with_friction","blocked"].map(k => {
+  const c = S.verdict[k]||0; return c ? `<div class="v-${k}" style="width:${pct(c,N)}%" title="${L(k)}: ${c}">${c} ${pct(c,N)>=14?L(k):""}</div>` : "";
+}).join("");
+
+/* findings */
+function autoFindings(){
+  const f = [];
+  const authAny = S.auth_any, top = Object.entries(S.auth_primary).sort((a,b)=>b[1]-a[1])[0]||["",0];
+  f.push({k:`${pct((authAny.oauth2||0),N)}%`, title:`OAuth 2 is the most common auth; ${L(top[0])} is the usual primary`, body:`${authAny.oauth2||0} apps document OAuth 2 and ${(authAny.api_key||0)+(authAny.bearer_token||0)} document a static key or token. Many offer both.`});
+  f.push({k:`${S.access.self_serve_free||0}`, title:"apps are self-serve and free to start", body:`Paid-plan-only: ${S.access.paid_plan||0}. Trial-only: ${S.access.self_serve_trial||0}. Approval or review: ${S.access.approval_or_review||0}. Partner or sales: ${S.access.partner_or_sales||0}.`});
+  const bl = Object.entries(S.blocker).sort((a,b)=>b[1]-a[1])[0]||["none",0];
+  f.push({k:`${bl[1]}`, title:`The most common blocker is ${L(bl[0]==="paid_plan"?"paid_plan_b":bl[0]).toLowerCase()}`, body:`Among apps that are not build-now.`});
+  f.push({k:`${S.mcp.official||0}`, title:"apps already publish their own MCP server", body:`Community-only: ${S.mcp.community_only||0}. None found: ${S.mcp.none_found||0}.`});
+  return f;
+}
+const finds = (ins.patterns && ins.patterns.length) ? ins.patterns : autoFindings();
+$("#findings").innerHTML = finds.map(x => `<div class="finding"><div class="k">${esc(x.k)}</div><h3>${esc(x.title)}</h3><p>${esc(x.body)}</p></div>`).join("");
+
+/* heat matrix */
+const maxCell = Math.max(...S.categories.flatMap(c => Object.values(S.cat_access[c]||{})), 1);
+const accCols = ACCESS_ORDER.filter(a => S.access[a]);
+$("#heat").innerHTML = `<thead><tr><th>Category</th>${accCols.map(a=>`<th>${L(a)}</th>`).join("")}<th>Verdict mix</th><th>Official MCP</th></tr></thead><tbody>` +
+  S.categories.map(c => {
+    const row = S.cat_access[c]||{}, vv = S.cat_verdict[c]||{}, tot = Object.values(vv).reduce((a,b)=>a+b,0);
+    return `<tr><td>${esc(c)}</td>${accCols.map(a => { const v=row[a]||0; const al = v? (0.12+0.7*v/maxCell):0;
+      return `<td class="cell" style="background:color-mix(in srgb, var(--accent) ${Math.round(al*100)}%, transparent);color:${al>0.5?"var(--surface)":"var(--ink)"}">${v||""}</td>`; }).join("")}
+      <td><div class="minibar" title="${["build_now","build_with_friction","blocked"].map(k=>`${L(k)} ${vv[k]||0}`).join(" · ")}">${["build_now","build_with_friction","blocked"].map(k=>`<i style="width:${pct(vv[k]||0,tot)}%;background:var(--${VCLS[k]})"></i>`).join("")}</div></td>
+      <td class="num">${S.cat_mcp[c]||0}/${tot}</td></tr>`;
+  }).join("") + `</tbody>`;
+
+/* bars */
+function bars(el, entries, total, color){
+  el.innerHTML = entries.map(([k,v]) => `<div class="bar"><span>${esc(k)}</span><div class="track"><div class="fill" style="width:${pct(v,total)}%;${color?`background:${color}`:""}"></div></div><span class="val">${v}</span></div>`).join("");
+}
+bars($("#auth-any"), ["oauth2","api_key","bearer_token","basic","jwt_or_signed","none","other"].filter(k=>S.auth_any[k]).map(k=>[L(k),S.auth_any[k]]), N);
+const blk = Object.entries(S.blocker).sort((a,b)=>b[1]-a[1]);
+bars($("#blockers"), blk.map(([k,v])=>[L(k==="paid_plan"?"paid_plan_b":k),v]), blk.reduce((a,[,v])=>a+v,0), "var(--warn)");
+bars($("#mcp"), ["official","community_only","none_found"].map(k=>[L(k),S.mcp[k]||0]), N, "var(--go)");
+$("#wins").innerHTML = S.easy_wins_not_in_catalog.length ? S.easy_wins_not_in_catalog.map(n=>`<span class="pill go">${esc(n)}</span>`).join("") : `<span class="count">None: every build-now app already has a Composio toolkit.</span>`;
+$("#outreach").innerHTML = S.outreach.map(o=>`<span class="pill ${o.tier==="partner_or_sales"?"stop":"warn"}" title="${L(o.tier)}">${esc(o.name)}</span>`).join("");
+
+/* flow */
+const steps = (arr) => `<div class="steps">${arr.map((s,i)=>`${i?'<span class="arrow" aria-hidden="true">→</span>':""}<div class="step ${s.cls||""}"><span class="tool">${esc(s.tool)}</span><b>${esc(s.t)}</b><small>${esc(s.d)}</small></div>`).join("")}</div>`;
+$("#flow").innerHTML = `
+ <div class="lane"><span class="lane-label">Setup</span>${steps([
+   {cls:"human",tool:"human",t:"Rubric + schema",d:"Defined every label (e.g. what counts as self-serve) so 100 answers are comparable."},
+   {tool:"apps.csv",t:"100 apps",d:"Name, category, docs hint from the brief."}])}</div>
+ <div class="lane"><span class="lane-label">Pass 1 · single pass per app</span>${steps([
+   {tool:"COMPOSIO_SEARCH_WEB",t:"Search",d:"3 queries: auth docs, access/pricing, MCP."},
+   {tool:"httpx · COMPOSIO_SEARCH_FETCH_URL_CONTENT",t:"Fetch",d:"Official domain first; Composio fetch for JS-heavy pages."},
+   {tool:"keyword excerpting",t:"Trim",d:"Keep paragraphs about auth, plans, endpoints, MCP."},
+   {tool:"Gemini",t:"Extract",d:"Fill the schema; every field cites a source URL + verbatim quote."}])}</div>
+ <div class="lane"><span class="lane-label">Pass 2 · verification loops (up to 2 rounds)</span>${steps([
+   {cls:"loop",tool:"L1 re-fetch",t:"Quote check",d:"Is the quote really on the cited page?"},
+   {cls:"loop",tool:"L2 rules",t:"Consistency",d:"Verdict vs access gate vs blocker must agree."},
+   {cls:"loop",tool:"L3 Composio /toolkits",t:"Catalog",d:"Compare auth with Composio's own toolkit catalog."},
+   {cls:"loop",tool:"L4 Groq · Llama",t:"Blind verifier",d:"Different model family answers from the same sources."},
+   {cls:"loop",tool:"L5 search",t:"MCP probe",d:"Look for a vendor MCP server pass 1 missed."}])}</div>
+ <div class="lane"><span class="lane-label">Resolve</span>${steps([
+   {tool:"search + fetch",t:"Targeted re-research",d:"New queries only for flagged fields."},
+   {tool:"Gemini",t:"Adjudicate",d:"Re-decide flagged fields; must cite a quote. Re-checked by L1–L4."},
+   {cls:"human",tool:"human",t:"Review queue",d:"Fields still failing checks go to a person."},
+   {cls:"human",tool:"human",t:"Sample check + patterns",d:"Hand-verified 20 apps; wrote the headline wording."}])}</div>`;
+const lu = run.llm_usage || {};
+$("#agent-facts").innerHTML = [
+  `Researched ${N} apps end to end: ${run.pages_fetched ? run.pages_fetched+" pages fetched, " : ""}${run.searches ? run.searches+" searches" : "searches via Composio"}.`,
+  `Flagged ${S.apps_flagged} of ${N} apps in pass 2; changed at least one field on ${S.apps_changed}.`,
+  `Checked ${S.p1_cited} cited quotes from pass 1 against the live pages.`,
+  `Matched ${S.in_catalog} of ${N} apps to an existing Composio toolkit for the auth cross-check.`,
+  run.runtime ? `Runtime: ${run.runtime}.` : ""
+].filter(Boolean).map(x=>`<li>${esc(x)}</li>`).join("");
+const hq = S.needs_human_apps;
+$("#human-facts").innerHTML = [
+  `Wrote the rubric that defines each label; without it "self-serve" meant different things for different apps.`,
+  `Hand-checked a stratified sample of ${(DATA.accuracy.truth||[]).length || 20} apps (2 per category) against the vendors' own docs.`,
+  `${hq.length} apps still had an unresolved field after two automated rounds and went to the review queue${hq.length?": "+hq.slice(0,8).map(x=>x.name).join(", ")+(hq.length>8?"…":""):""}.`,
+  ...(ins.human_notes||[])
+].map(x=>`<li>${esc(x)}</li>`).join("");
+
+/* accuracy */
+const A = (DATA.accuracy||{}).summary || {};
+const p1 = A.pass1, p2 = A.pass2;
+if (p1 && p2){
+  $("#acc-intro").textContent = ins.acc_intro || `Twenty apps (two per category) were checked by hand against vendor docs, blind to the agent's answers, and each of five fields was scored. That gives ${p2.overall.n} scored judgements. The same sample is scored for pass 1 and pass 2.`;
+  $("#acc-big").innerHTML = `<div class="fig"><b>${p1.overall.pct}%</b><span>Pass 1 · ${p1.overall.correct}/${p1.overall.n}</span></div><div class="to" aria-hidden="true">→</div><div class="fig"><b style="color:var(--accent)">${p2.overall.pct}%</b><span>Pass 2 · ${p2.overall.correct}/${p2.overall.n}</span></div>`;
+  $("#acc-fields").innerHTML = ["auth","access","api","mcp","verdict"].map(f => { const a=p1.per_field[f], b=p2.per_field[f];
+    return `<div class="pair"><span>${L(f)}</span><div style="display:grid;gap:3px"><div class="t"><div class="f1" style="width:${a.pct||0}%"></div></div><div class="t"><div class="f2" style="width:${b.pct||0}%"></div></div></div>
+    <span></span><span class="count num">${a.correct}/${a.n} → ${b.correct}/${b.n}</span></div>`; }).join("");
+} else { $("#acc-intro").textContent = "Accuracy scoring has not been run yet."; }
+const loopE = Object.entries(S.loops_initial).sort((a,b)=>a[0].localeCompare(b[0]));
+bars($("#loops"), loopE.map(([k,v])=>[L(k),v]), Math.max(...loopE.map(e=>e[1]),1), "var(--warn)");
+$("#loop-note").textContent = `Flags raised in round 0. Pass 1 cited ${S.p1_cited} quotes; ${S.p1_quote_fail} of those could not be found (or only partly) on the cited page, and ${S.p1_no_evidence} fields had no evidence at all. Field outcomes after pass 2: ${Object.entries(S.field_status).map(([k,v])=>`${v} ${k.replace(/_/g," ")}`).join(", ")}.`;
+
+const rows = (DATA.accuracy||{}).rows || [];
+const byId = {}; rows.forEach(r => { (byId[r.id] = byId[r.id]||{name:r.name})[r.pass] = r; });
+const F = ["auth","access","api","mcp","verdict"];
+$("#sample").innerHTML = `<thead><tr><th>App</th>${F.map(f=>`<th>${L(f)}</th>`).join("")}</tr></thead><tbody>` + Object.entries(byId).map(([id,o]) => {
+  return `<tr><td>${esc(o.name)}</td>${F.map(f => { const a=o.pass1?.[f], b=o.pass2?.[f];
+    if (a==null && b==null) return `<td class="na">—</td>`;
+    const cls = (a===false && b===true) ? "fix" : (a===true && b===false) ? "brk" : "";
+    const m = v => v===true?'<span class="ok">✓</span>':v===false?'<span class="bad">✗</span>':'<span class="na">—</span>';
+    const tip = `pass 1: ${JSON.stringify(o.pass1?.agent?.[f])} → pass 2: ${JSON.stringify(o.pass2?.agent?.[f])}`;
+    return `<td class="${cls}" title="${esc(tip)}">${m(a)} → ${m(b)}</td>`; }).join("")}</tr>`; }).join("") + `</tbody>`;
+const misses = [];
+Object.values(byId).forEach(o => F.forEach(f => { if (o.pass2 && o.pass2[f]===false) misses.push(`${o.name}, ${L(f)}: agent said ${JSON.stringify(o.pass2.agent[f])}`); }));
+$("#misses").innerHTML = (ins.misses || misses).map(x=>`<li>${esc(x)}</li>`).join("") || "<li>No misses on the sample.</li>";
+$("#limits").innerHTML = (ins.limits || [
+  "20 of 100 apps is a small sample; a single miss moves a field's score by 5 points.",
+  "Borderline apps accept two labels (listed in data/ground_truth_sample.csv with the reason).",
+  "Pricing and access gates change often; the evidence URLs are the record of what the docs said on the run date."
+]).map(x=>`<li>${esc(x)}</li>`).join("");
+
+/* main table */
+const cats = S.categories; cats.forEach(c => $("#f-cat").insertAdjacentHTML("beforeend", `<option>${esc(c)}</option>`));
+ACCESS_ORDER.forEach(a => S.access[a] && $("#f-acc").insertAdjacentHTML("beforeend", `<option value="${a}">${L(a)}</option>`));
+const statusPill = r => {
+  if (r.needs_human && r.needs_human.length) return `<span class="pill human">needs human: ${r.needs_human.map(L).join(", ")}</span>`;
+  if (r.human_override) return `<span class="pill human">human-resolved</span>`;
+  if (r.changed_fields && r.changed_fields.length) return `<span class="pill acc">corrected: ${r.changed_fields.map(L).join(", ")}</span>`;
+  return `<span class="pill go">verified</span>`;
+};
+function detail(r){
+  const ev = F.map(f => { const e = r.evidence[f]||{}; if (!e.url && !e.quote) return `<div><h4>${L(f)} evidence</h4><span class="count">none cited${f==="mcp"&&r.mcp==="none_found"?" (absence)":""}</span></div>`;
+    const good = e.check && e.check.startsWith("ok");
+    return `<div><h4>${L(f)} evidence ${e.check?`<span class="pill ${good?"go":"stop"}">${good?"quote found":"quote "+esc(e.check).replace("_"," ")}</span>`:""}</h4>
+      ${e.url?`<a class="wrapurl" href="${esc(e.url)}" target="_blank" rel="noopener">${esc(e.url)}</a>`:""}${e.quote?`<blockquote class="${good?"ev-ok":e.check?"ev-bad":""}">“${esc(e.quote)}”</blockquote>`:""}</div>`; }).join("");
+  const before = r.before||{};
+  const changes = (r.changed_fields||[]).map(f => { const k = {auth:"auth_methods",access:"access_tier",api:"api_types",mcp:"mcp",verdict:"verdict"}[f];
+    return `<li>${L(f)}: ${esc(JSON.stringify(before[k]))} → ${esc(JSON.stringify(r[k]))}</li>`; }).join("");
+  const iss = (r.issues_initial||[]).map(i=>`<li><span class="mono">${esc(i.loop.split("_")[0])}</span> ${L(i.field)}: ${esc(i.problem)}</li>`).join("");
+  const cat = r.composio_catalog||{};
+  return `<div class="detail-grid">
+    <div><h4>What it is</h4>${esc(r.one_liner)}<h4 style="margin-top:10px">Access</h4>${esc(r.access_notes)}<h4 style="margin-top:10px">API</h4>${esc(r.api_notes)} ${r.api_breadth?`<span class="pill">${esc(r.api_breadth)}</span>`:""}
+      <h4 style="margin-top:10px">Blocker</h4>${esc(L(r.blocker==="paid_plan"?"paid_plan_b":r.blocker))}${r.blocker_notes?": "+esc(r.blocker_notes):""}
+      ${r.mcp_url?`<h4 style="margin-top:10px">MCP</h4><a class="wrapurl" href="${esc(r.mcp_url)}" target="_blank" rel="noopener">${esc(r.mcp_url)}</a>`:""}
+      <h4 style="margin-top:10px">Composio catalog</h4>${cat.in_catalog?`toolkit <span class="mono">${esc(cat.slug)}</span> · auth ${esc((cat.auth||[]).join(", "))}${cat.tools_count?` · ${cat.tools_count} tools`:""}`:"no matching toolkit"}</div>
+    <div style="display:grid;gap:10px">${ev}</div>
+    <div><h4>Verification flags (round 0)</h4>${iss?`<ul class="clean">${iss}</ul>`:'<span class="count">none</span>'}
+      <h4 style="margin-top:10px">Changed by the loops</h4>${changes?`<ul class="clean">${changes}</ul>`:'<span class="count">nothing</span>'}
+      ${r.human_override?`<h4 style="margin-top:10px">Human override</h4><ul class="clean">${r.human_override.map(h=>`<li>${L(h.field)} → ${esc(JSON.stringify(h.to))}${h.note?": "+esc(h.note):""}</li>`).join("")}</ul>`:""}
+      <h4 style="margin-top:10px">Sources read</h4><ul class="clean">${(r.sources||[]).slice(0,6).map(u=>`<li><a class="wrapurl" href="${esc(u)}" target="_blank" rel="noopener">${esc(u)}</a></li>`).join("")}</ul></div></div>`;
+}
+const open = new Set();
+function renderTable(){
+  const q = $("#q").value.trim().toLowerCase(), fc=$("#f-cat").value, fv=$("#f-ver").value, fa=$("#f-acc").value, fh=$("#f-human").checked, fch=$("#f-changed").checked;
+  const list = APPS.filter(r => (!fc||r.category===fc)&&(!fv||r.verdict===fv)&&(!fa||r.access_tier===fa)&&(!fh||(r.needs_human||[]).length)&&(!fch||(r.changed_fields||[]).length)
+    && (!q || JSON.stringify([r.name,r.category,r.one_liner,r.auth_methods,r.access_notes,r.api_notes,r.blocker_notes,r.mcp]).toLowerCase().includes(q)));
+  $("#count").textContent = `${list.length} of ${N}`;
+  $("#apps").innerHTML = `<thead><tr><th>#</th><th>App</th><th>Auth</th><th>Access</th><th>API</th><th>MCP</th><th>Verdict</th><th>Checks</th></tr></thead><tbody>` +
+   list.map(r => `<tr class="row" data-id="${r.id}" tabindex="0" aria-expanded="${open.has(r.id)}"><td class="num">${r.id}</td>
+     <td class="name"><b>${esc(r.name)}</b><small>${esc(r.category)}</small></td>
+     <td>${r.auth_methods.map(m=>`<span class="pill ${m===r.auth_primary?"acc":""}">${L(m)}</span>`).join(" ")}</td>
+     <td>${L(r.access_tier)}</td><td>${r.api_types.map(L).join(", ")}</td><td>${L(r.mcp)}</td>
+     <td><span class="pill ${VCLS[r.verdict]}">${L(r.verdict)}</span></td><td>${statusPill(r)}</td></tr>
+     ${open.has(r.id)?`<tr class="detail"><td colspan="8">${detail(r)}</td></tr>`:""}`).join("") + `</tbody>`;
+}
+$("#apps").addEventListener("click", e => { if (e.target.closest("a")) return; const tr=e.target.closest("tr.row"); if(!tr) return; const id=+tr.dataset.id; open.has(id)?open.delete(id):open.add(id); renderTable(); });
+$("#apps").addEventListener("keydown", e => { if (e.key!=="Enter"&&e.key!==" ") return; const tr=e.target.closest("tr.row"); if(!tr) return; e.preventDefault(); const id=+tr.dataset.id; open.has(id)?open.delete(id):open.add(id); renderTable(); document.querySelector(`tr.row[data-id="${id}"]`)?.focus(); });
+["#q","#f-cat","#f-ver","#f-acc","#f-human","#f-changed"].forEach(s => $(s).addEventListener("input", renderTable));
+renderTable();
+$("#foot-run").textContent = run.summary || "";
+</script>
+</body>
+</html>

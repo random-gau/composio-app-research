@@ -1,0 +1,93 @@
+{
+  "one_liner": "Omnichannel customer service platform with live chat, ticketing, and AI automation tools.",
+  "auth_methods": [
+    "api_key"
+  ],
+  "auth_primary": "api_key",
+  "auth_notes": "LiveAgent supports API v1 and API v3 keys, which are separate and managed under Configuration > System > API.",
+  "access_tier": "self_serve_free",
+  "access_notes": "LiveAgent offers a 30-day free trial that requires no credit card, letting you test all features.",
+  "api_types": [
+    "rest"
+  ],
+  "api_breadth": "broad",
+  "api_notes": "REST API with v1 and v3 endpoints covering tickets, conversations, and messages.",
+  "mcp": "official",
+  "mcp_url": "https://support.liveagent.com/578762-MCP-Tools-Reference",
+  "verdict": "build_now",
+  "blocker": "none",
+  "blocker_notes": "none",
+  "evidence": {
+    "auth": {
+      "url": "https://faq.liveagent.com/535002-LiveAgent-API-v1-vs-v3-Authentication-Differences-API-Key-Management-and-Resolving-403-Errors",
+      "quote": "Log in to your LiveAgent account. Navigate to Configuration > System > API. Generate or manage your API v3 key here."
+    },
+    "access": {
+      "url": "https://liveagent.com",
+      "quote": "Yes — LiveAgent comes with a 30‑day free trial that requires no credit card, letting you test all features before committing to a paid plan."
+    },
+    "api": {
+      "url": "https://faq.liveagent.com/535002-LiveAgent-API-v1-vs-v3-Authentication-Differences-API-Key-Management-and-Resolving-403-Errors",
+      "quote": "LiveAgent supports two API versions: API v1 – A legacy (deprecated) version. No new endpoints are being added, but it remains functional and can be used alongside API v3. API v3 – The current, actively developed version."
+    },
+    "mcp": {
+      "url": "https://support.liveagent.com/578762-MCP-Tools-Reference",
+      "quote": "This article documents every tool exposed by the LiveAgent MCP server, including the exact parameters each tool accepts and the exact fields it returns."
+    },
+    "verdict": {
+      "url": "https://liveagent.com",
+      "quote": "Yes — LiveAgent comes with a 30‑day free trial that requires no credit card, letting you test all features before committing to a paid plan."
+    }
+  },
+  "confidence": {
+    "auth": 0.9,
+    "access": 0.9,
+    "api": 0.9,
+    "mcp": 0.9,
+    "verdict": 0.9
+  },
+  "_model": "gemini-3.5-flash-lite",
+  "status": "ok",
+  "id": 16,
+  "name": "LiveAgent",
+  "category": "Support & Helpdesk",
+  "hint": "liveagent.com",
+  "sources": [
+    {
+      "url": "https://liveagent.com",
+      "via": "direct",
+      "chars": 10868
+    },
+    {
+      "url": "https://faq.liveagent.com/535002-LiveAgent-API-v1-vs-v3-Authentication-Differences-API-Key-Management-and-Resolving-403-Errors",
+      "via": "direct",
+      "chars": 3092
+    },
+    {
+      "url": "https://faq.liveagent.com/585717-Do-I-need-to-configure-an-MCP-server-in-my-OpenAI-account-to-use-AI-Agents-feature",
+      "via": "direct",
+      "chars": 1187
+    },
+    {
+      "url": "https://faq.liveagent.com/916372-API-v1-vs-API-v3-in-LiveAgent-Key-Differences-Authentication-and-Resolving-ApiKey-Errors",
+      "via": "direct",
+      "chars": 3443
+    },
+    {
+      "url": "https://support.liveagent.com/578762-MCP-Tools-Reference",
+      "via": "direct",
+      "chars": 25338
+    },
+    {
+      "url": "https://support.liveagent.com/578762-MCP-tools-reference",
+      "via": "direct",
+      "chars": 25338
+    }
+  ],
+  "queries": [
+    "LiveAgent API authentication developer docs",
+    "LiveAgent API access pricing plan developer",
+    "LiveAgent MCP server"
+  ],
+  "seconds": 53.4
+}

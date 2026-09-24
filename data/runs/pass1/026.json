@@ -1,0 +1,95 @@
+{
+  "one_liner": "Voice, video, and text communication platform with a broad developer API.",
+  "auth_methods": [
+    "oauth2",
+    "api_key"
+  ],
+  "auth_primary": "oauth2",
+  "auth_notes": "OAuth2 is used for user authentication and bot interactions, while bot tokens (API keys) authenticate bot applications.",
+  "access_tier": "self_serve_free",
+  "access_notes": "Sign up for a free developer account on the Discord Developer Portal to create applications and bots at no cost.",
+  "api_types": [
+    "rest",
+    "websocket"
+  ],
+  "api_breadth": "broad",
+  "api_notes": "Comprehensive REST and Gateway WebSocket APIs covering channels, guilds, users, messages, and voice base URL https://discord.com/api/v10",
+  "mcp": "none_found",
+  "mcp_url": null,
+  "verdict": "build_now",
+  "blocker": "none",
+  "blocker_notes": "Public API is fully self-serve and accessible for developers.",
+  "evidence": {
+    "auth": {
+      "url": "https://docs.discord.com/developers/discord-social-sdk/development-guides/account-linking-with-discord",
+      "quote": "This guide explains how to authenticate users with their existing Discord accounts via OAuth2, enabling seamless login and access to Discord features."
+    },
+    "access": {
+      "url": "https://docs.discord.com/developers/gateway/getting-started-with-privileged-intent-review",
+      "quote": "Previously, apps in fewer than 100 servers could access Privileged Intents by toggling them on in the Developer Portal, and apps in 100+ servers needed to apply for access."
+    },
+    "api": {
+      "url": "https://docs.discord.com/developers/discord-social-sdk/development-guides/provisional-accounts/external-credentials-exchange",
+      "quote": "requests.post('https://discord.com/api/v10/partner-sdk/token', json={'client_id': CLIENT_ID, 'client_secret': CLIENT_SECRET, 'external_auth_type': EXTERNAL_AUTH_TYPE, 'external_auth_token': external_token})"
+    },
+    "mcp": {
+      "url": null,
+      "quote": null
+    },
+    "verdict": {
+      "url": "https://docs.discord.com/developers/gateway/getting-started-with-privileged-intent-review",
+      "quote": "You can turn privileged intents on and off from the Developer Portal as needed. No need to apply for access."
+    }
+  },
+  "confidence": {
+    "auth": 0.9,
+    "access": 0.9,
+    "api": 0.9,
+    "mcp": 1.0,
+    "verdict": 0.9
+  },
+  "_model": "gemini-3.5-flash-lite",
+  "status": "ok",
+  "id": 26,
+  "name": "Discord",
+  "category": "Communications & Messaging",
+  "hint": "discord.com",
+  "sources": [
+    {
+      "url": "https://discord.com",
+      "via": "direct",
+      "chars": 1877
+    },
+    {
+      "url": "https://docs.discord.com/developers/discord-social-sdk/development-guides/account-linking-with-discord",
+      "via": "direct",
+      "chars": 17232
+    },
+    {
+      "url": "https://docs.discord.com/developers/discord-social-sdk/development-guides/provisional-accounts/external-credentials-exchange",
+      "via": "direct",
+      "chars": 4076
+    },
+    {
+      "url": "https://docs.discord.com/developers/discord-social-sdk/development-guides/provisional-accounts/identity-providers",
+      "via": "direct",
+      "chars": 5807
+    },
+    {
+      "url": "https://docs.discord.com/developers/gateway/getting-started-with-privileged-intent-review",
+      "via": "direct",
+      "chars": 12587
+    },
+    {
+      "url": "https://docs.discord.com/developers/platform/account-linking",
+      "via": "direct",
+      "chars": 7583
+    }
+  ],
+  "queries": [
+    "Discord API authentication developer docs",
+    "Discord API access pricing plan developer",
+    "Discord MCP server"
+  ],
+  "seconds": 53.3
+}

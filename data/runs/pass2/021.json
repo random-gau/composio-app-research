@@ -1,0 +1,258 @@
+{
+  "one_liner": "Slack is a messaging platform for teams, offering channels, direct messages, and integrations.",
+  "auth_methods": [
+    "oauth2",
+    "bearer_token"
+  ],
+  "auth_primary": "oauth2",
+  "auth_notes": "Supports OAuth 2.0 and token-based authentication (bot or user tokens passed as headers or POST parameters).",
+  "access_tier": "self_serve_free",
+  "access_notes": "Developers can sign up for a free Slack account and create an application via the Slack API portal with self-serve credentials.",
+  "api_types": [
+    "rest",
+    "websocket"
+  ],
+  "api_breadth": "broad",
+  "api_notes": "Comprehensive Web API and Events API covering messaging, users, channels, billing, and custom workflows.",
+  "mcp": "official",
+  "mcp_url": "https://docs.slack.dev/ai/slack-mcp-server",
+  "verdict": "build_now",
+  "blocker": "none",
+  "blocker_notes": "Publicly accessible API with self-serve developer accounts and broad documentation.",
+  "evidence": {
+    "auth": {
+      "url": "http://docs.slack.dev/reference/methods/team.billing.info.md",
+      "quote": "Authentication token bearing required scopes. Tokens should be passed as an HTTP Authorization header or alternatively, as a POST parameter.",
+      "check": "ok"
+    },
+    "access": {
+      "url": "https://api.slack.com/apps",
+      "quote": "You'll need to sign in to your Slack account to create an application.",
+      "check": "ok"
+    },
+    "api": {
+      "url": "http://docs.slack.dev/reference/methods/team.billing.info.md",
+      "quote": "Retrieve information about a workspace's billing plan. Use this information to customize features based on a workspace's billing plan.",
+      "check": "ok"
+    },
+    "mcp": {
+      "url": "https://docs.slack.dev/ai/slack-mcp-server",
+      "quote": "With the Slack MCP server, your integrated apps can search channels, send messages, and perform other Slack actions through MCP clients.",
+      "check": "ok"
+    },
+    "verdict": {
+      "url": "https://api.slack.com/apps",
+      "quote": "You'll need to sign in to your Slack account to create an application.",
+      "check": "ok"
+    }
+  },
+  "confidence": {
+    "auth": 0.9,
+    "access": 0.9,
+    "api": 0.9,
+    "mcp": 0.7,
+    "verdict": 0.9
+  },
+  "_model": "gemini-3.5-flash-lite",
+  "status": "ok",
+  "id": 21,
+  "name": "Slack",
+  "category": "Communications & Messaging",
+  "hint": "slack.com",
+  "sources": [
+    {
+      "url": "https://slack.com",
+      "via": "direct",
+      "chars": 6058
+    },
+    {
+      "url": "https://api.slack.com/apps",
+      "via": "direct",
+      "chars": 212
+    },
+    {
+      "url": "https://api.slack.com/authentication/basics",
+      "via": "direct",
+      "chars": 4298
+    },
+    {
+      "url": "https://slack.com/intl/en-gb/terms-of-service/api",
+      "via": "direct",
+      "chars": 24807
+    },
+    {
+      "url": "https://slack.com/pricing",
+      "via": "direct",
+      "chars": 23698
+    },
+    {
+      "url": "http://docs.slack.dev/reference/methods/team.billing.info.md",
+      "via": "direct",
+      "chars": 6611
+    },
+    {
+      "url": "https://slack.com/help/articles/48855576908307-Guide-to-Model-Context-Protocol-in-Slack",
+      "via": "verification"
+    },
+    {
+      "url": "https://github.com/karbassi/slack-mcp",
+      "via": "verification"
+    },
+    {
+      "url": "https://clickup.com/blog/hub/ai/mcp/slack",
+      "via": "verification"
+    },
+    {
+      "url": "https://explainx.ai/mcp-servers/slack-mcp-server-official",
+      "via": "verification"
+    },
+    {
+      "url": "https://docs.slack.dev/ai/slack-mcp-server",
+      "via": "verification"
+    },
+    {
+      "url": "https://docs.slack.dev/ai/slack-mcp-server/developing.md",
+      "via": "verification"
+    }
+  ],
+  "queries": [
+    "Slack API authentication developer docs",
+    "Slack API access pricing plan developer",
+    "Slack MCP server"
+  ],
+  "seconds": 53.2,
+  "verification_queries": [
+    "Slack MCP server model context protocol"
+  ],
+  "verification": {
+    "initial_issues": [
+      {
+        "loop": "L5_mcp_probe",
+        "field": "mcp",
+        "problem": "possible official MCP found: ['https://docs.slack.dev/ai/slack-mcp-server', 'https://slack.com/help/articles/48855576908307-Guide-to-Model-Context-Protocol-in-Slack']",
+        "urls": [
+          "https://docs.slack.dev/ai/slack-mcp-server",
+          "https://slack.com/help/articles/48855576908307-Guide-to-Model-Context-Protocol-in-Slack",
+          "https://docs.slack.dev/ai/slack-mcp-server/developing.md"
+        ]
+      }
+    ],
+    "final_issues": [],
+    "rounds": [
+      {
+        "round": 0,
+        "issues": [
+          {
+            "loop": "L5_mcp_probe",
+            "field": "mcp",
+            "problem": "possible official MCP found: ['https://docs.slack.dev/ai/slack-mcp-server', 'https://slack.com/help/articles/48855576908307-Guide-to-Model-Context-Protocol-in-Slack']",
+            "urls": [
+              "https://docs.slack.dev/ai/slack-mcp-server",
+              "https://slack.com/help/articles/48855576908307-Guide-to-Model-Context-Protocol-in-Slack",
+              "https://docs.slack.dev/ai/slack-mcp-server/developing.md"
+            ]
+          }
+        ],
+        "verifier": {
+          "auth_methods": [
+            "other"
+          ],
+          "auth_primary": "other",
+          "access_tier": "unknown",
+          "api_types": [
+            "none"
+          ],
+          "mcp": "unknown",
+          "verdict": "unknown",
+          "reasons": {
+            "auth": "The provided sources do not mention which authentication methods (e.g., OAuth2, bearer tokens) the Slack API uses.",
+            "access": "The sources contain no information about how developers obtain API credentials or whether a free self‑serve tier exists.",
+            "mcp": "There is no mention of any official or community‑only MCP server for Slack in the sources.",
+            "verdict": "Because the sources lack details on auth, access, and MCP, we cannot determine whether a toolkit could be built today."
+          },
+          "_model": "openai/gpt-oss-120b"
+        },
+        "autofix": []
+      },
+      {
+        "round": 1,
+        "queries": [
+          "Slack MCP server model context protocol"
+        ],
+        "new_sources": [
+          "https://slack.com",
+          "https://slack.com/help/articles/48855576908307-Guide-to-Model-Context-Protocol-in-Slack",
+          "https://github.com/karbassi/slack-mcp",
+          "https://clickup.com/blog/hub/ai/mcp/slack",
+          "https://explainx.ai/mcp-servers/slack-mcp-server-official",
+          "https://docs.slack.dev/ai/slack-mcp-server",
+          "https://docs.slack.dev/ai/slack-mcp-server/developing.md"
+        ],
+        "change_log": "Updated mcp status to official since Slack publishes an official Model Context Protocol server documented at docs.slack.dev.",
+        "issues": [],
+        "verifier": {
+          "auth_methods": [
+            "oauth2",
+            "bearer_token"
+          ],
+          "auth_primary": "oauth2",
+          "access_tier": "self_serve_free",
+          "api_types": [
+            "rest",
+            "websocket"
+          ],
+          "mcp": "official",
+          "verdict": "build_now",
+          "reasons": {
+            "auth": "Slack’s public API documentation specifies OAuth 2.0 for app authentication and the use of bearer tokens (OAuth tokens) for API calls; no API key, basic auth, or JWT methods are documented.",
+            "access": "Developers can create a Slack app and obtain tokens at no cost; free plan provides full API access without a paid plan.",
+            "mcp": "Slack provides an official MCP server, as described in the ClickUp blog and Slack documentation.",
+            "verdict": "Public REST API, free developer credentials, and an official MCP server are all available, allowing a toolkit to be built immediately."
+          },
+          "_model": "openai/gpt-oss-20b"
+        },
+        "autofix": []
+      }
+    ],
+    "catalog": {
+      "in_catalog": true,
+      "slug": "slack",
+      "auth": [
+        "oauth2"
+      ],
+      "tools_count": 159
+    },
+    "changed_fields": [
+      "mcp"
+    ],
+    "field_status": {
+      "auth": "verified",
+      "access": "verified",
+      "api": "verified",
+      "mcp": "corrected",
+      "verdict": "verified"
+    },
+    "needs_human": [],
+    "before": {
+      "auth_methods": [
+        "oauth2",
+        "bearer_token"
+      ],
+      "auth_primary": "oauth2",
+      "access_tier": "self_serve_free",
+      "access_notes": "Developers can sign up for a free Slack account and create an application via the Slack API portal with self-serve credentials.",
+      "api_types": [
+        "rest",
+        "websocket"
+      ],
+      "api_breadth": "broad",
+      "api_notes": "Comprehensive Web API and Events API covering messaging, users, channels, billing, and custom workflows.",
+      "mcp": "community_only",
+      "mcp_url": null,
+      "verdict": "build_now",
+      "blocker": "none",
+      "blocker_notes": "Publicly accessible API with self-serve developer accounts and broad documentation."
+    },
+    "seconds": 124.3
+  }
+}

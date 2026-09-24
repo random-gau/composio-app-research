@@ -1,0 +1,95 @@
+{
+  "one_liner": "Agentic document platform for parsing, extracting, splitting, classifying, and editing documents at scale.",
+  "auth_methods": [
+    "bearer_token",
+    "oauth2"
+  ],
+  "auth_primary": "bearer_token",
+  "auth_notes": "API keys are passed via bearer token or authenticated via OAuth device-code flow.",
+  "access_tier": "self_serve_free",
+  "access_notes": "Sign up right away on the Standard tier, pay-as-you-go plan.",
+  "api_types": [
+    "rest",
+    "sdk_or_cli_only"
+  ],
+  "api_breadth": "moderate",
+  "api_notes": "Endpoints cover parse, extract, split, classify, edit, jobs, upload, webhook, and usage export.",
+  "mcp": "official",
+  "mcp_url": "https://docs.reducto.ai/mcp-server",
+  "verdict": "build_now",
+  "blocker": "none",
+  "blocker_notes": "Public API with self-serve signup and official MCP server.",
+  "evidence": {
+    "auth": {
+      "url": "https://docs.reducto.ai/mcp-server",
+      "quote": "Authorization: Bearer your-api-key"
+    },
+    "access": {
+      "url": "https://reducto.ai",
+      "quote": "You can get API access right away by starting off on our Standard tier, pay-as-you-go plan."
+    },
+    "api": {
+      "url": "https://docs.reducto.ai/overview",
+      "quote": "For developers building automated pipelines. Available in Python, Node.js, Go, and REST."
+    },
+    "mcp": {
+      "url": "https://docs.reducto.ai/mcp-server",
+      "quote": "The Reducto MCP server connects AI agents directly to Reducto."
+    },
+    "verdict": {
+      "url": "https://reducto.ai",
+      "quote": "You can get API access right away by starting off on our Standard tier, pay-as-you-go plan."
+    }
+  },
+  "confidence": {
+    "auth": 1.0,
+    "access": 1.0,
+    "api": 1.0,
+    "mcp": 1.0,
+    "verdict": 1.0
+  },
+  "_model": "gemini-3.5-flash-lite",
+  "status": "ok",
+  "id": 95,
+  "name": "Reducto",
+  "category": "AI Research & Media",
+  "hint": "reducto.ai (document parsing)",
+  "sources": [
+    {
+      "url": "https://reducto.ai",
+      "via": "direct",
+      "chars": 10211
+    },
+    {
+      "url": "https://docs.reducto.ai/mcp-server",
+      "via": "direct",
+      "chars": 21802
+    },
+    {
+      "url": "https://docs.reducto.ai/onprem/securing_reducto",
+      "via": "direct",
+      "chars": 5028
+    },
+    {
+      "url": "https://docs.reducto.ai/onprem/security_model",
+      "via": "direct",
+      "chars": 6997
+    },
+    {
+      "url": "https://docs.reducto.ai/overview",
+      "via": "direct",
+      "chars": 3673
+    },
+    {
+      "url": "https://docs.reducto.ai/reference/credit-usage",
+      "via": "direct",
+      "chars": 3074
+    }
+  ],
+  "queries": [
+    "Reducto API authentication developer docs",
+    "Reducto API access pricing plan developer",
+    "Reducto MCP server"
+  ],
+  "seconds": 53.0
+}

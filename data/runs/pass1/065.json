@@ -1,0 +1,98 @@
+{
+  "one_liner": "Open-source Firebase alternative providing full Postgres databases, auth, storage, and serverless edge functions.",
+  "auth_methods": [
+    "bearer_token",
+    "jwt_or_signed",
+    "oauth2",
+    "api_key"
+  ],
+  "auth_primary": "bearer_token",
+  "auth_notes": "Uses personal access tokens (PAT), project API keys, or JWTs for API and management access.",
+  "access_tier": "self_serve_free",
+  "access_notes": "Free tier available upon signup with active project limits.",
+  "api_types": [
+    "rest",
+    "websocket",
+    "sdk_or_cli_only"
+  ],
+  "api_breadth": "broad",
+  "api_notes": "Provides auto-generated REST/GraphQL data APIs, Management API, and client SDKs.",
+  "mcp": "official",
+  "mcp_url": "https://mcp.supabase.com/mcp",
+  "verdict": "build_now",
+  "blocker": "none",
+  "blocker_notes": "None.",
+  "evidence": {
+    "auth": {
+      "url": "https://supabase.com/blog/mcp-server",
+      "quote": "This token authenticates the MCP server with your Supabase account."
+    },
+    "access": {
+      "url": "https://supabase.com/blog/2021/03/29/pricing",
+      "quote": "Start building for free, collaborate with your team, then scale to millions of users"
+    },
+    "api": {
+      "url": "https://supabase.com/docs",
+      "query": "Supabase provides a full Postgres database for every project with Realtime functionality, database backups, extensions, and more."
+    },
+    "mcp": {
+      "url": "https://supabase.com/blog/remote-mcp-server",
+      "quote": "Today we are launching our remote MCP server, allowing you to connect your Supabase projects with more AI agents than before"
+    },
+    "verdict": {
+      "url": "https://supabase.com/blog/2021/03/29/pricing",
+      "quote": "Free projects are paused after 1 week of inactivity. Limit of 2 active projects."
+    }
+  },
+  "confidence": {
+    "auth": 0.9,
+    "access": 0.9,
+    "api": 0.9,
+    "mcp": 0.9,
+    "verdict": 0.9
+  },
+  "_model": "gemini-3.5-flash-lite",
+  "status": "ok",
+  "id": 65,
+  "name": "Supabase",
+  "category": "Developer Infra & Data",
+  "hint": "supabase.com/docs",
+  "sources": [
+    {
+      "url": "https://supabase.com/docs",
+      "via": "direct",
+      "chars": 3136
+    },
+    {
+      "url": "https://supabase.com/blog/2021/03/29/pricing",
+      "via": "direct",
+      "chars": 16394
+    },
+    {
+      "url": "https://supabase.com/blog/mcp",
+      "via": "direct",
+      "chars": 7546
+    },
+    {
+      "url": "https://supabase.com/blog/mcp-server",
+      "via": "direct",
+      "chars": 10108
+    },
+    {
+      "url": "https://supabase.com/blog/remote-mcp-server",
+      "via": "direct",
+      "chars": 8595
+    },
+    {
+      "url": "https://supabase.com/docs/guides/ai-tools/byo-mcp",
+      "via": "direct",
+      "chars": 16289
+    }
+  ],
+  "queries": [
+    "Supabase API authentication developer docs",
+    "Supabase API access pricing plan developer",
+    "Supabase MCP server"
+  ],
+  "seconds": 47.1
+}

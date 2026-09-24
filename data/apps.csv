@@ -1,0 +1,101 @@
+id,name,category,hint
+1,Salesforce,CRM & Sales,salesforce.com
+2,HubSpot,CRM & Sales,hubspot.com
+3,Pipedrive,CRM & Sales,pipedrive.com
+4,Attio,CRM & Sales,attio.com
+5,Twenty,CRM & Sales,twenty.com (open-source CRM)
+6,Podio,CRM & Sales,podio.com
+7,Zoho CRM,CRM & Sales,zoho.com/crm
+8,Close,CRM & Sales,close.com
+9,Copper,CRM & Sales,copper.com
+10,DealCloud,CRM & Sales,api.docs.dealcloud.com
+11,Zendesk,Support & Helpdesk,zendesk.com
+12,Intercom,Support & Helpdesk,intercom.com
+13,Freshdesk,Support & Helpdesk,freshdesk.com
+14,Front,Support & Helpdesk,front.com
+15,Pylon,Support & Helpdesk,usepylon.com
+16,LiveAgent,Support & Helpdesk,liveagent.com
+17,Plain,Support & Helpdesk,plain.com
+18,Help Scout,Support & Helpdesk,helpscout.com
+19,Gorgias,Support & Helpdesk,gorgias.com
+20,Gladly,Support & Helpdesk,gladly.com
+21,Slack,Communications & Messaging,slack.com
+22,Twilio,Communications & Messaging,twilio.com
+23,Zoho Cliq,Communications & Messaging,zoho.com/cliq
+24,Lark (Larksuite),Communications & Messaging,open.larksuite.com
+25,Pumble,Communications & Messaging,pumble.com
+26,Discord,Communications & Messaging,discord.com
+27,Telegram,Communications & Messaging,core.telegram.org
+28,WhatsApp Business,Communications & Messaging,developers.facebook.com/docs/whatsapp
+29,Aircall,Communications & Messaging,aircall.io
+30,Vonage,Communications & Messaging,developer.vonage.com
+31,Google Ads,Marketing Ads Email & Social,developers.google.com/google-ads
+32,Meta Ads,Marketing Ads Email & Social,developers.facebook.com/docs/marketing-apis
+33,LinkedIn Ads,Marketing Ads Email & Social,learn.microsoft.com/linkedin/marketing
+34,GoHighLevel,Marketing Ads Email & Social,highlevel.stoplight.io
+35,Mailchimp,Marketing Ads Email & Social,mailchimp.com/developer
+36,Klaviyo,Marketing Ads Email & Social,developers.klaviyo.com
+37,systeme.io,Marketing Ads Email & Social,systeme.io (funnel builder)
+38,Pinterest,Marketing Ads Email & Social,developers.pinterest.com
+39,Threads (Meta),Marketing Ads Email & Social,developers.facebook.com/docs/threads
+40,SendGrid,Marketing Ads Email & Social,sendgrid.com
+41,Shopify,Ecommerce,shopify.dev
+42,WooCommerce,Ecommerce,woocommerce.com/document/woocommerce-rest-api
+43,BigCommerce,Ecommerce,developer.bigcommerce.com
+44,Salesforce Commerce Cloud,Ecommerce,developer.salesforce.com/docs/commerce
+45,Magento (Adobe Commerce),Ecommerce,developer.adobe.com/commerce
+46,Squarespace,Ecommerce,developers.squarespace.com
+47,Ecwid,Ecommerce,api-docs.ecwid.com
+48,Gumroad,Ecommerce,gumroad.com/api
+49,Amazon Selling Partner,Ecommerce,developer-docs.amazon.com/sp-api
+50,fanbasis,Ecommerce,fanbasis.com
+51,DataForSEO,Data SEO & Scraping,docs.dataforseo.com
+52,SE Ranking,Data SEO & Scraping,seranking.com/api
+53,Ahrefs,Data SEO & Scraping,ahrefs.com/api
+54,MrScraper,Data SEO & Scraping,docs.mrscraper.com
+55,Apify,Data SEO & Scraping,docs.apify.com
+56,Firecrawl,Data SEO & Scraping,firecrawl.dev
+57,Bright Data,Data SEO & Scraping,brightdata.com
+58,Sherlock,Data SEO & Scraping,github.com/sherlock-project/sherlock
+59,Waterfall.io,Data SEO & Scraping,waterfall.io (contact/company intel)
+60,Clay,Data SEO & Scraping,clay.com
+61,GitHub,Developer Infra & Data,docs.github.com/rest
+62,Vercel,Developer Infra & Data,vercel.com/docs/rest-api
+63,Netlify,Developer Infra & Data,docs.netlify.com/api
+64,Cloudflare,Developer Infra & Data,developers.cloudflare.com/api
+65,Supabase,Developer Infra & Data,supabase.com/docs
+66,Neo4j,Developer Infra & Data,neo4j.com/docs/api
+67,Snowflake,Developer Infra & Data,docs.snowflake.com
+68,MongoDB Atlas,Developer Infra & Data,mongodb.com/docs/atlas/api
+69,Datadog,Developer Infra & Data,docs.datadoghq.com/api
+70,Sentry,Developer Infra & Data,docs.sentry.io/api
+71,Notion,Productivity & PM,developers.notion.com
+72,Airtable,Productivity & PM,airtable.com/developers
+73,Linear,Productivity & PM,developers.linear.app
+74,Jira,Productivity & PM,developer.atlassian.com
+75,Asana,Productivity & PM,developers.asana.com
+76,Monday.com,Productivity & PM,developer.monday.com
+77,ClickUp,Productivity & PM,clickup.com/api
+78,Coda,Productivity & PM,coda.io/developers
+79,Smartsheet,Productivity & PM,smartsheet.com/developers
+80,Harvest,Productivity & PM,help.getharvest.com/api-v2
+81,Stripe,Finance & Fintech,stripe.com/docs/api
+82,Plaid,Finance & Fintech,plaid.com/docs
+83,Binance,Finance & Fintech,binance-docs.github.io
+84,Paygent Connect,Finance & Fintech,paygent (NMI-powered)
+85,iPayX,Finance & Fintech,ipayx.ai/docs
+86,QuickBooks,Finance & Fintech,developer.intuit.com
+87,Xero,Finance & Fintech,developer.xero.com
+88,Brex,Finance & Fintech,developer.brex.com
+89,Ramp,Finance & Fintech,docs.ramp.com
+90,PitchBook,Finance & Fintech,pitchbook.com (research API)
+91,NotebookLM,AI Research & Media,cloud.google.com/gemini (Enterprise API)
+92,Otter AI,AI Research & Media,help.otter.ai (MCP server)
+93,Fathom,AI Research & Media,fathom.video
+94,Consensus,AI Research & Media,consensus.app (OAuth requested)
+95,Reducto,AI Research & Media,reducto.ai (document parsing)
+96,Devin,AI Research & Media,docs.devin.ai (MCP)
+97,higgsfield,AI Research & Media,higgsfield.ai/cli (content suite)
+98,Mermaid CLI,AI Research & Media,github.com/mermaid-js/mermaid-cli
+99,YouTube Transcript,AI Research & Media,transcriptapi.com
+100,Grain,AI Research & Media,grain.com (meeting notes)

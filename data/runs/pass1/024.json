@@ -1,0 +1,94 @@
+{
+  "one_liner": "Enterprise collaboration suite offering messaging, docs, calendar, and workflows via APIs.",
+  "auth_methods": [
+    "oauth2",
+    "bearer_token"
+  ],
+  "auth_primary": "oauth2",
+  "auth_notes": "Uses tenant_access_token, app_access_token, or user_access_token passed as Bearer tokens.",
+  "access_tier": "self_serve_free",
+  "access_notes": "Developers can sign up for a free developer account and create custom apps on the developer console.",
+  "api_types": [
+    "rest"
+  ],
+  "api_breadth": "broad",
+  "api_notes": "Comprehensive REST APIs covering messaging, contacts, calendar, drive, docs, and bits/base tables under open.larksuite.com.",
+  "mcp": "none_found",
+  "mcp_url": null,
+  "verdict": "build_now",
+  "blocker": "none",
+  "blocker_notes": "Publicly available developer platform with self-serve custom apps.",
+  "evidence": {
+    "auth": {
+      "url": "https://open.larksuite.com/document/home/introduction-to-scope-and-authorization/access-credentials",
+      "quote": "Note: The tokens should be placed in the HTTP request header and the value needs to be prefixed with``Bearer`' , as shown below:"
+    },
+    "access": {
+      "url": "https://open.larksuite.com/document/server-docs/getting-started/getting-started",
+      "quote": "Create apps. In the Developer Console, create custom apps or store apps according to actual needs."
+    },
+    "api": {
+      "url": "https://open.larksuite.com/document/server-docs/getting-started/getting-started",
+      "quote": "The APIs provided by Lark Open Platform follow the RESTful style, and the format of the request URL is as follows:"
+    },
+    "mcp": {
+      "url": null,
+      "quote": null
+    },
+    "verdict": {
+      "url": "https://open.larksuite.com/document/server-docs/getting-started/getting-started",
+      "quote": "Create apps. In the Developer Console, create custom apps or store apps according to actual needs."
+    }
+  },
+  "confidence": {
+    "auth": 0.9,
+    "access": 0.9,
+    "api": 0.9,
+    "mcp": 0.8,
+    "verdict": 0.9
+  },
+  "_model": "gemini-3.5-flash-lite",
+  "status": "ok",
+  "id": 24,
+  "name": "Lark (Larksuite)",
+  "category": "Communications & Messaging",
+  "hint": "open.larksuite.com",
+  "sources": [
+    {
+      "url": "https://open.larksuite.com/document/common-capabilities/sso/api/obtain-oauth-code",
+      "via": "composio_fetch",
+      "chars": 11005
+    },
+    {
+      "url": "https://open.larksuite.com/document/home/introduction-to-scope-and-authorization/access-credentials",
+      "via": "composio_fetch",
+      "chars": 3313
+    },
+    {
+      "url": "https://open.larksuite.com/document/server-docs/getting-started/api-access-token/app-access-token-development-guide",
+      "via": "composio_fetch",
+      "chars": 9107
+    },
+    {
+      "url": "https://open.larksuite.com/document/server-docs/getting-started/api-access-token/g",
+      "via": "composio_fetch",
+      "chars": 3704
+    },
+    {
+      "url": "https://open.larksuite.com/document/server-docs/getting-started/api-access-token/get-",
+      "via": "composio_fetch",
+      "chars": 4708
+    },
+    {
+      "url": "https://open.larksuite.com/document/server-docs/getting-started/getting-started",
+      "via": "composio_fetch",
+      "chars": 1795
+    }
+  ],
+  "queries": [
+    "Lark (Larksuite) API authentication developer docs",
+    "Lark (Larksuite) API access pricing plan developer",
+    "Lark (Larksuite) MCP server"
+  ],
+  "seconds": 59.9
+}

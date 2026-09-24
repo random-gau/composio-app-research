@@ -1,0 +1,93 @@
+{
+  "one_liner": "One B2B data solution to find, enrich, and verify contacts and companies.",
+  "auth_methods": [
+    "api_key"
+  ],
+  "auth_primary": "api_key",
+  "auth_notes": "Passed via the x-api-key header.",
+  "access_tier": "self_serve_free",
+  "access_notes": "Sign up on the platform to obtain an API key.",
+  "api_types": [
+    "rest"
+  ],
+  "api_breadth": "moderate",
+  "api_notes": "REST API covering contact and company data enrichment, verification, and API key management under https://api.waterfall.io/v1/.",
+  "mcp": "official",
+  "mcp_url": "https://docs.waterfall.io/v1/skills-overview.md",
+  "verdict": "build_now",
+  "blocker": "none",
+  "blocker_notes": "Public documentation and API keys are readily available.",
+  "evidence": {
+    "auth": {
+      "url": "https://docs.waterfall.io/v1/authentication",
+      "quote": "All requests are authenticated using x-api-key."
+    },
+    "access": {
+      "url": null,
+      "quote": null
+    },
+    "api": {
+      "url": "https://docs.waterfall.io/v1/authentication",
+      "quote": "Base API URL is https://api.waterfall.io/v1/ for v1 endpoints."
+    },
+    "mcp": {
+      "url": "https://docs.waterfall.io/v1/llms.txt",
+      "quote": "Agent Skills: Drop-in agent skills for the Waterfall API. Point your agent at the repo and let it do the rest."
+    },
+    "verdict": {
+      "url": null,
+      "quote": null
+    }
+  },
+  "confidence": {
+    "auth": 5.0,
+    "access": 4.0,
+    "api": 4.5,
+    "mcp": 5.0,
+    "verdict": 4.5
+  },
+  "_model": "gemini-3.5-flash-lite",
+  "status": "ok",
+  "id": 59,
+  "name": "Waterfall.io",
+  "category": "Data SEO & Scraping",
+  "hint": "waterfall.io (contact/company intel)",
+  "sources": [
+    {
+      "url": "https://waterfall.io",
+      "via": "direct",
+      "chars": 7589
+    },
+    {
+      "url": "https://docs.waterfall.io/llms.txt",
+      "via": "direct",
+      "chars": 6038
+    },
+    {
+      "url": "https://docs.waterfall.io/v1/api-keys-create",
+      "via": "direct",
+      "chars": 10129
+    },
+    {
+      "url": "https://docs.waterfall.io/v1/api-keys-list",
+      "via": "direct",
+      "chars": 6722
+    },
+    {
+      "url": "https://docs.waterfall.io/v1/api-keys-overview",
+      "via": "direct",
+      "chars": 1372
+    },
+    {
+      "url": "https://docs.waterfall.io/v1/authentication",
+      "via": "composio_fetch",
+      "chars": 601
+    }
+  ],
+  "queries": [
+    "Waterfall.io API authentication developer docs",
+    "Waterfall.io API access pricing plan developer",
+    "Waterfall.io MCP server"
+  ],
+  "seconds": 53.0
+}

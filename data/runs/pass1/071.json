@@ -1,0 +1,95 @@
+{
+  "one_liner": "Connect your workspace to external tools and automate workflows through the Notion REST API.",
+  "auth_methods": [
+    "oauth2",
+    "bearer_token"
+  ],
+  "auth_primary": "bearer_token",
+  "auth_notes": "Notion supports internal connection tokens, personal access tokens (bearer tokens), and OAuth 2.0 for public integrations.",
+  "access_tier": "self_serve_free",
+  "access_notes": "Developers can sign up for a free Notion account and immediately create internal connections or personal access tokens in the Developer portal at no cost.",
+  "api_types": [
+    "rest"
+  ],
+  "api_breadth": "broad",
+  "api_notes": "Covers pages, databases, users, comments, and blocks via the Notion REST API.",
+  "mcp": "none_found",
+  "mcp_url": null,
+  "verdict": "build_now",
+  "blocker": "none",
+  "blocker_notes": "Publicly available API with self-serve free developer access.",
+  "evidence": {
+    "auth": {
+      "url": "https://developers.notion.com",
+      "quote": "Notion supports three authentication models: are scoped to a single workspace and use a static API token. They’re ideal for custom automations and workflows — things like syncing data, sending notifications, or building internal dashboards. use OAuth 2.0 for authentication."
+    },
+    "access": {
+      "url": "https://developers.notion.com/guides/get-started/internal-connections",
+      "guidance": "Workspace Owner can create an internal connection directly in the Developer portal for free.",
+      "quote": "In the Build section of the sidebar, select Internal connections. Click Create a new connection, enter a connection name, and choose the workspace where the connection can be installed."
+    },
+    "api": {
+      "url": "https://developers.notion.com",
+      "quote": "With the REST API, you can read, create, and update nearly everything in a workspace — pages, databases, users, comments, and more."
+    },
+    "mcp": {
+      "url": null,
+      "quote": null
+    },
+    "verdict": {
+      "url": "https://developers.notion.com",
+      "quote": "For developers who want to build their own, Notion supports internal connections, public connections, and personal access tokens — all powered by the same REST API."
+    }
+  },
+  "confidence": {
+    "auth": 0.9,
+    "access": 0.9,
+    "api": 0.9,
+    "mcp": 0.8,
+    "verdict": 0.9
+  },
+  "_model": "gemini-3.5-flash-lite",
+  "status": "ok",
+  "id": 71,
+  "name": "Notion",
+  "category": "Productivity & PM",
+  "hint": "developers.notion.com",
+  "sources": [
+    {
+      "url": "https://developers.notion.com",
+      "via": "direct",
+      "chars": 6561
+    },
+    {
+      "url": "https://developers.notion.com/guides/get-started/authorization",
+      "via": "direct",
+      "chars": 20717
+    },
+    {
+      "url": "https://developers.notion.com/guides/get-started/internal-connections",
+      "via": "direct",
+      "chars": 5108
+    },
+    {
+      "url": "https://developers.notion.com/guides/get-started/overview",
+      "via": "direct",
+      "chars": 6561
+    },
+    {
+      "url": "https://developers.notion.com/guides/get-started/personal-access-tokens",
+      "via": "direct",
+      "chars": 6530
+    },
+    {
+      "url": "https://developers.notion.com/guides/get-started/public-connections",
+      "via": "direct",
+      "chars": 5259
+    }
+  ],
+  "queries": [
+    "Notion API authentication developer docs",
+    "Notion API access pricing plan developer",
+    "Notion MCP server"
+  ],
+  "seconds": 177.0
+}

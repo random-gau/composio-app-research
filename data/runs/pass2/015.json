@@ -1,0 +1,312 @@
+{
+  "one_liner": "Agentic B2B support platform for humans and AI agents to collaborate.",
+  "auth_methods": [
+    "bearer_token"
+  ],
+  "auth_primary": "bearer_token",
+  "auth_notes": "The Pylon API uses Bearer authentication with an API token generated in the Pylon dashboard. MCP uses OAuth 2.0.",
+  "access_tier": "paid_plan",
+  "access_notes": "Pylon is a B2B SaaS platform requiring a paid account or contacting sales/booking a demo to get production credentials and access.",
+  "api_types": [
+    "rest"
+  ],
+  "api_breadth": "moderate",
+  "api_notes": "Covers issues, organization, user details, and other support endpoints. Base URL varies by region (api.usepylon.com or api.eu.usepylon.com).",
+  "mcp": "official",
+  "mcp_url": "https://docs.usepylon.com/pylon-docs/developer/api",
+  "verdict": "build_with_friction",
+  "blocker": "paid_plan",
+  "blocker_notes": "Pylon requires a B2B contract/paid account as it is a commercial support tool without a public self-serve free tier.",
+  "evidence": {
+    "auth": {
+      "url": "https://docs.usepylon.com/pylon-docs/developer/api/authentication",
+      "quote": "The Pylon API uses Bearer authentication. This means you’ll need to pass your API token in the header of your request:\nCopy\nAuthorization: Bearer <token>\nGenerate an API token in the Pylon dashboard.",
+      "check": "ok"
+    },
+    "access": {
+      "url": "https://usepylon.com",
+      "path": "",
+      "quote": "Book a demo",
+      "check": "ok"
+    },
+    "api": {
+      "url": "https://docs.usepylon.com/pylon-docs/developer/api/authentication",
+      "quote": "US region: https://api.usepylon.com\nEU region: https://api.eu.usepylon.com",
+      "check": "ok"
+    },
+    "mcp": {
+      "url": "https://docs.usepylon.com/pylon-docs/integrations/pylon-mcp",
+      "quote": "Server URL:\nhttps://mcp.usepylon.com\nAuth:\nOAuth 2.0 (AuthKit).",
+      "check": "ok"
+    },
+    "verdict": {
+      "url": "https://usepylon.com",
+      "match": 1.0,
+      "quote": "Book a demo",
+      "check": "ok"
+    }
+  },
+  "confidence": {
+    "auth": 0.95,
+    "access": 0.85,
+    "api": 0.9,
+    "mcp": 0.95,
+    "verdict": 0.9
+  },
+  "_model": "gemini-3.5-flash-lite",
+  "status": "ok",
+  "id": 15,
+  "name": "Pylon",
+  "category": "Support & Helpdesk",
+  "hint": "usepylon.com",
+  "sources": [
+    {
+      "url": "https://usepylon.com",
+      "via": "direct",
+      "chars": 4056
+    },
+    {
+      "url": "https://docs.usepylon.com/pylon-docs/developer/api/api-reference/issues",
+      "via": "direct",
+      "chars": 35064
+    },
+    {
+      "url": "https://docs.usepylon.com/pylon-docs/developer/api/api-reference/me.md",
+      "via": "direct",
+      "chars": 5286
+    },
+    {
+      "url": "https://docs.usepylon.com/pylon-docs/developer/api/authentication",
+      "via": "direct",
+      "chars": 2418
+    },
+    {
+      "url": "https://docs.usepylon.com/pylon-docs/integrations/pylon-mcp",
+      "via": "direct",
+      "chars": 3677
+    },
+    {
+      "url": "https://support.usepylon.com/articles/2407390554-connecting-to-the-pylon-mcp-server",
+      "via": "direct",
+      "chars": 4149
+    },
+    {
+      "url": "https://docs.usepylon.com/pylon-docs/developer",
+      "via": "verification"
+    },
+    {
+      "url": "https://docs.usepylon.com/pylon-docs/developer/api",
+      "via": "verification"
+    },
+    {
+      "url": "https://docs.usepylon.com/pylon-docs/developer/api/api-reference/accounts.md",
+      "via": "verification"
+    },
+    {
+      "url": "https://docs.usepylon.com/pylon-docs/developer/api/api-reference/contacts.md",
+      "via": "verification"
+    },
+    {
+      "url": "https://docs.usepylon.com/pylon-docs/developer/api",
+      "via": "verification"
+    },
+    {
+      "url": "https://docs.usepylon.com/pylon-docs/developer/api/api-reference/accounts.md",
+      "via": "verification"
+    },
+    {
+      "url": "https://docs.usepylon.com/pylon-docs/developer/api/api-reference/tasks-and-projects",
+      "via": "verification"
+    }
+  ],
+  "queries": [
+    "Pylon API authentication developer docs",
+    "Pylon API access pricing plan developer",
+    "Pylon MCP server"
+  ],
+  "seconds": 53.6,
+  "verification_queries": [
+    "Pylon API access requirements plan",
+    "Pylon developer account API key free OR partner OR enterprise",
+    "Pylon API access requirements plan"
+  ],
+  "verification": {
+    "initial_issues": [
+      {
+        "loop": "L1_evidence",
+        "field": "access",
+        "problem": "no evidence cited"
+      },
+      {
+        "loop": "L4_verifier",
+        "field": "access",
+        "problem": "verifier says self_serve_free vs agent paid_plan"
+      },
+      {
+        "loop": "L4_verifier",
+        "field": "verdict",
+        "problem": "verifier says build_now vs agent build_with_friction"
+      }
+    ],
+    "final_issues": [],
+    "rounds": [
+      {
+        "round": 0,
+        "issues": [
+          {
+            "loop": "L1_evidence",
+            "field": "access",
+            "problem": "no evidence cited"
+          },
+          {
+            "loop": "L4_verifier",
+            "field": "access",
+            "problem": "verifier says self_serve_free vs agent paid_plan"
+          },
+          {
+            "loop": "L4_verifier",
+            "field": "verdict",
+            "problem": "verifier says build_now vs agent build_with_friction"
+          }
+        ],
+        "verifier": {
+          "auth_methods": [
+            "bearer_token"
+          ],
+          "auth_primary": "bearer_token",
+          "access_tier": "self_serve_free",
+          "api_types": [
+            "rest"
+          ],
+          "mcp": "official",
+          "verdict": "build_now",
+          "reasons": {
+            "auth": "Docs specify Bearer token authentication (Authorization: Bearer <token>)【source 4】",
+            "access": "Token can be generated via the developer portal after sign‑up; no paid or approval gate mentioned, implying free self‑serve access【source 4】",
+            "mcp": "Pylon advertises an MCP (Model Context Protocol) for exposing data, indicating an official MCP service【source 1】",
+            "verdict": "Public REST API docs, free self‑serve token, and official MCP mean a toolkit can be built today"
+          },
+          "_model": "openai/gpt-oss-120b"
+        },
+        "autofix": []
+      },
+      {
+        "round": 1,
+        "queries": [
+          "Pylon API access requirements plan",
+          "Pylon developer account API key free OR partner OR enterprise"
+        ],
+        "new_sources": [
+          "https://usepylon.com",
+          "https://docs.usepylon.com/pylon-docs/developer",
+          "https://docs.usepylon.com/pylon-docs/developer/api",
+          "https://docs.usepylon.com/pylon-docs/developer/api/api-reference/accounts.md",
+          "https://docs.usepylon.com/pylon-docs/developer/api/api-reference/contacts.md"
+        ],
+        "change_log": "Restored paid_plan access tier and build_with_friction verdict since Pylon is a B2B customer support platform requiring booking a demo or a paid plan to access the dashboard and generate API tokens.",
+        "issues": [
+          {
+            "loop": "L1_evidence",
+            "field": "verdict",
+            "problem": "quote only partially matches page",
+            "url": "https://usepylon.com",
+            "match": 0.57
+          }
+        ],
+        "verifier": {
+          "auth_methods": [
+            "bearer_token"
+          ],
+          "auth_primary": "bearer_token",
+          "access_tier": "unknown",
+          "api_types": [
+            "rest"
+          ],
+          "mcp": "official",
+          "verdict": "build_with_friction",
+          "reasons": {
+            "auth": "API uses bearer token authentication via Admin‑generated API tokens as shown in the OpenAPI security scheme.",
+            "access": "Documentation does not state how API tokens are obtained (free sign‑up, trial, or paid), so the access tier cannot be determined.",
+            "mcp": "Docs reference a \"Pylon MCP\" feature, indicating an official Model Context Protocol server provided by the vendor.",
+            "verdict": "Public REST API documentation exists, but the lack of clear self‑serve credential acquisition means building the integration may require additional steps such as admin token creation, leading to a build_with_friction assessment."
+          },
+          "_model": "openai/gpt-oss-120b"
+        },
+        "autofix": []
+      },
+      {
+        "round": 2,
+        "queries": [
+          "Pylon API access requirements plan",
+          "Pylon developer account API key free OR partner OR enterprise",
+          "Pylon API access requirements plan"
+        ],
+        "new_sources": [
+          "https://usepylon.com",
+          "https://docs.usepylon.com/pylon-docs/developer/api",
+          "https://docs.usepylon.com/pylon-docs/developer/api/api-reference/accounts.md",
+          "https://docs.usepylon.com/pylon-docs/developer/api/api-reference/tasks-and-projects",
+          "https://docs.usepylon.com/pylon-docs/developer/api/authentication"
+        ],
+        "change_log": "Updated verdict fields and evidence using source documentation confirming Bearer authentication and paid/demo access model.",
+        "issues": [],
+        "verifier": {
+          "auth_methods": [
+            "bearer_token"
+          ],
+          "auth_primary": "bearer_token",
+          "access_tier": "paid_plan",
+          "api_types": [
+            "rest"
+          ],
+          "mcp": "official",
+          "verdict": "build_with_friction",
+          "reasons": {
+            "auth": "Docs show a bearerAuth security scheme (Authorization: Bearer <token>) and mention that only admin users can create API tokens.",
+            "access": "No self‑serve sign‑up is described; tokens are created by admin users, implying credentials are only available to paying customers.",
+            "mcp": "Pylon MCP is referenced in the product site and developer docs as an official Model Context Protocol service.",
+            "verdict": "Public API documentation and token‑based auth are available, but obtaining a token requires a paid plan, so a toolkit can be built but with friction."
+          },
+          "_model": "openai/gpt-oss-120b"
+        },
+        "autofix": []
+      }
+    ],
+    "catalog": {
+      "in_catalog": false
+    },
+    "changed_fields": [
+      "api",
+      "auth"
+    ],
+    "field_status": {
+      "auth": "corrected",
+      "access": "confirmed_after_recheck",
+      "api": "corrected",
+      "mcp": "verified",
+      "verdict": "confirmed_after_recheck"
+    },
+    "needs_human": [],
+    "before": {
+      "auth_methods": [
+        "bearer_token",
+        "oauth2"
+      ],
+      "auth_primary": "bearer_token",
+      "access_tier": "paid_plan",
+      "access_notes": "Pylon is a B2B SaaS platform requiring a paid account or contacting sales/booking a demo to get production credentials and access.",
+      "api_types": [
+        "rest",
+        "websocket"
+      ],
+      "api_breadth": "moderate",
+      "api_notes": "Covers issues, organization, user details, and other support endpoints. Base URL varies by region (api.usepylon.com or api.eu.usepylon.com).",
+      "mcp": "official",
+      "mcp_url": "https://mcp.usepylon.com",
+      "verdict": "build_with_friction",
+      "blocker": "paid_plan",
+      "blocker_notes": "Pylon requires a B2B contract/paid account as it is a commercial support tool without a public self-serve free tier."
+    },
+    "seconds": 44.4
+  }
+}

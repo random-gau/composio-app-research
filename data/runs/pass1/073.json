@@ -1,0 +1,94 @@
+{
+  "one_liner": "Issue tracking and project management tool built for high-performance software teams.",
+  "auth_methods": [
+    "oauth2",
+    "bearer_token"
+  ],
+  "auth_primary": "oauth2",
+  "auth_notes": "Supports OAuth 2.0 with authorization code flow, PKCE, client credentials, and personal API keys.",
+  "access_tier": "self_serve_free",
+  "access_notes": "Free tier available; developers can sign up and create applications/API keys immediately at zero cost.",
+  "api_types": [
+    "graphql"
+  ],
+  "api_breadth": "broad",
+  "api_notes": "Comprehensive GraphQL API covering issues, projects, comments, workflows, and workspace administration at https://api.linear.app/graphql.",
+  "mcp": "none_found",
+  "mcp_url": null,
+  "verdict": "build_now",
+  "blocker": "none",
+  "blocker_notes": "Fully documented public GraphQL API with self-serve developer access.",
+  "evidence": {
+    "auth": {
+      "url": "https://linear.app/developers/graphql",
+      "quote": "The Linear API supports personal API keys and OAuth2 authentication."
+    },
+    "access": {
+      "url": "https://linear.app/developers/agents.md",
+      "quote": "It does not cost anything to develop agents in Linear."
+    },
+    "api": {
+      "url": "https://linear.app/developers/graphql",
+      "quote": "Linear’s public API is built using GraphQL. It’s the same API we use internally for developing our applications."
+    },
+    "mcp": {
+      "url": null,
+      "quote": null
+    },
+    "verdict": {
+      "url": "https://linear.app/developers/graphql",
+      "quote": "Linear’s public API is built using GraphQL. It’s the same API we use internally for developing our applications."
+    }
+  },
+  "confidence": {
+    "auth": 5.0,
+    "access": 5.0,
+    "api": 5.0,
+    "mcp": 4.0,
+    "verdict": 5.0
+  },
+  "_model": "gemini-3.5-flash-lite",
+  "status": "ok",
+  "id": 73,
+  "name": "Linear",
+  "category": "Productivity & PM",
+  "hint": "developers.linear.app",
+  "sources": [
+    {
+      "url": "https://developers.linear.app",
+      "via": "direct",
+      "chars": 844
+    },
+    {
+      "url": "https://linear.app/developers",
+      "via": "direct",
+      "chars": 844
+    },
+    {
+      "url": "https://linear.app/developers/agents.md",
+      "via": "direct",
+      "chars": 6189
+    },
+    {
+      "url": "https://linear.app/developers/file-storage-authentication",
+      "via": "direct",
+      "chars": 1923
+    },
+    {
+      "url": "https://linear.app/developers/graphql",
+      "via": "direct",
+      "chars": 10735
+    },
+    {
+      "url": "https://linear.app/developers/oauth-2-0-authentication",
+      "via": "direct",
+      "chars": 14698
+    }
+  ],
+  "queries": [
+    "Linear API authentication developer docs",
+    "Linear API access pricing plan developer",
+    "Linear MCP server"
+  ],
+  "seconds": 46.8
+}

@@ -1,0 +1,94 @@
+{
+  "one_liner": "Error tracking and application monitoring platform to discover, triage, and diagnose errors.",
+  "auth_methods": [
+    "oauth2",
+    "bearer_token"
+  ],
+  "auth_primary": "oauth2",
+  "auth_notes": "Supports OAuth2 and static Auth Tokens passed via Bearer authorization headers.",
+  "access_tier": "self_serve_free",
+  "access_notes": "Sentry has a free Developer plan and free trials available upon sign-up.",
+  "api_types": [
+    "rest"
+  ],
+  "api_breadth": "broad",
+  "api_notes": "Covers organizations, teams, projects, issues, events, releases, crons, dashboards, and more via REST API (v0).",
+  "mcp": "official",
+  "mcp_url": "https://blog.sentry.io/yes-sentry-has-an-mcp-server-and-its-pretty-good",
+  "verdict": "build_now",
+  "blocker": "none",
+  "blocker_notes": "Public APIs and official MCP are fully accessible via self-serve accounts.",
+  "evidence": {
+    "auth": {
+      "url": "https://docs.sentry.io/api/guides/teams-tutorial.md",
+      "quote": "export SENTRY_AUTH_TOKEN=<auth_token>\n-H \"Authorization: Bearer $SENTRY_AUTH_TOKEN\""
+    },
+    "access": {
+      "url": "https://docs.sentry.io/pricing",
+      "quote": "Sentry has one free Developer plan and three paid plans: Team, Business, and Enterprise."
+    },
+    "api": {
+      "url": "https://docs.sentry.io/api",
+      "quote": "The Sentry web API is used to access the Sentry platform programmatically. You can use the APIs to manage account-level resources, like organizations and teams, as well as manage and export data."
+    },
+    "mcp": {
+      "url": "https://blog.sentry.io/yes-sentry-has-an-mcp-server-and-its-pretty-good",
+      "quote": "Yes, Sentry has an MCP Server (...and it’s pretty good)"
+    },
+    "verdict": {
+      "url": "https://docs.sentry.io/api",
+      "quote": "The current version of the Sentry's web API is considered v0. Our public endpoints are generally stable, but beta endpoints are subject to change."
+    }
+  },
+  "confidence": {
+    "auth": 0.9,
+    "access": 0.9,
+    "api": 0.9,
+    "mcp": 0.9,
+    "verdict": 0.9
+  },
+  "_model": "gemini-3.5-flash-lite",
+  "status": "ok",
+  "id": 70,
+  "name": "Sentry",
+  "category": "Developer Infra & Data",
+  "hint": "docs.sentry.io/api",
+  "sources": [
+    {
+      "url": "https://docs.sentry.io/api",
+      "via": "direct",
+      "chars": 1933
+    },
+    {
+      "url": "https://blog.sentry.io/yes-sentry-has-an-mcp-server-and-its-pretty-good",
+      "via": "direct",
+      "chars": 11493
+    },
+    {
+      "url": "https://docs.sentry.io/api.md",
+      "via": "direct",
+      "chars": 4084
+    },
+    {
+      "url": "https://docs.sentry.io/api/guides/teams-tutorial.md",
+      "via": "direct",
+      "chars": 9323
+    },
+    {
+      "url": "https://docs.sentry.io/pricing",
+      "via": "direct",
+      "chars": 17034
+    },
+    {
+      "url": "https://docs.sentry.io/pricing/legacy-pricing.md",
+      "via": "direct",
+      "chars": 27718
+    }
+  ],
+  "queries": [
+    "Sentry API authentication developer docs",
+    "Sentry API access pricing plan developer",
+    "Sentry MCP server"
+  ],
+  "seconds": 46.8
+}

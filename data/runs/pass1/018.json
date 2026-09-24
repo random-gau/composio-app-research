@@ -1,0 +1,94 @@
+{
+  "one_liner": "Customer service software providing helpdesk, shared inbox, live chat, and robust support APIs.",
+  "auth_methods": [
+    "oauth2",
+    "api_key"
+  ],
+  "auth_primary": "oauth2",
+  "auth_notes": "Inbox API 2.0 uses OAuth 2.0 (Authorization Code & Client Credentials), while Docs API uses API keys via HTTP Basic Authentication.",
+  "access_tier": "self_serve_free",
+  "access_notes": "You can sign up and create a developer account to access APIs for free.",
+  "api_types": [
+    "rest"
+  ],
+  "api_breadth": "broad",
+  "api_notes": "Covers Inbox API 2.0, Docs API, Chat API, and Webhooks with dozens of endpoints.",
+  "mcp": "none_found",
+  "mcp_url": null,
+  "verdict": "build_now",
+  "blocker": "none",
+  "blocker_notes": "Publicly documented REST APIs with self-serve developer access.",
+  "evidence": {
+    "auth": {
+      "url": "https://developer.helpscout.com/llms.txt",
+      "quote": "Authentication: OAuth 2.0 (Authorization Code & Client Credentials flows)"
+    },
+    "access": {
+      "url": "https://helpscout.com",
+      "quote": "Start for Free"
+    },
+    "api": {
+      "url": "https://developer.helpscout.com/llms.txt",
+      "quote": "The primary REST API for managing Help Scout conversations, customers, and support operations."
+    },
+    "mcp": {
+      "url": null,
+      "quote": null
+    },
+    "verdict": {
+      "url": "https://developer.helpscout.com",
+      "quote": "Start for Free"
+    }
+  },
+  "confidence": {
+    "auth": 1.0,
+    "access": 1.0,
+    "api": 1.0,
+    "mcp": 1.0,
+    "verdict": 1.0
+  },
+  "_model": "gemini-3.5-flash-lite",
+  "status": "ok",
+  "id": 18,
+  "name": "Help Scout",
+  "category": "Support & Helpdesk",
+  "hint": "helpscout.com",
+  "sources": [
+    {
+      "url": "https://helpscout.com",
+      "via": "direct",
+      "chars": 3890
+    },
+    {
+      "url": "https://developer.helpscout.com",
+      "via": "direct",
+      "chars": 1291
+    },
+    {
+      "url": "https://developer.helpscout.com/docs-api",
+      "via": "direct",
+      "chars": 4917
+    },
+    {
+      "url": "https://developer.helpscout.com/docs-api/restricted-docs",
+      "via": "direct",
+      "chars": 9568
+    },
+    {
+      "url": "https://developer.helpscout.com/llms.txt",
+      "via": "direct",
+      "chars": 40456
+    },
+    {
+      "url": "https://developer.helpscout.com/mailbox-api",
+      "via": "direct",
+      "chars": 4792
+    }
+  ],
+  "queries": [
+    "Help Scout API authentication developer docs",
+    "Help Scout API access pricing plan developer",
+    "Help Scout MCP server"
+  ],
+  "seconds": 53.5
+}

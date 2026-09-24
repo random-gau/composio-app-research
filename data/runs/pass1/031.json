@@ -1,0 +1,95 @@
+{
+  "one_liner": "Create, manage, and automate Google Ads campaigns, ads, keywords, and reporting.",
+  "auth_methods": [
+    "oauth2",
+    "jwt_or_signed"
+  ],
+  "auth_primary": "oauth2",
+  "auth_notes": "Google Ads API uses OAuth 2.0 protocol for authentication and authorization.",
+  "access_tier": "approval_or_review",
+  "access_notes": "Requires enabling the API in Google Cloud and applying for Test/Explorer/Basic/Standard access.",
+  "api_types": [
+    "rest",
+    "soap"
+  ],
+  "api_breadth": "broad",
+  "api_notes": "Covers campaigns, ad groups, ads, keywords, budgeting, planning, and reporting via gRPC/REST.",
+  "mcp": "none_found",
+  "mcp_url": null,
+  "verdict": "build_with_friction",
+  "blocker": "app_review",
+  "blocker_notes": "Test and Basic/Explorer access can be obtained automatically or via quick application, but Standard access requires manual review.",
+  "evidence": {
+    "auth": {
+      "url": "https://developers.google.com/google-ads/api/docs/client-libs/dotnet/authentication",
+      "quote": "The Google Ads API uses the OAuth 2.0 protocol for authentication and authorization, allowing access to a user's Google Ads account without needing their login information."
+    },
+    "access": {
+      "url": "https://developers.google.com/google-ads/api/docs/api-policy/access-levels",
+      "quote": "There are three access levels: Test Account Access for test accounts with a 15,000 operation limit, Basic Access for test and production accounts with a 15,000 operation limit, and Standard Access for test and production accounts with an unlimited operation limit."
+    },
+    "api": {
+      "url": "https://developers.google.com/google-ads/api/docs/concepts/call-structure",
+      "quote": "Google Ads API calls can be made using either gRPC (preferred) or REST."
+    },
+    "mcp": {
+      "url": null,
+      "quote": null
+    },
+    "verdict": {
+      "url": "https://developers.google.com/google-ads/api/docs/api-policy/access-levels",
+      "quote": "The Standard access application involves a detailed manual audit of your application. You will need to provide demo sign-in access to your tool."
+    }
+  },
+  "confidence": {
+    "auth": 1.0,
+    "access": 1.0,
+    "api": 1.0,
+    "mcp": 1.0,
+    "verdict": 1.0
+  },
+  "_model": "gemini-3.5-flash-lite",
+  "status": "ok",
+  "id": 31,
+  "name": "Google Ads",
+  "category": "Marketing Ads Email & Social",
+  "hint": "developers.google.com/google-ads",
+  "sources": [
+    {
+      "url": "https://developers.google.com/google-ads",
+      "via": "direct",
+      "chars": 1267
+    },
+    {
+      "url": "https://developers.google.com/google-ads/api/docs/api-policy/access-levels",
+      "via": "direct",
+      "chars": 10103
+    },
+    {
+      "url": "https://developers.google.com/google-ads/api/docs/api-policy/developer-token",
+      "via": "direct",
+      "chars": 22966
+    },
+    {
+      "url": "https://developers.google.com/google-ads/api/docs/best-practices/quotas",
+      "via": "direct",
+      "chars": 13772
+    },
+    {
+      "url": "https://developers.google.com/google-ads/api/docs/client-libs/dotnet/authentication",
+      "via": "direct",
+      "chars": 6934
+    },
+    {
+      "url": "https://developers.google.com/google-ads/api/docs/concepts/call-structure",
+      "via": "direct",
+      "chars": 8512
+    }
+  ],
+  "queries": [
+    "Google Ads API authentication developer docs",
+    "Google Ads API access pricing plan developer",
+    "Google Ads MCP server"
+  ],
+  "seconds": 40.7
+}

@@ -1,0 +1,94 @@
+{
+  "one_liner": "Manage pins, boards, ads, and product catalogs on Pinterest via API.",
+  "auth_methods": [
+    "oauth2"
+  ],
+  "auth_primary": "oauth2",
+  "auth_notes": "OAuth 2.0 authorization code flow is used to obtain access tokens, with temporary test tokens available for quick testing.",
+  "access_tier": "self_serve_free",
+  "access_notes": "Free developer account creation and application submission required to get trial access credentials.",
+  "api_types": [
+    "rest"
+  ],
+  "api_breadth": "broad",
+  "api_notes": "Covers content management, ads, analytics, conversions, and shopping catalogs via REST API v5.",
+  "mcp": "none_found",
+  "mcp_url": null,
+  "verdict": "build_with_friction",
+  "blocker": "app_review",
+  "blocker_notes": "Apps require review and approval before gaining trial or standard API access.",
+  "evidence": {
+    "auth": {
+      "url": "https://developers.pinterest.com/docs/getting-started/authentication",
+      "quote": "Build a working authentication flow based on OAuth 2\nFor full details on the OAuth process, review our guide on\nScopes & Authentication"
+    },
+    "access": {
+      "url": "https://developers.pinterest.com/docs/getting-started/authentication",
+      "quote": "Login or\ncreate a business account\n. This is the account you will use to administer your app.\nVerify your account's email address\nGo to\nMy apps\nand click through to accept our Developer Terms of Service"
+    },
+    "api": {
+      "url": "https://developers.pinterest.com/docs/overview/welcome",
+      "ico": null,
+      "quote": "Use Transport Layer Security (TLS) version 1.2 or later when calling the Pinterest API v5, as the 1.0 and 1.1 protocols are deprecated."
+    },
+    "mcp": {
+      "url": null,
+      "quote": null
+    },
+    "verdict": {
+      "url": "https://developers.pinterest.com/docs/getting-started/authentication",
+      "quote": "Submit your request for trial access.\nApplication requests are reviewed each business day. As soon as your app has been reviewed you will receive an email notification letting you know if your app has been approved or denied access."
+    }
+  },
+  "confidence": {
+    "auth": 0.9,
+    "access": 0.9,
+    "api": 0.9,
+    "mcp": 0.8,
+    "verdict": 0.9
+  },
+  "_model": "gemini-3.5-flash-lite",
+  "status": "ok",
+  "id": 38,
+  "name": "Pinterest",
+  "category": "Marketing Ads Email & Social",
+  "hint": "developers.pinterest.com",
+  "sources": [
+    {
+      "url": "https://developers.pinterest.com",
+      "via": "direct",
+      "chars": 1262
+    },
+    {
+      "url": "https://developers.pinterest.com/docs/faqs/faqs",
+      "via": "direct",
+      "chars": 15167
+    },
+    {
+      "url": "https://developers.pinterest.com/docs/getting-started/authentication",
+      "via": "direct",
+      "chars": 3252
+    },
+    {
+      "url": "https://developers.pinterest.com/docs/key-concepts/access-tiers",
+      "via": "direct",
+      "chars": 5386
+    },
+    {
+      "url": "https://developers.pinterest.com/docs/key-concepts/best-practices",
+      "via": "direct",
+      "chars": 8236
+    },
+    {
+      "url": "https://developers.pinterest.com/docs/overview/welcome",
+      "via": "direct",
+      "chars": 2637
+    }
+  ],
+  "queries": [
+    "Pinterest API authentication developer docs",
+    "Pinterest API access pricing plan developer",
+    "Pinterest MCP server"
+  ],
+  "seconds": 40.3
+}

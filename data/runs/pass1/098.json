@@ -1,0 +1,93 @@
+{
+  "one_liner": "Command line tool for rendering Mermaid diagrams into SVG or PNG formats.",
+  "auth_methods": [
+    "none"
+  ],
+  "auth_primary": "none",
+  "auth_notes": "Local CLI tool, no authentication needed.",
+  "access_tier": "open_source_local",
+  "access_notes": "Open source command line tool available freely on GitHub and npm.",
+  "api_types": [
+    "sdk_or_cli_only"
+  ],
+  "api_breadth": "none",
+  "api_notes": "Command-line interface only, no web REST/GraphQL API.",
+  "mcp": "community_only",
+  "mcp_url": "https://github.com/hustcc/mcp-mermaid",
+  "verdict": "build_now",
+  "blocker": "none",
+  "blocker_notes": "Can be easily packaged as an open source local toolkit via CLI execution.",
+  "evidence": {
+    "auth": {
+      "url": null,
+      "quote": null
+    },
+    "access": {
+      "url": "https://github.com/mermaid-js/mermaid-cli",
+      "quote": "Command line tool for the Mermaid library"
+    },
+    "api": {
+      "url": "https://github.com/mermaid-js/mermaid-cli",
+      "quote": "Command line tool for the Mermaid library"
+    },
+    "mcp": {
+      "url": "https://github.com/hustcc/mcp-mermaid",
+      "quote": "❤️ Generate mermaid diagram and chart with AI MCP dynamically."
+    },
+    "verdict": {
+      "url": null,
+      "quote": null
+    }
+  },
+  "confidence": {
+    "auth": 0.9,
+    "access": 1.0,
+    "api": 1.0,
+    "mcp": 1.0,
+    "verdict": 0.9
+  },
+  "_model": "gemini-3.5-flash-lite",
+  "status": "ok",
+  "id": 98,
+  "name": "Mermaid CLI",
+  "category": "AI Research & Media",
+  "hint": "github.com/mermaid-js/mermaid-cli",
+  "sources": [
+    {
+      "url": "https://github.com/mermaid-js/mermaid-cli",
+      "via": "direct",
+      "chars": 6763
+    },
+    {
+      "url": "https://github.com/abekdwight/mermaid-mcp-server",
+      "via": "direct",
+      "chars": 4747
+    },
+    {
+      "url": "https://github.com/andrewginns/mermaid-mcp-server",
+      "via": "direct",
+      "chars": 7919
+    },
+    {
+      "url": "https://github.com/data-mermaid/mermaid-api/blob/master/docs/source/authentication.rst",
+      "via": "composio_fetch",
+      "chars": 1366
+    },
+    {
+      "url": "https://github.com/hustcc/mcp-mermaid",
+      "via": "direct",
+      "chars": 5364
+    },
+    {
+      "url": "https://github.com/locupleto/mcp-mermaid-diagram",
+      "via": "direct",
+      "chars": 7246
+    }
+  ],
+  "queries": [
+    "Mermaid CLI API authentication developer docs",
+    "Mermaid CLI API access pricing plan developer",
+    "Mermaid CLI MCP server"
+  ],
+  "seconds": 53.6
+}

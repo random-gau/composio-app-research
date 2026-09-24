@@ -1,0 +1,94 @@
+{
+  "one_liner": "AI notetaker and meeting intelligence platform with meeting transcripts, summaries, and action items.",
+  "auth_methods": [
+    "oauth2",
+    "bearer_token"
+  ],
+  "auth_primary": "oauth2",
+  "auth_notes": "Supports OAuth2 flow, Personal Access Tokens (PAT), and Workspace Access Tokens (WAT).",
+  "access_tier": "paid_plan",
+  "access_notes": "Personal API access is available on Starter plan and above; free plan does not include API access.",
+  "api_types": [
+    "rest"
+  ],
+  "api_breadth": "moderate",
+  "api_notes": "Allows reading meeting data, managing recordings, downloading transcripts/videos, and registering webhooks.",
+  "mcp": "official",
+  "mcp_url": "https://api.grain.com/_/mcp",
+  "verdict": "build_with_friction",
+  "blocker": "paid_plan",
+  "blocker_notes": "API access requires a paid Starter plan or above.",
+  "evidence": {
+    "auth": {
+      "url": "https://developers.grain.com",
+      "quote": "The API supports a standard OAuth2 Authorization Code flow, including the PKCE extension for client-side only authentication."
+    },
+    "access": {
+      "url": "https://support.grain.com/en/articles/15507288-grain-api",
+      "quote": "Yes. Personal API access is available on Starter, Business, and Enterprise plans. Workspace API access is available on Business and Enterprise plans and requires admin access to generate. The Free plan does not include API access."
+    },
+    "api": {
+      "url": "https://support.grain.com/en/articles/15507288-grain-api",
+      "quote": "The Grain API lets developers read meeting data, manage recordings, and receive real-time events from Grain programmatically."
+    },
+    "mcp": {
+      "url": "https://grain.com/release-note/06-18-2025",
+      "quote": "Grain's official MCP server is available now for all users! 🎉"
+    },
+    "verdict": {
+      "url": "https://support.grain.com/en/articles/15507288-grain-api",
+      "quote": "Yes. Personal API access is available on Starter, Business, and Enterprise plans."
+    }
+  },
+  "confidence": {
+    "auth": 5.0,
+    "access": 5.0,
+    "api": 5.0,
+    "mcp": 5.0,
+    "verdict": 5.0
+  },
+  "_model": "gemini-3.5-flash-lite",
+  "status": "ok",
+  "id": 100,
+  "name": "Grain",
+  "category": "AI Research & Media",
+  "hint": "grain.com (meeting notes)",
+  "sources": [
+    {
+      "url": "https://grain.com",
+      "via": "direct",
+      "chars": 5511
+    },
+    {
+      "url": "https://developers.grain.com",
+      "via": "composio_fetch",
+      "chars": 34529
+    },
+    {
+      "url": "https://grain.com/pricing",
+      "via": "direct",
+      "chars": 3058
+    },
+    {
+      "url": "https://support.grain.com/en/articles/14811968-grain-mcp",
+      "via": "direct",
+      "chars": 4308
+    },
+    {
+      "url": "https://support.grain.com/en/articles/15507288-grain-api",
+      "via": "direct",
+      "chars": 4396
+    },
+    {
+      "url": "https://grain.com/release-note/06-18-2025",
+      "via": "direct",
+      "chars": 1558
+    }
+  ],
+  "queries": [
+    "Grain API authentication developer docs",
+    "Grain API access pricing plan developer",
+    "Grain MCP server"
+  ],
+  "seconds": 48.3
+}

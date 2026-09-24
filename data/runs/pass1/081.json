@@ -1,0 +1,96 @@
+{
+  "one_liner": "Online payment processing platform for internet businesses",
+  "auth_methods": [
+    "api_key",
+    "bearer_token",
+    "basic",
+    "oauth2"
+  ],
+  "auth_primary": "api_key",
+  "auth_notes": "Stripe uses API keys passed via HTTP Basic Auth or Bearer token.",
+  "access_tier": "self_serve_free",
+  "access_notes": "Sign up for a free account and immediately access test mode sandboxes with API keys.",
+  "api_types": [
+    "rest"
+  ],
+  "api_breadth": "broad",
+  "api_notes": "Comprehensive REST API covering payments, customers, subscriptions, invoices, and more.",
+  "mcp": "none_found",
+  "mcp_url": null,
+  "verdict": "build_now",
+  "blocker": "none",
+  "blocker_notes": "None, fully accessible via self-serve API keys.",
+  "evidence": {
+    "auth": {
+      "url": "https://stripe.com/docs/api",
+      "quote": "The Stripe API authenticates requests using HTTP Basic Auth. Provide your API key as the basic auth username value."
+    },
+    "access": {
+      "url": "https://stripe.com/docs/api",
+      "quote": "The API key that you use to authenticate the request determines whether the request runs in live mode or in a sandbox."
+    },
+    "api": {
+      "url": "https://stripe.com/docs/api",
+      "quote": "Stripe API Reference"
+    },
+    "mcp": {
+      "url": null,
+      "quote": null
+    },
+    "verdict": {
+      "url": "https://stripe.com/docs/api",
+      "quote": "A sample test API key is included in all the examples here, so you can test any example right away."
+    }
+  },
+  "confidence": {
+    "auth": 0.9,
+    "access": 0.9,
+    "api": 0.9,
+    "mcp": 0.8,
+    "verdict": 0.9
+  },
+  "_model": "gemini-3.5-flash-lite",
+  "status": "ok",
+  "id": 81,
+  "name": "Stripe",
+  "category": "Finance & Fintech",
+  "hint": "stripe.com/docs/api",
+  "sources": [
+    {
+      "url": "https://stripe.com/docs/api",
+      "via": "direct",
+      "chars": 8869
+    },
+    {
+      "url": "https://docs.stripe.com/api/authentication?api-version=2025-02-24.acacia",
+      "via": "direct",
+      "chars": 7770
+    },
+    {
+      "url": "https://docs.stripe.com/api/authentication?api-version=2026-04-22.dahlia",
+      "via": "direct",
+      "chars": 7987
+    },
+    {
+      "url": "https://docs.stripe.com/api/authentication?lang=php",
+      "via": "direct",
+      "chars": 10031
+    },
+    {
+      "url": "https://docs.stripe.com/api/errors?api-version=2024-06-20",
+      "via": "direct",
+      "chars": 7807
+    },
+    {
+      "url": "https://docs.stripe.com/api/plans/create?lang=node",
+      "via": "direct",
+      "chars": 7131
+    }
+  ],
+  "queries": [
+    "Stripe API authentication developer docs",
+    "Stripe API access pricing plan developer",
+    "Stripe MCP server"
+  ],
+  "seconds": 183.2
+}

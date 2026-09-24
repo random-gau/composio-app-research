@@ -1,0 +1,93 @@
+{
+  "one_liner": "Cost-controlled AI infrastructure for tracking LLM spending and enforcing limits.",
+  "auth_methods": [
+    "bearer_token"
+  ],
+  "auth_primary": "bearer_token",
+  "auth_notes": "Bearer token using API keys prefixed with pg_live_.",
+  "access_tier": "self_serve_free",
+  "access_notes": "Sign up on the website to obtain credentials.",
+  "api_types": [
+    "rest"
+  ],
+  "api_breadth": "moderate",
+  "api_notes": "REST API for plans, users, usage, and webhook management.",
+  "mcp": "none_found",
+  "mcp_url": null,
+  "verdict": "build_now",
+  "blocker": "none",
+  "blocker_notes": "Publicly documented API and self-serve access are available.",
+  "evidence": {
+    "auth": {
+      "url": "https://docs.paygent.to/getting-started/quickstart",
+      "quote": "\"Authorization: Bearer pg_live_...\""
+    },
+    "access": {
+      "url": null,
+      "quote": null
+    },
+    "api": {
+      "url": "https://docs.paygent.to",
+      "quote": "Backend REST API for plans, users, usage, and gate events."
+    },
+    "mcp": {
+      "url": null,
+      "quote": null
+    },
+    "verdict": {
+      "url": null,
+      "quote": null
+    }
+  },
+  "confidence": {
+    "auth": 0.9,
+    "access": 0.8,
+    "api": 0.9,
+    "mcp": 1.0,
+    "verdict": 0.9
+  },
+  "_model": "gemini-3.5-flash-lite",
+  "status": "ok",
+  "id": 84,
+  "name": "Paygent Connect",
+  "category": "Finance & Fintech",
+  "hint": "paygent (NMI-powered)",
+  "sources": [
+    {
+      "url": "https://docs.paygent.to",
+      "via": "direct",
+      "chars": 4155
+    },
+    {
+      "url": "https://docs.paygent.to/getting-started/assign-users-to-plans",
+      "via": "direct",
+      "chars": 8620
+    },
+    {
+      "url": "https://docs.paygent.to/getting-started/configure-first-plan",
+      "via": "direct",
+      "chars": 8065
+    },
+    {
+      "url": "https://docs.paygent.to/getting-started/quickstart",
+      "via": "direct",
+      "chars": 9870
+    },
+    {
+      "url": "https://docs.paygent.to/getting-started/verify-its-working",
+      "via": "direct",
+      "chars": 15277
+    },
+    {
+      "url": "https://docs.paygent.to/integration/webhooks",
+      "via": "direct",
+      "chars": 5804
+    }
+  ],
+  "queries": [
+    "Paygent Connect API authentication developer docs",
+    "Paygent Connect API access pricing plan developer",
+    "Paygent Connect MCP server"
+  ],
+  "seconds": 39.9
+}
