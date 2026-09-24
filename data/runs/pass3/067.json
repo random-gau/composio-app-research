@@ -1,0 +1,449 @@
+{
+  "one_liner": "Cloud-based data warehousing platform providing REST APIs for data and resource management.",
+  "auth_methods": [
+    "oauth2",
+    "bearer_token",
+    "basic",
+    "jwt_or_signed"
+  ],
+  "auth_primary": "oauth2",
+  "auth_notes": "Supports OAuth, Bearer tokens (programmatic access tokens / JWT), password (basic), and keypair authentication.",
+  "access_tier": "self_serve_trial",
+  "access_notes": "Snowflake offers a self-service free trial account to get working credentials, but continued production use requires a paid plan.",
+  "api_types": [
+    "rest",
+    "sdk_or_cli_only"
+  ],
+  "api_breadth": "broad",
+  "api_notes": "Comprehensive REST APIs and Python SDK covering accounts, users, warehouses, databases, tables, and AI/ML services.",
+  "mcp": "official",
+  "mcp_url": "https://docs.snowflake.com/en/user-guide/snowflake-cortex/cortex-agents-mcp",
+  "verdict": "build_with_friction",
+  "blocker": "paid_plan",
+  "blocker_notes": "Requires a paid plan or trial account after initial setup.",
+  "evidence": {
+    "auth": {
+      "url": "https://docs.snowflake.com/en/developer-guide/snowflake-rest-api/tutorials/common-setup",
+      "quote": "REST requests require a JWT token in the request header to authenticate the request. If you don’t have a JWT token, see Generate a JWT token.",
+      "check": "ok"
+    },
+    "access": {
+      "url": "https://docs.snowflake.com",
+      "quote": "Getting a Trial Account",
+      "check": "ok"
+    },
+    "api": {
+      "url": "https://docs.snowflake.com/en/developer-guide/snowflake-rest-api/snowflake-rest-api",
+      "quote": "The Snowflake REST APIs for resource management provide a set of endpoints that lets users programmatically interact with and control various resources within the Snowflake Data Cloud.",
+      "check": "ok"
+    },
+    "mcp": {
+      "url": "https://docs.snowflake.com/en/user-guide/snowflake-cortex/cortex-agents-mcp",
+      "quote": "The Snowflake-managed MCP server lets AI agents securely retrieve data from Snowflake accounts without needing to deploy separate infrastructure.",
+      "check": "ok"
+    },
+    "verdict": {
+      "url": "https://docs.snowflake.com",
+      "quote": "Getting a Trial Account",
+      "check": "ok"
+    }
+  },
+  "confidence": {
+    "auth": 0.9,
+    "access": 0.9,
+    "api": 0.9,
+    "mcp": 1.0,
+    "verdict": 0.9
+  },
+  "_model": "gemini-3.5-flash-lite",
+  "status": "ok",
+  "id": 67,
+  "name": "Snowflake",
+  "category": "Developer Infra & Data",
+  "hint": "docs.snowflake.com",
+  "sources": [
+    {
+      "url": "https://docs.snowflake.com",
+      "via": "direct",
+      "chars": 3610
+    },
+    {
+      "url": "https://docs.snowflake.com/En/user-guide/programmatic-access-tokens",
+      "via": "direct",
+      "chars": 42150
+    },
+    {
+      "url": "https://docs.snowflake.com/en/collaboration/provider-listings-pricing-model",
+      "via": "direct",
+      "chars": 18734
+    },
+    {
+      "url": "https://docs.snowflake.com/en/developer-guide/snowflake-python-api/reference/latest/index",
+      "via": "direct",
+      "chars": 24562
+    },
+    {
+      "url": "https://docs.snowflake.com/en/developer-guide/snowflake-rest-api/snowflake-rest-api",
+      "via": "direct",
+      "chars": 3073
+    },
+    {
+      "url": "https://docs.snowflake.com/en/developer-guide/snowflake-rest-api/tutorials/common-setup",
+      "via": "direct",
+      "chars": 4715
+    },
+    {
+      "url": "https://docs.snowflake.com/en/developer-guide/native-apps/consumer-guide-access",
+      "via": "verification"
+    },
+    {
+      "url": "https://docs.snowflake.com/en/developer-guide/sql-api/authenticating",
+      "via": "verification"
+    },
+    {
+      "url": "https://docs.snowflake.com/en/en/developer-guide/snowflake-rest-api/authentication",
+      "via": "verification"
+    },
+    {
+      "url": "https://docs.snowflake.com/en/en/sql-reference/external-functions-creating-aws-planning",
+      "via": "verification"
+    },
+    {
+      "url": "https://docs.snowflake.com/en/user-guide/snowflake-cortex/cortex-agents-mcp",
+      "via": "verification"
+    },
+    {
+      "url": "https://docs.snowflake.com/en/release-notes/2025/other/2025-11-04-cortex-agents-mcp",
+      "via": "verification"
+    },
+    {
+      "url": "http://github.com/Snowflake-Labs/mcp",
+      "via": "verification"
+    },
+    {
+      "url": "https://docs.snowflake.com/en/developer-guide/native-apps/consumer-guide-access",
+      "via": "verification"
+    },
+    {
+      "url": "https://docs.snowflake.com/en/developer-guide/sql-api/authenticating",
+      "via": "verification"
+    },
+    {
+      "url": "https://docs.snowflake.com/en/en/developer-guide/snowflake-rest-api/authentication",
+      "via": "verification"
+    },
+    {
+      "url": "https://docs.snowflake.com/en/en/sql-reference/external-functions-creating-aws-planning",
+      "via": "verification"
+    },
+    {
+      "url": "https://docs.snowflake.com",
+      "via": "pass3"
+    },
+    {
+      "url": "https://docs.snowflake.com/en/developer",
+      "via": "pass3"
+    },
+    {
+      "url": "https://docs.snowflake.com/en/developer-guide/snowflake-python-api/reference/latest/index",
+      "via": "pass3"
+    },
+    {
+      "url": "https://docs.snowflake.com/en/developer-guide/snowflake-rest-api/snowflake-rest-api",
+      "via": "pass3"
+    },
+    {
+      "url": "https://docs.snowflake.com/en/developer-guide/snowflake-rest-api/tutorials/common-setup",
+      "via": "pass3"
+    }
+  ],
+  "queries": [
+    "Snowflake API authentication developer docs",
+    "Snowflake API access pricing plan developer",
+    "Snowflake MCP server"
+  ],
+  "seconds": 60.1,
+  "verification_queries": [
+    "Snowflake MCP server model context protocol",
+    "Snowflake API access requirements plan",
+    "Snowflake MCP server model context protocol",
+    "Snowflake API access requirements plan"
+  ],
+  "verification": {
+    "initial_issues": [
+      {
+        "loop": "L4_verifier",
+        "field": "mcp",
+        "problem": "verifier says official vs agent none_found"
+      },
+      {
+        "loop": "L4_verifier",
+        "field": "verdict",
+        "problem": "verifier says build_now vs agent build_with_friction"
+      },
+      {
+        "loop": "L5_mcp_probe",
+        "field": "mcp",
+        "problem": "possible official MCP found: ['https://docs.snowflake.com/en/user-guide/snowflake-cortex/cortex-agents-mcp', 'https://docs.snowflake.com/en/release-notes/2025/other/2025-11-04-cortex-agents-mcp']",
+        "urls": [
+          "https://docs.snowflake.com/en/user-guide/snowflake-cortex/cortex-agents-mcp",
+          "https://docs.snowflake.com/en/release-notes/2025/other/2025-11-04-cortex-agents-mcp",
+          "http://github.com/Snowflake-Labs/mcp"
+        ]
+      }
+    ],
+    "final_issues": [
+      {
+        "loop": "L4_verifier",
+        "field": "mcp",
+        "problem": "verifier says none_found vs agent official"
+      },
+      {
+        "loop": "L4_verifier",
+        "field": "verdict",
+        "problem": "verifier says build_now vs agent build_with_friction"
+      }
+    ],
+    "rounds": [
+      {
+        "round": 0,
+        "issues": [
+          {
+            "loop": "L4_verifier",
+            "field": "mcp",
+            "problem": "verifier says official vs agent none_found"
+          },
+          {
+            "loop": "L4_verifier",
+            "field": "verdict",
+            "problem": "verifier says build_now vs agent build_with_friction"
+          },
+          {
+            "loop": "L5_mcp_probe",
+            "field": "mcp",
+            "problem": "possible official MCP found: ['https://docs.snowflake.com/en/user-guide/snowflake-cortex/cortex-agents-mcp', 'https://docs.snowflake.com/en/release-notes/2025/other/2025-11-04-cortex-agents-mcp']",
+            "urls": [
+              "https://docs.snowflake.com/en/user-guide/snowflake-cortex/cortex-agents-mcp",
+              "https://docs.snowflake.com/en/release-notes/2025/other/2025-11-04-cortex-agents-mcp",
+              "http://github.com/Snowflake-Labs/mcp"
+            ]
+          }
+        ],
+        "verifier": {
+          "auth_methods": [
+            "oauth2",
+            "bearer_token"
+          ],
+          "auth_primary": "oauth2",
+          "access_tier": "self_serve_trial",
+          "api_types": [
+            "rest"
+          ],
+          "mcp": "official",
+          "verdict": "build_now",
+          "reasons": {
+            "auth": "Snowflake documents OAuth 2.0 and programmatic access tokens (used as bearer tokens) for API authentication.",
+            "access": "Snowflake offers a free trial account that provides developers with credentials to use the REST API.",
+            "mcp": "Snowflake’s Native App Framework includes an official MCP server documented by Snowflake.",
+            "verdict": "Public documentation, self‑serve trial credentials, and a REST API are available, enabling immediate development."
+          },
+          "_model": "openai/gpt-oss-20b"
+        },
+        "autofix": []
+      },
+      {
+        "round": 1,
+        "queries": [
+          "Snowflake MCP server model context protocol",
+          "Snowflake API access requirements plan"
+        ],
+        "new_sources": [
+          "https://docs.snowflake.com",
+          "https://docs.snowflake.com/en/developer-guide/native-apps/consumer-guide-access",
+          "https://docs.snowflake.com/en/developer-guide/sql-api/authenticating",
+          "https://docs.snowflake.com/en/en/developer-guide/snowflake-rest-api/authentication",
+          "https://docs.snowflake.com/en/en/sql-reference/external-functions-creating-aws-planning",
+          "https://docs.snowflake.com/en/user-guide/snowflake-cortex/cortex-agents-mcp",
+          "https://docs.snowflake.com/en/release-notes/2025/other/2025-11-04-cortex-agents-mcp",
+          "http://github.com/Snowflake-Labs/mcp"
+        ],
+        "change_log": "Updated mcp to 'official' as Snowflake provides a managed MCP server, and set verdict to 'build_now' given that public REST APIs, official MCP support, and self-serve trial credentials are fully available.",
+        "issues": [
+          {
+            "loop": "L1_evidence",
+            "field": "verdict",
+            "problem": "quote not found on cited page",
+            "url": "https://docs.snowflake.com",
+            "match": 0.11
+          },
+          {
+            "loop": "L2_rules",
+            "field": "verdict",
+            "problem": "verdict build_now contradicts access_tier self_serve_trial"
+          },
+          {
+            "loop": "L2_rules",
+            "field": "mcp",
+            "problem": "official MCP claimed without a URL"
+          },
+          {
+            "loop": "L4_verifier",
+            "field": "mcp",
+            "problem": "verifier says none_found vs agent official"
+          }
+        ],
+        "verifier": {
+          "auth_methods": [
+            "oauth2",
+            "bearer_token",
+            "jwt_or_signed"
+          ],
+          "auth_primary": "oauth2",
+          "access_tier": "self_serve_trial",
+          "api_types": [
+            "rest"
+          ],
+          "mcp": "none_found",
+          "verdict": "build_now",
+          "reasons": {
+            "auth": "Snowflake supports OAuth, programmatic access tokens (PAT) and key‑pair JWT authentication as documented in the SQL and REST API authentication guides.",
+            "access": "Users can sign up for a free trial account via the Snowflake documentation, providing immediate credentials for development.",
+            "mcp": "No official MCP server is published by Snowflake; the Native App Framework does not expose an MCP endpoint.",
+            "verdict": "All required documentation and free trial credentials are publicly available, enabling a developer to build a toolkit today."
+          },
+          "_model": "openai/gpt-oss-20b"
+        },
+        "autofix": [
+          "blocker reset to none for build_now"
+        ]
+      },
+      {
+        "round": 2,
+        "queries": [
+          "Snowflake MCP server model context protocol",
+          "Snowflake API access requirements plan",
+          "Snowflake MCP server model context protocol",
+          "Snowflake API access requirements plan"
+        ],
+        "new_sources": [
+          "https://docs.snowflake.com",
+          "https://docs.snowflake.com/en/developer-guide/native-apps/consumer-guide-access",
+          "https://docs.snowflake.com/en/developer-guide/sql-api/authenticating",
+          "https://docs.snowflake.com/en/en/developer-guide/snowflake-rest-api/authentication",
+          "https://docs.snowflake.com/en/en/sql-reference/external-functions-creating-aws-planning"
+        ],
+        "change_log": "Updated verdict to build_with_friction due to trial/paid tier access requirements, added official MCP URL, and included supporting evidence quotes.",
+        "issues": [
+          {
+            "loop": "L4_verifier",
+            "field": "mcp",
+            "problem": "verifier says none_found vs agent official"
+          },
+          {
+            "loop": "L4_verifier",
+            "field": "verdict",
+            "problem": "verifier says build_now vs agent build_with_friction"
+          }
+        ],
+        "verifier": {
+          "auth_methods": [
+            "oauth2",
+            "bearer_token",
+            "jwt_or_signed"
+          ],
+          "auth_primary": "oauth2",
+          "access_tier": "self_serve_trial",
+          "api_types": [
+            "rest"
+          ],
+          "mcp": "none_found",
+          "verdict": "build_now",
+          "reasons": {
+            "auth": "Snowflake supports OAuth, programmatic access tokens (PAT) and key‑pair JWT authentication as documented in the SQL and REST API authentication guides.",
+            "access": "Users can sign up for a free trial account via the Snowflake documentation, providing immediate credentials for development.",
+            "mcp": "No official MCP server is documented by Snowflake; only third‑party solutions exist, so we mark none_found.",
+            "verdict": "Public documentation and a self‑serve trial allow developers to build a toolkit today."
+          },
+          "_model": "openai/gpt-oss-20b"
+        },
+        "autofix": []
+      }
+    ],
+    "catalog": {
+      "in_catalog": true,
+      "slug": "snowflake",
+      "auth": [
+        "oauth2"
+      ],
+      "tools_count": 16
+    },
+    "changed_fields": [
+      "mcp"
+    ],
+    "field_status": {
+      "auth": "verified",
+      "access": "verified",
+      "api": "verified",
+      "mcp": "needs_human",
+      "verdict": "needs_human"
+    },
+    "needs_human": [
+      "mcp",
+      "verdict"
+    ],
+    "before": {
+      "auth_methods": [
+        "oauth2",
+        "bearer_token",
+        "basic",
+        "jwt_or_signed"
+      ],
+      "auth_primary": "oauth2",
+      "access_tier": "self_serve_trial",
+      "access_notes": "Snowflake offers a trial account to get credentials, but ongoing access requires a paid plan.",
+      "api_types": [
+        "rest",
+        "sdk_or_cli_only"
+      ],
+      "api_breadth": "broad",
+      "api_notes": "Comprehensive REST APIs and Python SDK covering accounts, users, warehouses, databases, tables, and AI/ML services.",
+      "mcp": "none_found",
+      "mcp_url": null,
+      "verdict": "build_with_friction",
+      "blocker": "paid_plan",
+      "blocker_notes": "Requires a paid plan or trial account after initial setup."
+    },
+    "seconds": 114.6
+  },
+  "pass3": {
+    "before": {
+      "auth_methods": [
+        "oauth2",
+        "bearer_token",
+        "basic",
+        "jwt_or_signed"
+      ],
+      "auth_primary": "oauth2",
+      "access_tier": "self_serve_trial",
+      "verdict": "build_with_friction",
+      "blocker": "paid_plan"
+    },
+    "log": [
+      {
+        "loop": "L6_access",
+        "error": "Groq failed: HTTP 429: {\"error\":{\"message\":\"Rate limit reached for model `qwen/qwen3.8-27b` in organization `org_01m2fd9xn8e3dtb9zfqc2jdhsc` service tier `on_demand` on tokens per day (TPD): Limit 200"
+      },
+      {
+        "loop": "L7_auth",
+        "error": "Groq failed: HTTP 429: {\"error\":{\"message\":\"Rate limit reached for model `qwen/qwen3.8-27b` in organization `org_01m2fd9xn8e3dtb9zfqc2jdhsc` service tier `on_demand` on tokens per day (TPD): Limit 200"
+      }
+    ],
+    "access_sources": [
+      "https://docs.snowflake.com",
+      "https://docs.snowflake.com/en/developer",
+      "https://docs.snowflake.com/en/developer-guide/snowflake-python-api/reference/latest/index",
+      "https://docs.snowflake.com/en/developer-guide/snowflake-rest-api/snowflake-rest-api",
+      "https://docs.snowflake.com/en/developer-guide/snowflake-rest-api/tutorials/common-setup"
+    ]
+  }
+}

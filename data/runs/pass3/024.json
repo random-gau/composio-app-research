@@ -1,0 +1,308 @@
+{
+  "one_liner": "Enterprise collaboration suite offering messaging, docs, calendar, and workflows via APIs.",
+  "auth_methods": [
+    "oauth2",
+    "bearer_token"
+  ],
+  "auth_primary": "oauth2",
+  "auth_notes": "Uses tenant_access_token, app_access_token, or user_access_token passed as Bearer tokens.",
+  "access_tier": "self_serve_free",
+  "access_notes": "Developers can sign up for a free developer account and create custom apps on the developer console.",
+  "api_types": [
+    "rest"
+  ],
+  "api_breadth": "broad",
+  "api_notes": "Comprehensive REST APIs covering messaging, contacts, calendar, drive, docs, and bits/base tables under open.larksuite.com.",
+  "mcp": "official",
+  "mcp_url": "https://github.com/larksuite/lark-openapi-mcp",
+  "verdict": "build_now",
+  "blocker": "none",
+  "blocker_notes": "Publicly available developer platform with self-serve custom apps.",
+  "evidence": {
+    "auth": {
+      "url": "https://open.larksuite.com/document/home/introduction-to-scope-and-authorization/access-credentials",
+      "quote": "Note: The tokens should be placed in the HTTP request header and the value needs to be prefixed with``Bearer`' , as shown below:",
+      "check": "ok"
+    },
+    "access": {
+      "url": "https://open.larksuite.com/document/server-docs/getting-started/getting-started",
+      "quote": "Create apps. In the Developer Console, create custom apps or store apps according to actual needs.",
+      "check": "ok"
+    },
+    "api": {
+      "url": "https://open.larksuite.com/document/server-docs/getting-started/getting-started",
+      "quote": "The APIs provided by Lark Open Platform follow the RESTful style, and the format of the request URL is as follows:",
+      "check": "ok"
+    },
+    "mcp": {
+      "url": "https://open.larksuite.com/document/uAjLw4CM/ukTMukTMukTM/mcp_integration/mcp_introduction",
+      "quote": "OpenAPI MCP Tool (hereinafter referred to as \"MCP Tool\") can help you quickly integrate AI agents with Lark's open capabilities...",
+      "check": "ok"
+    },
+    "verdict": {
+      "url": "https://open.larksuite.com/document/server-docs/getting-started/getting-started",
+      "quote": "Create apps. In the Developer Console, create custom apps or store apps according to actual needs.",
+      "check": "ok"
+    }
+  },
+  "confidence": {
+    "auth": 0.9,
+    "access": 0.9,
+    "api": 0.9,
+    "mcp": 0.8,
+    "verdict": 0.9
+  },
+  "_model": "gemini-3.5-flash-lite",
+  "status": "ok",
+  "id": 24,
+  "name": "Lark (Larksuite)",
+  "category": "Communications & Messaging",
+  "hint": "open.larksuite.com",
+  "sources": [
+    {
+      "url": "https://open.larksuite.com/document/common-capabilities/sso/api/obtain-oauth-code",
+      "via": "composio_fetch",
+      "chars": 11005
+    },
+    {
+      "url": "https://open.larksuite.com/document/home/introduction-to-scope-and-authorization/access-credentials",
+      "via": "composio_fetch",
+      "chars": 3313
+    },
+    {
+      "url": "https://open.larksuite.com/document/server-docs/getting-started/api-access-token/app-access-token-development-guide",
+      "via": "composio_fetch",
+      "chars": 9107
+    },
+    {
+      "url": "https://open.larksuite.com/document/server-docs/getting-started/api-access-token/g",
+      "via": "composio_fetch",
+      "chars": 3704
+    },
+    {
+      "url": "https://open.larksuite.com/document/server-docs/getting-started/api-access-token/get-",
+      "via": "composio_fetch",
+      "chars": 4708
+    },
+    {
+      "url": "https://open.larksuite.com/document/server-docs/getting-started/getting-started",
+      "via": "composio_fetch",
+      "chars": 1795
+    },
+    {
+      "url": "https://open.larksuite.com/document/uAjLw4CM/ukTMukTMukTM/mcp_integration/mcp_introduction",
+      "via": "verification"
+    },
+    {
+      "url": "https://github.com/YuanZhiTech/lark-mcp-server",
+      "via": "verification"
+    },
+    {
+      "url": "https://github.com/larksuite/lark-openapi-mcp",
+      "via": "verification"
+    },
+    {
+      "url": "https://github.com/phancthanhduc/lark-mcp",
+      "via": "verification"
+    },
+    {
+      "url": "https://github.com/yuki-js/larkmcp",
+      "via": "verification"
+    },
+    {
+      "url": "https://open.larksuite.com/document/uAjLw4CM/ukTMukTMukTM/mcp_integration/quick-start-guides/quick-integration-with-openapi-mcp",
+      "via": "verification"
+    },
+    {
+      "url": "https://github.com/larksuite/lark-openapi-mcp/blob/main/docs/usage/docker/docker.md",
+      "via": "verification"
+    },
+    {
+      "url": "https://base.larksuite.com/pricing",
+      "via": "pass3"
+    },
+    {
+      "url": "https://open.larksuite.com/document/client-docs/h5/development-guide/step1",
+      "via": "pass3"
+    },
+    {
+      "url": "https://open.larksuite.com/document/server-docs/getting-started/api-access-token/app-access-token-development-guide",
+      "via": "pass3"
+    },
+    {
+      "url": "https://open.larksuite.com/document/server-docs/getting-started/api-access-token/g",
+      "via": "pass3"
+    },
+    {
+      "url": "https://open.larksuite.com/document/server-docs/getting-started/api-access-token/get-",
+      "via": "pass3"
+    }
+  ],
+  "queries": [
+    "Lark (Larksuite) API authentication developer docs",
+    "Lark (Larksuite) API access pricing plan developer",
+    "Lark (Larksuite) MCP server"
+  ],
+  "seconds": 59.9,
+  "verification_queries": [
+    "Lark MCP server model context protocol"
+  ],
+  "verification": {
+    "initial_issues": [
+      {
+        "loop": "L5_mcp_probe",
+        "field": "mcp",
+        "problem": "possible official MCP found: ['https://github.com/larksuite/lark-openapi-mcp', 'https://open.larksuite.com/document/uAjLw4CM/ukTMukTMukTM/mcp_integration/quick-start-guides/quick-integration-with-openapi-mcp']",
+        "urls": [
+          "https://github.com/larksuite/lark-openapi-mcp",
+          "https://open.larksuite.com/document/uAjLw4CM/ukTMukTMukTM/mcp_integration/quick-start-guides/quick-integration-with-openapi-mcp",
+          "https://github.com/larksuite/lark-openapi-mcp/blob/main/docs/usage/docker/docker.md"
+        ]
+      }
+    ],
+    "final_issues": [],
+    "rounds": [
+      {
+        "round": 0,
+        "issues": [
+          {
+            "loop": "L5_mcp_probe",
+            "field": "mcp",
+            "problem": "possible official MCP found: ['https://github.com/larksuite/lark-openapi-mcp', 'https://open.larksuite.com/document/uAjLw4CM/ukTMukTMukTM/mcp_integration/quick-start-guides/quick-integration-with-openapi-mcp']",
+            "urls": [
+              "https://github.com/larksuite/lark-openapi-mcp",
+              "https://open.larksuite.com/document/uAjLw4CM/ukTMukTMukTM/mcp_integration/quick-start-guides/quick-integration-with-openapi-mcp",
+              "https://github.com/larksuite/lark-openapi-mcp/blob/main/docs/usage/docker/docker.md"
+            ]
+          }
+        ],
+        "verifier": {
+          "auth_methods": [
+            "oauth2",
+            "bearer_token"
+          ],
+          "auth_primary": "bearer_token",
+          "access_tier": "self_serve_free",
+          "api_types": [
+            "rest"
+          ],
+          "mcp": "none_found",
+          "verdict": "build_now",
+          "reasons": {
+            "auth": "Lark’s public API uses OAuth 2.0 for user authorization (obtain‑authorization‑code flow) and bearer tokens (tenant_access_token/app_access_token) for API calls. No API key, basic auth, JWT or other methods are documented.",
+            "access": "Developers can create a custom app in the Lark Developer Console, obtain an App ID and App Secret, and generate tenant_access_token/app_access_token on the server side without any paid plan or approval. This is a self‑serve free tier.",
+            "mcp": "No official MCP server is documented by Lark in the provided sources; only the standard OpenAPI endpoints are available.",
+            "verdict": "The public documentation provides all necessary steps to obtain credentials and call the REST API, so a toolkit can be built today."
+          },
+          "_model": "openai/gpt-oss-20b"
+        },
+        "autofix": []
+      },
+      {
+        "round": 1,
+        "queries": [
+          "Lark MCP server model context protocol"
+        ],
+        "new_sources": [
+          "https://open.larksuite.com/document/uAjLw4CM/ukTMukTMukTM/mcp_integration/mcp_introduction",
+          "https://github.com/YuanZhiTech/lark-mcp-server",
+          "https://github.com/larksuite/lark-openapi-mcp",
+          "https://github.com/phancthanhduc/lark-mcp",
+          "https://github.com/yuki-js/larkmcp",
+          "https://open.larksuite.com/document/uAjLw4CM/ukTMukTMukTM/mcp_integration/quick-start-guides/quick-integration-with-openapi-mcp",
+          "https://github.com/larksuite/lark-openapi-mcp/blob/main/docs/usage/docker/docker.md"
+        ],
+        "change_log": "Updated mcp field to 'official' and provided mcp_url based on official Lark OpenAPI MCP documentation and repository.",
+        "issues": [],
+        "verifier": {
+          "auth_methods": [
+            "oauth2",
+            "bearer_token"
+          ],
+          "auth_primary": "oauth2",
+          "access_tier": "self_serve_free",
+          "api_types": [
+            "rest"
+          ],
+          "mcp": "official",
+          "verdict": "build_now",
+          "reasons": {
+            "auth": "Docs describe tenant_access_token and user_access_token obtained via OAuth flow and usable as bearer tokens",
+            "access": "Developer can create a Lark app and obtain App ID/Secret for free to get tokens",
+            "mcp": "Official MCP tool and server are documented by Lark (source 1, 3)",
+            "verdict": "Public documentation and free self‑serve credentials enable immediate integration"
+          },
+          "_model": "openai/gpt-oss-120b"
+        },
+        "autofix": []
+      }
+    ],
+    "catalog": {
+      "in_catalog": false,
+      "checked": [
+        "lark",
+        "larksuite",
+        "feishu"
+      ]
+    },
+    "changed_fields": [
+      "mcp"
+    ],
+    "field_status": {
+      "auth": "verified",
+      "access": "verified",
+      "api": "verified",
+      "mcp": "corrected",
+      "verdict": "verified"
+    },
+    "needs_human": [],
+    "before": {
+      "auth_methods": [
+        "oauth2",
+        "bearer_token"
+      ],
+      "auth_primary": "oauth2",
+      "access_tier": "self_serve_free",
+      "access_notes": "Developers can sign up for a free developer account and create custom apps on the developer console.",
+      "api_types": [
+        "rest"
+      ],
+      "api_breadth": "broad",
+      "api_notes": "Comprehensive REST APIs covering messaging, contacts, calendar, drive, docs, and bits/base tables under open.larksuite.com.",
+      "mcp": "none_found",
+      "mcp_url": null,
+      "verdict": "build_now",
+      "blocker": "none",
+      "blocker_notes": "Publicly available developer platform with self-serve custom apps."
+    },
+    "seconds": 151.9
+  },
+  "_public_review": "unknown",
+  "pass3": {
+    "before": {
+      "auth_methods": [
+        "oauth2",
+        "bearer_token"
+      ],
+      "auth_primary": "oauth2",
+      "access_tier": "self_serve_free",
+      "verdict": "build_now",
+      "blocker": "none"
+    },
+    "log": [
+      {
+        "loop": "L6_access",
+        "field": "access",
+        "change": null,
+        "reason": "confirmed with a verified quote"
+      }
+    ],
+    "access_sources": [
+      "https://base.larksuite.com/pricing",
+      "https://open.larksuite.com/document/client-docs/h5/development-guide/step1",
+      "https://open.larksuite.com/document/server-docs/getting-started/api-access-token/app-access-token-development-guide",
+      "https://open.larksuite.com/document/server-docs/getting-started/api-access-token/g",
+      "https://open.larksuite.com/document/server-docs/getting-started/api-access-token/get-"
+    ]
+  }
+}

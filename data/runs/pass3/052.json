@@ -1,0 +1,370 @@
+{
+  "one_liner": "SEO and AI search data platform offering keywords, backlinks, domains, and site audits.",
+  "auth_methods": [
+    "api_key"
+  ],
+  "auth_primary": "api_key",
+  "auth_notes": "Supports Authorization header with Token scheme or apikey query parameter.",
+  "access_tier": "self_serve_free",
+  "access_notes": "Free 14-day trial available providing 100K API credits and MCP server access without credit card.",
+  "api_types": [
+    "rest"
+  ],
+  "api_breadth": "broad",
+  "api_notes": "Covers keywords, backlinks, domains, audits, AI search, and project management via REST endpoints.",
+  "mcp": "official",
+  "mcp_url": "https://seranking.com/api/integrations/mcp",
+  "verdict": "build_now",
+  "blocker": "none",
+  "blocker_notes": "None, public trial provides immediate API key and MCP access.",
+  "evidence": {
+    "auth": {
+      "url": "https://seranking.com/api/data/getting-started",
+      "quote": "Method 1: Authorization header (recommended)\nAuthorization\nToken YOUR_API_KEY\n-H 'Authorization: Token YOUR_API_KEY'",
+      "check": "partial"
+    },
+    "access": {
+      "url": "https://seranking.com/api-pricing.html",
+      "quote": "Yes. The 14-day free trial gives you 100K API credits across all six API endpoints, as well as  MCP server access. You also get access to the complete SEO and GEO suite by SE Ranking. No credit card required.",
+      "check": "ok"
+    },
+    "api": {
+      "url": "https://seranking.com/api-pricing.html",
+      "quote": "One API for keywords, backlinks, domains, audits, AI search, and more. Start pay as you go or commit annually for volume discounts.",
+      "check": "ok"
+    },
+    "mcp": {
+      "url": "https://seranking.com/api.html",
+      "quote": "SE Ranking’s MCP server connects SE Ranking’s data directly to AI assistants like Claude, Codex, Gemini, Cursor, and any other client.",
+      "check": "ok"
+    },
+    "verdict": {
+      "url": "https://seranking.com/api-pricing.html",
+      "quote": "The 14-day free trial gives you 100K API credits across all six API endpoints, as well as  MCP server access.",
+      "check": "ok"
+    }
+  },
+  "confidence": {
+    "auth": 5.0,
+    "access": 5.0,
+    "api": 5.0,
+    "mcp": 5.0,
+    "verdict": 5.0
+  },
+  "_model": "gemini-3.5-flash-lite",
+  "status": "ok",
+  "id": 52,
+  "name": "SE Ranking",
+  "category": "Data SEO & Scraping",
+  "hint": "seranking.com/api",
+  "sources": [
+    {
+      "url": "https://seranking.com/api",
+      "via": "composio_fetch",
+      "chars": 202
+    },
+    {
+      "url": "https://seranking.com/api-pricing.html",
+      "via": "direct",
+      "chars": 7546
+    },
+    {
+      "url": "https://seranking.com/api.html",
+      "via": "direct",
+      "chars": 12682
+    },
+    {
+      "url": "https://seranking.com/api/api-credits-system",
+      "via": "direct",
+      "chars": 5802
+    },
+    {
+      "url": "https://seranking.com/api/data",
+      "via": "direct",
+      "chars": 1134
+    },
+    {
+      "url": "https://seranking.com/api/data/getting-started",
+      "via": "direct",
+      "chars": 7880
+    },
+    {
+      "url": "https://seranking.com/api/data/reference",
+      "via": "verification"
+    },
+    {
+      "url": "https://seranking.com/api/how-to-get-api",
+      "via": "verification"
+    },
+    {
+      "url": "https://seranking.com/api/integrations/mcp",
+      "via": "verification"
+    },
+    {
+      "url": "https://seranking.com/api/data/reference",
+      "via": "verification"
+    },
+    {
+      "url": "https://seranking.com/api/how-to-get-api",
+      "via": "verification"
+    },
+    {
+      "url": "https://seranking.com/api/integrations/mcp",
+      "via": "verification"
+    },
+    {
+      "url": "https://seranking.com/api",
+      "via": "pass3"
+    },
+    {
+      "url": "https://seranking.com/api-pricing.html",
+      "via": "pass3"
+    },
+    {
+      "url": "https://seranking.com/api.html",
+      "via": "pass3"
+    },
+    {
+      "url": "https://seranking.com/api/api-credits-system",
+      "via": "pass3"
+    },
+    {
+      "url": "https://seranking.com/api/data/getting-started",
+      "via": "pass3"
+    }
+  ],
+  "queries": [
+    "SE Ranking API authentication developer docs",
+    "SE Ranking API access pricing plan developer",
+    "SE Ranking MCP server"
+  ],
+  "seconds": 53.4,
+  "verification_queries": [
+    "SE Ranking API authentication OAuth API key",
+    "SE Ranking API reference authentication",
+    "SE Ranking API authentication OAuth API key",
+    "SE Ranking API reference authentication"
+  ],
+  "verification": {
+    "initial_issues": [
+      {
+        "loop": "L1_evidence",
+        "field": "auth",
+        "problem": "quote only partially matches page",
+        "url": "https://seranking.com/api/data/getting-started",
+        "match": 0.55
+      },
+      {
+        "loop": "L4_verifier",
+        "field": "auth",
+        "problem": "verifier says ['api_key'] vs agent ['bearer_token', 'other']"
+      }
+    ],
+    "final_issues": [
+      {
+        "loop": "L1_evidence",
+        "field": "auth",
+        "problem": "quote only partially matches page",
+        "url": "https://seranking.com/api/data/getting-started",
+        "match": 0.55
+      }
+    ],
+    "rounds": [
+      {
+        "round": 0,
+        "issues": [
+          {
+            "loop": "L1_evidence",
+            "field": "auth",
+            "problem": "quote only partially matches page",
+            "url": "https://seranking.com/api/data/getting-started",
+            "match": 0.55
+          },
+          {
+            "loop": "L4_verifier",
+            "field": "auth",
+            "problem": "verifier says ['api_key'] vs agent ['bearer_token', 'other']"
+          }
+        ],
+        "verifier": {
+          "auth_methods": [
+            "api_key"
+          ],
+          "auth_primary": "api_key",
+          "access_tier": "self_serve_free",
+          "api_types": [
+            "rest"
+          ],
+          "mcp": "official",
+          "verdict": "build_now",
+          "reasons": {
+            "auth": "SE Ranking requires an API key passed in the Authorization header (Token YOUR_API_KEY). No other auth methods are documented.",
+            "access": "A free 14‑day trial provides an API key immediately after email confirmation, allowing full API and MCP access. Production use requires a paid plan, but the trial is self‑serve.",
+            "mcp": "The MCP server is officially documented and available to all plans, enabling conversational queries via AI assistants.",
+            "verdict": "Public REST API documentation, free trial credentials, and no additional approval steps make it possible to build a toolkit today."
+          },
+          "_model": "openai/gpt-oss-20b"
+        },
+        "autofix": []
+      },
+      {
+        "round": 1,
+        "queries": [
+          "SE Ranking API authentication OAuth API key",
+          "SE Ranking API reference authentication"
+        ],
+        "new_sources": [
+          "https://seranking.com/api",
+          "https://seranking.com/api/data/getting-started",
+          "https://seranking.com/api/data/reference",
+          "https://seranking.com/api/how-to-get-api",
+          "https://seranking.com/api/integrations/mcp"
+        ],
+        "change_log": "Updated auth_methods to api_key as documented in SE Ranking getting-started guide via the Authorization header using Token prefix.",
+        "issues": [
+          {
+            "loop": "L1_evidence",
+            "field": "auth",
+            "problem": "quote only partially matches page",
+            "url": "https://seranking.com/api/data/getting-started",
+            "match": 0.65
+          }
+        ],
+        "verifier": {
+          "auth_methods": [
+            "api_key"
+          ],
+          "auth_primary": "api_key",
+          "access_tier": "paid_plan",
+          "api_types": [
+            "rest"
+          ],
+          "mcp": "official",
+          "verdict": "build_with_friction",
+          "reasons": {
+            "auth": "API key authentication via Authorization header or query param",
+            "access": "Data API access requires a paid subscription plan (Essential, Pro, Business, Core, Growth, Enterprise)",
+            "mcp": "Official API documented and published by SE Ranking",
+            "verdict": "Buildable but requires a paid plan, so friction exists"
+          },
+          "_model": "openai/gpt-oss-20b"
+        },
+        "autofix": []
+      },
+      {
+        "round": 2,
+        "queries": [
+          "SE Ranking API authentication OAuth API key",
+          "SE Ranking API reference authentication",
+          "SE Ranking API authentication OAuth API key",
+          "SE Ranking API reference authentication"
+        ],
+        "new_sources": [
+          "https://seranking.com/api",
+          "https://seranking.com/api/data/getting-started",
+          "https://seranking.com/api/data/reference",
+          "https://seranking.com/api/how-to-get-api",
+          "https://seranking.com/api/integrations/mcp"
+        ],
+        "change_log": "Updated auth evidence to correctly cite the getting-started documentation page where the Authorization header is defined.",
+        "issues": [
+          {
+            "loop": "L1_evidence",
+            "field": "auth",
+            "problem": "quote only partially matches page",
+            "url": "https://seranking.com/api/data/getting-started",
+            "match": 0.55
+          }
+        ],
+        "verifier": {
+          "auth_methods": [
+            "api_key"
+          ],
+          "auth_primary": "api_key",
+          "access_tier": "paid_plan",
+          "api_types": [
+            "rest"
+          ],
+          "mcp": "official",
+          "verdict": "build_with_friction",
+          "reasons": {
+            "auth": "API key authentication via Authorization header or query param",
+            "access": "Data API access requires a paid subscription plan (Essential, Pro, Business, Core, Growth, Enterprise)",
+            "mcp": "Official API documented and published by SE Ranking",
+            "verdict": "Buildable after obtaining a paid plan, but not free"
+          },
+          "_model": "openai/gpt-oss-20b"
+        },
+        "autofix": []
+      }
+    ],
+    "catalog": {
+      "in_catalog": false,
+      "checked": [
+        "seranking",
+        "se_ranking"
+      ]
+    },
+    "changed_fields": [
+      "auth"
+    ],
+    "field_status": {
+      "auth": "needs_human",
+      "access": "verified",
+      "api": "verified",
+      "mcp": "verified",
+      "verdict": "verified"
+    },
+    "needs_human": [
+      "auth"
+    ],
+    "before": {
+      "auth_methods": [
+        "bearer_token",
+        "other"
+      ],
+      "auth_primary": "bearer_token",
+      "access_tier": "self_serve_free",
+      "access_notes": "Free 14-day trial available providing 100K API credits and MCP server access without credit card.",
+      "api_types": [
+        "rest"
+      ],
+      "api_breadth": "broad",
+      "api_notes": "Covers keywords, backlinks, domains, audits, AI search, and project management via REST endpoints.",
+      "mcp": "official",
+      "mcp_url": "https://seranking.com/api.html",
+      "verdict": "build_now",
+      "blocker": "none",
+      "blocker_notes": "None, public trial provides immediate API key and MCP access."
+    },
+    "seconds": 150.3
+  },
+  "pass3": {
+    "before": {
+      "auth_methods": [
+        "api_key"
+      ],
+      "auth_primary": "api_key",
+      "access_tier": "self_serve_free",
+      "verdict": "build_now",
+      "blocker": "none"
+    },
+    "log": [
+      {
+        "loop": "L6_access",
+        "error": "Groq failed: HTTP 429: {\"error\":{\"message\":\"Rate limit reached for model `qwen/qwen3.8-27b` in organization `org_01m2fd9xn8e3dtb9zfqc2jdhsc` service tier `on_demand` on tokens per day (TPD): Limit 200"
+      },
+      {
+        "loop": "L7_auth",
+        "error": "Groq failed: HTTP 429: {\"error\":{\"message\":\"Rate limit reached for model `qwen/qwen3.8-27b` in organization `org_01m2fd9xn8e3dtb9zfqc2jdhsc` service tier `on_demand` on tokens per day (TPD): Limit 200"
+      }
+    ],
+    "access_sources": [
+      "https://seranking.com/api",
+      "https://seranking.com/api-pricing.html",
+      "https://seranking.com/api.html",
+      "https://seranking.com/api/api-credits-system",
+      "https://seranking.com/api/data/getting-started"
+    ]
+  }
+}

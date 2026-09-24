@@ -1,0 +1,347 @@
+{
+  "one_liner": "Web data API to search, scrape, map, and crawl the live web at scale.",
+  "auth_methods": [
+    "api_key",
+    "bearer_token"
+  ],
+  "auth_primary": "api_key",
+  "auth_notes": "API key passed via Bearer token in the Authorization header or specific SDK options.",
+  "access_tier": "self_serve_free",
+  "access_notes": "New accounts start on a free plan offering 1,000 credits/month with no credit card required.",
+  "api_types": [
+    "rest"
+  ],
+  "api_breadth": "moderate",
+  "api_notes": "Endpoints cover scrape, crawl, map, search, extract, batch scrape, interact and monitor under base URL api.firecrawl.dev.",
+  "mcp": "official",
+  "mcp_url": "https://firecrawl.dev",
+  "verdict": "build_now",
+  "blocker": "none",
+  "blocker_notes": "Public API, self-serve free tier, official MCP, and SDKs readily available.",
+  "evidence": {
+    "auth": {
+      "url": "https://docs.firecrawl.dev/api-reference/endpoint/crawl-post",
+      "quote": "Authorization\nBearer authentication header of the form\nBearer <token>\n<token>\nis your auth token.",
+      "check": "partial"
+    },
+    "access": {
+      "url": "https://docs.firecrawl.dev/billing",
+      "quote": "New accounts start on the free plan. It costs nothing and does not need a card.",
+      "check": "ok"
+    },
+    "api": {
+      "url": "https://docs.firecrawl.dev/billing",
+      "quote": "Scrape, crawl, map, search, extract, batch scrape, interact and monitor all work on the free plan.",
+      "check": "ok"
+    },
+    "mcp": {
+      "url": "https://firecrawl.dev",
+      "quote": "Yes. Firecrawl has an official MCP server so agents in Cursor, Claude, Windsurf, and other MCP-compatible tools can search, scrape, and interact with the web directly.",
+      "check": "ok"
+    },
+    "verdict": {
+      "url": "https://firecrawl.dev",
+      "quote": "Firecrawl gives you 1,000 free credits every month, which covers about 1,000 pages, and no card is required.",
+      "check": "ok"
+    }
+  },
+  "confidence": {
+    "auth": 5.0,
+    "access": 5.0,
+    "api": 5.0,
+    "mcp": 5.0,
+    "verdict": 5.0
+  },
+  "_model": "gemini-3.5-flash-lite",
+  "status": "ok",
+  "id": 56,
+  "name": "Firecrawl",
+  "category": "Data SEO & Scraping",
+  "hint": "firecrawl.dev",
+  "sources": [
+    {
+      "url": "https://firecrawl.dev",
+      "via": "direct",
+      "chars": 20783
+    },
+    {
+      "url": "http://docs.firecrawl.dev/developer-guides/usage-guides/choosing-the-data-extractor",
+      "via": "direct",
+      "chars": 12297
+    },
+    {
+      "url": "http://docs.firecrawl.dev/introduction",
+      "via": "direct",
+      "chars": 11089
+    },
+    {
+      "url": "https://docs.firecrawl.dev/api-reference/endpoint/crawl-post",
+      "via": "direct",
+      "chars": 32646
+    },
+    {
+      "url": "https://docs.firecrawl.dev/api-reference/endpoint/scrape",
+      "via": "direct",
+      "chars": 40440
+    },
+    {
+      "url": "https://docs.firecrawl.dev/billing",
+      "via": "direct",
+      "chars": 19136
+    },
+    {
+      "url": "https://docs.firecrawl.dev/api-reference/v1-endpoint/extract",
+      "via": "verification"
+    },
+    {
+      "url": "https://docs.firecrawl.dev/api-reference/v1-endpoint/extract",
+      "via": "verification"
+    },
+    {
+      "url": "https://firecrawl.dev",
+      "via": "pass3"
+    },
+    {
+      "url": "http://docs.firecrawl.dev/introduction",
+      "via": "pass3"
+    },
+    {
+      "url": "https://docs.firecrawl.dev/api-reference/endpoint/scrape",
+      "via": "pass3"
+    },
+    {
+      "url": "https://docs.firecrawl.dev/billing",
+      "via": "pass3"
+    },
+    {
+      "url": "https://docs.firecrawl.dev/features/crawl?dub_id=5W9WUmP1QY8SNM9e",
+      "via": "pass3"
+    }
+  ],
+  "queries": [
+    "Firecrawl API authentication developer docs",
+    "Firecrawl API access pricing plan developer",
+    "Firecrawl MCP server"
+  ],
+  "seconds": 53.1,
+  "verification_queries": [
+    "Firecrawl API authentication OAuth API key",
+    "Firecrawl API reference authentication",
+    "Firecrawl API authentication OAuth API key",
+    "Firecrawl API reference authentication"
+  ],
+  "verification": {
+    "initial_issues": [
+      {
+        "loop": "L1_evidence",
+        "field": "auth",
+        "problem": "quote only partially matches page",
+        "url": "https://docs.firecrawl.dev/api-reference/endpoint/crawl-post",
+        "match": 0.64
+      }
+    ],
+    "final_issues": [
+      {
+        "loop": "L1_evidence",
+        "field": "auth",
+        "problem": "quote only partially matches page",
+        "url": "https://docs.firecrawl.dev/api-reference/endpoint/crawl-post",
+        "match": 0.64
+      }
+    ],
+    "rounds": [
+      {
+        "round": 0,
+        "issues": [
+          {
+            "loop": "L1_evidence",
+            "field": "auth",
+            "problem": "quote only partially matches page",
+            "url": "https://docs.firecrawl.dev/api-reference/endpoint/crawl-post",
+            "match": 0.64
+          }
+        ],
+        "verifier": {
+          "auth_methods": [
+            "api_key",
+            "bearer_token"
+          ],
+          "auth_primary": "api_key",
+          "access_tier": "self_serve_free",
+          "api_types": [
+            "rest"
+          ],
+          "mcp": "official",
+          "verdict": "build_now",
+          "reasons": {
+            "auth": "The API uses Bearer authentication with an API key (e.g., 'Authorization: Bearer $FIRECRAWL_API_KEY'). The documentation explicitly refers to this as an 'API key' and shows usage with 'fc-YOUR_API_KEY'.",
+            "access": "Firecrawl offers 1,000 free credits every month with no card required, allowing users to sign up and get working credentials for free. While some advanced features or higher limits may require paid plans, the base access is self-serve and free.",
+            "mcp": "The documentation mentions 'all MCP setup options' and a CLI that 'adds skills to every detected coding agent', indicating official support for MCP integration.",
+            "verdict": "Public documentation is available, and self-serve free credentials can be obtained immediately, allowing a toolkit to be built today."
+          },
+          "_model": "qwen/qwen3.8-27b"
+        },
+        "autofix": []
+      },
+      {
+        "round": 1,
+        "queries": [
+          "Firecrawl API authentication OAuth API key",
+          "Firecrawl API reference authentication"
+        ],
+        "new_sources": [
+          "https://firecrawl.dev",
+          "http://docs.firecrawl.dev/introduction",
+          "https://docs.firecrawl.dev/api-reference/endpoint/crawl-post",
+          "https://docs.firecrawl.dev/api-reference/endpoint/scrape",
+          "https://docs.firecrawl.dev/api-reference/v1-endpoint/extract"
+        ],
+        "change_log": "Updated the auth evidence citation to point to the correct heading in the documentation where Bearer token authentication is defined.",
+        "issues": [
+          {
+            "loop": "L1_evidence",
+            "field": "auth",
+            "problem": "quote only partially matches page",
+            "url": "https://docs.firecrawl.dev/api-reference/endpoint/crawl-post",
+            "match": 0.64
+          }
+        ],
+        "verifier": {
+          "auth_methods": [
+            "api_key",
+            "bearer_token"
+          ],
+          "auth_primary": "api_key",
+          "access_tier": "self_serve_free",
+          "api_types": [
+            "rest"
+          ],
+          "mcp": "official",
+          "verdict": "build_now",
+          "reasons": {
+            "auth": "The API uses Bearer authentication with a static API key (FIRECRAWL_API_KEY). While the header format is Bearer, the credential is a personal access token/API key obtained from the dashboard.",
+            "access": "Firecrawl offers 1,000 free credits every month with no card required, allowing developers to sign up and get working credentials for free. Some endpoints can even be used without an API key for lower rate limits.",
+            "mcp": "The documentation explicitly mentions 'all MCP setup options' and a CLI that adds skills to coding agents, indicating official MCP support.",
+            "verdict": "Public documentation is available, and self-serve free credentials can be obtained immediately, allowing a toolkit to be built today."
+          },
+          "_model": "qwen/qwen3.8-27b"
+        },
+        "autofix": []
+      },
+      {
+        "round": 2,
+        "queries": [
+          "Firecrawl API authentication OAuth API key",
+          "Firecrawl API reference authentication",
+          "Firecrawl API authentication OAuth API key",
+          "Firecrawl API reference authentication"
+        ],
+        "new_sources": [
+          "https://firecrawl.dev",
+          "http://docs.firecrawl.dev/introduction",
+          "https://docs.firecrawl.dev/api-reference/endpoint/crawl-post",
+          "https://docs.firecrawl.dev/api-reference/endpoint/scrape",
+          "https://docs.firecrawl.dev/api-reference/v1-endpoint/extract"
+        ],
+        "change_log": "Updated the auth evidence citation to point correctly to the API reference section documenting Bearer authentication headers.",
+        "issues": [
+          {
+            "loop": "L1_evidence",
+            "field": "auth",
+            "problem": "quote only partially matches page",
+            "url": "https://docs.firecrawl.dev/api-reference/endpoint/crawl-post",
+            "match": 0.64
+          }
+        ],
+        "verifier": {
+          "auth_methods": [
+            "bearer_token"
+          ],
+          "auth_primary": "bearer_token",
+          "access_tier": "self_serve_free",
+          "api_types": [
+            "rest"
+          ],
+          "mcp": "none_found",
+          "verdict": "build_now",
+          "reasons": {
+            "auth": "API key used as bearer token, no other auth methods documented",
+            "access": "Free tier provides 1,000 credits/month with no card required; paid plans available for higher usage",
+            "mcp": "No official MCP server documented by Firecrawl",
+            "verdict": "Public REST API with self‑serve free credentials is available, enabling immediate development"
+          },
+          "_model": "openai/gpt-oss-20b"
+        },
+        "autofix": []
+      }
+    ],
+    "catalog": {
+      "in_catalog": true,
+      "slug": "firecrawl",
+      "auth": [
+        "api_key"
+      ],
+      "tools_count": 29
+    },
+    "changed_fields": [],
+    "field_status": {
+      "auth": "needs_human",
+      "access": "verified",
+      "api": "verified",
+      "mcp": "verified",
+      "verdict": "verified"
+    },
+    "needs_human": [
+      "auth"
+    ],
+    "before": {
+      "auth_methods": [
+        "api_key",
+        "bearer_token"
+      ],
+      "auth_primary": "api_key",
+      "access_tier": "self_serve_free",
+      "access_notes": "New accounts start on a free plan offering 1,000 credits/month with no credit card required.",
+      "api_types": [
+        "rest"
+      ],
+      "api_breadth": "moderate",
+      "api_notes": "Endpoints cover scrape, crawl, map, search, extract, batch scrape, interact and monitor under base URL api.firecrawl.dev.",
+      "mcp": "official",
+      "mcp_url": "https://firecrawl.dev",
+      "verdict": "build_now",
+      "blocker": "none",
+      "blocker_notes": "Public API, self-serve free tier, official MCP, and SDKs readily available."
+    },
+    "seconds": 432.3
+  },
+  "pass3": {
+    "before": {
+      "auth_methods": [
+        "api_key",
+        "bearer_token"
+      ],
+      "auth_primary": "api_key",
+      "access_tier": "self_serve_free",
+      "verdict": "build_now",
+      "blocker": "none"
+    },
+    "log": [
+      {
+        "loop": "L6_access",
+        "error": "Groq failed: HTTP 429: {\"error\":{\"message\":\"Rate limit reached for model `qwen/qwen3.8-27b` in organization `org_01m2fd9xn8e3dtb9zfqc2jdhsc` service tier `on_demand` on tokens per day (TPD): Limit 200"
+      },
+      {
+        "loop": "L7_auth",
+        "error": "Groq failed: HTTP 429: {\"error\":{\"message\":\"Rate limit reached for model `qwen/qwen3.8-27b` in organization `org_01m2fd9xn8e3dtb9zfqc2jdhsc` service tier `on_demand` on tokens per day (TPD): Limit 200"
+      }
+    ],
+    "access_sources": [
+      "https://firecrawl.dev",
+      "http://docs.firecrawl.dev/introduction",
+      "https://docs.firecrawl.dev/api-reference/endpoint/scrape",
+      "https://docs.firecrawl.dev/billing",
+      "https://docs.firecrawl.dev/features/crawl?dub_id=5W9WUmP1QY8SNM9e"
+    ]
+  }
+}

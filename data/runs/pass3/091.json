@@ -1,0 +1,373 @@
+{
+  "one_liner": "AI-powered research assistant and notebook platform based on user-provided sources.",
+  "auth_methods": [
+    "other"
+  ],
+  "auth_primary": "other",
+  "auth_notes": "Uses session cookies extracted from browser login due to lack of a public API.",
+  "access_tier": "self_serve_free",
+  "access_notes": "Free to use via web interface with a Google account, but lacks any official developer API.",
+  "api_types": [
+    "none"
+  ],
+  "api_breadth": "none",
+  "api_notes": "No official public REST or GraphQL API exists; community tools use reverse-engineered internal RPC endpoints.",
+  "mcp": "community_only",
+  "mcp_url": "https://github.com/PavelGuzenfeld/mcp-notebooklm",
+  "verdict": "blocked",
+  "blocker": "no_public_api",
+  "blocker_notes": "NotebookLM has no official public API; integrations rely on reverse-engineering browser sessions.",
+  "evidence": {
+    "auth": {
+      "url": "https://github.com/Robiton/notebooklm-mcp-cli/blob/main/docs/AUTHENTICATION.md",
+      "quote": "NotebookLM uses browser cookies for authentication (there is no official API).",
+      "check": "ok"
+    },
+    "access": {
+      "url": "https://support.google.com/notebooklm/answer/16213268?hl=en",
+      "quote": "Sign up free of charge by using your gmail account.",
+      "check": "ok"
+    },
+    "api": {
+      "url": "https://github.com/HenriqueCosta05/notebooklm-ts-api/blob/main/README.md",
+      "quote": "NotebookLM does not have a public API. Authentication is",
+      "check": "ok"
+    },
+    "mcp": {
+      "url": "https://github.com/PavelGuzenfeld/mcp-notebooklm",
+      "quote": "MCP server that exposes Google NotebookLM as tools for any MCP-compatible client.",
+      "check": "ok"
+    },
+    "verdict": {
+      "url": "https://github.com/HenriqueCosta05/notebooklm-ts-api/blob/main/README.md",
+      "quote": "NotebookLM does not have a public API. Authentication is",
+      "check": "ok"
+    }
+  },
+  "confidence": {
+    "auth": 0.9,
+    "access": 0.9,
+    "api": 0.9,
+    "mcp": 0.9,
+    "verdict": 0.9
+  },
+  "_model": "gemini-3.5-flash-lite",
+  "status": "ok",
+  "id": 91,
+  "name": "NotebookLM",
+  "category": "AI Research & Media",
+  "hint": "cloud.google.com/gemini (Enterprise API)",
+  "sources": [
+    {
+      "url": "https://cloud.google.com/gemini",
+      "via": "direct",
+      "chars": 9033
+    },
+    {
+      "url": "https://support.google.com/notebooklm/answer/16213268?hl=en",
+      "via": "direct",
+      "chars": 7375
+    },
+    {
+      "url": "https://notebooklm.google/plans",
+      "via": "composio_fetch",
+      "chars": 5464
+    },
+    {
+      "url": "https://github.com/Cezial/notebooklm-mcp-server",
+      "via": "direct",
+      "chars": 8102
+    },
+    {
+      "url": "https://github.com/HenriqueCosta05/notebooklm-ts-api/blob/main/README.md",
+      "via": "direct",
+      "chars": 25811
+    },
+    {
+      "url": "https://github.com/PavelGuzenfeld/mcp-notebooklm",
+      "via": "direct",
+      "chars": 5974
+    },
+    {
+      "url": "https://github.com/Robiton/notebooklm-mcp-cli/blob/main/docs/AUTHENTICATION.md",
+      "via": "verification"
+    },
+    {
+      "url": "https://github.com/agmmnn/notebooklm-sdk/blob/master/DOCS.md",
+      "via": "verification"
+    },
+    {
+      "url": "https://github.com/gnh1201/notebooklm-rest-api",
+      "via": "verification"
+    },
+    {
+      "url": "https://github.com/Robiton/notebooklm-mcp-cli/blob/main/docs/AUTHENTICATION.md",
+      "via": "verification"
+    },
+    {
+      "url": "https://github.com/agmmnn/notebooklm-sdk/blob/master/DOCS.md",
+      "via": "verification"
+    },
+    {
+      "url": "https://github.com/gnh1201/notebooklm-rest-api",
+      "via": "verification"
+    },
+    {
+      "url": "https://cloud.google.com/gemini",
+      "via": "pass3"
+    },
+    {
+      "url": "https://support.google.com/notebooklm/answer/16213268?hl=en",
+      "via": "pass3"
+    },
+    {
+      "url": "https://notebooklm.google/plans",
+      "via": "pass3"
+    },
+    {
+      "url": "https://github.com/HenriqueCosta05/notebooklm-ts-api/blob/main/README.md",
+      "via": "pass3"
+    },
+    {
+      "url": "https://github.com/gnh1201/notebooklm-rest-api",
+      "via": "pass3"
+    }
+  ],
+  "queries": [
+    "NotebookLM API authentication developer docs",
+    "NotebookLM API access pricing plan developer",
+    "NotebookLM MCP server"
+  ],
+  "seconds": 53.6,
+  "verification_queries": [
+    "NotebookLM API authentication OAuth API key",
+    "NotebookLM API reference authentication",
+    "NotebookLM API authentication OAuth API key",
+    "NotebookLM API reference authentication"
+  ],
+  "verification": {
+    "initial_issues": [
+      {
+        "loop": "L2_rules",
+        "field": "auth",
+        "problem": "auth method not identified"
+      },
+      {
+        "loop": "L3_catalog",
+        "field": "auth",
+        "problem": "agent auth ['other'] shares nothing with Composio catalog ['oauth2'] (notebook_lm)"
+      }
+    ],
+    "final_issues": [
+      {
+        "loop": "L2_rules",
+        "field": "auth",
+        "problem": "auth method not identified"
+      },
+      {
+        "loop": "L3_catalog",
+        "field": "auth",
+        "problem": "agent auth ['other'] shares nothing with Composio catalog ['oauth2'] (notebook_lm)"
+      }
+    ],
+    "rounds": [
+      {
+        "round": 0,
+        "issues": [
+          {
+            "loop": "L2_rules",
+            "field": "auth",
+            "problem": "auth method not identified"
+          },
+          {
+            "loop": "L3_catalog",
+            "field": "auth",
+            "problem": "agent auth ['other'] shares nothing with Composio catalog ['oauth2'] (notebook_lm)"
+          }
+        ],
+        "verifier": {
+          "auth_methods": [
+            "other"
+          ],
+          "auth_primary": "other",
+          "access_tier": "self_serve_free",
+          "api_types": [
+            "none"
+          ],
+          "mcp": "community_only",
+          "verdict": "blocked",
+          "reasons": {
+            "auth": "NotebookLM (Gemini Notebook) does not have a public API with standard authentication methods like OAuth2 or API keys. The community MCP server uses 'Playwright-extracted Google session cookies', which is a non-standard, unofficial method.",
+            "access": "The app is available for free with a Google account (self_serve_free), but this access is for the consumer web application, not a developer API.",
+            "mcp": "There is a community-made MCP server (Cezial/notebooklm-mcp-server) that uses browser automation/cookies, but no official MCP server is documented by Google for NotebookLM.",
+            "verdict": "There is no public API for NotebookLM. The only way to integrate is via unofficial community tools that scrape the web interface using session cookies, which is not a stable or supported method for building a toolkit."
+          },
+          "_model": "qwen/qwen3.8-27b"
+        },
+        "autofix": []
+      },
+      {
+        "round": 1,
+        "queries": [
+          "NotebookLM API authentication OAuth API key",
+          "NotebookLM API reference authentication"
+        ],
+        "new_sources": [
+          "https://cloud.google.com/gemini",
+          "https://github.com/HenriqueCosta05/notebooklm-ts-api/blob/main/README.md",
+          "https://github.com/Robiton/notebooklm-mcp-cli/blob/main/docs/AUTHENTICATION.md",
+          "https://github.com/agmmnn/notebooklm-sdk/blob/master/DOCS.md",
+          "https://github.com/gnh1201/notebooklm-rest-api"
+        ],
+        "change_log": "Retained 'other' auth method as NotebookLM has no public developer API and relies on browser cookies/session extraction via community libraries.",
+        "issues": [
+          {
+            "loop": "L2_rules",
+            "field": "auth",
+            "problem": "auth method not identified"
+          },
+          {
+            "loop": "L3_catalog",
+            "field": "auth",
+            "problem": "agent auth ['other'] shares nothing with Composio catalog ['oauth2'] (notebook_lm)"
+          }
+        ],
+        "verifier": {
+          "auth_methods": [
+            "other"
+          ],
+          "auth_primary": "other",
+          "access_tier": "open_source_local",
+          "api_types": [
+            "sdk_or_cli_only"
+          ],
+          "mcp": "community_only",
+          "verdict": "blocked",
+          "reasons": {
+            "auth": "NotebookLM does not have a public API; authentication relies on browser cookies or undocumented internal RPC endpoints, which are not standard public auth methods like OAuth2 or API keys.",
+            "access": "There is no self-serve public API access; available tools are community-maintained open-source libraries that reverse-engineer internal endpoints or use local browser sessions.",
+            "mcp": "MCP servers exist (e.g., notebooklm-mcp-cli) but are community-developed, not official.",
+            "verdict": "Blocked because there is no public API; only unofficial, potentially unstable community tools using undocumented endpoints or local browser automation are available."
+          },
+          "_model": "qwen/qwen3.8-27b"
+        },
+        "autofix": []
+      },
+      {
+        "round": 2,
+        "queries": [
+          "NotebookLM API authentication OAuth API key",
+          "NotebookLM API reference authentication",
+          "NotebookLM API authentication OAuth API key",
+          "NotebookLM API reference authentication"
+        ],
+        "new_sources": [
+          "https://cloud.google.com/gemini",
+          "https://github.com/HenriqueCosta05/notebooklm-ts-api/blob/main/README.md",
+          "https://github.com/Robiton/notebooklm-mcp-cli/blob/main/docs/AUTHENTICATION.md",
+          "https://github.com/agmmnn/notebooklm-sdk/blob/master/DOCS.md",
+          "https://github.com/gnh1201/notebooklm-rest-api"
+        ],
+        "change_log": "Updated auth_methods to ['other'] and auth_primary to 'other' as NotebookLM uses browser cookies/session storage via unofficial wrappers rather than standard public API auth methods.",
+        "issues": [
+          {
+            "loop": "L2_rules",
+            "field": "auth",
+            "problem": "auth method not identified"
+          },
+          {
+            "loop": "L3_catalog",
+            "field": "auth",
+            "problem": "agent auth ['other'] shares nothing with Composio catalog ['oauth2'] (notebook_lm)"
+          }
+        ],
+        "verifier": {
+          "auth_methods": [
+            "other"
+          ],
+          "auth_primary": "other",
+          "access_tier": "open_source_local",
+          "api_types": [
+            "sdk_or_cli_only"
+          ],
+          "mcp": "community_only",
+          "verdict": "blocked",
+          "reasons": {
+            "auth": "NotebookLM does not have a public API; authentication relies on browser cookies or undocumented internal RPC endpoints, which are not standard public auth methods like OAuth2 or API keys.",
+            "access": "There is no self-serve public API access; available tools are community-maintained open-source libraries that reverse-engineer internal endpoints or use local browser sessions.",
+            "mcp": "MCP servers exist (e.g., notebooklm-mcp-cli) but are community-developed, not official.",
+            "verdict": "Blocked because there is no public API; only unofficial, potentially unstable community tools using undocumented endpoints or local browser automation are available."
+          },
+          "_model": "qwen/qwen3.8-27b"
+        },
+        "autofix": []
+      }
+    ],
+    "catalog": {
+      "in_catalog": true,
+      "slug": "notebook_lm",
+      "auth": [
+        "oauth2"
+      ],
+      "tools_count": 11
+    },
+    "changed_fields": [],
+    "field_status": {
+      "auth": "needs_human",
+      "access": "verified",
+      "api": "verified",
+      "mcp": "verified",
+      "verdict": "verified"
+    },
+    "needs_human": [
+      "auth"
+    ],
+    "before": {
+      "auth_methods": [
+        "other"
+      ],
+      "auth_primary": "other",
+      "access_tier": "self_serve_free",
+      "access_notes": "Free to use via web interface with a Google account, but lacks any official developer API.",
+      "api_types": [
+        "none"
+      ],
+      "api_breadth": "none",
+      "api_notes": "No official public REST or GraphQL API exists; community tools use reverse-engineered internal RPC endpoints.",
+      "mcp": "community_only",
+      "mcp_url": "https://github.com/PavelGuzenfeld/mcp-notebooklm",
+      "verdict": "blocked",
+      "blocker": "no_public_api",
+      "blocker_notes": "NotebookLM has no official public API; integrations rely on reverse-engineering browser sessions."
+    },
+    "seconds": 705.5
+  },
+  "pass3": {
+    "before": {
+      "auth_methods": [
+        "other"
+      ],
+      "auth_primary": "other",
+      "access_tier": "self_serve_free",
+      "verdict": "blocked",
+      "blocker": "no_public_api"
+    },
+    "log": [
+      {
+        "loop": "L6_access",
+        "error": "Groq failed: HTTP 429: {\"error\":{\"message\":\"Rate limit reached for model `qwen/qwen3.8-27b` in organization `org_01m2fd9xn8e3dtb9zfqc2jdhsc` service tier `on_demand` on tokens per day (TPD): Limit 200"
+      },
+      {
+        "loop": "L7_auth",
+        "error": "Groq failed: HTTP 429: {\"error\":{\"message\":\"Rate limit reached for model `qwen/qwen3.8-27b` in organization `org_01m2fd9xn8e3dtb9zfqc2jdhsc` service tier `on_demand` on tokens per day (TPD): Limit 200"
+      }
+    ],
+    "access_sources": [
+      "https://cloud.google.com/gemini",
+      "https://support.google.com/notebooklm/answer/16213268?hl=en",
+      "https://notebooklm.google/plans",
+      "https://github.com/HenriqueCosta05/notebooklm-ts-api/blob/main/README.md",
+      "https://github.com/gnh1201/notebooklm-rest-api"
+    ]
+  }
+}

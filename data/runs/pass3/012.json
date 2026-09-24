@@ -1,0 +1,232 @@
+{
+  "one_liner": "A complete customer service helpdesk system featuring human and AI support capabilities.",
+  "auth_methods": [
+    "oauth2",
+    "bearer_token"
+  ],
+  "auth_primary": "oauth2",
+  "auth_notes": "Uses OAuth 2.0 for public integrations and static Bearer access tokens for private apps.",
+  "access_tier": "self_serve_free",
+  "access_notes": "Free development workspaces are available upon signup to obtain credentials.",
+  "api_types": [
+    "rest"
+  ],
+  "api_breadth": "broad",
+  "api_notes": "Covers contacts, tickets, help center, conversations, and reporting endpoints via api.intercom.io.",
+  "mcp": "official",
+  "mcp_url": "https://developers.intercom.com/docs/build-an-integration/getting-started",
+  "verdict": "build_with_friction",
+  "blocker": "app_review",
+  "blocker_notes": "Public APIs and free development workspaces are readily accessible.",
+  "evidence": {
+    "auth": {
+      "url": "https://developers.intercom.com/docs/build-an-integration/learn-more/authentication",
+      "quote": "To access the Intercom API, you have two authentication options depending on whether you app is public or private.",
+      "check": "ok"
+    },
+    "access": {
+      "url": "https://developers.intercom.com/docs/build-an-integration/getting-started",
+      "quote": "Development workspaces are free and intended for development purposes only.",
+      "check": "ok"
+    },
+    "api": {
+      "url": "https://developers.intercom.com/docs",
+      "quote": "The Intercom Developer Platform is a suite of SDKs and APIs for building apps that connect with Intercom.",
+      "check": "ok"
+    },
+    "mcp": {
+      "url": "https://www.intercom.com",
+      "quote": "Fin pulls in customer data and takes action through APIs or MCP.",
+      "check": "ok_url_outside_sources"
+    },
+    "verdict": {
+      "url": "https://developers.intercom.com/docs",
+      "quote": "To develop a public app you will need to use a development workspace: sign up here to create your free account.",
+      "check": "ok"
+    },
+    "review": {
+      "url": "https://developers.intercom.com/docs",
+      "quote": "Public apps (sometimes referred to as integrations) are apps that are available for any customer to install. These apps have access to other peoples' Intercom data, which means there are specific requirements in order to publish them, such as setting up OAuth and submitting to the Intercom team for review.",
+      "check": "ok"
+    }
+  },
+  "confidence": {
+    "auth": 5.0,
+    "access": 5.0,
+    "api": 5.0,
+    "mcp": 4.0,
+    "verdict": 5.0
+  },
+  "_model": "gemini-3.5-flash-lite",
+  "status": "ok",
+  "id": 12,
+  "name": "Intercom",
+  "category": "Support & Helpdesk",
+  "hint": "intercom.com",
+  "sources": [
+    {
+      "url": "https://intercom.com",
+      "via": "direct",
+      "chars": 7327
+    },
+    {
+      "url": "https://developers.intercom.com/docs",
+      "via": "direct",
+      "chars": 5464
+    },
+    {
+      "url": "https://developers.intercom.com/docs.md",
+      "via": "direct",
+      "chars": 6638
+    },
+    {
+      "url": "https://developers.intercom.com/docs/build-an-integration/getting-started",
+      "via": "direct",
+      "chars": 6667
+    },
+    {
+      "url": "https://developers.intercom.com/docs/build-an-integration/learn-more/authentication",
+      "via": "direct",
+      "chars": 3800
+    },
+    {
+      "url": "https://developers.intercom.com/docs/build-an-integration/learn-more/authentication/installing-uninstalling-apps",
+      "via": "direct",
+      "chars": 7562
+    },
+    {
+      "url": "https://intercom.com",
+      "via": "pass3"
+    },
+    {
+      "url": "https://community.intercom.com/api-webhooks-23/how-can-i-integrate-my-intercom-contacts-with-my-web-app-s-database-7300?fid=23&tid=7300",
+      "via": "pass3"
+    },
+    {
+      "url": "https://community.intercom.com/apps-integrations-25/app-creation-limitation-and-api-1777",
+      "via": "pass3"
+    },
+    {
+      "url": "https://developers.intercom.com/docs",
+      "via": "pass3"
+    },
+    {
+      "url": "https://developers.intercom.com/docs/build-an-integration/getting-started",
+      "via": "pass3"
+    }
+  ],
+  "queries": [
+    "Intercom API authentication developer docs",
+    "Intercom API access pricing plan developer",
+    "Intercom MCP server"
+  ],
+  "seconds": 53.7,
+  "verification": {
+    "initial_issues": [],
+    "final_issues": [],
+    "rounds": [
+      {
+        "round": 0,
+        "issues": [],
+        "verifier": {
+          "auth_methods": [
+            "oauth2",
+            "bearer_token"
+          ],
+          "auth_primary": "oauth2",
+          "access_tier": "self_serve_free",
+          "api_types": [
+            "rest"
+          ],
+          "mcp": "official",
+          "verdict": "build_now",
+          "reasons": {
+            "auth": "Intercom supports OAuth2 for public apps and Bearer token (access token) for private apps, as documented in the Developer Hub.",
+            "access": "A free 14‑day trial is available with no credit card required, and developers can create a free workspace to obtain credentials.",
+            "mcp": "The Model Context Protocol (MCP) is documented in the Intercom Developer Platform and is officially published by Intercom.",
+            "verdict": "Public documentation, free trial, and self‑serve credentials allow a developer to build an integration today without additional hurdles."
+          },
+          "_model": "openai/gpt-oss-20b"
+        },
+        "autofix": []
+      }
+    ],
+    "catalog": {
+      "in_catalog": true,
+      "slug": "intercom",
+      "auth": [
+        "oauth2"
+      ],
+      "tools_count": 133
+    },
+    "changed_fields": [],
+    "field_status": {
+      "auth": "verified",
+      "access": "verified",
+      "api": "verified",
+      "mcp": "verified",
+      "verdict": "verified"
+    },
+    "needs_human": [],
+    "before": {
+      "auth_methods": [
+        "oauth2",
+        "bearer_token"
+      ],
+      "auth_primary": "oauth2",
+      "access_tier": "self_serve_free",
+      "access_notes": "Free development workspaces are available upon signup to obtain credentials.",
+      "api_types": [
+        "rest"
+      ],
+      "api_breadth": "broad",
+      "api_notes": "Covers contacts, tickets, help center, conversations, and reporting endpoints via api.intercom.io.",
+      "mcp": "official",
+      "mcp_url": "https://developers.intercom.com/docs/build-an-integration/getting-started",
+      "verdict": "build_now",
+      "blocker": "none",
+      "blocker_notes": "Public APIs and free development workspaces are readily accessible."
+    },
+    "seconds": 99.2
+  },
+  "_public_review": "yes",
+  "pass3": {
+    "before": {
+      "auth_methods": [
+        "oauth2",
+        "bearer_token"
+      ],
+      "auth_primary": "oauth2",
+      "access_tier": "self_serve_free",
+      "verdict": "build_now",
+      "blocker": "none"
+    },
+    "log": [
+      {
+        "loop": "L6_access",
+        "field": "access",
+        "change": null,
+        "reason": "confirmed with a verified quote"
+      },
+      {
+        "loop": "L7_auth",
+        "field": "auth",
+        "change": null,
+        "reason": "no method could be grounded; pass 2 answer kept"
+      },
+      {
+        "loop": "verdict_rule",
+        "field": "verdict",
+        "change": "build_now -> build_with_friction",
+        "reason": "derived from access self_serve_free / public review yes"
+      }
+    ],
+    "access_sources": [
+      "https://intercom.com",
+      "https://community.intercom.com/api-webhooks-23/how-can-i-integrate-my-intercom-contacts-with-my-web-app-s-database-7300?fid=23&tid=7300",
+      "https://community.intercom.com/apps-integrations-25/app-creation-limitation-and-api-1777",
+      "https://developers.intercom.com/docs",
+      "https://developers.intercom.com/docs/build-an-integration/getting-started"
+    ]
+  }
+}

@@ -1,0 +1,336 @@
+{
+  "one_liner": "E-commerce, payments, subscriptions, and automated checkout platform with built-in APIs.",
+  "auth_methods": [
+    "api_key"
+  ],
+  "auth_primary": "api_key",
+  "auth_notes": "Every API request must include your API key in the x-api-key header.",
+  "access_tier": "self_serve_free",
+  "access_notes": "Log into your Commas/Fanbasis dashboard and go to Account to get API keys.",
+  "api_types": [
+    "rest"
+  ],
+  "api_breadth": "broad",
+  "api_notes": "Covers checkout sessions, customers, subscribers, products, transactions, refunds, and webhooks via public API.",
+  "mcp": "none_found",
+  "mcp_url": null,
+  "verdict": "build_now",
+  "blocker": "none",
+  "blocker_notes": "Public API is fully self-serve with test and live environments.",
+  "evidence": {
+    "auth": {
+      "url": "https://commasdocs.com",
+      "quote": "Every API request must include your API key in the x-api-key header. There are no usernames or passwords — just your key.",
+      "check": "ok"
+    },
+    "access": {
+      "url": "https://commasdocs.com",
+      "quote": "Log into your Commas dashboard and go to Account → API Keys. Copy your API key. You'll use it in every request you make.",
+      "check": "ok"
+    },
+    "api": {
+      "url": "https://github.com/subtain-haider/laravel-payments/blob/main/docs/gateways/fanbasis.md",
+      "quote": "Full Fanbasis API integration: checkout sessions, customers, subscribers, discount codes, products, transactions, refunds, and webhook management.",
+      "check": "ok"
+    },
+    "mcp": {
+      "url": "https://commasdocs.com",
+      "quote": "Commas API Reference: Everything you need to collect payments, manage subscriptions, reward customers, and automate your business with Commas.",
+      "check": "ok"
+    },
+    "verdict": {
+      "url": "https://commasdocs.com",
+      "quote": "Use your test API key. No real charges. Safe to experiment freely. Base URL: https://qa.dev-fan-basis.com",
+      "check": "ok"
+    }
+  },
+  "confidence": {
+    "auth": 0.9,
+    "access": 0.9,
+    "api": 0.9,
+    "mcp": 0.7,
+    "verdict": 0.9
+  },
+  "_model": "gemini-3.5-flash-lite",
+  "status": "ok",
+  "id": 50,
+  "name": "fanbasis",
+  "category": "Ecommerce",
+  "hint": "fanbasis.com",
+  "sources": [
+    {
+      "url": "https://fanbasis.com",
+      "via": "direct",
+      "chars": 6262
+    },
+    {
+      "url": "https://www.fanbasis.com",
+      "via": "direct",
+      "chars": 6262
+    },
+    {
+      "url": "https://github.com/subtain-haider/laravel-payments/blob/main/docs/gateways/fanbasis.md",
+      "via": "composio_fetch",
+      "chars": 6805
+    },
+    {
+      "url": "https://commasdocs.com",
+      "via": "composio_fetch",
+      "chars": 200000
+    },
+    {
+      "url": "https://fanbase.gg/features/mcp",
+      "via": "direct",
+      "chars": 6238
+    },
+    {
+      "url": "https://mintlify.wiki/MatthewSabia1/AdRecon/api/fanbasis",
+      "via": "direct",
+      "chars": 18093
+    },
+    {
+      "url": "https://github.com/modelcontextprotocol/docs/blob/main/docs/concepts/architecture.mdx",
+      "via": "verification"
+    },
+    {
+      "url": "https://github.com/modelcontextprotocol/modelcontextprotocol/blob/main/docs/specification/2026-07-28/index.mdx",
+      "via": "verification"
+    },
+    {
+      "url": "https://launchonbasis.com/sdk-docs/mcp-server",
+      "via": "verification"
+    },
+    {
+      "url": "https://modelcontextprotocol.io/docs/2026%2D07%2D28/learn/architecture",
+      "via": "verification"
+    },
+    {
+      "url": "https://github.com/modelcontextprotocol/docs/blob/main/docs/concepts/architecture.mdx",
+      "via": "verification"
+    },
+    {
+      "url": "https://github.com/modelcontextprotocol/modelcontextprotocol/blob/main/docs/specification/2026-07-28/index.mdx",
+      "via": "verification"
+    },
+    {
+      "url": "https://launchonbasis.com/sdk-docs/mcp-server",
+      "via": "verification"
+    },
+    {
+      "url": "https://modelcontextprotocol.io/docs/2026%2D07%2D28/learn/architecture",
+      "via": "verification"
+    },
+    {
+      "url": "https://fanbasis.com",
+      "via": "pass3"
+    },
+    {
+      "url": "https://www.fanbasis.com",
+      "via": "pass3"
+    },
+    {
+      "url": "https://github.com/subtain-haider/laravel-payments/blob/main/docs/gateways/fanbasis.md",
+      "via": "pass3"
+    },
+    {
+      "url": "https://mintlify.wiki/MatthewSabia1/AdRecon/api/fanbasis",
+      "via": "pass3"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/otniel-bit/fbnewapi/main/api-docs.md",
+      "via": "pass3"
+    }
+  ],
+  "queries": [
+    "fanbasis API authentication developer docs",
+    "fanbasis API access pricing plan developer",
+    "fanbasis MCP server"
+  ],
+  "seconds": 52.7,
+  "verification_queries": [
+    "fanbasis MCP server model context protocol",
+    "fanbasis MCP server model context protocol"
+  ],
+  "verification": {
+    "initial_issues": [
+      {
+        "loop": "L4_verifier",
+        "field": "mcp",
+        "problem": "verifier says official vs agent none_found"
+      }
+    ],
+    "final_issues": [],
+    "rounds": [
+      {
+        "round": 0,
+        "issues": [
+          {
+            "loop": "L4_verifier",
+            "field": "mcp",
+            "problem": "verifier says official vs agent none_found"
+          }
+        ],
+        "verifier": {
+          "auth_methods": [
+            "api_key"
+          ],
+          "auth_primary": "api_key",
+          "access_tier": "self_serve_free",
+          "api_types": [
+            "rest"
+          ],
+          "mcp": "official",
+          "verdict": "build_now",
+          "reasons": {
+            "auth": "API key required for all calls, no OAuth or other methods documented",
+            "access": "Developers can sign up and obtain API keys for sandbox and production environments without prior approval",
+            "mcp": "Official MCP server documented at https://www.fanbasis.com",
+            "verdict": "Public API documentation and self‑serve credentials are available, enabling immediate development"
+          },
+          "_model": "openai/gpt-oss-20b"
+        },
+        "autofix": []
+      },
+      {
+        "round": 1,
+        "queries": [
+          "fanbasis MCP server model context protocol"
+        ],
+        "new_sources": [
+          "https://fanbasis.com",
+          "https://github.com/modelcontextprotocol/docs/blob/main/docs/concepts/architecture.mdx",
+          "https://github.com/modelcontextprotocol/modelcontextprotocol/blob/main/docs/specification/2026-07-28/index.mdx",
+          "https://launchonbasis.com/sdk-docs/mcp-server",
+          "https://modelcontextprotocol.io/docs/2026%2D07%2D28/learn/architecture"
+        ],
+        "change_log": "Set mcp to none_found as the fanbasis.com mention is just a placeholder link and the official MCP documentation found in search belongs to a different platform (Basis/Launch-On-Basis).",
+        "issues": [
+          {
+            "loop": "L4_verifier",
+            "field": "mcp",
+            "problem": "verifier says official vs agent none_found"
+          }
+        ],
+        "verifier": {
+          "auth_methods": [
+            "none",
+            "other"
+          ],
+          "auth_primary": "none",
+          "access_tier": "unknown",
+          "api_types": [
+            "none"
+          ],
+          "mcp": "official",
+          "verdict": "blocked",
+          "reasons": {
+            "auth": "No authentication method is documented in the public fanbasis.com site or API documentation.",
+            "access": "The site does not provide a self‑serve free or trial sandbox; no public credentials are available for developers.",
+            "mcp": "The term \"MCP\" is mentioned in the Enterprise & APIs section, indicating an official protocol implementation, but no public MCP server documentation is provided.",
+            "verdict": "Without a publicly documented API, authentication scheme, or developer sandbox, a toolkit cannot be built today."
+          },
+          "_model": "openai/gpt-oss-20b"
+        },
+        "autofix": []
+      },
+      {
+        "round": 2,
+        "queries": [
+          "fanbasis MCP server model context protocol",
+          "fanbasis MCP server model context protocol"
+        ],
+        "new_sources": [
+          "https://fanbasis.com",
+          "https://github.com/modelcontextprotocol/docs/blob/main/docs/concepts/architecture.mdx",
+          "https://github.com/modelcontextprotocol/modelcontextprotocol/blob/main/docs/specification/2026-07-28/index.mdx",
+          "https://launchonbasis.com/sdk-docs/mcp-server",
+          "https://modelcontextprotocol.io/docs/2026%2D07%2D28/learn/architecture"
+        ],
+        "change_log": "Resolved mcp to none_found as Fanbasis/Commas docs provide a REST API with API key authentication but no official MCP server.",
+        "issues": [],
+        "verifier": {
+          "auth_methods": [
+            "other"
+          ],
+          "auth_primary": "other",
+          "access_tier": "unknown",
+          "api_types": [
+            "none"
+          ],
+          "mcp": "unknown",
+          "verdict": "unknown",
+          "reasons": {
+            "auth": "No authentication method is documented in the provided source",
+            "access": "The source does not specify any free or paid access tier or sandbox availability",
+            "mcp": "No information about an official MCP server is provided",
+            "verdict": "Insufficient information from the sources to determine if a public API is available or buildable"
+          },
+          "_model": "openai/gpt-oss-20b"
+        },
+        "autofix": []
+      }
+    ],
+    "catalog": {
+      "in_catalog": false,
+      "checked": [
+        "fanbasis"
+      ]
+    },
+    "changed_fields": [],
+    "field_status": {
+      "auth": "verified",
+      "access": "verified",
+      "api": "verified",
+      "mcp": "confirmed_after_recheck",
+      "verdict": "verified"
+    },
+    "needs_human": [],
+    "before": {
+      "auth_methods": [
+        "api_key"
+      ],
+      "auth_primary": "api_key",
+      "access_tier": "self_serve_free",
+      "access_notes": "Log into your Commas/Fanbasis dashboard and go to Account to get API keys.",
+      "api_types": [
+        "rest"
+      ],
+      "api_breadth": "broad",
+      "api_notes": "Covers checkout sessions, customers, subscribers, products, transactions, refunds, and webhooks via public API.",
+      "mcp": "none_found",
+      "mcp_url": null,
+      "verdict": "build_now",
+      "blocker": "none",
+      "blocker_notes": "Public API is fully self-serve with test and live environments."
+    },
+    "seconds": 52.5
+  },
+  "pass3": {
+    "before": {
+      "auth_methods": [
+        "api_key"
+      ],
+      "auth_primary": "api_key",
+      "access_tier": "self_serve_free",
+      "verdict": "build_now",
+      "blocker": "none"
+    },
+    "log": [
+      {
+        "loop": "L6_access",
+        "error": "Groq failed: HTTP 429: {\"error\":{\"message\":\"Rate limit reached for model `qwen/qwen3.8-27b` in organization `org_01m2fd9xn8e3dtb9zfqc2jdhsc` service tier `on_demand` on tokens per day (TPD): Limit 200"
+      },
+      {
+        "loop": "L7_auth",
+        "error": "Groq failed: HTTP 429: {\"error\":{\"message\":\"Rate limit reached for model `qwen/qwen3.8-27b` in organization `org_01m2fd9xn8e3dtb9zfqc2jdhsc` service tier `on_demand` on tokens per day (TPD): Limit 200"
+      }
+    ],
+    "access_sources": [
+      "https://fanbasis.com",
+      "https://www.fanbasis.com",
+      "https://github.com/subtain-haider/laravel-payments/blob/main/docs/gateways/fanbasis.md",
+      "https://mintlify.wiki/MatthewSabia1/AdRecon/api/fanbasis",
+      "https://raw.githubusercontent.com/otniel-bit/fbnewapi/main/api-docs.md"
+    ]
+  }
+}

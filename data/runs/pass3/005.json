@@ -1,0 +1,401 @@
+{
+  "one_liner": "Open-source CRM platform providing customizable data models, REST and GraphQL APIs, and native MCP support.",
+  "auth_methods": [
+    "oauth2",
+    "api_key",
+    "bearer_token"
+  ],
+  "auth_primary": "oauth2",
+  "auth_notes": "Supports dynamic client registration via RFC 7591 for OAuth2 (authorization code with PKCE and client credentials) as well as static API keys.",
+  "access_tier": "open_source_local",
+  "access_notes": "Twenty is explicitly identified as an open-source CRM that can be self-hosted, fitting the open_source_local tier.",
+  "api_types": [
+    "rest",
+    "graphql"
+  ],
+  "api_breadth": "broad",
+  "api_notes": "Core API and Metadata API supporting CRUD, batch operations, filtering, and schema management via REST and GraphQL.",
+  "mcp": "official",
+  "mcp_url": "https://twenty.com",
+  "verdict": "build_with_friction",
+  "blocker": "local_tool_only",
+  "blocker_notes": "Fully accessible public API with self-serve signup and official MCP support.",
+  "evidence": {
+    "auth": {
+      "url": "https://docs.twenty.com/developers/extend/oauth",
+      "quote": "Twenty implements OAuth 2.0 with authorization code + PKCE for user-facing apps and client credentials for server-to-server access.",
+      "check": "ok"
+    },
+    "access": {
+      "url": "https://twenty.com",
+      "quote": "Twenty | #1 Open Source CRM",
+      "check": "ok"
+    },
+    "api": {
+      "url": "https://docs.twenty.com/developers/extend/api",
+      "quote": "Core API — /rest/ and /graphql/ CRUD on records: People, Companies, Opportunities, your custom objects. Query, filter, traverse relations.",
+      "check": "ok"
+    },
+    "mcp": {
+      "url": "https://twenty.com",
+      "quote": "Yes. Every Cloud workspace ships with a native MCP server. Connect your AI assistant via OAuth and it can read and write your CRM data in natural language.",
+      "check": "ok"
+    },
+    "verdict": {
+      "url": "https://docs.twenty.com/developers/extend/api",
+      "quote": "Your workspace-specific API documentation is available under Settings → API & Webhooks after creating an API key.",
+      "check": "ok"
+    }
+  },
+  "confidence": {
+    "auth": 5.0,
+    "access": 5.0,
+    "api": 5.0,
+    "mcp": 5.0,
+    "verdict": 5.0
+  },
+  "_model": "gemini-3.5-flash-lite",
+  "status": "ok",
+  "id": 5,
+  "name": "Twenty",
+  "category": "CRM & Sales",
+  "hint": "twenty.com (open-source CRM)",
+  "sources": [
+    {
+      "url": "https://twenty.com",
+      "via": "direct",
+      "chars": 11245
+    },
+    {
+      "url": "https://docs.twenty.com/developers/extend/api",
+      "via": "direct",
+      "chars": 2127
+    },
+    {
+      "url": "https://docs.twenty.com/developers/extend/oauth",
+      "via": "direct",
+      "chars": 4574
+    },
+    {
+      "url": "https://docs.twenty.com/developers/extend/webhooks.md",
+      "via": "direct",
+      "chars": 4718
+    },
+    {
+      "url": "https://docs.twenty.com/user-guide/billing/how-tos/billing-faq",
+      "via": "direct",
+      "chars": 4735
+    },
+    {
+      "url": "https://twenty.com/pricing",
+      "via": "direct",
+      "chars": 5429
+    },
+    {
+      "url": "https://docs.twenty.com/developers/extend/oauth.md",
+      "via": "verification"
+    },
+    {
+      "url": "https://twenty.com/partners",
+      "via": "verification"
+    },
+    {
+      "url": "https://twenty.mintlify.app/developers/extend/api",
+      "via": "verification"
+    },
+    {
+      "url": "https://docs.twenty.com/developers/extend/oauth.md",
+      "via": "verification"
+    },
+    {
+      "url": "https://twenty.com/partners",
+      "via": "verification"
+    },
+    {
+      "url": "https://twenty.mintlify.app/developers/extend/api",
+      "via": "verification"
+    },
+    {
+      "url": "https://twenty.com",
+      "via": "pass3"
+    },
+    {
+      "url": "https://docs.twenty.com/developers/extend/api",
+      "via": "pass3"
+    },
+    {
+      "url": "https://docs.twenty.com/developers/extend/apps/getting-started/quick-start.md",
+      "via": "pass3"
+    },
+    {
+      "url": "https://docs.twenty.com/developers/extend/oauth",
+      "via": "pass3"
+    },
+    {
+      "url": "https://docs.twenty.com/user-guide/billing/capabilities/credits",
+      "via": "pass3"
+    }
+  ],
+  "queries": [
+    "Twenty API authentication developer docs",
+    "Twenty API access pricing plan developer",
+    "Twenty MCP server"
+  ],
+  "seconds": 59.9,
+  "verification_queries": [
+    "Twenty API access requirements plan",
+    "Twenty developer account API key free OR partner OR enterprise",
+    "Twenty API access requirements plan",
+    "Twenty developer account API key free OR partner OR enterprise"
+  ],
+  "verification": {
+    "initial_issues": [
+      {
+        "loop": "L4_verifier",
+        "field": "access",
+        "problem": "verifier says self_serve_trial vs agent self_serve_free"
+      },
+      {
+        "loop": "L4_verifier",
+        "field": "verdict",
+        "problem": "verifier says build_with_friction vs agent build_now"
+      }
+    ],
+    "final_issues": [
+      {
+        "loop": "L4_verifier",
+        "field": "access",
+        "problem": "verifier says self_serve_trial vs agent self_serve_free"
+      },
+      {
+        "loop": "L4_verifier",
+        "field": "verdict",
+        "problem": "verifier says build_with_friction vs agent build_now"
+      }
+    ],
+    "rounds": [
+      {
+        "round": 0,
+        "issues": [
+          {
+            "loop": "L4_verifier",
+            "field": "access",
+            "problem": "verifier says self_serve_trial vs agent self_serve_free"
+          },
+          {
+            "loop": "L4_verifier",
+            "field": "verdict",
+            "problem": "verifier says build_with_friction vs agent build_now"
+          }
+        ],
+        "verifier": {
+          "auth_methods": [
+            "api_key",
+            "oauth2"
+          ],
+          "auth_primary": "oauth2",
+          "access_tier": "self_serve_trial",
+          "api_types": [
+            "rest",
+            "graphql"
+          ],
+          "mcp": "official",
+          "verdict": "build_with_friction",
+          "reasons": {
+            "auth": "Supports API keys (Bearer token) and OAuth2 as documented.",
+            "access": "Credentials obtained via 30‑day free trial after sign‑up; no always‑free tier.",
+            "mcp": "Native MCP server included in each Cloud workspace, documented.",
+            "verdict": "Public API docs exist, but access requires a trial account (paid after trial), so building now needs trial."
+          },
+          "_model": "openai/gpt-oss-120b"
+        },
+        "autofix": []
+      },
+      {
+        "round": 1,
+        "queries": [
+          "Twenty API access requirements plan",
+          "Twenty developer account API key free OR partner OR enterprise"
+        ],
+        "new_sources": [
+          "https://twenty.com",
+          "https://docs.twenty.com/developers/extend/api",
+          "https://docs.twenty.com/developers/extend/oauth.md",
+          "https://twenty.com/partners",
+          "https://twenty.mintlify.app/developers/extend/api"
+        ],
+        "change_log": "Restored access_tier to self_serve_free and verdict to build_now since Twenty can be self-hosted completely for free with full access to APIs.",
+        "issues": [
+          {
+            "loop": "L4_verifier",
+            "field": "access",
+            "problem": "verifier says self_serve_trial vs agent self_serve_free"
+          },
+          {
+            "loop": "L4_verifier",
+            "field": "verdict",
+            "problem": "verifier says build_with_friction vs agent build_now"
+          }
+        ],
+        "verifier": {
+          "auth_methods": [
+            "api_key",
+            "oauth2",
+            "bearer_token"
+          ],
+          "auth_primary": "oauth2",
+          "access_tier": "self_serve_trial",
+          "api_types": [
+            "rest",
+            "graphql"
+          ],
+          "mcp": "official",
+          "verdict": "build_with_friction",
+          "reasons": {
+            "auth": "Docs list API‑key (used as Bearer token) and full OAuth 2.0 flows",
+            "access": "Sign‑up gives a 30‑day free trial; continued use requires paid plan",
+            "mcp": "Vendor ships a native MCP server with each Cloud workspace",
+            "verdict": "Public API and docs exist, but credentials are only available via a time‑limited trial, so building now requires trial/upgrade"
+          },
+          "_model": "openai/gpt-oss-120b"
+        },
+        "autofix": []
+      },
+      {
+        "round": 2,
+        "queries": [
+          "Twenty API access requirements plan",
+          "Twenty developer account API key free OR partner OR enterprise",
+          "Twenty API access requirements plan",
+          "Twenty developer account API key free OR partner OR enterprise"
+        ],
+        "new_sources": [
+          "https://twenty.com",
+          "https://docs.twenty.com/developers/extend/api",
+          "https://docs.twenty.com/developers/extend/oauth.md",
+          "https://twenty.com/partners",
+          "https://twenty.mintlify.app/developers/extend/api"
+        ],
+        "change_log": "Retained self_serve_free and build_now because Twenty provides an open-source self-hosted option for free alongside self-serve cloud trials with immediate API and developer platform access.",
+        "issues": [
+          {
+            "loop": "L4_verifier",
+            "field": "access",
+            "problem": "verifier says self_serve_trial vs agent self_serve_free"
+          },
+          {
+            "loop": "L4_verifier",
+            "field": "verdict",
+            "problem": "verifier says build_with_friction vs agent build_now"
+          }
+        ],
+        "verifier": {
+          "auth_methods": [
+            "api_key",
+            "oauth2"
+          ],
+          "auth_primary": "oauth2",
+          "access_tier": "self_serve_trial",
+          "api_types": [
+            "rest",
+            "graphql"
+          ],
+          "mcp": "official",
+          "verdict": "build_with_friction",
+          "reasons": {
+            "auth": "API key (used as Bearer token) and OAuth 2.0 are documented for authentication",
+            "access": "Only a 30‑day free trial is offered; no always‑free tier, so credentials require trial signup",
+            "mcp": "Each Cloud workspace includes a native MCP server per vendor documentation",
+            "verdict": "Public docs and trial credentials allow building, but require trial subscription, creating friction"
+          },
+          "_model": "openai/gpt-oss-120b"
+        },
+        "autofix": []
+      }
+    ],
+    "catalog": {
+      "in_catalog": true,
+      "slug": "twenty",
+      "auth": [
+        "api_key"
+      ],
+      "tools_count": 8
+    },
+    "changed_fields": [],
+    "field_status": {
+      "auth": "verified",
+      "access": "needs_human",
+      "api": "verified",
+      "mcp": "verified",
+      "verdict": "needs_human"
+    },
+    "needs_human": [
+      "access",
+      "verdict"
+    ],
+    "before": {
+      "auth_methods": [
+        "oauth2",
+        "api_key",
+        "bearer_token"
+      ],
+      "auth_primary": "oauth2",
+      "access_tier": "self_serve_free",
+      "access_notes": "Sign up for Cloud with a free trial or self-host for free; developer platform and APIs are accessible out-of-the-box.",
+      "api_types": [
+        "rest",
+        "graphql"
+      ],
+      "api_breadth": "broad",
+      "api_notes": "Core API and Metadata API supporting CRUD, batch operations, filtering, and schema management via REST and GraphQL.",
+      "mcp": "official",
+      "mcp_url": "https://twenty.com",
+      "verdict": "build_now",
+      "blocker": "none",
+      "blocker_notes": "Fully accessible public API with self-serve signup and official MCP support."
+    },
+    "seconds": 53.6
+  },
+  "_public_review": "unknown",
+  "pass3": {
+    "before": {
+      "auth_methods": [
+        "oauth2",
+        "api_key",
+        "bearer_token"
+      ],
+      "auth_primary": "oauth2",
+      "access_tier": "self_serve_free",
+      "verdict": "build_now",
+      "blocker": "none"
+    },
+    "log": [
+      {
+        "loop": "L6_access",
+        "field": "access",
+        "change": "self_serve_free -> open_source_local",
+        "reason": "Twenty is explicitly identified as an open-source CRM that can be self-hosted, fitting the open_source_local tier.",
+        "url": "https://twenty.com"
+      },
+      {
+        "loop": "L7_auth",
+        "field": "auth",
+        "change": null,
+        "reason": "no method could be grounded; pass 2 answer kept"
+      },
+      {
+        "loop": "verdict_rule",
+        "field": "verdict",
+        "change": "build_now -> build_with_friction",
+        "reason": "derived from access open_source_local / public review unknown"
+      }
+    ],
+    "access_sources": [
+      "https://twenty.com",
+      "https://docs.twenty.com/developers/extend/api",
+      "https://docs.twenty.com/developers/extend/apps/getting-started/quick-start.md",
+      "https://docs.twenty.com/developers/extend/oauth",
+      "https://docs.twenty.com/user-guide/billing/capabilities/credits"
+    ]
+  }
+}

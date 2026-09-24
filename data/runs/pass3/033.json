@@ -1,0 +1,258 @@
+{
+  "one_liner": "Manage LinkedIn advertising campaigns, ad accounts, analytics, and creatives programmatically.",
+  "auth_methods": [
+    "oauth2"
+  ],
+  "auth_primary": "oauth2",
+  "auth_notes": "Uses 3-legged OAuth for member-consented permission scopes.",
+  "access_tier": "approval_or_review",
+  "access_notes": "Requires developer application approval and vetting by LinkedIn for marketing API programs.",
+  "api_types": [
+    "rest"
+  ],
+  "api_breadth": "broad",
+  "api_notes": "Covers advertising accounts, campaigns, creatives, analytics, and reporting via REST base https://api.linkedin.com/rest/",
+  "mcp": "none_found",
+  "mcp_url": null,
+  "verdict": "build_with_friction",
+  "blocker": "app_review",
+  "blocker_notes": "Requires approval and vetting through the LinkedIn Developer portal to access marketing APIs.",
+  "evidence": {
+    "auth": {
+      "url": "https://learn.microsoft.com/en-us/linkedin/marketing/getting-started?view=li-lms-2026-02",
+      "quote": "Once you have a developer application that has been given access to the LinkedIn Marketing API Program, you're ready to start generating OAuth access tokens to make API calls on behalf of authenticated members.",
+      "check": "ok"
+    },
+    "access": {
+      "url": "https://learn.microsoft.com/en-us/linkedin/marketing/increasing-access?view=li-lms-2026-06",
+      "quote": "The Advertising API and Community Management API each have two access tiers with different access criteria. All applications start with Development tier. You must apply separately to upgrade to the Standard tier.",
+      "check": "ok"
+    },
+    "api": {
+      "url": "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/ads/ads-overview?view=li-lms-2026-03",
+      "quote": "The Advertising API enables developers to manage LinkedIn's campaign management platform on behalf of clients through APIs. These APIs provide all features available in LinkedIn Campaign Manager, including creation and management of ad accounts, campaign groups, campaigns, creatives, ad types, and analytics.",
+      "check": "ok"
+    },
+    "mcp": {
+      "url": "https://gitlab.com/nuraveda-lab/linkedin-ads-mcp",
+      "quote": "There's no official LinkedIn MCP. This fills the gap with a thin, correctness-first wrapper that handles LinkedIn's quirky restli encoding rules so you don't have to.",
+      "check": "ok"
+    },
+    "verdict": {
+      "url": "https://learn.microsoft.com/en-us/linkedin/marketing/increasing-access?view=li-lms-2026-06",
+      "quote": "The Advertising API and Community Management API each have two access tiers with different access criteria. All applications start with Development tier. You must apply separately to upgrade to the Standard tier.",
+      "check": "ok"
+    }
+  },
+  "confidence": {
+    "auth": 0.9,
+    "access": 0.9,
+    "api": 0.9,
+    "mcp": 1.0,
+    "verdict": 0.9
+  },
+  "_model": "gemini-3.5-flash-lite",
+  "status": "ok",
+  "id": 33,
+  "name": "LinkedIn Ads",
+  "category": "Marketing Ads Email & Social",
+  "hint": "learn.microsoft.com/linkedin/marketing",
+  "sources": [
+    {
+      "url": "https://learn.microsoft.com/linkedin/marketing",
+      "via": "direct",
+      "chars": 3733
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/linkedin/marketing/getting-started?view=li-lms-2026-02",
+      "via": "direct",
+      "chars": 9780
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/linkedin/marketing/increasing-access?view=li-lms-2026-06",
+      "via": "direct",
+      "chars": 13164
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/linkedin/marketing/increasing-access?view=li-lms-2026-08",
+      "via": "direct",
+      "chars": 13164
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/ads/account-structure/create-and-manage-accounts?view=li-lms-2026-05",
+      "via": "direct",
+      "chars": 31519
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/ads/ads-overview?view=li-lms-2026-03",
+      "via": "direct",
+      "chars": 5767
+    },
+    {
+      "url": "https://github.com/dhawalshah/linkedin-ads-mcp",
+      "via": "verification"
+    },
+    {
+      "url": "https://github.com/insightfulpipe/linkedin-ads-mcp-server/blob/main/README.md",
+      "via": "verification"
+    },
+    {
+      "url": "https://github.com/mharnett/mcp-linkedin-ads",
+      "via": "verification"
+    },
+    {
+      "url": "https://gitlab.com/nuraveda-lab/linkedin-ads-mcp",
+      "via": "verification"
+    },
+    {
+      "url": "https://learn.microsoft.com/linkedin/marketing",
+      "via": "pass3"
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/ads-reporting/ad-budget-pricing?view=li-lms-2026-02",
+      "via": "pass3"
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/linkedin/marketing/getting-started?view=li-lms-2026-02",
+      "via": "pass3"
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/linkedin/marketing/increasing-access?view=li-lms-2026-08",
+      "via": "pass3"
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/ads-reporting/getting-started?view=li-lms-2026-07",
+      "via": "pass3"
+    }
+  ],
+  "queries": [
+    "LinkedIn Ads API authentication developer docs",
+    "LinkedIn Ads API access pricing plan developer",
+    "LinkedIn Ads MCP server"
+  ],
+  "seconds": 40.1,
+  "verification_queries": [
+    "LinkedIn Ads MCP server model context protocol"
+  ],
+  "verification": {
+    "initial_issues": [
+      {
+        "loop": "L4_verifier",
+        "field": "mcp",
+        "problem": "verifier says official vs agent none_found"
+      }
+    ],
+    "final_issues": [],
+    "rounds": [
+      {
+        "round": 0,
+        "issues": [
+          {
+            "loop": "L4_verifier",
+            "field": "mcp",
+            "problem": "verifier says official vs agent none_found"
+          }
+        ],
+        "verifier": {
+          "auth_methods": [
+            "oauth2"
+          ],
+          "auth_primary": "oauth2",
+          "access_tier": "approval_or_review",
+          "api_types": [
+            "rest"
+          ],
+          "mcp": "official",
+          "verdict": "build_with_friction",
+          "reasons": {
+            "auth": "LinkedIn Marketing API uses OAuth 2.0 3‑legged flow for access tokens, as documented in the developer portal.",
+            "access": "Access requires a developer application to be approved by LinkedIn; the API is not self‑serve and is gated by an approval or review process.",
+            "mcp": "The API is published and documented by LinkedIn itself, making it an official MCP server.",
+            "verdict": "Because credentials are only available after approval, a toolkit can be built but with a friction step (app review)."
+          },
+          "_model": "openai/gpt-oss-20b"
+        },
+        "autofix": []
+      },
+      {
+        "round": 1,
+        "queries": [
+          "LinkedIn Ads MCP server model context protocol"
+        ],
+        "new_sources": [
+          "https://learn.microsoft.com/linkedin/marketing",
+          "https://github.com/dhawalshah/linkedin-ads-mcp",
+          "https://github.com/insightfulpipe/linkedin-ads-mcp-server/blob/main/README.md",
+          "https://github.com/mharnett/mcp-linkedin-ads",
+          "https://gitlab.com/nuraveda-lab/linkedin-ads-mcp"
+        ],
+        "change_log": "Corrected mcp to none_found based on community-only and source-available MCP implementations with no official vendor-published MCP server.",
+        "issues": [],
+        "verifier": {
+          "error": "Groq failed: HTTP 429: {\"error\":{\"message\":\"Rate limit reached for model `openai/gpt-oss-20b` in organization `org_01m2fd9xn8e3dtb9zfqc2jdhsc` service tier `on_demand` on tokens per minute (TPM): Limi"
+        },
+        "autofix": []
+      }
+    ],
+    "catalog": {
+      "in_catalog": true,
+      "slug": "linkedin_ads",
+      "auth": [
+        "oauth2"
+      ],
+      "tools_count": 28
+    },
+    "changed_fields": [],
+    "field_status": {
+      "auth": "verified",
+      "access": "verified",
+      "api": "verified",
+      "mcp": "confirmed_after_recheck",
+      "verdict": "verified"
+    },
+    "needs_human": [],
+    "before": {
+      "auth_methods": [
+        "oauth2"
+      ],
+      "auth_primary": "oauth2",
+      "access_tier": "approval_or_review",
+      "access_notes": "Requires developer application approval and vetting by LinkedIn for marketing API programs.",
+      "api_types": [
+        "rest"
+      ],
+      "api_breadth": "broad",
+      "api_notes": "Covers advertising accounts, campaigns, creatives, analytics, and reporting via REST base https://api.linkedin.com/rest/",
+      "mcp": "none_found",
+      "mcp_url": null,
+      "verdict": "build_with_friction",
+      "blocker": "partner_approval",
+      "blocker_notes": "Requires approval and vetting through the LinkedIn Developer portal to access marketing APIs."
+    },
+    "seconds": 109.1
+  },
+  "pass3": {
+    "before": {
+      "auth_methods": [
+        "oauth2"
+      ],
+      "auth_primary": "oauth2",
+      "access_tier": "approval_or_review",
+      "verdict": "build_with_friction",
+      "blocker": "partner_approval"
+    },
+    "log": [
+      {
+        "loop": "L6_access",
+        "error": "Groq failed: HTTP 429: {\"error\":{\"message\":\"Rate limit reached for model `qwen/qwen3.8-27b` in organization `org_01m2fd9xn8e3dtb9zfqc2jdhsc` service tier `on_demand` on input tokens per minute (ITPM):"
+      }
+    ],
+    "access_sources": [
+      "https://learn.microsoft.com/linkedin/marketing",
+      "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/ads-reporting/ad-budget-pricing?view=li-lms-2026-02",
+      "https://learn.microsoft.com/en-us/linkedin/marketing/getting-started?view=li-lms-2026-02",
+      "https://learn.microsoft.com/en-us/linkedin/marketing/increasing-access?view=li-lms-2026-08",
+      "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/ads-reporting/getting-started?view=li-lms-2026-07"
+    ]
+  }
+}

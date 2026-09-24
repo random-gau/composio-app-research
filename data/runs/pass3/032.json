@@ -1,0 +1,386 @@
+{
+  "one_liner": "Create, manage, and analyze advertising campaigns across Facebook, Instagram, and Meta technologies.",
+  "auth_methods": [
+    "oauth2",
+    "bearer_token"
+  ],
+  "auth_primary": "oauth2",
+  "auth_notes": "Uses OAuth 2.0 user access tokens, page access tokens, or system user access tokens.",
+  "access_tier": "self_serve_free",
+  "access_notes": "Sign up for a Meta Developer Account for free development access; production usage requires business verification and app review for advanced access permissions.",
+  "api_types": [
+    "rest",
+    "graphql"
+  ],
+  "api_breadth": "broad",
+  "api_notes": "Graph API endpoints covering campaigns, ad sets, creatives, insights, catalogs, and business management under https://graph.facebook.com/",
+  "mcp": "official",
+  "mcp_url": "https://developers.facebook.com/documentation/ads-commerce/ads-ai-connectors/ads-mcp-server/ads-mcp-server-overview",
+  "verdict": "build_with_friction",
+  "blocker": "app_review",
+  "blocker_notes": "Development access is freely available with a Meta Developer account.",
+  "evidence": {
+    "auth": {
+      "url": "https://developers.facebook.com/docs/facebook-login/facebook-login-for-business",
+      "quote": "Facebook Login for Business is the preferred authentication and authorization solution for tech providers building integrations with Meta’s business tools to create marketing, messaging, and selling solutions.",
+      "check": "ok"
+    },
+    "access": {
+      "url": "https://developers.facebook.com/docs/marketing-api/creative/reels-ads",
+      "quote": "By default, you get Standard Access when you add the Marketing API product to your App Dashboard, which provides you development access to the Marketing API.",
+      "check": "ok"
+    },
+    "api": {
+      "url": "https://developers.facebook.com/docs/marketing-apis",
+      "quote": "The Marketing API is a collection of Graph API endpoints and other features that can be used to help you advertise across Meta technologies.",
+      "check": "ok"
+    },
+    "mcp": {
+      "url": "https://developers.facebook.com/documentation/ads-commerce/ads-ai-connectors/ads-mcp-server/ads-mcp-server-overview",
+      "quote": "The ads MCP server is a Meta-hosted Model Context Protocol server that lets you manage Meta ads directly from an AI agent. It is one of Meta’s ads AI connectors — a family of integrations that expose Meta business surfaces to third-party AI clients through structured, permission-scoped tools.",
+      "check": "ok"
+    },
+    "verdict": {
+      "url": "https://developers.facebook.com/docs/marketing-api/creative/reels-ads",
+      "quote": "By default, you get Standard Access when you add the Marketing API product to your App Dashboard, which provides you development access to the Marketing API.",
+      "check": "ok"
+    },
+    "review": {
+      "url": "https://developers.facebook.com/docs/development/create-an-app",
+      "quote": "It is required if your app will be used by people without a role on your app or a role on the business that is connected to your app.",
+      "check": "ok"
+    }
+  },
+  "confidence": {
+    "auth": 0.9,
+    "access": 0.9,
+    "api": 0.9,
+    "mcp": 1.0,
+    "verdict": 0.9
+  },
+  "_model": "gemini-3.5-flash-lite",
+  "status": "ok",
+  "id": 32,
+  "name": "Meta Ads",
+  "category": "Marketing Ads Email & Social",
+  "hint": "developers.facebook.com/docs/marketing-apis",
+  "sources": [
+    {
+      "url": "https://developers.facebook.com/docs/marketing-apis",
+      "via": "composio_fetch",
+      "chars": 1935
+    },
+    {
+      "url": "https://developers.facebook.com/docs/business-sdk/getting-started",
+      "via": "composio_fetch",
+      "chars": 8841
+    },
+    {
+      "url": "https://developers.facebook.com/docs/facebook-login/facebook-login-for-business",
+      "via": "composio_fetch",
+      "chars": 20206
+    },
+    {
+      "url": "https://developers.facebook.com/docs/facebook-login/guides/access-tokens",
+      "via": "composio_fetch",
+      "chars": 15814
+    },
+    {
+      "url": "https://developers.facebook.com/docs/marketing-api/businessmanager/support",
+      "via": "composio_fetch",
+      "chars": 7926
+    },
+    {
+      "url": "https://developers.facebook.com/docs/marketing-api/creative/reels-ads",
+      "via": "composio_fetch",
+      "chars": 19328
+    },
+    {
+      "url": "https://developers.facebook.com/docs/development/create-an-app",
+      "via": "verification"
+    },
+    {
+      "url": "https://developers.facebook.com/docs/features-reference/ads-management-standard-access",
+      "via": "verification"
+    },
+    {
+      "url": "https://developers.facebook.com/documentation/ads-commerce/ads-ai-connectors/ads-mcp-server/ads-mcp-server-overview",
+      "via": "verification"
+    },
+    {
+      "url": "https://developers.facebook.com/documentation/ads-commerce/ads-ai-connectors/ads-mcp-server/ads-mcp-server-overview",
+      "via": "verification"
+    },
+    {
+      "url": "https://github.com/AbnerZx/meta-ads-mcp",
+      "via": "verification"
+    },
+    {
+      "url": "https://github.com/byadsco/meta-ads-mcp",
+      "via": "verification"
+    },
+    {
+      "url": "https://github.com/hashcott/meta-ads-mcp",
+      "via": "verification"
+    },
+    {
+      "url": "https://developers.facebook.com/docs/marketing-apis",
+      "via": "pass3"
+    },
+    {
+      "url": "https://developers.facebook.com/docs/business-sdk/getting-started",
+      "via": "pass3"
+    },
+    {
+      "url": "https://developers.facebook.com/docs/development/create-an-app",
+      "via": "pass3"
+    },
+    {
+      "url": "https://developers.facebook.com/docs/facebook-login/facebook-login-for-business",
+      "via": "pass3"
+    },
+    {
+      "url": "https://developers.facebook.com/docs/marketing-api/get-started",
+      "via": "pass3"
+    }
+  ],
+  "queries": [
+    "Meta Ads API authentication developer docs",
+    "Meta Ads API access pricing plan developer",
+    "Meta Ads MCP server"
+  ],
+  "seconds": 40.1,
+  "verification_queries": [
+    "Meta Ads API access requirements plan",
+    "Meta Ads developer account API key free OR partner OR enterprise",
+    "Meta Ads MCP server model context protocol",
+    "Meta Ads MCP server model context protocol"
+  ],
+  "verification": {
+    "initial_issues": [
+      {
+        "loop": "L4_verifier",
+        "field": "access",
+        "problem": "verifier says approval_or_review vs agent self_serve_free"
+      },
+      {
+        "loop": "L4_verifier",
+        "field": "verdict",
+        "problem": "verifier says build_with_friction vs agent build_now"
+      },
+      {
+        "loop": "L5_mcp_probe",
+        "field": "mcp",
+        "problem": "possible official MCP found: ['https://developers.facebook.com/documentation/ads-commerce/ads-ai-connectors/ads-mcp-server/ads-mcp-server-overview']",
+        "urls": [
+          "https://developers.facebook.com/documentation/ads-commerce/ads-ai-connectors/ads-mcp-server/ads-mcp-server-overview"
+        ]
+      }
+    ],
+    "final_issues": [],
+    "rounds": [
+      {
+        "round": 0,
+        "issues": [
+          {
+            "loop": "L4_verifier",
+            "field": "access",
+            "problem": "verifier says approval_or_review vs agent self_serve_free"
+          },
+          {
+            "loop": "L4_verifier",
+            "field": "verdict",
+            "problem": "verifier says build_with_friction vs agent build_now"
+          },
+          {
+            "loop": "L5_mcp_probe",
+            "field": "mcp",
+            "problem": "possible official MCP found: ['https://developers.facebook.com/documentation/ads-commerce/ads-ai-connectors/ads-mcp-server/ads-mcp-server-overview']",
+            "urls": [
+              "https://developers.facebook.com/documentation/ads-commerce/ads-ai-connectors/ads-mcp-server/ads-mcp-server-overview"
+            ]
+          }
+        ],
+        "verifier": {
+          "auth_methods": [
+            "oauth2"
+          ],
+          "auth_primary": "oauth2",
+          "access_tier": "approval_or_review",
+          "api_types": [
+            "rest"
+          ],
+          "mcp": "unknown",
+          "verdict": "build_with_friction",
+          "reasons": {
+            "auth": "Sources describe using user, system‑user, or app access tokens obtained via Facebook Login for Business, which follows the OAuth2 flow (Source 3, Source 4).",
+            "access": "A Meta Developer Account, registered app, app secret, and an ad account are required, and many Marketing API permissions require app review before production use (Source 2, Source 3).",
+            "mcp": "No information about an official MCP server is provided in the sources.",
+            "verdict": "Because access requires app review/approval, the integration can be built but only after passing the review process, so it is buildable with friction."
+          },
+          "_model": "openai/gpt-oss-120b"
+        },
+        "autofix": []
+      },
+      {
+        "round": 1,
+        "queries": [
+          "Meta Ads API access requirements plan",
+          "Meta Ads developer account API key free OR partner OR enterprise",
+          "Meta Ads MCP server model context protocol"
+        ],
+        "new_sources": [
+          "https://developers.facebook.com/docs/marketing-apis",
+          "https://developers.facebook.com/docs/business-sdk/getting-started",
+          "https://developers.facebook.com/docs/development/create-an-app",
+          "https://developers.facebook.com/docs/features-reference/ads-management-standard-access",
+          "https://developers.facebook.com/docs/marketing-api/creative/reels-ads",
+          "https://developers.facebook.com/documentation/ads-commerce/ads-ai-connectors/ads-mcp-server/ads-mcp-server-overview"
+        ],
+        "change_log": "Updated access tier to self_serve_free and verdict to build_now since Standard Access is available by default upon adding the Marketing API product to the App Dashboard, and added official MCP server as documented by Meta.",
+        "issues": [
+          {
+            "loop": "L4_verifier",
+            "field": "mcp",
+            "problem": "verifier says none_found vs agent official"
+          }
+        ],
+        "verifier": {
+          "auth_methods": [
+            "bearer_token",
+            "oauth2"
+          ],
+          "auth_primary": "bearer_token",
+          "access_tier": "self_serve_free",
+          "api_types": [
+            "rest"
+          ],
+          "mcp": "none_found",
+          "verdict": "build_now",
+          "reasons": {
+            "auth": "Marketing API uses access tokens (bearer) and OAuth2 flows for user tokens.",
+            "access": "Developers can create a Meta App and obtain an access token via a free developer account.",
+            "mcp": "No MCP server is documented by Meta for the Marketing API.",
+            "verdict": "Public documentation and free self‑serve credentials allow immediate development."
+          },
+          "_model": "openai/gpt-oss-20b"
+        },
+        "autofix": []
+      },
+      {
+        "round": 2,
+        "queries": [
+          "Meta Ads API access requirements plan",
+          "Meta Ads developer account API key free OR partner OR enterprise",
+          "Meta Ads MCP server model context protocol",
+          "Meta Ads MCP server model context protocol"
+        ],
+        "new_sources": [
+          "https://developers.facebook.com/docs/marketing-apis",
+          "https://developers.facebook.com/documentation/ads-commerce/ads-ai-connectors/ads-mcp-server/ads-mcp-server-overview",
+          "https://github.com/AbnerZx/meta-ads-mcp",
+          "https://github.com/byadsco/meta-ads-mcp",
+          "https://github.com/hashcott/meta-ads-mcp"
+        ],
+        "change_log": "Corrected the mcp field to 'official' as Meta publishes and documents an official first-party Ads MCP Server.",
+        "issues": [],
+        "verifier": {
+          "auth_methods": [
+            "oauth2",
+            "bearer_token"
+          ],
+          "auth_primary": "oauth2",
+          "access_tier": "self_serve_free",
+          "api_types": [
+            "rest"
+          ],
+          "mcp": "official",
+          "verdict": "build_now",
+          "reasons": {
+            "auth": "Marketing API uses OAuth 2.0 to obtain a user access token, which is passed as a bearer token in the Authorization header. Both oauth2 and bearer_token are documented as valid methods.",
+            "access": "Developers can create a Facebook app, generate a user access token via the OAuth flow, and use it immediately—no trial or paid plan required.",
+            "mcp": "Meta hosts an official MCP server at https://mcp.facebook.com/ads, documented in the Ads MCP Server docs.",
+            "verdict": "Public documentation, self‑serve credentials, and an official MCP server allow a developer to build a toolkit today."
+          },
+          "_model": "openai/gpt-oss-20b"
+        },
+        "autofix": []
+      }
+    ],
+    "catalog": {
+      "in_catalog": true,
+      "slug": "metaads",
+      "auth": [
+        "api_key",
+        "oauth2"
+      ],
+      "tools_count": 65
+    },
+    "changed_fields": [
+      "mcp"
+    ],
+    "field_status": {
+      "auth": "verified",
+      "access": "confirmed_after_recheck",
+      "api": "verified",
+      "mcp": "corrected",
+      "verdict": "confirmed_after_recheck"
+    },
+    "needs_human": [],
+    "before": {
+      "auth_methods": [
+        "oauth2",
+        "bearer_token"
+      ],
+      "auth_primary": "oauth2",
+      "access_tier": "self_serve_free",
+      "access_notes": "Sign up for a Meta Developer Account for free development access; production usage requires business verification and app review for advanced access permissions.",
+      "api_types": [
+        "rest",
+        "graphql"
+      ],
+      "api_breadth": "broad",
+      "api_notes": "Graph API endpoints covering campaigns, ad sets, creatives, insights, catalogs, and business management under https://graph.facebook.com/",
+      "mcp": "none_found",
+      "mcp_url": null,
+      "verdict": "build_now",
+      "blocker": "none",
+      "blocker_notes": "Development access is freely available with a Meta Developer account."
+    },
+    "seconds": 80.0
+  },
+  "_public_review": "yes",
+  "pass3": {
+    "before": {
+      "auth_methods": [
+        "oauth2",
+        "bearer_token"
+      ],
+      "auth_primary": "oauth2",
+      "access_tier": "self_serve_free",
+      "verdict": "build_now",
+      "blocker": "none"
+    },
+    "log": [
+      {
+        "loop": "L6_access",
+        "field": "access",
+        "change": null,
+        "reason": "confirmed with a verified quote"
+      },
+      {
+        "loop": "verdict_rule",
+        "field": "verdict",
+        "change": "build_now -> build_with_friction",
+        "reason": "derived from access self_serve_free / public review yes"
+      }
+    ],
+    "access_sources": [
+      "https://developers.facebook.com/docs/marketing-apis",
+      "https://developers.facebook.com/docs/business-sdk/getting-started",
+      "https://developers.facebook.com/docs/development/create-an-app",
+      "https://developers.facebook.com/docs/facebook-login/facebook-login-for-business",
+      "https://developers.facebook.com/docs/marketing-api/get-started"
+    ]
+  }
+}

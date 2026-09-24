@@ -119,15 +119,16 @@ table{border-collapse:collapse;width:100%}
 .arrow{align-self:center;color:var(--muted);font-family:var(--mono)}
 
 /* accuracy */
-.acc-big{display:flex;flex-wrap:wrap;align-items:flex-end;gap:12px 28px}
+.acc-big{display:flex;flex-wrap:wrap;align-items:flex-end;gap:10px 18px}
 .acc-big .fig{display:grid;gap:2px}
-.acc-big .fig b{font:700 44px/1 var(--display);font-variant-numeric:tabular-nums}
+.acc-big .fig b{font:700 34px/1 var(--display);font-variant-numeric:tabular-nums}
 .acc-big .fig span{font-size:13px;color:var(--muted)}
-.acc-big .to{font:700 28px/1 var(--display);color:var(--muted);padding-bottom:18px}
+.acc-big .to{font:700 22px/1 var(--display);color:var(--muted);padding-bottom:16px}
 .pair{display:grid;grid-template-columns:70px 1fr;gap:4px 10px;align-items:center;font-size:14px}
 .pair .t{height:10px;background:var(--line-2);border-radius:3px;overflow:hidden}
-.pair .f1{height:100%;background:var(--muted);opacity:.55}
-.pair .f2{height:100%;background:var(--accent)}
+.pair .f1{height:100%;background:var(--line)}
+.pair .f2{height:100%;background:color-mix(in srgb, var(--accent) 45%, var(--line))}
+.pair .f3{height:100%;background:var(--accent)}
 .sample th,.sample td{padding:7px 8px;border-bottom:1px solid var(--line-2);font-size:13.5px;text-align:center;white-space:nowrap}
 .sample th{font:600 11px/1.2 var(--mono);color:var(--muted);text-transform:uppercase}
 .sample td:first-child,.sample th:first-child{text-align:left}
@@ -212,16 +213,22 @@ footer{color:var(--muted);font-size:14px;display:grid;gap:10px;border-top:1px so
     <div class="sec-head"><div class="eyebrow">Verification</div><h2>How accurate is it?</h2>
       <p id="acc-intro"></p></div>
     <div class="grid-2">
-      <div class="panel" style="display:grid;gap:18px">
-        <div class="acc-big" id="acc-big"></div>
-        <div style="display:grid;gap:10px" id="acc-fields"></div>
-        <div class="legend"><span style="--c:var(--muted)">Pass 1 (single pass)</span><span style="--c:var(--accent)">Pass 2 (after loops)</span></div>
-      </div>
-      <div class="panel"><h3>What each loop caught across all 100 apps</h3><div class="bars" id="loops" style="margin-top:12px"></div>
-        <p class="count" style="margin-top:14px" id="loop-note"></p></div>
+      <div class="panel" style="display:grid;gap:16px"><h3>Dev sample · the 19 apps used to design pass 3</h3>
+        <div class="acc-big" id="acc-big"></div><div style="display:grid;gap:10px" id="acc-fields"></div></div>
+      <div class="panel" style="display:grid;gap:16px"><h3>Held-out test · 10 new apps, never used for design</h3>
+        <div class="acc-big" id="acc-big-test"></div><div style="display:grid;gap:10px" id="acc-fields-test"></div></div>
     </div>
-    <div class="panel scroll"><h3 style="margin-bottom:10px">The hand-checked sample: pass 1 → pass 2, field by field</h3><table class="sample" id="sample"></table>
-      <p class="count" style="margin-top:10px">✓ correct · ✗ wrong · green cell = the loops fixed it · red cell = the loops broke it · — not scored. Hover a cell for the agent's answer.</p></div>
+    <div class="legend"><span style="--c:var(--line)">Pass 1 · single pass</span><span style="--c:color-mix(in srgb, var(--accent) 45%, var(--line))">Pass 2 · five verification loops</span><span style="--c:var(--accent)">Pass 3 · targeted fixes (access check, auth grounding, verdict rule)</span></div>
+    <p class="count" id="auth-note"></p>
+    <div class="grid-2">
+      <div class="panel"><h3>What the pass 2 loops flagged across all 100 apps</h3><div class="bars" id="loops" style="margin-top:12px"></div>
+        <p class="count" style="margin-top:14px" id="loop-note"></p></div>
+      <div class="panel"><h3>What pass 3 changed across all 100 apps</h3><div class="bars" id="loops3" style="margin-top:12px"></div>
+        <p class="count" style="margin-top:14px" id="loop3-note"></p></div>
+    </div>
+    <div class="panel scroll"><h3 style="margin-bottom:10px">Dev sample, field by field: pass 1 → 2 → 3</h3><table class="sample" id="sample"></table>
+      <h3 style="margin:18px 0 10px">Held-out test, field by field: pass 1 → 2 → 3</h3><table class="sample" id="sample-test"></table>
+      <p class="count" style="margin-top:10px">✓ correct · ✗ wrong · green cell = wrong in pass 1, right at the end · red cell = right in pass 1, wrong at the end · — not scored. Hover a cell for the agent's answers.</p></div>
     <div class="grid-2">
       <div class="panel"><h3>Where it was still wrong</h3><ul class="clean" id="misses" style="margin-top:8px"></ul></div>
       <div class="panel"><h3>Limits of this check</h3><ul class="clean" id="limits" style="margin-top:8px"></ul></div>
@@ -263,6 +270,7 @@ const LBL = {
   local_tool_only:"Local tool only", enterprise_only:"Enterprise only", docs_unclear:"Docs unclear",
   rest:"REST", graphql:"GraphQL", soap:"SOAP", websocket:"WebSocket", sdk_or_cli_only:"SDK/CLI only",
   auth:"Auth", access:"Access", api:"API", mcp:"MCP", verdict:"Verdict",
+  L6_access:"L6 access / pricing check", L7_auth:"L7 auth grounding", verdict_rule:"Verdict rule",
   L1_evidence:"L1 evidence quote check", L2_rules:"L2 consistency rules", L3_catalog:"L3 Composio catalog", L4_verifier:"L4 blind verifier (other model)", L5_mcp_probe:"L5 MCP probe"
 };
 const L = k => LBL[k] || k;
@@ -335,11 +343,15 @@ $("#flow").innerHTML = `
    {cls:"loop",tool:"L3 Composio /toolkits",t:"Catalog",d:"Compare auth with Composio's own toolkit catalog."},
    {cls:"loop",tool:"L4 Groq · Llama",t:"Blind verifier",d:"Different model family answers from the same sources."},
    {cls:"loop",tool:"L5 search",t:"MCP probe",d:"Look for a vendor MCP server pass 1 missed."}])}</div>
+ <div class="lane"><span class="lane-label">Pass 3 · targeted fixes for the error patterns pass 2 left (designed on the dev sample, scored on a held-out one)</span>${steps([
+   {cls:"loop",tool:"L6 search + fetch pricing",t:"Access check",d:"Read pricing / API-access pages; stricter sandbox rule; review gates need a verified quote."},
+   {cls:"loop",tool:"L7 re-fetch",t:"Auth grounding",d:"Each auth method needs its own verified quote or it is dropped."},
+   {cls:"loop",tool:"deterministic",t:"Verdict rule",d:"Verdict derived from the access gate, so the two can't disagree."}])}</div>
  <div class="lane"><span class="lane-label">Resolve</span>${steps([
    {tool:"search + fetch",t:"Targeted re-research",d:"New queries only for flagged fields."},
    {tool:"Gemini",t:"Adjudicate",d:"Re-decide flagged fields; must cite a quote. Re-checked by L1–L4."},
    {cls:"human",tool:"human",t:"Review queue",d:"Fields still failing checks go to a person."},
-   {cls:"human",tool:"human",t:"Sample check + patterns",d:"Hand-verified 20 apps; wrote the headline wording."}])}</div>`;
+   {cls:"human",tool:"human",t:"Sample checks + patterns",d:"Confirmed a 20-app dev sample and a 10-app held-out test; wrote the headline wording."}])}</div>`;
 const lu = run.llm_usage || {};
 $("#agent-facts").innerHTML = [
   `Researched ${N} apps end to end: ${run.pages_fetched ? run.pages_fetched+" pages fetched, " : ""}${run.searches ? run.searches+" searches" : "searches via Composio"}.`,
@@ -353,38 +365,54 @@ $("#agent-facts").innerHTML = [
 const hq = S.needs_human_apps;
 $("#human-facts").innerHTML = [
   `Wrote the rubric that defines each label; without it "self-serve" meant different things for different apps.`,
-  `Hand-checked a stratified sample of ${(DATA.accuracy.truth||[]).length || 20} apps (2 per category) against the vendors' own docs.`,
+  `Confirmed the reference answers for a ${(DATA.accuracy.truth||[]).length || 20}-app dev sample and a ${(DATA.accuracy.test_truth||[]).length}-app held-out test against the vendors' own docs.`,
   `${hq.length} apps still had an unresolved field after two automated rounds and went to the review queue${hq.length?": "+hq.slice(0,8).map(x=>x.name).join(", ")+(hq.length>8?"…":""):""}.`,
   ...(ins.human_notes||[])
 ].map(x=>`<li>${esc(x)}</li>`).join("");
 
 /* accuracy */
-const A = (DATA.accuracy||{}).summary || {};
-const p1 = A.pass1, p2 = A.pass2;
-if (p1 && p2){
-  $("#acc-intro").textContent = ins.acc_intro || `Twenty apps (two per category) were checked by hand against vendor docs, blind to the agent's answers, and each of five fields was scored. That gives ${p2.overall.n} scored judgements. The same sample is scored for pass 1 and pass 2.`;
-  $("#acc-big").innerHTML = `<div class="fig"><b>${p1.overall.pct}%</b><span>Pass 1 · ${p1.overall.correct}/${p1.overall.n}</span></div><div class="to" aria-hidden="true">→</div><div class="fig"><b style="color:var(--accent)">${p2.overall.pct}%</b><span>Pass 2 · ${p2.overall.correct}/${p2.overall.n}</span></div>`;
-  $("#acc-fields").innerHTML = ["auth","access","api","mcp","verdict"].map(f => { const a=p1.per_field[f], b=p2.per_field[f];
-    return `<div class="pair"><span>${L(f)}</span><div style="display:grid;gap:3px"><div class="t"><div class="f1" style="width:${a.pct||0}%"></div></div><div class="t"><div class="f2" style="width:${b.pct||0}%"></div></div></div>
-    <span></span><span class="count num">${a.correct}/${a.n} → ${b.correct}/${b.n}</span></div>`; }).join("");
-  if (p1.auth_primary_only) $("#acc-fields").insertAdjacentHTML("beforeend", `<p class="count">Auth is scored strictly: the main method must be right and no listed method may be one the docs don't support. Scored on the main method alone, auth is ${p1.auth_primary_only.correct}/${p1.auth_primary_only.n} → ${p2.auth_primary_only.correct}/${p2.auth_primary_only.n}. Most auth misses are extra methods, not wrong ones.</p>`);
-} else { $("#acc-intro").textContent = "Accuracy scoring has not been run yet."; }
+const ACC = DATA.accuracy || {};
+const PASSES = ["pass1","pass2","pass3"];
+const F = ["auth","access","api","mcp","verdict"];
+function renderAcc(summary, bigEl, fieldsEl){
+  const ps = PASSES.filter(p => summary && summary[p]);
+  if (!ps.length){ bigEl.innerHTML = '<span class="count">Not scored yet.</span>'; return; }
+  bigEl.innerHTML = ps.map((p,i) => `${i?'<div class="to" aria-hidden="true">→</div>':''}<div class="fig"><b style="${i===ps.length-1?'color:var(--accent)':''}">${summary[p].overall.pct}%</b><span>Pass ${p.slice(-1)}${p===(S.final_pass||"pass2")?" (final table)":""} · ${summary[p].overall.correct}/${summary[p].overall.n}</span></div>`).join("");
+  fieldsEl.innerHTML = F.map(f => `<div class="pair"><span>${L(f)}</span><div style="display:grid;gap:3px">${ps.map((p,i)=>`<div class="t"><div class="f${i+1}" style="width:${summary[p].per_field[f].pct||0}%"></div></div>`).join("")}</div>
+    <span></span><span class="count num">${ps.map(p=>`${summary[p].per_field[f].correct}/${summary[p].per_field[f].n}`).join(" → ")}</span></div>`).join("");
+}
+const A = ACC.summary || {};
+renderAcc(A, $("#acc-big"), $("#acc-fields"));
+renderAcc(ACC.test_summary, $("#acc-big-test"), $("#acc-fields-test"));
+$("#acc-intro").textContent = ins.acc_intro || "";
+const lastP = s => PASSES.filter(p => s && s[p]).pop();
+if (A.pass1 && A.pass1.auth_primary_only){ const l = lastP(A);
+  $("#auth-note").textContent = `Auth is scored strictly: the main method must be right and no listed method may be one the docs don't support. On the main method alone, the dev sample scores ${A.pass1.auth_primary_only.correct}/${A.pass1.auth_primary_only.n} in pass 1 and ${A[l].auth_primary_only.correct}/${A[l].auth_primary_only.n} at the end.`; }
 const loopE = Object.entries(S.loops_initial).sort((a,b)=>a[0].localeCompare(b[0]));
 bars($("#loops"), loopE.map(([k,v])=>[L(k),v]), Math.max(...loopE.map(e=>e[1]),1), "var(--warn)");
-$("#loop-note").textContent = `Flags raised in round 0. Pass 1 cited ${S.p1_cited} quotes; ${S.p1_quote_fail} of those could not be found (or only partly) on the cited page, and ${S.p1_no_evidence} fields had no evidence at all. Field outcomes after pass 2: ${Object.entries(S.field_status).map(([k,v])=>`${v} ${k.replace(/_/g," ")}`).join(", ")}.`;
+$("#loop-note").textContent = `Flags raised in round 0. Pass 1 cited ${S.p1_cited} quotes; ${S.p1_quote_fail} could not be found (or only partly) on the cited page, and ${S.p1_no_evidence} fields had no evidence at all. Field outcomes after pass 2: ${Object.entries(S.field_status).map(([k,v])=>`${v} ${k.replace(/_/g," ")}`).join(", ")}.`;
+const l3 = Object.entries(S.p3_changes||{});
+if (l3.length){ bars($("#loops3"), l3.map(([k,v])=>[L(k),v]), Math.max(...l3.map(e=>e[1]),1), "var(--accent)");
+  $("#loop3-note").textContent = S.p3_note || "";
+  if ((S.p3_examples||[]).length) $("#loop3-note").insertAdjacentHTML("afterend", `<details style="margin-top:10px"><summary class="count">Every pass 3 change</summary><ul class="clean" style="margin-top:8px;font-size:13px">${S.p3_examples.map(x=>`<li>${esc(x)}</li>`).join("")}</ul></details>`); }
+else { $("#loops3").innerHTML = '<span class="count">Pass 3 has not run.</span>'; }
 
-const rows = (DATA.accuracy||{}).rows || [];
-const byId = {}; rows.forEach(r => { (byId[r.id] = byId[r.id]||{name:r.name})[r.pass] = r; });
-const F = ["auth","access","api","mcp","verdict"];
-$("#sample").innerHTML = `<thead><tr><th>App</th>${F.map(f=>`<th>${L(f)}</th>`).join("")}</tr></thead><tbody>` + Object.entries(byId).map(([id,o]) => {
-  return `<tr><td>${esc(o.name)}</td>${F.map(f => { const a=o.pass1?.[f], b=o.pass2?.[f];
-    if (a==null && b==null) return `<td class="na">—</td>`;
-    const cls = (a===false && b===true) ? "fix" : (a===true && b===false) ? "brk" : "";
-    const m = v => v===true?'<span class="ok">✓</span>':v===false?'<span class="bad">✗</span>':'<span class="na">—</span>';
-    const tip = `pass 1: ${JSON.stringify(o.pass1?.agent?.[f])} → pass 2: ${JSON.stringify(o.pass2?.agent?.[f])}`;
-    return `<td class="${cls}" title="${esc(tip)}">${m(a)} → ${m(b)}</td>`; }).join("")}</tr>`; }).join("") + `</tbody>`;
+function sampleTable(el, rows){
+  const byId = {}; rows.forEach(r => { (byId[r.id] = byId[r.id]||{name:r.name})[r.pass] = r; });
+  el.innerHTML = `<thead><tr><th>App</th>${F.map(f=>`<th>${L(f)}</th>`).join("")}</tr></thead><tbody>` + Object.values(byId).map(o => {
+    const ps = PASSES.filter(p => o[p]);
+    return `<tr><td>${esc(o.name)}</td>${F.map(f => { const v = ps.map(p => o[p][f]);
+      if (v.every(x => x==null)) return `<td class="na">—</td>`;
+      const cls = (v[0]===false && v[v.length-1]===true) ? "fix" : (v[0]===true && v[v.length-1]===false) ? "brk" : "";
+      const m = x => x===true?'<span class="ok">✓</span>':x===false?'<span class="bad">✗</span>':'<span class="na">—</span>';
+      const tip = ps.map(p => `${p}: ${JSON.stringify(o[p].agent[f])}`).join("  |  ");
+      return `<td class="${cls}" title="${esc(tip)}">${v.map(m).join(" → ")}</td>`; }).join("")}</tr>`; }).join("") + `</tbody>`;
+  return byId;
+}
+const byId = sampleTable($("#sample"), ACC.rows || []);
+sampleTable($("#sample-test"), ACC.test_rows || []);
 const misses = [];
-Object.values(byId).forEach(o => F.forEach(f => { if (o.pass2 && o.pass2[f]===false) misses.push(`${o.name}, ${L(f)}: agent said ${JSON.stringify(o.pass2.agent[f])}`); }));
+Object.values(byId).forEach(o => F.forEach(f => { const l = PASSES.filter(p=>o[p]).pop(); if (o[l] && o[l][f]===false) misses.push(`${o.name}, ${L(f)}: agent said ${JSON.stringify(o[l].agent[f])}`); }));
 $("#misses").innerHTML = (ins.misses || misses).map(x=>`<li>${esc(x)}</li>`).join("") || "<li>No misses on the sample.</li>";
 $("#limits").innerHTML = (ins.limits || [
   "20 of 100 apps is a small sample; a single miss moves a field's score by 5 points.",
@@ -398,7 +426,8 @@ ACCESS_ORDER.forEach(a => S.access[a] && $("#f-acc").insertAdjacentHTML("beforee
 const statusPill = r => {
   if (r.needs_human && r.needs_human.length) return `<span class="pill human">needs human: ${r.needs_human.map(L).join(", ")}</span>`;
   if (r.human_override) return `<span class="pill human">human-resolved</span>`;
-  if (r.changed_fields && r.changed_fields.length) return `<span class="pill acc">corrected: ${r.changed_fields.map(L).join(", ")}</span>`;
+  const ch = [...new Set([...(r.changed_fields||[]), ...(r.p3_changed||[])])];
+  if (ch.length) return `<span class="pill acc">corrected: ${ch.map(L).join(", ")}</span>`;
   return `<span class="pill go">verified</span>`;
 };
 function detail(r){
@@ -419,6 +448,7 @@ function detail(r){
     <div style="display:grid;gap:10px">${ev}</div>
     <div><h4>Verification flags (round 0)</h4>${iss?`<ul class="clean">${iss}</ul>`:'<span class="count">none</span>'}
       <h4 style="margin-top:10px">Changed by the loops</h4>${changes?`<ul class="clean">${changes}</ul>`:'<span class="count">nothing</span>'}
+      ${(r.p3log||[]).length?`<h4 style="margin-top:10px">Pass 3</h4><ul class="clean">${r.p3log.map(x=>`<li><span class="mono">${esc((x.loop||"").split("_")[0])}</span> ${esc(x.change||x.reason||x.error||"")}</li>`).join("")}</ul>`:""}
       ${r.human_override?`<h4 style="margin-top:10px">Human override</h4><ul class="clean">${r.human_override.map(h=>`<li>${L(h.field)} → ${esc(JSON.stringify(h.to))}${h.note?": "+esc(h.note):""}</li>`).join("")}</ul>`:""}
       <h4 style="margin-top:10px">Sources read</h4><ul class="clean">${(r.sources||[]).slice(0,6).map(u=>`<li><a class="wrapurl" href="${esc(u)}" target="_blank" rel="noopener">${esc(u)}</a></li>`).join("")}</ul></div></div>`;
 }

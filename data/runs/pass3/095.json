@@ -1,0 +1,214 @@
+{
+  "one_liner": "Agentic document platform for parsing, extracting, splitting, classifying, and editing documents at scale.",
+  "auth_methods": [
+    "bearer_token",
+    "oauth2"
+  ],
+  "auth_primary": "bearer_token",
+  "auth_notes": "API keys are passed via bearer token or authenticated via OAuth device-code flow.",
+  "access_tier": "self_serve_free",
+  "access_notes": "Sign up right away on the Standard tier, pay-as-you-go plan.",
+  "api_types": [
+    "rest",
+    "sdk_or_cli_only"
+  ],
+  "api_breadth": "moderate",
+  "api_notes": "Endpoints cover parse, extract, split, classify, edit, jobs, upload, webhook, and usage export.",
+  "mcp": "official",
+  "mcp_url": "https://docs.reducto.ai/mcp-server",
+  "verdict": "build_now",
+  "blocker": "none",
+  "blocker_notes": "Public API with self-serve signup and official MCP server.",
+  "evidence": {
+    "auth": {
+      "url": "https://docs.reducto.ai/mcp-server",
+      "quote": "Authorization: Bearer your-api-key",
+      "check": "ok"
+    },
+    "access": {
+      "url": "https://reducto.ai",
+      "quote": "You can get API access right away by starting off on our Standard tier, pay-as-you-go plan.",
+      "check": "ok"
+    },
+    "api": {
+      "url": "https://docs.reducto.ai/overview",
+      "quote": "For developers building automated pipelines. Available in Python, Node.js, Go, and REST.",
+      "check": "ok"
+    },
+    "mcp": {
+      "url": "https://docs.reducto.ai/mcp-server",
+      "quote": "The Reducto MCP server connects AI agents directly to Reducto.",
+      "check": "ok"
+    },
+    "verdict": {
+      "url": "https://reducto.ai",
+      "quote": "You can get API access right away by starting off on our Standard tier, pay-as-you-go plan.",
+      "check": "ok"
+    }
+  },
+  "confidence": {
+    "auth": 1.0,
+    "access": 1.0,
+    "api": 1.0,
+    "mcp": 1.0,
+    "verdict": 1.0
+  },
+  "_model": "gemini-3.5-flash-lite",
+  "status": "ok",
+  "id": 95,
+  "name": "Reducto",
+  "category": "AI Research & Media",
+  "hint": "reducto.ai (document parsing)",
+  "sources": [
+    {
+      "url": "https://reducto.ai",
+      "via": "direct",
+      "chars": 10211
+    },
+    {
+      "url": "https://docs.reducto.ai/mcp-server",
+      "via": "direct",
+      "chars": 21802
+    },
+    {
+      "url": "https://docs.reducto.ai/onprem/securing_reducto",
+      "via": "direct",
+      "chars": 5028
+    },
+    {
+      "url": "https://docs.reducto.ai/onprem/security_model",
+      "via": "direct",
+      "chars": 6997
+    },
+    {
+      "url": "https://docs.reducto.ai/overview",
+      "via": "direct",
+      "chars": 3673
+    },
+    {
+      "url": "https://docs.reducto.ai/reference/credit-usage",
+      "via": "direct",
+      "chars": 3074
+    },
+    {
+      "url": "https://reducto.ai",
+      "via": "pass3"
+    },
+    {
+      "url": "https://docs.reducto.ai/mcp-server",
+      "via": "pass3"
+    },
+    {
+      "url": "https://docs.reducto.ai/quickstart",
+      "via": "pass3"
+    },
+    {
+      "url": "https://docs.reducto.ai/reference/credit-usage",
+      "via": "pass3"
+    },
+    {
+      "url": "https://docs.reducto.ai/sdk/go/overview",
+      "via": "pass3"
+    }
+  ],
+  "queries": [
+    "Reducto API authentication developer docs",
+    "Reducto API access pricing plan developer",
+    "Reducto MCP server"
+  ],
+  "seconds": 53.0,
+  "verification": {
+    "initial_issues": [],
+    "final_issues": [],
+    "rounds": [
+      {
+        "round": 0,
+        "issues": [],
+        "verifier": {
+          "auth_methods": [
+            "oauth2",
+            "api_key",
+            "bearer_token",
+            "jwt_or_signed",
+            "none"
+          ],
+          "auth_primary": "oauth2",
+          "access_tier": "unknown",
+          "api_types": [
+            "none"
+          ],
+          "mcp": "unknown",
+          "verdict": "unknown",
+          "reasons": {},
+          "_model": "allam-2-7b"
+        },
+        "autofix": []
+      }
+    ],
+    "catalog": {
+      "in_catalog": false,
+      "checked": [
+        "reducto"
+      ]
+    },
+    "changed_fields": [],
+    "field_status": {
+      "auth": "verified",
+      "access": "verified",
+      "api": "verified",
+      "mcp": "verified",
+      "verdict": "verified"
+    },
+    "needs_human": [],
+    "before": {
+      "auth_methods": [
+        "bearer_token",
+        "oauth2"
+      ],
+      "auth_primary": "bearer_token",
+      "access_tier": "self_serve_free",
+      "access_notes": "Sign up right away on the Standard tier, pay-as-you-go plan.",
+      "api_types": [
+        "rest",
+        "sdk_or_cli_only"
+      ],
+      "api_breadth": "moderate",
+      "api_notes": "Endpoints cover parse, extract, split, classify, edit, jobs, upload, webhook, and usage export.",
+      "mcp": "official",
+      "mcp_url": "https://docs.reducto.ai/mcp-server",
+      "verdict": "build_now",
+      "blocker": "none",
+      "blocker_notes": "Public API with self-serve signup and official MCP server."
+    },
+    "seconds": 43.8
+  },
+  "pass3": {
+    "before": {
+      "auth_methods": [
+        "bearer_token",
+        "oauth2"
+      ],
+      "auth_primary": "bearer_token",
+      "access_tier": "self_serve_free",
+      "verdict": "build_now",
+      "blocker": "none"
+    },
+    "log": [
+      {
+        "loop": "L6_access",
+        "error": "Groq failed: HTTP 429: {\"error\":{\"message\":\"Rate limit reached for model `qwen/qwen3.8-27b` in organization `org_01m2fd9xn8e3dtb9zfqc2jdhsc` service tier `on_demand` on tokens per day (TPD): Limit 200"
+      },
+      {
+        "loop": "L7_auth",
+        "error": "Groq failed: HTTP 429: {\"error\":{\"message\":\"Rate limit reached for model `qwen/qwen3.8-27b` in organization `org_01m2fd9xn8e3dtb9zfqc2jdhsc` service tier `on_demand` on tokens per day (TPD): Limit 200"
+      }
+    ],
+    "access_sources": [
+      "https://reducto.ai",
+      "https://docs.reducto.ai/mcp-server",
+      "https://docs.reducto.ai/quickstart",
+      "https://docs.reducto.ai/reference/credit-usage",
+      "https://docs.reducto.ai/sdk/go/overview"
+    ]
+  }
+}

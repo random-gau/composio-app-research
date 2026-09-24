@@ -1,0 +1,212 @@
+{
+  "one_liner": "Ecwid provides an e-commerce platform API to manage store products, orders, customers, and categories.",
+  "auth_methods": [
+    "oauth2",
+    "bearer_token"
+  ],
+  "auth_primary": "oauth2",
+  "auth_notes": "OAuth 2.0 is used for public apps, and static secret/public access tokens are available for custom apps.",
+  "access_tier": "self_serve_free",
+  "access_notes": "Sign up for a free Ecwid account and create a custom app to obtain access tokens or use OAuth.",
+  "api_types": [
+    "rest"
+  ],
+  "api_breadth": "broad",
+  "api_notes": "Covers store profile, orders, products, categories, customers, discounts, domains, dictionaries, and staff accounts via base URL https://app.ecwid.com/api/v3/{storeId}.",
+  "mcp": "none_found",
+  "mcp_url": null,
+  "verdict": "build_now",
+  "blocker": "none",
+  "blocker_notes": "Public REST API with self-serve credentials is fully available.",
+  "evidence": {
+    "auth": {
+      "url": "https://docs.ecwid.com/api-reference",
+      "quote": "We use OAuth 2.0 authorization simplified for single-store customizations, JSON-formatted data, and a clear structure.",
+      "check": "ok"
+    },
+    "access": {
+      "url": "https://docs.ecwid.com/get-started/make-your-first-api-request",
+      "quote": "There is no test mode in Ecwid API, so we recommend setting up a separate test store. This way you can safely experiment and develop without impacting your live store",
+      "check": "ok"
+    },
+    "api": {
+      "url": "https://docs.ecwid.com/api-reference/advanced/rest-api-calls",
+      "quote": "Base URL:\nhttps://app.ecwid.com/api/v3/{storeId}\nFull list of endpoints and calls below.",
+      "check": "ok"
+    },
+    "mcp": {
+      "url": null,
+      "quote": null
+    },
+    "verdict": {
+      "url": "https://docs.ecwid.com/get-started/make-your-first-api-request",
+      "quote": "After signing up with Ecwid and getting a custom app, you already have two tokens",
+      "check": "ok"
+    }
+  },
+  "confidence": {
+    "auth": 5.0,
+    "access": 5.0,
+    "api": 5.0,
+    "mcp": 5.0,
+    "verdict": 5.0
+  },
+  "_model": "gemini-3.5-flash-lite",
+  "status": "ok",
+  "id": 47,
+  "name": "Ecwid",
+  "category": "Ecommerce",
+  "hint": "api-docs.ecwid.com",
+  "sources": [
+    {
+      "url": "https://api-docs.ecwid.com",
+      "via": "direct",
+      "chars": 2724
+    },
+    {
+      "url": "https://docs.ecwid.com/api-reference",
+      "via": "direct",
+      "chars": 2241
+    },
+    {
+      "url": "https://docs.ecwid.com/api-reference/advanced/rest-api-calls",
+      "via": "direct",
+      "chars": 4425
+    },
+    {
+      "url": "https://docs.ecwid.com/changelog/march-2025/march-20/oauth-for-public-apps-get-request-type-changed-to-post",
+      "via": "direct",
+      "chars": 2745
+    },
+    {
+      "url": "https://docs.ecwid.com/develop-apps/app-settings",
+      "via": "direct",
+      "chars": 9585
+    },
+    {
+      "url": "https://docs.ecwid.com/get-started/make-your-first-api-request",
+      "via": "direct",
+      "chars": 3592
+    },
+    {
+      "url": "https://api-docs.ecwid.com",
+      "via": "pass3"
+    },
+    {
+      "url": "https://developers.ecwid.com",
+      "via": "pass3"
+    },
+    {
+      "url": "https://docs.ecwid.com/api-reference",
+      "via": "pass3"
+    },
+    {
+      "url": "https://docs.ecwid.com/api-reference/advanced/rest-api-calls",
+      "via": "pass3"
+    },
+    {
+      "url": "https://docs.ecwid.com/api-reference/rest-api",
+      "via": "pass3"
+    }
+  ],
+  "queries": [
+    "Ecwid API authentication developer docs",
+    "Ecwid API access pricing plan developer",
+    "Ecwid MCP server"
+  ],
+  "seconds": 53.7,
+  "verification": {
+    "initial_issues": [],
+    "final_issues": [],
+    "rounds": [
+      {
+        "round": 0,
+        "issues": [],
+        "verifier": {
+          "auth_methods": [
+            "oauth2"
+          ],
+          "auth_primary": "oauth2",
+          "access_tier": "self_serve_free",
+          "api_types": [
+            "rest"
+          ],
+          "mcp": "none_found",
+          "verdict": "build_now",
+          "reasons": {
+            "auth": "Ecwid’s REST API uses OAuth 2.0 for authorization (see \"We use OAuth 2.0 authorization simplified for single‑store customizations\" in the API reference).",
+            "access": "The API is available to developers who sign up and obtain credentials via the public documentation; no paid plan or trial is required for initial access.",
+            "mcp": "No MCP server is documented or published by Ecwid; the API is accessed directly via the public endpoints.",
+            "verdict": "Public REST API documentation is available and developers can obtain OAuth 2.0 credentials through self‑serve sign‑up, enabling immediate integration."
+          },
+          "_model": "openai/gpt-oss-20b"
+        },
+        "autofix": []
+      }
+    ],
+    "catalog": {
+      "in_catalog": false,
+      "checked": [
+        "ecwid"
+      ]
+    },
+    "changed_fields": [],
+    "field_status": {
+      "auth": "verified",
+      "access": "verified",
+      "api": "verified",
+      "mcp": "verified",
+      "verdict": "verified"
+    },
+    "needs_human": [],
+    "before": {
+      "auth_methods": [
+        "oauth2",
+        "bearer_token"
+      ],
+      "auth_primary": "oauth2",
+      "access_tier": "self_serve_free",
+      "access_notes": "Sign up for a free Ecwid account and create a custom app to obtain access tokens or use OAuth.",
+      "api_types": [
+        "rest"
+      ],
+      "api_breadth": "broad",
+      "api_notes": "Covers store profile, orders, products, categories, customers, discounts, domains, dictionaries, and staff accounts via base URL https://app.ecwid.com/api/v3/{storeId}.",
+      "mcp": "none_found",
+      "mcp_url": null,
+      "verdict": "build_now",
+      "blocker": "none",
+      "blocker_notes": "Public REST API with self-serve credentials is fully available."
+    },
+    "seconds": 14.7
+  },
+  "pass3": {
+    "before": {
+      "auth_methods": [
+        "oauth2",
+        "bearer_token"
+      ],
+      "auth_primary": "oauth2",
+      "access_tier": "self_serve_free",
+      "verdict": "build_now",
+      "blocker": "none"
+    },
+    "log": [
+      {
+        "loop": "L6_access",
+        "error": "Groq failed: HTTP 429: {\"error\":{\"message\":\"Rate limit reached for model `qwen/qwen3.8-27b` in organization `org_01m2fd9xn8e3dtb9zfqc2jdhsc` service tier `on_demand` on tokens per day (TPD): Limit 200"
+      },
+      {
+        "loop": "L7_auth",
+        "error": "Groq failed: HTTP 429: {\"error\":{\"message\":\"Rate limit reached for model `qwen/qwen3.8-27b` in organization `org_01m2fd9xn8e3dtb9zfqc2jdhsc` service tier `on_demand` on tokens per day (TPD): Limit 200"
+      }
+    ],
+    "access_sources": [
+      "https://api-docs.ecwid.com",
+      "https://developers.ecwid.com",
+      "https://docs.ecwid.com/api-reference",
+      "https://docs.ecwid.com/api-reference/advanced/rest-api-calls",
+      "https://docs.ecwid.com/api-reference/rest-api"
+    ]
+  }
+}

@@ -1,0 +1,285 @@
+{
+  "one_liner": "AI notetaker and meeting intelligence platform with meeting transcripts, summaries, and action items.",
+  "auth_methods": [
+    "oauth2",
+    "bearer_token"
+  ],
+  "auth_primary": "oauth2",
+  "auth_notes": "Supports OAuth2 flow, Personal Access Tokens (PAT), and Workspace Access Tokens (WAT).",
+  "access_tier": "paid_plan",
+  "access_notes": "Personal API access is available on Starter plan and above; free plan does not include API access.",
+  "api_types": [
+    "rest"
+  ],
+  "api_breadth": "moderate",
+  "api_notes": "Allows reading meeting data, managing recordings, downloading transcripts/videos, and registering webhooks.",
+  "mcp": "official",
+  "mcp_url": "https://api.grain.com/_/mcp",
+  "verdict": "build_with_friction",
+  "blocker": "paid_plan",
+  "blocker_notes": "API access requires a paid Starter plan or above.",
+  "evidence": {
+    "auth": {
+      "url": "https://developers.grain.com",
+      "quote": "The API supports a standard OAuth2 Authorization Code flow, including the PKCE extension for client-side only authentication.",
+      "check": "ok"
+    },
+    "access": {
+      "url": "https://support.grain.com/en/articles/15507288-grain-api",
+      "quote": "Personal API access is available on Starter, Business, and Enterprise plans. Workspace API access is available on Business and Enterprise plans and requires admin access to generate. The Free plan does not include API access.",
+      "check": "ok"
+    },
+    "api": {
+      "url": "https://support.grain.com/en/articles/15507288-grain-api",
+      "quote": "The Grain API lets developers read meeting data, manage recordings, and receive real-time events from Grain programmatically.",
+      "check": "ok"
+    },
+    "mcp": {
+      "url": "https://grain.com/release-note/06-18-2025",
+      "quote": "Grain's official MCP server is available now for all users! 🎉",
+      "check": "ok"
+    },
+    "verdict": {
+      "url": "https://support.grain.com/en/articles/15507288-grain-api",
+      "quote": "Do I need a specific Grain plan to use the API? Yes. Personal API access is available on Starter, Business, and Enterprise plans... The Free plan does not include API access.",
+      "check": "ok"
+    }
+  },
+  "confidence": {
+    "auth": 5.0,
+    "access": 5.0,
+    "api": 5.0,
+    "mcp": 5.0,
+    "verdict": 5.0
+  },
+  "_model": "gemini-3.5-flash-lite",
+  "status": "ok",
+  "id": 100,
+  "name": "Grain",
+  "category": "AI Research & Media",
+  "hint": "grain.com (meeting notes)",
+  "sources": [
+    {
+      "url": "https://grain.com",
+      "via": "direct",
+      "chars": 5511
+    },
+    {
+      "url": "https://developers.grain.com",
+      "via": "composio_fetch",
+      "chars": 34529
+    },
+    {
+      "url": "https://grain.com/pricing",
+      "via": "direct",
+      "chars": 3058
+    },
+    {
+      "url": "https://support.grain.com/en/articles/14811968-grain-mcp",
+      "via": "direct",
+      "chars": 4308
+    },
+    {
+      "url": "https://support.grain.com/en/articles/15507288-grain-api",
+      "via": "direct",
+      "chars": 4396
+    },
+    {
+      "url": "https://grain.com/release-note/06-18-2025",
+      "via": "direct",
+      "chars": 1558
+    },
+    {
+      "url": "https://support.grain.com/en/articles/15297861-bring-your-own-llm-byollm",
+      "via": "verification"
+    },
+    {
+      "url": "https://support.grain.com/en/articles/9253220-plans",
+      "via": "verification"
+    },
+    {
+      "url": "https://grain.com",
+      "via": "pass3"
+    },
+    {
+      "url": "https://developers.grain.com",
+      "via": "pass3"
+    },
+    {
+      "url": "https://support.grain.com/en/articles/15507288-grain-api",
+      "via": "pass3"
+    },
+    {
+      "url": "https://blackseagrain.io/api/docs",
+      "via": "pass3"
+    },
+    {
+      "url": "https://developers.mygrainexchange.com",
+      "via": "pass3"
+    }
+  ],
+  "queries": [
+    "Grain API authentication developer docs",
+    "Grain API access pricing plan developer",
+    "Grain MCP server"
+  ],
+  "seconds": 48.3,
+  "verification_queries": [
+    "Grain API access requirements plan",
+    "Grain developer account API key free OR partner OR enterprise"
+  ],
+  "verification": {
+    "initial_issues": [
+      {
+        "loop": "L4_verifier",
+        "field": "access",
+        "problem": "verifier says self_serve_free vs agent paid_plan"
+      },
+      {
+        "loop": "L4_verifier",
+        "field": "verdict",
+        "problem": "verifier says build_now vs agent build_with_friction"
+      }
+    ],
+    "final_issues": [],
+    "rounds": [
+      {
+        "round": 0,
+        "issues": [
+          {
+            "loop": "L4_verifier",
+            "field": "access",
+            "problem": "verifier says self_serve_free vs agent paid_plan"
+          },
+          {
+            "loop": "L4_verifier",
+            "field": "verdict",
+            "problem": "verifier says build_now vs agent build_with_friction"
+          }
+        ],
+        "verifier": {
+          "auth_methods": [
+            "oauth2",
+            "bearer_token"
+          ],
+          "auth_primary": "oauth2",
+          "access_tier": "self_serve_free",
+          "api_types": [
+            "rest"
+          ],
+          "mcp": "official",
+          "verdict": "build_now",
+          "reasons": {
+            "auth": "Grain API supports OAuth2 Authorization Code flow (including PKCE) and provides personal or workspace access tokens used as Bearer tokens.",
+            "access": "A free‑forever plan lets users sign up and generate API tokens without payment, giving immediate developer credentials.",
+            "mcp": "Grain MCP is documented on Grain’s support site as an official MCP server provided by the vendor.",
+            "verdict": "Public documentation, free credentials, and an official MCP allow an integration to be built today."
+          },
+          "_model": "openai/gpt-oss-120b"
+        },
+        "autofix": []
+      },
+      {
+        "round": 1,
+        "queries": [
+          "Grain API access requirements plan",
+          "Grain developer account API key free OR partner OR enterprise"
+        ],
+        "new_sources": [
+          "https://grain.com",
+          "https://developers.grain.com",
+          "https://support.grain.com/en/articles/15507288-grain-api",
+          "https://support.grain.com/en/articles/15297861-bring-your-own-llm-byollm",
+          "https://support.grain.com/en/articles/9253220-plans"
+        ],
+        "change_log": "Changed access_tier from self_serve_free to paid_plan and verdict from build_now to build_with_friction because documentation specifies that API access requires the Starter plan or above and is not included on the Free plan.",
+        "issues": [],
+        "verifier": {
+          "auth_methods": [
+            "oauth2",
+            "bearer_token"
+          ],
+          "auth_primary": "oauth2",
+          "access_tier": "paid_plan",
+          "api_types": [
+            "rest"
+          ],
+          "mcp": "official",
+          "verdict": "build_with_friction",
+          "reasons": {
+            "auth": "Grain documents OAuth2 Authorization Code flow and Personal/Workspace Access Tokens for API authentication",
+            "access": "API access is only available on Starter plan and above; the free plan does not include API access and there is no sandbox",
+            "mcp": "Grain offers its own MCP server and API as part of the product",
+            "verdict": "Since a paid plan is required to obtain credentials, building an integration is possible but requires a paid subscription, creating friction"
+          },
+          "_model": "openai/gpt-oss-120b"
+        },
+        "autofix": []
+      }
+    ],
+    "catalog": {
+      "in_catalog": false,
+      "checked": [
+        "grain"
+      ]
+    },
+    "changed_fields": [],
+    "field_status": {
+      "auth": "verified",
+      "access": "confirmed_after_recheck",
+      "api": "verified",
+      "mcp": "verified",
+      "verdict": "confirmed_after_recheck"
+    },
+    "needs_human": [],
+    "before": {
+      "auth_methods": [
+        "oauth2",
+        "bearer_token"
+      ],
+      "auth_primary": "oauth2",
+      "access_tier": "paid_plan",
+      "access_notes": "Personal API access is available on Starter plan and above; free plan does not include API access.",
+      "api_types": [
+        "rest"
+      ],
+      "api_breadth": "moderate",
+      "api_notes": "Allows reading meeting data, managing recordings, downloading transcripts/videos, and registering webhooks.",
+      "mcp": "official",
+      "mcp_url": "https://api.grain.com/_/mcp",
+      "verdict": "build_with_friction",
+      "blocker": "paid_plan",
+      "blocker_notes": "API access requires a paid Starter plan or above."
+    },
+    "seconds": 111.3
+  },
+  "pass3": {
+    "before": {
+      "auth_methods": [
+        "oauth2",
+        "bearer_token"
+      ],
+      "auth_primary": "oauth2",
+      "access_tier": "paid_plan",
+      "verdict": "build_with_friction",
+      "blocker": "paid_plan"
+    },
+    "log": [
+      {
+        "loop": "L6_access",
+        "error": "Groq failed: HTTP 429: {\"error\":{\"message\":\"Rate limit reached for model `qwen/qwen3.8-27b` in organization `org_01m2fd9xn8e3dtb9zfqc2jdhsc` service tier `on_demand` on tokens per day (TPD): Limit 200"
+      },
+      {
+        "loop": "L7_auth",
+        "error": "Groq failed: HTTP 429: {\"error\":{\"message\":\"Rate limit reached for model `qwen/qwen3.8-27b` in organization `org_01m2fd9xn8e3dtb9zfqc2jdhsc` service tier `on_demand` on tokens per day (TPD): Limit 200"
+      }
+    ],
+    "access_sources": [
+      "https://grain.com",
+      "https://developers.grain.com",
+      "https://support.grain.com/en/articles/15507288-grain-api",
+      "https://blackseagrain.io/api/docs",
+      "https://developers.mygrainexchange.com"
+    ]
+  }
+}

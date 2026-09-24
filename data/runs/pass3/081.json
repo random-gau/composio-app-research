@@ -1,0 +1,318 @@
+{
+  "one_liner": "Online payment processing platform for internet businesses",
+  "auth_methods": [
+    "api_key",
+    "bearer_token",
+    "basic",
+    "oauth2"
+  ],
+  "auth_primary": "api_key",
+  "auth_notes": "Stripe uses API keys passed via HTTP Basic Auth or Bearer token.",
+  "access_tier": "self_serve_free",
+  "access_notes": "Sign up for a free account and immediately access test mode sandboxes with API keys.",
+  "api_types": [
+    "rest"
+  ],
+  "api_breadth": "broad",
+  "api_notes": "Comprehensive REST API covering payments, customers, subscriptions, invoices, and more.",
+  "mcp": "official",
+  "mcp_url": "https://mcp.stripe.com",
+  "verdict": "build_now",
+  "blocker": "none",
+  "blocker_notes": "None, fully accessible via self-serve API keys.",
+  "evidence": {
+    "auth": {
+      "url": "https://stripe.com/docs/api",
+      "quote": "The Stripe API authenticates requests using HTTP Basic Auth. Provide your API key as the basic auth username value.",
+      "check": "ok"
+    },
+    "access": {
+      "url": "https://stripe.com/docs/api",
+      "quote": "The API key that you use to authenticate the request determines whether the request runs in live mode or in a sandbox.",
+      "check": "ok"
+    },
+    "api": {
+      "url": "https://stripe.com/docs/api",
+      "quote": "Stripe API Reference",
+      "check": "ok"
+    },
+    "mcp": {
+      "url": "https://docs.stripe.com/mcp.md",
+      "quote": "The Stripe Model Context Protocol (MCP) server provides tools that AI agents can use to interact with the Stripe API and search Stripe’s knowledge base, including documentation and support articles.",
+      "check": "ok"
+    },
+    "verdict": {
+      "url": "https://stripe.com/docs/api",
+      "quote": "A sample test API key is included in all the examples here, so you can test any example right away.",
+      "check": "ok"
+    }
+  },
+  "confidence": {
+    "auth": 0.9,
+    "access": 0.9,
+    "api": 0.9,
+    "mcp": 0.8,
+    "verdict": 0.9
+  },
+  "_model": "gemini-3.5-flash-lite",
+  "status": "ok",
+  "id": 81,
+  "name": "Stripe",
+  "category": "Finance & Fintech",
+  "hint": "stripe.com/docs/api",
+  "sources": [
+    {
+      "url": "https://stripe.com/docs/api",
+      "via": "direct",
+      "chars": 8869
+    },
+    {
+      "url": "https://docs.stripe.com/api/authentication?api-version=2025-02-24.acacia",
+      "via": "direct",
+      "chars": 7770
+    },
+    {
+      "url": "https://docs.stripe.com/api/authentication?api-version=2026-04-22.dahlia",
+      "via": "direct",
+      "chars": 7987
+    },
+    {
+      "url": "https://docs.stripe.com/api/authentication?lang=php",
+      "via": "direct",
+      "chars": 10031
+    },
+    {
+      "url": "https://docs.stripe.com/api/errors?api-version=2024-06-20",
+      "via": "direct",
+      "chars": 7807
+    },
+    {
+      "url": "https://docs.stripe.com/api/plans/create?lang=node",
+      "via": "direct",
+      "chars": 7131
+    },
+    {
+      "url": "https://docs.stripe.com/mcp.md",
+      "via": "verification"
+    },
+    {
+      "url": "https://docs.stripe.com/mcp?mcp-client=cursor",
+      "via": "verification"
+    },
+    {
+      "url": "https://a2a-mcp.org/entry/stripe-mcp",
+      "via": "verification"
+    },
+    {
+      "url": "https://mcp.directory/servers/stripe",
+      "via": "verification"
+    },
+    {
+      "url": "https://docs.stripe.com/mcp?mcp-client=claudecode",
+      "via": "verification"
+    },
+    {
+      "url": "https://stripe.com/docs/api",
+      "via": "pass3"
+    },
+    {
+      "url": "https://docs.stripe.com/api/authentication?api-version=2025-02-24.acacia",
+      "via": "pass3"
+    },
+    {
+      "url": "https://docs.stripe.com/api/prices/create?api-version=2024-10-28.acacia",
+      "via": "pass3"
+    },
+    {
+      "url": "https://docs.stripe.com/api/prices/list?api-version=2026-03-25.dahlia",
+      "via": "pass3"
+    },
+    {
+      "url": "https://docs.stripe.com/billing/subscriptions/usage-based/pricing-plans?payment-ui=checkout",
+      "via": "pass3"
+    }
+  ],
+  "queries": [
+    "Stripe API authentication developer docs",
+    "Stripe API access pricing plan developer",
+    "Stripe MCP server"
+  ],
+  "seconds": 183.2,
+  "verification_queries": [
+    "Stripe MCP server model context protocol"
+  ],
+  "verification": {
+    "initial_issues": [
+      {
+        "loop": "L4_verifier",
+        "field": "mcp",
+        "problem": "verifier says official vs agent none_found"
+      },
+      {
+        "loop": "L5_mcp_probe",
+        "field": "mcp",
+        "problem": "possible official MCP found: ['https://docs.stripe.com/mcp.md', 'https://docs.stripe.com/mcp?mcp-client=cursor']",
+        "urls": [
+          "https://docs.stripe.com/mcp.md",
+          "https://docs.stripe.com/mcp?mcp-client=cursor",
+          "https://docs.stripe.com/mcp?mcp-client=claudecode"
+        ]
+      }
+    ],
+    "final_issues": [],
+    "rounds": [
+      {
+        "round": 0,
+        "issues": [
+          {
+            "loop": "L4_verifier",
+            "field": "mcp",
+            "problem": "verifier says official vs agent none_found"
+          },
+          {
+            "loop": "L5_mcp_probe",
+            "field": "mcp",
+            "problem": "possible official MCP found: ['https://docs.stripe.com/mcp.md', 'https://docs.stripe.com/mcp?mcp-client=cursor']",
+            "urls": [
+              "https://docs.stripe.com/mcp.md",
+              "https://docs.stripe.com/mcp?mcp-client=cursor",
+              "https://docs.stripe.com/mcp?mcp-client=claudecode"
+            ]
+          }
+        ],
+        "verifier": {
+          "auth_methods": [
+            "oauth2",
+            "api_key",
+            "bearer_token",
+            "jwt_or_signed",
+            "none"
+          ],
+          "auth_primary": "api_key",
+          "access_tier": "unknown",
+          "api_types": [
+            "rest",
+            "graphql",
+            "none"
+          ],
+          "mcp": "official",
+          "verdict": "build_now",
+          "reasons": {},
+          "_model": "allam-2-7b"
+        },
+        "autofix": []
+      },
+      {
+        "round": 1,
+        "queries": [
+          "Stripe MCP server model context protocol"
+        ],
+        "new_sources": [
+          "https://stripe.com/docs/api",
+          "https://docs.stripe.com/mcp.md",
+          "https://docs.stripe.com/mcp?mcp-client=cursor",
+          "https://a2a-mcp.org/entry/stripe-mcp",
+          "https://mcp.directory/servers/stripe",
+          "https://docs.stripe.com/mcp?mcp-client=claudecode"
+        ],
+        "change_log": "Updated mcp from none_found to official because Stripe provides an official Model Context Protocol (MCP) server at https://mcp.stripe.com.",
+        "issues": [],
+        "verifier": {
+          "auth_methods": [
+            "basic",
+            "bearer_token",
+            "oauth2"
+          ],
+          "auth_primary": "bearer_token",
+          "access_tier": "self_serve_free",
+          "api_types": [
+            "rest"
+          ],
+          "mcp": "official",
+          "verdict": "build_now",
+          "reasons": {
+            "auth": "Stripe documents API keys used as Basic Auth username or Bearer tokens, and OAuth for MCP clients.",
+            "access": "Developers can sign up for a free account and obtain test mode API keys immediately without payment or approval.",
+            "mcp": "Stripe publishes an official MCP server documented in their official docs.",
+            "verdict": "Public API documentation is available and free self-serve credentials (test mode) allow immediate integration."
+          },
+          "_model": "qwen/qwen3.8-27b"
+        },
+        "autofix": []
+      }
+    ],
+    "catalog": {
+      "in_catalog": true,
+      "slug": "stripe",
+      "auth": [
+        "api_key",
+        "oauth2"
+      ],
+      "tools_count": 426
+    },
+    "changed_fields": [
+      "mcp"
+    ],
+    "field_status": {
+      "auth": "verified",
+      "access": "verified",
+      "api": "verified",
+      "mcp": "corrected",
+      "verdict": "verified"
+    },
+    "needs_human": [],
+    "before": {
+      "auth_methods": [
+        "api_key",
+        "bearer_token",
+        "basic",
+        "oauth2"
+      ],
+      "auth_primary": "api_key",
+      "access_tier": "self_serve_free",
+      "access_notes": "Sign up for a free account and immediately access test mode sandboxes with API keys.",
+      "api_types": [
+        "rest"
+      ],
+      "api_breadth": "broad",
+      "api_notes": "Comprehensive REST API covering payments, customers, subscriptions, invoices, and more.",
+      "mcp": "none_found",
+      "mcp_url": null,
+      "verdict": "build_now",
+      "blocker": "none",
+      "blocker_notes": "None, fully accessible via self-serve API keys."
+    },
+    "seconds": 214.9
+  },
+  "pass3": {
+    "before": {
+      "auth_methods": [
+        "api_key",
+        "bearer_token",
+        "basic",
+        "oauth2"
+      ],
+      "auth_primary": "api_key",
+      "access_tier": "self_serve_free",
+      "verdict": "build_now",
+      "blocker": "none"
+    },
+    "log": [
+      {
+        "loop": "L6_access",
+        "error": "Groq failed: HTTP 429: {\"error\":{\"message\":\"Rate limit reached for model `qwen/qwen3.8-27b` in organization `org_01m2fd9xn8e3dtb9zfqc2jdhsc` service tier `on_demand` on tokens per day (TPD): Limit 200"
+      },
+      {
+        "loop": "L7_auth",
+        "error": "Groq failed: HTTP 429: {\"error\":{\"message\":\"Rate limit reached for model `qwen/qwen3.8-27b` in organization `org_01m2fd9xn8e3dtb9zfqc2jdhsc` service tier `on_demand` on tokens per day (TPD): Limit 200"
+      }
+    ],
+    "access_sources": [
+      "https://stripe.com/docs/api",
+      "https://docs.stripe.com/api/authentication?api-version=2025-02-24.acacia",
+      "https://docs.stripe.com/api/prices/create?api-version=2024-10-28.acacia",
+      "https://docs.stripe.com/api/prices/list?api-version=2026-03-25.dahlia",
+      "https://docs.stripe.com/billing/subscriptions/usage-based/pricing-plans?payment-ui=checkout"
+    ]
+  }
+}

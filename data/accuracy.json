@@ -77,6 +77,45 @@
         "n": 19,
         "pct": 94.7
       }
+    },
+    "pass3": {
+      "per_field": {
+        "auth": {
+          "correct": 12,
+          "n": 19,
+          "pct": 63.2
+        },
+        "access": {
+          "correct": 18,
+          "n": 19,
+          "pct": 94.7
+        },
+        "api": {
+          "correct": 19,
+          "n": 19,
+          "pct": 100.0
+        },
+        "mcp": {
+          "correct": 17,
+          "n": 19,
+          "pct": 89.5
+        },
+        "verdict": {
+          "correct": 16,
+          "n": 19,
+          "pct": 84.2
+        }
+      },
+      "overall": {
+        "correct": 82,
+        "n": 95,
+        "pct": 86.3
+      },
+      "auth_primary_only": {
+        "correct": 18,
+        "n": 19,
+        "pct": 94.7
+      }
     }
   },
   "rows": [
@@ -981,6 +1020,452 @@
         "mcp": "community_only",
         "verdict": "build_with_friction"
       }
+    },
+    {
+      "pass": "pass3",
+      "id": 2,
+      "name": "HubSpot",
+      "auth": true,
+      "access": true,
+      "api": true,
+      "mcp": true,
+      "verdict": true,
+      "agent": {
+        "auth": [
+          "oauth2",
+          "bearer_token"
+        ],
+        "access": "self_serve_free",
+        "api": [
+          "rest"
+        ],
+        "mcp": "official",
+        "verdict": "build_now"
+      }
+    },
+    {
+      "pass": "pass3",
+      "id": 6,
+      "name": "Podio",
+      "auth": false,
+      "access": true,
+      "api": true,
+      "mcp": true,
+      "verdict": true,
+      "agent": {
+        "auth": [
+          "oauth2",
+          "basic"
+        ],
+        "access": "self_serve_free",
+        "api": [
+          "rest"
+        ],
+        "mcp": "none_found",
+        "verdict": "build_now"
+      }
+    },
+    {
+      "pass": "pass3",
+      "id": 19,
+      "name": "Gorgias",
+      "auth": true,
+      "access": true,
+      "api": true,
+      "mcp": true,
+      "verdict": true,
+      "agent": {
+        "auth": [
+          "oauth2",
+          "api_key",
+          "basic"
+        ],
+        "access": "approval_or_review",
+        "api": [
+          "rest"
+        ],
+        "mcp": "official",
+        "verdict": "build_with_friction"
+      }
+    },
+    {
+      "pass": "pass3",
+      "id": 20,
+      "name": "Gladly",
+      "auth": true,
+      "access": true,
+      "api": true,
+      "mcp": true,
+      "verdict": true,
+      "agent": {
+        "auth": [
+          "basic",
+          "bearer_token"
+        ],
+        "access": "partner_or_sales",
+        "api": [
+          "rest",
+          "graphql"
+        ],
+        "mcp": "none_found",
+        "verdict": "blocked"
+      }
+    },
+    {
+      "pass": "pass3",
+      "id": 22,
+      "name": "Twilio",
+      "auth": true,
+      "access": true,
+      "api": true,
+      "mcp": true,
+      "verdict": true,
+      "agent": {
+        "auth": [
+          "basic"
+        ],
+        "access": "self_serve_free",
+        "api": [
+          "rest",
+          "websocket"
+        ],
+        "mcp": "official",
+        "verdict": "build_now"
+      }
+    },
+    {
+      "pass": "pass3",
+      "id": 24,
+      "name": "Lark (Larksuite)",
+      "auth": true,
+      "access": true,
+      "api": true,
+      "mcp": true,
+      "verdict": true,
+      "agent": {
+        "auth": [
+          "oauth2",
+          "bearer_token"
+        ],
+        "access": "self_serve_free",
+        "api": [
+          "rest"
+        ],
+        "mcp": "official",
+        "verdict": "build_now"
+      }
+    },
+    {
+      "pass": "pass3",
+      "id": 39,
+      "name": "Threads (Meta)",
+      "auth": true,
+      "access": true,
+      "api": true,
+      "mcp": true,
+      "verdict": false,
+      "agent": {
+        "auth": [
+          "oauth2"
+        ],
+        "access": "self_serve_free",
+        "api": [
+          "rest"
+        ],
+        "mcp": "community_only",
+        "verdict": "build_now"
+      }
+    },
+    {
+      "pass": "pass3",
+      "id": 40,
+      "name": "SendGrid",
+      "auth": false,
+      "access": true,
+      "api": true,
+      "mcp": true,
+      "verdict": true,
+      "agent": {
+        "auth": [
+          "api_key",
+          "bearer_token",
+          "basic"
+        ],
+        "access": "self_serve_trial",
+        "api": [
+          "rest"
+        ],
+        "mcp": "community_only",
+        "verdict": "build_with_friction"
+      }
+    },
+    {
+      "pass": "pass3",
+      "id": 47,
+      "name": "Ecwid",
+      "auth": true,
+      "access": false,
+      "api": true,
+      "mcp": true,
+      "verdict": false,
+      "agent": {
+        "auth": [
+          "oauth2",
+          "bearer_token"
+        ],
+        "access": "self_serve_free",
+        "api": [
+          "rest"
+        ],
+        "mcp": "none_found",
+        "verdict": "build_now"
+      }
+    },
+    {
+      "pass": "pass3",
+      "id": 49,
+      "name": "Amazon Selling Partner",
+      "auth": true,
+      "access": true,
+      "api": true,
+      "mcp": false,
+      "verdict": true,
+      "agent": {
+        "auth": [
+          "oauth2"
+        ],
+        "access": "approval_or_review",
+        "api": [
+          "rest"
+        ],
+        "mcp": "none_found",
+        "verdict": "build_with_friction"
+      }
+    },
+    {
+      "pass": "pass3",
+      "id": 58,
+      "name": "Sherlock",
+      "auth": true,
+      "access": true,
+      "api": true,
+      "mcp": true,
+      "verdict": true,
+      "agent": {
+        "auth": [
+          "none"
+        ],
+        "access": "open_source_local",
+        "api": [
+          "sdk_or_cli_only"
+        ],
+        "mcp": "community_only",
+        "verdict": "build_with_friction"
+      }
+    },
+    {
+      "pass": "pass3",
+      "id": 60,
+      "name": "Clay",
+      "auth": false,
+      "access": true,
+      "api": true,
+      "mcp": true,
+      "verdict": true,
+      "agent": {
+        "auth": [
+          "api_key",
+          "oauth2"
+        ],
+        "access": "self_serve_free",
+        "api": [
+          "rest"
+        ],
+        "mcp": "official",
+        "verdict": "build_now"
+      }
+    },
+    {
+      "pass": "pass3",
+      "id": 61,
+      "name": "GitHub",
+      "auth": false,
+      "access": true,
+      "api": true,
+      "mcp": true,
+      "verdict": true,
+      "agent": {
+        "auth": [
+          "oauth2",
+          "bearer_token",
+          "basic",
+          "jwt_or_signed"
+        ],
+        "access": "self_serve_free",
+        "api": [
+          "rest",
+          "graphql"
+        ],
+        "mcp": "official",
+        "verdict": "build_now"
+      }
+    },
+    {
+      "pass": "pass3",
+      "id": 64,
+      "name": "Cloudflare",
+      "auth": false,
+      "access": true,
+      "api": true,
+      "mcp": true,
+      "verdict": true,
+      "agent": {
+        "auth": [
+          "api_key",
+          "bearer_token",
+          "oauth2"
+        ],
+        "access": "self_serve_free",
+        "api": [
+          "rest",
+          "graphql"
+        ],
+        "mcp": "official",
+        "verdict": "build_now"
+      }
+    },
+    {
+      "pass": "pass3",
+      "id": 72,
+      "name": "Airtable",
+      "auth": true,
+      "access": true,
+      "api": true,
+      "mcp": true,
+      "verdict": true,
+      "agent": {
+        "auth": [
+          "oauth2",
+          "bearer_token"
+        ],
+        "access": "self_serve_free",
+        "api": [
+          "rest"
+        ],
+        "mcp": "official",
+        "verdict": "build_now"
+      }
+    },
+    {
+      "pass": "pass3",
+      "id": 80,
+      "name": "Harvest",
+      "auth": true,
+      "access": true,
+      "api": true,
+      "mcp": false,
+      "verdict": false,
+      "agent": {
+        "auth": [
+          "oauth2",
+          "bearer_token"
+        ],
+        "access": "self_serve_trial",
+        "api": [
+          "rest"
+        ],
+        "mcp": "official",
+        "verdict": "build_with_friction"
+      }
+    },
+    {
+      "pass": "pass3",
+      "id": 82,
+      "name": "Plaid",
+      "auth": false,
+      "access": true,
+      "api": true,
+      "mcp": true,
+      "verdict": true,
+      "agent": {
+        "auth": [
+          "oauth2",
+          "api_key"
+        ],
+        "access": "self_serve_free",
+        "api": [
+          "rest"
+        ],
+        "mcp": "official",
+        "verdict": "build_now"
+      }
+    },
+    {
+      "pass": "pass3",
+      "id": 85,
+      "name": "iPayX",
+      "auth": null,
+      "access": null,
+      "api": null,
+      "mcp": null,
+      "verdict": null,
+      "agent": {
+        "auth": [
+          "api_key",
+          "bearer_token",
+          "none"
+        ],
+        "access": "self_serve_free",
+        "api": [
+          "rest",
+          "websocket"
+        ],
+        "mcp": "official",
+        "verdict": "build_now"
+      }
+    },
+    {
+      "pass": "pass3",
+      "id": 92,
+      "name": "Otter AI",
+      "auth": false,
+      "access": true,
+      "api": true,
+      "mcp": true,
+      "verdict": true,
+      "agent": {
+        "auth": [
+          "oauth2",
+          "bearer_token"
+        ],
+        "access": "partner_or_sales",
+        "api": [
+          "rest"
+        ],
+        "mcp": "official",
+        "verdict": "blocked"
+      }
+    },
+    {
+      "pass": "pass3",
+      "id": 98,
+      "name": "Mermaid CLI",
+      "auth": true,
+      "access": true,
+      "api": true,
+      "mcp": true,
+      "verdict": true,
+      "agent": {
+        "auth": [
+          "none"
+        ],
+        "access": "open_source_local",
+        "api": [
+          "sdk_or_cli_only"
+        ],
+        "mcp": "community_only",
+        "verdict": "build_with_friction"
+      }
     }
   ],
   "truth": [
@@ -1203,6 +1688,910 @@
       "verdict_accept": "build_now|build_with_friction",
       "sources": "https://github.com/mermaid-js/mermaid-cli ; https://mermaid.ai/docs/ai/mcp-server",
       "notes": "Local Node CLI; no auth; Mermaid Chart (the company) runs an MCP but it is not the CLI - MCP label ambiguous"
+    }
+  ],
+  "test_summary": {
+    "pass1": {
+      "per_field": {
+        "auth": {
+          "correct": 9,
+          "n": 10,
+          "pct": 90.0
+        },
+        "access": {
+          "correct": 9,
+          "n": 10,
+          "pct": 90.0
+        },
+        "api": {
+          "correct": 10,
+          "n": 10,
+          "pct": 100.0
+        },
+        "mcp": {
+          "correct": 9,
+          "n": 10,
+          "pct": 90.0
+        },
+        "verdict": {
+          "correct": 8,
+          "n": 10,
+          "pct": 80.0
+        }
+      },
+      "overall": {
+        "correct": 45,
+        "n": 50,
+        "pct": 90.0
+      },
+      "auth_primary_only": {
+        "correct": 10,
+        "n": 10,
+        "pct": 100.0
+      }
+    },
+    "pass2": {
+      "per_field": {
+        "auth": {
+          "correct": 9,
+          "n": 10,
+          "pct": 90.0
+        },
+        "access": {
+          "correct": 9,
+          "n": 10,
+          "pct": 90.0
+        },
+        "api": {
+          "correct": 10,
+          "n": 10,
+          "pct": 100.0
+        },
+        "mcp": {
+          "correct": 10,
+          "n": 10,
+          "pct": 100.0
+        },
+        "verdict": {
+          "correct": 8,
+          "n": 10,
+          "pct": 80.0
+        }
+      },
+      "overall": {
+        "correct": 46,
+        "n": 50,
+        "pct": 92.0
+      },
+      "auth_primary_only": {
+        "correct": 10,
+        "n": 10,
+        "pct": 100.0
+      }
+    },
+    "pass3": {
+      "per_field": {
+        "auth": {
+          "correct": 9,
+          "n": 10,
+          "pct": 90.0
+        },
+        "access": {
+          "correct": 9,
+          "n": 10,
+          "pct": 90.0
+        },
+        "api": {
+          "correct": 10,
+          "n": 10,
+          "pct": 100.0
+        },
+        "mcp": {
+          "correct": 10,
+          "n": 10,
+          "pct": 100.0
+        },
+        "verdict": {
+          "correct": 8,
+          "n": 10,
+          "pct": 80.0
+        }
+      },
+      "overall": {
+        "correct": 46,
+        "n": 50,
+        "pct": 92.0
+      },
+      "auth_primary_only": {
+        "correct": 10,
+        "n": 10,
+        "pct": 100.0
+      }
+    }
+  },
+  "test_rows": [
+    {
+      "pass": "pass1",
+      "id": 9,
+      "name": "Copper",
+      "auth": true,
+      "access": true,
+      "api": true,
+      "mcp": true,
+      "verdict": true,
+      "agent": {
+        "auth": [
+          "oauth2",
+          "api_key"
+        ],
+        "access": "self_serve_trial",
+        "api": [
+          "rest"
+        ],
+        "mcp": "none_found",
+        "verdict": "build_with_friction"
+      }
+    },
+    {
+      "pass": "pass1",
+      "id": 17,
+      "name": "Plain",
+      "auth": false,
+      "access": false,
+      "api": true,
+      "mcp": true,
+      "verdict": false,
+      "agent": {
+        "auth": [
+          "api_key",
+          "bearer_token",
+          "oauth2"
+        ],
+        "access": "self_serve_free",
+        "api": [
+          "graphql"
+        ],
+        "mcp": "official",
+        "verdict": "build_now"
+      }
+    },
+    {
+      "pass": "pass1",
+      "id": 26,
+      "name": "Discord",
+      "auth": true,
+      "access": true,
+      "api": true,
+      "mcp": true,
+      "verdict": true,
+      "agent": {
+        "auth": [
+          "oauth2",
+          "api_key"
+        ],
+        "access": "self_serve_free",
+        "api": [
+          "rest",
+          "websocket"
+        ],
+        "mcp": "none_found",
+        "verdict": "build_now"
+      }
+    },
+    {
+      "pass": "pass1",
+      "id": 33,
+      "name": "LinkedIn Ads",
+      "auth": true,
+      "access": true,
+      "api": true,
+      "mcp": true,
+      "verdict": true,
+      "agent": {
+        "auth": [
+          "oauth2"
+        ],
+        "access": "approval_or_review",
+        "api": [
+          "rest"
+        ],
+        "mcp": "none_found",
+        "verdict": "build_with_friction"
+      }
+    },
+    {
+      "pass": "pass1",
+      "id": 44,
+      "name": "Salesforce Commerce Cloud",
+      "auth": true,
+      "access": true,
+      "api": true,
+      "mcp": true,
+      "verdict": false,
+      "agent": {
+        "auth": [
+          "oauth2",
+          "jwt_or_signed"
+        ],
+        "access": "partner_or_sales",
+        "api": [
+          "rest"
+        ],
+        "mcp": "official",
+        "verdict": "build_with_friction"
+      }
+    },
+    {
+      "pass": "pass1",
+      "id": 54,
+      "name": "MrScraper",
+      "auth": true,
+      "access": true,
+      "api": true,
+      "mcp": true,
+      "verdict": true,
+      "agent": {
+        "auth": [
+          "api_key",
+          "bearer_token"
+        ],
+        "access": "self_serve_free",
+        "api": [
+          "rest"
+        ],
+        "mcp": "official",
+        "verdict": "build_now"
+      }
+    },
+    {
+      "pass": "pass1",
+      "id": 65,
+      "name": "Supabase",
+      "auth": true,
+      "access": true,
+      "api": true,
+      "mcp": true,
+      "verdict": true,
+      "agent": {
+        "auth": [
+          "bearer_token",
+          "jwt_or_signed",
+          "oauth2",
+          "api_key"
+        ],
+        "access": "self_serve_free",
+        "api": [
+          "rest",
+          "websocket",
+          "sdk_or_cli_only"
+        ],
+        "mcp": "official",
+        "verdict": "build_now"
+      }
+    },
+    {
+      "pass": "pass1",
+      "id": 73,
+      "name": "Linear",
+      "auth": true,
+      "access": true,
+      "api": true,
+      "mcp": false,
+      "verdict": true,
+      "agent": {
+        "auth": [
+          "oauth2",
+          "bearer_token"
+        ],
+        "access": "self_serve_free",
+        "api": [
+          "graphql"
+        ],
+        "mcp": "none_found",
+        "verdict": "build_now"
+      }
+    },
+    {
+      "pass": "pass1",
+      "id": 87,
+      "name": "Xero",
+      "auth": true,
+      "access": true,
+      "api": true,
+      "mcp": true,
+      "verdict": true,
+      "agent": {
+        "auth": [
+          "oauth2"
+        ],
+        "access": "self_serve_free",
+        "api": [
+          "rest"
+        ],
+        "mcp": "official",
+        "verdict": "build_now"
+      }
+    },
+    {
+      "pass": "pass1",
+      "id": 99,
+      "name": "YouTube Transcript",
+      "auth": true,
+      "access": true,
+      "api": true,
+      "mcp": true,
+      "verdict": true,
+      "agent": {
+        "auth": [
+          "bearer_token"
+        ],
+        "access": "self_serve_free",
+        "api": [
+          "rest"
+        ],
+        "mcp": "official",
+        "verdict": "build_now"
+      }
+    },
+    {
+      "pass": "pass2",
+      "id": 9,
+      "name": "Copper",
+      "auth": true,
+      "access": true,
+      "api": true,
+      "mcp": true,
+      "verdict": true,
+      "agent": {
+        "auth": [
+          "oauth2",
+          "api_key"
+        ],
+        "access": "self_serve_trial",
+        "api": [
+          "rest"
+        ],
+        "mcp": "none_found",
+        "verdict": "build_with_friction"
+      }
+    },
+    {
+      "pass": "pass2",
+      "id": 17,
+      "name": "Plain",
+      "auth": false,
+      "access": false,
+      "api": true,
+      "mcp": true,
+      "verdict": false,
+      "agent": {
+        "auth": [
+          "api_key",
+          "bearer_token",
+          "oauth2"
+        ],
+        "access": "self_serve_free",
+        "api": [
+          "graphql"
+        ],
+        "mcp": "official",
+        "verdict": "build_now"
+      }
+    },
+    {
+      "pass": "pass2",
+      "id": 26,
+      "name": "Discord",
+      "auth": true,
+      "access": true,
+      "api": true,
+      "mcp": true,
+      "verdict": true,
+      "agent": {
+        "auth": [
+          "oauth2",
+          "bearer_token"
+        ],
+        "access": "self_serve_free",
+        "api": [
+          "rest",
+          "websocket"
+        ],
+        "mcp": "community_only",
+        "verdict": "build_now"
+      }
+    },
+    {
+      "pass": "pass2",
+      "id": 33,
+      "name": "LinkedIn Ads",
+      "auth": true,
+      "access": true,
+      "api": true,
+      "mcp": true,
+      "verdict": true,
+      "agent": {
+        "auth": [
+          "oauth2"
+        ],
+        "access": "approval_or_review",
+        "api": [
+          "rest"
+        ],
+        "mcp": "none_found",
+        "verdict": "build_with_friction"
+      }
+    },
+    {
+      "pass": "pass2",
+      "id": 44,
+      "name": "Salesforce Commerce Cloud",
+      "auth": true,
+      "access": true,
+      "api": true,
+      "mcp": true,
+      "verdict": false,
+      "agent": {
+        "auth": [
+          "oauth2",
+          "jwt_or_signed"
+        ],
+        "access": "partner_or_sales",
+        "api": [
+          "rest"
+        ],
+        "mcp": "official",
+        "verdict": "build_with_friction"
+      }
+    },
+    {
+      "pass": "pass2",
+      "id": 54,
+      "name": "MrScraper",
+      "auth": true,
+      "access": true,
+      "api": true,
+      "mcp": true,
+      "verdict": true,
+      "agent": {
+        "auth": [
+          "api_key",
+          "bearer_token"
+        ],
+        "access": "self_serve_free",
+        "api": [
+          "rest"
+        ],
+        "mcp": "official",
+        "verdict": "build_now"
+      }
+    },
+    {
+      "pass": "pass2",
+      "id": 65,
+      "name": "Supabase",
+      "auth": true,
+      "access": true,
+      "api": true,
+      "mcp": true,
+      "verdict": true,
+      "agent": {
+        "auth": [
+          "api_key",
+          "bearer_token",
+          "oauth2"
+        ],
+        "access": "self_serve_free",
+        "api": [
+          "rest",
+          "graphql",
+          "websocket",
+          "sdk_or_cli_only"
+        ],
+        "mcp": "official",
+        "verdict": "build_now"
+      }
+    },
+    {
+      "pass": "pass2",
+      "id": 73,
+      "name": "Linear",
+      "auth": true,
+      "access": true,
+      "api": true,
+      "mcp": true,
+      "verdict": true,
+      "agent": {
+        "auth": [
+          "oauth2",
+          "api_key",
+          "bearer_token"
+        ],
+        "access": "self_serve_free",
+        "api": [
+          "graphql"
+        ],
+        "mcp": "official",
+        "verdict": "build_now"
+      }
+    },
+    {
+      "pass": "pass2",
+      "id": 87,
+      "name": "Xero",
+      "auth": true,
+      "access": true,
+      "api": true,
+      "mcp": true,
+      "verdict": true,
+      "agent": {
+        "auth": [
+          "oauth2"
+        ],
+        "access": "self_serve_free",
+        "api": [
+          "rest"
+        ],
+        "mcp": "official",
+        "verdict": "build_now"
+      }
+    },
+    {
+      "pass": "pass2",
+      "id": 99,
+      "name": "YouTube Transcript",
+      "auth": true,
+      "access": true,
+      "api": true,
+      "mcp": true,
+      "verdict": true,
+      "agent": {
+        "auth": [
+          "bearer_token"
+        ],
+        "access": "self_serve_free",
+        "api": [
+          "rest"
+        ],
+        "mcp": "official",
+        "verdict": "build_now"
+      }
+    },
+    {
+      "pass": "pass3",
+      "id": 9,
+      "name": "Copper",
+      "auth": true,
+      "access": false,
+      "api": true,
+      "mcp": true,
+      "verdict": false,
+      "agent": {
+        "auth": [
+          "oauth2",
+          "api_key"
+        ],
+        "access": "self_serve_free",
+        "api": [
+          "rest"
+        ],
+        "mcp": "none_found",
+        "verdict": "build_now"
+      }
+    },
+    {
+      "pass": "pass3",
+      "id": 17,
+      "name": "Plain",
+      "auth": false,
+      "access": true,
+      "api": true,
+      "mcp": true,
+      "verdict": true,
+      "agent": {
+        "auth": [
+          "api_key",
+          "bearer_token",
+          "oauth2"
+        ],
+        "access": "self_serve_trial",
+        "api": [
+          "graphql"
+        ],
+        "mcp": "official",
+        "verdict": "build_with_friction"
+      }
+    },
+    {
+      "pass": "pass3",
+      "id": 26,
+      "name": "Discord",
+      "auth": true,
+      "access": true,
+      "api": true,
+      "mcp": true,
+      "verdict": false,
+      "agent": {
+        "auth": [
+          "oauth2",
+          "bearer_token"
+        ],
+        "access": "self_serve_free",
+        "api": [
+          "rest",
+          "websocket"
+        ],
+        "mcp": "community_only",
+        "verdict": "build_with_friction"
+      }
+    },
+    {
+      "pass": "pass3",
+      "id": 33,
+      "name": "LinkedIn Ads",
+      "auth": true,
+      "access": true,
+      "api": true,
+      "mcp": true,
+      "verdict": true,
+      "agent": {
+        "auth": [
+          "oauth2"
+        ],
+        "access": "approval_or_review",
+        "api": [
+          "rest"
+        ],
+        "mcp": "none_found",
+        "verdict": "build_with_friction"
+      }
+    },
+    {
+      "pass": "pass3",
+      "id": 44,
+      "name": "Salesforce Commerce Cloud",
+      "auth": true,
+      "access": true,
+      "api": true,
+      "mcp": true,
+      "verdict": true,
+      "agent": {
+        "auth": [
+          "oauth2",
+          "jwt_or_signed"
+        ],
+        "access": "partner_or_sales",
+        "api": [
+          "rest"
+        ],
+        "mcp": "official",
+        "verdict": "blocked"
+      }
+    },
+    {
+      "pass": "pass3",
+      "id": 54,
+      "name": "MrScraper",
+      "auth": true,
+      "access": true,
+      "api": true,
+      "mcp": true,
+      "verdict": true,
+      "agent": {
+        "auth": [
+          "api_key",
+          "bearer_token"
+        ],
+        "access": "self_serve_free",
+        "api": [
+          "rest"
+        ],
+        "mcp": "official",
+        "verdict": "build_now"
+      }
+    },
+    {
+      "pass": "pass3",
+      "id": 65,
+      "name": "Supabase",
+      "auth": true,
+      "access": true,
+      "api": true,
+      "mcp": true,
+      "verdict": true,
+      "agent": {
+        "auth": [
+          "api_key",
+          "bearer_token",
+          "oauth2"
+        ],
+        "access": "self_serve_free",
+        "api": [
+          "rest",
+          "graphql",
+          "websocket",
+          "sdk_or_cli_only"
+        ],
+        "mcp": "official",
+        "verdict": "build_now"
+      }
+    },
+    {
+      "pass": "pass3",
+      "id": 73,
+      "name": "Linear",
+      "auth": true,
+      "access": true,
+      "api": true,
+      "mcp": true,
+      "verdict": true,
+      "agent": {
+        "auth": [
+          "oauth2",
+          "api_key",
+          "bearer_token"
+        ],
+        "access": "self_serve_free",
+        "api": [
+          "graphql"
+        ],
+        "mcp": "official",
+        "verdict": "build_now"
+      }
+    },
+    {
+      "pass": "pass3",
+      "id": 87,
+      "name": "Xero",
+      "auth": true,
+      "access": true,
+      "api": true,
+      "mcp": true,
+      "verdict": true,
+      "agent": {
+        "auth": [
+          "oauth2"
+        ],
+        "access": "self_serve_free",
+        "api": [
+          "rest"
+        ],
+        "mcp": "official",
+        "verdict": "build_now"
+      }
+    },
+    {
+      "pass": "pass3",
+      "id": 99,
+      "name": "YouTube Transcript",
+      "auth": true,
+      "access": true,
+      "api": true,
+      "mcp": true,
+      "verdict": true,
+      "agent": {
+        "auth": [
+          "bearer_token"
+        ],
+        "access": "self_serve_free",
+        "api": [
+          "rest"
+        ],
+        "mcp": "official",
+        "verdict": "build_now"
+      }
+    }
+  ],
+  "test_truth": [
+    {
+      "id": "9",
+      "name": "Copper",
+      "auth_methods": "api_key;bearer_token;oauth2",
+      "access_accept": "paid_plan|self_serve_trial",
+      "api_accept": "rest",
+      "mcp_accept": "none_found|community_only",
+      "verdict_accept": "build_with_friction",
+      "sources": "https://developer.copper.com/introduction/authentication.html ; https://www.copper.com/pricing ; https://support.copper.com/en/articles/9623758-copper-plans-feature-comparison",
+      "notes": "API token + user email in headers; OAuth2 for partner integrations. No free plan; \"API & Embedded integration SDK\" on Professional tier and above; free trial available. Only third-party MCP servers found."
+    },
+    {
+      "id": "17",
+      "name": "Plain",
+      "auth_methods": "api_key;bearer_token",
+      "access_accept": "self_serve_trial|paid_plan",
+      "api_accept": "graphql",
+      "mcp_accept": "official",
+      "verdict_accept": "build_with_friction",
+      "sources": "https://www.plain.com/docs/graphql/authentication ; https://www.plain.com/pricing ; https://www.plain.com/blog/mcp-customer-support-2026",
+      "notes": "Machine-user API keys sent as Bearer; no free plan, 7-day free trial then from $35/seat; official MCP at mcp.plain.com/mcp"
+    },
+    {
+      "id": "26",
+      "name": "Discord",
+      "auth_methods": "bearer_token;oauth2",
+      "access_accept": "self_serve_free",
+      "api_accept": "rest|websocket",
+      "mcp_accept": "none_found|community_only",
+      "verdict_accept": "build_now",
+      "sources": "https://discord.com/developers/docs/reference#authentication",
+      "notes": "Bot token or OAuth2 bearer token; free developer portal; REST + Gateway websocket; only community MCP servers"
+    },
+    {
+      "id": "33",
+      "name": "LinkedIn Ads",
+      "auth_methods": "oauth2",
+      "access_accept": "approval_or_review",
+      "api_accept": "rest",
+      "mcp_accept": "none_found|community_only",
+      "verdict_accept": "build_with_friction",
+      "sources": "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/marketing-tiers ; https://www.linkedin.com/help/linkedin/answer/a527289",
+      "notes": "OAuth 2.0; Advertising API requires an application review before Development tier access; no official LinkedIn Ads MCP as of Aug 2026"
+    },
+    {
+      "id": "44",
+      "name": "Salesforce Commerce Cloud",
+      "auth_methods": "oauth2;jwt_or_signed",
+      "access_accept": "partner_or_sales",
+      "api_accept": "rest",
+      "mcp_accept": "official",
+      "verdict_accept": "blocked",
+      "sources": "https://developer.salesforce.com/docs/commerce/commerce-api/guide/authorization.html ; https://developer.salesforce.com/docs/commerce/b2c-commerce/guide/mcp-dx-intro.html",
+      "notes": "SLAS / Account Manager OAuth clients issuing JWTs; credentials require a B2C Commerce instance (customer or partner); Salesforce publishes the B2C DX MCP server"
+    },
+    {
+      "id": "54",
+      "name": "MrScraper",
+      "auth_methods": "api_key;bearer_token",
+      "access_accept": "self_serve_free",
+      "api_accept": "rest",
+      "mcp_accept": "official",
+      "verdict_accept": "build_now",
+      "sources": "https://docs.mrscraper.com/ ; https://docs.mrscraper.com/docs/getting-started/billing",
+      "notes": "API token; Free plan with monthly tokens, no card; official MCP server on GitHub"
+    },
+    {
+      "id": "65",
+      "name": "Supabase",
+      "auth_methods": "api_key;bearer_token;oauth2;jwt_or_signed",
+      "access_accept": "self_serve_free",
+      "api_accept": "rest|graphql",
+      "mcp_accept": "official",
+      "verdict_accept": "build_now",
+      "sources": "https://supabase.com/docs/guides/api/api-keys ; https://supabase.com/docs/reference/api/introduction ; https://supabase.com/docs/guides/getting-started/mcp",
+      "notes": "Project API keys + user JWTs for data APIs; personal access tokens or OAuth for the Management API; free plan; official Supabase MCP"
+    },
+    {
+      "id": "73",
+      "name": "Linear",
+      "auth_methods": "api_key;bearer_token;oauth2",
+      "access_accept": "self_serve_free",
+      "api_accept": "graphql",
+      "mcp_accept": "official",
+      "verdict_accept": "build_now",
+      "sources": "https://linear.app/developers/graphql ; https://linear.app/docs/mcp",
+      "notes": "Personal API keys or OAuth2; free plan; GraphQL API; official remote MCP at mcp.linear.app"
+    },
+    {
+      "id": "87",
+      "name": "Xero",
+      "auth_methods": "oauth2",
+      "access_accept": "self_serve_free",
+      "api_accept": "rest",
+      "mcp_accept": "official",
+      "verdict_accept": "build_now",
+      "sources": "https://developer.xero.com/pricing ; https://github.com/xeroapi/xero-mcp-server",
+      "notes": "OAuth 2.0 (custom connections use client credentials); free Starter developer tier up to 5 connections; official XeroAPI MCP server"
+    },
+    {
+      "id": "99",
+      "name": "YouTube Transcript",
+      "auth_methods": "api_key;bearer_token",
+      "access_accept": "self_serve_free|self_serve_trial",
+      "api_accept": "rest",
+      "mcp_accept": "official",
+      "verdict_accept": "build_now|build_with_friction",
+      "sources": "https://transcriptapi.com/",
+      "notes": "API key (sk_…); 100 free credits, no card; paid plans from $5/month; official MCP at transcriptapi.com/mcp"
     }
   ]
 }

@@ -1,0 +1,231 @@
+{
+  "one_liner": "Customer database, messaging engine, and customer-experience layer for marketing automation.",
+  "auth_methods": [
+    "oauth2",
+    "api_key"
+  ],
+  "auth_primary": "oauth2",
+  "auth_notes": "OAuth 2.0 authorization code flow or private API keys.",
+  "access_tier": "self_serve_free",
+  "access_notes": "Sign up for a free developer account or test account with a free tier.",
+  "api_types": [
+    "rest"
+  ],
+  "api_breadth": "broad",
+  "api_notes": "Profiles, events, lists, segments, metrics, campaigns, flows, catalogs, coupons. Base URL: https://a.klaviyo.com/api/",
+  "mcp": "official",
+  "mcp_url": "https://developers.klaviyo.com/en/docs/klaviyo_mcp_server",
+  "verdict": "build_with_friction",
+  "blocker": "app_review",
+  "blocker_notes": "Public APIs and self-serve accounts are fully available.",
+  "evidence": {
+    "auth": {
+      "url": "https://developers.klaviyo.com/en/docs/migrate_to_oauth_from_private_key_authentication",
+      "quote": "Switching your app from private key authentication to OAuth allows for greater exposure to our customers, simpler integration workflows, and access to all new items our R&D team is developing.",
+      "check": "ok"
+    },
+    "access": {
+      "url": "https://developers.klaviyo.com",
+      "quote": "Create apps and integrations using Klaviyo's API that help your business grow. Get started for free.",
+      "check": "ok"
+    },
+    "api": {
+      "url": "https://developers.klaviyo.com/en/docs/klaviyo_stripe_projects_context",
+      "quote": "Call the Klaviyo REST API directly over HTTP. Full API reference: https://developers.klaviyo.com Base URL: https://a.klaviyo.com/api/",
+      "check": "ok"
+    },
+    "mcp": {
+      "url": "https://developers.klaviyo.com/en/docs/klaviyo_mcp_server",
+      "quote": "The Klaviyo Model Context Protocol (MCP) server seamlessly integrates with Klaviyo’s APIs, enabling AI clients to interact with your Klaviyo data.",
+      "check": "ok"
+    },
+    "verdict": {
+      "url": "https://developers.klaviyo.com",
+      "quote": "Create apps and integrations using Klaviyo's API that help your business grow. Get started for free.",
+      "check": "ok"
+    },
+    "review": {
+      "url": "https://developers.klaviyo.com/en/docs/migrate_to_oauth_from_private_key_authentication",
+      "quote": "Only apps using OAuth will be considered for inclusion in Klaviyo's App Marketplace.",
+      "check": "ok"
+    }
+  },
+  "confidence": {
+    "auth": 5.0,
+    "access": 5.0,
+    "api": 5.0,
+    "mcp": 5.0,
+    "verdict": 5.0
+  },
+  "_model": "gemini-3.5-flash-lite",
+  "status": "ok",
+  "id": 36,
+  "name": "Klaviyo",
+  "category": "Marketing Ads Email & Social",
+  "hint": "developers.klaviyo.com",
+  "sources": [
+    {
+      "url": "https://developers.klaviyo.com",
+      "via": "direct",
+      "chars": 3291
+    },
+    {
+      "url": "https://developers.klaviyo.com/en/docs/klaviyo_mcp_server",
+      "via": "direct",
+      "chars": 1561
+    },
+    {
+      "url": "https://developers.klaviyo.com/en/docs/klaviyo_stripe_projects_context",
+      "via": "direct",
+      "chars": 5719
+    },
+    {
+      "url": "https://developers.klaviyo.com/en/docs/migrate_to_oauth_from_private_key_authentication",
+      "via": "direct",
+      "chars": 7322
+    },
+    {
+      "url": "https://developers.klaviyo.com/en/docs/rate_limits_and_error_handling",
+      "via": "direct",
+      "chars": 8448
+    },
+    {
+      "url": "https://developers.klaviyo.com/en/docs/set_up_oauth",
+      "via": "direct",
+      "chars": 23889
+    },
+    {
+      "url": "https://developers.klaviyo.com",
+      "via": "pass3"
+    },
+    {
+      "url": "https://developers.klaviyo.com/en/docs/get_started",
+      "via": "pass3"
+    },
+    {
+      "url": "https://developers.klaviyo.com/en/docs/klaviyo_stripe_projects_context",
+      "via": "pass3"
+    },
+    {
+      "url": "https://developers.klaviyo.com/en/docs/migrate_to_oauth_from_private_key_authentication",
+      "via": "pass3"
+    },
+    {
+      "url": "https://developers.klaviyo.com/en/docs/rate_limits_and_error_handling",
+      "via": "pass3"
+    }
+  ],
+  "queries": [
+    "Klaviyo API authentication developer docs",
+    "Klaviyo API access pricing plan developer",
+    "Klaviyo MCP server"
+  ],
+  "seconds": 39.9,
+  "verification": {
+    "initial_issues": [],
+    "final_issues": [],
+    "rounds": [
+      {
+        "round": 0,
+        "issues": [],
+        "verifier": {
+          "auth_methods": [
+            "api_key",
+            "oauth2"
+          ],
+          "auth_primary": "oauth2",
+          "access_tier": "self_serve_free",
+          "api_types": [
+            "rest"
+          ],
+          "mcp": "official",
+          "verdict": "build_now",
+          "reasons": {
+            "auth": "Klaviyo provides private API key authentication (Authorization: Klaviyo-API-Key) and requires OAuth for published partners (Authorization: Bearer).",
+            "access": "Developers can sign up and obtain credentials for free; the free plan is available for all accounts.",
+            "mcp": "The Klaviyo MCP server is documented and published by Klaviyo itself.",
+            "verdict": "Public REST API, free self‑serve credentials, and official MCP support allow a toolkit to be built immediately."
+          },
+          "_model": "openai/gpt-oss-20b"
+        },
+        "autofix": []
+      }
+    ],
+    "catalog": {
+      "in_catalog": true,
+      "slug": "klaviyo",
+      "auth": [
+        "api_key",
+        "oauth2"
+      ],
+      "tools_count": 225
+    },
+    "changed_fields": [],
+    "field_status": {
+      "auth": "verified",
+      "access": "verified",
+      "api": "verified",
+      "mcp": "verified",
+      "verdict": "verified"
+    },
+    "needs_human": [],
+    "before": {
+      "auth_methods": [
+        "oauth2",
+        "api_key"
+      ],
+      "auth_primary": "oauth2",
+      "access_tier": "self_serve_free",
+      "access_notes": "Sign up for a free developer account or test account with a free tier.",
+      "api_types": [
+        "rest"
+      ],
+      "api_breadth": "broad",
+      "api_notes": "Profiles, events, lists, segments, metrics, campaigns, flows, catalogs, coupons. Base URL: https://a.klaviyo.com/api/",
+      "mcp": "official",
+      "mcp_url": "https://developers.klaviyo.com/en/docs/klaviyo_mcp_server",
+      "verdict": "build_now",
+      "blocker": "none",
+      "blocker_notes": "Public APIs and self-serve accounts are fully available."
+    },
+    "seconds": 14.7
+  },
+  "_public_review": "yes",
+  "pass3": {
+    "before": {
+      "auth_methods": [
+        "oauth2",
+        "api_key"
+      ],
+      "auth_primary": "oauth2",
+      "access_tier": "self_serve_free",
+      "verdict": "build_now",
+      "blocker": "none"
+    },
+    "log": [
+      {
+        "loop": "L6_access",
+        "field": "access",
+        "change": null,
+        "reason": "confirmed with a verified quote"
+      },
+      {
+        "loop": "L7_auth",
+        "error": "Groq failed: HTTP 429: {\"error\":{\"message\":\"Rate limit reached for model `qwen/qwen3.8-27b` in organization `org_01m2fd9xn8e3dtb9zfqc2jdhsc` service tier `on_demand` on tokens per day (TPD): Limit 200"
+      },
+      {
+        "loop": "verdict_rule",
+        "field": "verdict",
+        "change": "build_now -> build_with_friction",
+        "reason": "derived from access self_serve_free / public review yes"
+      }
+    ],
+    "access_sources": [
+      "https://developers.klaviyo.com",
+      "https://developers.klaviyo.com/en/docs/get_started",
+      "https://developers.klaviyo.com/en/docs/klaviyo_stripe_projects_context",
+      "https://developers.klaviyo.com/en/docs/migrate_to_oauth_from_private_key_authentication",
+      "https://developers.klaviyo.com/en/docs/rate_limits_and_error_handling"
+    ]
+  }
+}

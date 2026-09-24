@@ -1,0 +1,271 @@
+{
+  "one_liner": "Cost-controlled AI infrastructure for tracking LLM spending and enforcing limits.",
+  "auth_methods": [
+    "api_key",
+    "bearer_token"
+  ],
+  "auth_primary": "api_key",
+  "auth_notes": "Bearer token using API keys prefixed with pg_live_.",
+  "access_tier": "self_serve_free",
+  "access_notes": "Sign up on the website to obtain credentials.",
+  "api_types": [
+    "rest",
+    "sdk_or_cli_only"
+  ],
+  "api_breadth": "moderate",
+  "api_notes": "REST API for plans, users, usage, and webhook management.",
+  "mcp": "none_found",
+  "mcp_url": null,
+  "verdict": "build_now",
+  "blocker": "none",
+  "blocker_notes": "Publicly documented API and self-serve access are available.",
+  "evidence": {
+    "auth": {
+      "url": "https://docs.paygent.to/getting-started/quickstart",
+      "quote": "\"Authorization: Bearer pg_live_...\"",
+      "check": "ok"
+    },
+    "access": {
+      "url": "https://docs.paygent.to",
+      "quote": "Paygent is an SDK — for Python and TypeScript — that tracks per-user LLM costs and enforces spending limits before calls reach OpenAI or Anthropic.",
+      "check": "ok"
+    },
+    "api": {
+      "url": "https://docs.paygent.to",
+      "quote": "Backend REST API for plans, users, usage, and gate events.",
+      "check": "ok"
+    },
+    "mcp": {
+      "url": null,
+      "quote": null
+    },
+    "verdict": {
+      "url": null,
+      "quote": null
+    }
+  },
+  "confidence": {
+    "auth": 0.9,
+    "access": 0.8,
+    "api": 0.9,
+    "mcp": 1.0,
+    "verdict": 0.9
+  },
+  "_model": "gemini-3.5-flash-lite",
+  "status": "ok",
+  "id": 84,
+  "name": "Paygent Connect",
+  "category": "Finance & Fintech",
+  "hint": "paygent (NMI-powered)",
+  "sources": [
+    {
+      "url": "https://docs.paygent.to",
+      "via": "direct",
+      "chars": 4155
+    },
+    {
+      "url": "https://docs.paygent.to/getting-started/assign-users-to-plans",
+      "via": "direct",
+      "chars": 8620
+    },
+    {
+      "url": "https://docs.paygent.to/getting-started/configure-first-plan",
+      "via": "direct",
+      "chars": 8065
+    },
+    {
+      "url": "https://docs.paygent.to/getting-started/quickstart",
+      "via": "direct",
+      "chars": 9870
+    },
+    {
+      "url": "https://docs.paygent.to/getting-started/verify-its-working",
+      "via": "direct",
+      "chars": 15277
+    },
+    {
+      "url": "https://docs.paygent.to/integration/webhooks",
+      "via": "direct",
+      "chars": 5804
+    },
+    {
+      "url": "https://docs.paygent.to",
+      "via": "pass3"
+    },
+    {
+      "url": "https://docs.paygent.to/getting-started/assign-users-to-plans",
+      "via": "pass3"
+    },
+    {
+      "url": "https://docs.paygent.to/getting-started/configure-first-plan",
+      "via": "pass3"
+    },
+    {
+      "url": "https://docs.paygent.to/getting-started/quickstart",
+      "via": "pass3"
+    },
+    {
+      "url": "https://docs.paygent.to/introduction/plans-and-usage-events",
+      "via": "pass3"
+    }
+  ],
+  "queries": [
+    "Paygent Connect API authentication developer docs",
+    "Paygent Connect API access pricing plan developer",
+    "Paygent Connect MCP server"
+  ],
+  "seconds": 39.9,
+  "verification_queries": [
+    "Paygent Connect API access requirements plan",
+    "Paygent Connect developer account API key free OR partner OR enterprise"
+  ],
+  "verification": {
+    "initial_issues": [
+      {
+        "loop": "L1_evidence",
+        "field": "access",
+        "problem": "no evidence cited"
+      }
+    ],
+    "final_issues": [],
+    "rounds": [
+      {
+        "round": 0,
+        "issues": [
+          {
+            "loop": "L1_evidence",
+            "field": "access",
+            "problem": "no evidence cited"
+          }
+        ],
+        "verifier": {
+          "auth_methods": [
+            "api_key",
+            "bearer_token"
+          ],
+          "auth_primary": "api_key",
+          "access_tier": "self_serve_free",
+          "api_types": [
+            "rest",
+            "sdk_or_cli_only"
+          ],
+          "mcp": "none_found",
+          "verdict": "build_now",
+          "reasons": {
+            "auth": "The documentation explicitly shows usage of API keys (e.g., 'pg_live_...') passed via the 'Authorization: Bearer' header, indicating API key authentication is the primary method.",
+            "access": "The quickstart guide indicates that users can sign up, obtain an API key, and configure plans immediately without mentioning any approval process, paid requirement, or trial limitations, suggesting a self-serve free or freemium model for initial access.",
+            "mcp": "No mention of MCP servers in the provided sources.",
+            "verdict": "Public documentation is available, and credentials can be obtained via self-service sign-up to use the REST API and SDKs, allowing a toolkit to be built immediately."
+          },
+          "_model": "qwen/qwen3.8-27b"
+        },
+        "autofix": []
+      },
+      {
+        "round": 1,
+        "queries": [
+          "Paygent Connect API access requirements plan",
+          "Paygent Connect developer account API key free OR partner OR enterprise"
+        ],
+        "new_sources": [
+          "https://docs.paygent.to",
+          "https://docs.paygent.to/getting-started/assign-users-to-plans",
+          "https://docs.paygent.to/getting-started/configure-first-plan",
+          "https://docs.paygent.to/getting-started/quickstart",
+          "https://docs.paygent.to/getting-started/verify-its-working"
+        ],
+        "change_log": "Retained self_serve_free based on quickstart and SDK provisioning documentation, providing explicit evidence URL and quote.",
+        "issues": [],
+        "verifier": {
+          "auth_methods": [
+            "api_key",
+            "bearer_token"
+          ],
+          "auth_primary": "api_key",
+          "access_tier": "self_serve_free",
+          "api_types": [
+            "rest",
+            "sdk_or_cli_only"
+          ],
+          "mcp": "none_found",
+          "verdict": "build_now",
+          "reasons": {
+            "auth": "The documentation explicitly shows usage of API keys (e.g., `pg_live_...`) passed via `Authorization: Bearer` headers in REST calls and as `apiKey` parameters in SDKs.",
+            "access": "The quickstart guide indicates a self-serve process where developers install the SDK and connect to their account using an API key, with no mention of approval, sales contact, or paid requirements for initial access.",
+            "mcp": "No mention of MCP servers in the provided sources.",
+            "verdict": "Public documentation is available, and credentials appear to be self-serve via API keys, allowing a toolkit to be built immediately."
+          },
+          "_model": "qwen/qwen3.8-27b"
+        },
+        "autofix": []
+      }
+    ],
+    "catalog": {
+      "in_catalog": false,
+      "checked": [
+        "paygentconnect",
+        "paygent_connect"
+      ]
+    },
+    "changed_fields": [
+      "api",
+      "auth"
+    ],
+    "field_status": {
+      "auth": "corrected",
+      "access": "confirmed_after_recheck",
+      "api": "corrected",
+      "mcp": "verified",
+      "verdict": "verified"
+    },
+    "needs_human": [],
+    "before": {
+      "auth_methods": [
+        "bearer_token"
+      ],
+      "auth_primary": "bearer_token",
+      "access_tier": "self_serve_free",
+      "access_notes": "Sign up on the website to obtain credentials.",
+      "api_types": [
+        "rest"
+      ],
+      "api_breadth": "moderate",
+      "api_notes": "REST API for plans, users, usage, and webhook management.",
+      "mcp": "none_found",
+      "mcp_url": null,
+      "verdict": "build_now",
+      "blocker": "none",
+      "blocker_notes": "Publicly documented API and self-serve access are available."
+    },
+    "seconds": 527.0
+  },
+  "pass3": {
+    "before": {
+      "auth_methods": [
+        "api_key",
+        "bearer_token"
+      ],
+      "auth_primary": "api_key",
+      "access_tier": "self_serve_free",
+      "verdict": "build_now",
+      "blocker": "none"
+    },
+    "log": [
+      {
+        "loop": "L6_access",
+        "error": "Groq failed: HTTP 429: {\"error\":{\"message\":\"Rate limit reached for model `qwen/qwen3.8-27b` in organization `org_01m2fd9xn8e3dtb9zfqc2jdhsc` service tier `on_demand` on tokens per day (TPD): Limit 200"
+      },
+      {
+        "loop": "L7_auth",
+        "error": "Groq failed: HTTP 429: {\"error\":{\"message\":\"Rate limit reached for model `qwen/qwen3.8-27b` in organization `org_01m2fd9xn8e3dtb9zfqc2jdhsc` service tier `on_demand` on tokens per day (TPD): Limit 200"
+      }
+    ],
+    "access_sources": [
+      "https://docs.paygent.to",
+      "https://docs.paygent.to/getting-started/assign-users-to-plans",
+      "https://docs.paygent.to/getting-started/configure-first-plan",
+      "https://docs.paygent.to/getting-started/quickstart",
+      "https://docs.paygent.to/introduction/plans-and-usage-events"
+    ]
+  }
+}

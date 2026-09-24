@@ -1,0 +1,415 @@
+{
+  "one_liner": "Hunt down social media accounts by username across social networks",
+  "auth_methods": [
+    "none"
+  ],
+  "auth_primary": "none",
+  "auth_notes": "Runs locally via command line without requiring authentication.",
+  "access_tier": "open_source_local",
+  "access_notes": "Open-source python tool that runs locally with no hosted API or credentials required.",
+  "api_types": [
+    "sdk_or_cli_only"
+  ],
+  "api_breadth": "none",
+  "api_notes": "CLI tool with no hosted public API.",
+  "mcp": "community_only",
+  "mcp_url": "https://github.com/p1atdev/sherlock-mcp",
+  "verdict": "build_with_friction",
+  "blocker": "local_tool_only",
+  "blocker_notes": "Open-source CLI tool can be wrapped locally.",
+  "evidence": {
+    "auth": {
+      "url": "https://github.com/sherlock-project/sherlock",
+      "quote": "sherlock user123",
+      "check": "ok"
+    },
+    "access": {
+      "url": "https://github.com/sherlock-project/sherlock",
+      "quote": "MIT © Sherlock Project",
+      "check": "ok"
+    },
+    "api": {
+      "url": "https://github.com/sherlock-project/sherlock",
+      "quote": "usage: sherlock [-h] [--version] [--verbose] [--folderoutput FOLDEROUTPUT] [--output OUTPUT] [--csv] [--xlsx] [--site SITE_NAME]",
+      "check": "ok"
+    },
+    "mcp": {
+      "url": "https://github.com/p1atdev/sherlock-mcp",
+      "s_quote": "A MCP server to search social accounts across multiple platforms using sherlock."
+    },
+    "verdict": {
+      "url": "https://github.com/sherlock-project/sherlock",
+      "s_quote": "Hunt down social media accounts by username across 400+ social networks"
+    }
+  },
+  "confidence": {
+    "auth": 0.9,
+    "access": 0.9,
+    "api": 0.9,
+    "mcp": 0.9,
+    "verdict": 0.9
+  },
+  "_model": "gemini-3.5-flash-lite",
+  "status": "ok",
+  "id": 58,
+  "name": "Sherlock",
+  "category": "Data SEO & Scraping",
+  "hint": "github.com/sherlock-project/sherlock",
+  "sources": [
+    {
+      "url": "https://github.com/sherlock-project/sherlock",
+      "via": "direct",
+      "chars": 4999
+    },
+    {
+      "url": "https://github.com/Fewsats/sherlock-mcp",
+      "via": "direct",
+      "chars": 3519
+    },
+    {
+      "url": "https://github.com/H4RR1SON/sherlock-mcp",
+      "via": "direct",
+      "chars": 4999
+    },
+    {
+      "url": "https://github.com/H4RR1SON/sherlock-mcp/blob/main/docs/tools.md",
+      "via": "direct",
+      "chars": 5579
+    },
+    {
+      "url": "https://github.com/jcucci/dotnet-sherlock-mcp",
+      "via": "direct",
+      "chars": 17090
+    },
+    {
+      "url": "https://github.com/p1atdev/sherlock-mcp",
+      "via": "direct",
+      "chars": 1446
+    },
+    {
+      "url": "https://github.com/Burnsedia/sherlock-mcp",
+      "via": "verification"
+    },
+    {
+      "url": "https://github.com/H4RR1SON/sherlock-mcp/blob/main/README.md",
+      "via": "verification"
+    },
+    {
+      "url": "https://github.com/Burnsedia/sherlock-mcp",
+      "via": "verification"
+    },
+    {
+      "url": "https://github.com/H4RR1SON/sherlock-mcp/blob/main/README.md",
+      "via": "verification"
+    },
+    {
+      "url": "https://github.com/sherlock-project/sherlock",
+      "via": "pass3"
+    },
+    {
+      "url": "https://sherlockeye.io/pricing",
+      "via": "pass3"
+    },
+    {
+      "url": "https://www.emailsherlock.com/api/quickstart",
+      "via": "pass3"
+    },
+    {
+      "url": "https://www.sherlock.stanford.edu/docs/getting-started/connecting",
+      "via": "pass3"
+    },
+    {
+      "url": "https://www.usesherlock.ai/pricing",
+      "via": "pass3"
+    }
+  ],
+  "queries": [
+    "Sherlock API authentication developer docs",
+    "Sherlock API access pricing plan developer",
+    "Sherlock MCP server"
+  ],
+  "seconds": 194.7,
+  "verification_queries": [
+    "Sherlock MCP server model context protocol",
+    "Sherlock API access requirements plan",
+    "Sherlock MCP server model context protocol",
+    "Sherlock API access requirements plan"
+  ],
+  "verification": {
+    "initial_issues": [
+      {
+        "loop": "L2_rules",
+        "field": "verdict",
+        "problem": "open-source local tool has no hosted API or credentials; build_now needs justification"
+      },
+      {
+        "loop": "L4_verifier",
+        "field": "verdict",
+        "problem": "verifier says blocked vs agent build_now"
+      },
+      {
+        "loop": "L5_mcp_probe",
+        "field": "mcp",
+        "problem": "possible official MCP found: ['https://github.com/H4RR1SON/sherlock-mcp', 'https://github.com/H4RR1SON/sherlock-mcp/blob/main/README.md']",
+        "urls": [
+          "https://github.com/H4RR1SON/sherlock-mcp",
+          "https://github.com/H4RR1SON/sherlock-mcp/blob/main/README.md",
+          "https://github.com/Burnsedia/sherlock-mcp"
+        ]
+      }
+    ],
+    "final_issues": [
+      {
+        "loop": "L1_evidence",
+        "field": "mcp",
+        "problem": "no evidence cited"
+      },
+      {
+        "loop": "L1_evidence",
+        "field": "verdict",
+        "problem": "no evidence cited"
+      },
+      {
+        "loop": "L2_rules",
+        "field": "verdict",
+        "problem": "open-source local tool has no hosted API or credentials; build_now needs justification"
+      },
+      {
+        "loop": "L4_verifier",
+        "field": "verdict",
+        "problem": "verifier says blocked vs agent build_now"
+      }
+    ],
+    "rounds": [
+      {
+        "round": 0,
+        "issues": [
+          {
+            "loop": "L2_rules",
+            "field": "verdict",
+            "problem": "open-source local tool has no hosted API or credentials; build_now needs justification"
+          },
+          {
+            "loop": "L4_verifier",
+            "field": "verdict",
+            "problem": "verifier says blocked vs agent build_now"
+          },
+          {
+            "loop": "L5_mcp_probe",
+            "field": "mcp",
+            "problem": "possible official MCP found: ['https://github.com/H4RR1SON/sherlock-mcp', 'https://github.com/H4RR1SON/sherlock-mcp/blob/main/README.md']",
+            "urls": [
+              "https://github.com/H4RR1SON/sherlock-mcp",
+              "https://github.com/H4RR1SON/sherlock-mcp/blob/main/README.md",
+              "https://github.com/Burnsedia/sherlock-mcp"
+            ]
+          }
+        ],
+        "verifier": {
+          "auth_methods": [
+            "none",
+            "other"
+          ],
+          "auth_primary": "none",
+          "access_tier": "unknown",
+          "api_types": [
+            "none"
+          ],
+          "mcp": "community_only",
+          "verdict": "blocked",
+          "reasons": {
+            "auth": "No public API documented; no authentication methods available for external use",
+            "access": "No self‑serve or trial credentials for an API; the tool is a CLI only",
+            "mcp": "Only community‑maintained MCP servers exist, not an official vendor‑published server",
+            "verdict": "The app does not expose a public API that can be used by third‑party developers, so it cannot be built against today"
+          },
+          "_model": "openai/gpt-oss-20b"
+        },
+        "autofix": []
+      },
+      {
+        "round": 1,
+        "queries": [
+          "Sherlock MCP server model context protocol",
+          "Sherlock API access requirements plan"
+        ],
+        "new_sources": [
+          "https://github.com/sherlock-project/sherlock",
+          "https://github.com/Burnsedia/sherlock-mcp",
+          "https://github.com/H4RR1SON/sherlock-mcp",
+          "https://github.com/H4RR1SON/sherlock-mcp/blob/main/README.md",
+          "https://github.com/jcucci/dotnet-sherlock-mcp"
+        ],
+        "change_log": "Resolved the mcp and verdict fields by acknowledging community-maintained MCP servers exist for the local open-source CLI tool, allowing build_now as it runs locally without hosted credentials.",
+        "issues": [
+          {
+            "loop": "L2_rules",
+            "field": "verdict",
+            "problem": "open-source local tool has no hosted API or credentials; build_now needs justification"
+          },
+          {
+            "loop": "L4_verifier",
+            "field": "mcp",
+            "problem": "verifier says none_found vs agent community_only"
+          },
+          {
+            "loop": "L4_verifier",
+            "field": "verdict",
+            "problem": "verifier says blocked vs agent build_now"
+          }
+        ],
+        "verifier": {
+          "auth_methods": [
+            "none",
+            "other"
+          ],
+          "auth_primary": "none",
+          "access_tier": "open_source_local",
+          "api_types": [
+            "none"
+          ],
+          "mcp": "none_found",
+          "verdict": "blocked",
+          "reasons": {
+            "auth": "No public API documented; the tool is a CLI with no authentication mechanism exposed to developers",
+            "access": "The project is open‑source and runs locally; no self‑serve credentials or sandbox are provided",
+            "mcp": "No official MCP server is published by the Sherlock project; community MCP servers exist but are not part of the core app",
+            "verdict": "Without a public API, a developer cannot build a toolkit that interacts with Sherlock programmatically, so the app is blocked for that purpose"
+          },
+          "_model": "openai/gpt-oss-20b"
+        },
+        "autofix": []
+      },
+      {
+        "round": 2,
+        "queries": [
+          "Sherlock MCP server model context protocol",
+          "Sherlock API access requirements plan",
+          "Sherlock MCP server model context protocol",
+          "Sherlock API access requirements plan"
+        ],
+        "new_sources": [
+          "https://github.com/sherlock-project/sherlock",
+          "https://github.com/Burnsedia/sherlock-mcp",
+          "https://github.com/H4RR1SON/sherlock-mcp",
+          "https://github.com/H4RR1SON/sherlock-mcp/blob/main/README.md",
+          "https://github.com/jcucci/dotnet-sherlock-mcp"
+        ],
+        "change_log": "Updated mcp to community_only based on third-party community repositories and set verdict to build_now since the open-source CLI tool is fully usable locally.",
+        "issues": [
+          {
+            "loop": "L1_evidence",
+            "field": "mcp",
+            "problem": "no evidence cited"
+          },
+          {
+            "loop": "L1_evidence",
+            "field": "verdict",
+            "problem": "no evidence cited"
+          },
+          {
+            "loop": "L2_rules",
+            "field": "verdict",
+            "problem": "open-source local tool has no hosted API or credentials; build_now needs justification"
+          },
+          {
+            "loop": "L4_verifier",
+            "field": "verdict",
+            "problem": "verifier says blocked vs agent build_now"
+          }
+        ],
+        "verifier": {
+          "auth_methods": [
+            "none"
+          ],
+          "auth_primary": "none",
+          "access_tier": "open_source_local",
+          "api_types": [
+            "none"
+          ],
+          "mcp": "community_only",
+          "verdict": "blocked",
+          "reasons": {
+            "auth": "Sherlock exposes no public API endpoints; the repository contains only a CLI tool.",
+            "access": "No credentials or API keys are required or available for external use; the tool is run locally.",
+            "mcp": "The available MCP servers are community‑maintained and require a personal access token from a third‑party service (Covertlabs).",
+            "verdict": "Because there is no public API and no self‑serve credentials, a third‑party integration cannot be built today."
+          },
+          "_model": "openai/gpt-oss-20b"
+        },
+        "autofix": []
+      }
+    ],
+    "catalog": {
+      "in_catalog": false,
+      "checked": [
+        "sherlock"
+      ]
+    },
+    "changed_fields": [],
+    "field_status": {
+      "auth": "verified",
+      "access": "verified",
+      "api": "verified",
+      "mcp": "needs_human",
+      "verdict": "needs_human"
+    },
+    "needs_human": [
+      "mcp",
+      "verdict"
+    ],
+    "before": {
+      "auth_methods": [
+        "none"
+      ],
+      "auth_primary": "none",
+      "access_tier": "open_source_local",
+      "access_notes": "Open-source python tool that runs locally.",
+      "api_types": [
+        "sdk_or_cli_only"
+      ],
+      "api_breadth": "none",
+      "api_notes": "CLI tool with no hosted public API.",
+      "mcp": "community_only",
+      "mcp_url": "https://github.com/p1atdev/sherlock-mcp",
+      "verdict": "build_now",
+      "blocker": "none",
+      "blocker_notes": "Open-source CLI tool can be wrapped locally."
+    },
+    "seconds": 53.9
+  },
+  "pass3": {
+    "before": {
+      "auth_methods": [
+        "none"
+      ],
+      "auth_primary": "none",
+      "access_tier": "open_source_local",
+      "verdict": "build_now",
+      "blocker": "none"
+    },
+    "log": [
+      {
+        "loop": "L6_access",
+        "error": "Groq failed: HTTP 429: {\"error\":{\"message\":\"Rate limit reached for model `qwen/qwen3.8-27b` in organization `org_01m2fd9xn8e3dtb9zfqc2jdhsc` service tier `on_demand` on tokens per day (TPD): Limit 200"
+      },
+      {
+        "loop": "L7_auth",
+        "error": "Groq failed: HTTP 429: {\"error\":{\"message\":\"Rate limit reached for model `qwen/qwen3.8-27b` in organization `org_01m2fd9xn8e3dtb9zfqc2jdhsc` service tier `on_demand` on tokens per day (TPD): Limit 200"
+      },
+      {
+        "loop": "verdict_rule",
+        "field": "verdict",
+        "change": "build_now -> build_with_friction",
+        "reason": "derived from access open_source_local / public review None"
+      }
+    ],
+    "access_sources": [
+      "https://github.com/sherlock-project/sherlock",
+      "https://sherlockeye.io/pricing",
+      "https://www.emailsherlock.com/api/quickstart",
+      "https://www.sherlock.stanford.edu/docs/getting-started/connecting",
+      "https://www.usesherlock.ai/pricing"
+    ]
+  }
+}

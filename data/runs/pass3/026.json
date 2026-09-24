@@ -1,0 +1,300 @@
+{
+  "one_liner": "Voice, video, and text communication platform with a broad developer API.",
+  "auth_methods": [
+    "oauth2",
+    "bearer_token"
+  ],
+  "auth_primary": "oauth2",
+  "auth_notes": "OAuth2 is used for user authentication and bot interactions, while bot tokens (API keys) authenticate bot applications.",
+  "access_tier": "self_serve_free",
+  "access_notes": "Sign up for a free developer account on the Discord Developer Portal to create applications and bots at no cost.",
+  "api_types": [
+    "rest",
+    "websocket"
+  ],
+  "api_breadth": "broad",
+  "api_notes": "Comprehensive REST and Gateway WebSocket APIs covering channels, guilds, users, messages, and voice base URL https://discord.com/api/v10",
+  "mcp": "community_only",
+  "mcp_url": "https://github.com/jb-bz/jb-discord-mcp",
+  "verdict": "build_with_friction",
+  "blocker": "app_review",
+  "blocker_notes": "Public API is fully self-serve and accessible for developers.",
+  "evidence": {
+    "auth": {
+      "url": "https://docs.discord.com/developers/discord-social-sdk/development-guides/account-linking-with-discord",
+      "quote": "This guide explains how to authenticate users with their existing Discord accounts via OAuth2, enabling seamless login and access to Discord features.",
+      "check": "ok"
+    },
+    "access": {
+      "url": "https://docs.discord.com/developers/gateway/getting-started-with-privileged-intent-review",
+      "quote": "Previously, apps in fewer than 100 servers could access Privileged Intents by toggling them on in the Developer Portal, and apps in 100+ servers needed to apply for access.",
+      "check": "ok"
+    },
+    "api": {
+      "url": "https://docs.discord.com/developers/discord-social-sdk/development-guides/provisional-accounts/external-credentials-exchange",
+      "quote": "requests.post('https://discord.com/api/v10/partner-sdk/token', json={'client_id': CLIENT_ID, 'client_secret': CLIENT_SECRET, 'external_auth_type': EXTERNAL_AUTH_TYPE, 'external_auth_token': external_token})",
+      "check": "ok"
+    },
+    "mcp": {
+      "url": "https://github.com/jb-bz/jb-discord-mcp",
+      "src": "GitHub - jb-bz/jb-discord-mcp: A TypeScript-based MCP server and client for Discord.",
+      "quote": "A Model Context Protocol (MCP) server that enables AI agents to interact with Discord through standardized tools. Built with TypeScript and the official MCP SDK.",
+      "check": "ok"
+    },
+    "verdict": {
+      "url": "https://docs.discord.com/developers/gateway/getting-started-with-privileged-intent-review",
+      "quote": "You can turn privileged intents on and off from the Developer Portal as needed. No need to apply for access.",
+      "check": "ok"
+    },
+    "review": {
+      "url": "https://docs.discord.com/developers/events/gateway.md",
+      "quote": "When an app has more than 10,000 unique users who can see your app across all the servers it's in, it requires review for continued access to Privileged Intents.",
+      "check": "ok"
+    }
+  },
+  "confidence": {
+    "auth": 0.9,
+    "access": 0.9,
+    "api": 0.9,
+    "mcp": 1.0,
+    "verdict": 0.9
+  },
+  "_model": "gemini-3.5-flash-lite",
+  "status": "ok",
+  "id": 26,
+  "name": "Discord",
+  "category": "Communications & Messaging",
+  "hint": "discord.com",
+  "sources": [
+    {
+      "url": "https://discord.com",
+      "via": "direct",
+      "chars": 1877
+    },
+    {
+      "url": "https://docs.discord.com/developers/discord-social-sdk/development-guides/account-linking-with-discord",
+      "via": "direct",
+      "chars": 17232
+    },
+    {
+      "url": "https://docs.discord.com/developers/discord-social-sdk/development-guides/provisional-accounts/external-credentials-exchange",
+      "via": "direct",
+      "chars": 4076
+    },
+    {
+      "url": "https://docs.discord.com/developers/discord-social-sdk/development-guides/provisional-accounts/identity-providers",
+      "via": "direct",
+      "chars": 5807
+    },
+    {
+      "url": "https://docs.discord.com/developers/gateway/getting-started-with-privileged-intent-review",
+      "via": "direct",
+      "chars": 12587
+    },
+    {
+      "url": "https://docs.discord.com/developers/platform/account-linking",
+      "via": "direct",
+      "chars": 7583
+    },
+    {
+      "url": "https://github.com/jb-bz/jb-discord-mcp",
+      "via": "verification"
+    },
+    {
+      "url": "https://github.com/markhalliwell/discord-mcp",
+      "via": "verification"
+    },
+    {
+      "url": "https://github.com/mine1x/discord-mcp",
+      "via": "verification"
+    },
+    {
+      "url": "https://github.com/ngoctranfire/discord-mcp-server",
+      "via": "verification"
+    },
+    {
+      "url": "https://discord.com",
+      "via": "pass3"
+    },
+    {
+      "url": "https://discord.com/developers/?store_signup=true",
+      "via": "pass3"
+    },
+    {
+      "url": "https://docs.discord.com/developers/developer-tools/game-sdk.md",
+      "via": "pass3"
+    },
+    {
+      "url": "https://docs.discord.com/developers/events/gateway.md",
+      "via": "pass3"
+    },
+    {
+      "url": "https://docs.discord.com/developers/monetization/managing-skus",
+      "via": "pass3"
+    }
+  ],
+  "queries": [
+    "Discord API authentication developer docs",
+    "Discord API access pricing plan developer",
+    "Discord MCP server"
+  ],
+  "seconds": 53.3,
+  "verification_queries": [
+    "Discord MCP server model context protocol"
+  ],
+  "verification": {
+    "initial_issues": [
+      {
+        "loop": "L4_verifier",
+        "field": "mcp",
+        "problem": "verifier says official vs agent none_found"
+      }
+    ],
+    "final_issues": [],
+    "rounds": [
+      {
+        "round": 0,
+        "issues": [
+          {
+            "loop": "L4_verifier",
+            "field": "mcp",
+            "problem": "verifier says official vs agent none_found"
+          }
+        ],
+        "verifier": {
+          "auth_methods": [
+            "oauth2",
+            "bearer_token"
+          ],
+          "auth_primary": "oauth2",
+          "access_tier": "self_serve_free",
+          "api_types": [
+            "rest",
+            "websocket"
+          ],
+          "mcp": "official",
+          "verdict": "build_now",
+          "reasons": {
+            "auth": "OAuth2 flow for user account linking and token exchange is documented, and bot tokens are provided as Bearer tokens",
+            "access": "Developer Portal lets you create an app and obtain client credentials and bot token for free",
+            "mcp": "Discord publishes official API docs and token endpoints",
+            "verdict": "All required authentication and API details are publicly documented and obtainable without payment or approval"
+          },
+          "_model": "openai/gpt-oss-120b"
+        },
+        "autofix": []
+      },
+      {
+        "round": 1,
+        "queries": [
+          "Discord MCP server model context protocol"
+        ],
+        "new_sources": [
+          "https://discord.com",
+          "https://github.com/jb-bz/jb-discord-mcp",
+          "https://github.com/markhalliwell/discord-mcp",
+          "https://github.com/mine1x/discord-mcp",
+          "https://github.com/ngoctranfire/discord-mcp-server"
+        ],
+        "change_log": "Corrected mcp to community_only as there are third-party GitHub community integrations for Discord MCP rather than an official vendor-published server.",
+        "issues": [],
+        "verifier": {
+          "auth_methods": [
+            "bearer_token"
+          ],
+          "auth_primary": "bearer_token",
+          "access_tier": "self_serve_free",
+          "api_types": [
+            "rest",
+            "websocket"
+          ],
+          "mcp": "community_only",
+          "verdict": "build_now",
+          "reasons": {
+            "auth": "Discord provides a bot token that is used as a static bearer token for API calls (see source 3 and 4).",
+            "access": "Bot tokens are obtained for free via the Discord Developer Portal (source 3).",
+            "mcp": "MCP servers for Discord are community projects on GitHub (sources 2‑4); no official MCP server is published by Discord.",
+            "verdict": "With a free bot token and public REST/WebSocket APIs, a toolkit can be built today."
+          },
+          "_model": "openai/gpt-oss-120b"
+        },
+        "autofix": []
+      }
+    ],
+    "catalog": {
+      "in_catalog": true,
+      "slug": "discord",
+      "auth": [
+        "oauth2"
+      ],
+      "tools_count": 23
+    },
+    "changed_fields": [
+      "auth",
+      "mcp"
+    ],
+    "field_status": {
+      "auth": "corrected",
+      "access": "verified",
+      "api": "verified",
+      "mcp": "corrected",
+      "verdict": "verified"
+    },
+    "needs_human": [],
+    "before": {
+      "auth_methods": [
+        "oauth2",
+        "api_key"
+      ],
+      "auth_primary": "oauth2",
+      "access_tier": "self_serve_free",
+      "access_notes": "Sign up for a free developer account on the Discord Developer Portal to create applications and bots at no cost.",
+      "api_types": [
+        "rest",
+        "websocket"
+      ],
+      "api_breadth": "broad",
+      "api_notes": "Comprehensive REST and Gateway WebSocket APIs covering channels, guilds, users, messages, and voice base URL https://discord.com/api/v10",
+      "mcp": "none_found",
+      "mcp_url": null,
+      "verdict": "build_now",
+      "blocker": "none",
+      "blocker_notes": "Public API is fully self-serve and accessible for developers."
+    },
+    "seconds": 36.6
+  },
+  "_public_review": "yes",
+  "pass3": {
+    "before": {
+      "auth_methods": [
+        "oauth2",
+        "bearer_token"
+      ],
+      "auth_primary": "oauth2",
+      "access_tier": "self_serve_free",
+      "verdict": "build_now",
+      "blocker": "none"
+    },
+    "log": [
+      {
+        "loop": "L6_access",
+        "field": "access",
+        "change": null,
+        "reason": "L6 answer 'self_serve_free' not adopted: quote not verified on page"
+      },
+      {
+        "loop": "verdict_rule",
+        "field": "verdict",
+        "change": "build_now -> build_with_friction",
+        "reason": "derived from access self_serve_free / public review yes"
+      }
+    ],
+    "access_sources": [
+      "https://discord.com",
+      "https://discord.com/developers/?store_signup=true",
+      "https://docs.discord.com/developers/developer-tools/game-sdk.md",
+      "https://docs.discord.com/developers/events/gateway.md",
+      "https://docs.discord.com/developers/monetization/managing-skus"
+    ]
+  }
+}

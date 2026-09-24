@@ -1,0 +1,217 @@
+{
+  "one_liner": "Sell products, manage subscriptions, and track sales using the Gumroad API.",
+  "auth_methods": [
+    "oauth2",
+    "bearer_token"
+  ],
+  "auth_primary": "bearer_token",
+  "auth_notes": "Supports OAuth2 and personal access tokens generated from the Gumroad advanced settings.",
+  "access_tier": "self_serve_free",
+  "access_notes": "Sign in to Gumroad, navigate to advanced settings, and generate an access token for your account.",
+  "api_types": [
+    "rest"
+  ],
+  "api_breadth": "moderate",
+  "api_notes": "REST API v2 covering products, sales, subscribers, offer codes, and user profiles.",
+  "mcp": "community_only",
+  "mcp_url": "https://github.com/Contrite42/gumroad-mcp-server",
+  "verdict": "build_now",
+  "blocker": "none",
+  "blocker_notes": "Publicly documented API and self-serve access tokens allow building immediately.",
+  "evidence": {
+    "auth": {
+      "url": "https://gumroad.com/help/article/280-create-application-api",
+      "quote": "If you're writing some custom code you need to run with your Gumroad account, all you need is an access token. Your access token is used in the request header of every request to the API",
+      "check": "ok"
+    },
+    "access": {
+      "url": "https://gumroad.com/help/article/280-create-application-api",
+      "quote": "First, sign in to your Gumroad account. Then, go to advanced settings. Here, you'll see a form to create a new application.",
+      "check": "ok"
+    },
+    "api": {
+      "url": "https://github.com/Contrite42/gumroad-mcp-server",
+      "quote": "Built against Gumroad API v2 (the public, stable surface)",
+      "check": "ok"
+    },
+    "mcp": {
+      "url": "https://github.com/Contrite42/gumroad-mcp-server",
+      "quote": "MCP server for the Gumroad API. Drive your store from Claude Desktop or Cursor.",
+      "check": "ok"
+    },
+    "verdict": {
+      "url": "https://gumroad.com/help/article/280-create-application-api",
+      "quote": "With your access token in hand, head back to our API documentation for a list of endpoints the API makes available.",
+      "check": "ok"
+    }
+  },
+  "confidence": {
+    "auth": 1.0,
+    "access": 1.0,
+    "api": 1.0,
+    "mcp": 1.0,
+    "verdict": 1.0
+  },
+  "_model": "gemini-3.5-flash-lite",
+  "status": "ok",
+  "id": 48,
+  "name": "Gumroad",
+  "category": "Ecommerce",
+  "hint": "gumroad.com/api",
+  "sources": [
+    {
+      "url": "https://gumroad.com/api",
+      "via": "composio_fetch",
+      "chars": 200000
+    },
+    {
+      "url": "https://gumroad.com/help/article/280-create-application-api",
+      "via": "composio_fetch",
+      "chars": 5546
+    },
+    {
+      "url": "https://github.com/Contrite42/gumroad-mcp-server",
+      "via": "direct",
+      "chars": 4860
+    },
+    {
+      "url": "https://github.com/keithah/gumroad-mcp",
+      "via": "composio_fetch",
+      "chars": 4152
+    },
+    {
+      "url": "https://github.com/rmarescu/gumroad-mcp",
+      "via": "direct",
+      "chars": 5746
+    },
+    {
+      "url": "https://github.com/stcmain/gumroad-mcp",
+      "via": "direct",
+      "chars": 3860
+    },
+    {
+      "url": "https://gumroad.com/api",
+      "via": "pass3"
+    },
+    {
+      "url": "https://gumroad.com/help/article/280-create-application-api",
+      "via": "pass3"
+    },
+    {
+      "url": "https://gumroad.com/pricing",
+      "via": "pass3"
+    },
+    {
+      "url": "https://gumroad.com/help/article/82-membership-products",
+      "via": "pass3"
+    },
+    {
+      "url": "https://deepwiki.com/antiwork/gumroad/9.3-public-and-mobile-apis",
+      "via": "pass3"
+    }
+  ],
+  "queries": [
+    "Gumroad API authentication developer docs",
+    "Gumroad API access pricing plan developer",
+    "Gumroad MCP server"
+  ],
+  "seconds": 59.6,
+  "verification": {
+    "initial_issues": [],
+    "final_issues": [],
+    "rounds": [
+      {
+        "round": 0,
+        "issues": [],
+        "verifier": {
+          "auth_methods": [
+            "bearer_token",
+            "oauth2"
+          ],
+          "auth_primary": "bearer_token",
+          "access_tier": "self_serve_free",
+          "api_types": [
+            "rest",
+            "sdk_or_cli_only"
+          ],
+          "mcp": "community_only",
+          "verdict": "build_now",
+          "reasons": {
+            "auth": "The API supports Bearer tokens for direct access and OAuth2 (via 'Sign in with Gumroad' and Redirect URIs) for third-party applications. Bearer tokens are the primary method for simple integrations and CLI usage.",
+            "access": "Developers can self-serve by creating an application in their Gumroad account and manually generating an access token for their own account without any approval process or cost.",
+            "mcp": "There are multiple community-built MCP servers (e.g., Contrite42/gumroad-mcp-server, keithah/gumroad-mcp) available on GitHub, but no official MCP server is documented by Gumroad.",
+            "verdict": "Public documentation is available, credentials can be generated immediately for free, and the API is accessible via REST and CLI, allowing a toolkit to be built today."
+          },
+          "_model": "qwen/qwen3.8-27b"
+        },
+        "autofix": []
+      }
+    ],
+    "catalog": {
+      "in_catalog": true,
+      "slug": "gumroad",
+      "auth": [
+        "oauth2"
+      ],
+      "tools_count": 7
+    },
+    "changed_fields": [],
+    "field_status": {
+      "auth": "verified",
+      "access": "verified",
+      "api": "verified",
+      "mcp": "verified",
+      "verdict": "verified"
+    },
+    "needs_human": [],
+    "before": {
+      "auth_methods": [
+        "oauth2",
+        "bearer_token"
+      ],
+      "auth_primary": "bearer_token",
+      "access_tier": "self_serve_free",
+      "access_notes": "Sign in to Gumroad, navigate to advanced settings, and generate an access token for your account.",
+      "api_types": [
+        "rest"
+      ],
+      "api_breadth": "moderate",
+      "api_notes": "REST API v2 covering products, sales, subscribers, offer codes, and user profiles.",
+      "mcp": "community_only",
+      "mcp_url": "https://github.com/Contrite42/gumroad-mcp-server",
+      "verdict": "build_now",
+      "blocker": "none",
+      "blocker_notes": "Publicly documented API and self-serve access tokens allow building immediately."
+    },
+    "seconds": 341.0
+  },
+  "pass3": {
+    "before": {
+      "auth_methods": [
+        "oauth2",
+        "bearer_token"
+      ],
+      "auth_primary": "bearer_token",
+      "access_tier": "self_serve_free",
+      "verdict": "build_now",
+      "blocker": "none"
+    },
+    "log": [
+      {
+        "loop": "L6_access",
+        "error": "Groq failed: HTTP 429: {\"error\":{\"message\":\"Rate limit reached for model `qwen/qwen3.8-27b` in organization `org_01m2fd9xn8e3dtb9zfqc2jdhsc` service tier `on_demand` on tokens per day (TPD): Limit 200"
+      },
+      {
+        "loop": "L7_auth",
+        "error": "Groq failed: HTTP 429: {\"error\":{\"message\":\"Rate limit reached for model `qwen/qwen3.8-27b` in organization `org_01m2fd9xn8e3dtb9zfqc2jdhsc` service tier `on_demand` on tokens per day (TPD): Limit 200"
+      }
+    ],
+    "access_sources": [
+      "https://gumroad.com/api",
+      "https://gumroad.com/help/article/280-create-application-api",
+      "https://gumroad.com/pricing",
+      "https://gumroad.com/help/article/82-membership-products",
+      "https://deepwiki.com/antiwork/gumroad/9.3-public-and-mobile-apis"
+    ]
+  }
+}

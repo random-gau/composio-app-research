@@ -1,0 +1,322 @@
+{
+  "one_liner": "Cloud-scale monitoring, metrics, logging, and security platform with a comprehensive REST API.",
+  "auth_methods": [
+    "api_key",
+    "bearer_token",
+    "oauth2"
+  ],
+  "auth_primary": "api_key",
+  "auth_notes": "Authenticate via API key (DD-API-KEY) and application key (DD-APPLICATION-KEY), or via Bearer tokens (PATs/SATs) and OAuth2.",
+  "access_tier": "self_serve_trial",
+  "access_notes": "Requires signing up for a Datadog account/trial; full production usage requires a paid plan.",
+  "api_types": [
+    "rest"
+  ],
+  "api_breadth": "broad",
+  "api_notes": "Extensive REST API covering metrics, logs, dashboards, monitors, APM, security, and administration.",
+  "mcp": "official",
+  "mcp_url": "https://docs.datadoghq.com/mcp_server.md",
+  "verdict": "build_with_friction",
+  "blocker": "paid_plan",
+  "blocker_notes": "Requires a trial or paid account to obtain working API and application keys.",
+  "evidence": {
+    "auth": {
+      "url": "https://docs.datadoghq.com/api/latest.md",
+      "quote": "Authenticate to the API with an [API key](https://docs.datadoghq.com/account_management/api-app-keys.md#api-keys) using the header `DD-API-KEY`. For some endpoints, you also need an [Application key](https://docs.datadoghq.com/account_management/api-app-keys.md#application-keys), which uses the header `DD-APPLICATION-KEY`.",
+      "check": "ok"
+    },
+    "access": {
+      "url": "https://docs.datadoghq.com/account_management/billing/pricing.md",
+      "quote": "Datadog has many pricing plans to fit your needs. For more information, see the [Pricing](https://www.datadoghq.com/pricing) page.",
+      "check": "ok"
+    },
+    "api": {
+      "url": "https://docs.datadoghq.com/api",
+      "quote": "The Datadog API is an HTTP REST API. The API uses resource-oriented URLs to call the API, uses status codes to indicate the success or failure of requests, returns JSON from all requests, and uses standard HTTP response codes.",
+      "check": "ok"
+    },
+    "mcp": {
+      "url": "https://docs.datadoghq.com/mcp_server.md",
+      "id": "Datadog MCP Server",
+      "quote": "The Datadog MCP Server acts as a bridge between your observability data in Datadog and any AI agents that support the Model Context Protocol (MCP).",
+      "check": "ok"
+    },
+    "verdict": {
+      "url": "https://docs.datadoghq.com/account_management/billing/pricing.md",
+      "quote": "Datadog has many pricing plans to fit your needs.",
+      "check": "ok"
+    }
+  },
+  "confidence": {
+    "auth": 0.95,
+    "access": 0.9,
+    "api": 0.95,
+    "mcp": 0.8,
+    "verdict": 0.9
+  },
+  "_model": "gemini-3.5-flash-lite",
+  "status": "ok",
+  "id": 69,
+  "name": "Datadog",
+  "category": "Developer Infra & Data",
+  "hint": "docs.datadoghq.com/api",
+  "sources": [
+    {
+      "url": "https://docs.datadoghq.com/api",
+      "via": "direct",
+      "chars": 88544
+    },
+    {
+      "url": "https://docs.datadoghq.com/account_management/billing/pricing.md",
+      "via": "direct",
+      "chars": 12382
+    },
+    {
+      "url": "https://docs.datadoghq.com/account_management/personal-access-tokens.md",
+      "via": "direct",
+      "chars": 10881
+    },
+    {
+      "url": "https://docs.datadoghq.com/account_management/plan_and_usage/partner_experience.md",
+      "via": "direct",
+      "chars": 12478
+    },
+    {
+      "url": "https://docs.datadoghq.com/account_management/service-access-tokens.md",
+      "via": "direct",
+      "chars": 10899
+    },
+    {
+      "url": "https://docs.datadoghq.com/api/latest.md",
+      "via": "direct",
+      "chars": 7046
+    },
+    {
+      "url": "https://docs.datadoghq.com/mcp%5Fserver/setup.md?tab=codex",
+      "via": "verification"
+    },
+    {
+      "url": "https://docs.datadoghq.com/mcp_server.md",
+      "via": "verification"
+    },
+    {
+      "url": "https://github.com/DataDog/documentation/blob/master/content/en/mcp_server/_index.md",
+      "via": "verification"
+    },
+    {
+      "url": "https://github.com/ppandrangi/datadog-mcp",
+      "via": "verification"
+    },
+    {
+      "url": "https://github.com/datadog-ai-labs/mcp-server",
+      "via": "verification"
+    },
+    {
+      "url": "https://investors.datadoghq.com/news-releases/news-release-details/datadog-launches-mcp-server-provide-ai-agents-secure-real-time",
+      "via": "verification"
+    },
+    {
+      "url": "https://docs.datadoghq.com/api",
+      "via": "pass3"
+    },
+    {
+      "url": "https://docs.datadoghq.com/account_management/personal-access-tokens.md",
+      "via": "pass3"
+    },
+    {
+      "url": "https://docs.datadoghq.com/account_management/plan_and_usage/cost_details",
+      "via": "pass3"
+    },
+    {
+      "url": "https://docs.datadoghq.com/api/latest",
+      "via": "pass3"
+    },
+    {
+      "url": "https://docs.datadoghq.com/api/latest.md",
+      "via": "pass3"
+    }
+  ],
+  "queries": [
+    "Datadog API authentication developer docs",
+    "Datadog API access pricing plan developer",
+    "Datadog MCP server"
+  ],
+  "seconds": 60.3,
+  "verification_queries": [
+    "Datadog MCP server model context protocol"
+  ],
+  "verification": {
+    "initial_issues": [
+      {
+        "loop": "L4_verifier",
+        "field": "mcp",
+        "problem": "verifier says official vs agent none_found"
+      },
+      {
+        "loop": "L5_mcp_probe",
+        "field": "mcp",
+        "problem": "possible official MCP found: ['https://docs.datadoghq.com/mcp_server.md', 'https://github.com/datadog-ai-labs/mcp-server']",
+        "urls": [
+          "https://docs.datadoghq.com/mcp_server.md",
+          "https://github.com/datadog-ai-labs/mcp-server",
+          "https://investors.datadoghq.com/news-releases/news-release-details/datadog-launches-mcp-server-provide-ai-agents-secure-real-time"
+        ]
+      }
+    ],
+    "final_issues": [],
+    "rounds": [
+      {
+        "round": 0,
+        "issues": [
+          {
+            "loop": "L4_verifier",
+            "field": "mcp",
+            "problem": "verifier says official vs agent none_found"
+          },
+          {
+            "loop": "L5_mcp_probe",
+            "field": "mcp",
+            "problem": "possible official MCP found: ['https://docs.datadoghq.com/mcp_server.md', 'https://github.com/datadog-ai-labs/mcp-server']",
+            "urls": [
+              "https://docs.datadoghq.com/mcp_server.md",
+              "https://github.com/datadog-ai-labs/mcp-server",
+              "https://investors.datadoghq.com/news-releases/news-release-details/datadog-launches-mcp-server-provide-ai-agents-secure-real-time"
+            ]
+          }
+        ],
+        "verifier": {
+          "auth_methods": [
+            "api_key",
+            "oauth2"
+          ],
+          "auth_primary": "api_key",
+          "access_tier": "self_serve_trial",
+          "api_types": [
+            "rest"
+          ],
+          "mcp": "official",
+          "verdict": "build_with_friction",
+          "reasons": {
+            "auth": "The API supports Personal Access Tokens (PATs) and Service Access Tokens (which function as API keys) as well as OAuth2. PATs are the primary method for individual developer access, while OAuth2 is documented for broader authorization.",
+            "access": "Datadog offers a free 14-day trial for new accounts, after which a paid plan is required for continued usage. There is no permanent free tier for the full API, placing it in the self-serve trial category.",
+            "mcp": "The documentation explicitly lists 'MCP Server' and 'MCP Tools' under the API reference and developer portal sections, indicating an official MCP server is provided by the vendor.",
+            "verdict": "While the API is public and documented, building a production integration requires a paid plan after the trial period ends, creating friction for long-term use without immediate payment."
+          },
+          "_model": "qwen/qwen3.8-27b"
+        },
+        "autofix": []
+      },
+      {
+        "round": 1,
+        "queries": [
+          "Datadog MCP server model context protocol"
+        ],
+        "new_sources": [
+          "https://docs.datadoghq.com/api",
+          "https://docs.datadoghq.com/mcp%5Fserver/setup.md?tab=codex",
+          "https://docs.datadoghq.com/mcp_server.md",
+          "https://github.com/DataDog/documentation/blob/master/content/en/mcp_server/_index.md",
+          "https://github.com/ppandrangi/datadog-mcp",
+          "https://github.com/datadog-ai-labs/mcp-server",
+          "https://investors.datadoghq.com/news-releases/news-release-details/datadog-launches-mcp-server-provide-ai-agents-secure-real-time"
+        ],
+        "change_log": "Updated mcp field to official based on official documentation confirming the Datadog MCP Server.",
+        "issues": [],
+        "verifier": {
+          "auth_methods": [
+            "api_key",
+            "bearer_token",
+            "oauth2"
+          ],
+          "auth_primary": "api_key",
+          "access_tier": "self_serve_free",
+          "api_types": [
+            "rest"
+          ],
+          "mcp": "official",
+          "verdict": "build_now",
+          "reasons": {
+            "auth": "The API supports Personal Access Tokens (PAT) and Service Access Tokens (SAT) which are passed as bearer tokens or API keys, as well as OAuth2 for the MCP server and general authorization.",
+            "access": "Datadog offers a free plan (self-serve) where developers can sign up and obtain API keys (PAT/SAT) to access the API without immediate payment.",
+            "mcp": "Datadog publishes and documents an official MCP Server for connecting AI agents to its observability data.",
+            "verdict": "Public documentation is available, credentials can be obtained via self-service on a free plan, and an official MCP server exists, allowing a toolkit to be built immediately."
+          },
+          "_model": "qwen/qwen3.8-27b"
+        },
+        "autofix": []
+      }
+    ],
+    "catalog": {
+      "in_catalog": true,
+      "slug": "datadog",
+      "auth": [
+        "api_key",
+        "bearer_token",
+        "oauth2"
+      ],
+      "tools_count": 64
+    },
+    "changed_fields": [
+      "mcp"
+    ],
+    "field_status": {
+      "auth": "verified",
+      "access": "verified",
+      "api": "verified",
+      "mcp": "corrected",
+      "verdict": "verified"
+    },
+    "needs_human": [],
+    "before": {
+      "auth_methods": [
+        "api_key",
+        "bearer_token",
+        "oauth2"
+      ],
+      "auth_primary": "api_key",
+      "access_tier": "self_serve_trial",
+      "access_notes": "Requires signing up for a Datadog account/trial; full production usage requires a paid plan.",
+      "api_types": [
+        "rest"
+      ],
+      "api_breadth": "broad",
+      "api_notes": "Extensive REST API covering metrics, logs, dashboards, monitors, APM, security, and administration.",
+      "mcp": "none_found",
+      "mcp_url": null,
+      "verdict": "build_with_friction",
+      "blocker": "paid_plan",
+      "blocker_notes": "Requires a trial or paid account to obtain working API and application keys."
+    },
+    "seconds": 431.7
+  },
+  "pass3": {
+    "before": {
+      "auth_methods": [
+        "api_key",
+        "bearer_token",
+        "oauth2"
+      ],
+      "auth_primary": "api_key",
+      "access_tier": "self_serve_trial",
+      "verdict": "build_with_friction",
+      "blocker": "paid_plan"
+    },
+    "log": [
+      {
+        "loop": "L6_access",
+        "error": "Groq failed: HTTP 429: {\"error\":{\"message\":\"Rate limit reached for model `qwen/qwen3.8-27b` in organization `org_01m2fd9xn8e3dtb9zfqc2jdhsc` service tier `on_demand` on tokens per day (TPD): Limit 200"
+      },
+      {
+        "loop": "L7_auth",
+        "error": "Groq failed: HTTP 429: {\"error\":{\"message\":\"Rate limit reached for model `qwen/qwen3.8-27b` in organization `org_01m2fd9xn8e3dtb9zfqc2jdhsc` service tier `on_demand` on tokens per day (TPD): Limit 200"
+      }
+    ],
+    "access_sources": [
+      "https://docs.datadoghq.com/api",
+      "https://docs.datadoghq.com/account_management/personal-access-tokens.md",
+      "https://docs.datadoghq.com/account_management/plan_and_usage/cost_details",
+      "https://docs.datadoghq.com/api/latest",
+      "https://docs.datadoghq.com/api/latest.md"
+    ]
+  }
+}

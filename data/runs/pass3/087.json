@@ -1,0 +1,213 @@
+{
+  "one_liner": "Cloud-based accounting software platform with APIs for invoicing, bank feeds, and financial data.",
+  "auth_methods": [
+    "oauth2"
+  ],
+  "auth_primary": "oauth2",
+  "auth_notes": "OAuth 2.0 with authorization code flow or client credentials (for custom connections).",
+  "access_tier": "self_serve_free",
+  "access_notes": "Sign up for a free developer account on the Xero Developer Portal to get credentials and access test environments.",
+  "api_types": [
+    "rest"
+  ],
+  "api_breadth": "broad",
+  "api_notes": "Comprehensive REST APIs covering accounting, bank feeds, assets, projects, and files.",
+  "mcp": "official",
+  "mcp_url": "https://developer.xero.com",
+  "verdict": "build_now",
+  "blocker": "none",
+  "blocker_notes": "Public APIs and self-serve developer accounts are freely available.",
+  "evidence": {
+    "auth": {
+      "url": "https://developer.xero.com/custom-development",
+      "quote": "Alongside our standard OAuth 2.0 flow, Custom Connections is a streamlined integration option for anyone building bespoke solutions for Xero businesses.",
+      "check": "ok"
+    },
+    "access": {
+      "url": "https://developer.xero.com",
+      "quote": "Sign up for a free account to build on the Xero platform. Take a look at our getting started guide, SDKs and the other steps you need to complete for certification.",
+      "check": "ok"
+    },
+    "api": {
+      "url": "https://developer.xero.com",
+      "quote": "This includes Xero APIs, SDKs, code samples, documentation and more.",
+      "check": "ok"
+    },
+    "mcp": {
+      "url": "https://developer.xero.com",
+      "quote": "Get Started with Xero's AI Toolkit including OpenAI Agents SDK, MCP Server, LangChain and prompt examples.",
+      "check": "ok"
+    },
+    "verdict": {
+      "url": "https://developer.xero.com",
+      "quote": "Sign up for a free account to build on the Xero platform.",
+      "check": "ok"
+    }
+  },
+  "confidence": {
+    "auth": 0.9,
+    "access": 0.9,
+    "api": 0.9,
+    "mcp": 0.9,
+    "verdict": 0.9
+  },
+  "_model": "gemini-3.5-flash-lite",
+  "status": "ok",
+  "id": 87,
+  "name": "Xero",
+  "category": "Finance & Fintech",
+  "hint": "developer.xero.com",
+  "sources": [
+    {
+      "url": "https://developer.xero.com",
+      "via": "direct",
+      "chars": 4781
+    },
+    {
+      "url": "https://devblog.xero.com/migrating-from-xass-to-our-new-pricing-structure-fa2d045f02c1",
+      "via": "composio_fetch",
+      "chars": 5947
+    },
+    {
+      "url": "https://devblog.xero.com/xero-developer-migration-timelines-and-next-steps-9e0c6c0c913f",
+      "via": "composio_fetch",
+      "chars": 4863
+    },
+    {
+      "url": "https://developer.xero.com/custom-development",
+      "via": "direct",
+      "chars": 4929
+    },
+    {
+      "url": "https://developer.xero.com/faq",
+      "via": "direct",
+      "chars": 38041
+    },
+    {
+      "url": "https://developer.xero.com/faq/custom-integration",
+      "via": "direct",
+      "chars": 4546
+    },
+    {
+      "url": "https://developer.xero.com",
+      "via": "pass3"
+    },
+    {
+      "url": "https://devblog.xero.com/xero-developer-migration-timelines-and-next-steps-9e0c6c0c913f",
+      "via": "pass3"
+    },
+    {
+      "url": "https://developer.xero.com/custom-development",
+      "via": "pass3"
+    },
+    {
+      "url": "https://developer.xero.com/faq",
+      "via": "pass3"
+    },
+    {
+      "url": "https://developer.xero.com/faq/custom-integration",
+      "via": "pass3"
+    }
+  ],
+  "queries": [
+    "Xero API authentication developer docs",
+    "Xero API access pricing plan developer",
+    "Xero MCP server"
+  ],
+  "seconds": 46.7,
+  "verification": {
+    "initial_issues": [],
+    "final_issues": [],
+    "rounds": [
+      {
+        "round": 0,
+        "issues": [],
+        "verifier": {
+          "auth_methods": [
+            "oauth2",
+            "jwt_or_signed"
+          ],
+          "auth_primary": "oauth2",
+          "access_tier": "self_serve_free",
+          "api_types": [
+            "rest"
+          ],
+          "mcp": "official",
+          "verdict": "build_now",
+          "reasons": {
+            "auth": "The platform uses standard OAuth 2.0 for general integrations. Custom Connections utilize the client credentials grant type (a form of OAuth 2.0) with client ID and secret, which fits the 'jwt_or_signed' or 'oauth2' category depending on strict interpretation, but OAuth2 is the primary documented method. The sources explicitly mention 'standard OAuth 2.0 flow' and 'client credentials grant type'.",
+            "access": "Developers can sign up for a free account to build on the platform. Custom Connections can be connected to the Xero Demo Company for free for development purposes. While new pricing tiers exist for production/app store distribution, self-serve free access for development and internal innovation is available.",
+            "mcp": "Source 1 explicitly states: 'Get Started with Xero's AI Toolkit including OpenAI Agents SDK, MCP Server, LangChain and prompt examples.' This indicates an official MCP server is provided by the vendor.",
+            "verdict": "Public documentation is available, self-serve free credentials (developer account/demo company) are accessible, and an official MCP server exists, allowing a toolkit to be built today."
+          },
+          "_model": "qwen/qwen3.8-27b"
+        },
+        "autofix": []
+      }
+    ],
+    "catalog": {
+      "in_catalog": true,
+      "slug": "xero",
+      "auth": [
+        "oauth2"
+      ],
+      "tools_count": 53
+    },
+    "changed_fields": [],
+    "field_status": {
+      "auth": "verified",
+      "access": "verified",
+      "api": "verified",
+      "mcp": "verified",
+      "verdict": "verified"
+    },
+    "needs_human": [],
+    "before": {
+      "auth_methods": [
+        "oauth2"
+      ],
+      "auth_primary": "oauth2",
+      "access_tier": "self_serve_free",
+      "access_notes": "Sign up for a free developer account on the Xero Developer Portal to get credentials and access test environments.",
+      "api_types": [
+        "rest"
+      ],
+      "api_breadth": "broad",
+      "api_notes": "Comprehensive REST APIs covering accounting, bank feeds, assets, projects, and files.",
+      "mcp": "official",
+      "mcp_url": "https://developer.xero.com",
+      "verdict": "build_now",
+      "blocker": "none",
+      "blocker_notes": "Public APIs and self-serve developer accounts are freely available."
+    },
+    "seconds": 117.7
+  },
+  "pass3": {
+    "before": {
+      "auth_methods": [
+        "oauth2"
+      ],
+      "auth_primary": "oauth2",
+      "access_tier": "self_serve_free",
+      "verdict": "build_now",
+      "blocker": "none"
+    },
+    "log": [
+      {
+        "loop": "L6_access",
+        "error": "Groq failed: HTTP 429: {\"error\":{\"message\":\"Rate limit reached for model `qwen/qwen3.8-27b` in organization `org_01m2fd9xn8e3dtb9zfqc2jdhsc` service tier `on_demand` on tokens per day (TPD): Limit 200"
+      },
+      {
+        "loop": "L7_auth",
+        "error": "Groq failed: HTTP 429: {\"error\":{\"message\":\"Rate limit reached for model `qwen/qwen3.8-27b` in organization `org_01m2fd9xn8e3dtb9zfqc2jdhsc` service tier `on_demand` on tokens per day (TPD): Limit 200"
+      }
+    ],
+    "access_sources": [
+      "https://developer.xero.com",
+      "https://devblog.xero.com/xero-developer-migration-timelines-and-next-steps-9e0c6c0c913f",
+      "https://developer.xero.com/custom-development",
+      "https://developer.xero.com/faq",
+      "https://developer.xero.com/faq/custom-integration"
+    ]
+  }
+}

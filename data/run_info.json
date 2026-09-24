@@ -1,6 +1,6 @@
 {
   "date": "24 Sep 2026",
   "repo": "https://github.com/random-gau/composio-app-research",
-  "runtime": "about 3 hours of wall-clock for both passes, mostly waiting on free-tier rate limits",
-  "summary": "Run on 24 Sep 2026 from a MacBook Air (Python 3.9). Composio REST v3.1 for search, fetch and the toolkit catalog; Gemini 3.5 Flash-Lite for extraction and adjudication; Groq-hosted gpt-oss-120b, gpt-oss-20b, qwen3.8-27b and allam-2-7b as the blind verifier."
+  "runtime": "about 4.5 hours of wall-clock across three passes, mostly waiting on free-tier rate limits",
+  "summary": "Run on 24 Sep 2026 from a MacBook Air (Python 3.9). Composio REST v3.1 for search, fetch and the toolkit catalog; Gemini 3.5 Flash-Lite for pass 1-2 extraction and adjudication; Groq-hosted gpt-oss-120b, gpt-oss-20b, qwen3.8-27b and allam-2-7b as the pass 2 blind verifier and the pass 3 model."
 }

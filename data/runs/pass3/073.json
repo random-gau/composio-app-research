@@ -1,0 +1,287 @@
+{
+  "one_liner": "Issue tracking and project management tool built for high-performance software teams.",
+  "auth_methods": [
+    "oauth2",
+    "api_key",
+    "bearer_token"
+  ],
+  "auth_primary": "oauth2",
+  "auth_notes": "Supports OAuth 2.0 with authorization code flow, PKCE, client credentials, and personal API keys.",
+  "access_tier": "self_serve_free",
+  "access_notes": "Free tier available; developers can sign up and create applications/API keys immediately at zero cost.",
+  "api_types": [
+    "graphql"
+  ],
+  "api_breadth": "broad",
+  "api_notes": "Comprehensive GraphQL API covering issues, projects, comments, workflows, and workspace administration at https://api.linear.app/graphql.",
+  "mcp": "official",
+  "mcp_url": "https://mcp.linear.app/mcp",
+  "verdict": "build_now",
+  "blocker": "none",
+  "blocker_notes": "Fully documented public GraphQL API with self-serve developer access.",
+  "evidence": {
+    "auth": {
+      "url": "https://linear.app/developers/graphql",
+      "quote": "The Linear API supports personal API keys and OAuth2 authentication.",
+      "check": "ok"
+    },
+    "access": {
+      "url": "https://linear.app/developers/agents.md",
+      "quote": "It does not cost anything to develop agents in Linear.",
+      "check": "ok"
+    },
+    "api": {
+      "url": "https://linear.app/developers/graphql",
+      "quote": "Linear’s public API is built using GraphQL. It’s the same API we use internally for developing our applications.",
+      "check": "ok"
+    },
+    "mcp": {
+      "url": "https://linear.app/docs/mcp",
+      "quote": "The Model Context Protocol (MCP) server provides a standardized interface that allows any compatible AI model or agent to access your Linear data in a simple and secure way.",
+      "check": "ok"
+    },
+    "verdict": {
+      "url": "https://linear.app/developers/graphql",
+      "quote": "Linear’s public API is built using GraphQL. It’s the same API we use internally for developing our applications.",
+      "check": "ok"
+    }
+  },
+  "confidence": {
+    "auth": 5.0,
+    "access": 5.0,
+    "api": 5.0,
+    "mcp": 4.0,
+    "verdict": 5.0
+  },
+  "_model": "gemini-3.5-flash-lite",
+  "status": "ok",
+  "id": 73,
+  "name": "Linear",
+  "category": "Productivity & PM",
+  "hint": "developers.linear.app",
+  "sources": [
+    {
+      "url": "https://developers.linear.app",
+      "via": "direct",
+      "chars": 844
+    },
+    {
+      "url": "https://linear.app/developers",
+      "via": "direct",
+      "chars": 844
+    },
+    {
+      "url": "https://linear.app/developers/agents.md",
+      "via": "direct",
+      "chars": 6189
+    },
+    {
+      "url": "https://linear.app/developers/file-storage-authentication",
+      "via": "direct",
+      "chars": 1923
+    },
+    {
+      "url": "https://linear.app/developers/graphql",
+      "via": "direct",
+      "chars": 10735
+    },
+    {
+      "url": "https://linear.app/developers/oauth-2-0-authentication",
+      "via": "direct",
+      "chars": 14698
+    },
+    {
+      "url": "https://linear.app/docs/mcp",
+      "via": "verification"
+    },
+    {
+      "url": "https://github.com/geropl/linear-mcp-go",
+      "via": "verification"
+    },
+    {
+      "url": "https://github.laiyagushi.com/tacticlaunch/mcp-linear",
+      "via": "verification"
+    },
+    {
+      "url": "https://glama.ai/mcp/servers/iceener/linear-streamable-mcp-server",
+      "via": "verification"
+    },
+    {
+      "url": "https://linear.app/docs/mcp.md",
+      "via": "verification"
+    },
+    {
+      "url": "https://linear.app/changelog/2025-05-01-mcp",
+      "via": "verification"
+    },
+    {
+      "url": "https://developers.linear.app",
+      "via": "pass3"
+    },
+    {
+      "url": "https://linear.app/developers",
+      "via": "pass3"
+    },
+    {
+      "url": "https://linear.app/developers/agents.md",
+      "via": "pass3"
+    },
+    {
+      "url": "https://linear.app/developers/graphql",
+      "via": "pass3"
+    },
+    {
+      "url": "https://linear.app/developers/oauth-2-0-authentication",
+      "via": "pass3"
+    }
+  ],
+  "queries": [
+    "Linear API authentication developer docs",
+    "Linear API access pricing plan developer",
+    "Linear MCP server"
+  ],
+  "seconds": 46.8,
+  "verification_queries": [
+    "Linear MCP server model context protocol"
+  ],
+  "verification": {
+    "initial_issues": [
+      {
+        "loop": "L5_mcp_probe",
+        "field": "mcp",
+        "problem": "possible official MCP found: ['https://linear.app/docs/mcp.md', 'https://linear.app/changelog/2025-05-01-mcp']",
+        "urls": [
+          "https://linear.app/docs/mcp.md",
+          "https://linear.app/changelog/2025-05-01-mcp"
+        ]
+      }
+    ],
+    "final_issues": [],
+    "rounds": [
+      {
+        "round": 0,
+        "issues": [
+          {
+            "loop": "L5_mcp_probe",
+            "field": "mcp",
+            "problem": "possible official MCP found: ['https://linear.app/docs/mcp.md', 'https://linear.app/changelog/2025-05-01-mcp']",
+            "urls": [
+              "https://linear.app/docs/mcp.md",
+              "https://linear.app/changelog/2025-05-01-mcp"
+            ]
+          }
+        ],
+        "verifier": {
+          "auth_methods": [
+            "oauth2",
+            "api_key",
+            "bearer_token",
+            "none"
+          ],
+          "auth_primary": "oauth2",
+          "access_tier": "unknown",
+          "api_types": [
+            "none"
+          ],
+          "mcp": "unknown",
+          "verdict": "unknown",
+          "reasons": {},
+          "_model": "allam-2-7b"
+        },
+        "autofix": []
+      },
+      {
+        "round": 1,
+        "queries": [
+          "Linear MCP server model context protocol"
+        ],
+        "new_sources": [
+          "https://developers.linear.app",
+          "https://linear.app/docs/mcp",
+          "https://github.com/geropl/linear-mcp-go",
+          "https://github.laiyagushi.com/tacticlaunch/mcp-linear",
+          "https://glama.ai/mcp/servers/iceener/linear-streamable-mcp-server",
+          "https://linear.app/docs/mcp.md",
+          "https://linear.app/changelog/2025-05-01-mcp"
+        ],
+        "change_log": "Updated mcp field to 'official' and provided the official MCP server URL as documented by Linear.",
+        "issues": [],
+        "verifier": {
+          "error": "Unterminated string starting at: line 71 column 41 (char 4014)"
+        },
+        "autofix": []
+      }
+    ],
+    "catalog": {
+      "in_catalog": true,
+      "slug": "linear",
+      "auth": [
+        "api_key",
+        "oauth2"
+      ],
+      "tools_count": 47
+    },
+    "changed_fields": [
+      "auth",
+      "mcp"
+    ],
+    "field_status": {
+      "auth": "corrected",
+      "access": "verified",
+      "api": "verified",
+      "mcp": "corrected",
+      "verdict": "verified"
+    },
+    "needs_human": [],
+    "before": {
+      "auth_methods": [
+        "oauth2",
+        "bearer_token"
+      ],
+      "auth_primary": "oauth2",
+      "access_tier": "self_serve_free",
+      "access_notes": "Free tier available; developers can sign up and create applications/API keys immediately at zero cost.",
+      "api_types": [
+        "graphql"
+      ],
+      "api_breadth": "broad",
+      "api_notes": "Comprehensive GraphQL API covering issues, projects, comments, workflows, and workspace administration at https://api.linear.app/graphql.",
+      "mcp": "none_found",
+      "mcp_url": null,
+      "verdict": "build_now",
+      "blocker": "none",
+      "blocker_notes": "Fully documented public GraphQL API with self-serve developer access."
+    },
+    "seconds": 225.3
+  },
+  "pass3": {
+    "before": {
+      "auth_methods": [
+        "oauth2",
+        "api_key",
+        "bearer_token"
+      ],
+      "auth_primary": "oauth2",
+      "access_tier": "self_serve_free",
+      "verdict": "build_now",
+      "blocker": "none"
+    },
+    "log": [
+      {
+        "loop": "L6_access",
+        "error": "Groq failed: HTTP 429: {\"error\":{\"message\":\"Rate limit reached for model `qwen/qwen3.8-27b` in organization `org_01m2fd9xn8e3dtb9zfqc2jdhsc` service tier `on_demand` on tokens per day (TPD): Limit 200"
+      },
+      {
+        "loop": "L7_auth",
+        "error": "Groq failed: HTTP 429: {\"error\":{\"message\":\"Rate limit reached for model `qwen/qwen3.8-27b` in organization `org_01m2fd9xn8e3dtb9zfqc2jdhsc` service tier `on_demand` on tokens per day (TPD): Limit 200"
+      }
+    ],
+    "access_sources": [
+      "https://developers.linear.app",
+      "https://linear.app/developers",
+      "https://linear.app/developers/agents.md",
+      "https://linear.app/developers/graphql",
+      "https://linear.app/developers/oauth-2-0-authentication"
+    ]
+  }
+}

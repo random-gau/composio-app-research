@@ -1,0 +1,353 @@
+{
+  "one_liner": "Devin is an autonomous AI software engineer that can write, run and test code.",
+  "auth_methods": [
+    "bearer_token"
+  ],
+  "auth_primary": "bearer_token",
+  "auth_notes": "Uses a bearer token (Service User API Key or Personal Access Token) in the Authorization header.",
+  "access_tier": "self_serve_free",
+  "access_notes": "Sign up directly at app.devin.ai for a free tier or self-serve paid plans.",
+  "api_types": [
+    "rest"
+  ],
+  "api_breadth": "moderate",
+  "api_notes": "REST API covering sessions, enterprise features, and more.",
+  "mcp": "official",
+  "mcp_url": "https://docs.devin.ai",
+  "verdict": "build_now",
+  "blocker": "none",
+  "blocker_notes": "None",
+  "evidence": {
+    "auth": {
+      "url": "https://docs.devin.ai/api-reference/authentication",
+      "quote": "Include your token in the Authorization header: \"Authorization: Bearer cog_your_token_here\"",
+      "check": "partial"
+    },
+    "access": {
+      "url": "https://docs.devin.ai/admin/billing",
+      "quote": "Self-serve: Free, Pro, Max, and Teams plans you can sign up for directly at app.devin.ai.",
+      "check": "ok"
+    },
+    "api": {
+      "url": "https://docs.devin.ai/api-reference/authentication",
+      "quote": "Legacy API keys are used with the v1 and v2 APIs. They continue to work during the deprecation period but do not support new features like RBAC, session attribution, or cursor-based pagination.",
+      "check": "ok"
+    },
+    "mcp": {
+      "url": "https://docs.devin.ai/api-reference/authentication",
+      "quote": "Devin MCP Verify your API key is correct and properly formatted in the Authorization header. For MCP usage, ensure you are using a service user API key (not a legacy key).",
+      "check": "ok"
+    },
+    "verdict": {
+      "url": "https://docs.devin.ai/admin/billing",
+      "quote": "Self-serve: Free, Pro, Max, and Teams plans you can sign up for directly at app.devin.ai.",
+      "check": "ok"
+    }
+  },
+  "confidence": {
+    "auth": 0.9,
+    "access": 0.9,
+    "api": 0.8,
+    "mcp": 0.8,
+    "verdict": 0.9
+  },
+  "_model": "gemini-3.5-flash-lite",
+  "status": "ok",
+  "id": 96,
+  "name": "Devin",
+  "category": "AI Research & Media",
+  "hint": "docs.devin.ai (MCP)",
+  "sources": [
+    {
+      "url": "https://docs.devin.ai",
+      "via": "direct",
+      "chars": 4805
+    },
+    {
+      "url": "https://devin.ai/blog/pricing-v2",
+      "via": "direct",
+      "chars": 8780
+    },
+    {
+      "url": "https://devin.ai/pricing",
+      "via": "direct",
+      "chars": 3507
+    },
+    {
+      "url": "https://docs.devin.ai/admin/billing",
+      "via": "direct",
+      "chars": 909
+    },
+    {
+      "url": "https://docs.devin.ai/admin/billing/self-serve",
+      "via": "direct",
+      "chars": 6896
+    },
+    {
+      "url": "https://docs.devin.ai/api-reference/authentication",
+      "via": "direct",
+      "chars": 7576
+    },
+    {
+      "url": "https://api.devin.ai/docs",
+      "via": "verification"
+    },
+    {
+      "url": "https://docs.devin.ai/api-reference/common-flows",
+      "via": "verification"
+    },
+    {
+      "url": "https://docs.devin.ai/api-reference/getting-started/migration-guide",
+      "via": "verification"
+    },
+    {
+      "url": "https://api.devin.ai/docs",
+      "via": "verification"
+    },
+    {
+      "url": "https://docs.devin.ai/api-reference/common-flows",
+      "via": "verification"
+    },
+    {
+      "url": "https://docs.devin.ai/api-reference/getting-started/migration-guide",
+      "via": "verification"
+    },
+    {
+      "url": "https://docs.devin.ai",
+      "via": "pass3"
+    },
+    {
+      "url": "https://devin.ai/pricing",
+      "via": "pass3"
+    },
+    {
+      "url": "https://docs.devin.ai/admin/billing",
+      "via": "pass3"
+    },
+    {
+      "url": "https://docs.devin.ai/admin/billing/self-serve",
+      "via": "pass3"
+    },
+    {
+      "url": "https://docs.devin.ai/api-reference/authentication",
+      "via": "pass3"
+    }
+  ],
+  "queries": [
+    "Devin API authentication developer docs",
+    "Devin API access pricing plan developer",
+    "Devin MCP server"
+  ],
+  "seconds": 52.9,
+  "verification_queries": [
+    "Devin API authentication OAuth API key",
+    "Devin API reference authentication",
+    "Devin API authentication OAuth API key",
+    "Devin API reference authentication"
+  ],
+  "verification": {
+    "initial_issues": [
+      {
+        "loop": "L1_evidence",
+        "field": "auth",
+        "problem": "quote only partially matches page",
+        "url": "https://docs.devin.ai/api-reference/authentication",
+        "match": 0.5
+      }
+    ],
+    "final_issues": [
+      {
+        "loop": "L1_evidence",
+        "field": "auth",
+        "problem": "quote only partially matches page",
+        "url": "https://docs.devin.ai/api-reference/authentication",
+        "match": 0.7
+      },
+      {
+        "loop": "L4_verifier",
+        "field": "auth",
+        "problem": "verifier says ['oauth2', 'api_key'] vs agent ['bearer_token']"
+      }
+    ],
+    "rounds": [
+      {
+        "round": 0,
+        "issues": [
+          {
+            "loop": "L1_evidence",
+            "field": "auth",
+            "problem": "quote only partially matches page",
+            "url": "https://docs.devin.ai/api-reference/authentication",
+            "match": 0.5
+          }
+        ],
+        "verifier": {
+          "error": "Unterminated string starting at: line 124 column 3 (char 4028)"
+        },
+        "autofix": []
+      },
+      {
+        "round": 1,
+        "queries": [
+          "Devin API authentication OAuth API key",
+          "Devin API reference authentication"
+        ],
+        "new_sources": [
+          "https://docs.devin.ai",
+          "https://api.devin.ai/docs",
+          "https://docs.devin.ai/api-reference/authentication",
+          "https://docs.devin.ai/api-reference/common-flows",
+          "https://docs.devin.ai/api-reference/getting-started/migration-guide"
+        ],
+        "change_log": "Updated auth evidence to correctly cite the official bearer token documentation page.",
+        "issues": [
+          {
+            "loop": "L1_evidence",
+            "field": "auth",
+            "problem": "quote only partially matches page",
+            "url": "https://docs.devin.ai/api-reference/authentication",
+            "match": 0.7
+          },
+          {
+            "loop": "L4_verifier",
+            "field": "auth",
+            "problem": "verifier says ['oauth2', 'api_key'] vs agent ['bearer_token']"
+          }
+        ],
+        "verifier": {
+          "auth_methods": [
+            "oauth2",
+            "api_key"
+          ],
+          "auth_primary": "oauth2",
+          "access_tier": "unknown",
+          "api_types": [
+            "rest",
+            "graphql",
+            "websocket"
+          ],
+          "mcp": "unknown",
+          "verdict": "unknown",
+          "reasons": {},
+          "_model": "allam-2-7b"
+        },
+        "autofix": []
+      },
+      {
+        "round": 2,
+        "queries": [
+          "Devin API authentication OAuth API key",
+          "Devin API reference authentication",
+          "Devin API authentication OAuth API key",
+          "Devin API reference authentication"
+        ],
+        "new_sources": [
+          "https://docs.devin.ai",
+          "https://api.devin.ai/docs",
+          "https://docs.devin.ai/api-reference/authentication",
+          "https://docs.devin.ai/api-reference/common-flows",
+          "https://docs.devin.ai/api-reference/getting-started/migration-guide"
+        ],
+        "change_log": "Updated auth evidence quote to match exact text from docs, confirming bearer token usage.",
+        "issues": [
+          {
+            "loop": "L1_evidence",
+            "field": "auth",
+            "problem": "quote only partially matches page",
+            "url": "https://docs.devin.ai/api-reference/authentication",
+            "match": 0.7
+          },
+          {
+            "loop": "L4_verifier",
+            "field": "auth",
+            "problem": "verifier says ['oauth2', 'api_key'] vs agent ['bearer_token']"
+          }
+        ],
+        "verifier": {
+          "auth_methods": [
+            "oauth2",
+            "api_key"
+          ],
+          "auth_primary": "oauth2",
+          "access_tier": "unknown",
+          "api_types": [
+            "rest",
+            "graphql",
+            "websocket"
+          ],
+          "mcp": "unknown",
+          "verdict": "unknown",
+          "reasons": {},
+          "_model": "allam-2-7b"
+        },
+        "autofix": []
+      }
+    ],
+    "catalog": {
+      "in_catalog": true,
+      "slug": "devin_mcp",
+      "auth": [
+        "api_key"
+      ],
+      "tools_count": 22
+    },
+    "changed_fields": [],
+    "field_status": {
+      "auth": "needs_human",
+      "access": "verified",
+      "api": "verified",
+      "mcp": "verified",
+      "verdict": "verified"
+    },
+    "needs_human": [
+      "auth"
+    ],
+    "before": {
+      "auth_methods": [
+        "bearer_token"
+      ],
+      "auth_primary": "bearer_token",
+      "access_tier": "self_serve_free",
+      "access_notes": "Sign up directly at app.devin.ai for a free tier or self-serve paid plans.",
+      "api_types": [
+        "rest"
+      ],
+      "api_breadth": "moderate",
+      "api_notes": "REST API covering sessions, enterprise features, and more.",
+      "mcp": "official",
+      "mcp_url": "https://docs.devin.ai",
+      "verdict": "build_now",
+      "blocker": "none",
+      "blocker_notes": "None"
+    },
+    "seconds": 396.4
+  },
+  "pass3": {
+    "before": {
+      "auth_methods": [
+        "bearer_token"
+      ],
+      "auth_primary": "bearer_token",
+      "access_tier": "self_serve_free",
+      "verdict": "build_now",
+      "blocker": "none"
+    },
+    "log": [
+      {
+        "loop": "L6_access",
+        "error": "Groq failed: HTTP 429: {\"error\":{\"message\":\"Rate limit reached for model `qwen/qwen3.8-27b` in organization `org_01m2fd9xn8e3dtb9zfqc2jdhsc` service tier `on_demand` on tokens per day (TPD): Limit 200"
+      },
+      {
+        "loop": "L7_auth",
+        "error": "Groq failed: HTTP 429: {\"error\":{\"message\":\"Rate limit reached for model `qwen/qwen3.8-27b` in organization `org_01m2fd9xn8e3dtb9zfqc2jdhsc` service tier `on_demand` on tokens per day (TPD): Limit 200"
+      }
+    ],
+    "access_sources": [
+      "https://docs.devin.ai",
+      "https://devin.ai/pricing",
+      "https://docs.devin.ai/admin/billing",
+      "https://docs.devin.ai/admin/billing/self-serve",
+      "https://docs.devin.ai/api-reference/authentication"
+    ]
+  }
+}

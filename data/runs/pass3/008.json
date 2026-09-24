@@ -1,0 +1,302 @@
+{
+  "one_liner": "Sales CRM combining calling, email, SMS, pipeline management, reporting, and an AI sales agent.",
+  "auth_methods": [
+    "api_key",
+    "basic"
+  ],
+  "auth_primary": "api_key",
+  "auth_notes": "API keys use HTTP Basic Auth with the key as the username and an empty password; OAuth 2.0 is also supported.",
+  "access_tier": "self_serve_trial",
+  "access_notes": "The pricing page indicates that API access is available during a free trial, but continued use requires choosing a paid plan.",
+  "api_types": [
+    "rest"
+  ],
+  "api_breadth": "broad",
+  "api_notes": "Comprehensive REST API covering leads, contacts, opportunities, tasks, files, webhooks, reporting, and more at https://api.close.com/api/v1",
+  "mcp": "official",
+  "mcp_url": "https://developer.close.com/_mcp/server",
+  "verdict": "build_with_friction",
+  "blocker": "paid_plan",
+  "blocker_notes": "Public REST API, official MCP server, and self-serve trial make it fully ready to build today.",
+  "evidence": {
+    "auth": {
+      "url": "https://developer.close.com/api/overview.md",
+      "quote": "Two methods are supported:\n\n- API Keys — Best for scripts, internal tools, and server-side integrations. Use HTTP Basic Auth with your API key as the username and an empty password.\n- OAuth 2.0 — Best for user-facing integrations.",
+      "check": "ok"
+    },
+    "access": {
+      "url": "https://close.com/pricing",
+      "quote": "What happens when my free trial ends? If you decide Close is a fit, you can choose a plan and continue without interruption.",
+      "check": "ok"
+    },
+    "api": {
+      "url": "https://developer.close.com/api/overview.md",
+      "quote": "Close uses industry-standard REST conventions with predictable URL structures, standard HTTP methods, and JSON request/response bodies.",
+      "check": "ok"
+    },
+    "mcp": {
+      "url": "https://developer.close.com/llms.txt",
+      "quote": "For AI client integration (Claude Code, Cursor, etc.), connect to the MCP server at https://developer.close.com/_mcp/server",
+      "check": "ok"
+    },
+    "verdict": {
+      "url": "https://developer.close.com/api/overview.md",
+      "quote": "Close uses industry-standard REST conventions with predictable URL structures, standard HTTP methods, and JSON request/response bodies.",
+      "check": "ok"
+    }
+  },
+  "confidence": {
+    "auth": 1.0,
+    "access": 1.0,
+    "api": 1.0,
+    "mcp": 1.0,
+    "verdict": 1.0
+  },
+  "_model": "gemini-3.5-flash-lite",
+  "status": "ok",
+  "id": 8,
+  "name": "Close",
+  "category": "CRM & Sales",
+  "hint": "close.com",
+  "sources": [
+    {
+      "url": "https://close.com",
+      "via": "direct",
+      "chars": 3833
+    },
+    {
+      "url": "https://close.com/pricing",
+      "via": "direct",
+      "chars": 17541
+    },
+    {
+      "url": "https://developer.close.com/api/overview.md",
+      "via": "direct",
+      "chars": 2647
+    },
+    {
+      "url": "https://developer.close.com/api/overview/changelog/llms.txt",
+      "via": "direct",
+      "chars": 8459
+    },
+    {
+      "url": "https://developer.close.com/api/resources/leads/merge.md",
+      "via": "direct",
+      "chars": 4620
+    },
+    {
+      "url": "https://developer.close.com/llms.txt",
+      "via": "direct",
+      "chars": 60263
+    },
+    {
+      "url": "https://help.close.com/docs/mcp-server",
+      "via": "verification"
+    },
+    {
+      "url": "https://onboarding.closeplanapp.com/wizard/step-08",
+      "via": "verification"
+    },
+    {
+      "url": "https://close.com",
+      "via": "pass3"
+    },
+    {
+      "url": "https://close.com/api",
+      "via": "pass3"
+    },
+    {
+      "url": "https://close.com/pricing",
+      "via": "pass3"
+    },
+    {
+      "url": "https://developer.close.com/api.md",
+      "via": "pass3"
+    },
+    {
+      "url": "https://developer.close.com/llms.txt",
+      "via": "pass3"
+    }
+  ],
+  "queries": [
+    "Close API authentication developer docs",
+    "Close API access pricing plan developer",
+    "Close MCP server"
+  ],
+  "seconds": 86.6,
+  "verification_queries": [
+    "Close API access requirements plan",
+    "Close developer account API key free OR partner OR enterprise"
+  ],
+  "verification": {
+    "initial_issues": [
+      {
+        "loop": "L4_verifier",
+        "field": "access",
+        "problem": "verifier says self_serve_trial vs agent self_serve_free"
+      },
+      {
+        "loop": "L4_verifier",
+        "field": "verdict",
+        "problem": "verifier says build_with_friction vs agent build_now"
+      }
+    ],
+    "final_issues": [],
+    "rounds": [
+      {
+        "round": 0,
+        "issues": [
+          {
+            "loop": "L4_verifier",
+            "field": "access",
+            "problem": "verifier says self_serve_trial vs agent self_serve_free"
+          },
+          {
+            "loop": "L4_verifier",
+            "field": "verdict",
+            "problem": "verifier says build_with_friction vs agent build_now"
+          }
+        ],
+        "verifier": {
+          "auth_methods": [
+            "api_key",
+            "oauth2",
+            "basic"
+          ],
+          "auth_primary": "oauth2",
+          "access_tier": "self_serve_trial",
+          "api_types": [
+            "rest"
+          ],
+          "mcp": "official",
+          "verdict": "build_with_friction",
+          "reasons": {
+            "auth": "Close API supports API Key authentication (via HTTP Basic Auth) and OAuth 2.0, both documented publicly.",
+            "access": "API credentials are obtainable during a free trial period; continued use requires a paid subscription.",
+            "mcp": "Close provides an official MCP server as noted on the main site.",
+            "verdict": "Public docs and trial credentials enable building an integration, but the need for a trial (and eventual paid plan) introduces friction."
+          },
+          "_model": "openai/gpt-oss-120b"
+        },
+        "autofix": []
+      },
+      {
+        "round": 1,
+        "queries": [
+          "Close API access requirements plan",
+          "Close developer account API key free OR partner OR enterprise"
+        ],
+        "new_sources": [
+          "https://close.com",
+          "https://developer.close.com/api/overview.md",
+          "https://developer.close.com/llms.txt",
+          "https://help.close.com/docs/mcp-server",
+          "https://onboarding.closeplanapp.com/wizard/step-08"
+        ],
+        "change_log": "Confirmed access is self_serve_free via free trial with no credit card required, supporting build_now verdict.",
+        "issues": [],
+        "verifier": {
+          "auth_methods": [
+            "api_key",
+            "oauth2"
+          ],
+          "auth_primary": "oauth2",
+          "access_tier": "self_serve_free",
+          "api_types": [
+            "rest"
+          ],
+          "mcp": "official",
+          "verdict": "build_now",
+          "reasons": {
+            "auth": "API keys via HTTP Basic Auth and OAuth 2.0 are documented and available to all developers; OAuth is the primary method for third‑party integrations.",
+            "access": "Developers can sign up for a free trial and immediately obtain API keys or register an OAuth app without approval; no paid plan required for API use.",
+            "mcp": "Close publishes an official MCP server at https://mcp.close.com/mcp, documented in the help center and developer docs.",
+            "verdict": "Public REST API, self‑serve credentials, and official MCP server allow a toolkit to be built today with no friction."
+          },
+          "_model": "openai/gpt-oss-20b"
+        },
+        "autofix": []
+      }
+    ],
+    "catalog": {
+      "in_catalog": true,
+      "slug": "close",
+      "auth": [
+        "api_key"
+      ],
+      "tools_count": 14
+    },
+    "changed_fields": [],
+    "field_status": {
+      "auth": "verified",
+      "access": "confirmed_after_recheck",
+      "api": "verified",
+      "mcp": "verified",
+      "verdict": "confirmed_after_recheck"
+    },
+    "needs_human": [],
+    "before": {
+      "auth_methods": [
+        "api_key",
+        "oauth2",
+        "basic"
+      ],
+      "auth_primary": "api_key",
+      "access_tier": "self_serve_free",
+      "access_notes": "Close is designed to be self-serve, offering a free trial to sign up and get credentials without talking to sales.",
+      "api_types": [
+        "rest"
+      ],
+      "api_breadth": "broad",
+      "api_notes": "Comprehensive REST API covering leads, contacts, opportunities, tasks, files, webhooks, reporting, and more at https://api.close.com/api/v1",
+      "mcp": "official",
+      "mcp_url": "https://developer.close.com/_mcp/server",
+      "verdict": "build_now",
+      "blocker": "none",
+      "blocker_notes": "Public REST API, official MCP server, and self-serve trial make it fully ready to build today."
+    },
+    "seconds": 95.0
+  },
+  "_public_review": "unknown",
+  "pass3": {
+    "before": {
+      "auth_methods": [
+        "api_key",
+        "oauth2",
+        "basic"
+      ],
+      "auth_primary": "api_key",
+      "access_tier": "self_serve_free",
+      "verdict": "build_now",
+      "blocker": "none"
+    },
+    "log": [
+      {
+        "loop": "L6_access",
+        "field": "access",
+        "change": "self_serve_free -> self_serve_trial",
+        "reason": "The pricing page indicates that API access is available during a free trial, but continued use requires choosing a paid plan.",
+        "url": "https://close.com/pricing"
+      },
+      {
+        "loop": "L7_auth",
+        "field": "auth",
+        "change": "['api_key', 'oauth2', 'basic'] -> ['api_key', 'basic']",
+        "reason": "dropped (no verified quote): ['oauth2']"
+      },
+      {
+        "loop": "verdict_rule",
+        "field": "verdict",
+        "change": "build_now -> build_with_friction",
+        "reason": "derived from access self_serve_trial / public review unknown"
+      }
+    ],
+    "access_sources": [
+      "https://close.com",
+      "https://close.com/api",
+      "https://close.com/pricing",
+      "https://developer.close.com/api.md",
+      "https://developer.close.com/llms.txt"
+    ]
+  }
+}

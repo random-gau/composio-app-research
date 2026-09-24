@@ -1,0 +1,297 @@
+{
+  "one_liner": "Customer service platform combining shared inboxes, teams, and AI-powered workflows into one coordinated system.",
+  "auth_methods": [
+    "oauth2",
+    "api_key",
+    "bearer_token"
+  ],
+  "auth_primary": "oauth2",
+  "auth_notes": "Front's public API supports OAuth 2.0 as well as API tokens (bearer tokens).",
+  "access_tier": "self_serve_free",
+  "access_notes": "Users can create a free developer account or use the free 14-day trial to obtain developer credentials and access the API.",
+  "api_types": [
+    "rest"
+  ],
+  "api_breadth": "broad",
+  "api_notes": "Broad REST API covering conversations, inboxes, channels, contacts, messages, and more via api2.frontapp.com.",
+  "mcp": "official",
+  "mcp_url": "https://help.front.com/en/articles/4883136",
+  "verdict": "build_now",
+  "blocker": "none",
+  "blocker_notes": "Public documentation, self-serve trial/accounts, and an official MCP server allow building immediately.",
+  "evidence": {
+    "auth": {
+      "url": "https://help.front.com/en/articles/2438",
+      "quote": "API requests made by a partner integration on behalf of a company via OAuth have a separate rate limit",
+      "check": "ok"
+    },
+    "access": {
+      "url": "https://community.front.com/developer-q-a-37/how-can-i-get-access-to-a-developer-account-given-that-i-am-already-a-front-customer-with-an-existing-user-acount-93",
+      "quote": "You can create a free developer account on our Developer Portal.",
+      "check": "ok"
+    },
+    "api": {
+      "url": "https://help.front.com/en/articles/2438",
+      "quote": "POST https://api2.frontapp.com/channels/{channel_id}/incoming_messages",
+      "check": "ok"
+    },
+    "mcp": {
+      "url": "https://help.front.com/en/articles/4883136",
+      "quote": "Get started with Front's MCP server [beta]",
+      "check": "ok"
+    },
+    "verdict": {
+      "url": "https://community.front.com/developer-q-a-37/how-can-i-get-access-to-a-developer-account-given-that-i-am-already-a-front-customer-with-an-existing-user-acount-93",
+      "quote": "You can create a free developer account on our Developer Portal.",
+      "check": "ok"
+    }
+  },
+  "confidence": {
+    "auth": 0.9,
+    "access": 0.9,
+    "api": 0.9,
+    "mcp": 0.9,
+    "verdict": 0.9
+  },
+  "_model": "gemini-3.5-flash-lite",
+  "status": "ok",
+  "id": 14,
+  "name": "Front",
+  "category": "Support & Helpdesk",
+  "hint": "front.com",
+  "sources": [
+    {
+      "url": "https://front.com",
+      "via": "direct",
+      "chars": 4546
+    },
+    {
+      "url": "https://community.front.com/developer-q-a-37/what-s-the-recommended-approach-for-developing-application-requests-2489",
+      "via": "direct",
+      "chars": 3411
+    },
+    {
+      "url": "https://front.com/pricing",
+      "via": "direct",
+      "chars": 11130
+    },
+    {
+      "url": "https://front.com/webassets/pages/pricing/Front-Pricing-One-Pager-2023-03-06.pdf",
+      "via": "composio_fetch",
+      "chars": 8223
+    },
+    {
+      "url": "https://help.front.com/en/articles/2438",
+      "via": "direct",
+      "chars": 5000
+    },
+    {
+      "url": "https://help.front.com/en/articles/4883136",
+      "via": "direct",
+      "chars": 7829
+    },
+    {
+      "url": "https://community.front.com/developer-q-a-37/how-can-i-get-access-to-a-developer-account-given-that-i-am-already-a-front-customer-with-an-existing-user-acount-93",
+      "via": "verification"
+    },
+    {
+      "url": "https://help.front.com/en/articles/2331",
+      "via": "verification"
+    },
+    {
+      "url": "https://dev.frontapp.com/docs/authentication",
+      "via": "verification"
+    },
+    {
+      "url": "https://front.com",
+      "via": "pass3"
+    },
+    {
+      "url": "https://front.com/pricing?network=g",
+      "via": "pass3"
+    },
+    {
+      "url": "https://front.com/webassets/pages/pricing/Front-Pricing-One-Pager-2023-03-06.pdf",
+      "via": "pass3"
+    },
+    {
+      "url": "https://help.front.com/en/articles/2178",
+      "via": "pass3"
+    },
+    {
+      "url": "https://help.front.com/en/articles/2438",
+      "via": "pass3"
+    }
+  ],
+  "queries": [
+    "Front API authentication developer docs",
+    "Front API access pricing plan developer",
+    "Front MCP server"
+  ],
+  "seconds": 46.7,
+  "verification_queries": [
+    "Front API access requirements plan",
+    "Front developer account API key free OR partner OR enterprise"
+  ],
+  "verification": {
+    "initial_issues": [
+      {
+        "loop": "L4_verifier",
+        "field": "access",
+        "problem": "verifier says self_serve_trial vs agent self_serve_free"
+      },
+      {
+        "loop": "L4_verifier",
+        "field": "verdict",
+        "problem": "verifier says blocked vs agent build_now"
+      }
+    ],
+    "final_issues": [],
+    "rounds": [
+      {
+        "round": 0,
+        "issues": [
+          {
+            "loop": "L4_verifier",
+            "field": "access",
+            "problem": "verifier says self_serve_trial vs agent self_serve_free"
+          },
+          {
+            "loop": "L4_verifier",
+            "field": "verdict",
+            "problem": "verifier says blocked vs agent build_now"
+          }
+        ],
+        "verifier": {
+          "auth_methods": [
+            "other"
+          ],
+          "auth_primary": "other",
+          "access_tier": "self_serve_trial",
+          "api_types": [
+            "none"
+          ],
+          "mcp": "unknown",
+          "verdict": "blocked",
+          "reasons": {
+            "auth": "No information on authentication methods is provided in the sources.",
+            "access": "Only a free 14‑day trial is offered; developer accounts mimic paid Scale plans and require a trial or paid plan, with no self‑serve free credentials for production.",
+            "mcp": "The sources do not mention any official or community MCP server.",
+            "verdict": "Without documented public API details, a toolkit cannot be built today."
+          },
+          "_model": "openai/gpt-oss-120b"
+        },
+        "autofix": []
+      },
+      {
+        "round": 1,
+        "queries": [
+          "Front API access requirements plan",
+          "Front developer account API key free OR partner OR enterprise"
+        ],
+        "new_sources": [
+          "https://front.com",
+          "https://community.front.com/developer-q-a-37/how-can-i-get-access-to-a-developer-account-given-that-i-am-already-a-front-customer-with-an-existing-user-acount-93",
+          "https://help.front.com/en/articles/2331",
+          "https://help.front.com/en/articles/2438",
+          "https://dev.frontapp.com/docs/authentication"
+        ],
+        "change_log": "Updated access_tier to self_serve_free and verdict to build_now because Front provides a free developer account option and public API documentation to build immediately.",
+        "issues": [],
+        "verifier": {
+          "auth_methods": [
+            "bearer_token",
+            "oauth2"
+          ],
+          "auth_primary": "oauth2",
+          "access_tier": "self_serve_free",
+          "api_types": [
+            "rest"
+          ],
+          "mcp": "unknown",
+          "verdict": "build_now",
+          "reasons": {
+            "auth": "Front’s API uses static API tokens (bearer tokens) and supports OAuth for partner integrations (source 3, source 4).",
+            "access": "A free developer account can be created and API tokens generated by an admin (source 2), providing self‑serve free credentials.",
+            "mcp": "No information about an official or community MCP server is provided in the sources.",
+            "verdict": "Public documentation and free developer credentials are available, so a toolkit can be built today."
+          },
+          "_model": "openai/gpt-oss-120b"
+        },
+        "autofix": []
+      }
+    ],
+    "catalog": {
+      "in_catalog": true,
+      "slug": "front",
+      "auth": [
+        "api_key"
+      ],
+      "tools_count": 0,
+      "via": "slug_lookup",
+      "mcp_wrapper": false
+    },
+    "changed_fields": [],
+    "field_status": {
+      "auth": "verified",
+      "access": "confirmed_after_recheck",
+      "api": "verified",
+      "mcp": "verified",
+      "verdict": "confirmed_after_recheck"
+    },
+    "needs_human": [],
+    "before": {
+      "auth_methods": [
+        "oauth2",
+        "api_key",
+        "bearer_token"
+      ],
+      "auth_primary": "oauth2",
+      "access_tier": "self_serve_free",
+      "access_notes": "Users can sign up for a free trial or account to obtain developer credentials and access the API.",
+      "api_types": [
+        "rest"
+      ],
+      "api_breadth": "broad",
+      "api_notes": "Broad REST API covering conversations, inboxes, channels, contacts, messages, and more via api2.frontapp.com.",
+      "mcp": "official",
+      "mcp_url": "https://help.front.com/en/articles/4883136",
+      "verdict": "build_now",
+      "blocker": "none",
+      "blocker_notes": "Public documentation, self-serve trial/accounts, and an official MCP server allow building immediately."
+    },
+    "seconds": 33.2
+  },
+  "pass3": {
+    "before": {
+      "auth_methods": [
+        "oauth2",
+        "api_key",
+        "bearer_token"
+      ],
+      "auth_primary": "oauth2",
+      "access_tier": "self_serve_free",
+      "verdict": "build_now",
+      "blocker": "none"
+    },
+    "log": [
+      {
+        "loop": "L6_access",
+        "error": "Unterminated string starting at: line 1 column 3190 (char 3189)"
+      },
+      {
+        "loop": "L7_auth",
+        "field": "auth",
+        "change": null,
+        "reason": "no method could be grounded; pass 2 answer kept"
+      }
+    ],
+    "access_sources": [
+      "https://front.com",
+      "https://front.com/pricing?network=g",
+      "https://front.com/webassets/pages/pricing/Front-Pricing-One-Pager-2023-03-06.pdf",
+      "https://help.front.com/en/articles/2178",
+      "https://help.front.com/en/articles/2438"
+    ]
+  }
+}

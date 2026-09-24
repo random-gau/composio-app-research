@@ -1,0 +1,278 @@
+{
+  "one_liner": "Salesforce Commerce Cloud provides headless ecommerce APIs, sandboxes, and development tools.",
+  "auth_methods": [
+    "oauth2",
+    "jwt_or_signed"
+  ],
+  "auth_primary": "oauth2",
+  "auth_notes": "OAuth2 with JWT tokens via Salesforce Account Manager and SLAS.",
+  "access_tier": "partner_or_sales",
+  "access_notes": "Requires purchasing sandbox credits, setting up user roles, and configuring an API client via Account Manager or Account Executive.",
+  "api_types": [
+    "rest"
+  ],
+  "api_breadth": "broad",
+  "api_notes": "Salesforce Commerce API (SCAPI) covers catalogs, products, shoppers, orders, and more.",
+  "mcp": "official",
+  "mcp_url": "https://developer.salesforce.com/docs/commerce/b2c-commerce/guide/mcp-dx-intro.html",
+  "verdict": "blocked",
+  "blocker": "partner_approval",
+  "blocker_notes": "Requires sandbox credits and contract interaction with an Account Executive to get working credentials.",
+  "evidence": {
+    "auth": {
+      "url": "https://developer.salesforce.com/docs/commerce/b2c-commerce/guide/b2c-get-started-sandboxes.html",
+      "quote": "Token Endpoint Auth Method | client_secret_post\nAccess Token Format | JWT",
+      "check": "ok"
+    },
+    "access": {
+      "url": "https://developer.salesforce.com/docs/commerce/b2c-commerce/guide/b2c-get-started-sandboxes.html",
+      "quote": "To access on-demand sandboxes, you must purchase sandbox credits, set up user roles, configure an API client key, and obtain your realm ID. ... To use on-demand sandboxes, you must purchase sandbox credits. Contact your Account Executive for more information.",
+      "check": "ok"
+    },
+    "api": {
+      "url": "https://developer.salesforce.com/docs/commerce/b2c-commerce/guide/mcp-dx-intro.html",
+      "quote": "The new B2C DX MCP server is a unified MCP that is the starting point for various development tools and storefronts. The B2C DX MCP server provides your AI assistant with real-time access to B2C Commerce APIs (SCAPI)",
+      "check": "ok"
+    },
+    "mcp": {
+      "url": "https://developer.salesforce.com/docs/commerce/b2c-commerce/guide/mcp-dx-intro.html",
+      "quote": "Use the B2C DX Model Context Protocol (MCP), which is part of the B2C Developer Toolkit, to enhance your development workflow by connecting an AI assistant... The B2C DX MCP Server is implemented in the `@salesforce/b2c-dx-mcp` package",
+      "check": "ok"
+    },
+    "verdict": {
+      "url": "https://developer.salesforce.com/docs/commerce/b2c-commerce/guide/b2c-get-started-sandboxes.html",
+      "quote": "To use on-demand sandboxes, you must purchase sandbox credits. Contact your Account Executive for more information.",
+      "check": "ok"
+    }
+  },
+  "confidence": {
+    "auth": 0.9,
+    "access": 0.9,
+    "api": 0.9,
+    "mcp": 1.0,
+    "verdict": 0.9
+  },
+  "_model": "gemini-3.5-flash-lite",
+  "status": "ok",
+  "id": 44,
+  "name": "Salesforce Commerce Cloud",
+  "category": "Ecommerce",
+  "hint": "developer.salesforce.com/docs/commerce",
+  "sources": [
+    {
+      "url": "https://developer.salesforce.com/docs/commerce",
+      "via": "composio_fetch",
+      "chars": 217
+    },
+    {
+      "url": "https://developer.salesforce.com/docs/commerce/b2c-commerce/guide/b2c-get-started-sandboxes.html",
+      "via": "composio_fetch",
+      "chars": 6286
+    },
+    {
+      "url": "https://developer.salesforce.com/docs/commerce/b2c-commerce/guide/create-storefront-using-sandbox.html",
+      "via": "composio_fetch",
+      "chars": 4752
+    },
+    {
+      "url": "https://developer.salesforce.com/docs/commerce/b2c-commerce/guide/hybrid-implementation.html",
+      "via": "composio_fetch",
+      "chars": 4887
+    },
+    {
+      "url": "https://developer.salesforce.com/docs/commerce/b2c-commerce/guide/mcp-dx-intro.html",
+      "via": "composio_fetch",
+      "chars": 4002
+    },
+    {
+      "url": "https://developer.salesforce.com/docs/commerce/b2c-commerce/guide/security.html",
+      "via": "composio_fetch",
+      "chars": 6939
+    },
+    {
+      "url": "https://developer.salesforce.com/docs/commerce/b2c-commerce/guide/scapi-get-started.html",
+      "via": "verification"
+    },
+    {
+      "url": "https://developer.salesforce.com/docs/commerce/commerce-api/guide/auth-z-scope-catalog.html",
+      "via": "verification"
+    },
+    {
+      "url": "https://developer.salesforce.com/docs/commerce",
+      "via": "pass3"
+    },
+    {
+      "url": "https://developer.salesforce.com/docs/commerce/b2c-commerce/guide/scapi-get-started.html",
+      "via": "pass3"
+    },
+    {
+      "url": "https://developer.salesforce.com/docs/commerce/commerce-api/guide/authorization-for-admin-apis.html",
+      "via": "pass3"
+    },
+    {
+      "url": "https://developer.salesforce.com/docs/commerce/commerce-api/guide/authorization-for-shopper-apis.html",
+      "via": "pass3"
+    },
+    {
+      "url": "https://developer.salesforce.com/docs/commerce/commerce-api/guide/b2c-develop-with-on-demand-sandbox.html",
+      "via": "pass3"
+    }
+  ],
+  "queries": [
+    "Salesforce Commerce Cloud API authentication developer docs",
+    "Salesforce Commerce Cloud API access pricing plan developer",
+    "Salesforce Commerce Cloud MCP server"
+  ],
+  "seconds": 46.7,
+  "verification_queries": [
+    "Salesforce Commerce Cloud API access requirements plan",
+    "Salesforce Commerce Cloud developer account API key free OR partner OR enterprise",
+    "Salesforce Commerce Cloud MCP server model context protocol"
+  ],
+  "verification": {
+    "initial_issues": [
+      {
+        "loop": "L4_verifier",
+        "field": "access",
+        "problem": "verifier says approval_or_review vs agent partner_or_sales"
+      },
+      {
+        "loop": "L4_verifier",
+        "field": "mcp",
+        "problem": "verifier says none_found vs agent official"
+      }
+    ],
+    "final_issues": [],
+    "rounds": [
+      {
+        "round": 0,
+        "issues": [
+          {
+            "loop": "L4_verifier",
+            "field": "access",
+            "problem": "verifier says approval_or_review vs agent partner_or_sales"
+          },
+          {
+            "loop": "L4_verifier",
+            "field": "mcp",
+            "problem": "verifier says none_found vs agent official"
+          }
+        ],
+        "verifier": {
+          "auth_methods": [
+            "oauth2",
+            "jwt_or_signed"
+          ],
+          "auth_primary": "oauth2",
+          "access_tier": "approval_or_review",
+          "api_types": [
+            "rest"
+          ],
+          "mcp": "none_found",
+          "verdict": "build_with_friction",
+          "reasons": {
+            "auth": "Public docs reference OAuth2 client‑credentials flow via API client ID and password, and JWT (SLAS) for Shopper APIs.",
+            "access": "To obtain credentials, an administrator must create an API client ID in Account Manager; this requires approval or review before a developer can use the Sandbox API.",
+            "mcp": "No official MCP server is documented by Salesforce Commerce Cloud.",
+            "verdict": "The API is publicly documented and accessible, but a developer must go through an admin approval step to get working credentials, so building today requires that friction."
+          },
+          "_model": "openai/gpt-oss-20b"
+        },
+        "autofix": []
+      },
+      {
+        "round": 1,
+        "queries": [
+          "Salesforce Commerce Cloud API access requirements plan",
+          "Salesforce Commerce Cloud developer account API key free OR partner OR enterprise",
+          "Salesforce Commerce Cloud MCP server model context protocol"
+        ],
+        "new_sources": [
+          "https://developer.salesforce.com/docs/commerce",
+          "https://developer.salesforce.com/docs/commerce/b2c-commerce/guide/b2c-get-started-sandboxes.html",
+          "https://developer.salesforce.com/docs/commerce/b2c-commerce/guide/scapi-get-started.html",
+          "https://developer.salesforce.com/docs/commerce/b2c-commerce/guide/security.html",
+          "https://developer.salesforce.com/docs/commerce/commerce-api/guide/auth-z-scope-catalog.html"
+        ],
+        "change_log": "Updated access_tier to partner_or_sales due to requiring sandbox credits and account executive interaction, and mcp to official as Salesforce explicitly documents the official B2C DX MCP Server.",
+        "issues": [],
+        "verifier": {
+          "error": "Groq failed: HTTP 429: {\"error\":{\"message\":\"Rate limit reached for model `openai/gpt-oss-20b` in organization `org_01m2fd9xn8e3dtb9zfqc2jdhsc` service tier `on_demand` on tokens per minute (TPM): Limi"
+        },
+        "autofix": []
+      }
+    ],
+    "catalog": {
+      "in_catalog": false,
+      "checked": [
+        "salesforcecommercecloud",
+        "commercecloud",
+        "salesforce_commerce_cloud"
+      ]
+    },
+    "changed_fields": [],
+    "field_status": {
+      "auth": "verified",
+      "access": "confirmed_after_recheck",
+      "api": "verified",
+      "mcp": "confirmed_after_recheck",
+      "verdict": "verified"
+    },
+    "needs_human": [],
+    "before": {
+      "auth_methods": [
+        "oauth2",
+        "jwt_or_signed"
+      ],
+      "auth_primary": "oauth2",
+      "access_tier": "partner_or_sales",
+      "access_notes": "Requires purchasing sandbox credits or a partner/enterprise contract via Account Executive.",
+      "api_types": [
+        "rest"
+      ],
+      "api_breadth": "broad",
+      "api_notes": "Salesforce Commerce API (SCAPI) covers catalogs, products, shoppers, orders, and more.",
+      "mcp": "official",
+      "mcp_url": "https://developer.salesforce.com/docs/commerce/b2c-commerce/guide/mcp-dx-intro.html",
+      "verdict": "build_with_friction",
+      "blocker": "partner_approval",
+      "blocker_notes": "Requires sandbox credits and contract interaction with an Account Executive to get working credentials."
+    },
+    "seconds": 111.2
+  },
+  "pass3": {
+    "before": {
+      "auth_methods": [
+        "oauth2",
+        "jwt_or_signed"
+      ],
+      "auth_primary": "oauth2",
+      "access_tier": "partner_or_sales",
+      "verdict": "build_with_friction",
+      "blocker": "partner_approval"
+    },
+    "log": [
+      {
+        "loop": "L6_access",
+        "error": "Groq failed: HTTP 429: {\"error\":{\"message\":\"Rate limit reached for model `qwen/qwen3.8-27b` in organization `org_01m2fd9xn8e3dtb9zfqc2jdhsc` service tier `on_demand` on tokens per day (TPD): Limit 200"
+      },
+      {
+        "loop": "L7_auth",
+        "error": "Groq failed: HTTP 429: {\"error\":{\"message\":\"Rate limit reached for model `qwen/qwen3.8-27b` in organization `org_01m2fd9xn8e3dtb9zfqc2jdhsc` service tier `on_demand` on tokens per day (TPD): Limit 200"
+      },
+      {
+        "loop": "verdict_rule",
+        "field": "verdict",
+        "change": "build_with_friction -> blocked",
+        "reason": "derived from access partner_or_sales / public review None"
+      }
+    ],
+    "access_sources": [
+      "https://developer.salesforce.com/docs/commerce",
+      "https://developer.salesforce.com/docs/commerce/b2c-commerce/guide/scapi-get-started.html",
+      "https://developer.salesforce.com/docs/commerce/commerce-api/guide/authorization-for-admin-apis.html",
+      "https://developer.salesforce.com/docs/commerce/commerce-api/guide/authorization-for-shopper-apis.html",
+      "https://developer.salesforce.com/docs/commerce/commerce-api/guide/b2c-develop-with-on-demand-sandbox.html"
+    ]
+  }
+}

@@ -1,6 +1,6 @@
 {
   "h1": "76 of 100 apps could become agent toolkits today. Half of the rest are held back by a price, not a partner.",
-  "lede": "An agent built on Composio's own search and fetch tools researched 100 apps for auth, access gate, API surface, MCP and buildability. It cited a source URL and a verbatim quote for every answer. Five verification loops then flagged 68 apps, changed answers on 43 and sent 22 to a human. On a hand-checked sample, accuracy rose from 75.8% after one pass to 81.1% after the loops.",
+  "lede": "An agent built on Composio's own search and fetch tools researched 100 apps for auth, access gate, API surface, MCP and buildability. It cited a source URL and a verbatim quote for every answer. Five verification loops then flagged 68 apps, changed answers on 43 and sent 22 to a human. On a hand-checked sample, accuracy rose from 75.8% after one pass to 81.1% after the loops. A third pass looked better still on that sample but did not improve a held-out test, so it was not adopted.",
   "patterns": [
     {
       "k": "76",
@@ -33,7 +33,7 @@
       "body": "Ads platforms gate on app review (Google Ads, LinkedIn Ads). Enterprise data vendors sell access by contract (DealCloud, PitchBook). Marketplaces and fintech require approval (Amazon SP-API, Ramp). These are the conversations to start early."
     }
   ],
-  "acc_intro": "Twenty apps, two per category from a seeded random draw, were labelled from vendor docs and checked by hand. iPayX could not be confirmed, which leaves 19 apps \u00d7 5 fields = 95 judgements. The same 95 are scored for pass 1 and pass 2.",
+  "acc_intro": "Two hand-checked samples. The dev sample (20 apps, two per category; iPayX left unscored) gives 95 judgements and was used to find error patterns and design pass 3. The held-out test (10 new apps, one per category, 50 judgements) was drawn after that and never used for design. The final 100-app table uses pass 2.",
   "misses": [
     "Gladly got worse because of the loops. Pass 1 correctly said enterprise-only. The verifier read 'sandbox environment' as free self-serve and the adjudicator agreed. The root cause is my rubric: it counted any free sandbox as self-serve without requiring that anyone can sign up.",
     "Ecwid is still wrong. Its docs say 'Only stores on paid plans can access API'; the agent read the free custom-app flow as self-serve.",
@@ -44,10 +44,11 @@
     "Auth over-listing on 8 of 19 apps. The agent lists every method it sees mentioned, such as Basic for GitHub or OAuth for Plaid's bank-connection flow. It picks the right main method on 18 of 19."
   ],
   "limits": [
-    "19 scored apps give 95 judgements, so one answer moves the score by about a point.",
-    "The reference labels were drafted by Claude from vendor docs before the agent ran, then confirmed by Gaurav opening every source. That is a light human check, not two independent annotators.",
-    "Free tiers shaped the run. Gemini's stronger model ran out of quota, so every extraction used gemini-3.5-flash-lite. Groq's daily caps pushed the verifier across four models, one of them small (allam-2-7b). 7 apps got no blind verifier.",
-    "The rubric was not re-tuned on the sample's misses, because that would inflate the score. Next fixes: count a sandbox only if anyone can sign up for it, read the pricing page for trial-only or paid-only API access, and list only auth methods documented for the public API.",
+    "Pass 3 raised the dev sample from 81.1% to 86.3%, but the held-out test stayed at 92.0%: it fixed Plain and broke Copper (read a trial as free) and Discord (treated a bot-verification rule as a review gate). A gain that appears only on the data used to design it is overfitting, so the final table stays on pass 2.",
+    "Pass 3's LLM checks also completed on only 26 of 100 apps before every free-tier model hit its daily cap.",
+    "The held-out apps turned out easier (90% at pass 1), and 10 apps is small, so that test can only catch large effects. 19 dev apps give 95 judgements, so one answer moves the score by about a point.",
+    "The reference labels were drafted by Claude from vendor docs before each run, then confirmed by Gaurav opening the sources. That is a light human check, not two independent annotators.",
+    "Free tiers shaped the run. Gemini's stronger model ran out of quota, so every extraction used gemini-3.5-flash-lite. Groq's daily caps pushed the verifier across four models, one of them small (allam-2-7b). 7 apps got no blind verifier in pass 2.",
     "Access rules and pricing change often. Each answer's evidence URL records what the docs said on 24 Sep 2026."
   ],
   "human_notes": [

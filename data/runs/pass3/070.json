@@ -1,0 +1,263 @@
+{
+  "one_liner": "Error tracking and application monitoring platform to discover, triage, and diagnose errors.",
+  "auth_methods": [
+    "oauth2",
+    "bearer_token"
+  ],
+  "auth_primary": "oauth2",
+  "auth_notes": "Supports OAuth2 and static Auth Tokens passed via Bearer authorization headers.",
+  "access_tier": "self_serve_free",
+  "access_notes": "Sentry has a free Developer plan and free trials available upon sign-up.",
+  "api_types": [
+    "rest"
+  ],
+  "api_breadth": "broad",
+  "api_notes": "Covers organizations, teams, projects, issues, events, releases, crons, dashboards, and more via REST API (v0).",
+  "mcp": "official",
+  "mcp_url": "https://blog.sentry.io/yes-sentry-has-an-mcp-server-and-its-pretty-good",
+  "verdict": "build_now",
+  "blocker": "none",
+  "blocker_notes": "Public APIs and official MCP are fully accessible via self-serve accounts.",
+  "evidence": {
+    "auth": {
+      "url": "https://docs.sentry.io/api/auth",
+      "quote": "Authentication tokens are passed using an auth header, and are used to authenticate as a user or organization account with the API.",
+      "check": "ok"
+    },
+    "access": {
+      "url": "https://docs.sentry.io/pricing",
+      "quote": "Sentry has one free Developer plan and three paid plans: Team, Business, and Enterprise.",
+      "check": "ok"
+    },
+    "api": {
+      "url": "https://docs.sentry.io/api",
+      "quote": "The Sentry web API is used to access the Sentry platform programmatically. You can use the APIs to manage account-level resources, like organizations and teams, as well as manage and export data.",
+      "check": "ok"
+    },
+    "mcp": {
+      "url": "https://blog.sentry.io/yes-sentry-has-an-mcp-server-and-its-pretty-good",
+      "quote": "Yes, Sentry has an MCP Server (...and it’s pretty good)",
+      "check": "ok"
+    },
+    "verdict": {
+      "url": "https://docs.sentry.io/api",
+      "quote": "The current version of the Sentry's web API is considered v0. Our public endpoints are generally stable, but beta endpoints are subject to change.",
+      "check": "ok"
+    }
+  },
+  "confidence": {
+    "auth": 0.9,
+    "access": 0.9,
+    "api": 0.9,
+    "mcp": 0.9,
+    "verdict": 0.9
+  },
+  "_model": "gemini-3.5-flash-lite",
+  "status": "ok",
+  "id": 70,
+  "name": "Sentry",
+  "category": "Developer Infra & Data",
+  "hint": "docs.sentry.io/api",
+  "sources": [
+    {
+      "url": "https://docs.sentry.io/api",
+      "via": "direct",
+      "chars": 1933
+    },
+    {
+      "url": "https://blog.sentry.io/yes-sentry-has-an-mcp-server-and-its-pretty-good",
+      "via": "direct",
+      "chars": 11493
+    },
+    {
+      "url": "https://docs.sentry.io/api.md",
+      "via": "direct",
+      "chars": 4084
+    },
+    {
+      "url": "https://docs.sentry.io/api/guides/teams-tutorial.md",
+      "via": "direct",
+      "chars": 9323
+    },
+    {
+      "url": "https://docs.sentry.io/pricing",
+      "via": "direct",
+      "chars": 17034
+    },
+    {
+      "url": "https://docs.sentry.io/pricing/legacy-pricing.md",
+      "via": "direct",
+      "chars": 27718
+    },
+    {
+      "url": "https://docs.sentry.io/api/auth",
+      "via": "verification"
+    },
+    {
+      "url": "https://cli.sentry.dev/commands/auth",
+      "via": "verification"
+    },
+    {
+      "url": "https://docs.sentry.io/api",
+      "via": "pass3"
+    },
+    {
+      "url": "https://docs.sentry.io/api/guides/teams-tutorial.md",
+      "via": "pass3"
+    },
+    {
+      "url": "https://docs.sentry.io/integrations/integration-platform/public-integration",
+      "via": "pass3"
+    },
+    {
+      "url": "https://docs.sentry.io/pricing",
+      "via": "pass3"
+    },
+    {
+      "url": "https://docs.sentry.io/pricing/legacy-pricing.md",
+      "via": "pass3"
+    }
+  ],
+  "queries": [
+    "Sentry API authentication developer docs",
+    "Sentry API access pricing plan developer",
+    "Sentry MCP server"
+  ],
+  "seconds": 46.8,
+  "verification_queries": [
+    "Sentry API authentication OAuth API key",
+    "Sentry API reference authentication"
+  ],
+  "verification": {
+    "initial_issues": [
+      {
+        "loop": "L1_evidence",
+        "field": "auth",
+        "problem": "quote only partially matches page",
+        "url": "https://docs.sentry.io/api/guides/teams-tutorial.md",
+        "match": 0.67
+      }
+    ],
+    "final_issues": [],
+    "rounds": [
+      {
+        "round": 0,
+        "issues": [
+          {
+            "loop": "L1_evidence",
+            "field": "auth",
+            "problem": "quote only partially matches page",
+            "url": "https://docs.sentry.io/api/guides/teams-tutorial.md",
+            "match": 0.67
+          }
+        ],
+        "verifier": {
+          "auth_methods": [
+            "bearer_token"
+          ],
+          "auth_primary": "bearer_token",
+          "access_tier": "self_serve_free",
+          "api_types": [
+            "rest"
+          ],
+          "mcp": "official",
+          "verdict": "build_now",
+          "reasons": {
+            "auth": "Sentry’s public API uses a bearer token (Sentry Authentication Token) for all authenticated requests, as shown in the docs and tutorials.",
+            "access": "A free Sentry developer account provides immediate, self‑serve credentials with no trial or paid plan required.",
+            "mcp": "Sentry publishes an official MCP server at https://mcp.sentry.dev/mcp, documented in the Sentry blog.",
+            "verdict": "The API is fully documented, publicly available, and can be accessed with a free developer account, enabling immediate toolkit development."
+          },
+          "_model": "openai/gpt-oss-20b"
+        },
+        "autofix": []
+      },
+      {
+        "round": 1,
+        "queries": [
+          "Sentry API authentication OAuth API key",
+          "Sentry API reference authentication"
+        ],
+        "new_sources": [
+          "https://docs.sentry.io/api",
+          "https://docs.sentry.io/api.md",
+          "https://docs.sentry.io/api/auth",
+          "https://docs.sentry.io/api/guides/teams-tutorial.md",
+          "https://cli.sentry.dev/commands/auth"
+        ],
+        "change_log": "Updated the auth evidence quote to reference the actual API auth documentation correctly.",
+        "issues": [],
+        "verifier": {
+          "error": "Groq failed: HTTP 429: {\"error\":{\"message\":\"Rate limit reached for model `openai/gpt-oss-20b` in organization `org_01m2fd9xn8e3dtb9zfqc2jdhsc` service tier `on_demand` on tokens per day (TPD): Limit 2"
+        },
+        "autofix": []
+      }
+    ],
+    "catalog": {
+      "in_catalog": true,
+      "slug": "sentry",
+      "auth": [
+        "oauth2"
+      ],
+      "tools_count": 209
+    },
+    "changed_fields": [],
+    "field_status": {
+      "auth": "confirmed_after_recheck",
+      "access": "verified",
+      "api": "verified",
+      "mcp": "verified",
+      "verdict": "verified"
+    },
+    "needs_human": [],
+    "before": {
+      "auth_methods": [
+        "oauth2",
+        "bearer_token"
+      ],
+      "auth_primary": "oauth2",
+      "access_tier": "self_serve_free",
+      "access_notes": "Sentry has a free Developer plan and free trials available upon sign-up.",
+      "api_types": [
+        "rest"
+      ],
+      "api_breadth": "broad",
+      "api_notes": "Covers organizations, teams, projects, issues, events, releases, crons, dashboards, and more via REST API (v0).",
+      "mcp": "official",
+      "mcp_url": "https://blog.sentry.io/yes-sentry-has-an-mcp-server-and-its-pretty-good",
+      "verdict": "build_now",
+      "blocker": "none",
+      "blocker_notes": "Public APIs and official MCP are fully accessible via self-serve accounts."
+    },
+    "seconds": 79.5
+  },
+  "pass3": {
+    "before": {
+      "auth_methods": [
+        "oauth2",
+        "bearer_token"
+      ],
+      "auth_primary": "oauth2",
+      "access_tier": "self_serve_free",
+      "verdict": "build_now",
+      "blocker": "none"
+    },
+    "log": [
+      {
+        "loop": "L6_access",
+        "error": "Groq failed: HTTP 429: {\"error\":{\"message\":\"Rate limit reached for model `qwen/qwen3.8-27b` in organization `org_01m2fd9xn8e3dtb9zfqc2jdhsc` service tier `on_demand` on tokens per day (TPD): Limit 200"
+      },
+      {
+        "loop": "L7_auth",
+        "error": "Groq failed: HTTP 429: {\"error\":{\"message\":\"Rate limit reached for model `qwen/qwen3.8-27b` in organization `org_01m2fd9xn8e3dtb9zfqc2jdhsc` service tier `on_demand` on tokens per day (TPD): Limit 200"
+      }
+    ],
+    "access_sources": [
+      "https://docs.sentry.io/api",
+      "https://docs.sentry.io/api/guides/teams-tutorial.md",
+      "https://docs.sentry.io/integrations/integration-platform/public-integration",
+      "https://docs.sentry.io/pricing",
+      "https://docs.sentry.io/pricing/legacy-pricing.md"
+    ]
+  }
+}

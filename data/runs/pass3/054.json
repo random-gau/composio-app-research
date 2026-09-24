@@ -1,0 +1,389 @@
+{
+  "one_liner": "AI-powered web scraping and data extraction platform with a REST API and MCP server.",
+  "auth_methods": [
+    "api_key",
+    "bearer_token"
+  ],
+  "auth_primary": "api_key",
+  "auth_notes": "API tokens are managed from the dashboard and passed in the x-api-token header, or as a Bearer token for marketplace endpoints.",
+  "access_tier": "self_serve_free",
+  "access_notes": "Sign up for the free plan providing 1,000 tokens per month with no credit card required.",
+  "api_types": [
+    "rest"
+  ],
+  "api_breadth": "moderate",
+  "api_notes": "REST API covering scrapers, unblocker, analytics, and platform management under api.app.mrscraper.com/api/v1.",
+  "mcp": "official",
+  "mcp_url": "https://docs.mrscraper.com/docs/getting-started/mcp-server",
+  "verdict": "build_now",
+  "blocker": "none",
+  "blocker_notes": "Fully available with self-serve free tier and documented public API.",
+  "evidence": {
+    "auth": {
+      "url": "https://docs.mrscraper.com/docs/api/authentication",
+      "quote": "Include your API token in the x-api-token HTTP header on every request: x-api-token: <MRSCRAPER_API_TOKEN>",
+      "check": "ok"
+    },
+    "access": {
+      "url": "https://docs.mrscraper.com/docs/getting-started/billing",
+      "quote": "The Free plan includes 1,000 token [sic] per month with no credit card required.",
+      "check": "partial"
+    },
+    "api": {
+      "url": "https://docs.mrscraper.com/docs/api/overview",
+      "quote": "The MrScraper API provides a powerful and flexible way to programmatically scrape web pages and retrieve structured data. Built on REST principles, our API offers predictable resource-oriented URLs",
+      "check": "ok"
+    },
+    "mcp": {
+      "url": "https://docs.mrscraper.com/docs/getting-started/billing",
+      "quote": "Official MrScraper MCP server for web scraping, structured data extraction, and Google search. Connect AI clients or run the open-source server locally.",
+      "check": "ok"
+    },
+    "verdict": {
+      "url": "https://docs.mrscraper.com/docs/getting-started/billing",
+      "quote": "The Free plan includes 1,000 token [sic] per month with no credit card required.",
+      "check": "partial"
+    }
+  },
+  "confidence": {
+    "auth": 5.0,
+    "access": 5.0,
+    "api": 5.0,
+    "mcp": 5.0,
+    "verdict": 5.0
+  },
+  "_model": "gemini-3.5-flash-lite",
+  "status": "ok",
+  "id": 54,
+  "name": "MrScraper",
+  "category": "Data SEO & Scraping",
+  "hint": "docs.mrscraper.com",
+  "sources": [
+    {
+      "url": "https://docs.mrscraper.com",
+      "via": "direct",
+      "chars": 5658
+    },
+    {
+      "url": "https://docs.mrscraper.com/docs/api/authentication",
+      "via": "direct",
+      "chars": 2902
+    },
+    {
+      "url": "https://docs.mrscraper.com/docs/api/error-handling",
+      "via": "direct",
+      "chars": 4086
+    },
+    {
+      "url": "https://docs.mrscraper.com/docs/api/overview",
+      "via": "direct",
+      "chars": 1934
+    },
+    {
+      "url": "https://docs.mrscraper.com/docs/getting-started/api-token",
+      "via": "direct",
+      "chars": 7300
+    },
+    {
+      "url": "https://docs.mrscraper.com/docs/getting-started/billing",
+      "via": "direct",
+      "chars": 3940
+    },
+    {
+      "url": "https://docs.mrscraper.com/docs/features/activating-api",
+      "via": "verification"
+    },
+    {
+      "url": "https://docs.mrscraper.com/docs/features/activating-api",
+      "via": "verification"
+    },
+    {
+      "url": "https://docs.mrscraper.com",
+      "via": "pass3"
+    },
+    {
+      "url": "https://docs.mrscraper.com/docs/api/authentication",
+      "via": "pass3"
+    },
+    {
+      "url": "https://docs.mrscraper.com/docs/api/overview",
+      "via": "pass3"
+    },
+    {
+      "url": "https://docs.mrscraper.com/docs/features/activating-api",
+      "via": "pass3"
+    },
+    {
+      "url": "https://docs.mrscraper.com/docs/getting-started/api-token",
+      "via": "pass3"
+    }
+  ],
+  "queries": [
+    "MrScraper API authentication developer docs",
+    "MrScraper API access pricing plan developer",
+    "MrScraper MCP server"
+  ],
+  "seconds": 53.6,
+  "verification_queries": [
+    "MrScraper API access requirements plan",
+    "MrScraper developer account API key free OR partner OR enterprise",
+    "MrScraper API access requirements plan",
+    "MrScraper developer account API key free OR partner OR enterprise"
+  ],
+  "verification": {
+    "initial_issues": [
+      {
+        "loop": "L4_verifier",
+        "field": "access",
+        "problem": "verifier says paid_plan vs agent self_serve_free"
+      },
+      {
+        "loop": "L4_verifier",
+        "field": "verdict",
+        "problem": "verifier says build_with_friction vs agent build_now"
+      }
+    ],
+    "final_issues": [
+      {
+        "loop": "L1_evidence",
+        "field": "access",
+        "problem": "quote only partially matches page",
+        "url": "https://docs.mrscraper.com/docs/getting-started/billing",
+        "match": 0.5
+      },
+      {
+        "loop": "L1_evidence",
+        "field": "verdict",
+        "problem": "quote only partially matches page",
+        "url": "https://docs.mrscraper.com/docs/getting-started/billing",
+        "match": 0.5
+      },
+      {
+        "loop": "L4_verifier",
+        "field": "access",
+        "problem": "verifier says paid_plan vs agent self_serve_free"
+      },
+      {
+        "loop": "L4_verifier",
+        "field": "verdict",
+        "problem": "verifier says build_with_friction vs agent build_now"
+      }
+    ],
+    "rounds": [
+      {
+        "round": 0,
+        "issues": [
+          {
+            "loop": "L4_verifier",
+            "field": "access",
+            "problem": "verifier says paid_plan vs agent self_serve_free"
+          },
+          {
+            "loop": "L4_verifier",
+            "field": "verdict",
+            "problem": "verifier says build_with_friction vs agent build_now"
+          }
+        ],
+        "verifier": {
+          "auth_methods": [
+            "bearer_token"
+          ],
+          "auth_primary": "bearer_token",
+          "access_tier": "paid_plan",
+          "api_types": [
+            "rest"
+          ],
+          "mcp": "official",
+          "verdict": "build_with_friction",
+          "reasons": {
+            "auth": "API token passed in x-api-token header or Bearer token; no other methods documented",
+            "access": "No free or trial plan documented; requires paid subscription to obtain token",
+            "mcp": "MCP server source code provided in docs, indicating official MCP server",
+            "verdict": "Public REST API documented and accessible with paid credentials; can build after payment, but not free"
+          },
+          "_model": "openai/gpt-oss-20b"
+        },
+        "autofix": []
+      },
+      {
+        "round": 1,
+        "queries": [
+          "MrScraper API access requirements plan",
+          "MrScraper developer account API key free OR partner OR enterprise"
+        ],
+        "new_sources": [
+          "https://docs.mrscraper.com",
+          "https://docs.mrscraper.com/docs/api/authentication",
+          "https://docs.mrscraper.com/docs/api/overview",
+          "https://docs.mrscraper.com/docs/features/activating-api",
+          "https://docs.mrscraper.com/docs/getting-started/api-token"
+        ],
+        "change_log": "Corrected access_tier to self_serve_free and verdict to build_now because documentation confirms a free plan (Scraper Free) is available with 100 tokens per month and no credit card required.",
+        "issues": [
+          {
+            "loop": "L4_verifier",
+            "field": "access",
+            "problem": "verifier says paid_plan vs agent self_serve_free"
+          },
+          {
+            "loop": "L4_verifier",
+            "field": "verdict",
+            "problem": "verifier says build_with_friction vs agent build_now"
+          }
+        ],
+        "verifier": {
+          "auth_methods": [
+            "bearer_token"
+          ],
+          "auth_primary": "bearer_token",
+          "access_tier": "paid_plan",
+          "api_types": [
+            "rest"
+          ],
+          "mcp": "official",
+          "verdict": "build_with_friction",
+          "reasons": {
+            "auth": "API token authentication via x-api-token header or Bearer token as documented in the API reference.",
+            "access": "Credentials are obtained through a paid subscription plan; no free sandbox or trial is mentioned in the documentation.",
+            "mcp": "Official MCP server source code is provided in the documentation, indicating an official MCP implementation.",
+            "verdict": "The API is publicly documented and RESTful, but requires a paid plan to obtain working credentials, so a toolkit can be built today with the friction of a paid subscription."
+          },
+          "_model": "openai/gpt-oss-20b"
+        },
+        "autofix": []
+      },
+      {
+        "round": 2,
+        "queries": [
+          "MrScraper API access requirements plan",
+          "MrScraper developer account API key free OR partner OR enterprise",
+          "MrScraper API access requirements plan",
+          "MrScraper developer account API key free OR partner OR enterprise"
+        ],
+        "new_sources": [
+          "https://docs.mrscraper.com",
+          "https://docs.mrscraper.com/docs/api/authentication",
+          "https://docs.mrscraper.com/docs/api/overview",
+          "https://docs.mrscraper.com/docs/features/activating-api",
+          "https://docs.mrscraper.com/docs/getting-started/api-token"
+        ],
+        "change_log": "Corrected access_tier to self_serve_free and verdict to build_now since the documentation clearly provides a Scraper Free plan with 1,000 tokens per month and no credit card required.",
+        "issues": [
+          {
+            "loop": "L1_evidence",
+            "field": "access",
+            "problem": "quote only partially matches page",
+            "url": "https://docs.mrscraper.com/docs/getting-started/billing",
+            "match": 0.5
+          },
+          {
+            "loop": "L1_evidence",
+            "field": "verdict",
+            "problem": "quote only partially matches page",
+            "url": "https://docs.mrscraper.com/docs/getting-started/billing",
+            "match": 0.5
+          },
+          {
+            "loop": "L4_verifier",
+            "field": "access",
+            "problem": "verifier says paid_plan vs agent self_serve_free"
+          },
+          {
+            "loop": "L4_verifier",
+            "field": "verdict",
+            "problem": "verifier says build_with_friction vs agent build_now"
+          }
+        ],
+        "verifier": {
+          "auth_methods": [
+            "bearer_token"
+          ],
+          "auth_primary": "bearer_token",
+          "access_tier": "paid_plan",
+          "api_types": [
+            "rest"
+          ],
+          "mcp": "official",
+          "verdict": "build_with_friction",
+          "reasons": {
+            "auth": "API token passed in the x-api-token header or as a Bearer token; a static personal token is required.",
+            "access": "Credentials are issued via the dashboard after subscribing to a paid plan; no free sandbox or trial is documented.",
+            "mcp": "The MCP server source code is published in the documentation, indicating an official MCP server.",
+            "verdict": "The REST API is fully documented and publicly available, but obtaining working credentials requires a paid plan, so building a toolkit today would need that paid access."
+          },
+          "_model": "openai/gpt-oss-20b"
+        },
+        "autofix": []
+      }
+    ],
+    "catalog": {
+      "in_catalog": true,
+      "slug": "mrscraper",
+      "auth": [
+        "api_key"
+      ],
+      "tools_count": 11
+    },
+    "changed_fields": [],
+    "field_status": {
+      "auth": "verified",
+      "access": "needs_human",
+      "api": "verified",
+      "mcp": "verified",
+      "verdict": "needs_human"
+    },
+    "needs_human": [
+      "access",
+      "verdict"
+    ],
+    "before": {
+      "auth_methods": [
+        "api_key",
+        "bearer_token"
+      ],
+      "auth_primary": "api_key",
+      "access_tier": "self_serve_free",
+      "access_notes": "Sign up for the free tier providing 1,000 tokens (or 100 tokens per month free plan) with no credit card required.",
+      "api_types": [
+        "rest"
+      ],
+      "api_breadth": "moderate",
+      "api_notes": "REST API covering scrapers, unblocker, analytics, and platform management under api.app.mrscraper.com/api/v1.",
+      "mcp": "official",
+      "mcp_url": "https://docs.mrscraper.com/docs/getting-started/mcp-server",
+      "verdict": "build_now",
+      "blocker": "none",
+      "blocker_notes": "Fully available with self-serve free tier and documented public API."
+    },
+    "seconds": 83.1
+  },
+  "pass3": {
+    "before": {
+      "auth_methods": [
+        "api_key",
+        "bearer_token"
+      ],
+      "auth_primary": "api_key",
+      "access_tier": "self_serve_free",
+      "verdict": "build_now",
+      "blocker": "none"
+    },
+    "log": [
+      {
+        "loop": "L6_access",
+        "error": "Groq failed: HTTP 429: {\"error\":{\"message\":\"Rate limit reached for model `qwen/qwen3.8-27b` in organization `org_01m2fd9xn8e3dtb9zfqc2jdhsc` service tier `on_demand` on tokens per day (TPD): Limit 200"
+      },
+      {
+        "loop": "L7_auth",
+        "error": "Groq failed: HTTP 429: {\"error\":{\"message\":\"Rate limit reached for model `qwen/qwen3.8-27b` in organization `org_01m2fd9xn8e3dtb9zfqc2jdhsc` service tier `on_demand` on tokens per day (TPD): Limit 200"
+      }
+    ],
+    "access_sources": [
+      "https://docs.mrscraper.com",
+      "https://docs.mrscraper.com/docs/api/authentication",
+      "https://docs.mrscraper.com/docs/api/overview",
+      "https://docs.mrscraper.com/docs/features/activating-api",
+      "https://docs.mrscraper.com/docs/getting-started/api-token"
+    ]
+  }
+}

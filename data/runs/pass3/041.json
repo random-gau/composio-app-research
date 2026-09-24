@@ -1,0 +1,399 @@
+{
+  "one_liner": "Build apps, storefronts, and agents on Shopify's ecommerce platform using comprehensive APIs.",
+  "auth_methods": [
+    "oauth2",
+    "api_key",
+    "bearer_token"
+  ],
+  "auth_primary": "oauth2",
+  "auth_notes": "Shopify uses OAuth 2.0 flows, access tokens in request headers (e.g., X-Shopify-Access-Token), and client credentials.",
+  "access_tier": "self_serve_free",
+  "access_notes": "Developers can sign up for a free Shopify partner account and create apps and development stores at no cost.",
+  "api_types": [
+    "rest",
+    "graphql"
+  ],
+  "api_breadth": "broad",
+  "api_notes": "Covers GraphQL Admin API, REST Admin API, Storefront API, Partner API, and Customer Account API.",
+  "mcp": "none_found",
+  "mcp_url": null,
+  "verdict": "build_now",
+  "blocker": "none",
+  "blocker_notes": "Public docs and self-serve developer accounts allow building integrations immediately.",
+  "evidence": {
+    "auth": {
+      "url": "https://shopify.dev/docs/api/usage/authentication",
+      "quote": "Most Shopify APIs, including the GraphQL Admin API, Storefront API, and Partner API, authenticate your app acting on behalf of a merchant or organization.",
+      "check": "ok"
+    },
+    "access": {
+      "url": "https://shopify.dev/docs/api/shop/guides/creating-a-client",
+      "quote": "To use the Shop APIs and SDKs, you need an app in the Dev Dashboard. This guide covers creating an app, configuring scopes, and retrieving your credentials.",
+      "check": "ok"
+    },
+    "api": {
+      "url": "https://shopify.dev/docs/api/usage",
+      "quote": "GraphQL Admin API reads and writes products, customers, orders, inventory, and the rest of the data behind the Shopify admin.",
+      "check": "ok"
+    },
+    "mcp": {
+      "url": "https://shopify.dev",
+      "page_summary": "Shopify developer documentation covers APIs, app creation, and tools like the Shopify CLI, but contains no mention of an official Model Context Protocol (MCP) server."
+    },
+    "verdict": {
+      "url": "https://shopify.dev",
+      "quote": "Whether you're just getting started, deep in the development process, or ready to distribute and monetize your work, Shopify's docs, dev tools and frameworks make building easy and efficient.",
+      "check": "ok"
+    }
+  },
+  "confidence": {
+    "auth": 0.9,
+    "access": 0.8,
+    "api": 0.9,
+    "mcp": 1.0,
+    "verdict": 0.9
+  },
+  "_model": "gemini-3.5-flash-lite",
+  "status": "ok",
+  "id": 41,
+  "name": "Shopify",
+  "category": "Ecommerce",
+  "hint": "shopify.dev",
+  "sources": [
+    {
+      "url": "https://shopify.dev",
+      "via": "direct",
+      "chars": 3910
+    },
+    {
+      "url": "https://shopify.dev/docs/api/usage",
+      "via": "direct",
+      "chars": 6186
+    },
+    {
+      "url": "https://shopify.dev/docs/api/usage/authentication",
+      "via": "direct",
+      "chars": 3537
+    },
+    {
+      "url": "https://shopify.dev/docs/api/usage/limits",
+      "via": "direct",
+      "chars": 4199
+    },
+    {
+      "url": "https://shopify.dev/docs/apps/build/apis/graphql-admin/rate-limits",
+      "via": "direct",
+      "chars": 5070
+    },
+    {
+      "url": "https://shopify.dev/docs/apps/build/authentication-authorization",
+      "via": "direct",
+      "chars": 7817
+    },
+    {
+      "url": "https://shopify.dev/docs/api/admin-rest/usage/access-scopes",
+      "via": "verification"
+    },
+    {
+      "url": "https://shopify.dev/docs/api/partner/2026-07",
+      "via": "verification"
+    },
+    {
+      "url": "https://shopify.dev/docs/api/shop/guides/creating-a-client",
+      "via": "verification"
+    },
+    {
+      "url": "https://shopify.dev/docs/api/admin-rest/usage/access-scopes",
+      "via": "verification"
+    },
+    {
+      "url": "https://shopify.dev/docs/api/partner/2026-07",
+      "via": "verification"
+    },
+    {
+      "url": "https://shopify.dev/docs/api/shop/guides/creating-a-client",
+      "via": "verification"
+    },
+    {
+      "url": "https://shopify.dev",
+      "via": "pass3"
+    },
+    {
+      "url": "https://shopify.dev/docs/api/shop/guides/creating-a-client",
+      "via": "pass3"
+    },
+    {
+      "url": "https://shopify.dev/docs/api/usage/limits",
+      "via": "pass3"
+    },
+    {
+      "url": "https://shopify.dev/docs/apps/build/authentication-authorization",
+      "via": "pass3"
+    },
+    {
+      "url": "https://shopify.dev/docs/apps/build/authentication-authorization/client-credentials-grant",
+      "via": "pass3"
+    }
+  ],
+  "queries": [
+    "Shopify API authentication developer docs",
+    "Shopify API access pricing plan developer",
+    "Shopify MCP server"
+  ],
+  "seconds": 46.6,
+  "verification_queries": [
+    "Shopify API access requirements plan",
+    "Shopify developer account API key free OR partner OR enterprise",
+    "Shopify MCP server model context protocol",
+    "Shopify API access requirements plan",
+    "Shopify developer account API key free OR partner OR enterprise",
+    "Shopify MCP server model context protocol"
+  ],
+  "verification": {
+    "initial_issues": [
+      {
+        "loop": "L1_evidence",
+        "field": "access",
+        "problem": "no evidence cited"
+      },
+      {
+        "loop": "L4_verifier",
+        "field": "mcp",
+        "problem": "verifier says official vs agent none_found"
+      }
+    ],
+    "final_issues": [
+      {
+        "loop": "L1_evidence",
+        "field": "mcp",
+        "problem": "no evidence cited"
+      },
+      {
+        "loop": "L4_verifier",
+        "field": "mcp",
+        "problem": "verifier says official vs agent none_found"
+      }
+    ],
+    "rounds": [
+      {
+        "round": 0,
+        "issues": [
+          {
+            "loop": "L1_evidence",
+            "field": "access",
+            "problem": "no evidence cited"
+          },
+          {
+            "loop": "L4_verifier",
+            "field": "mcp",
+            "problem": "verifier says official vs agent none_found"
+          }
+        ],
+        "verifier": {
+          "auth_methods": [
+            "oauth2",
+            "api_key",
+            "bearer_token",
+            "basic"
+          ],
+          "auth_primary": "oauth2",
+          "access_tier": "self_serve_free",
+          "api_types": [
+            "rest",
+            "graphql"
+          ],
+          "mcp": "official",
+          "verdict": "build_now",
+          "reasons": {
+            "auth": "Shopify supports OAuth2 for public apps, API key/password for private apps (basic auth), and bearer tokens for app access; all documented in the dev docs.",
+            "access": "Developers can create a free Shopify developer account and obtain API credentials for a development store without approval; production access requires app review.",
+            "mcp": "Shopify publishes official REST and GraphQL Admin APIs, documented on shopify.dev.",
+            "verdict": "Public documentation, self‑serve credentials, and official APIs allow a toolkit to be built today."
+          },
+          "_model": "openai/gpt-oss-20b"
+        },
+        "autofix": []
+      },
+      {
+        "round": 1,
+        "queries": [
+          "Shopify API access requirements plan",
+          "Shopify developer account API key free OR partner OR enterprise",
+          "Shopify MCP server model context protocol"
+        ],
+        "new_sources": [
+          "https://shopify.dev",
+          "https://shopify.dev/docs/api/admin-rest/usage/access-scopes",
+          "https://shopify.dev/docs/api/partner/2026-07",
+          "https://shopify.dev/docs/api/shop/guides/creating-a-client",
+          "https://shopify.dev/docs/api/usage"
+        ],
+        "change_log": "Added proper evidence citations for the access tier and verified that Shopify does not publish an official MCP server (none_found).",
+        "issues": [
+          {
+            "loop": "L1_evidence",
+            "field": "access",
+            "problem": "quote only partially matches page",
+            "url": "https://shopify.dev/docs/api/shop/guides/creating-a-client",
+            "match": 0.77
+          },
+          {
+            "loop": "L4_verifier",
+            "field": "mcp",
+            "problem": "verifier says official vs agent none_found"
+          }
+        ],
+        "verifier": {
+          "auth_methods": [
+            "oauth2",
+            "basic",
+            "bearer_token"
+          ],
+          "auth_primary": "oauth2",
+          "access_tier": "self_serve_free",
+          "api_types": [
+            "rest",
+            "graphql"
+          ],
+          "mcp": "official",
+          "verdict": "build_now",
+          "reasons": {
+            "auth": "Shopify public APIs use OAuth 2.0 for the Admin API (REST and GraphQL) and the Partner API uses Basic authentication and bearer‑token style client access tokens.",
+            "access": "Developers can create an app in the Dev Dashboard for free, obtain client ID/secret and OAuth scopes, and test in a sandbox; production access requires app review but the free tier suffices for development.",
+            "mcp": "Shopify publishes official GraphQL Admin API and REST Admin API endpoints.",
+            "verdict": "All required documentation and free credentials are available, enabling toolkit development today."
+          },
+          "_model": "openai/gpt-oss-20b"
+        },
+        "autofix": []
+      },
+      {
+        "round": 2,
+        "queries": [
+          "Shopify API access requirements plan",
+          "Shopify developer account API key free OR partner OR enterprise",
+          "Shopify MCP server model context protocol",
+          "Shopify API access requirements plan",
+          "Shopify developer account API key free OR partner OR enterprise",
+          "Shopify MCP server model context protocol"
+        ],
+        "new_sources": [
+          "https://shopify.dev",
+          "https://shopify.dev/docs/api/admin-rest/usage/access-scopes",
+          "https://shopify.dev/docs/api/partner/2026-07",
+          "https://shopify.dev/docs/api/shop/guides/creating-a-client",
+          "https://shopify.dev/docs/api/usage"
+        ],
+        "change_log": "Retained self_serve_free based on Shopify's free developer dashboard and partner program, and set mcp to none_found as Shopify has no official MCP server documented.",
+        "issues": [
+          {
+            "loop": "L1_evidence",
+            "field": "mcp",
+            "problem": "no evidence cited"
+          },
+          {
+            "loop": "L4_verifier",
+            "field": "mcp",
+            "problem": "verifier says official vs agent none_found"
+          }
+        ],
+        "verifier": {
+          "auth_methods": [
+            "oauth2",
+            "basic",
+            "bearer_token"
+          ],
+          "auth_primary": "oauth2",
+          "access_tier": "self_serve_free",
+          "api_types": [
+            "rest",
+            "graphql"
+          ],
+          "mcp": "official",
+          "verdict": "build_now",
+          "reasons": {
+            "auth": "Shopify uses OAuth 2.0 for public apps and provides client ID/secret; private apps use Basic auth with API key/password; Partner API uses bearer token.",
+            "access": "Developers can create an app in the Dev Dashboard for free and obtain credentials; no paid plan required for sandbox.",
+            "mcp": "Shopify publishes official GraphQL Admin API and REST Admin API; no community‑only MCP.",
+            "verdict": "Public docs and self‑serve credentials allow building a toolkit today."
+          },
+          "_model": "openai/gpt-oss-20b"
+        },
+        "autofix": []
+      }
+    ],
+    "catalog": {
+      "in_catalog": true,
+      "slug": "shopify",
+      "auth": [
+        "api_key",
+        "oauth2",
+        "other"
+      ],
+      "tools_count": 315
+    },
+    "changed_fields": [],
+    "field_status": {
+      "auth": "verified",
+      "access": "confirmed_after_recheck",
+      "api": "verified",
+      "mcp": "needs_human",
+      "verdict": "verified"
+    },
+    "needs_human": [
+      "mcp"
+    ],
+    "before": {
+      "auth_methods": [
+        "oauth2",
+        "api_key",
+        "bearer_token"
+      ],
+      "auth_primary": "oauth2",
+      "access_tier": "self_serve_free",
+      "access_notes": "Developers can sign up for a free developer account / partner account and create apps without initial payment.",
+      "api_types": [
+        "rest",
+        "graphql"
+      ],
+      "api_breadth": "broad",
+      "api_notes": "Covers GraphQL Admin API, REST Admin API, Storefront API, Partner API, and Customer Account API.",
+      "mcp": "none_found",
+      "mcp_url": null,
+      "verdict": "build_now",
+      "blocker": "none",
+      "blocker_notes": "Public docs and self-serve developer accounts allow building integrations immediately."
+    },
+    "seconds": 63.2
+  },
+  "pass3": {
+    "before": {
+      "auth_methods": [
+        "oauth2",
+        "api_key",
+        "bearer_token"
+      ],
+      "auth_primary": "oauth2",
+      "access_tier": "self_serve_free",
+      "verdict": "build_now",
+      "blocker": "none"
+    },
+    "log": [
+      {
+        "loop": "L6_access",
+        "error": "Groq failed: HTTP 429: {\"error\":{\"message\":\"Rate limit reached for model `qwen/qwen3.8-27b` in organization `org_01m2fd9xn8e3dtb9zfqc2jdhsc` service tier `on_demand` on tokens per day (TPD): Limit 200"
+      },
+      {
+        "loop": "L7_auth",
+        "error": "Groq failed: HTTP 429: {\"error\":{\"message\":\"Rate limit reached for model `qwen/qwen3.8-27b` in organization `org_01m2fd9xn8e3dtb9zfqc2jdhsc` service tier `on_demand` on tokens per day (TPD): Limit 200"
+      }
+    ],
+    "access_sources": [
+      "https://shopify.dev",
+      "https://shopify.dev/docs/api/shop/guides/creating-a-client",
+      "https://shopify.dev/docs/api/usage/limits",
+      "https://shopify.dev/docs/apps/build/authentication-authorization",
+      "https://shopify.dev/docs/apps/build/authentication-authorization/client-credentials-grant"
+    ]
+  }
+}

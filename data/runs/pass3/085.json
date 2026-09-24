@@ -1,0 +1,219 @@
+{
+  "one_liner": "FINTRAC-registered FX forensic audit layer and MCP server for checking cross-border payments.",
+  "auth_methods": [
+    "api_key",
+    "bearer_token",
+    "none"
+  ],
+  "auth_primary": "bearer_token",
+  "auth_notes": "HTTP Bearer token with format ipx_live_xxxxx or ipx_test_xxxxx for paid features; some endpoints require no auth.",
+  "access_tier": "self_serve_free",
+  "access_notes": "Free tier available upon signup with usage limits; paid tiers available for full reports.",
+  "api_types": [
+    "rest",
+    "websocket"
+  ],
+  "api_breadth": "narrow",
+  "api_notes": "Covers FX rates, transaction auditing, and forensic reports via REST and MCP.",
+  "mcp": "official",
+  "mcp_url": "https://www.ipayx.ai/docs/mcp-server",
+  "verdict": "build_now",
+  "blocker": "none",
+  "blocker_notes": "None",
+  "evidence": {
+    "auth": {
+      "url": "https://www.ipayx.ai/docs/mcp-server",
+      "quote": "Method: HTTP Bearer token in Authorization header.",
+      "check": "ok"
+    },
+    "access": {
+      "url": "https://www.ipayx.ai",
+      "quote": "Start free with five lifetime audits. Upgrade to the 100-audit Credit Pack or Unlimited for API access, white-label embedding, and forensic PDF exports.",
+      "check": "ok"
+    },
+    "api": {
+      "url": "https://www.ipayx.ai/docs/mcp-server",
+      "quote": "Connect your AI agent to real-time FX audit verdicts.",
+      "check": "ok"
+    },
+    "mcp": {
+      "url": "https://www.ipayx.ai/docs/mcp-server",
+      "quote": "iPayX MCP Server — Documentation",
+      "check": "ok"
+    },
+    "verdict": {
+      "url": "https://www.ipayx.ai",
+      "quote": "Start free with five lifetime audits. Upgrade to the 100-audit Credit Pack or Unlimited for API access, white-label embedding, and forensic PDF exports.",
+      "check": "ok"
+    }
+  },
+  "confidence": {
+    "auth": 0.9,
+    "access": 0.9,
+    "api": 0.8,
+    "mcp": 1.0,
+    "verdict": 0.9
+  },
+  "_model": "gemini-3.5-flash-lite",
+  "status": "ok",
+  "id": 85,
+  "name": "iPayX",
+  "category": "Finance & Fintech",
+  "hint": "ipayx.ai/docs",
+  "sources": [
+    {
+      "url": "https://ipayx.ai/docs",
+      "via": "composio_fetch",
+      "chars": 1074
+    },
+    {
+      "url": "https://www.ipayx.ai/docs/mcp-server",
+      "via": "composio_fetch",
+      "chars": 3322
+    },
+    {
+      "url": "https://www.ipayx.ai",
+      "via": "composio_fetch",
+      "chars": 5606
+    },
+    {
+      "url": "https://github.com/Ipayx-stellar/mcp-fx-audit",
+      "via": "direct",
+      "chars": 2858
+    },
+    {
+      "url": "https://github.com/iPAYX-Technologies/mcp-fx-audit",
+      "via": "direct",
+      "chars": 4465
+    },
+    {
+      "url": "https://github.com/iPAYX-Technologies/mcp-fx-audit/commit/bb30c87f2bdfe8a2f8d18b051b2d34c61ba7b7a6",
+      "via": "direct",
+      "chars": 2404
+    },
+    {
+      "url": "https://ipayx.ai/docs",
+      "via": "pass3"
+    },
+    {
+      "url": "https://www.ipayx.ai/docs/mcp-server",
+      "via": "pass3"
+    },
+    {
+      "url": "https://www.ipayx.ai",
+      "via": "pass3"
+    },
+    {
+      "url": "https://github.com/Ipayx-stellar/mcp-fx-audit",
+      "via": "pass3"
+    },
+    {
+      "url": "https://github.com/iPAYX-Technologies/mcp-fx-audit",
+      "via": "pass3"
+    }
+  ],
+  "queries": [
+    "iPayX API authentication developer docs",
+    "iPayX API access pricing plan developer",
+    "iPayX MCP server"
+  ],
+  "seconds": 23.0,
+  "verification": {
+    "initial_issues": [],
+    "final_issues": [],
+    "rounds": [
+      {
+        "round": 0,
+        "issues": [],
+        "verifier": {
+          "auth_methods": [
+            "bearer_token"
+          ],
+          "auth_primary": "bearer_token",
+          "access_tier": "self_serve_free",
+          "api_types": [
+            "rest",
+            "websocket"
+          ],
+          "mcp": "official",
+          "verdict": "build_now",
+          "reasons": {
+            "auth": "The documentation explicitly states that authentication is via HTTP Bearer token in the Authorization header, using keys formatted as ipx_live_xxxxx or ipx_test_xxxxx.",
+            "access": "Users can sign up and obtain API keys from the dashboard. A free tier is available with rate limits (10 audits/day), and the homepage mentions starting free with five lifetime audits, indicating self-serve access without mandatory payment for initial credentials.",
+            "mcp": "The vendor publishes official documentation for an MCP server at /docs/mcp-server and hosts a public GitHub repository for the @ipayx/mcp-fx-audit package, confirming an official MCP server.",
+            "verdict": "Public documentation exists, self-serve free credentials are available, and an official MCP server is provided, allowing a toolkit to be built immediately."
+          },
+          "_model": "qwen/qwen3.8-27b"
+        },
+        "autofix": []
+      }
+    ],
+    "catalog": {
+      "in_catalog": false,
+      "checked": [
+        "ipayx"
+      ]
+    },
+    "changed_fields": [],
+    "field_status": {
+      "auth": "verified",
+      "access": "verified",
+      "api": "verified",
+      "mcp": "verified",
+      "verdict": "verified"
+    },
+    "needs_human": [],
+    "before": {
+      "auth_methods": [
+        "api_key",
+        "bearer_token",
+        "none"
+      ],
+      "auth_primary": "bearer_token",
+      "access_tier": "self_serve_free",
+      "access_notes": "Free tier available upon signup with usage limits; paid tiers available for full reports.",
+      "api_types": [
+        "rest",
+        "websocket"
+      ],
+      "api_breadth": "narrow",
+      "api_notes": "Covers FX rates, transaction auditing, and forensic reports via REST and MCP.",
+      "mcp": "official",
+      "mcp_url": "https://www.ipayx.ai/docs/mcp-server",
+      "verdict": "build_now",
+      "blocker": "none",
+      "blocker_notes": "None"
+    },
+    "seconds": 361.2
+  },
+  "pass3": {
+    "before": {
+      "auth_methods": [
+        "api_key",
+        "bearer_token",
+        "none"
+      ],
+      "auth_primary": "bearer_token",
+      "access_tier": "self_serve_free",
+      "verdict": "build_now",
+      "blocker": "none"
+    },
+    "log": [
+      {
+        "loop": "L6_access",
+        "error": "Groq failed: HTTP 429: {\"error\":{\"message\":\"Rate limit reached for model `qwen/qwen3.8-27b` in organization `org_01m2fd9xn8e3dtb9zfqc2jdhsc` service tier `on_demand` on tokens per day (TPD): Limit 200"
+      },
+      {
+        "loop": "L7_auth",
+        "error": "Groq failed: HTTP 429: {\"error\":{\"message\":\"Rate limit reached for model `qwen/qwen3.8-27b` in organization `org_01m2fd9xn8e3dtb9zfqc2jdhsc` service tier `on_demand` on tokens per day (TPD): Limit 200"
+      }
+    ],
+    "access_sources": [
+      "https://ipayx.ai/docs",
+      "https://www.ipayx.ai/docs/mcp-server",
+      "https://www.ipayx.ai",
+      "https://github.com/Ipayx-stellar/mcp-fx-audit",
+      "https://github.com/iPAYX-Technologies/mcp-fx-audit"
+    ]
+  }
+}

@@ -1,0 +1,389 @@
+{
+  "one_liner": "Build systems to grow revenue with data enrichment and AI agents.",
+  "auth_methods": [
+    "api_key",
+    "oauth2"
+  ],
+  "auth_primary": "api_key",
+  "auth_notes": "Uses a personal API key passed via the clay-api-key header, or OAuth via CLI login.",
+  "access_tier": "self_serve_free",
+  "access_notes": "Sign up for a free trial or account on Clay to access the API and generate an API key self-serve.",
+  "api_types": [
+    "rest"
+  ],
+  "api_breadth": "moderate",
+  "api_notes": "REST API covering user/workspace, search, tables, and routines under https://api.clay.com/public/v0",
+  "mcp": "official",
+  "mcp_url": "https://www.clay.com/guides/clay-mcp",
+  "verdict": "build_now",
+  "blocker": "none",
+  "blocker_notes": "Public API docs and self-serve access are available.",
+  "evidence": {
+    "auth": {
+      "url": "https://developers.clay.com/public-api/authentication",
+      "quote": "Every request to the Clay Public API must include a Clay API key in the clay-api-key header.",
+      "check": "ok"
+    },
+    "access": {
+      "url": "https://www.clay.com",
+      "quote": "Start free trial",
+      "check": "ok_url_outside_sources"
+    },
+    "api": {
+      "url": "https://developers.clay.com/api-reference/search/create-a-search-from-a-clay-search-query-beta",
+      "quote": "servers:\n  - description: production\n    url: https://api.clay.com/public/v0",
+      "check": "ok"
+    },
+    "mcp": {
+      "url": "https://www.clay.com/guides/clay-mcp",
+      "quote": "Clay's MCP server uses it to expose 150+ data providers, AI research agents, and your team's prebuilt workflows inside ChatGPT, Claude, and Codex.",
+      "check": "ok"
+    },
+    "verdict": {
+      "url": "https://developers.clay.com/quickstart",
+      "quote": "Use the Public API to call Clay from your own applications and services — backend jobs, internal tools, queues, and product features.",
+      "check": "ok"
+    }
+  },
+  "confidence": {
+    "auth": 0.9,
+    "access": 0.9,
+    "api": 0.9,
+    "mcp": 0.8,
+    "verdict": 0.9
+  },
+  "_model": "gemini-3.5-flash-lite",
+  "status": "ok",
+  "id": 60,
+  "name": "Clay",
+  "category": "Data SEO & Scraping",
+  "hint": "clay.com",
+  "sources": [
+    {
+      "url": "https://clay.com",
+      "via": "direct",
+      "chars": 12188
+    },
+    {
+      "url": "https://developers.clay.com/api-reference/me/get-the-authenticated-user",
+      "via": "direct",
+      "chars": 2180
+    },
+    {
+      "url": "https://developers.clay.com/api-reference/search/create-a-search-from-a-clay-search-query-beta",
+      "via": "composio_fetch",
+      "chars": 3799
+    },
+    {
+      "url": "https://developers.clay.com/concepts/cli-basics",
+      "via": "direct",
+      "chars": 2911
+    },
+    {
+      "url": "https://developers.clay.com/public-api/authentication",
+      "via": "direct",
+      "chars": 994
+    },
+    {
+      "url": "https://developers.clay.com/quickstart",
+      "via": "direct",
+      "chars": 1826
+    },
+    {
+      "url": "https://developers.clay.com",
+      "via": "verification"
+    },
+    {
+      "url": "https://developers.clay.com/tables",
+      "via": "verification"
+    },
+    {
+      "url": "https://www.clay.com/guides/clay-mcp",
+      "via": "verification"
+    },
+    {
+      "url": "https://university.clay.com/docs/connect-to-clay-mcp",
+      "via": "verification"
+    },
+    {
+      "url": "https://developers.clay.com",
+      "via": "verification"
+    },
+    {
+      "url": "https://developers.clay.com/tables",
+      "via": "verification"
+    },
+    {
+      "url": "https://clay.com",
+      "via": "pass3"
+    },
+    {
+      "url": "https://developers.clay.com",
+      "via": "pass3"
+    },
+    {
+      "url": "https://developers.clay.com/concepts/cli-basics",
+      "via": "pass3"
+    },
+    {
+      "url": "https://developers.clay.com/public-api/authentication",
+      "via": "pass3"
+    },
+    {
+      "url": "https://developers.clay.com/quickstart",
+      "via": "pass3"
+    }
+  ],
+  "queries": [
+    "Clay API authentication developer docs",
+    "Clay API access pricing plan developer",
+    "Clay MCP server"
+  ],
+  "seconds": 53.2,
+  "verification_queries": [
+    "Clay API access requirements plan",
+    "Clay developer account API key free OR partner OR enterprise",
+    "Clay MCP server model context protocol",
+    "Clay API access requirements plan",
+    "Clay developer account API key free OR partner OR enterprise"
+  ],
+  "verification": {
+    "initial_issues": [
+      {
+        "loop": "L4_verifier",
+        "field": "access",
+        "problem": "verifier says self_serve_trial vs agent self_serve_free"
+      },
+      {
+        "loop": "L4_verifier",
+        "field": "mcp",
+        "problem": "verifier says official vs agent none_found"
+      },
+      {
+        "loop": "L5_mcp_probe",
+        "field": "mcp",
+        "problem": "possible official MCP found: ['https://www.clay.com/guides/clay-mcp', 'https://university.clay.com/docs/connect-to-clay-mcp']",
+        "urls": [
+          "https://www.clay.com/guides/clay-mcp",
+          "https://university.clay.com/docs/connect-to-clay-mcp"
+        ]
+      }
+    ],
+    "final_issues": [
+      {
+        "loop": "L4_verifier",
+        "field": "access",
+        "problem": "verifier says self_serve_trial vs agent self_serve_free"
+      }
+    ],
+    "rounds": [
+      {
+        "round": 0,
+        "issues": [
+          {
+            "loop": "L4_verifier",
+            "field": "access",
+            "problem": "verifier says self_serve_trial vs agent self_serve_free"
+          },
+          {
+            "loop": "L4_verifier",
+            "field": "mcp",
+            "problem": "verifier says official vs agent none_found"
+          },
+          {
+            "loop": "L5_mcp_probe",
+            "field": "mcp",
+            "problem": "possible official MCP found: ['https://www.clay.com/guides/clay-mcp', 'https://university.clay.com/docs/connect-to-clay-mcp']",
+            "urls": [
+              "https://www.clay.com/guides/clay-mcp",
+              "https://university.clay.com/docs/connect-to-clay-mcp"
+            ]
+          }
+        ],
+        "verifier": {
+          "auth_methods": [
+            "api_key",
+            "oauth2"
+          ],
+          "auth_primary": "oauth2",
+          "access_tier": "self_serve_trial",
+          "api_types": [
+            "rest"
+          ],
+          "mcp": "official",
+          "verdict": "build_now",
+          "reasons": {
+            "auth": "API key and OAuth2 documented; OAuth used by CLI; API key for API calls",
+            "access": "Free trial available; credentials via trial",
+            "mcp": "Official MCP documented on Clay site",
+            "verdict": "Public docs and free trial allow immediate build"
+          },
+          "_model": "openai/gpt-oss-20b"
+        },
+        "autofix": []
+      },
+      {
+        "round": 1,
+        "queries": [
+          "Clay API access requirements plan",
+          "Clay developer account API key free OR partner OR enterprise",
+          "Clay MCP server model context protocol"
+        ],
+        "new_sources": [
+          "https://clay.com",
+          "https://developers.clay.com",
+          "https://developers.clay.com/public-api/authentication",
+          "https://developers.clay.com/quickstart",
+          "https://developers.clay.com/tables",
+          "https://www.clay.com/guides/clay-mcp",
+          "https://university.clay.com/docs/connect-to-clay-mcp"
+        ],
+        "change_log": "Updated access tier to reflect self-serve options and set MCP to official based on Clay's documented MCP server and guides.",
+        "issues": [
+          {
+            "loop": "L4_verifier",
+            "field": "access",
+            "problem": "verifier says self_serve_trial vs agent self_serve_free"
+          }
+        ],
+        "verifier": {
+          "auth_methods": [
+            "api_key"
+          ],
+          "auth_primary": "api_key",
+          "access_tier": "self_serve_trial",
+          "api_types": [
+            "rest"
+          ],
+          "mcp": "official",
+          "verdict": "build_now",
+          "reasons": {
+            "auth": "Public API requires a Clay API key, documented in the authentication guide.",
+            "access": "API keys can be created by users in Settings → Account → API keys (beta) after signing up for a free trial, allowing immediate access to the API.",
+            "mcp": "The documentation references an official MCP for reps (Clay MCP), indicating a vendor‑published MCP server.",
+            "verdict": "All necessary documentation and self‑serve credentials are available, enabling a developer to build a toolkit today."
+          },
+          "_model": "openai/gpt-oss-20b"
+        },
+        "autofix": []
+      },
+      {
+        "round": 2,
+        "queries": [
+          "Clay API access requirements plan",
+          "Clay developer account API key free OR partner OR enterprise",
+          "Clay MCP server model context protocol",
+          "Clay API access requirements plan",
+          "Clay developer account API key free OR partner OR enterprise"
+        ],
+        "new_sources": [
+          "https://clay.com",
+          "https://developers.clay.com",
+          "https://developers.clay.com/public-api/authentication",
+          "https://developers.clay.com/quickstart",
+          "https://developers.clay.com/tables"
+        ],
+        "change_log": "Resolved the verifier conflict by adhering to the definition for self_serve_free since users can sign up for a free trial/account and generate API keys self-serve.",
+        "issues": [
+          {
+            "loop": "L4_verifier",
+            "field": "access",
+            "problem": "verifier says self_serve_trial vs agent self_serve_free"
+          }
+        ],
+        "verifier": {
+          "auth_methods": [
+            "api_key"
+          ],
+          "auth_primary": "api_key",
+          "access_tier": "self_serve_trial",
+          "api_types": [
+            "rest"
+          ],
+          "mcp": "official",
+          "verdict": "build_with_friction",
+          "reasons": {
+            "auth": "Only Clay API key is documented for authentication.",
+            "access": "API keys are created under Settings → Account → API keys (beta) and the site offers a free trial; no fully free sandbox is explicitly documented.",
+            "mcp": "The documentation references a Clay MCP (MCP for reps) and a Clay MCP page, indicating an official MCP server is provided by Clay.",
+            "verdict": "A developer can start building after signing up for a free trial, but full production access requires a paid plan or further approval, so building today requires friction."
+          },
+          "_model": "openai/gpt-oss-20b"
+        },
+        "autofix": []
+      }
+    ],
+    "catalog": {
+      "in_catalog": true,
+      "slug": "clay",
+      "auth": [
+        "api_key"
+      ],
+      "tools_count": 6
+    },
+    "changed_fields": [
+      "auth",
+      "mcp"
+    ],
+    "field_status": {
+      "auth": "corrected",
+      "access": "needs_human",
+      "api": "verified",
+      "mcp": "corrected",
+      "verdict": "verified"
+    },
+    "needs_human": [
+      "access"
+    ],
+    "before": {
+      "auth_methods": [
+        "api_key",
+        "bearer_token",
+        "oauth2"
+      ],
+      "auth_primary": "api_key",
+      "access_tier": "self_serve_free",
+      "access_notes": "Sign up for a free account on Clay to access the API and generate an API key.",
+      "api_types": [
+        "rest"
+      ],
+      "api_breadth": "moderate",
+      "api_notes": "REST API covering user/workspace, search, tables, and routines under https://api.clay.com/public/v0",
+      "mcp": "none_found",
+      "mcp_url": null,
+      "verdict": "build_now",
+      "blocker": "none",
+      "blocker_notes": "Public API docs and self-serve access are available."
+    },
+    "seconds": 64.8
+  },
+  "pass3": {
+    "before": {
+      "auth_methods": [
+        "api_key",
+        "oauth2"
+      ],
+      "auth_primary": "api_key",
+      "access_tier": "self_serve_free",
+      "verdict": "build_now",
+      "blocker": "none"
+    },
+    "log": [
+      {
+        "loop": "L6_access",
+        "error": "Groq failed: HTTP 429: {\"error\":{\"message\":\"Rate limit reached for model `qwen/qwen3.8-27b` in organization `org_01m2fd9xn8e3dtb9zfqc2jdhsc` service tier `on_demand` on tokens per day (TPD): Limit 200"
+      },
+      {
+        "loop": "L7_auth",
+        "error": "Groq failed: HTTP 429: {\"error\":{\"message\":\"Rate limit reached for model `qwen/qwen3.8-27b` in organization `org_01m2fd9xn8e3dtb9zfqc2jdhsc` service tier `on_demand` on tokens per day (TPD): Limit 200"
+      }
+    ],
+    "access_sources": [
+      "https://clay.com",
+      "https://developers.clay.com",
+      "https://developers.clay.com/concepts/cli-basics",
+      "https://developers.clay.com/public-api/authentication",
+      "https://developers.clay.com/quickstart"
+    ]
+  }
+}

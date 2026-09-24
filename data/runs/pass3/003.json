@@ -1,0 +1,299 @@
+{
+  "one_liner": "Sales CRM and pipeline management software with an extensive REST API.",
+  "auth_methods": [
+    "oauth2",
+    "api_key"
+  ],
+  "auth_primary": "oauth2",
+  "auth_notes": "OAuth 2.0 is used for Marketplace apps, while manual personal API tokens/keys can be obtained from the Pipedrive app for private integrations.",
+  "access_tier": "self_serve_free",
+  "access_notes": "14-day free trial available with API access included across plans, and developers can request a sandbox account.",
+  "api_types": [
+    "rest"
+  ],
+  "api_breadth": "broad",
+  "api_notes": "Extensive API reference with hundreds of endpoints covering activities, deals, persons, organizations, products, pipelines, stages, and search.",
+  "mcp": "official",
+  "mcp_url": "https://www.pipedrive.com/en/features/mcp-server",
+  "verdict": "build_now",
+  "blocker": "none",
+  "blocker_notes": "Public REST API with self-serve free trial and standard auth methods.",
+  "evidence": {
+    "auth": {
+      "url": "https://developers.pipedrive.com/docs/api/v1/Oauth",
+      "quote": "Using OAuth 2.0 is necessary for developing apps that are available in the Pipedrive Marketplace.",
+      "check": "ok"
+    },
+    "access": {
+      "url": "https://pipedrive.com",
+      "page_title": null,
+      "quote": "14-day free trial, no credit card required",
+      "check": "ok"
+    },
+    "api": {
+      "url": "https://www.pipedrive.com/en/features/crm-api",
+      "quote": "Within our powerful and flexible API is our extensive API Reference with hundreds of endpoints.",
+      "check": "ok"
+    },
+    "mcp": {
+      "url": "https://www.pipedrive.com/en/newsroom/pipedrive-launches-native-mcp-server-bringing-crm-workflows-directly-into-ai-assistants",
+      "quote": "Pipedrive, the easy and intelligent CRM for small and medium-sized businesses, today announced the launch of its native Model Context Protocol (MCP) server, enabling customers to securely connect Pipedrive with AI assistants such as ChatGPT, Claude and other MCP-compatible tools.",
+      "check": "ok"
+    },
+    "verdict": {
+      "url": "https://pipedrive.com",
+      "quote": "14-day free trial, no credit card required",
+      "check": "ok"
+    }
+  },
+  "confidence": {
+    "auth": 0.9,
+    "access": 0.9,
+    "api": 0.9,
+    "mcp": 0.8,
+    "verdict": 0.9
+  },
+  "_model": "gemini-3.5-flash-lite",
+  "status": "ok",
+  "id": 3,
+  "name": "Pipedrive",
+  "category": "CRM & Sales",
+  "hint": "pipedrive.com",
+  "sources": [
+    {
+      "url": "https://pipedrive.com",
+      "via": "direct",
+      "chars": 13740
+    },
+    {
+      "url": "https://developers.pipedrive.com/changelog/post/apiv2-endpoints-now-stable-improved-performance-lower-token-costs",
+      "via": "direct",
+      "chars": 3142
+    },
+    {
+      "url": "https://developers.pipedrive.com/docs/api/v1",
+      "via": "direct",
+      "chars": 2494
+    },
+    {
+      "url": "https://developers.pipedrive.com/docs/api/v1/Oauth",
+      "via": "direct",
+      "chars": 6078
+    },
+    {
+      "url": "https://support.pipedrive.com/en/article/how-does-pricing-work-in-pipedrive",
+      "via": "direct",
+      "chars": 3260
+    },
+    {
+      "url": "https://www.pipedrive.com/en/features/crm-api",
+      "via": "direct",
+      "chars": 8326
+    },
+    {
+      "url": "https://www.pipedrive.com/en/newsroom/pipedrive-launches-native-mcp-server-bringing-crm-workflows-directly-into-ai-assistants",
+      "via": "verification"
+    },
+    {
+      "url": "https://github.com/WillDent/pipedrive-mcp-server",
+      "via": "verification"
+    },
+    {
+      "url": "https://github.com/civicteam/pipedrive-mcp-server",
+      "via": "verification"
+    },
+    {
+      "url": "https://github.com/ckalima/pipedrive-mcp-server",
+      "via": "verification"
+    },
+    {
+      "url": "https://www.pipedrive.com/en/features/mcp-server",
+      "via": "verification"
+    },
+    {
+      "url": "https://pipedrive.com",
+      "via": "pass3"
+    },
+    {
+      "url": "https://developers.pipedrive.com",
+      "via": "pass3"
+    },
+    {
+      "url": "https://developers.pipedrive.com/docs/api/v1",
+      "via": "pass3"
+    },
+    {
+      "url": "https://developers.pipedrive.com/docs/api/v1/Oauth",
+      "via": "pass3"
+    },
+    {
+      "url": "https://support.pipedrive.com/en/article/how-does-pricing-work-in-pipedrive",
+      "via": "pass3"
+    }
+  ],
+  "queries": [
+    "Pipedrive API authentication developer docs",
+    "Pipedrive API access pricing plan developer",
+    "Pipedrive MCP server"
+  ],
+  "seconds": 81.0,
+  "verification_queries": [
+    "Pipedrive MCP server model context protocol"
+  ],
+  "verification": {
+    "initial_issues": [
+      {
+        "loop": "L5_mcp_probe",
+        "field": "mcp",
+        "problem": "possible official MCP found: ['https://www.pipedrive.com/en/features/mcp-server', 'https://www.pipedrive.com/en/newsroom/pipedrive-launches-native-mcp-server-bringing-crm-workflows-directly-into-ai-assistants']",
+        "urls": [
+          "https://www.pipedrive.com/en/features/mcp-server",
+          "https://www.pipedrive.com/en/newsroom/pipedrive-launches-native-mcp-server-bringing-crm-workflows-directly-into-ai-assistants"
+        ]
+      }
+    ],
+    "final_issues": [],
+    "rounds": [
+      {
+        "round": 0,
+        "issues": [
+          {
+            "loop": "L5_mcp_probe",
+            "field": "mcp",
+            "problem": "possible official MCP found: ['https://www.pipedrive.com/en/features/mcp-server', 'https://www.pipedrive.com/en/newsroom/pipedrive-launches-native-mcp-server-bringing-crm-workflows-directly-into-ai-assistants']",
+            "urls": [
+              "https://www.pipedrive.com/en/features/mcp-server",
+              "https://www.pipedrive.com/en/newsroom/pipedrive-launches-native-mcp-server-bringing-crm-workflows-directly-into-ai-assistants"
+            ]
+          }
+        ],
+        "verifier": {
+          "auth_methods": [
+            "oauth2",
+            "api_key"
+          ],
+          "auth_primary": "oauth2",
+          "access_tier": "self_serve_free",
+          "api_types": [
+            "rest"
+          ],
+          "mcp": "none_found",
+          "verdict": "build_now",
+          "reasons": {
+            "auth": "Docs list OAuth 2.0 flow (source 4) and API‑token (api_key) authentication (source 3).",
+            "access": "Free 14‑day trial and sandbox account can be obtained without payment (source 1, source 3).",
+            "mcp": "No MCP server is mentioned in any source.",
+            "verdict": "Public REST API with free self‑serve credentials enables immediate integration."
+          },
+          "_model": "openai/gpt-oss-120b"
+        },
+        "autofix": []
+      },
+      {
+        "round": 1,
+        "queries": [
+          "Pipedrive MCP server model context protocol"
+        ],
+        "new_sources": [
+          "https://pipedrive.com",
+          "https://www.pipedrive.com/en/newsroom/pipedrive-launches-native-mcp-server-bringing-crm-workflows-directly-into-ai-assistants",
+          "https://github.com/WillDent/pipedrive-mcp-server",
+          "https://github.com/civicteam/pipedrive-mcp-server",
+          "https://github.com/ckalima/pipedrive-mcp-server",
+          "https://www.pipedrive.com/en/features/mcp-server"
+        ],
+        "change_log": "Updated mcp from none_found to official because Pipedrive launched a native, vendor-maintained Model Context Protocol server.",
+        "issues": [],
+        "verifier": {
+          "auth_methods": [
+            "oauth2",
+            "bearer_token"
+          ],
+          "auth_primary": "oauth2",
+          "access_tier": "self_serve_free",
+          "api_types": [
+            "rest"
+          ],
+          "mcp": "official",
+          "verdict": "build_now",
+          "reasons": {
+            "auth": "Pipedrive supports OAuth2 (setup via secure OAuth connection) and personal API tokens used as Bearer tokens (Authorization: Bearer <token>) per the sources.",
+            "access": "A 14‑day free trial provides a Pipedrive account and API token without requiring payment, enabling self‑serve credential acquisition.",
+            "mcp": "Pipedrive announced a native Model Context Protocol (MCP) server available to all plans, constituting an official MCP implementation.",
+            "verdict": "Public API documentation, free self‑serve credentials, and an official MCP server are all available, allowing a toolkit to be built today."
+          },
+          "_model": "openai/gpt-oss-120b"
+        },
+        "autofix": []
+      }
+    ],
+    "catalog": {
+      "in_catalog": true,
+      "slug": "pipedrive",
+      "auth": [
+        "api_key",
+        "oauth2"
+      ],
+      "tools_count": 400
+    },
+    "changed_fields": [
+      "mcp"
+    ],
+    "field_status": {
+      "auth": "verified",
+      "access": "verified",
+      "api": "verified",
+      "mcp": "corrected",
+      "verdict": "verified"
+    },
+    "needs_human": [],
+    "before": {
+      "auth_methods": [
+        "oauth2",
+        "api_key"
+      ],
+      "auth_primary": "oauth2",
+      "access_tier": "self_serve_free",
+      "access_notes": "14-day free trial available with API access included across plans, and developers can request a sandbox account.",
+      "api_types": [
+        "rest"
+      ],
+      "api_breadth": "broad",
+      "api_notes": "Extensive API reference with hundreds of endpoints covering activities, deals, persons, organizations, products, pipelines, stages, and search.",
+      "mcp": "none_found",
+      "mcp_url": null,
+      "verdict": "build_now",
+      "blocker": "none",
+      "blocker_notes": "Public REST API with self-serve free trial and standard auth methods."
+    },
+    "seconds": 28.5
+  },
+  "_public_review": "unknown",
+  "pass3": {
+    "before": {
+      "auth_methods": [
+        "oauth2",
+        "api_key"
+      ],
+      "auth_primary": "oauth2",
+      "access_tier": "self_serve_free",
+      "verdict": "build_now",
+      "blocker": "none"
+    },
+    "log": [
+      {
+        "loop": "L6_access",
+        "field": "access",
+        "change": null,
+        "reason": "confirmed with a verified quote"
+      }
+    ],
+    "access_sources": [
+      "https://pipedrive.com",
+      "https://developers.pipedrive.com",
+      "https://developers.pipedrive.com/docs/api/v1",
+      "https://developers.pipedrive.com/docs/api/v1/Oauth",
+      "https://support.pipedrive.com/en/article/how-does-pricing-work-in-pipedrive"
+    ]
+  }
+}

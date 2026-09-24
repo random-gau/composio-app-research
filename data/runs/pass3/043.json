@@ -1,0 +1,290 @@
+{
+  "one_liner": "Open SaaS e-commerce platform offering REST and GraphQL APIs for store management and MCP integration.",
+  "auth_methods": [
+    "oauth2",
+    "api_key",
+    "bearer_token",
+    "jwt_or_signed"
+  ],
+  "auth_primary": "oauth2",
+  "auth_notes": "OAuth2 code grant for apps, plus X-Auth-Token API keys and JWT/Bearer tokens for storefront/B2B APIs.",
+  "access_tier": "self_serve_free",
+  "access_notes": "Sign up for a free BigCommerce trial store or developer account to test APIs and create credentials.",
+  "api_types": [
+    "rest",
+    "graphql"
+  ],
+  "api_breadth": "broad",
+  "api_notes": "Comprehensive REST and GraphQL APIs managing products, orders, customers, and store settings.",
+  "mcp": "official",
+  "mcp_url": "https://docs.bigcommerce.com/_mcp/server",
+  "verdict": "build_now",
+  "blocker": "none",
+  "blocker_notes": "Public docs, self-serve sandboxes, and official MCP support enable building today.",
+  "evidence": {
+    "auth": {
+      "url": "https://docs.bigcommerce.com/developer/docs/integrations/apps/guide/auth",
+      "quote": "this article covers the sequence and contents of API requests and responses in the code grant authorization flow for a BigCommerce app.",
+      "check": "ok"
+    },
+    "access": {
+      "url": "https://developer.bigcommerce.com",
+      "quote": "Create a sandbox store: Sign up for a free BigCommerce trial store to test API control panel. Create credentials with the scopes you need.",
+      "check": "ok"
+    },
+    "api": {
+      "url": "https://developer.bigcommerce.com",
+      "quote": "Use REST and GraphQL APIs to manage products, orders, Set up B2B Edition for wholesale and enterprise buyers",
+      "check": "ok"
+    },
+    "mcp": {
+      "url": "https://docs.bigcommerce.com/developer/docs/ai-agent-setup",
+      "quote": "BigCommerce docs MCP server https://docs.bigcommerce.com/_mcp/server",
+      "check": "ok"
+    },
+    "verdict": {
+      "url": "https://developer.bigcommerce.com",
+      "quote": "Sign up for a free BigCommerce trial store to test API control panel. Create credentials with the scopes you need.",
+      "check": "ok"
+    }
+  },
+  "confidence": {
+    "auth": 5.0,
+    "access": 5.0,
+    "api": 5.0,
+    "mcp": 5.0,
+    "verdict": 5.0
+  },
+  "_model": "gemini-3.5-flash-lite",
+  "status": "ok",
+  "id": 43,
+  "name": "BigCommerce",
+  "category": "Ecommerce",
+  "hint": "developer.bigcommerce.com",
+  "sources": [
+    {
+      "url": "https://developer.bigcommerce.com",
+      "via": "direct",
+      "chars": 7672
+    },
+    {
+      "url": "https://docs.bigcommerce.com/developer/api-reference/mcp/overview",
+      "via": "direct",
+      "chars": 4263
+    },
+    {
+      "url": "https://docs.bigcommerce.com/developer/api-reference/rest/b2b/management/authentication",
+      "via": "direct",
+      "chars": 2006
+    },
+    {
+      "url": "https://docs.bigcommerce.com/developer/docs/ai-agent-setup",
+      "via": "direct",
+      "chars": 3827
+    },
+    {
+      "url": "https://docs.bigcommerce.com/developer/docs/b2b-edition/getting-started/authentication",
+      "via": "direct",
+      "chars": 13709
+    },
+    {
+      "url": "https://docs.bigcommerce.com/developer/docs/integrations/apps/guide/auth",
+      "via": "direct",
+      "chars": 11453
+    },
+    {
+      "url": "https://docs.bigcommerce.com/developer/docs/b2b-edition/getting-started/authentication.mdx",
+      "via": "verification"
+    },
+    {
+      "url": "https://docs.bigcommerce.com/developer/docs/b2b-edition/getting-started/overview",
+      "via": "verification"
+    },
+    {
+      "url": "https://docs.bigcommerce.com/developer/docs/integrations/apps/guide.md",
+      "via": "verification"
+    },
+    {
+      "url": "https://developer.bigcommerce.com",
+      "via": "pass3"
+    },
+    {
+      "url": "https://developer.bigcommerce.com/docs/5a269b1b8b4e5-price-list-api",
+      "via": "pass3"
+    },
+    {
+      "url": "https://docs.bigcommerce.com/developer/docs/integrations/apps/guide.md",
+      "via": "pass3"
+    },
+    {
+      "url": "https://docs.bigcommerce.com/developer/docs/integrations/apps/guide/auth",
+      "via": "pass3"
+    },
+    {
+      "url": "https://docs.bigcommerce.com/developer/docs/integrations/apps/guide/beginning-development",
+      "via": "pass3"
+    }
+  ],
+  "queries": [
+    "BigCommerce API authentication developer docs",
+    "BigCommerce API access pricing plan developer",
+    "BigCommerce MCP server"
+  ],
+  "seconds": 53.0,
+  "verification_queries": [
+    "BigCommerce API access requirements plan",
+    "BigCommerce developer account API key free OR partner OR enterprise"
+  ],
+  "verification": {
+    "initial_issues": [
+      {
+        "loop": "L4_verifier",
+        "field": "access",
+        "problem": "verifier says self_serve_trial vs agent self_serve_free"
+      }
+    ],
+    "final_issues": [],
+    "rounds": [
+      {
+        "round": 0,
+        "issues": [
+          {
+            "loop": "L4_verifier",
+            "field": "access",
+            "problem": "verifier says self_serve_trial vs agent self_serve_free"
+          }
+        ],
+        "verifier": {
+          "auth_methods": [
+            "bearer_token",
+            "api_key"
+          ],
+          "auth_primary": "bearer_token",
+          "access_tier": "self_serve_trial",
+          "api_types": [
+            "rest",
+            "graphql"
+          ],
+          "mcp": "official",
+          "verdict": "build_now",
+          "reasons": {
+            "auth": "The API uses Bearer tokens (access tokens) for authentication, as shown in the code samples and documentation for REST and GraphQL endpoints.",
+            "access": "Developers can sign up for a free BigCommerce trial store to test API access, which provides working credentials for a limited time.",
+            "mcp": "BigCommerce provides an official MCP server for its documentation and API tools, documented at docs.bigcommerce.com.",
+            "verdict": "Public documentation and self-serve trial credentials are available, allowing a toolkit to be built immediately for testing and development."
+          },
+          "_model": "qwen/qwen3.8-27b"
+        },
+        "autofix": []
+      },
+      {
+        "round": 1,
+        "queries": [
+          "BigCommerce API access requirements plan",
+          "BigCommerce developer account API key free OR partner OR enterprise"
+        ],
+        "new_sources": [
+          "https://developer.bigcommerce.com",
+          "https://docs.bigcommerce.com/developer/docs/b2b-edition/getting-started/authentication.mdx",
+          "https://docs.bigcommerce.com/developer/docs/b2b-edition/getting-started/overview",
+          "https://docs.bigcommerce.com/developer/docs/integrations/apps/guide.md",
+          "https://docs.bigcommerce.com/developer/docs/integrations/apps/guide/auth"
+        ],
+        "change_log": "Retained self_serve_free as the primary access tier since BigCommerce offers a free trial/sandbox store sign-up to obtain working API credentials without immediate payment.",
+        "issues": [],
+        "verifier": {
+          "auth_methods": [
+            "oauth2",
+            "api_key",
+            "bearer_token"
+          ],
+          "auth_primary": "oauth2",
+          "access_tier": "self_serve_free",
+          "api_types": [
+            "rest",
+            "graphql"
+          ],
+          "mcp": "official",
+          "verdict": "build_now",
+          "reasons": {
+            "auth": "The public API documents OAuth 2.0 Authorization Code Grant for single-click apps (recommended) and API tokens (X-Auth-Token/Bearer) for connector apps or direct integration.",
+            "access": "Developers can sign up for a free trial store or request a free non-transactional sandbox store to obtain working credentials without payment or approval hurdles.",
+            "mcp": "The documentation explicitly instructs AI clients to connect to the official MCP server at https://docs.bigcommerce.com/_mcp/server.",
+            "verdict": "Public documentation is available, and self-serve free credentials (trial/sandbox) allow a toolkit to be built immediately."
+          },
+          "_model": "qwen/qwen3.8-27b"
+        },
+        "autofix": []
+      }
+    ],
+    "catalog": {
+      "in_catalog": false,
+      "checked": [
+        "bigcommerce"
+      ]
+    },
+    "changed_fields": [],
+    "field_status": {
+      "auth": "verified",
+      "access": "confirmed_after_recheck",
+      "api": "verified",
+      "mcp": "verified",
+      "verdict": "verified"
+    },
+    "needs_human": [],
+    "before": {
+      "auth_methods": [
+        "oauth2",
+        "api_key",
+        "bearer_token",
+        "jwt_or_signed"
+      ],
+      "auth_primary": "oauth2",
+      "access_tier": "self_serve_free",
+      "access_notes": "Sign up for a free BigCommerce trial store or developer account to test APIs and create credentials.",
+      "api_types": [
+        "rest",
+        "graphql"
+      ],
+      "api_breadth": "broad",
+      "api_notes": "Comprehensive REST and GraphQL APIs managing products, orders, customers, and store settings.",
+      "mcp": "official",
+      "mcp_url": "https://docs.bigcommerce.com/_mcp/server",
+      "verdict": "build_now",
+      "blocker": "none",
+      "blocker_notes": "Public docs, self-serve sandboxes, and official MCP support enable building today."
+    },
+    "seconds": 312.9
+  },
+  "pass3": {
+    "before": {
+      "auth_methods": [
+        "oauth2",
+        "api_key",
+        "bearer_token",
+        "jwt_or_signed"
+      ],
+      "auth_primary": "oauth2",
+      "access_tier": "self_serve_free",
+      "verdict": "build_now",
+      "blocker": "none"
+    },
+    "log": [
+      {
+        "loop": "L6_access",
+        "error": "Groq failed: HTTP 429: {\"error\":{\"message\":\"Rate limit reached for model `qwen/qwen3.8-27b` in organization `org_01m2fd9xn8e3dtb9zfqc2jdhsc` service tier `on_demand` on tokens per day (TPD): Limit 200"
+      },
+      {
+        "loop": "L7_auth",
+        "error": "Groq failed: HTTP 429: {\"error\":{\"message\":\"Rate limit reached for model `qwen/qwen3.8-27b` in organization `org_01m2fd9xn8e3dtb9zfqc2jdhsc` service tier `on_demand` on tokens per day (TPD): Limit 200"
+      }
+    ],
+    "access_sources": [
+      "https://developer.bigcommerce.com",
+      "https://developer.bigcommerce.com/docs/5a269b1b8b4e5-price-list-api",
+      "https://docs.bigcommerce.com/developer/docs/integrations/apps/guide.md",
+      "https://docs.bigcommerce.com/developer/docs/integrations/apps/guide/auth",
+      "https://docs.bigcommerce.com/developer/docs/integrations/apps/guide/beginning-development"
+    ]
+  }
+}

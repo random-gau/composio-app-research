@@ -1,0 +1,347 @@
+{
+  "one_liner": "Web data infrastructure providing scraping APIs, proxies, and an official Model Context Protocol server.",
+  "auth_methods": [
+    "api_key"
+  ],
+  "auth_primary": "api_key",
+  "auth_notes": "Bright Data uses API keys / tokens generated from the user settings control panel.",
+  "access_tier": "self_serve_free",
+  "access_notes": "Bright Data offers a free tier/plan and free trial credits (such as 5,000 free monthly requests for the Web MCP and free credits for testing) where developers can sign up without a credit card to obtain an API key.",
+  "api_types": [
+    "rest"
+  ],
+  "api_breadth": "broad",
+  "api_notes": "Covers scraping APIs, proxy configuration, datasets, scrapers, and MCP server tools.",
+  "mcp": "official",
+  "mcp_url": "https://github.com/brightdata/brightdata-mcp",
+  "verdict": "build_now",
+  "blocker": "none",
+  "blocker_notes": "Free tier and public API keys available immediately upon signup.",
+  "evidence": {
+    "auth": {
+      "url": "https://docs.brightdata.com/ai/mcp-server/faqs",
+      "quote": "No. The Bright Data MCP server only requires an API token, for both the remote (hosted) and local (self-hosted) setup.",
+      "check": "ok"
+    },
+    "access": {
+      "url": "https://brightdata.com/ai/mcp-server",
+      "quote": "NEW! Start with Bright Data's Web MCP and get 5,000 free monthly requests ... No credit card required",
+      "check": "ok"
+    },
+    "api": {
+      "url": "https://brightdata.com/pricing/mcp-server",
+      "quote": "The MCP server provides advanced capabilities, including: Bypassing geo-restrictions to access content regardless of location Access to a global IP network to avoid blocking or rate limiting",
+      "check": "ok"
+    },
+    "mcp": {
+      "url": "https://brightdata.com/ai/mcp-server",
+      "quote": "NEW! Start with Bright Data's Web MCP and get 5,000 free monthly requests",
+      "check": "ok"
+    },
+    "verdict": {
+      "url": "https://brightdata.com/ai/mcp-server",
+      "quote": "NEW! Start with Bright Data's Web MCP and get 5,000 free monthly requests",
+      "check": "ok"
+    }
+  },
+  "confidence": {
+    "auth": 0.9,
+    "access": 0.9,
+    "api": 0.9,
+    "mcp": 1.0,
+    "verdict": 0.9
+  },
+  "_model": "gemini-3.5-flash-lite",
+  "status": "ok",
+  "id": 57,
+  "name": "Bright Data",
+  "category": "Data SEO & Scraping",
+  "hint": "brightdata.com",
+  "sources": [
+    {
+      "url": "https://brightdata.com",
+      "via": "direct",
+      "chars": 6138
+    },
+    {
+      "url": "https://brightdata.com/ai/mcp-server",
+      "via": "direct",
+      "chars": 2341
+    },
+    {
+      "url": "https://brightdata.com/pricing",
+      "via": "direct",
+      "chars": 2089
+    },
+    {
+      "url": "https://brightdata.com/pricing/crawl-api",
+      "via": "direct",
+      "chars": 4063
+    },
+    {
+      "url": "https://brightdata.com/pricing/mcp-server",
+      "via": "direct",
+      "chars": 10457
+    },
+    {
+      "url": "https://brightdata.com/pricing/scraping-browser",
+      "via": "direct",
+      "chars": 4658
+    },
+    {
+      "url": "https://brightdata.com/blog/ai/mcp-vs-traditional-scraping",
+      "via": "verification"
+    },
+    {
+      "url": "https://docs.brightdata.com/ai/mcp-server/faqs",
+      "via": "verification"
+    },
+    {
+      "url": "https://brightdata.com/blog/ai/mcp-vs-traditional-scraping",
+      "via": "verification"
+    },
+    {
+      "url": "https://docs.brightdata.com/ai/mcp-server/faqs",
+      "via": "verification"
+    },
+    {
+      "url": "https://brightdata.com",
+      "via": "pass3"
+    },
+    {
+      "url": "https://brightdata.com/pricing",
+      "via": "pass3"
+    },
+    {
+      "url": "https://brightdata.com/pricing/crawl-api",
+      "via": "pass3"
+    },
+    {
+      "url": "https://brightdata.com/pricing/mcp-server",
+      "via": "pass3"
+    },
+    {
+      "url": "https://brightdata.com/pricing/proxy-network",
+      "via": "pass3"
+    }
+  ],
+  "queries": [
+    "Bright Data API authentication developer docs",
+    "Bright Data API access pricing plan developer",
+    "Bright Data MCP server"
+  ],
+  "seconds": 46.9,
+  "verification_queries": [
+    "Bright Data API access requirements plan",
+    "Bright Data developer account API key free OR partner OR enterprise",
+    "Bright Data API authentication OAuth API key",
+    "Bright Data API reference authentication",
+    "Bright Data MCP server model context protocol",
+    "Bright Data MCP server model context protocol"
+  ],
+  "verification": {
+    "initial_issues": [
+      {
+        "loop": "L1_evidence",
+        "field": "auth",
+        "problem": "quote only partially matches page",
+        "url": "https://brightdata.com/pricing/mcp-server",
+        "match": 0.77
+      },
+      {
+        "loop": "L1_evidence",
+        "field": "mcp",
+        "problem": "quote only partially matches page",
+        "url": "https://brightdata.com/pricing/mcp-server",
+        "match": 0.77
+      },
+      {
+        "loop": "L4_verifier",
+        "field": "access",
+        "problem": "verifier says self_serve_trial vs agent self_serve_free"
+      }
+    ],
+    "final_issues": [],
+    "rounds": [
+      {
+        "round": 0,
+        "issues": [
+          {
+            "loop": "L1_evidence",
+            "field": "auth",
+            "problem": "quote only partially matches page",
+            "url": "https://brightdata.com/pricing/mcp-server",
+            "match": 0.77
+          },
+          {
+            "loop": "L1_evidence",
+            "field": "mcp",
+            "problem": "quote only partially matches page",
+            "url": "https://brightdata.com/pricing/mcp-server",
+            "match": 0.77
+          },
+          {
+            "loop": "L4_verifier",
+            "field": "access",
+            "problem": "verifier says self_serve_trial vs agent self_serve_free"
+          }
+        ],
+        "verifier": {
+          "auth_methods": [
+            "api_key"
+          ],
+          "auth_primary": "api_key",
+          "access_tier": "self_serve_trial",
+          "api_types": [
+            "rest"
+          ],
+          "mcp": "official",
+          "verdict": "build_now",
+          "reasons": {
+            "auth": "Bright Data’s APIs are documented to use an API key for authentication, as noted in the Crawl API documentation and control panel for key management.",
+            "access": "The Crawl API offers a free trial and a free tier for developers to sign up and obtain credentials without a paid plan, allowing immediate access to the API.",
+            "mcp": "Bright Data publishes its Model Context Protocol (MCP) server as a public service, documented on the Bright Data MCP page, making it an official MCP implementation.",
+            "verdict": "With public documentation, a self‑serve free trial, and API key authentication, developers can build a toolkit today without additional hurdles."
+          },
+          "_model": "openai/gpt-oss-20b"
+        },
+        "autofix": []
+      },
+      {
+        "round": 1,
+        "queries": [
+          "Bright Data API access requirements plan",
+          "Bright Data developer account API key free OR partner OR enterprise",
+          "Bright Data API authentication OAuth API key",
+          "Bright Data API reference authentication",
+          "Bright Data MCP server model context protocol"
+        ],
+        "new_sources": [
+          "https://brightdata.com",
+          "https://brightdata.com/ai/mcp-server",
+          "https://brightdata.com/blog/ai/mcp-vs-traditional-scraping",
+          "https://brightdata.com/pricing/mcp-server",
+          "https://docs.brightdata.com/ai/mcp-server/faqs"
+        ],
+        "change_log": "Resolved the validation check failures by citing exact matches from the official Bright Data docs and pricing pages for API key auth, free tier/trial access, and official MCP repository support.",
+        "issues": [
+          {
+            "loop": "L1_evidence",
+            "field": "mcp",
+            "problem": "quote not found on cited page",
+            "url": "https://brightdata.com/ai/mcp-server",
+            "match": 0.0
+          }
+        ],
+        "verifier": {
+          "auth_methods": [
+            "api_key"
+          ],
+          "auth_primary": "api_key",
+          "access_tier": "self_serve_free",
+          "api_types": [
+            "rest"
+          ],
+          "mcp": "official",
+          "verdict": "build_now",
+          "reasons": {
+            "auth": "public docs state API key required",
+            "access": "free tier with 5,000 requests per month available to all users",
+            "mcp": "Bright Data publishes MCP server and SDKs",
+            "verdict": "public docs and free credentials allow immediate build"
+          },
+          "_model": "openai/gpt-oss-20b"
+        },
+        "autofix": []
+      },
+      {
+        "round": 2,
+        "queries": [
+          "Bright Data API access requirements plan",
+          "Bright Data developer account API key free OR partner OR enterprise",
+          "Bright Data API authentication OAuth API key",
+          "Bright Data API reference authentication",
+          "Bright Data MCP server model context protocol",
+          "Bright Data MCP server model context protocol"
+        ],
+        "new_sources": [
+          "https://brightdata.com",
+          "https://brightdata.com/ai/mcp-server",
+          "https://brightdata.com/blog/ai/mcp-vs-traditional-scraping",
+          "https://brightdata.com/pricing/mcp-server",
+          "https://docs.brightdata.com/ai/mcp-server/faqs"
+        ],
+        "change_log": "Updated the mcp evidence quote to point to the correct heading text on brightdata.com/ai/mcp-server.",
+        "issues": [],
+        "verifier": {
+          "error": "Groq failed: HTTP 429: {\"error\":{\"message\":\"Rate limit reached for model `openai/gpt-oss-20b` in organization `org_01m2fd9xn8e3dtb9zfqc2jdhsc` service tier `on_demand` on tokens per minute (TPM): Limi"
+        },
+        "autofix": []
+      }
+    ],
+    "catalog": {
+      "in_catalog": true,
+      "slug": "brightdata",
+      "auth": [
+        "api_key"
+      ],
+      "tools_count": 22
+    },
+    "changed_fields": [],
+    "field_status": {
+      "auth": "confirmed_after_recheck",
+      "access": "confirmed_after_recheck",
+      "api": "verified",
+      "mcp": "confirmed_after_recheck",
+      "verdict": "verified"
+    },
+    "needs_human": [],
+    "before": {
+      "auth_methods": [
+        "api_key"
+      ],
+      "auth_primary": "api_key",
+      "access_tier": "self_serve_free",
+      "access_notes": "Sign up on Bright Data with a free tier offering credits or free monthly requests.",
+      "api_types": [
+        "rest"
+      ],
+      "api_breadth": "broad",
+      "api_notes": "Covers scraping APIs, proxy configuration, datasets, scrapers, and MCP server tools.",
+      "mcp": "official",
+      "mcp_url": "https://github.com/brightdata/brightdata-mcp",
+      "verdict": "build_now",
+      "blocker": "none",
+      "blocker_notes": "Free tier and public API keys available immediately upon signup."
+    },
+    "seconds": 144.5
+  },
+  "pass3": {
+    "before": {
+      "auth_methods": [
+        "api_key"
+      ],
+      "auth_primary": "api_key",
+      "access_tier": "self_serve_free",
+      "verdict": "build_now",
+      "blocker": "none"
+    },
+    "log": [
+      {
+        "loop": "L6_access",
+        "error": "Groq failed: HTTP 429: {\"error\":{\"message\":\"Rate limit reached for model `qwen/qwen3.8-27b` in organization `org_01m2fd9xn8e3dtb9zfqc2jdhsc` service tier `on_demand` on tokens per day (TPD): Limit 200"
+      },
+      {
+        "loop": "L7_auth",
+        "error": "Groq failed: HTTP 429: {\"error\":{\"message\":\"Rate limit reached for model `qwen/qwen3.8-27b` in organization `org_01m2fd9xn8e3dtb9zfqc2jdhsc` service tier `on_demand` on tokens per day (TPD): Limit 200"
+      }
+    ],
+    "access_sources": [
+      "https://brightdata.com",
+      "https://brightdata.com/pricing",
+      "https://brightdata.com/pricing/crawl-api",
+      "https://brightdata.com/pricing/mcp-server",
+      "https://brightdata.com/pricing/proxy-network"
+    ]
+  }
+}

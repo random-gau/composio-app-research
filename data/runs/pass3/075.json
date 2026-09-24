@@ -1,0 +1,199 @@
+{
+  "one_liner": "Work management platform to organize, track, and manage team projects and tasks.",
+  "auth_methods": [
+    "oauth2",
+    "bearer_token"
+  ],
+  "auth_primary": "oauth2",
+  "auth_notes": "Supports OAuth 2.0, Personal Access Tokens (PAT), and Service Accounts for enterprise tiers.",
+  "access_tier": "self_serve_free",
+  "access_notes": "Free developer account and personal access tokens available out of the box.",
+  "api_types": [
+    "rest"
+  ],
+  "api_breadth": "broad",
+  "api_notes": "Comprehensive REST API covering tasks, projects, workspaces, portfolios, and webhooks at https://app.asana.com/api/1.0",
+  "mcp": "official",
+  "mcp_url": "https://mcp.asana.com/v2/mcp",
+  "verdict": "build_now",
+  "blocker": "none",
+  "blocker_notes": "Fully accessible with public developer docs, self-serve tokens, and an official MCP server.",
+  "evidence": {
+    "auth": {
+      "url": "https://developers.asana.com/docs/authentication",
+      "quote": "Asana’s API has several options for authenticating. The purpose of your app, who uses it, and its features will dictate the method of auth that’s best for your app.",
+      "check": "ok"
+    },
+    "access": {
+      "url": "https://developers.asana.com/docs/api-explorer",
+      "quote": "Before using the API explorer, be sure to create a personal access token (if you do not already have one). Generating a PAT allows you to access (i.e., make requests to) the Asana REST API upon successful authentication.",
+      "check": "ok"
+    },
+    "api": {
+      "url": "https://developers.asana.com/docs/api-explorer",
+      "quote": "Asana's REST API reference allows you to explore different REST API endpoints through an in-context, easy-to-use interface.",
+      "check": "ok"
+    },
+    "mcp": {
+      "url": "https://developers.asana.com/docs/connecting-mcp-clients-to-asanas-v2-server",
+      "quote": "The V2 MCP server (https://mcp.asana.com/v2/mcp) requires OAuth 2.0 authentication with a registered client ID and client secret.",
+      "check": "ok"
+    },
+    "verdict": {
+      "url": "https://developers.asana.com",
+      "quote": "Integrate tools, automate actions, and customize your workflows with Asana’s developer platform.",
+      "check": "ok"
+    }
+  },
+  "confidence": {
+    "auth": 5.0,
+    "access": 5.0,
+    "api": 5.0,
+    "mcp": 5.0,
+    "verdict": 5.0
+  },
+  "_model": "gemini-3.5-flash-lite",
+  "status": "ok",
+  "id": 75,
+  "name": "Asana",
+  "category": "Productivity & PM",
+  "hint": "developers.asana.com",
+  "sources": [
+    {
+      "url": "https://developers.asana.com",
+      "via": "direct",
+      "chars": 1784
+    },
+    {
+      "url": "https://asana.com/pricing",
+      "via": "direct",
+      "chars": 40526
+    },
+    {
+      "url": "https://asana.com/terms/api-terms",
+      "via": "direct",
+      "chars": 30294
+    },
+    {
+      "url": "https://developers.asana.com/docs/api-explorer",
+      "via": "direct",
+      "chars": 2609
+    },
+    {
+      "url": "https://developers.asana.com/docs/authentication",
+      "via": "direct",
+      "chars": 4762
+    },
+    {
+      "url": "https://developers.asana.com/docs/connecting-mcp-clients-to-asanas-v2-server",
+      "via": "direct",
+      "chars": 15281
+    },
+    {
+      "url": "https://developers.asana.com",
+      "via": "pass3"
+    },
+    {
+      "url": "https://asana.com/apps/nangoapi",
+      "via": "pass3"
+    },
+    {
+      "url": "https://asana.com/pricing",
+      "via": "pass3"
+    },
+    {
+      "url": "https://asana.com/terms/api-terms",
+      "via": "pass3"
+    },
+    {
+      "url": "https://asana.com/terms/developer-terms",
+      "via": "pass3"
+    }
+  ],
+  "queries": [
+    "Asana API authentication developer docs",
+    "Asana API access pricing plan developer",
+    "Asana MCP server"
+  ],
+  "seconds": 159.9,
+  "verification": {
+    "initial_issues": [],
+    "final_issues": [],
+    "rounds": [
+      {
+        "round": 0,
+        "issues": [],
+        "verifier": {
+          "error": "Unterminated string starting at: line 162 column 1 (char 6299)"
+        },
+        "autofix": []
+      }
+    ],
+    "catalog": {
+      "in_catalog": true,
+      "slug": "asana",
+      "auth": [
+        "oauth2"
+      ],
+      "tools_count": 153
+    },
+    "changed_fields": [],
+    "field_status": {
+      "auth": "verified",
+      "access": "verified",
+      "api": "verified",
+      "mcp": "verified",
+      "verdict": "verified"
+    },
+    "needs_human": [],
+    "before": {
+      "auth_methods": [
+        "oauth2",
+        "bearer_token"
+      ],
+      "auth_primary": "oauth2",
+      "access_tier": "self_serve_free",
+      "access_notes": "Free developer account and personal access tokens available out of the box.",
+      "api_types": [
+        "rest"
+      ],
+      "api_breadth": "broad",
+      "api_notes": "Comprehensive REST API covering tasks, projects, workspaces, portfolios, and webhooks at https://app.asana.com/api/1.0",
+      "mcp": "official",
+      "mcp_url": "https://mcp.asana.com/v2/mcp",
+      "verdict": "build_now",
+      "blocker": "none",
+      "blocker_notes": "Fully accessible with public developer docs, self-serve tokens, and an official MCP server."
+    },
+    "seconds": 199.9
+  },
+  "pass3": {
+    "before": {
+      "auth_methods": [
+        "oauth2",
+        "bearer_token"
+      ],
+      "auth_primary": "oauth2",
+      "access_tier": "self_serve_free",
+      "verdict": "build_now",
+      "blocker": "none"
+    },
+    "log": [
+      {
+        "loop": "L6_access",
+        "error": "Groq failed: HTTP 429: {\"error\":{\"message\":\"Rate limit reached for model `qwen/qwen3.8-27b` in organization `org_01m2fd9xn8e3dtb9zfqc2jdhsc` service tier `on_demand` on tokens per day (TPD): Limit 200"
+      },
+      {
+        "loop": "L7_auth",
+        "error": "Groq failed: HTTP 429: {\"error\":{\"message\":\"Rate limit reached for model `qwen/qwen3.8-27b` in organization `org_01m2fd9xn8e3dtb9zfqc2jdhsc` service tier `on_demand` on tokens per day (TPD): Limit 200"
+      }
+    ],
+    "access_sources": [
+      "https://developers.asana.com",
+      "https://asana.com/apps/nangoapi",
+      "https://asana.com/pricing",
+      "https://asana.com/terms/api-terms",
+      "https://asana.com/terms/developer-terms"
+    ]
+  }
+}

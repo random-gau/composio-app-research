@@ -49,10 +49,10 @@ def judge(rec: Dict[str, Any], t: Dict[str, str]) -> Dict[str, Any]:
     return out
 
 
-def main() -> None:
-    truth = list(csv.DictReader(open(DATA / "ground_truth_sample.csv", newline="")))
+def score_set(truth_file: str) -> Dict[str, Any]:
+    truth = list(csv.DictReader(open(DATA / truth_file, newline="")))
     passes = {}
-    for name in ("pass1", "pass2"):
+    for name in ("pass1", "pass2", "pass3"):
         p = RUNS / f"{name}.json"
         if p.exists():
             passes[name] = {r["id"]: r for r in read_json(p)}
@@ -83,7 +83,24 @@ def main() -> None:
                          "overall": {"correct": correct, "n": n, "pct": round(100 * correct / n, 1) if n else None},
                          "auth_primary_only": {"correct": prim[0], "n": prim[1],
                                                "pct": round(100 * prim[0] / prim[1], 1) if prim[1] else None}}
-    write_json(DATA / "accuracy.json", {"summary": summary, "rows": rows, "truth": truth})
+    return {"summary": summary, "rows": rows, "truth": truth}
+
+
+def main() -> None:
+    dev = score_set("ground_truth_sample.csv")
+    out = dict(dev)
+    if (DATA / "ground_truth_test.csv").exists():
+        test = score_set("ground_truth_test.csv")
+        out.update({"test_summary": test["summary"], "test_rows": test["rows"], "test_truth": test["truth"]})
+    write_json(DATA / "accuracy.json", out)
+    report("DEV sample (used to design pass 3)", dev)
+    if "test_summary" in out:
+        report("HELD-OUT test sample (never used for design)", {"summary": out["test_summary"], "rows": out["test_rows"]})
+
+
+def report(title: str, res: Dict[str, Any]) -> None:
+    summary, rows = res["summary"], res["rows"]
+    print(f"== {title}")
     for name, s in summary.items():
         pf = "  ".join(f"{f}={v['correct']}/{v['n']}" for f, v in s["per_field"].items())
         print(f"{name}: overall {s['overall']['correct']}/{s['overall']['n']} = {s['overall']['pct']}%   {pf}"

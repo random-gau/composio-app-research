@@ -1,0 +1,297 @@
+{
+  "one_liner": "The AI support stack built for B2B customer operations.",
+  "auth_methods": [
+    "api_key",
+    "bearer_token",
+    "oauth2"
+  ],
+  "auth_primary": "api_key",
+  "auth_notes": "API uses Bearer tokens (API keys), while the official MCP server uses OAuth.",
+  "access_tier": "self_serve_trial",
+  "access_notes": "The pricing page indicates a 7-day free trial for plans, and the documentation describes creating API keys without mentioning any approval process or free permanent tier.",
+  "api_types": [
+    "graphql"
+  ],
+  "api_breadth": "broad",
+  "api_notes": "Comprehensive GraphQL API covering core support objects; base URL https://core-api.uk.plain.com/graphql/v1",
+  "mcp": "official",
+  "mcp_url": "https://mcp.plain.com/mcp",
+  "verdict": "build_with_friction",
+  "blocker": "paid_plan",
+  "blocker_notes": "None.",
+  "evidence": {
+    "auth": {
+      "url": "https://help.plain.com/article/api-quickstart",
+      "quote": "Authorization: Bearer YOUR_TOKEN\nwhere the token is your API key. See authentication for more details.",
+      "check": "ok"
+    },
+    "access": {
+      "url": "https://changelog.plain.com/pricing",
+      "quote": "7 day free trial",
+      "check": "ok"
+    },
+    "api": {
+      "url": "https://help.plain.com/article/api-quickstart",
+      "quote": "Plain itself is built on this same GraphQL API. This means that there are no limitations in what can be done via the API vs the UI.",
+      "check": "ok"
+    },
+    "mcp": {
+      "url": "https://help.plain.com/article/mcp-server",
+      "quote": "The Plain MCP server at https://mcp.plain.com/mcp",
+      "check": "ok"
+    },
+    "verdict": {
+      "url": "https://help.plain.com/article/api-quickstart",
+      "quote": "API URL:\nhttps://core-api.uk.plain.com/graphql/v1",
+      "check": "ok"
+    }
+  },
+  "confidence": {
+    "auth": 0.95,
+    "access": 0.9,
+    "api": 0.95,
+    "mcp": 0.95,
+    "verdict": 0.95
+  },
+  "_model": "gemini-3.5-flash-lite",
+  "status": "ok",
+  "id": 17,
+  "name": "Plain",
+  "category": "Support & Helpdesk",
+  "hint": "plain.com",
+  "sources": [
+    {
+      "url": "https://plain.com",
+      "via": "direct",
+      "chars": 8288
+    },
+    {
+      "url": "https://help.plain.com/article/api-quickstart",
+      "via": "direct",
+      "chars": 2309
+    },
+    {
+      "url": "https://help.plain.com/article/developer",
+      "via": "direct",
+      "chars": 2309
+    },
+    {
+      "url": "https://help.plain.com/article/how-to-configure-ari-inline-links-and-connect-mcp-servers-u5sgzsbutg42vm1rf4vm90ui",
+      "via": "direct",
+      "chars": 1654
+    },
+    {
+      "url": "https://help.plain.com/article/mcp-server",
+      "via": "direct",
+      "chars": 9191
+    },
+    {
+      "url": "https://help.plain.com/article/pricing",
+      "via": "direct",
+      "chars": 1910
+    },
+    {
+      "url": "https://github.com/dropseed/plain/tree/master/plain-mcp",
+      "via": "verification"
+    },
+    {
+      "url": "https://github.com/modelcontextprotocol/modelcontextprotocol/blob/main/docs/specification/2026-07-28/index.mdx",
+      "via": "verification"
+    },
+    {
+      "url": "https://developers.openai.com/plugins/build/mcp-server",
+      "via": "verification"
+    },
+    {
+      "url": "https://modelcontextprotocol.io/docs/2026-07-28/learn/server-concepts",
+      "via": "verification"
+    },
+    {
+      "url": "https://plain.com",
+      "via": "pass3"
+    },
+    {
+      "url": "https://changelog.plain.com/pricing",
+      "via": "pass3"
+    },
+    {
+      "url": "https://help.plain.com/article/api-quickstart",
+      "via": "pass3"
+    },
+    {
+      "url": "https://help.plain.com/article/creating-api-keys",
+      "via": "pass3"
+    },
+    {
+      "url": "https://help.plain.com/article/developer",
+      "via": "pass3"
+    }
+  ],
+  "queries": [
+    "Plain API authentication developer docs",
+    "Plain API access pricing plan developer",
+    "Plain MCP server"
+  ],
+  "seconds": 60.0,
+  "verification_queries": [
+    "Plain MCP server model context protocol"
+  ],
+  "verification": {
+    "initial_issues": [
+      {
+        "loop": "L4_verifier",
+        "field": "mcp",
+        "problem": "verifier says none_found vs agent official"
+      }
+    ],
+    "final_issues": [],
+    "rounds": [
+      {
+        "round": 0,
+        "issues": [
+          {
+            "loop": "L4_verifier",
+            "field": "mcp",
+            "problem": "verifier says none_found vs agent official"
+          }
+        ],
+        "verifier": {
+          "auth_methods": [
+            "bearer_token",
+            "api_key"
+          ],
+          "auth_primary": "bearer_token",
+          "access_tier": "self_serve_free",
+          "api_types": [
+            "graphql"
+          ],
+          "mcp": "none_found",
+          "verdict": "build_now",
+          "reasons": {
+            "auth": "Bearer token (API key) is documented for GraphQL calls",
+            "access": "Free sign‑up (“Start for free”) provides API key",
+            "mcp": "No official MCP server is published by Plain",
+            "verdict": "Public GraphQL API with free credentials allows immediate building"
+          },
+          "_model": "openai/gpt-oss-120b"
+        },
+        "autofix": []
+      },
+      {
+        "round": 1,
+        "queries": [
+          "Plain MCP server model context protocol"
+        ],
+        "new_sources": [
+          "https://plain.com",
+          "https://github.com/dropseed/plain/tree/master/plain-mcp",
+          "https://github.com/modelcontextprotocol/modelcontextprotocol/blob/main/docs/specification/2026-07-28/index.mdx",
+          "https://developers.openai.com/plugins/build/mcp-server",
+          "https://modelcontextprotocol.io/docs/2026-07-28/learn/server-concepts"
+        ],
+        "change_log": "Corrected mcp to 'official' based on official Plain MCP server documentation at https://mcp.plain.com/mcp.",
+        "issues": [],
+        "verifier": {
+          "auth_methods": [
+            "bearer_token",
+            "oauth2",
+            "api_key"
+          ],
+          "auth_primary": "oauth2",
+          "access_tier": "unknown",
+          "api_types": [
+            "rest"
+          ],
+          "mcp": "official",
+          "verdict": "build_with_friction",
+          "reasons": {
+            "auth": "Bearer token auth and OAuth 2.1 are documented for MCP endpoints; APIKeyMCP is also mentioned in the plain‑mcp repo.",
+            "access": "No explicit information on free self‑serve credentials; the website shows a \"Start for free\" button but no API key or token issuance flow, making the access tier unclear.",
+            "mcp": "The plain‑mcp GitHub repository is an official Plain project providing MCP endpoints, indicating an official MCP implementation.",
+            "verdict": "Public documentation exists for authentication and MCP, but the lack of clear self‑serve credential process or free tier means a developer would face friction (potential trial, paid plan, or approval) before building."
+          },
+          "_model": "openai/gpt-oss-120b"
+        },
+        "autofix": []
+      }
+    ],
+    "catalog": {
+      "in_catalog": true,
+      "slug": "plain",
+      "auth": [
+        "api_key"
+      ],
+      "tools_count": 22
+    },
+    "changed_fields": [],
+    "field_status": {
+      "auth": "verified",
+      "access": "verified",
+      "api": "verified",
+      "mcp": "confirmed_after_recheck",
+      "verdict": "verified"
+    },
+    "needs_human": [],
+    "before": {
+      "auth_methods": [
+        "api_key",
+        "bearer_token",
+        "oauth2"
+      ],
+      "auth_primary": "api_key",
+      "access_tier": "self_serve_free",
+      "access_notes": "Plain offers plans with a free trial or starting free options, though advanced tiers exist.",
+      "api_types": [
+        "graphql"
+      ],
+      "api_breadth": "broad",
+      "api_notes": "Comprehensive GraphQL API covering core support objects; base URL https://core-api.uk.plain.com/graphql/v1",
+      "mcp": "official",
+      "mcp_url": "https://mcp.plain.com/mcp",
+      "verdict": "build_now",
+      "blocker": "none",
+      "blocker_notes": "None."
+    },
+    "seconds": 31.6
+  },
+  "_public_review": "unknown",
+  "pass3": {
+    "before": {
+      "auth_methods": [
+        "api_key",
+        "bearer_token",
+        "oauth2"
+      ],
+      "auth_primary": "api_key",
+      "access_tier": "self_serve_free",
+      "verdict": "build_now",
+      "blocker": "none"
+    },
+    "log": [
+      {
+        "loop": "L6_access",
+        "field": "access",
+        "change": "self_serve_free -> self_serve_trial",
+        "reason": "The pricing page indicates a 7-day free trial for plans, and the documentation describes creating API keys without mentioning any approval process or free permanent tier.",
+        "url": "https://changelog.plain.com/pricing"
+      },
+      {
+        "loop": "L7_auth",
+        "error": "Groq failed: HTTP 429: {\"error\":{\"message\":\"Rate limit reached for model `qwen/qwen3.8-27b` in organization `org_01m2fd9xn8e3dtb9zfqc2jdhsc` service tier `on_demand` on input tokens per minute (ITPM):"
+      },
+      {
+        "loop": "verdict_rule",
+        "field": "verdict",
+        "change": "build_now -> build_with_friction",
+        "reason": "derived from access self_serve_trial / public review unknown"
+      }
+    ],
+    "access_sources": [
+      "https://plain.com",
+      "https://changelog.plain.com/pricing",
+      "https://help.plain.com/article/api-quickstart",
+      "https://help.plain.com/article/creating-api-keys",
+      "https://help.plain.com/article/developer"
+    ]
+  }
+}

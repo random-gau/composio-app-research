@@ -1,0 +1,391 @@
+{
+  "one_liner": "Communications platform providing APIs for SMS, voice, video, and verification.",
+  "auth_methods": [
+    "api_key"
+  ],
+  "auth_primary": "api_key",
+  "auth_notes": "Uses API key and secret, along with JWT authentication for specific APIs and client SDKs.",
+  "access_tier": "self_serve_free",
+  "access_notes": "Sign up for a free Vonage account to receive API keys and test credit.",
+  "api_types": [
+    "rest",
+    "websocket"
+  ],
+  "api_breadth": "broad",
+  "api_notes": "Covers messaging, voice, video, verification, and network features via REST and SDKs.",
+  "mcp": "official",
+  "mcp_url": "https://developer.vonage.com/en/blog/introducing-the-vonage-mcp-tooling-server",
+  "verdict": "build_now",
+  "blocker": "none",
+  "blocker_notes": "Public APIs and self-serve developer credentials are readily available.",
+  "evidence": {
+    "auth": {
+      "url": "https://developer.vonage.com",
+      "quote": "JWT authentication available",
+      "check": "ok"
+    },
+    "access": {
+      "url": "https://developer.vonage.com/en/account/guides/dashboard-management",
+      "quote": "To create your free Vonage account: In your browser, navigate to Dashboard. Add your company information and click Sign up... When you create your Vonage account you are given €2 free test credit and your account is set in DEMO mode.",
+      "check": "ok"
+    },
+    "api": {
+      "url": "https://developer.vonage.com",
+      "quote": "Communication & Network APIs, Web & Mobile (iOS, Android) SDKs, Server-side SDKs, Video REST API",
+      "check": "not_found"
+    },
+    "mcp": {
+      "url": "https://developer.vonage.com/en/blog/introducing-the-vonage-mcp-tooling-server",
+      "quote": "Introducing the Vonage MCP Tooling Server\nThe Vonage MCP Tooling Server unlocks AI-driven automation for the Vonage platform, allowing developers to run SMS, voice, and WhatsApp operations directly from tools like Claude and Cursor.",
+      "check": "ok"
+    },
+    "verdict": {
+      "url": "https://developer.vonage.com",
+      "quote": "Create a free account now!",
+      "check": "ok"
+    }
+  },
+  "confidence": {
+    "auth": 0.9,
+    "access": 0.9,
+    "api": 0.9,
+    "mcp": 1.0,
+    "verdict": 0.9
+  },
+  "_model": "gemini-3.5-flash-lite",
+  "status": "ok",
+  "id": 30,
+  "name": "Vonage",
+  "category": "Communications & Messaging",
+  "hint": "developer.vonage.com",
+  "sources": [
+    {
+      "url": "https://developer.vonage.com",
+      "via": "direct",
+      "chars": 8420
+    },
+    {
+      "url": "https://developer.vonage.com/en/blog/introducing-the-vonage-mcp-tooling-server",
+      "via": "direct",
+      "chars": 6849
+    },
+    {
+      "url": "https://developer.vonage.com/en/blog/step-by-step-adding-vonage-apis-to-your-ai-agent-with-mcp",
+      "via": "direct",
+      "chars": 14343
+    },
+    {
+      "url": "https://developer.vonage.com/en/blog/the-vonage-server-and-tooling-mcp-servers-are-live-on-postman",
+      "via": "direct",
+      "chars": 4804
+    },
+    {
+      "url": "https://developer.vonage.com/en/conversation/guides/user-authentication",
+      "via": "direct",
+      "chars": 8144
+    },
+    {
+      "url": "https://developer.vonage.com/en/dashboard/build/tools-solutions/cloud-runtime",
+      "via": "direct",
+      "chars": 2083
+    },
+    {
+      "url": "https://developer.vonage.com/en/account/guides/dashboard-management",
+      "via": "verification"
+    },
+    {
+      "url": "https://developer.vonage.com/en/api-errors",
+      "via": "verification"
+    },
+    {
+      "url": "https://developer.vonage.com/en/api-reference/sms",
+      "via": "verification"
+    },
+    {
+      "url": "https://developer.vonage.com/en/api/application.v2",
+      "via": "verification"
+    },
+    {
+      "url": "https://developer.vonage.com/en/api-reference/sms",
+      "via": "verification"
+    },
+    {
+      "url": "https://developer.vonage.com/en/api/application.v2",
+      "via": "verification"
+    },
+    {
+      "url": "https://developer.vonage.com/en/api/messages",
+      "via": "verification"
+    },
+    {
+      "url": "https://developer.vonage.com/en/api/numbers",
+      "via": "verification"
+    },
+    {
+      "url": "https://developer.vonage.com",
+      "via": "pass3"
+    },
+    {
+      "url": "https://developer.vonage.com/en/api/pricing.v2",
+      "via": "pass3"
+    },
+    {
+      "url": "https://developer.vonage.com/en/dashboard/control/pricing",
+      "via": "pass3"
+    },
+    {
+      "url": "https://developer.vonage.com/en/dashboard/getting-started",
+      "via": "pass3"
+    },
+    {
+      "url": "https://developer.vonage.com/en/getting-started-network/concepts/network-registry",
+      "via": "pass3"
+    }
+  ],
+  "queries": [
+    "Vonage API authentication developer docs",
+    "Vonage API access pricing plan developer",
+    "Vonage MCP server"
+  ],
+  "seconds": 40.2,
+  "verification_queries": [
+    "Vonage API access requirements plan",
+    "Vonage developer account API key free OR partner OR enterprise",
+    "Vonage API reference endpoints",
+    "Vonage API reference endpoints"
+  ],
+  "verification": {
+    "initial_issues": [
+      {
+        "loop": "L1_evidence",
+        "field": "api",
+        "problem": "quote not found on cited page",
+        "url": "https://developer.vonage.com",
+        "match": 0.25
+      },
+      {
+        "loop": "L4_verifier",
+        "field": "access",
+        "problem": "verifier says self_serve_trial vs agent self_serve_free"
+      }
+    ],
+    "final_issues": [
+      {
+        "loop": "L1_evidence",
+        "field": "api",
+        "problem": "quote not found on cited page",
+        "url": "https://developer.vonage.com",
+        "match": 0.18
+      }
+    ],
+    "rounds": [
+      {
+        "round": 0,
+        "issues": [
+          {
+            "loop": "L1_evidence",
+            "field": "api",
+            "problem": "quote not found on cited page",
+            "url": "https://developer.vonage.com",
+            "match": 0.25
+          },
+          {
+            "loop": "L4_verifier",
+            "field": "access",
+            "problem": "verifier says self_serve_trial vs agent self_serve_free"
+          }
+        ],
+        "verifier": {
+          "auth_methods": [
+            "api_key",
+            "jwt_or_signed"
+          ],
+          "auth_primary": "api_key",
+          "access_tier": "self_serve_trial",
+          "api_types": [
+            "rest"
+          ],
+          "mcp": "official",
+          "verdict": "build_now",
+          "reasons": {
+            "auth": "Vonage public docs show API Key/Secret and Application ID + Private Key for JWT signing; no other auth methods documented.",
+            "access": "Developers can sign up for a free trial via the Vonage Developer portal and receive API credentials immediately.",
+            "mcp": "Vonage publishes an official MCP Tooling Server (https://documentation-mcp.vonage.dev/mcp) and provides it on Postman, confirming official status.",
+            "verdict": "All required components (public API, free credentials, official MCP) are available, enabling immediate toolkit development."
+          },
+          "_model": "openai/gpt-oss-20b"
+        },
+        "autofix": []
+      },
+      {
+        "round": 1,
+        "queries": [
+          "Vonage API access requirements plan",
+          "Vonage developer account API key free OR partner OR enterprise",
+          "Vonage API reference endpoints"
+        ],
+        "new_sources": [
+          "https://developer.vonage.com",
+          "https://developer.vonage.com/en/account/guides/dashboard-management",
+          "https://developer.vonage.com/en/api-errors",
+          "https://developer.vonage.com/en/api-reference/sms",
+          "https://developer.vonage.com/en/api/application.v2"
+        ],
+        "change_log": "Corrected access_tier to self_serve_free based on official documentation confirming free account signup and test credit.",
+        "issues": [
+          {
+            "loop": "L1_evidence",
+            "field": "api",
+            "problem": "quote not found on cited page",
+            "url": "https://developer.vonage.com",
+            "match": 0.14
+          }
+        ],
+        "verifier": {
+          "auth_methods": [
+            "api_key",
+            "bearer_token"
+          ],
+          "auth_primary": "api_key",
+          "access_tier": "self_serve_free",
+          "api_types": [
+            "rest"
+          ],
+          "mcp": "none_found",
+          "verdict": "build_now",
+          "reasons": {
+            "auth": "Vonage docs list api_key and Authorization header (token) as supported auth methods",
+            "access": "Free account with €2 test credit and demo mode is available for immediate sign‑up",
+            "mcp": "No MCP server is documented by Vonage",
+            "verdict": "Public REST docs and free sandbox allow a toolkit to be built today"
+          },
+          "_model": "openai/gpt-oss-120b"
+        },
+        "autofix": []
+      },
+      {
+        "round": 2,
+        "queries": [
+          "Vonage API access requirements plan",
+          "Vonage developer account API key free OR partner OR enterprise",
+          "Vonage API reference endpoints",
+          "Vonage API reference endpoints"
+        ],
+        "new_sources": [
+          "https://developer.vonage.com",
+          "https://developer.vonage.com/en/api-reference/sms",
+          "https://developer.vonage.com/en/api/application.v2",
+          "https://developer.vonage.com/en/api/messages",
+          "https://developer.vonage.com/en/api/numbers"
+        ],
+        "change_log": "Corrected the api field quote and source citation for the rest/websocket endpoints.",
+        "issues": [
+          {
+            "loop": "L1_evidence",
+            "field": "api",
+            "problem": "quote not found on cited page",
+            "url": "https://developer.vonage.com",
+            "match": 0.18
+          }
+        ],
+        "verifier": {
+          "auth_methods": [
+            "api_key",
+            "basic",
+            "bearer_token"
+          ],
+          "auth_primary": "basic",
+          "access_tier": "self_serve_free",
+          "api_types": [
+            "rest"
+          ],
+          "mcp": "none_found",
+          "verdict": "build_now",
+          "reasons": {
+            "auth": "Vonage’s public API supports API key, Basic (API key+secret) and Bearer (JWT) authentication as documented in the SMS, Application, and Messages APIs.",
+            "access": "Developers can sign up for a free Vonage developer account and obtain API credentials (API key and secret) without any paid plan or approval process.",
+            "mcp": "No official MCP server is documented by Vonage in the provided sources; only the standard REST endpoints are available.",
+            "verdict": "All required public documentation and free credentials are available, enabling a toolkit to be built today."
+          },
+          "_model": "openai/gpt-oss-20b"
+        },
+        "autofix": []
+      }
+    ],
+    "catalog": {
+      "in_catalog": false,
+      "checked": [
+        "vonage"
+      ]
+    },
+    "changed_fields": [
+      "auth"
+    ],
+    "field_status": {
+      "auth": "corrected",
+      "access": "confirmed_after_recheck",
+      "api": "needs_human",
+      "mcp": "verified",
+      "verdict": "verified"
+    },
+    "needs_human": [
+      "api"
+    ],
+    "before": {
+      "auth_methods": [
+        "api_key",
+        "jwt_or_signed"
+      ],
+      "auth_primary": "api_key",
+      "access_tier": "self_serve_free",
+      "access_notes": "Sign up for a developer account to access API keys and sandbox/free features.",
+      "api_types": [
+        "rest",
+        "websocket"
+      ],
+      "api_breadth": "broad",
+      "api_notes": "Covers messaging, voice, video, verification, and network features via REST and SDKs.",
+      "mcp": "official",
+      "mcp_url": "https://developer.vonage.com/en/blog/introducing-the-vonage-mcp-tooling-server",
+      "verdict": "build_now",
+      "blocker": "none",
+      "blocker_notes": "Public APIs and self-serve developer credentials are readily available."
+    },
+    "seconds": 179.6
+  },
+  "_public_review": "unknown",
+  "pass3": {
+    "before": {
+      "auth_methods": [
+        "api_key",
+        "bearer_token",
+        "jwt_or_signed"
+      ],
+      "auth_primary": "api_key",
+      "access_tier": "self_serve_free",
+      "verdict": "build_now",
+      "blocker": "none"
+    },
+    "log": [
+      {
+        "loop": "L6_access",
+        "field": "access",
+        "change": null,
+        "reason": "confirmed with a verified quote"
+      },
+      {
+        "loop": "L7_auth",
+        "field": "auth",
+        "change": "['api_key', 'bearer_token', 'jwt_or_signed'] -> ['api_key']",
+        "reason": "dropped (no verified quote): ['bearer_token', 'jwt_or_signed']"
+      }
+    ],
+    "access_sources": [
+      "https://developer.vonage.com",
+      "https://developer.vonage.com/en/api/pricing.v2",
+      "https://developer.vonage.com/en/dashboard/control/pricing",
+      "https://developer.vonage.com/en/dashboard/getting-started",
+      "https://developer.vonage.com/en/getting-started-network/concepts/network-registry"
+    ]
+  }
+}

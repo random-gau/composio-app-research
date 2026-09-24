@@ -1,0 +1,213 @@
+{
+  "one_liner": "Corporate cards, expense management, bill payments, and financial automation platform.",
+  "auth_methods": [
+    "oauth2"
+  ],
+  "auth_primary": "oauth2",
+  "auth_notes": "Ramp uses OAuth 2.0 with client ID and client secret, supporting client credentials and authorization code flows.",
+  "access_tier": "approval_or_review",
+  "access_notes": "Review Partner Integrations to learn about partnership requirements and production access.",
+  "api_types": [
+    "rest"
+  ],
+  "api_breadth": "broad",
+  "api_notes": "Comprehensive REST API covering cards, transactions, reimbursements, bills, vendors, and more, with an OpenAPI spec.",
+  "mcp": "official",
+  "mcp_url": "https://agents.ramp.com/docs/mcp/setup",
+  "verdict": "build_with_friction",
+  "blocker": "app_review",
+  "blocker_notes": "Requires review or partnership requirements for production developer access.",
+  "evidence": {
+    "auth": {
+      "url": "https://docs.ramp.com/llms-full.txt",
+      "quote": "Ramp uses OAuth 2.0 for secure API access, providing granular permission control through scopes and supporting multiple authorization flows for different use cases.",
+      "check": "ok"
+    },
+    "access": {
+      "url": "https://docs.ramp.com/llms-full.txt",
+      "quote": "Review Partner Integrations to learn about partnership requirements and production access.",
+      "check": "ok"
+    },
+    "api": {
+      "url": "https://docs.ramp.com/llms-full.txt",
+      "quote": "# Ramp Developer API\n## Guides\n# Ramp Developer API Guides\nPlain-text guide export for Ramp's Developer API.",
+      "check": "ok"
+    },
+    "mcp": {
+      "url": "https://agents.ramp.com/docs/mcp/setup",
+      "setup": "https://mcp.ramp.com/mcp",
+      "quote": "Connect a live Ramp business to:\nhttps://mcp.ramp.com/mcp\nUse sample data instead at:\nhttps://demo-mcp.ramp.com/mcp",
+      "check": "ok"
+    },
+    "verdict": {
+      "url": "https://docs.ramp.com/llms-full.txt",
+      "quote": "Review Partner Integrations to learn about partnership requirements and production access.",
+      "check": "ok"
+    }
+  },
+  "confidence": {
+    "auth": 0.9,
+    "access": 0.8,
+    "api": 0.9,
+    "mcp": 0.9,
+    "verdict": 0.85
+  },
+  "_model": "gemini-3.5-flash-lite",
+  "status": "ok",
+  "id": 89,
+  "name": "Ramp",
+  "category": "Finance & Fintech",
+  "hint": "docs.ramp.com",
+  "sources": [
+    {
+      "url": "https://docs.ramp.com",
+      "via": "direct",
+      "chars": 972
+    },
+    {
+      "url": "https://agents.ramp.com/docs/mcp/setup",
+      "via": "direct",
+      "chars": 4786
+    },
+    {
+      "url": "https://docs.ramp.com/developer-api",
+      "via": "direct",
+      "chars": 972
+    },
+    {
+      "url": "https://docs.ramp.com/developer-api/v1/authorization",
+      "via": "direct",
+      "chars": 972
+    },
+    {
+      "url": "https://docs.ramp.com/developer-api/v1/rate-limiting",
+      "via": "direct",
+      "chars": 972
+    },
+    {
+      "url": "https://docs.ramp.com/llms-full.txt",
+      "via": "direct",
+      "chars": 200000
+    },
+    {
+      "url": "https://docs.ramp.com",
+      "via": "pass3"
+    },
+    {
+      "url": "https://docs.ramp.com/developer-api",
+      "via": "pass3"
+    },
+    {
+      "url": "https://docs.ramp.com/developer-api/v1/getting-started",
+      "via": "pass3"
+    },
+    {
+      "url": "https://docs.ramp.com/llms-full.txt",
+      "via": "pass3"
+    },
+    {
+      "url": "https://docs.ramp.com/llms-guides/applications.txt",
+      "via": "pass3"
+    }
+  ],
+  "queries": [
+    "Ramp API authentication developer docs",
+    "Ramp API access pricing plan developer",
+    "Ramp MCP server"
+  ],
+  "seconds": 40.5,
+  "verification": {
+    "initial_issues": [],
+    "final_issues": [],
+    "rounds": [
+      {
+        "round": 0,
+        "issues": [],
+        "verifier": {
+          "auth_methods": [
+            "oauth2"
+          ],
+          "auth_primary": "oauth2",
+          "access_tier": "unknown",
+          "api_types": [
+            "rest"
+          ],
+          "mcp": "official",
+          "verdict": "unknown",
+          "reasons": {
+            "auth": "Source 2 explicitly mentions 'browser authorization' and 'OAuth' for MCP connections and states that the Developer API team is responsible for 'OAuth, scopes, webhooks'.",
+            "access": "The provided sources do not contain information regarding pricing, free tiers, trials, or approval processes for obtaining API credentials.",
+            "mcp": "Source 2 documents official MCP connectors and provides hosted endpoints (https://mcp.ramp.com/mcp) published by Ramp.",
+            "verdict": "While public documentation and an official MCP server exist, the sources do not specify the access tier (e.g., whether it is self-serve free or requires approval), making it impossible to definitively classify the buildability as 'build_now' or 'build_with_friction' based strictly on the provided text."
+          },
+          "_model": "qwen/qwen3.8-27b"
+        },
+        "autofix": []
+      }
+    ],
+    "catalog": {
+      "in_catalog": true,
+      "slug": "ramp",
+      "auth": [
+        "oauth2"
+      ],
+      "tools_count": 88
+    },
+    "changed_fields": [],
+    "field_status": {
+      "auth": "verified",
+      "access": "verified",
+      "api": "verified",
+      "mcp": "verified",
+      "verdict": "verified"
+    },
+    "needs_human": [],
+    "before": {
+      "auth_methods": [
+        "oauth2"
+      ],
+      "auth_primary": "oauth2",
+      "access_tier": "approval_or_review",
+      "access_notes": "Review Partner Integrations to learn about partnership requirements and production access.",
+      "api_types": [
+        "rest"
+      ],
+      "api_breadth": "broad",
+      "api_notes": "Comprehensive REST API covering cards, transactions, reimbursements, bills, vendors, and more, with an OpenAPI spec.",
+      "mcp": "official",
+      "mcp_url": "https://agents.ramp.com/docs/mcp/setup",
+      "verdict": "build_with_friction",
+      "blocker": "partner_approval",
+      "blocker_notes": "Requires review or partnership requirements for production developer access."
+    },
+    "seconds": 215.6
+  },
+  "pass3": {
+    "before": {
+      "auth_methods": [
+        "oauth2"
+      ],
+      "auth_primary": "oauth2",
+      "access_tier": "approval_or_review",
+      "verdict": "build_with_friction",
+      "blocker": "partner_approval"
+    },
+    "log": [
+      {
+        "loop": "L6_access",
+        "error": "Groq failed: HTTP 429: {\"error\":{\"message\":\"Rate limit reached for model `qwen/qwen3.8-27b` in organization `org_01m2fd9xn8e3dtb9zfqc2jdhsc` service tier `on_demand` on tokens per day (TPD): Limit 200"
+      },
+      {
+        "loop": "L7_auth",
+        "error": "Groq failed: HTTP 429: {\"error\":{\"message\":\"Rate limit reached for model `qwen/qwen3.8-27b` in organization `org_01m2fd9xn8e3dtb9zfqc2jdhsc` service tier `on_demand` on tokens per day (TPD): Limit 200"
+      }
+    ],
+    "access_sources": [
+      "https://docs.ramp.com",
+      "https://docs.ramp.com/developer-api",
+      "https://docs.ramp.com/developer-api/v1/getting-started",
+      "https://docs.ramp.com/llms-full.txt",
+      "https://docs.ramp.com/llms-guides/applications.txt"
+    ]
+  }
+}

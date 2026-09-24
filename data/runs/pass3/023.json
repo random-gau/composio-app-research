@@ -1,0 +1,212 @@
+{
+  "one_liner": "Team chat and communication software with robust developer tools and REST APIs.",
+  "auth_methods": [
+    "oauth2"
+  ],
+  "auth_primary": "oauth2",
+  "auth_notes": "OAuth 2.0 with granular scopes for authentication.",
+  "access_tier": "self_serve_free",
+  "access_notes": "Sign up for a free plan account to get credentials.",
+  "api_types": [
+    "rest"
+  ],
+  "api_breadth": "broad",
+  "api_notes": "REST APIs v3 covering chats, messages, stars, pins, and chat folders.",
+  "mcp": "official",
+  "mcp_url": "https://help.zoho.com/portal/en/kb/zoho-cliq/cliq-7-0/user-guides/articles/setting-up-the-zoho-cliq-mcp-server",
+  "verdict": "build_now",
+  "blocker": "none",
+  "blocker_notes": "Public APIs and self-serve free tier are available.",
+  "evidence": {
+    "auth": {
+      "url": "https://help.zoho.com/portal/fr/community/topic/re-introducing-zoho-cliq-rest-apis-the-much-needed-glow-up",
+      "quote": "Granular OAuth Scopes: OAuth scopes are now more detailed and documented for each endpoint. This allows integrations to request only the permissions they need (READ, CREATE, UPDATE, DELETE), with each endpoint clearly stating the required scope.",
+      "check": "ok"
+    },
+    "access": {
+      "url": "https://zoho.com/cliq",
+      "page": null,
+      "quote": "Sign up\nCreate a new account by filling in your organization’s details.",
+      "check": "ok"
+    },
+    "api": {
+      "url": "https://help.zoho.com/portal/fr/community/topic/re-introducing-zoho-cliq-rest-apis-the-much-needed-glow-up",
+      "quote": "v3 includes dedicated search endpoints for both messages and chats, with rich filtering parameters.\n- Stars, pins, and chat folders are no longer UI-only gestures; they are proper first-class resources with full CRUD endpoints",
+      "check": "ok"
+    },
+    "mcp": {
+      "url": "https://help.zoho.com/portal/en/kb/zoho-cliq/cliq-7-0/user-guides/articles/setting-up-the-zoho-cliq-mcp-server",
+      "quote": "You can integrate Zoho MCP (Model Context Protocol) and Cliq to trigger workflows and sync data across services with the help of popular AI agents.",
+      "check": "ok"
+    },
+    "verdict": {
+      "url": "https://zoho.com/cliq",
+      "quote": "Try Zoho Cliq for your business\nSign up for free",
+      "check": "ok"
+    }
+  },
+  "confidence": {
+    "auth": 0.9,
+    "access": 0.9,
+    "api": 0.9,
+    "mcp": 0.9,
+    "verdict": 0.9
+  },
+  "_model": "gemini-3.5-flash-lite",
+  "status": "ok",
+  "id": 23,
+  "name": "Zoho Cliq",
+  "category": "Communications & Messaging",
+  "hint": "zoho.com/cliq",
+  "sources": [
+    {
+      "url": "https://zoho.com/cliq",
+      "via": "direct",
+      "chars": 5111
+    },
+    {
+      "url": "https://help.zoho.com/portal/en/kb/mcp/implementation-guide/articles/zoho-mcp-implementation-guide",
+      "via": "composio_fetch",
+      "chars": 24278
+    },
+    {
+      "url": "https://help.zoho.com/portal/en/kb/zoho-cliq/cliq-7-0/user-guides/articles/setting-up-the-zoho-cliq-mcp-server",
+      "via": "composio_fetch",
+      "chars": 3988
+    },
+    {
+      "url": "https://help.zoho.com/portal/fr/community/topic/re-introducing-zoho-cliq-rest-apis-the-much-needed-glow-up",
+      "via": "composio_fetch",
+      "chars": 10572
+    },
+    {
+      "url": "https://www.zoho.com/cliq/flexible-pricing.html",
+      "via": "direct",
+      "chars": 3321
+    },
+    {
+      "url": "https://www.zoho.com/cliq/help/platform/configure-zoho-cliq-mcp.html",
+      "via": "direct",
+      "chars": 1911
+    },
+    {
+      "url": "https://zoho.com/cliq",
+      "via": "pass3"
+    },
+    {
+      "url": "https://docs.catalyst.zoho.com/en/tutorials/invoice-notifier/java/register-client",
+      "via": "pass3"
+    },
+    {
+      "url": "https://help.zoho.com/portal/en/community/topic/cliq-5-0-pricing-update",
+      "via": "pass3"
+    },
+    {
+      "url": "https://www.zoho.com/cliq/flexible-pricing.html",
+      "via": "pass3"
+    },
+    {
+      "url": "https://www.zoho.com/cliq/help/restapi/v2/registerclient",
+      "via": "pass3"
+    }
+  ],
+  "queries": [
+    "Zoho Cliq API authentication developer docs",
+    "Zoho Cliq API access pricing plan developer",
+    "Zoho Cliq MCP server"
+  ],
+  "seconds": 53.9,
+  "verification": {
+    "initial_issues": [],
+    "final_issues": [],
+    "rounds": [
+      {
+        "round": 0,
+        "issues": [],
+        "verifier": {
+          "auth_methods": [
+            "oauth2"
+          ],
+          "auth_primary": "oauth2",
+          "access_tier": "self_serve_free",
+          "api_types": [
+            "rest"
+          ],
+          "mcp": "official",
+          "verdict": "build_now",
+          "reasons": {
+            "auth": "Source 4 describes OAuth2 scopes and token lifecycle for the REST API",
+            "access": "Product page (Source 1) offers a free trial and Zoho provides a developer console where OAuth credentials can be obtained without payment",
+            "mcp": "Sources 2 and 3 detail Zoho‑provided MCP server setup for Cliq, indicating an official MCP implementation",
+            "verdict": "Public REST API docs with OAuth2 and free credential access allow a toolkit to be built immediately"
+          },
+          "_model": "openai/gpt-oss-120b"
+        },
+        "autofix": []
+      }
+    ],
+    "catalog": {
+      "in_catalog": false,
+      "checked": [
+        "zohocliq",
+        "cliq",
+        "zoho_cliq"
+      ]
+    },
+    "changed_fields": [],
+    "field_status": {
+      "auth": "verified",
+      "access": "verified",
+      "api": "verified",
+      "mcp": "verified",
+      "verdict": "verified"
+    },
+    "needs_human": [],
+    "before": {
+      "auth_methods": [
+        "oauth2"
+      ],
+      "auth_primary": "oauth2",
+      "access_tier": "self_serve_free",
+      "access_notes": "Sign up for a free plan account to get credentials.",
+      "api_types": [
+        "rest"
+      ],
+      "api_breadth": "broad",
+      "api_notes": "REST APIs v3 covering chats, messages, stars, pins, and chat folders.",
+      "mcp": "official",
+      "mcp_url": "https://help.zoho.com/portal/en/kb/zoho-cliq/cliq-7-0/user-guides/articles/setting-up-the-zoho-cliq-mcp-server",
+      "verdict": "build_now",
+      "blocker": "none",
+      "blocker_notes": "Public APIs and self-serve free tier are available."
+    },
+    "seconds": 16.6
+  },
+  "_public_review": "unknown",
+  "pass3": {
+    "before": {
+      "auth_methods": [
+        "oauth2"
+      ],
+      "auth_primary": "oauth2",
+      "access_tier": "self_serve_free",
+      "verdict": "build_now",
+      "blocker": "none"
+    },
+    "log": [
+      {
+        "loop": "L6_access",
+        "field": "access",
+        "change": null,
+        "reason": "confirmed with a verified quote"
+      }
+    ],
+    "access_sources": [
+      "https://zoho.com/cliq",
+      "https://docs.catalyst.zoho.com/en/tutorials/invoice-notifier/java/register-client",
+      "https://help.zoho.com/portal/en/community/topic/cliq-5-0-pricing-update",
+      "https://www.zoho.com/cliq/flexible-pricing.html",
+      "https://www.zoho.com/cliq/help/restapi/v2/registerclient"
+    ]
+  }
+}

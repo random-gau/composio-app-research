@@ -10,6 +10,7 @@ from __future__ import annotations
 
 import csv
 import json
+import os
 import sys
 from collections import Counter, defaultdict
 from pathlib import Path
@@ -44,6 +45,8 @@ def slim(r: Dict[str, Any]) -> Dict[str, Any]:
         "before": v.get("before", {}),
         "sources": [s["url"] for s in r.get("sources", [])][:12],
         "human_override": r.get("human_override"),
+        "p3log": [{k: x.get(k) for k in ("loop", "field", "change", "reason", "error")} for x in (r.get("pass3") or {}).get("log", [])],
+        "p3_changed": sorted({x["field"] for x in (r.get("pass3") or {}).get("log", []) if x.get("change") and x.get("field")}),
         "_rounds_meta": [{"verifier_model": (rd.get("verifier") or {}).get("_model") or "unavailable"} for rd in v.get("rounds", [])],
         "_l4_skipped": bool(((v.get("rounds") or [{}])[0].get("verifier") or {}).get("error")),
     }
@@ -129,6 +132,12 @@ def stats(recs: List[Dict[str, Any]], p1: List[Dict[str, Any]]) -> Dict[str, Any
                              and "no evidence" not in i["problem"])
     s["p1_no_evidence"] = sum(1 for r in recs for i in r["issues_initial"] if i["loop"] == "L1_evidence"
                               and "no evidence" in i["problem"])
+    s["p3_changes"] = Counter(x["loop"] for r in recs for x in r.get("p3log", []) if x.get("change"))
+    s["p3_apps_changed"] = sum(1 for r in recs if r.get("p3_changed"))
+    s["p3_errors"] = sum(1 for r in recs for x in r.get("p3log", []) if x.get("error"))
+    s["p3_note"] = (f"Pass 3 changed {s['p3_apps_changed']} of {len(recs)} apps. Every change needed a quote that was re-found on the "
+                    f"cited page; answers without one were left as pass 2 had them."
+                    + (f" {s['p3_errors']} checks failed to run." if s["p3_errors"] else "")) if s["p3_changes"] else ""
     s["verifier_models"] = Counter(rd.get("verifier_model") for r in recs for rd in r.get("_rounds_meta", []))
     s["l4_skipped_apps"] = [r["name"] for r in recs if r.get("_l4_skipped")]
     s["models_extract"] = Counter(r.get("_model") for r in p1)
@@ -138,7 +147,11 @@ def stats(recs: List[Dict[str, Any]], p1: List[Dict[str, Any]]) -> Dict[str, Any
 
 
 def main() -> None:
-    p2 = read_json(RUNS / "pass2.json")
+    # The final table is pass 2. Pass 3 is reported as an experiment: it did not improve the held-out sample
+    # (see data/accuracy.json), so it is not promoted. Set FINAL_PASS=pass3 to build from it anyway.
+    final_name = os.getenv("FINAL_PASS", "pass2")
+    p2 = read_json(RUNS / f"{final_name}.json")
+    p3 = read_json(RUNS / "pass3.json") if (RUNS / "pass3.json").exists() else []
     p1 = read_json(RUNS / "pass1.json")
     recs = [slim(r) for r in p2]
     apply_docs_check(recs)
@@ -147,6 +160,16 @@ def main() -> None:
     insights = read_json(DATA / "insights.json") if (DATA / "insights.json").exists() else {}
     runinfo = read_json(DATA / "run_info.json") if (DATA / "run_info.json").exists() else {}
     s = stats(recs, p1)
+    if p3:  # pass 3 experiment summary, computed from its own records
+        logs = [(r["name"], x) for r in p3 for x in (r.get("pass3") or {}).get("log", [])]
+        s["p3_changes"] = dict(Counter(x["loop"] for _, x in logs if x.get("change")))
+        s["p3_apps_changed"] = len({n for n, x in logs if x.get("change")})
+        s["p3_apps_full"] = sum(1 for r in p3 if not any(x.get("error") for x in (r.get("pass3") or {}).get("log", [])))
+        s["p3_note"] = (f"Pass 3 changed answers on {s['p3_apps_changed']} apps. Its LLM checks completed on only "
+                        f"{s['p3_apps_full']} of {len(p3)} apps before every free-tier model hit its daily cap; the rest kept "
+                        f"their pass 2 answers plus the verdict rule. Not promoted to the final table (see Limits).")
+        s["p3_examples"] = [f"{n}: {x['change']}" for n, x in logs if x.get("change")][:40]
+    s["final_pass"] = final_name
     payload = {"apps": recs, "stats": s, "accuracy": acc, "insights": insights, "run": runinfo}
     SITE.mkdir(exist_ok=True)
     write_json(SITE / "results.json", {

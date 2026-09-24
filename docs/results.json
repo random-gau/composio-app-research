@@ -37,8 +37,8 @@
     },
     "auth_any": {
       "oauth2": 75,
-      "jwt_or_signed": 11,
       "basic": 19,
+      "jwt_or_signed": 11,
       "bearer_token": 57,
       "api_key": 52,
       "other": 3,
@@ -420,6 +420,14 @@
     "p1_cited": 432,
     "p1_quote_fail": 14,
     "p1_no_evidence": 17,
+    "p3_changes": {
+      "L6_access": 8,
+      "verdict_rule": 17,
+      "L7_auth": 8
+    },
+    "p3_apps_changed": 23,
+    "p3_errors": 0,
+    "p3_note": "Pass 3 changed answers on 23 apps. Its LLM checks completed on only 26 of 100 apps before every free-tier model hit its daily cap; the rest kept their pass 2 answers plus the verdict rule. Not promoted to the final table (see Limits).",
     "verifier_models": {
       "openai/gpt-oss-120b": 53,
       "openai/gpt-oss-20b": 80,
@@ -443,7 +451,44 @@
       "build_now": 81,
       "build_with_friction": 15,
       "blocked": 4
-    }
+    },
+    "p3_apps_full": 26,
+    "p3_examples": [
+      "Twenty: self_serve_free -> open_source_local",
+      "Twenty: build_now -> build_with_friction",
+      "Close: self_serve_free -> self_serve_trial",
+      "Close: ['api_key', 'oauth2', 'basic'] -> ['api_key', 'basic']",
+      "Close: build_now -> build_with_friction",
+      "Copper: self_serve_trial -> self_serve_free",
+      "Copper: build_with_friction -> build_now",
+      "Intercom: build_now -> build_with_friction",
+      "Freshdesk: self_serve_free -> paid_plan",
+      "Freshdesk: build_now -> build_with_friction",
+      "Pylon: paid_plan -> partner_or_sales",
+      "Pylon: build_with_friction -> blocked",
+      "Plain: self_serve_free -> self_serve_trial",
+      "Plain: build_now -> build_with_friction",
+      "Help Scout: ['oauth2', 'api_key', 'jwt_or_signed'] -> ['oauth2', 'api_key']",
+      "Gorgias: ['oauth2', 'api_key', 'bearer_token', 'basic'] -> ['oauth2', 'api_key', 'basic']",
+      "Gladly: self_serve_free -> partner_or_sales",
+      "Gladly: ['basic', 'bearer_token', 'jwt_or_signed', 'other'] -> ['basic', 'bearer_token']",
+      "Gladly: build_now -> blocked",
+      "Twilio: ['api_key', 'basic', 'bearer_token', 'jwt_or_signed'] -> ['basic']",
+      "Pumble: ['api_key', 'bearer_token'] -> ['api_key']",
+      "Discord: build_now -> build_with_friction",
+      "WhatsApp Business: build_now -> build_with_friction",
+      "Aircall: self_serve_free -> self_serve_trial",
+      "Aircall: build_now -> build_with_friction",
+      "Vonage: ['api_key', 'bearer_token', 'jwt_or_signed'] -> ['api_key']",
+      "Google Ads: ['oauth2', 'jwt_or_signed'] -> ['oauth2']",
+      "Meta Ads: build_now -> build_with_friction",
+      "Klaviyo: build_now -> build_with_friction",
+      "Pinterest: build_with_friction -> build_now",
+      "Salesforce Commerce Cloud: build_with_friction -> blocked",
+      "Sherlock: build_now -> build_with_friction",
+      "Otter AI: build_with_friction -> blocked"
+    ],
+    "final_pass": "pass2"
   },
   "accuracy": {
     "pass1": {
@@ -517,6 +562,45 @@
         "correct": 77,
         "n": 95,
         "pct": 81.1
+      },
+      "auth_primary_only": {
+        "correct": 18,
+        "n": 19,
+        "pct": 94.7
+      }
+    },
+    "pass3": {
+      "per_field": {
+        "auth": {
+          "correct": 12,
+          "n": 19,
+          "pct": 63.2
+        },
+        "access": {
+          "correct": 18,
+          "n": 19,
+          "pct": 94.7
+        },
+        "api": {
+          "correct": 19,
+          "n": 19,
+          "pct": 100.0
+        },
+        "mcp": {
+          "correct": 17,
+          "n": 19,
+          "pct": 89.5
+        },
+        "verdict": {
+          "correct": 16,
+          "n": 19,
+          "pct": 84.2
+        }
+      },
+      "overall": {
+        "correct": 82,
+        "n": 95,
+        "pct": 86.3
       },
       "auth_primary_only": {
         "correct": 18,
@@ -640,6 +724,8 @@
         "https://developer.salesforce.com/docs/atlas.en-us.packagingGuide.meta/packagingGuide/dev_packages_rest_api_access.htm"
       ],
       "human_override": null,
+      "p3log": [],
+      "p3_changed": [],
       "_rounds_meta": [
         {
           "verifier_model": "openai/gpt-oss-120b"
@@ -749,6 +835,8 @@
         "https://developers.hubspot.com/docs/apps/developer-platform/build-apps/authentication/account-service-keys"
       ],
       "human_override": null,
+      "p3log": [],
+      "p3_changed": [],
       "_rounds_meta": [
         {
           "verifier_model": "openai/gpt-oss-120b"
@@ -868,6 +956,8 @@
         "https://www.pipedrive.com/en/features/mcp-server"
       ],
       "human_override": null,
+      "p3log": [],
+      "p3_changed": [],
       "_rounds_meta": [
         {
           "verifier_model": "openai/gpt-oss-120b"
@@ -974,6 +1064,8 @@
         "https://docs.attio.com/rest-api/endpoint-reference/meta/identify"
       ],
       "human_override": null,
+      "p3log": [],
+      "p3_changed": [],
       "_rounds_meta": [
         {
           "verifier_model": "openai/gpt-oss-20b"
@@ -1114,6 +1206,8 @@
         "https://twenty.mintlify.app/developers/extend/api"
       ],
       "human_override": null,
+      "p3log": [],
+      "p3_changed": [],
       "_rounds_meta": [
         {
           "verifier_model": "openai/gpt-oss-120b"
@@ -1224,6 +1318,8 @@
         "https://developers.podio.com/doc/oauth-authorization/client-info-22357"
       ],
       "human_override": null,
+      "p3log": [],
+      "p3_changed": [],
       "_rounds_meta": [
         {
           "verifier_model": "openai/gpt-oss-120b"
@@ -1329,6 +1425,8 @@
         "https://www.zoho.com/crm/developer/docs/api/v8/api-limits.html"
       ],
       "human_override": null,
+      "p3log": [],
+      "p3_changed": [],
       "_rounds_meta": [
         {
           "verifier_model": "openai/gpt-oss-20b"
@@ -1449,6 +1547,8 @@
         "https://onboarding.closeplanapp.com/wizard/step-08"
       ],
       "human_override": null,
+      "p3log": [],
+      "p3_changed": [],
       "_rounds_meta": [
         {
           "verifier_model": "openai/gpt-oss-120b"
@@ -1556,6 +1656,8 @@
         "https://www.copper.com/pricing"
       ],
       "human_override": null,
+      "p3log": [],
+      "p3_changed": [],
       "_rounds_meta": [
         {
           "verifier_model": "openai/gpt-oss-120b"
@@ -1690,6 +1792,8 @@
         "https://api.docs.dealcloud.com/docs/data"
       ],
       "human_override": null,
+      "p3log": [],
+      "p3_changed": [],
       "_rounds_meta": [
         {
           "verifier_model": "openai/gpt-oss-120b"
@@ -1817,6 +1921,8 @@
         "https://www.zendesk.nl/blog/zip2-revolutionizing-service-with-the-zendesk-ai-mcp-client"
       ],
       "human_override": null,
+      "p3log": [],
+      "p3_changed": [],
       "_rounds_meta": [
         {
           "verifier_model": "openai/gpt-oss-120b"
@@ -1925,6 +2031,8 @@
         "https://developers.intercom.com/docs/build-an-integration/learn-more/authentication/installing-uninstalling-apps"
       ],
       "human_override": null,
+      "p3log": [],
+      "p3_changed": [],
       "_rounds_meta": [
         {
           "verifier_model": "openai/gpt-oss-20b"
@@ -2030,6 +2138,8 @@
         "https://support.freshdesk.com/support/solutions/articles/50000014407-mcp-integration-frequently-asked-questions-faq-"
       ],
       "human_override": null,
+      "p3log": [],
+      "p3_changed": [],
       "_rounds_meta": [
         {
           "verifier_model": "openai/gpt-oss-120b"
@@ -2153,6 +2263,8 @@
         "https://dev.frontapp.com/docs/authentication"
       ],
       "human_override": null,
+      "p3log": [],
+      "p3_changed": [],
       "_rounds_meta": [
         {
           "verifier_model": "openai/gpt-oss-120b"
@@ -2288,6 +2400,8 @@
         "https://docs.usepylon.com/pylon-docs/developer/api/api-reference/accounts.md"
       ],
       "human_override": null,
+      "p3log": [],
+      "p3_changed": [],
       "_rounds_meta": [
         {
           "verifier_model": "openai/gpt-oss-120b"
@@ -2411,6 +2525,8 @@
         "https://support.liveagent.com/931802-API-rate-limit-API-requests-limit"
       ],
       "human_override": null,
+      "p3log": [],
+      "p3_changed": [],
       "_rounds_meta": [
         {
           "verifier_model": "openai/gpt-oss-20b"
@@ -2534,6 +2650,8 @@
         "https://modelcontextprotocol.io/docs/2026-07-28/learn/server-concepts"
       ],
       "human_override": null,
+      "p3log": [],
+      "p3_changed": [],
       "_rounds_meta": [
         {
           "verifier_model": "openai/gpt-oss-120b"
@@ -2652,6 +2770,8 @@
         "https://developer.helpscout.com/mailbox-api/overview/authentication"
       ],
       "human_override": null,
+      "p3log": [],
+      "p3_changed": [],
       "_rounds_meta": [
         {
           "verifier_model": "openai/gpt-oss-20b"
@@ -2786,6 +2906,8 @@
         "https://developers.gorgias.com/docs/1-register-on-developer-portal"
       ],
       "human_override": null,
+      "p3log": [],
+      "p3_changed": [],
       "_rounds_meta": [
         {
           "verifier_model": "openai/gpt-oss-120b"
@@ -2929,6 +3051,8 @@
         "https://help.gladly.com/developer-tutorials/docs/technical-planning"
       ],
       "human_override": null,
+      "p3log": [],
+      "p3_changed": [],
       "_rounds_meta": [
         {
           "verifier_model": "openai/gpt-oss-120b"
@@ -3053,6 +3177,8 @@
         "https://docs.slack.dev/ai/slack-mcp-server/developing.md"
       ],
       "human_override": null,
+      "p3log": [],
+      "p3_changed": [],
       "_rounds_meta": [
         {
           "verifier_model": "openai/gpt-oss-120b"
@@ -3175,6 +3301,8 @@
         "https://www.twilio.com/en-us/blog/introducing-twilio-alpha-mcp-server"
       ],
       "human_override": null,
+      "p3log": [],
+      "p3_changed": [],
       "_rounds_meta": [
         {
           "verifier_model": "openai/gpt-oss-120b"
@@ -3280,6 +3408,8 @@
         "https://www.zoho.com/cliq/help/platform/configure-zoho-cliq-mcp.html"
       ],
       "human_override": null,
+      "p3log": [],
+      "p3_changed": [],
       "_rounds_meta": [
         {
           "verifier_model": "openai/gpt-oss-120b"
@@ -3398,6 +3528,8 @@
         "https://open.larksuite.com/document/uAjLw4CM/ukTMukTMukTM/mcp_integration/quick-start-guides/quick-integration-with-openapi-mcp"
       ],
       "human_override": null,
+      "p3log": [],
+      "p3_changed": [],
       "_rounds_meta": [
         {
           "verifier_model": "openai/gpt-oss-20b"
@@ -3506,6 +3638,8 @@
         "https://pumble.com/learn/pumble/connecting-pumble-with-ai-agents-mcp"
       ],
       "human_override": null,
+      "p3log": [],
+      "p3_changed": [],
       "_rounds_meta": [
         {
           "verifier_model": "openai/gpt-oss-120b"
@@ -3626,6 +3760,8 @@
         "https://github.com/ngoctranfire/discord-mcp-server"
       ],
       "human_override": null,
+      "p3log": [],
+      "p3_changed": [],
       "_rounds_meta": [
         {
           "verifier_model": "openai/gpt-oss-120b"
@@ -3750,6 +3886,8 @@
         "https://github.com/mcp-telegram/mcp-telegram/blob/9f6e7478325aff213524550bbc0511317f9fda5a/README.md"
       ],
       "human_override": null,
+      "p3log": [],
+      "p3_changed": [],
       "_rounds_meta": [
         {
           "verifier_model": "openai/gpt-oss-120b"
@@ -3895,6 +4033,8 @@
         "https://developers.facebook.com/docs/whatsapp/cloud-api/guides/send-message-templates/auth-otp-template-messages"
       ],
       "human_override": null,
+      "p3log": [],
+      "p3_changed": [],
       "_rounds_meta": [
         {
           "verifier_model": "openai/gpt-oss-120b"
@@ -4007,6 +4147,8 @@
         "https://developer.aircall.io/docs/best-practices"
       ],
       "human_override": null,
+      "p3log": [],
+      "p3_changed": [],
       "_rounds_meta": [
         {
           "verifier_model": "openai/gpt-oss-120b"
@@ -4141,6 +4283,8 @@
         "https://developer.vonage.com/en/api/application.v2"
       ],
       "human_override": null,
+      "p3log": [],
+      "p3_changed": [],
       "_rounds_meta": [
         {
           "verifier_model": "openai/gpt-oss-20b"
@@ -4273,6 +4417,8 @@
         "https://github.com/LucasSantana-Dev/google-ads-mcp"
       ],
       "human_override": null,
+      "p3log": [],
+      "p3_changed": [],
       "_rounds_meta": [
         {
           "verifier_model": "openai/gpt-oss-120b"
@@ -4411,6 +4557,8 @@
         "https://github.com/byadsco/meta-ads-mcp"
       ],
       "human_override": null,
+      "p3log": [],
+      "p3_changed": [],
       "_rounds_meta": [
         {
           "verifier_model": "openai/gpt-oss-120b"
@@ -4530,6 +4678,8 @@
         "https://gitlab.com/nuraveda-lab/linkedin-ads-mcp"
       ],
       "human_override": null,
+      "p3log": [],
+      "p3_changed": [],
       "_rounds_meta": [
         {
           "verifier_model": "openai/gpt-oss-20b"
@@ -4664,6 +4814,8 @@
         "https://developers.gohighlevel.com"
       ],
       "human_override": null,
+      "p3log": [],
+      "p3_changed": [],
       "_rounds_meta": [
         {
           "verifier_model": "openai/gpt-oss-120b"
@@ -4779,6 +4931,8 @@
         "https://mailchimp.com/developer/marketing/docs/integrations"
       ],
       "human_override": null,
+      "p3log": [],
+      "p3_changed": [],
       "_rounds_meta": [
         {
           "verifier_model": "openai/gpt-oss-20b"
@@ -4885,6 +5039,8 @@
         "https://developers.klaviyo.com/en/docs/set_up_oauth"
       ],
       "human_override": null,
+      "p3log": [],
+      "p3_changed": [],
       "_rounds_meta": [
         {
           "verifier_model": "openai/gpt-oss-20b"
@@ -4988,6 +5144,8 @@
         "https://developer.systeme.io/reference/api_contacts_get_collection-1"
       ],
       "human_override": null,
+      "p3log": [],
+      "p3_changed": [],
       "_rounds_meta": [
         {
           "verifier_model": "openai/gpt-oss-20b"
@@ -5112,6 +5270,8 @@
         "https://developers.pinterest.com/docs/getting-started/connect-app"
       ],
       "human_override": null,
+      "p3log": [],
+      "p3_changed": [],
       "_rounds_meta": [
         {
           "verifier_model": "openai/gpt-oss-20b"
@@ -5237,6 +5397,8 @@
         "https://github.com/bintangtimurlangit/threads-mcp/blob/main/docs/README.md"
       ],
       "human_override": null,
+      "p3log": [],
+      "p3_changed": [],
       "_rounds_meta": [
         {
           "verifier_model": "openai/gpt-oss-20b"
@@ -5375,6 +5537,8 @@
         "https://www.twilio.com/docs/sendgrid/api-reference/account-provisioning-api.md"
       ],
       "human_override": null,
+      "p3log": [],
+      "p3_changed": [],
       "_rounds_meta": [
         {
           "verifier_model": "openai/gpt-oss-120b"
@@ -5522,6 +5686,8 @@
         "https://shopify.dev/docs/api/shop/guides/creating-a-client"
       ],
       "human_override": null,
+      "p3log": [],
+      "p3_changed": [],
       "_rounds_meta": [
         {
           "verifier_model": "openai/gpt-oss-20b"
@@ -5652,6 +5818,8 @@
         "https://github.com/woocommerce/woocommerce/blob/trunk/plugins/woocommerce/src/Internal/MCP/MCPAdapterProvider.php"
       ],
       "human_override": null,
+      "p3log": [],
+      "p3_changed": [],
       "_rounds_meta": [
         {
           "verifier_model": "openai/gpt-oss-20b"
@@ -5774,6 +5942,8 @@
         "https://docs.bigcommerce.com/developer/docs/integrations/apps/guide.md"
       ],
       "human_override": null,
+      "p3log": [],
+      "p3_changed": [],
       "_rounds_meta": [
         {
           "verifier_model": "qwen/qwen3.8-27b"
@@ -5895,6 +6065,8 @@
         "https://developer.salesforce.com/docs/commerce/commerce-api/guide/auth-z-scope-catalog.html"
       ],
       "human_override": null,
+      "p3log": [],
+      "p3_changed": [],
       "_rounds_meta": [
         {
           "verifier_model": "openai/gpt-oss-20b"
@@ -6023,6 +6195,8 @@
         "https://developer.adobe.com/commerce/php/architecture/technical-vision/web-api"
       ],
       "human_override": null,
+      "p3log": [],
+      "p3_changed": [],
       "_rounds_meta": [
         {
           "verifier_model": "openai/gpt-oss-20b"
@@ -6130,6 +6304,8 @@
         "https://developers.squarespace.com/commerce-apis/authentication-and-permissions"
       ],
       "human_override": null,
+      "p3log": [],
+      "p3_changed": [],
       "_rounds_meta": [
         {
           "verifier_model": "openai/gpt-oss-20b"
@@ -6234,6 +6410,8 @@
         "https://docs.ecwid.com/get-started/make-your-first-api-request"
       ],
       "human_override": null,
+      "p3log": [],
+      "p3_changed": [],
       "_rounds_meta": [
         {
           "verifier_model": "openai/gpt-oss-20b"
@@ -6339,6 +6517,8 @@
         "https://github.com/stcmain/gumroad-mcp"
       ],
       "human_override": null,
+      "p3log": [],
+      "p3_changed": [],
       "_rounds_meta": [
         {
           "verifier_model": "qwen/qwen3.8-27b"
@@ -6478,6 +6658,8 @@
         "https://developer-docs.amazon.com/sp-api/lang-US/docs/sp-api-registration-overview"
       ],
       "human_override": null,
+      "p3log": [],
+      "p3_changed": [],
       "_rounds_meta": [
         {
           "verifier_model": "openai/gpt-oss-20b"
@@ -6597,6 +6779,8 @@
         "https://github.com/modelcontextprotocol/modelcontextprotocol/blob/main/docs/specification/2026-07-28/index.mdx"
       ],
       "human_override": null,
+      "p3log": [],
+      "p3_changed": [],
       "_rounds_meta": [
         {
           "verifier_model": "openai/gpt-oss-20b"
@@ -6728,6 +6912,8 @@
         "https://dataforseo.com/help-center/connecting-the-remote-dataforseo-mcp-server-using-oauth"
       ],
       "human_override": null,
+      "p3log": [],
+      "p3_changed": [],
       "_rounds_meta": [
         {
           "verifier_model": "qwen/qwen3.8-27b"
@@ -6864,6 +7050,8 @@
         "https://seranking.com/api/integrations/mcp"
       ],
       "human_override": null,
+      "p3log": [],
+      "p3_changed": [],
       "_rounds_meta": [
         {
           "verifier_model": "openai/gpt-oss-20b"
@@ -6984,6 +7172,8 @@
         "https://docs.ahrefs.com/ahrefs-connect/docs/how-it-works.md"
       ],
       "human_override": null,
+      "p3log": [],
+      "p3_changed": [],
       "_rounds_meta": [
         {
           "verifier_model": "openai/gpt-oss-20b"
@@ -7132,6 +7322,8 @@
         "https://docs.mrscraper.com/docs/features/activating-api"
       ],
       "human_override": null,
+      "p3log": [],
+      "p3_changed": [],
       "_rounds_meta": [
         {
           "verifier_model": "openai/gpt-oss-20b"
@@ -7245,6 +7437,8 @@
         "https://docs.apify.com/account/subscriptions"
       ],
       "human_override": null,
+      "p3log": [],
+      "p3_changed": [],
       "_rounds_meta": [
         {
           "verifier_model": "unavailable"
@@ -7366,6 +7560,8 @@
         "https://docs.firecrawl.dev/api-reference/v1-endpoint/extract"
       ],
       "human_override": null,
+      "p3log": [],
+      "p3_changed": [],
       "_rounds_meta": [
         {
           "verifier_model": "qwen/qwen3.8-27b"
@@ -7495,6 +7691,8 @@
         "https://docs.brightdata.com/ai/mcp-server/faqs"
       ],
       "human_override": null,
+      "p3log": [],
+      "p3_changed": [],
       "_rounds_meta": [
         {
           "verifier_model": "openai/gpt-oss-20b"
@@ -7646,6 +7844,8 @@
         "https://github.com/H4RR1SON/sherlock-mcp/blob/main/README.md"
       ],
       "human_override": null,
+      "p3log": [],
+      "p3_changed": [],
       "_rounds_meta": [
         {
           "verifier_model": "openai/gpt-oss-20b"
@@ -7793,6 +7993,8 @@
         "https://ts.sdk.modelcontextprotocol.io/v2/api/@modelcontextprotocol/server/server/mcp.html"
       ],
       "human_override": null,
+      "p3log": [],
+      "p3_changed": [],
       "_rounds_meta": [
         {
           "verifier_model": "openai/gpt-oss-20b"
@@ -7938,6 +8140,8 @@
         "https://developers.clay.com/tables"
       ],
       "human_override": null,
+      "p3log": [],
+      "p3_changed": [],
       "_rounds_meta": [
         {
           "verifier_model": "openai/gpt-oss-20b"
@@ -8074,6 +8278,8 @@
         "https://github.blog/open-source/maintainers/why-we-open-sourced-our-mcp-server-and-what-it-means-for-you"
       ],
       "human_override": null,
+      "p3log": [],
+      "p3_changed": [],
       "_rounds_meta": [
         {
           "verifier_model": "allam-2-7b"
@@ -8186,6 +8392,8 @@
         "https://vercel.com/docs/ai-gateway/pricing.md"
       ],
       "human_override": null,
+      "p3log": [],
+      "p3_changed": [],
       "_rounds_meta": [
         {
           "verifier_model": "qwen/qwen3.8-27b"
@@ -8293,6 +8501,8 @@
         "https://docs.netlify.com/manage/accounts-and-billing/billing/billing-for-credit-based-plans/billing-faq-for-credit-based-plans"
       ],
       "human_override": null,
+      "p3log": [],
+      "p3_changed": [],
       "_rounds_meta": [
         {
           "verifier_model": "openai/gpt-oss-20b"
@@ -8424,6 +8634,8 @@
         "https://developers.cloudflare.com/api/resources/api_gateway/subresources/operations/methods/create"
       ],
       "human_override": null,
+      "p3log": [],
+      "p3_changed": [],
       "_rounds_meta": [
         {
           "verifier_model": "openai/gpt-oss-20b"
@@ -8556,6 +8768,8 @@
         "https://supabase.com/docs/guides/api/creating-routes"
       ],
       "human_override": null,
+      "p3log": [],
+      "p3_changed": [],
       "_rounds_meta": [
         {
           "verifier_model": "openai/gpt-oss-20b"
@@ -8687,6 +8901,8 @@
         "https://neo4j.com/blog/developer/how-to-create-and-integrate-an-okta-oidc-service-account-with-neo4j"
       ],
       "human_override": null,
+      "p3log": [],
+      "p3_changed": [],
       "_rounds_meta": [
         {
           "verifier_model": "openai/gpt-oss-20b"
@@ -8839,6 +9055,8 @@
         "https://docs.snowflake.com/en/release-notes/2025/other/2025-11-04-cortex-agents-mcp"
       ],
       "human_override": null,
+      "p3log": [],
+      "p3_changed": [],
       "_rounds_meta": [
         {
           "verifier_model": "openai/gpt-oss-20b"
@@ -8974,6 +9192,8 @@
         "https://www.mongodb.com/docs/mcp-server/tools"
       ],
       "human_override": null,
+      "p3log": [],
+      "p3_changed": [],
       "_rounds_meta": [
         {
           "verifier_model": "openai/gpt-oss-20b"
@@ -9108,6 +9328,8 @@
         "https://investors.datadoghq.com/news-releases/news-release-details/datadog-launches-mcp-server-provide-ai-agents-secure-real-time"
       ],
       "human_override": null,
+      "p3log": [],
+      "p3_changed": [],
       "_rounds_meta": [
         {
           "verifier_model": "qwen/qwen3.8-27b"
@@ -9224,6 +9446,8 @@
         "https://cli.sentry.dev/commands/auth"
       ],
       "human_override": null,
+      "p3log": [],
+      "p3_changed": [],
       "_rounds_meta": [
         {
           "verifier_model": "openai/gpt-oss-20b"
@@ -9346,6 +9570,8 @@
         "https://developers.notion.com/guides/mcp/overview"
       ],
       "human_override": null,
+      "p3log": [],
+      "p3_changed": [],
       "_rounds_meta": [
         {
           "verifier_model": "openai/gpt-oss-20b"
@@ -9455,6 +9681,8 @@
         "https://airtable.com/developers/web/api/oauth-reference"
       ],
       "human_override": null,
+      "p3log": [],
+      "p3_changed": [],
       "_rounds_meta": [
         {
           "verifier_model": "openai/gpt-oss-20b"
@@ -9577,6 +9805,8 @@
         "https://linear.app/changelog/2025-05-01-mcp"
       ],
       "human_override": null,
+      "p3log": [],
+      "p3_changed": [],
       "_rounds_meta": [
         {
           "verifier_model": "allam-2-7b"
@@ -9700,6 +9930,8 @@
         "https://developer.atlassian.com/cloud/jira/software/rest/intro"
       ],
       "human_override": null,
+      "p3log": [],
+      "p3_changed": [],
       "_rounds_meta": [
         {
           "verifier_model": "unavailable"
@@ -9808,6 +10040,8 @@
         "https://developers.asana.com/docs/connecting-mcp-clients-to-asanas-v2-server"
       ],
       "human_override": null,
+      "p3log": [],
+      "p3_changed": [],
       "_rounds_meta": [
         {
           "verifier_model": "unavailable"
@@ -9915,6 +10149,8 @@
         "https://developer.monday.com/api-reference/docs/compatible-mcp-clients"
       ],
       "human_override": null,
+      "p3log": [],
+      "p3_changed": [],
       "_rounds_meta": [
         {
           "verifier_model": "allam-2-7b"
@@ -10021,6 +10257,8 @@
         "https://developer.clickup.com/docs/Getting%20Started.md"
       ],
       "human_override": null,
+      "p3log": [],
+      "p3_changed": [],
       "_rounds_meta": [
         {
           "verifier_model": "unavailable"
@@ -10126,6 +10364,8 @@
         "https://coda.io/packs/build/latest/samples/topic/authentication"
       ],
       "human_override": null,
+      "p3log": [],
+      "p3_changed": [],
       "_rounds_meta": [
         {
           "verifier_model": "qwen/qwen3.8-27b"
@@ -10270,6 +10510,8 @@
         "https://developers.smartsheet.com/api/smartsheet/guides/basics/authentication"
       ],
       "human_override": null,
+      "p3log": [],
+      "p3_changed": [],
       "_rounds_meta": [
         {
           "verifier_model": "qwen/qwen3.8-27b"
@@ -10401,6 +10643,8 @@
         "https://support.getharvest.com/hc/en-us/articles/46293697226381-Harvest-MCP"
       ],
       "human_override": null,
+      "p3log": [],
+      "p3_changed": [],
       "_rounds_meta": [
         {
           "verifier_model": "allam-2-7b"
@@ -10532,6 +10776,8 @@
         "https://docs.stripe.com/mcp?mcp-client=claudecode"
       ],
       "human_override": null,
+      "p3log": [],
+      "p3_changed": [],
       "_rounds_meta": [
         {
           "verifier_model": "allam-2-7b"
@@ -10640,6 +10886,8 @@
         "https://plaid.com/docs/api/oauth/index.html.md"
       ],
       "human_override": null,
+      "p3log": [],
+      "p3_changed": [],
       "_rounds_meta": [
         {
           "verifier_model": "allam-2-7b"
@@ -10746,6 +10994,8 @@
         "https://developers.binance.com/en/docs/catalog/core-trading-spot-trading/api/ws-api/auth"
       ],
       "human_override": null,
+      "p3log": [],
+      "p3_changed": [],
       "_rounds_meta": [
         {
           "verifier_model": "qwen/qwen3.8-27b"
@@ -10859,6 +11109,8 @@
         "https://docs.paygent.to/integration/webhooks"
       ],
       "human_override": null,
+      "p3log": [],
+      "p3_changed": [],
       "_rounds_meta": [
         {
           "verifier_model": "qwen/qwen3.8-27b"
@@ -10969,6 +11221,8 @@
         "https://github.com/iPAYX-Technologies/mcp-fx-audit/commit/bb30c87f2bdfe8a2f8d18b051b2d34c61ba7b7a6"
       ],
       "human_override": null,
+      "p3log": [],
+      "p3_changed": [],
       "_rounds_meta": [
         {
           "verifier_model": "qwen/qwen3.8-27b"
@@ -11085,6 +11339,8 @@
         "https://help.developer.intuit.com/s/question/0D5TR00001LtKZk0AN/is-there-a-plan-or-timeline-for-when-intuit-will-provide-a-hosted-quickbooks-mcp-server-we-are-exploring-the-possibility-of-a-multitenant-integration-with-quickbooks-and-selfhosted-is-not-a-viable-option-for-us"
       ],
       "human_override": null,
+      "p3log": [],
+      "p3_changed": [],
       "_rounds_meta": [
         {
           "verifier_model": "unavailable"
@@ -11191,6 +11447,8 @@
         "https://developer.xero.com/faq/custom-integration"
       ],
       "human_override": null,
+      "p3log": [],
+      "p3_changed": [],
       "_rounds_meta": [
         {
           "verifier_model": "qwen/qwen3.8-27b"
@@ -11319,6 +11577,8 @@
         "https://truto.one/blog/how-to-connect-an-ai-agent-to-brex-expense-data-via-mcp-a-production-quickstart"
       ],
       "human_override": null,
+      "p3log": [],
+      "p3_changed": [],
       "_rounds_meta": [
         {
           "verifier_model": "qwen/qwen3.8-27b"
@@ -11428,6 +11688,8 @@
         "https://docs.ramp.com/llms-full.txt"
       ],
       "human_override": null,
+      "p3log": [],
+      "p3_changed": [],
       "_rounds_meta": [
         {
           "verifier_model": "qwen/qwen3.8-27b"
@@ -11566,6 +11828,8 @@
         "https://pitchbook.com/data"
       ],
       "human_override": null,
+      "p3log": [],
+      "p3_changed": [],
       "_rounds_meta": [
         {
           "verifier_model": "allam-2-7b"
@@ -11705,6 +11969,8 @@
         "https://github.com/gnh1201/notebooklm-rest-api"
       ],
       "human_override": null,
+      "p3log": [],
+      "p3_changed": [],
       "_rounds_meta": [
         {
           "verifier_model": "qwen/qwen3.8-27b"
@@ -11816,6 +12082,8 @@
         "https://connect.tryotter.com/docs/api-reference/reference/request-token"
       ],
       "human_override": null,
+      "p3log": [],
+      "p3_changed": [],
       "_rounds_meta": [
         {
           "verifier_model": "unavailable"
@@ -11922,6 +12190,8 @@
         "https://developers.fathom.ai/sdks/advanced-configuration"
       ],
       "human_override": null,
+      "p3log": [],
+      "p3_changed": [],
       "_rounds_meta": [
         {
           "verifier_model": "allam-2-7b"
@@ -12055,6 +12325,8 @@
         "https://docs.consensus.app/reference/v1_quick_search"
       ],
       "human_override": null,
+      "p3log": [],
+      "p3_changed": [],
       "_rounds_meta": [
         {
           "verifier_model": "qwen/qwen3.8-27b"
@@ -12167,6 +12439,8 @@
         "https://docs.reducto.ai/reference/credit-usage"
       ],
       "human_override": null,
+      "p3log": [],
+      "p3_changed": [],
       "_rounds_meta": [
         {
           "verifier_model": "allam-2-7b"
@@ -12295,6 +12569,8 @@
         "https://docs.devin.ai/api-reference/getting-started/migration-guide"
       ],
       "human_override": null,
+      "p3log": [],
+      "p3_changed": [],
       "_rounds_meta": [
         {
           "verifier_model": "unavailable"
@@ -12418,6 +12694,8 @@
         "https://higgsfield.ai/blog/generate-ai-videos-higgsfield-api"
       ],
       "human_override": null,
+      "p3log": [],
+      "p3_changed": [],
       "_rounds_meta": [
         {
           "verifier_model": "qwen/qwen3.8-27b"
@@ -12566,6 +12844,8 @@
         "https://docs.rs/mermaid-cli/latest/mermaid_cli/cli/enum.Commands.html"
       ],
       "human_override": null,
+      "p3log": [],
+      "p3_changed": [],
       "_rounds_meta": [
         {
           "verifier_model": "allam-2-7b"
@@ -12685,6 +12965,8 @@
         "https://github.com/opspresso/mcp-youtube"
       ],
       "human_override": null,
+      "p3log": [],
+      "p3_changed": [],
       "_rounds_meta": [
         {
           "verifier_model": "qwen/qwen3.8-27b"
@@ -12805,6 +13087,8 @@
         "https://support.grain.com/en/articles/9253220-plans"
       ],
       "human_override": null,
+      "p3log": [],
+      "p3_changed": [],
       "_rounds_meta": [
         {
           "verifier_model": "openai/gpt-oss-120b"

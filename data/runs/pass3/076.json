@@ -1,0 +1,213 @@
+{
+  "one_liner": "A work OS and project management platform to track tasks, workflows, and team collaboration.",
+  "auth_methods": [
+    "oauth2",
+    "api_key",
+    "bearer_token"
+  ],
+  "auth_primary": "oauth2",
+  "auth_notes": "Supports OAuth2 and personal V2 API tokens passed in the Authorization header.",
+  "access_tier": "self_serve_free",
+  "access_notes": "You can sign up for a free developer account to get API tokens and test at no cost.",
+  "api_types": [
+    "graphql"
+  ],
+  "api_breadth": "broad",
+  "api_notes": "GraphQL API covering boards, items, column values, users, workspaces, and more.",
+  "mcp": "official",
+  "mcp_url": "https://mcp.monday.com/mcp",
+  "verdict": "build_now",
+  "blocker": "none",
+  "blocker_notes": "Public documentation, GraphQL API, and free developer accounts make it immediately buildable.",
+  "evidence": {
+    "auth": {
+      "url": "https://developer.monday.com/api-reference/docs/authentication",
+      "quote": "The monday.com platform API utilizes personal V2 API tokens to authenticate requests and identify the user making the call.",
+      "check": "ok"
+    },
+    "access": {
+      "url": "https://developer.monday.com/api-reference/docs/authentication",
+      "quote": "If you don't have a monday.com account yet, create a free developer account to get an API token and start testing.",
+      "check": "ok"
+    },
+    "api": {
+      "url": "https://developer.monday.com/api-reference/docs/basics",
+      "quote": "The monday GraphQL API is part of the monday apps framework. It is an application layer that allows apps to read and update data inside a monday.com account. It supports operations boards, items, column values, users, workspaces, and more.",
+      "check": "ok"
+    },
+    "mcp": {
+      "url": "https://developer.monday.com/api-reference/docs/compatible-mcp-clients",
+      "quote": "The monday.com hosted MCP server lets you interact with your monday.com account through natural language — create items, query boards, build dashboards, and more — from your preferred AI platform. Server URL: https://mcp.monday.com/mcp",
+      "check": "ok"
+    },
+    "verdict": {
+      "url": "https://developer.monday.com/api-reference/docs/authentication",
+      "quote": "If you don't have a monday.com account yet, create a free developer account to get an API token and start testing.",
+      "check": "ok"
+    }
+  },
+  "confidence": {
+    "auth": 1.0,
+    "access": 1.0,
+    "api": 1.0,
+    "mcp": 1.0,
+    "verdict": 1.0
+  },
+  "_model": "gemini-3.5-flash-lite",
+  "status": "ok",
+  "id": 76,
+  "name": "Monday.com",
+  "category": "Productivity & PM",
+  "hint": "developer.monday.com",
+  "sources": [
+    {
+      "url": "https://developer.monday.com",
+      "via": "direct",
+      "chars": 4261
+    },
+    {
+      "url": "https://developer-community.monday.com/product-updates/your-developer-account-just-got-a-major-upgrade-5142",
+      "via": "direct",
+      "chars": 5252
+    },
+    {
+      "url": "https://developer.monday.com/api-reference/docs/apps-mcp",
+      "via": "direct",
+      "chars": 2361
+    },
+    {
+      "url": "https://developer.monday.com/api-reference/docs/authentication",
+      "via": "direct",
+      "chars": 2951
+    },
+    {
+      "url": "https://developer.monday.com/api-reference/docs/basics",
+      "via": "direct",
+      "chars": 2648
+    },
+    {
+      "url": "https://developer.monday.com/api-reference/docs/compatible-mcp-clients",
+      "via": "direct",
+      "chars": 3223
+    },
+    {
+      "url": "https://developer.monday.com",
+      "via": "pass3"
+    },
+    {
+      "url": "https://developer.monday.com/api-reference",
+      "via": "pass3"
+    },
+    {
+      "url": "https://developer.monday.com/api-reference/docs/authentication",
+      "via": "pass3"
+    },
+    {
+      "url": "https://developer.monday.com/api-reference/docs/developer-sandbox-account",
+      "via": "pass3"
+    },
+    {
+      "url": "https://developer.monday.com/api-reference/docs/getting-started",
+      "via": "pass3"
+    }
+  ],
+  "queries": [
+    "Monday.com API authentication developer docs",
+    "Monday.com API access pricing plan developer",
+    "Monday.com MCP server"
+  ],
+  "seconds": 53.7,
+  "verification": {
+    "initial_issues": [],
+    "final_issues": [],
+    "rounds": [
+      {
+        "round": 0,
+        "issues": [],
+        "verifier": {
+          "auth_methods": [
+            "oauth2"
+          ],
+          "auth_primary": "oauth2",
+          "access_tier": "unknown",
+          "api_types": [
+            "none"
+          ],
+          "mcp": "unknown",
+          "verdict": "unknown",
+          "reasons": {},
+          "_model": "allam-2-7b"
+        },
+        "autofix": []
+      }
+    ],
+    "catalog": {
+      "in_catalog": true,
+      "slug": "monday",
+      "auth": [
+        "oauth2"
+      ],
+      "tools_count": 122
+    },
+    "changed_fields": [],
+    "field_status": {
+      "auth": "verified",
+      "access": "verified",
+      "api": "verified",
+      "mcp": "verified",
+      "verdict": "verified"
+    },
+    "needs_human": [],
+    "before": {
+      "auth_methods": [
+        "oauth2",
+        "api_key",
+        "bearer_token"
+      ],
+      "auth_primary": "oauth2",
+      "access_tier": "self_serve_free",
+      "access_notes": "You can sign up for a free developer account to get API tokens and test at no cost.",
+      "api_types": [
+        "graphql"
+      ],
+      "api_breadth": "broad",
+      "api_notes": "GraphQL API covering boards, items, column values, users, workspaces, and more.",
+      "mcp": "official",
+      "mcp_url": "https://mcp.monday.com/mcp",
+      "verdict": "build_now",
+      "blocker": "none",
+      "blocker_notes": "Public documentation, GraphQL API, and free developer accounts make it immediately buildable."
+    },
+    "seconds": 158.5
+  },
+  "pass3": {
+    "before": {
+      "auth_methods": [
+        "oauth2",
+        "api_key",
+        "bearer_token"
+      ],
+      "auth_primary": "oauth2",
+      "access_tier": "self_serve_free",
+      "verdict": "build_now",
+      "blocker": "none"
+    },
+    "log": [
+      {
+        "loop": "L6_access",
+        "error": "Groq failed: HTTP 429: {\"error\":{\"message\":\"Rate limit reached for model `qwen/qwen3.8-27b` in organization `org_01m2fd9xn8e3dtb9zfqc2jdhsc` service tier `on_demand` on tokens per day (TPD): Limit 200"
+      },
+      {
+        "loop": "L7_auth",
+        "error": "Groq failed: HTTP 429: {\"error\":{\"message\":\"Rate limit reached for model `qwen/qwen3.8-27b` in organization `org_01m2fd9xn8e3dtb9zfqc2jdhsc` service tier `on_demand` on tokens per day (TPD): Limit 200"
+      }
+    ],
+    "access_sources": [
+      "https://developer.monday.com",
+      "https://developer.monday.com/api-reference",
+      "https://developer.monday.com/api-reference/docs/authentication",
+      "https://developer.monday.com/api-reference/docs/developer-sandbox-account",
+      "https://developer.monday.com/api-reference/docs/getting-started"
+    ]
+  }
+}
