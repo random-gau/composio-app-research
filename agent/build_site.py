@@ -153,6 +153,13 @@ def main() -> None:
         "schema": "one record per app; enums documented in agent/schema.py", "generated_from": "data/runs/pass2.json",
         "stats": s, "accuracy": acc.get("summary"), "apps": recs})
     html = TEMPLATE.read_text().replace("/*__DATA__*/null", json.dumps(payload, ensure_ascii=False).replace("</", "<\\/"))
+    # static copies of the headline so non-JS readers (crawlers, agents) see the finding too
+    import html as _h
+    if insights.get("h1"):
+        html = html.replace('<h1 id="h1">Which of 100 apps could become agent toolkits today?</h1>',
+                            f'<h1 id="h1">{_h.escape(insights["h1"])}</h1>')
+    if insights.get("lede"):
+        html = html.replace('<p class="lede" id="lede"></p>', f'<p class="lede" id="lede">{_h.escape(insights["lede"])}</p>')
     (SITE / "index.html").write_text(html)
     print(f"built docs/index.html ({len(html)//1024} KB) and docs/results.json for {len(recs)} apps")
 
